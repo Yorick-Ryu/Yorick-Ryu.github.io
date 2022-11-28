@@ -4,6 +4,131 @@
   
   
   <entry>
+    <title>滚动视图（ScrollView）</title>
+    <link href="/2022/11/28/%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE%EF%BC%88ScrollView%EF%BC%89/"/>
+    <url>/2022/11/28/%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE%EF%BC%88ScrollView%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="滚动视图-ScrollView"><a href="#滚动视图-ScrollView" class="headerlink" title="滚动视图(ScrollView)"></a>滚动视图(ScrollView)</h1><p><strong>滚动视图有两种</strong></p><ul><li><code>ScrollView</code>，它是垂直方向的滚动视图；垂直方向滚动时，<code>layout_width</code>属性值设置为<code>match_parent</code>，<code>layout_height</code>属性值设置为<code>wrap_content</code>。</li><li><code>HorizontalScrollView</code>，它是水平方向的滚动视图；水平方向滚动时，<code>layout_width</code>属性值设置为<code>wrap_content</code>，<code>layout_height</code>属性值设置为<code>match_parent</code>。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Andorid</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>网格布局（GridLayout）</title>
+    <link href="/2022/11/28/%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80%EF%BC%88GridLayout%EF%BC%89/"/>
+    <url>/2022/11/28/%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80%EF%BC%88GridLayout%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p>网格布局支持多行多列的表格排列。</p><p>网格布局默认从左往右、从上到下排列，它新增了两个属性：</p><ul><li><code>columnCount</code>属性，它指定了网格的列数，即每行能放多少个视图；</li><li><code>rowCount</code>属性，它指定了网格的行数，即每列能放多少个视图；</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Andorid</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>相对布局（RelativeLayout）</title>
+    <link href="/2022/11/28/%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80%EF%BC%88RelativeLayout%EF%BC%89/"/>
+    <url>/2022/11/28/%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80%EF%BC%88RelativeLayout%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="相对布局-RelativeLayout"><a href="#相对布局-RelativeLayout" class="headerlink" title="相对布局(RelativeLayout)"></a>相对布局(RelativeLayout)</h1><p>相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：</p><ul><li>与该视图自身平级的视图；</li><li>该视图的上级视图(也就是它归属的<code>RelativeLayout</code>)</li></ul><p>如果不设定下级视图的参照物，那么下级视图默认显示在<code>RelativeLayout</code>内部的左上角。</p><h2 id="相对位置取值"><a href="#相对位置取值" class="headerlink" title="相对位置取值"></a>相对位置取值</h2><table><thead><tr><th>相对位置的属性取值</th><th>相对位置说明</th></tr></thead><tbody><tr><td>layout_toLeftOf</td><td>当前视图在指定视图的左边</td></tr><tr><td>layout_toRightOf</td><td>当前视图在指定视图的右边</td></tr><tr><td>layout_above</td><td>当前视图在指定视图的上方</td></tr><tr><td>layout_below</td><td>当前视图在指定视图的下方</td></tr><tr><td>layout_alignLeft</td><td>当前视图与指定视图的左侧对齐</td></tr><tr><td>layout_alignRight</td><td>当前视图与指定视图的右侧对齐</td></tr><tr><td>layout_alignTop</td><td>当前视图与指定视图的顶部对齐</td></tr><tr><td>layout_alignBottom</td><td>当前视图与指定视图的底部对齐</td></tr><tr><td>layout_centerlnParent</td><td>当前视图在上级视图中间</td></tr><tr><td>layout_centerHorizontal</td><td>当前视图在上级视图的水平方向居中</td></tr><tr><td>layout_centerVertical</td><td>当前视图在上级视图的垂直方向居中</td></tr><tr><td>layout_alignParentLeft</td><td>当前视图与上级视图的左侧对齐</td></tr><tr><td>layout_alignParentRight</td><td>当前视图与上级视图的右侧对齐</td></tr><tr><td>layout_alignParentTop</td><td>当前视图与上级视图的顶部对齐</td></tr><tr><td>layout_alignParentBottom</td><td>当前视图与上级视图的底部对齐</td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>Andorid</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>线性布局（LinearLayout）</title>
+    <link href="/2022/11/28/%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%EF%BC%88LinearLayout%EF%BC%89/"/>
+    <url>/2022/11/28/%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%EF%BC%88LinearLayout%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="线性布局-LinearLayout"><a href="#线性布局-LinearLayout" class="headerlink" title="线性布局(LinearLayout)"></a>线性布局(LinearLayout)</h1><h2 id="线性布局的排列方式"><a href="#线性布局的排列方式" class="headerlink" title="线性布局的排列方式"></a>线性布局的排列方式</h2><p>线性布局内部的各视图有两种排列方式:</p><ul><li><code>orientation</code>属性值为<code>horizontal</code>时，内部视图在水平方向从左往右排列。</li><li><code>orientation</code>属性值为<code>vertical</code>时，内部视图在垂直方向从上往下排列。</li><li>如果不指定<code>orientation</code>属性，则<code>LinearLayout</code>默认水平方向排列。</li></ul><h2 id="线性布局的权重"><a href="#线性布局的权重" class="headerlink" title="线性布局的权重"></a>线性布局的权重</h2><p>线性布局的权重概念，指的是线性布局的下级视图各自拥有多大比例的宽高。</p><p>权重属性名叫<code>layout_weight</code>，但该属性不在<code>LinearLayout</code>节点设置，而在线性布局的直接下级视图设置，表示该下级视图占据的宽高比例。</p><ul><li><code>layout_width</code>填<code>0dp</code>时，<code>layout_weight</code>表示水平方向的宽度比例。</li><li><code>layout_height</code>填<code>0dp</code>时，<code>layout_weight</code>表示垂直方向的高度比例。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Andorid</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>视图（View）</title>
+    <link href="/2022/11/28/%E8%A7%86%E5%9B%BE%EF%BC%88View%EF%BC%89/"/>
+    <url>/2022/11/28/%E8%A7%86%E5%9B%BE%EF%BC%88View%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="视图（View）"><a href="#视图（View）" class="headerlink" title="视图（View）"></a>视图（View）</h1><ul><li><a href="#%E8%A7%86%E5%9B%BEview">视图（View）</a><ul><li><a href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E5%AE%BD%E9%AB%98">设置视图的宽高</a><ul><li><a href="#%E5%9C%A8xml%E4%BB%A3%E7%A0%81%E4%B8%AD%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E5%AE%BD%E9%AB%98">在xml代码中设置视图宽高</a></li><li><a href="#%E5%9C%A8java%E4%BB%A3%E7%A0%81%E4%B8%AD%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E5%AE%BD%E9%AB%98">在java代码中设置视图宽高</a></li><li><a href="#dp-%E8%BD%AC-px-%E5%B7%A5%E5%85%B7%E7%B1%BB">dp 转 px 工具类</a></li></ul></li><li><a href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E9%97%B4%E8%B7%9D">设置视图的间距</a></li><li><a href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F">设置视图的对齐方式</a></li></ul></li></ul><h2 id="设置视图的宽高"><a href="#设置视图的宽高" class="headerlink" title="设置视图的宽高"></a>设置视图的宽高</h2><p>设置视图的宽高有两种途径：</p><h3 id="在xml代码中设置视图宽高"><a href="#在xml代码中设置视图宽高" class="headerlink" title="在xml代码中设置视图宽高"></a>在xml代码中设置视图宽高</h3><p>视图宽度通过属性<code>android:layout_width</code>表达，视图高度通过属性<code>android:layout_height</code>表达，宽高的取值主要有下列三种：</p><ul><li>match_parent：表示与上级视图保持一致。</li><li>wrap_content：表示与内容自适应。</li><li>以dp为单位的具体尺寸。</li></ul><h3 id="在java代码中设置视图宽高"><a href="#在java代码中设置视图宽高" class="headerlink" title="在java代码中设置视图宽高"></a>在java代码中设置视图宽高</h3><p>首先确保XML中的宽高属性值为<code>wrap_content</code>，接着打开该页面对应的Java代码，依序执行以下三个步骤：</p><ul><li>调用控件对象的<code>getLayoutParams</code>方法，获取该控件的布局参数。</li><li>布局参数的<code>width</code>属性表示宽度，<code>height</code>属性表示高度，修改这两个属性值。</li><li>调用控件对象的<code>setLayoutParams</code>方法，填入修改后的布局参数使之生效。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 获取布局参数（含宽度和高度)</span><br>ViewGroup.<span class="hljs-type">LayoutParams</span> <span class="hljs-variable">params</span> <span class="hljs-operator">=</span> tv.getLayoutParams();<br><span class="hljs-comment">// 修改布局参数中的宽度数值，注意默认px单位，所以要一个工具类将 dp 转换为 px</span><br>params.width = Utils.dip2px(<span class="hljs-built_in">this</span>, <span class="hljs-number">300</span>);<br><span class="hljs-comment">// 设置布局参数（</span><br>tv.setLayoutParams(params);<br></code></pre></td></tr></table></figure><h3 id="dp-转-px-工具类"><a href="#dp-转-px-工具类" class="headerlink" title="dp 转 px 工具类"></a>dp 转 px 工具类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Utils</span> &#123;<br>    <span class="hljs-comment">// 根据手机的分辨率从 dp 的单位转成为 px（像素）</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dip2px</span><span class="hljs-params">(Context context, <span class="hljs-type">float</span> dpValue)</span> &#123;<br>        <span class="hljs-comment">// 获取当前手机的像素密度(1个dp对应几个px)</span><br>        <span class="hljs-type">float</span> <span class="hljs-variable">scale</span> <span class="hljs-operator">=</span> context.getResources().getDisplayMetrics().density;<br>        <span class="hljs-comment">// 四舍五入取整</span><br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) (dpValue * scale + <span class="hljs-number">0.5f</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>context（上下文） 的妙用！</p><h2 id="设置视图的间距"><a href="#设置视图的间距" class="headerlink" title="设置视图的间距"></a>设置视图的间距</h2><p>设置视图的间距有两种途径：</p><ul><li><p>采用<code>layout_margin</code>属性，它指定了当前视图与周围平级视图之间的距离（外边距）。包括<code>layout_margin</code>、<code>layout_marginLeft</code>、<code>layout_marginTop</code>、<code>layout_marginRight</code>、<code>layout_marginBottom</code></p></li><li><p>采用<code>padding</code>属性，它指定了当前视图与内部下级视图之间的距离（内边距）。包括<code>padding</code>、<code>paddingLeft</code>、<code>paddingTop</code>、<code>paddingRight</code>、<code>paddingBottom</code></p></li></ul><p><code>margin</code>和<code>padding</code>属性适用于所有视图，附视图家族的依赖继承关系：</p><p><img src="/./img/view_relationship.png" alt="视图家族的依赖继承关系"></p><h2 id="设置视图的对齐方式"><a href="#设置视图的对齐方式" class="headerlink" title="设置视图的对齐方式"></a>设置视图的对齐方式</h2><p>设置视图的对齐方式有两种途径：</p><ul><li>采用<code>layout_gravity</code>属性，它指定了当前视图相对于上级视图的对齐方式。</li><li>采用<code>gravity</code>属性，它指定了下级视图相对于当前视图的对齐方式。<br><code>layout_gravity</code>与<code>gravity</code>的取值包括: <code>left</code>、<code>top</code>、<code>right</code>、<code>bottom</code>，还可以用竖线连接各取值，例如<code>left|top</code>表示即靠左又靠上，也就是朝左上角对齐。</li></ul><p><a href="https://www.jianshu.com/p/d597d96d5167">Android 中 marginLeft 和 marginStart 的区别</a></p><p><a href="https://developer.android.com/about/versions/android-4.2.html#RTL">goole官方解释</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Andorid</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>计算机基础</title>
     <link href="/2022/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     <url>/2022/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</url>
