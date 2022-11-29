@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>MarkDownPlugins的使用</title>
+    <link href="/2022/11/29/MarkDownPlugins%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2022/11/29/MarkDownPlugins%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MarkDown-Plugins"><a href="#MarkDown-Plugins" class="headerlink" title="MarkDown Plugins"></a>MarkDown Plugins</h1><p>Markdown 插件使用备忘  </p><p>参考：[Markdown All in One 书写Markdown利器(<a href="https://blog.csdn.net/weixin_33895604/article/details/88702076">https://blog.csdn.net/weixin_33895604/article/details/88702076</a>)</p><p><strong>目录：</strong></p><ul><li><a href="#markdown-plugins">MarkDown Plugins</a><ul><li><a href="#markdown-all-in-on-%E6%8F%92%E4%BB%B6">Markdown All in On 插件</a><ul><li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a></li><li><a href="#task-list">Task List</a></li><li><a href="#%E7%94%9F%E6%88%90%E7%9B%AE%E5%BD%95">生成目录</a></li></ul></li><li><a href="#markdown-preview-enhanced-%E6%8F%92%E4%BB%B6">Markdown Preview Enhanced 插件</a></li></ul></li></ul><h3 id="Markdown-All-in-On-插件"><a href="#Markdown-All-in-On-插件" class="headerlink" title="Markdown All in On 插件"></a>Markdown All in On 插件</h3><h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><div class="code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-built_in">Key</span>    <span class="hljs-variable">Command</span><span class="hljs-variable">Ctrl</span> <span class="hljs-operator">+</span> <span class="hljs-variable">B</span>    粗体<span class="hljs-variable">Ctrl</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">I</span>    斜体<span class="hljs-variable">Alt</span> <span class="hljs-operator">+</span> <span class="hljs-variable">S</span>    删除线<span class="hljs-variable">Ctrl</span> <span class="hljs-operator">+</span> <span class="hljs-variable">Shift</span> <span class="hljs-operator">+</span> <span class="hljs-punctuation">]</span>    标题<span class="hljs-punctuation">(</span><span class="hljs-variable">uplevel</span><span class="hljs-punctuation">)</span><span class="hljs-variable">Ctrl</span> <span class="hljs-operator">+</span> <span class="hljs-variable">Shift</span> <span class="hljs-operator">+</span> <span class="hljs-punctuation">[</span>    标题<span class="hljs-punctuation">(</span><span class="hljs-variable">downlevel</span><span class="hljs-punctuation">)</span><span class="hljs-variable">Ctrl</span> <span class="hljs-operator">+</span> <span class="hljs-variable">M</span>    <span class="hljs-built_in">Toggle</span> <span class="hljs-variable">math</span> <span class="hljs-variable">environment</span><span class="hljs-operator">/</span>进入数学环境<span class="hljs-variable">Alt</span> <span class="hljs-operator">+</span> <span class="hljs-built_in">C</span>    <span class="hljs-built_in">Check</span><span class="hljs-operator">/</span><span class="hljs-variable">Uncheck</span> <span class="hljs-variable">task</span> <span class="hljs-variable">list</span> <span class="hljs-variable">item</span></code></pre></div><p><strong>实例：</strong>  </p><p><strong>粗体</strong><br><em>斜体</em><br><del>删除线</del><br>$x+y&#x3D;z$</p><h4 id="Task-List"><a href="#Task-List" class="headerlink" title="Task List"></a>Task List</h4><ul><li><input checked="" disabled="" type="checkbox"> Python Study</li><li><input disabled="" type="checkbox"> Andorid Studey</li><li><input disabled="" type="checkbox"> Java Study</li></ul><h4 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h4><p>Crtl + Shift + P 可以查看更多功能</p><h3 id="Markdown-Preview-Enhanced-插件"><a href="#Markdown-Preview-Enhanced-插件" class="headerlink" title="Markdown Preview Enhanced 插件"></a>Markdown Preview Enhanced 插件</h3><p>预览增强插件，在插件设置里可以更改配色</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Environment</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Markdown</tag>
+      
+      <tag>VsCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对话框</title>
     <link href="/2022/11/29/%E5%AF%B9%E8%AF%9D%E6%A1%86/"/>
     <url>/2022/11/29/%E5%AF%B9%E8%AF%9D%E6%A1%86/</url>
@@ -33,7 +60,7 @@
     <link href="/2022/11/29/SeekBar/"/>
     <url>/2022/11/29/SeekBar/</url>
     
-    <content type="html"><![CDATA[<h1 id="SeekBar"><a href="#SeekBar" class="headerlink" title="SeekBar"></a>SeekBar</h1><p>[TOC]</p><p><strong>参考：</strong></p><ul><li><a href="https://developer.android.google.cn/reference/kotlin/android/widget/SeekBar?hl=en">SeekBar  | Android Developers (google.cn)</a></li><li><a href="https://verytoolz.com/blog/cf7594a53a/#:~:text=SeekBar">Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)</a></li></ul><h2 id="Seekbar介绍"><a href="#Seekbar介绍" class="headerlink" title="Seekbar介绍"></a>Seekbar介绍</h2><p>Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度控制、音量控制等。</p><p>它是重要的用户界面元素之一，它提供了在定义的范围内选择整数值的功能，例如 1 到 100。</p><p>通过在 SeekBar 中拖动拇指，我们可以来回滑动，在使用 <code>android:min</code> 和 <code>android:max</code> 属性定义的最小和最大整数值之间选择一个值。</p><p>使用<code>android:progress</code>定义初始值。</p><p>在控件列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。</p><p><img src="/./img/image-20221129173639697.png" alt="image-20221129173639697"></p><h2 id="使用SeekBar"><a href="#使用SeekBar" class="headerlink" title="使用SeekBar"></a>使用SeekBar</h2><p>以两个SeekBar数据同步为例。</p><ol><li><p>创建项目，打开<code>activity_main.xml</code>的Design界面，</p></li><li><p>在Widgets列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。根据需要选择不同的类型。这里我们都选上并约束布局。</p><p><img src="/./img/image-20221129173639697.png" alt="image-20221129173639697"></p><ul><li><p>SeekBar连续</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/seekBar2&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;300dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;40dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:max</span>=<span class="hljs-string">&quot;100&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:progress</span>=<span class="hljs-string">&quot;40&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintHorizontal_bias</span>=<span class="hljs-string">&quot;0.5&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.8&quot;</span> /&gt;</span></code></pre></div></li><li><p>SeekBar离散</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/seekBar&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;@style/Widget.AppCompat.SeekBar.Discrete&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;300dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;40dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:max</span>=<span class="hljs-string">&quot;10&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:progress</span>=<span class="hljs-string">&quot;4&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.9&quot;</span> /&gt;</span></code></pre></div></li></ul></li><li><p>在对应的Activity或者Fragment中绑定控件</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> seekBar: SeekBar    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> seekBar2: SeekBar    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        seekBar = findViewById(R.id.seekBar)        seekBar2 = findViewById(R.id.seekBar2)    &#125;&#125;</code></pre></div></li><li><p>让两个控件的进度一致，在<code>onCreate</code>加入以下代码</p><div class="note note-success">            <p>注意默认的TODO要删掉</p>          </div><div class="code-wrapper"><pre><code class="hljs kotlin">seekBar.progress = seekBar2.progress / <span class="hljs-number">10</span>seekBar.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : OnSeekBarChangeListener &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onProgressChanged</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?, progress: <span class="hljs-type">Int</span>, fromUser: <span class="hljs-type">Boolean</span>)</span></span> &#123;        seekBar2.progress = progress * <span class="hljs-number">10</span> <span class="hljs-comment">// 进度改变时触发</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStartTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;        <span class="hljs-comment">// 开始拖动时触发</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStopTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;        <span class="hljs-comment">// 结束拖动时触发</span>    &#125;&#125;)seekBar2.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : OnSeekBarChangeListener &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onProgressChanged</span><span class="hljs-params">(seekBar1: <span class="hljs-type">SeekBar</span>?, progress: <span class="hljs-type">Int</span>, fromUser: <span class="hljs-type">Boolean</span>)</span></span> &#123;        seekBar.progress = progress / <span class="hljs-number">10</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStartTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStopTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;    &#125;&#125;)</code></pre></div></li><li><p><code>build</code>并运行，发现实现了两个SeekBar数据同步的效果。</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="SeekBar"><a href="#SeekBar" class="headerlink" title="SeekBar"></a>SeekBar</h1><p>[TOC]</p><p><strong>参考：</strong></p><ul><li><a href="https://developer.android.google.cn/reference/kotlin/android/widget/SeekBar?hl=en">SeekBar  | Android Developers (google.cn)</a></li><li><a href="https://verytoolz.com/blog/cf7594a53a/#:~:text=SeekBar">Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)</a></li></ul><h2 id="Seekbar介绍"><a href="#Seekbar介绍" class="headerlink" title="Seekbar介绍"></a>Seekbar介绍</h2><p>Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度控制、音量控制等。</p><p>它是重要的用户界面元素之一，它提供了在定义的范围内选择整数值的功能，例如 1 到 100。</p><p>通过在 SeekBar 中拖动拇指，我们可以来回滑动，在使用 <code>android:min</code> 和 <code>android:max</code> 属性定义的最小和最大整数值之间选择一个值。</p><p>使用<code>android:progress</code>定义初始值。</p><p>在控件列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。</p><p><img src="/./img/image-20221129173639697.png" alt="image-20221129173639697"></p><h2 id="使用SeekBar"><a href="#使用SeekBar" class="headerlink" title="使用SeekBar"></a>使用SeekBar</h2><p>以两个SeekBar数据同步为例。</p><ol><li><p>创建项目，打开<code>activity_main.xml</code>的Design界面，</p></li><li><p>在Widgets列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。根据需要选择不同的类型。这里我们都选上并约束布局。</p><p><img src="/./img/image-20221129173639697.png" alt="image-20221129173639697"></p><ul><li><p>SeekBar连续</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/seekBar2&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;300dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;40dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:max</span>=<span class="hljs-string">&quot;100&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:progress</span>=<span class="hljs-string">&quot;40&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintHorizontal_bias</span>=<span class="hljs-string">&quot;0.5&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.8&quot;</span> /&gt;</span></code></pre></div></li><li><p>SeekBar离散</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/seekBar&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;@style/Widget.AppCompat.SeekBar.Discrete&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;300dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;40dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:max</span>=<span class="hljs-string">&quot;10&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:progress</span>=<span class="hljs-string">&quot;4&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.9&quot;</span> /&gt;</span></code></pre></div></li></ul></li><li><p>在对应的Activity或者Fragment中绑定控件</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> seekBar: SeekBar    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> seekBar2: SeekBar    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        seekBar = findViewById(R.id.seekBar)        seekBar2 = findViewById(R.id.seekBar2)    &#125;&#125;</code></pre></div></li><li><p>让两个控件的进度一致，在<code>onCreate</code>加入以下代码</p><div class="note note-warning">            <p>注意默认的TODO要删掉</p>          </div><div class="code-wrapper"><pre><code class="hljs kotlin">seekBar.progress = seekBar2.progress / <span class="hljs-number">10</span>seekBar.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : OnSeekBarChangeListener &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onProgressChanged</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?, progress: <span class="hljs-type">Int</span>, fromUser: <span class="hljs-type">Boolean</span>)</span></span> &#123;        seekBar2.progress = progress * <span class="hljs-number">10</span> <span class="hljs-comment">// 进度改变时触发</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStartTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;        <span class="hljs-comment">// 开始拖动时触发</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStopTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;        <span class="hljs-comment">// 结束拖动时触发</span>    &#125;&#125;)seekBar2.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : OnSeekBarChangeListener &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onProgressChanged</span><span class="hljs-params">(seekBar1: <span class="hljs-type">SeekBar</span>?, progress: <span class="hljs-type">Int</span>, fromUser: <span class="hljs-type">Boolean</span>)</span></span> &#123;        seekBar.progress = progress / <span class="hljs-number">10</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStartTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStopTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;    &#125;&#125;)</code></pre></div></li><li><p><code>build</code>并运行，发现实现了两个SeekBar数据同步的效果。</p></li></ol>]]></content>
     
     
     <categories>
@@ -45,9 +72,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>kotlin</tag>
       
@@ -74,9 +101,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>textview</tag>
       
@@ -103,9 +130,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>button</tag>
       
@@ -182,9 +209,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>button</tag>
       
@@ -355,9 +382,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -388,22 +415,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
