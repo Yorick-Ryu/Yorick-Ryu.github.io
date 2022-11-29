@@ -340,7 +340,19 @@
 </ul>
 <p>通过<code>AlertDialog.Builder</code>设置完对话框参数，还需调用建造器的create方法才能生成对话框实例。最后调用对话框实例的show方法，在页面上弹出提醒对话框。</p>
 <p>使用MD3风格的对话框</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">MaterialAlertDialogBuilder(context)<br>        .setTitle(resources.getString(R.string.title))<br>        .setMessage(resources.getString(R.string.supporting_text))<br>        .setNeutralButton(resources.getString(R.string.cancel)) &#123; dialog, which -&gt;<br>            <span class="hljs-comment">// Respond to neutral button press</span><br>        &#125;<br>        .setNegativeButton(resources.getString(R.string.decline)) &#123; dialog, which -&gt;<br>            <span class="hljs-comment">// Respond to negative button press</span><br>        &#125;<br>        .setPositiveButton(resources.getString(R.string.accept)) &#123; dialog, which -&gt;<br>            <span class="hljs-comment">// Respond to positive button press</span><br>        &#125;<br>        .show()<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs kotlin">MaterialAlertDialogBuilder(context)
+        .setTitle(resources.getString(R.string.title))
+        .setMessage(resources.getString(R.string.supporting_text))
+        .setNeutralButton(resources.getString(R.string.cancel)) &#123; dialog, which -&gt;
+            <span class="hljs-comment">// Respond to neutral button press</span>
+        &#125;
+        .setNegativeButton(resources.getString(R.string.decline)) &#123; dialog, which -&gt;
+            <span class="hljs-comment">// Respond to negative button press</span>
+        &#125;
+        .setPositiveButton(resources.getString(R.string.accept)) &#123; dialog, which -&gt;
+            <span class="hljs-comment">// Respond to positive button press</span>
+        &#125;
+        .show()</code></pre></div>
 
 <p><a target="_blank" rel="noopener" href="https://github.com/material-components/material-components-android/blob/master/docs/components/Dialog.md">material-components-android&#x2F;Dialog.md at master · material-components&#x2F;material-components-android (github.com)</a></p>
 <h2 id="日期对话框DatePickerDialog"><a href="#日期对话框DatePickerDialog" class="headerlink" title="日期对话框DatePickerDialog"></a>日期对话框DatePickerDialog</h2><p>虽然EditText提供了<code>inputType=&quot;date&quot;</code>的日期输入，但是很少有人会手工输入完整日期，况且EditText还不支持”年 ** 月 ** 日”这样的中文日期，所以系统提供了专门的日期选择器DatePicker，供用户选择具体的年月日。不过，DatePicker并非弹窗模式而是在当前页面占据一块区域，并且不会自动关闭。按习惯来说，日期控件应该弹出对话框，选择完日期就要自动关闭对话框。因此，很少直接在界面上显示DatePicker，而是利用已经封装好的日期选择对话框DatePickerDialog。</p>
@@ -348,14 +360,22 @@
 <p>示例：</p>
 <p>日期选择器DatePicker</p>
 <p>新建控件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">DatePicker</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/dp_date&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:calendarViewShown</span>=<span class="hljs-string">&quot;false&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:datePickerMode</span>=<span class="hljs-string">&quot;spinner&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">DatePicker</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/dp_date&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:calendarViewShown</span>=<span class="hljs-string">&quot;false&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:datePickerMode</span>=<span class="hljs-string">&quot;spinner&quot;</span> /&gt;</span></code></pre></div>
 
 <p><code>android:datePickerMode</code>属性可以选择模式。</p>
 <p>新建按钮点击事件为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;您选择的日期是%d年%d月%d日&quot;</span>, dpDate.getYear(), dpDate.getMonth() + <span class="hljs-number">1</span>, dpDate.getDayOfMonth());<br>tvDate.setText(desc);<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;您选择的日期是%d年%d月%d日&quot;</span>, dpDate.getYear(), dpDate.getMonth() + <span class="hljs-number">1</span>, dpDate.getDayOfMonth());
+tvDate.setText(desc);</code></pre></div>
 
 <p>日期对话框DatePickerDialog</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Calendar</span> <span class="hljs-variable">calendar</span> <span class="hljs-operator">=</span> Calendar.getInstance();<br><span class="hljs-type">DatePickerDialog</span> <span class="hljs-variable">dialog</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DatePickerDialog</span>(<span class="hljs-built_in">this</span>, <span class="hljs-built_in">this</span>, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));<br>dialog.show();<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Calendar</span> <span class="hljs-variable">calendar</span> <span class="hljs-operator">=</span> Calendar.getInstance();
+<span class="hljs-type">DatePickerDialog</span> <span class="hljs-variable">dialog</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DatePickerDialog</span>(<span class="hljs-built_in">this</span>, <span class="hljs-built_in">this</span>, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+dialog.show();</code></pre></div>
 
 <h2 id="时间对话框TimePickerDialog"><a href="#时间对话框TimePickerDialog" class="headerlink" title="时间对话框TimePickerDialog"></a>时间对话框TimePickerDialog</h2><p>时间选择器TimePicker可以让用户选择具体的小时和分钟。</p>
 <p>TimePickerDialog 的用法类似 DatePickerDialog。</p>
