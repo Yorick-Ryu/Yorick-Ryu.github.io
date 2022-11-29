@@ -16,16 +16,16 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="活动(Activity)     启停活动页面 Activity的启动和结束 Activity的生命周期 Activity的启动模式 默认启动模式 standard 栈顶复用模式 singleTop 栈内复用模式 singleTask 全局唯一模式 singlelnstance 动态设置启动模式 FLAG_ACTIVITY_NEW_TASK FLAG_ACTIVITY_SINGLE_TOP FLA">
+    <meta name="description" content="活动(Activity)[TOC] 启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初">
 <meta property="og:type" content="article">
 <meta property="og:title" content="活动（Activity）">
 <meta property="og:url" content="http://yorick.love/2022/11/29/%E6%B4%BB%E5%8A%A8%EF%BC%88Activity%EF%BC%89/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="活动(Activity)     启停活动页面 Activity的启动和结束 Activity的生命周期 Activity的启动模式 默认启动模式 standard 栈顶复用模式 singleTop 栈内复用模式 singleTask 全局唯一模式 singlelnstance 动态设置启动模式 FLAG_ACTIVITY_NEW_TASK FLAG_ACTIVITY_SINGLE_TOP FLA">
+<meta property="og:description" content="活动(Activity)[TOC] 启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/activity_life_cycle.png">
 <meta property="article:published_time" content="2022-11-29T10:15:48.000Z">
-<meta property="article:modified_time" content="2022-11-29T10:31:28.801Z">
+<meta property="article:modified_time" content="2022-11-29T10:38:44.591Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="activity">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6,"maxdepth":6,"class":"toc"},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2,"maxdepth":6,"class":"toc"},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -262,7 +262,7 @@
         
         
         
-          67 分钟
+          65 分钟
         
       </span>
     
@@ -321,54 +321,7 @@
             
               <div class="markdown-body">
                 
-                <h1><span id="活动activity">活动(Activity)</span></h1><div class="toc">
-
-<!-- toc -->
-
-<ul>
-<li><a href="#%E5%90%AF%E5%81%9C%E6%B4%BB%E5%8A%A8%E9%A1%B5%E9%9D%A2">启停活动页面</a><ul>
-<li><a href="#activity%E7%9A%84%E5%90%AF%E5%8A%A8%E5%92%8C%E7%BB%93%E6%9D%9F">Activity的启动和结束</a></li>
-<li><a href="#activity%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">Activity的生命周期</a></li>
-<li><a href="#activity%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F">Activity的启动模式</a><ul>
-<li><a href="#%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F-standard">默认启动模式 standard</a></li>
-<li><a href="#%E6%A0%88%E9%A1%B6%E5%A4%8D%E7%94%A8%E6%A8%A1%E5%BC%8F-singletop">栈顶复用模式 singleTop</a></li>
-<li><a href="#%E6%A0%88%E5%86%85%E5%A4%8D%E7%94%A8%E6%A8%A1%E5%BC%8F-singletask">栈内复用模式 singleTask</a></li>
-<li><a href="#%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A8%A1%E5%BC%8F-singlelnstance">全局唯一模式 singlelnstance</a></li>
-<li><a href="#%E5%8A%A8%E6%80%81%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F">动态设置启动模式</a><ul>
-<li><a href="#flag_activity_new_task">FLAG_ACTIVITY_NEW_TASK</a></li>
-<li><a href="#flag_activity_single_top">FLAG_ACTIVITY_SINGLE_TOP</a></li>
-<li><a href="#flag_activity_clear_task">FLAG_ACTIVITY_CLEAR_TASK</a></li>
-<li><a href="#flag_activity_clear_top">FLAG_ACTIVITY_CLEAR_TOP</a></li>
-<li><a href="#flag_activity_no_history">FLAG_ACTIVITY_NO_HISTORY</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%9C%A8%E6%B4%BB%E5%8A%A8%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF">在活动之间传递消息</a><ul>
-<li><a href="#intent%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86">Intent的组成部分</a></li>
-<li><a href="#%E6%98%BE%E5%BC%8Flntent%E5%92%8C%E9%9A%90%E5%BC%8Fintent">显式lntent和隐式Intent</a></li>
-<li><a href="#%E5%90%91%E4%B8%8B%E4%B8%80%E4%B8%AAactivity%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE">向下一个Activity发送数据</a></li>
-<li><a href="#%E5%90%91%E4%B8%8A%E4%B8%80%E4%B8%AAactivity%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE">向上一个Activity返回数据</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%BA%E6%B4%BB%E5%8A%A8%E8%A1%A5%E5%85%85%E9%99%84%E5%8A%A0%E4%BF%A1%E6%81%AF">为活动补充附加信息</a><ul>
-<li><a href="#%E5%88%A9%E7%94%A8%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AD%97%E7%AC%A6%E4%B8%B2">利用资源文件配置字符串</a></li>
-<li><a href="#%E5%88%A9%E7%94%A8%E5%85%83%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF">利用元数据传递配置信息</a><ul>
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%83%E6%95%B0%E6%8D%AE">什么是元数据</a></li>
-<li><a href="#%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">元数据应用场景</a></li>
-<li><a href="#%E8%8E%B7%E5%8F%96%E5%85%83%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF">获取元数据信息</a></li>
-</ul>
-</li>
-<li><a href="#%E7%BB%99%E5%BA%94%E7%94%A8%E9%A1%B5%E9%9D%A2%E6%B3%A8%E5%86%8C%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F">给应用页面注册快捷方式</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-</div>
-
+                <h1><span id="活动activity">活动(Activity)</span></h1><p>[TOC]</p>
 <h2><span id="启停活动页面">启停活动页面</span></h2><h3><span id="activity的启动和结束">Activity的启动和结束</span></h3><ul>
 <li>从当前页面跳到新页面，跳转代码如下：<br><code>startActivity(new Intent(源页面.this,目标页面.class));</code></li>
 <li>从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：<br><code>finish();//结束当前的活动页面</code></li>
