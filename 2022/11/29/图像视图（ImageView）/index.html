@@ -321,7 +321,7 @@
             
               <div class="markdown-body">
                 
-                <h1><span id="图像视图imageview">图像视图(ImageView)</span></h1><ul>
+                <h1 id="图像视图-ImageView"><a href="#图像视图-ImageView" class="headerlink" title="图像视图(ImageView)"></a>图像视图(ImageView)</h1><ul>
 <li><a href="#%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BEimageview">图像视图(ImageView)</a><ul>
 <li><a href="#%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%E7%9A%84%E7%BC%A9%E6%94%BE%E7%B1%BB%E5%9E%8B">图像视图的缩放类型</a></li>
 </ul>
@@ -337,7 +337,7 @@
 <li>在XML文件中，通过属性<code>android:src</code>设置图片资源，属性值格式形如<code>@drawable/apple</code>。（apple为不含扩展名的图片名称）</li>
 <li>在Java代码中，调用<code>setlmageResource</code>方法设置图片资源，方法参数格式形如<code>R.drawable.apple</code>。</li>
 </ul>
-<h2><span id="图像视图的缩放类型">图像视图的缩放类型</span></h2><p>lmageView本身默认图片居中显示（<code>fitCenter</code>），若要改变图片的显示方式，可通过<code>scaleType</code>属性设定，该属性的取值说明如下：</p>
+<h2 id="图像视图的缩放类型"><a href="#图像视图的缩放类型" class="headerlink" title="图像视图的缩放类型"></a>图像视图的缩放类型</h2><p>lmageView本身默认图片居中显示（<code>fitCenter</code>），若要改变图片的显示方式，可通过<code>scaleType</code>属性设定，该属性的取值说明如下：</p>
 <table>
 <thead>
 <tr>
@@ -384,19 +384,19 @@
 </tbody></table>
 <p>java代码中设置图片缩放属性：<br><code>iv_scale.setScaleType(ImageView.ScaleType.CENTER);</code></p>
 <p>很多情况下，可以注意到<code>centernside</code>和<code>center</code>的显示效果居然一模一样，这缘于它们的缩放规则设定。表面上<code>fitCenter</code>、<code>centerinside</code>、<code>center</code>三个类型都是居中显示，且均不越过图像视图的边界。它们之间的区别在于：<code>fitCenter</code>既允许缩小图片、也允许放大图片，<code>centerInside</code>只允许缩小图片、不允许放大图标，而center自始至终保持原始尺寸(既不允许缩小图片、也不允许放大图片)。因此，当图片尺寸大于视图宽高，<code>centerInside</code>与<code>fitCenter</code>都会缩小图片，此时它俩的显示效果相同；当图片尺寸小于视图宽高，<code>centernside</code>与<code>center</code>都保持图片大小不变，此时它俩的显示效果相同。</p>
-<h1><span id="图像按钮lmagebutton">图像按钮(lmageButton)</span></h1><p><code>lmageButton</code>是显示图片的图像按钮，但它继承自<code>lmageView</code>，而非继承<code>Button</code>。<br><code>lmageButton</code>和<code>Button</code>之间的区别有：</p>
+<h1 id="图像按钮-lmageButton"><a href="#图像按钮-lmageButton" class="headerlink" title="图像按钮(lmageButton)"></a>图像按钮(lmageButton)</h1><p><code>lmageButton</code>是显示图片的图像按钮，但它继承自<code>lmageView</code>，而非继承<code>Button</code>。<br><code>lmageButton</code>和<code>Button</code>之间的区别有：</p>
 <ul>
 <li><code>Button</code>既可显示文本也可显示图片，<code>lmageButton</code>只能显示图片不能显示文本。</li>
 <li><code>lmageButton</code>上的图像可按比例缩放，而<code>Button</code>通过背景设置的图像会拉伸变形。</li>
 <li><code>Button</code>只能靠背景显示一张图片，而<code>lmageButton</code>可分别在前景和背景显示图片，从而实现两张图片叠加的效果。</li>
 </ul>
-<h2><span id="imagebutton的使用场合">ImageButton的使用场合</span></h2><p>在某些场合，有的字符无法由输入法打出来，或者某些文字以特殊字体展示，就适合先切图再放到<code>ImageButton</code>。例如：开平方符号$\sqrt{n}$，等等。</p>
+<h2 id="ImageButton的使用场合"><a href="#ImageButton的使用场合" class="headerlink" title="ImageButton的使用场合"></a>ImageButton的使用场合</h2><p>在某些场合，有的字符无法由输入法打出来，或者某些文字以特殊字体展示，就适合先切图再放到<code>ImageButton</code>。例如：开平方符号$\sqrt{n}$，等等。</p>
 <p><code>lmageButton</code>与<code>lmageView</code>之间的区别有：</p>
 <ul>
 <li><code>lmageButton</code>有默认的按钮背景，<code>ImageView</code>默认无背景。</li>
 <li><code>lmageButton</code>默认的缩放类型为<code>center</code>，而<code>ImageView</code>默认的缩放类型为<code>fitCenter</code>。</li>
 </ul>
-<h1><span id="同时展示文本与图像">同时展示文本与图像</span></h1><p>同时展示文本与图像的可能途径包括：</p>
+<h1 id="同时展示文本与图像"><a href="#同时展示文本与图像" class="headerlink" title="同时展示文本与图像"></a>同时展示文本与图像</h1><p>同时展示文本与图像的可能途径包括：</p>
 <p>(1）利用<code>LinearLayout</code>对<code>ImageView</code>和<code>TextView</code>组合布局。<br>(2）通过按钮控件<code>Button</code>的<code>drawable***</code>属性设置文本周围的图标。</p>
 <p><code>drawableTop</code>:指定文字上方的图片。<br><code>drawableBottom</code>:指定文字下方的图片。<br><code>drawableLeft</code>:指定文字左边的图片。<br><code>drawableRight</code>:指定文字右边的图片。<br><code>drawablePadding</code>:指定图片与文字的间距。</p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19U4y1R7zV?p=33&t=170.1">修改背景不起作用</a></p>
