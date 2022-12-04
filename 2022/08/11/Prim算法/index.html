@@ -16,26 +16,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="按钮(Button) 按钮(Button) 控件属性 点击和长按事件 禁用和恢复按钮    控件属性按钮控件Button由TextView派生而来，它们之间的区别有：  Button拥有默认的按钮背景，而TextView默认无背景; Button的内部文本默认居中对齐，而TextView的内部文本默认靠左对齐； Button会默认将英文字母转为大写，而TextView保持原始的英文大小写。  与T">
+    <meta name="description" content="Prim算法 Prim算法 应用场景 最小生成树 算法介绍 代码实现    应用场景最短路径问题，给定带权无向连通图，选中尽可能少的线路，使各顶点连通，并且使总路程最小。 也就是最小生成树问题。 最小生成树最小生成树(Minimum CostSpanning Tree)，简称MST。 （1）给定一个带权的无向连通图，如何选取一棵生成树，使树上所有边上权的总和为最小，这叫最小生成树。 （2）N个顶点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="按钮（Button）">
-<meta property="og:url" content="http://yorick.love/2022/11/29/%E6%8C%89%E9%92%AE%EF%BC%88Button%EF%BC%89/index.html">
+<meta property="og:title" content="Prim算法">
+<meta property="og:url" content="http://yorick.love/2022/08/11/Prim%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="按钮(Button) 按钮(Button) 控件属性 点击和长按事件 禁用和恢复按钮    控件属性按钮控件Button由TextView派生而来，它们之间的区别有：  Button拥有默认的按钮背景，而TextView默认无背景; Button的内部文本默认居中对齐，而TextView的内部文本默认靠左对齐； Button会默认将英文字母转为大写，而TextView保持原始的英文大小写。  与T">
+<meta property="og:description" content="Prim算法 Prim算法 应用场景 最小生成树 算法介绍 代码实现    应用场景最短路径问题，给定带权无向连通图，选中尽可能少的线路，使各顶点连通，并且使总路程最小。 也就是最小生成树问题。 最小生成树最小生成树(Minimum CostSpanning Tree)，简称MST。 （1）给定一个带权的无向连通图，如何选取一棵生成树，使树上所有边上权的总和为最小，这叫最小生成树。 （2）N个顶点">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2022-11-29T10:08:23.000Z">
-<meta property="article:modified_time" content="2022-11-29T10:50:50.103Z">
+<meta property="article:published_time" content="2022-08-11T07:15:18.000Z">
+<meta property="article:modified_time" content="2022-12-04T12:18:53.245Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="控件">
-<meta property="article:tag" content="view">
-<meta property="article:tag" content="button">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>按钮（Button） | Yorick Harbor</title>
+  <title>Prim算法 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +228,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="按钮（Button）"></span>
+            <span id="subtitle" data-typed-text="Prim算法"></span>
           
         </div>
 
@@ -241,8 +239,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-29 18:08" pubdate>
-          2022年11月29日 晚上
+        <time datetime="2022-08-11 15:15" pubdate>
+          2022年8月11日 下午
         </time>
       </span>
     
@@ -253,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.2k 字
         
       </span>
     
@@ -264,7 +262,7 @@
         
         
         
-          15 分钟
+          13 分钟
         
       </span>
     
@@ -310,12 +308,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">按钮（Button）</h1>
+            <h1 style="display: none">Prim算法</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年11月29日 晚上
+                    本文最后更新于：2022年12月4日 晚上
                   
                 
               </p>
@@ -323,115 +321,99 @@
             
               <div class="markdown-body">
                 
-                <h1 id="按钮-Button"><a href="#按钮-Button" class="headerlink" title="按钮(Button)"></a>按钮(Button)</h1><ul>
-<li><a href="#%E6%8C%89%E9%92%AEbutton">按钮(Button)</a><ul>
-<li><a href="#%E6%8E%A7%E4%BB%B6%E5%B1%9E%E6%80%A7">控件属性</a></li>
-<li><a href="#%E7%82%B9%E5%87%BB%E5%92%8C%E9%95%BF%E6%8C%89%E4%BA%8B%E4%BB%B6">点击和长按事件</a></li>
-<li><a href="#%E7%A6%81%E7%94%A8%E5%92%8C%E6%81%A2%E5%A4%8D%E6%8C%89%E9%92%AE">禁用和恢复按钮</a></li>
+                <h1 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h1><ul>
+<li><a href="#prim%E7%AE%97%E6%B3%95">Prim算法</a><ul>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91">最小生成树</a></li>
+<li><a href="#%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">算法介绍</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="控件属性"><a href="#控件属性" class="headerlink" title="控件属性"></a>控件属性</h2><p>按钮控件<code>Button</code>由<code>TextView</code>派生而来，它们之间的区别有：</p>
-<ul>
-<li><code>Button</code>拥有默认的按钮背景，而<code>TextView</code>默认无背景;</li>
-<li><code>Button</code>的内部文本默认居中对齐，而<code>TextView</code>的内部文本默认靠左对齐；</li>
-<li><code>Button</code>会默认将英文字母转为大写，而<code>TextView</code>保持原始的英文大小写。</li>
-</ul>
-<p>与<code>TextView</code>相比，<code>Button</code>增加了两个新属性：</p>
-<ul>
-<li><code>textAllCaps</code>属性，它指定了是否将英文字母转为大写，为<code>true</code>是表示自动转为大写，为<code>false</code>表示不做大写转换；</li>
-<li><code>onClick</code>属性，它用来接管用户的点击动作，指定了点击按钮时要触发哪个方法。</li>
-</ul>
-<h2 id="点击和长按事件"><a href="#点击和长按事件" class="headerlink" title="点击和长按事件"></a>点击和长按事件</h2><p>监听器，意思是专门监听控件的动作行为。只有控件发生了指定的动作，监听器才会触发开关去执行对应的代码逻辑。</p>
-<p>按钮控件有两种常用的监听器：</p>
-<ul>
-<li>点击监听器，通过<code>setOnClickListener</code>方法设置。按钮被按住少于500毫秒时，会触发点击事件。</li>
-<li>长按监听器，通过<code>setOnLongClickListener</code>方法设置。按钮被按住超过500毫秒时，会触发长按事件。</li>
-</ul>
-<p>点击事件有多种实现方式：</p>
-<ul>
-<li><p>使用匿名内部类的方式适用于按钮少的情况，使用静态内部类可以防止内存泄漏。</p>
-<div class="code-wrapper"><pre><code class="hljs java">btnLongClick.setOnLongClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnLongClickListener() &#123;
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">onLongClick</span><span class="hljs-params">(View v)</span> &#123;
-      <span class="hljs-comment">// 这里放点击实现的代码</span>
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; 
-      <span class="hljs-comment">// 返回true表示事件已经被消耗掉，不往上层冒泡；否则向上层冒泡</span>
-  &#125;
-  &#125;);</code></pre></div>
-
-<p>改用<code>lambda</code>表达式：</p>
-<div class="code-wrapper"><pre><code class="hljs java">btnLongClick.setOnLongClickListener(v -&gt; &#123;
-  <span class="hljs-comment">//这里放点击实现的代码</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; 
-  &#125;);</code></pre></div>
-
-<p>没有事件甚至可以省略大括号：</p>
-<div class="code-wrapper"><pre><code class="hljs java">btnLongClick.setOnLongClickListener(v -&gt; <span class="hljs-literal">false</span>);</code></pre></div>
-</li>
-<li><p>单独点击事件也适用于按钮少的情况，使用静态内部类可以防止内存泄漏。</p>
-</li>
-<li><p>公共点击事件适用于按钮多的时候，直接使当前<code>Activity</code>实现<code>View.OnClickListener</code>接口的<code>onClick</code>方法。</p>
-</li>
-</ul>
-<p>代码示例：</p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ButtonClickActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
-
-    <span class="hljs-keyword">private</span> TextView tvResult;
-
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;
-        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_button_click);
-        tvResult = findViewById(R.id.tv_result);
-        <span class="hljs-type">Button</span> <span class="hljs-variable">btnClickSingle</span> <span class="hljs-operator">=</span> findViewById(R.id.btn_click_single);
-        btnClickSingle.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">MyOnClickListener</span>(tvResult));
-
-        <span class="hljs-type">Button</span> <span class="hljs-variable">btnClickPublic</span> <span class="hljs-operator">=</span> findViewById(R.id.btn_click_public);
-        <span class="hljs-type">Button</span> <span class="hljs-variable">btnClickPublic2</span> <span class="hljs-operator">=</span> findViewById(R.id.btn_click_public_2);
-        btnClickPublic.setOnClickListener(<span class="hljs-built_in">this</span>);
-        btnClickPublic2.setOnClickListener(<span class="hljs-built_in">this</span>);
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>最短路径问题，给定带权无向连通图，选中尽可能少的线路，使各顶点连通，并且使总路程最小。</p>
+<p>也就是最小生成树问题。</p>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><p>最小生成树(Minimum CostSpanning Tree)，简称MST。</p>
+<p>（1）给定一个带权的无向连通图，如何选取一棵生成树，使树上所有边上权的总和为最小，这叫最小生成树。</p>
+<p>（2）N个顶点，一定有N-1条边<br>（3）包含全部顶点<br>（4）N-1条边都在图中<br>（5）求最小生成树的算法主要是普里姆算法和克鲁斯卡尔算法</p>
+<h2 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h2><p>普利姆(Prim)算法求最小生成树，也就是在包含n个顶点的连通图中，找出只有(n-1)条边包含所有n个顶点的连通子图，也就是所谓的极小连通子图。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PrimAlgorithm</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-type">char</span>[] data = &#123;<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-string">&#x27;G&#x27;</span>&#125;;
+        <span class="hljs-type">int</span> <span class="hljs-variable">verxs</span> <span class="hljs-operator">=</span> data.length;
+        <span class="hljs-type">int</span>[][] weight = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[][]&#123;
+                &#123;<span class="hljs-number">10000</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">2</span>&#125;,
+                &#123;<span class="hljs-number">5</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">3</span>&#125;,
+                &#123;<span class="hljs-number">7</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>&#125;,
+                &#123;<span class="hljs-number">10000</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">4</span>, <span class="hljs-number">10000</span>&#125;,
+                &#123;<span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;,
+                &#123;<span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">6</span>&#125;,
+                &#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">10000</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">10000</span>&#125;,
+        &#125;;
+        <span class="hljs-type">MGraph</span> <span class="hljs-variable">graph</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MGraph</span>(verxs);
+        <span class="hljs-type">MinTree</span> <span class="hljs-variable">minTree</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MinTree</span>();
+        minTree.createGraph(graph, verxs, data, weight);
+        minTree.showGraph(graph);
+        <span class="hljs-type">int</span> <span class="hljs-variable">distance</span> <span class="hljs-operator">=</span> minTree.prim(graph, <span class="hljs-number">0</span>);
+        System.out.println(<span class="hljs-string">&quot;最短长度：&quot;</span> + distance);
     &#125;
+&#125;
 
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span> &#123;
-        <span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;%s 您点击了按钮 %s&quot;</span>, DateUtil.getCurrentTime(), ((Button) v).getText());
-        <span class="hljs-keyword">switch</span> (v.getId()) &#123;
-            <span class="hljs-keyword">case</span> R.id.btn_click_public:
-                tvResult.setText(desc);
-                <span class="hljs-keyword">break</span>;
-            <span class="hljs-keyword">case</span> R.id.btn_click_public_2:
-                tvResult.setText(desc);
-                <span class="hljs-keyword">break</span>;
+<span class="hljs-comment">// 创建最小生成树</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MinTree</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createGraph</span><span class="hljs-params">(MGraph graph, <span class="hljs-type">int</span> verxs, <span class="hljs-type">char</span>[] data, <span class="hljs-type">int</span>[][] weight)</span> &#123;
+        <span class="hljs-type">int</span> i, j;
+        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; verxs; i++) &#123;
+            graph.data[i] = data[i];
+            <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; verxs; j++) &#123;
+                graph.weight[i][j] = weight[i][j];
+            &#125;
         &#125;
     &#125;
 
-    <span class="hljs-comment">// 写成静态内部类，减少内存泄露</span>
-    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyOnClickListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
-        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> TextView tvResult;
-
-        <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyOnClickListener</span><span class="hljs-params">(TextView tvResult)</span> &#123;
-            <span class="hljs-built_in">this</span>.tvResult = tvResult;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showGraph</span><span class="hljs-params">(MGraph graph)</span> &#123;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] link : graph.weight) &#123;
+            System.out.println(Arrays.toString(link));
         &#125;
+    &#125;
 
-        <span class="hljs-meta">@Override</span>
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span> &#123;
-            <span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;%s 您点击了按钮 %s&quot;</span>, DateUtil.getCurrentTime(), ((Button) v).getText());
-            tvResult.setText(desc);
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">prim</span><span class="hljs-params">(MGraph graph, <span class="hljs-type">int</span> v)</span> &#123;
+        <span class="hljs-type">int</span> <span class="hljs-variable">distance</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-type">int</span>[] visited = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[graph.verxs];
+        visited[v] = <span class="hljs-number">1</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">h1</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">h2</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">minWeight</span> <span class="hljs-operator">=</span> <span class="hljs-number">10000</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; k &lt; graph.verxs; k++) &#123;
+            <span class="hljs-comment">// 确定每一次遍历后，和哪个顶点的距离最近</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; graph.verxs; i++) &#123;
+                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; graph.verxs; j++) &#123;
+                    <span class="hljs-keyword">if</span> (visited[i] == <span class="hljs-number">1</span> &amp;&amp; visited[j] == <span class="hljs-number">0</span> &amp;&amp; graph.weight[i][j] &lt; minWeight) &#123;
+                        minWeight = graph.weight[i][j];
+                        h1 = i;
+                        h2 = j;
+                    &#125;
+                &#125;
+            &#125;
+            System.out.println(<span class="hljs-string">&quot;边&lt;&quot;</span> + graph.data[h1] + <span class="hljs-string">&quot;,&quot;</span> + graph.data[h2] + <span class="hljs-string">&quot;&gt; 权值：&quot;</span> + minWeight);
+            distance += minWeight;
+            visited[h2] = <span class="hljs-number">1</span>;
+            minWeight = <span class="hljs-number">10000</span>;
         &#125;
+        <span class="hljs-keyword">return</span> distance;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MGraph</span> &#123;
+    <span class="hljs-type">int</span> verxs; <span class="hljs-comment">// 表示图的顶点个数</span>
+    <span class="hljs-type">char</span>[] data; <span class="hljs-comment">//存放顶点数据</span>
+    <span class="hljs-type">int</span>[][] weight; <span class="hljs-comment">// 邻接矩阵存放边的权值</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MGraph</span><span class="hljs-params">(<span class="hljs-type">int</span> verxs)</span> &#123;
+        <span class="hljs-built_in">this</span>.verxs = verxs;
+        data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[verxs];
+        weight = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[verxs][verxs];
     &#125;
 &#125;</code></pre></div>
-
-<p>当然，除此之外<code>button</code>还有很多事件监听器。如<code>setOnTouchListener</code>可以实现双击事件。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zuo_er_lyf/article/details/80068006">参考</a></p>
-<h2 id="禁用和恢复按钮"><a href="#禁用和恢复按钮" class="headerlink" title="禁用和恢复按钮"></a>禁用和恢复按钮</h2><p>在实际业务中，按钮通常拥有两种状态，即不可用状态与可用状态，它们在外观和功能上的区别如下：</p>
-<ul>
-<li>不可用按钮：按钮不允许点击，即使点击也没反应，同时按钮文字为灰色；</li>
-<li>可用按钮：按钮允许点击，点击按钮会触发点击事件，同时按钮文字为正常的黑色；</li>
-</ul>
-<p>是否允许点击由<code>enabled</code>属性控制，属性值为<code>true</code>时表示允许点击，为<code>false</code>时表示不允许点击。</p>
-<p>在Java代码中用<code>setEnabled()</code>方法控制，属性值为<code>true</code>时表示允许点击，为<code>false</code>时表示不允许点击。</p>
-
                 
               </div>
             
@@ -449,7 +431,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Andorid/" class="category-chain-item">Andorid</a>
+  <a href="/categories/algorithm/" class="category-chain-item">algorithm</a>
   
   
 
@@ -464,11 +446,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%8E%A7%E4%BB%B6/">#控件</a>
-      
-        <a href="/tags/view/">#view</a>
-      
-        <a href="/tags/button/">#button</a>
+        <a href="/tags/Java/">#Java</a>
       
     </div>
   
@@ -480,8 +458,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>按钮（Button）</div>
-      <div>http://yorick.love/2022/11/29/按钮（Button）/</div>
+      <div>Prim算法</div>
+      <div>http://yorick.love/2022/08/11/Prim算法/</div>
     </div>
     <div class="license-meta">
       
@@ -493,7 +471,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月29日</div>
+          <div>2022年8月11日</div>
         </div>
       
       
@@ -525,9 +503,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/29/%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%EF%BC%88ImageView%EF%BC%89/" title="图像视图（ImageView）">
+                      <a href="/2022/08/12/Kruskal%E7%AE%97%E6%B3%95/" title="Kruskal算法">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">图像视图（ImageView）</span>
+                        <span class="hidden-mobile">Kruskal算法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -535,8 +513,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/28/%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE%EF%BC%88ScrollView%EF%BC%89/" title="滚动视图（ScrollView）">
-                        <span class="hidden-mobile">滚动视图（ScrollView）</span>
+                      <a href="/2022/08/10/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法">
+                        <span class="hidden-mobile">贪心算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
