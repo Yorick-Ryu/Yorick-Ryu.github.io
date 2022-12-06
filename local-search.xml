@@ -72,9 +72,9 @@
     
     <tags>
       
-      <tag>控件</tag>
-      
       <tag>view</tag>
+      
+      <tag>控件</tag>
       
       <tag>kotlin</tag>
       
@@ -101,9 +101,9 @@
     
     <tags>
       
-      <tag>控件</tag>
-      
       <tag>view</tag>
+      
+      <tag>控件</tag>
       
       <tag>textview</tag>
       
@@ -130,9 +130,9 @@
     
     <tags>
       
-      <tag>控件</tag>
-      
       <tag>view</tag>
+      
+      <tag>控件</tag>
       
       <tag>button</tag>
       
@@ -209,9 +209,9 @@
     
     <tags>
       
-      <tag>控件</tag>
-      
       <tag>view</tag>
+      
+      <tag>控件</tag>
       
       <tag>button</tag>
       
@@ -382,9 +382,9 @@
     
     <tags>
       
-      <tag>控件</tag>
-      
       <tag>view</tag>
+      
+      <tag>控件</tag>
       
     </tags>
     
@@ -626,6 +626,25 @@
     <url>/2022/09/07/Kotlin%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     
     <content type="html"><![CDATA[<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>[TOC]</p><h3 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h3><h4 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h4><p>substring函数支持IntRange类型（表示一个整数范围的类型）的参数，until创建的范围不包括上限值。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> NAME = <span class="hljs-string">&quot;Jerry Smith&quot;</span><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> index = NAME.indexOf(<span class="hljs-string">&quot; &quot;</span>)    <span class="hljs-comment">// Java方式</span>    <span class="hljs-keyword">var</span> str = NAME.substring(<span class="hljs-number">0</span>, index)    println(str)    <span class="hljs-comment">// Kotlin方式</span>    str = NAME.substring(<span class="hljs-number">0</span> until index)    println(str)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// Jerry</span><span class="hljs-comment">// Jerry</span></code></pre></div><h4 id="split"><a href="#split" class="headerlink" title="split"></a>split</h4><p>split函数返回的是List集合数据，List集合又支持解构语法特性，它允许你在一个表达式里给多个变量赋值，解构常用来简化变量的赋值。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> NAMES = <span class="hljs-string">&quot;Jerry,Morty,Yorick&quot;</span><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> <span class="hljs-keyword">data</span> = NAMES.split(<span class="hljs-string">&quot;,&quot;</span>)    <span class="hljs-comment">// data[0]</span>    <span class="hljs-comment">// 结构语法</span>    <span class="hljs-keyword">val</span> (origin, dest, proxy) = NAMES.split(<span class="hljs-string">&quot;,&quot;</span>)    println(<span class="hljs-string">&quot;<span class="hljs-variable">$origin</span> <span class="hljs-variable">$dest</span> <span class="hljs-variable">$proxy</span>&quot;</span>)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// Jerry Morty Yorick</span></code></pre></div><h3 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h3><p>replace 字符串替换</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> str = <span class="hljs-string">&quot;The People&#x27;s Republic of China&quot;</span>    <span class="hljs-keyword">val</span> reStr = str.replace(Regex(<span class="hljs-string">&quot;[anxious]&quot;</span>)) &#123;        <span class="hljs-keyword">when</span> (it.value) &#123;            <span class="hljs-string">&quot;a&quot;</span> -&gt; <span class="hljs-string">&quot;6&quot;</span>            <span class="hljs-string">&quot;n&quot;</span> -&gt; <span class="hljs-string">&quot;3&quot;</span>            <span class="hljs-string">&quot;x&quot;</span> -&gt; <span class="hljs-string">&quot;2&quot;</span>            <span class="hljs-string">&quot;i&quot;</span> -&gt; <span class="hljs-string">&quot;5&quot;</span>            <span class="hljs-string">&quot;o&quot;</span> -&gt; <span class="hljs-string">&quot;4&quot;</span>            <span class="hljs-string">&quot;u&quot;</span> -&gt; <span class="hljs-string">&quot;0&quot;</span>            <span class="hljs-string">&quot;s&quot;</span> -&gt; <span class="hljs-string">&quot;7&quot;</span>            <span class="hljs-keyword">else</span> -&gt; it.value        &#125;    &#125;    println(str)    println(reStr)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// The People&#x27;s Republic of China</span><span class="hljs-comment">// The Pe4ple&#x27;7 Rep0bl5c 4f Ch536</span></code></pre></div><h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><p>在Kotlin中，用<code>==</code>检查两个字符串中的字符是否匹配，用<code>===</code>检查两个变量是否指向内存堆上同一对象。而在Java中<code>==</code>做引用比较（是否为同一对象），做内容比较时用<code>equals</code>方法。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> str1 = <span class="hljs-string">&quot;Yorick&quot;</span>    <span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;Yorick&quot;</span>    println(str1==str2)    println(str1===str2)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// true</span><span class="hljs-comment">// true</span></code></pre></div><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> str1 = <span class="hljs-string">&quot;Yorick&quot;</span>    <span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;yorick&quot;</span>.capitalize()    println(str1 == str2)    println(str1 === str2)&#125;</code></pre></div><h3 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h3><h3 id="遍历字符"><a href="#遍历字符" class="headerlink" title="遍历字符"></a>遍历字符</h3><p>forEach</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> str1 = <span class="hljs-string">&quot;Yorick&quot;</span>    <span class="hljs-keyword">val</span> str2 = <span class="hljs-string">&quot;yorick&quot;</span>.capitalize()    println(str1 == str2)    println(str1 === str2)    str1.forEach &#123;        print(<span class="hljs-string">&quot;<span class="hljs-variable">$it</span> * &quot;</span>)    &#125;&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// Y * o * r * i * c * k * </span></code></pre></div><h3 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h3><p><a href="https://www.delftstack.com/zh/howto/kotlin/kotlin-string-format/">在 Kotlin 中格式化字符串 | D栈 - Delft Stack</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>kotlin</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Kotlin Null安全与异常</title>
+    <link href="/2022/09/07/Kotlinnull%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BC%82%E5%B8%B8/"/>
+    <url>/2022/09/07/Kotlinnull%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BC%82%E5%B8%B8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="null安全与异常"><a href="#null安全与异常" class="headerlink" title="null安全与异常"></a>null安全与异常</h2><ul><li><a href="#null%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BC%82%E5%B8%B8">null安全与异常</a><ul><li><a href="#%E5%8F%AF%E7%A9%BA%E6%80%A7">可空性</a></li><li><a href="#null%E5%AE%89%E5%85%A8">null安全</a><ul><li><a href="#%E5%AE%89%E5%85%A8%E8%B0%83%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6">安全调用操作符</a></li><li><a href="#%E4%BD%BF%E7%94%A8%E5%B8%A6let%E7%9A%84%E5%AE%89%E5%85%A8%E8%B0%83%E7%94%A8">使用带let的安全调用</a></li><li><a href="#%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6">使用!!.操作符</a></li><li><a href="#%E4%BD%BF%E7%94%A8if%E5%88%A4%E6%96%ADnull%E5%80%BC">使用if判断null值</a></li><li><a href="#%E4%BD%BF%E7%94%A8%E7%A9%BA%E5%90%88%E5%B9%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F">使用空合并表达式</a></li></ul></li><li><a href="#%E5%BC%82%E5%B8%B8">异常</a></li><li><a href="#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0">先决条件函数</a></li></ul></li></ul><p>Koltin受不了Java里常见的空指针异常，所以做出了改良。Kotlin更多地把运行时可能会出现的null问题，以编译错误的方式，提前在代码编译期强迫我们重视起来。</p><h3 id="可空性"><a href="#可空性" class="headerlink" title="可空性"></a>可空性</h3><p>对于null值问题，Kotlin反其道而行之，除非另有规定，变量不可为null值，这样一来，运行时崩溃从根源上得到解决。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// 编译无法通过</span><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str = <span class="hljs-string">&quot;Hi,Yorick!&quot;</span>    str = <span class="hljs-literal">null</span>&#125;</code></pre></div><p>如果我偏要赋null值呢？</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str:String? = <span class="hljs-string">&quot;Hi,Yorick!&quot;</span>    str = <span class="hljs-literal">null</span>&#125;</code></pre></div><!-- ### Kotlin的null类型 ### 编译时间与运行时间 --><h3 id="null安全"><a href="#null安全" class="headerlink" title="null安全"></a>null安全</h3><p>Kotlin区分可空类型和非可空类型，所以，你要一个可空类型变量运行，而它又可能不存在，对于这种潜在危险，编译器时刻警惕着。为了应对这种风险，Kotlin不允许你在可空类型值上调用函数，除非你主动接手安全管理。</p><h4 id="安全调用操作符"><a href="#安全调用操作符" class="headerlink" title="安全调用操作符"></a>安全调用操作符</h4><p>直接调用空类型的方法，编译器会报错</p><div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str:String? = <span class="hljs-string">&quot;Hi,Yorick!&quot;</span>    str = <span class="hljs-literal">null</span>    <span class="hljs-comment">// 下面会报错</span>    println(str.length)&#125;</code></pre></div><p>但是使用安全调用操作符<code>?.</code>，就可有避免，<code>?.</code>的作用为调用者非空才执行。</p><div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str:String? = <span class="hljs-string">&quot;Hi,Yorick!&quot;</span>    str = <span class="hljs-literal">null</span>    println(str?.length)&#125;</code></pre></div><h4 id="使用带let的安全调用"><a href="#使用带let的安全调用" class="headerlink" title="使用带let的安全调用"></a>使用带let的安全调用</h4><p>安全调用允许在可空类型上调用函数，但是如果还想做点额外的事，比如创建新值，或判断不为null就调用其他函数，怎么办?</p><p>可以使用带let函数的安全调用操作符。你可以在任何类型上调用let函数，它的主要作用是让你在指定的作用域内定义一个或多个变量。</p><div class="code-wrapper"><pre><code class="hljs java">fun <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick!&quot;</span>    str = str?.let &#123;        <span class="hljs-comment">// 非空白的字符串</span>        <span class="hljs-keyword">if</span> (it.isNotBlank()) &#123;            it.capitalize()        &#125; <span class="hljs-keyword">else</span> &#123;            <span class="hljs-string">&quot;Hi,Yorick!&quot;</span>        &#125;    &#125;    println(str)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// Hi,Yorick!</span></code></pre></div><h4 id="使用-操作符"><a href="#使用-操作符" class="headerlink" title="使用!!.操作符"></a>使用!!.操作符</h4><p><code>!!.</code>非空断言操作符，强制执行方法，会抛出空指针异常。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick!&quot;</span>    str = <span class="hljs-literal">null</span>    println(str!!.capitalize())&#125;</code></pre></div><h4 id="使用if判断null值"><a href="#使用if判断null值" class="headerlink" title="使用if判断null值"></a>使用if判断null值</h4><p>这里就是传统Java的使用if判断null值，可以比较一下，Kotlin用一个<code>?</code>就解决了。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick!&quot;</span>    <span class="hljs-keyword">if</span> (str != <span class="hljs-literal">null</span>) &#123;        str = str.capitalize()    &#125; <span class="hljs-keyword">else</span> &#123;        println(<span class="hljs-string">&quot;为空&quot;</span>)    &#125;    println(str)&#125;</code></pre></div><p>我们可以使用if判断，但是相比之下安全调用操作符用起来更灵活，代码也更简洁，我们可以用安全操作符进行多个函数的链式调用。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick.&quot;</span>    str = str?.capitalize().plus(<span class="hljs-string">&quot;Have a nice day!&quot;</span>)    println(str)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// Hi,Yorick.Have a nice day!</span></code></pre></div><p>如果第一个<code>?.</code>方法的调用者为空，那么后面的方法都不会被调用。</p><h4 id="使用空合并表达式"><a href="#使用空合并表达式" class="headerlink" title="使用空合并表达式"></a>使用空合并表达式</h4><p><code>?:</code>操作符的意思是，如果左边的求值结果为null，就使用右边的结果值。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick.&quot;</span>    str = <span class="hljs-literal">null</span>    println(str ?: <span class="hljs-string">&quot;yeah!&quot;</span>)&#125;<span class="hljs-comment">// 输出</span><span class="hljs-comment">// yeah!</span></code></pre></div><p>空合并操作符也可以和let函数一起使用来代替if&#x2F;else语句。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">var</span> str: String? = <span class="hljs-string">&quot;hi,Yorick.&quot;</span>    str = str?.let &#123; it.capitalize() &#125; ?: <span class="hljs-string">&quot;yeah!&quot;</span>    println(str)&#125;</code></pre></div><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>异常处理：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> number: <span class="hljs-built_in">Int</span>? = <span class="hljs-literal">null</span>    <span class="hljs-keyword">try</span> &#123;        number!!.plus(<span class="hljs-number">1</span>)    &#125; <span class="hljs-keyword">catch</span> (e: KotlinNullPointerException) &#123;        println(e)    &#125;&#125;</code></pre></div><p>自定义异常：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> java.lang.IllegalArgumentException<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    <span class="hljs-keyword">val</span> number: <span class="hljs-built_in">Int</span>? = <span class="hljs-literal">null</span>    <span class="hljs-keyword">try</span> &#123;        checkOperation(number)        number!!.plus(<span class="hljs-number">1</span>)    &#125; <span class="hljs-keyword">catch</span> (e: KotlinNullPointerException) &#123;        println(e)    &#125;&#125;<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">checkOperation</span><span class="hljs-params">(number: <span class="hljs-type">Int</span>?)</span></span> &#123;    number ?: <span class="hljs-keyword">throw</span> UnskilledException()&#125;<span class="hljs-comment">// 自定义异常</span><span class="hljs-keyword">class</span> <span class="hljs-title class_">UnskilledException</span> : <span class="hljs-type">IllegalArgumentException</span>(<span class="hljs-string">&quot;操作不当&quot;</span>)</code></pre></div><h3 id="先决条件函数"><a href="#先决条件函数" class="headerlink" title="先决条件函数"></a>先决条件函数</h3><p>Kotlin标准库提供了一些便利函数，使用这些内置函数，你可以抛出带自定义信息的异常，这些便利函数叫做先决条件函数，你可以用它定义先决条件，条件必须满足目标代码才能执行。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// 在上面代码的基础上修改</span><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">checkOperation</span><span class="hljs-params">(number: <span class="hljs-type">Int</span>?)</span></span> &#123;    checkNotNull(number) &#123; <span class="hljs-string">&quot;Something is Null!&quot;</span> &#125;&#125;</code></pre></div><table><thead><tr><th>函数</th><th>描述</th></tr></thead><tbody><tr><td>checkNotNull</td><td>如果参数为null，则抛出IllegalStateException异常，否则返回非null值</td></tr><tr><td>require</td><td>如果参数为false，则抛出IllegalArgumentException异常</td></tr><tr><td>requireNotNull</td><td>如果参数为null，则抛出IllegalStateException异常，否则返回非null值</td></tr><tr><td>error</td><td>如果参数为null，则抛出IllegalStateException异常并输出错误信息，否则返回非null值</td></tr><tr><td>assert</td><td>如果参数为false，则抛出AssertError异常，并打上断言编译器标记</td></tr></tbody></table><!-- ### 已检查异常和未检查异常 ### 可空性如何保证 -->]]></content>
     
     
     <categories>
@@ -944,22 +963,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
