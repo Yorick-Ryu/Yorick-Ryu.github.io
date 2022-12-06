@@ -72,9 +72,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>kotlin</tag>
       
@@ -101,9 +101,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>textview</tag>
       
@@ -130,9 +130,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>button</tag>
       
@@ -209,9 +209,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
       <tag>button</tag>
       
@@ -382,9 +382,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>控件</tag>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -640,7 +640,7 @@
   
   
   <entry>
-    <title>Kotlin Null安全与异常</title>
+    <title>Kotlin空安全与异常</title>
     <link href="/2022/09/07/Kotlinnull%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BC%82%E5%B8%B8/"/>
     <url>/2022/09/07/Kotlinnull%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BC%82%E5%B8%B8/</url>
     
