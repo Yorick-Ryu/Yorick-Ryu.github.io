@@ -16,23 +16,27 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="比特(bit)和字节(bytet)（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3）负">
+    <meta name="description" content="Java网络编程 Java网络编程 TCP&#x2F;IP编程基础 lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程   URL &amp; URLConnection    网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题，  如何准确地定位网络上一台或多台主机 找到主机后如何可靠高效地进行数据传输。  要想让处于网络中的主机互相">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机基础">
-<meta property="og:url" content="http://yorick.love/2022/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Java网络编程">
+<meta property="og:url" content="http://yorick.love/2022/05/21/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="比特(bit)和字节(bytet)（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3）负">
+<meta property="og:description" content="Java网络编程 Java网络编程 TCP&#x2F;IP编程基础 lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程   URL &amp; URLConnection    网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题，  如何准确地定位网络上一台或多台主机 找到主机后如何可靠高效地进行数据传输。  要想让处于网络中的主机互相">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2022-11-28T04:11:35.000Z">
-<meta property="article:modified_time" content="2022-11-28T12:03:29.199Z">
+<meta property="og:image" content="http://yorick.love/img/TCPSocket.png">
+<meta property="article:published_time" content="2022-05-21T06:37:43.000Z">
+<meta property="article:modified_time" content="2022-12-08T10:57:50.137Z">
 <meta property="article:author" content="Yorick">
+<meta property="article:tag" content="TCP&#x2F;IP">
+<meta property="article:tag" content="UDP">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="socket">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/default.png">
+<meta name="twitter:image" content="http://yorick.love/img/TCPSocket.png">
   
   
   
-  <title>计算机基础 | Yorick Harbor</title>
+  <title>Java网络编程 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -227,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="计算机基础"></span>
+            <span id="subtitle" data-typed-text="Java网络编程"></span>
           
         </div>
 
@@ -238,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-28 12:11" pubdate>
-          2022年11月28日 中午
+        <time datetime="2022-05-21 14:37" pubdate>
+          2022年5月21日 下午
         </time>
       </span>
     
@@ -250,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          356 字
+          3.7k 字
         
       </span>
     
@@ -261,7 +265,7 @@
         
         
         
-          2 分钟
+          21 分钟
         
       </span>
     
@@ -307,12 +311,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算机基础</h1>
+            <h1 style="display: none">Java网络编程</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年11月28日 晚上
+                    本文最后更新于：2022年12月8日 晚上
                   
                 
               </p>
@@ -320,17 +324,150 @@
             
               <div class="markdown-body">
                 
-                <h2 id="比特-bit-和字节-bytet"><a href="#比特-bit-和字节-bytet" class="headerlink" title="比特(bit)和字节(bytet)"></a>比特(bit)和字节(bytet)</h2><p>（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。</p>
-<p>（2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。</p>
-<h2 id="二进制的原码、反码、补码"><a href="#二进制的原码、反码、补码" class="headerlink" title="二进制的原码、反码、补码"></a>二进制的原码、反码、补码</h2><p>（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°）</p>
-<p>（2）正数的原码，反码，补码都一样（三码合一）</p>
-<p>（3）负数的反码 &#x3D; 它的原码符号位不变，其它位取反（0 -&gt; 1，1 -&gt; 0）</p>
-<p>（4）负数的补码 &#x3D; 它的反码 +1，负数的反码 &#x3D; 负数的补码 -1</p>
-<p>（5）0的反码，补码都是 0</p>
-<p>（6） java没有无符号数，换言之，java中的数都是有符号的</p>
-<p>（7）在计算机运算的时候，都是以补码的方式来运算的。</p>
-<p>（8）当我们看运算结果的时候，要看他的原码</p>
+                <h1 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h1><ul>
+<li><a href="#java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">Java网络编程</a><ul>
+<li><a href="#tcpip%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80">TCP&#x2F;IP编程基础</a><ul>
+<li><a href="#lnetadress%E7%B1%BB">lnetAdress类</a></li>
+<li><a href="#ip%E5%92%8C%E7%AB%AF%E5%8F%A3%E5%8F%B7">IP和端口号</a></li>
+<li><a href="#tcp%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">TCP程序设计</a></li>
+<li><a href="#tcp%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">TCP网络编程</a></li>
+</ul>
+</li>
+<li><a href="#url--urlconnection">URL &amp; URLConnection</a></li>
+</ul>
+</li>
+</ul>
+<p>网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。</p>
+<p>网络编程中有两个主要的问题，</p>
+<ul>
+<li>如何准确地定位网络上一台或多台主机</li>
+<li>找到主机后如何可靠高效地进行数据传输。</li>
+</ul>
+<p>要想让处于网络中的主机互相通信，只是知道通信双方地址还是不够的了，还必须遵循一定的规则。有两套参考模型：</p>
+<ul>
+<li>OSI参考模型:模型过于理想化，未能在因特网上进行广泛推广</li>
+<li>TCP&#x2F;IP参考模型(或TCPAIP协议)：事实上的国际标准。</li>
+</ul>
+<h2 id="TCP-x2F-IP编程基础"><a href="#TCP-x2F-IP编程基础" class="headerlink" title="TCP&#x2F;IP编程基础"></a>TCP&#x2F;IP编程基础</h2><h3 id="lnetAdress类"><a href="#lnetAdress类" class="headerlink" title="lnetAdress类"></a>lnetAdress类</h3><p>InetAddress类对象含有一个Internet主机地址的域名和IP地址:<code>www.yorick.com/101.43.43.234</code></p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;www.yorick.com&quot;</span>);
+System.out.println(address);
+<span class="hljs-type">InetAddress</span> <span class="hljs-variable">address1</span> <span class="hljs-operator">=</span> InetAddress.getLocalHost();
+System.out.println(address1);
+<span class="hljs-comment">//www.yorick.com/35.186.238.101</span>
+<span class="hljs-comment">//YursPC/10.12.0.16</span></code></pre></div>
+<h3 id="IP和端口号"><a href="#IP和端口号" class="headerlink" title="IP和端口号"></a>IP和端口号</h3><p>IP地址标识Internet 上的计算机，端口号标识正在计算机上运行的进程（程序)。</p>
+<p>端口号与IP地址的组合得出一个网络套接字。</p>
+<p>端口号被规定为一个16位的整数<code>0~65535</code>。其中，<br><code>0~1023</code>被预先定义的服务通信占用（如telnet占用端口23，http占用端口80等）。除非我们需要访问这些特定服务否则，就应该使用<code>1024~65535</code>这些端口中的某一个进行通信，以免发生端口冲突。</p>
+<h3 id="TCP程序设计"><a href="#TCP程序设计" class="headerlink" title="TCP程序设计"></a>TCP程序设计</h3><p>利用套接字(Socket)接口开发网络应用程序早已被广泛的采用，以至于成为事实上的标准。套接字能执行7种基本操作：</p>
+<ul>
+<li>连接到远程主机</li>
+<li>绑定到端口</li>
+<li>接收从远程机器来的连接请求</li>
+<li>监听到达的数据</li>
+<li>发送数据</li>
+<li>接收数据</li>
+<li>关闭连接TCP网络编程</li>
+</ul>
+<h3 id="TCP网络编程"><a href="#TCP网络编程" class="headerlink" title="TCP网络编程"></a>TCP网络编程</h3><p>两个Java应用程序可通过一个双向的网络通信连接实现数据交换，这个双向链路的一段称为一个Socket（套接字）。Socket通常用来实现<code>Client/Server</code>连接。</p>
+<p>Java语言的基于套接字编程分为服务器编程和客户端编程，其通信模型如图所示：</p>
+<p><img src="/./img/TCPSocket.png" srcset="/img/loading.gif" lazyload alt="TCPSocket"></p>
+<p>实例：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//客户端</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClientSocket</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;127.0.0.1&quot;</span>);
+    <span class="hljs-comment">//创建Socket对象同时向服务端发出请求</span>
+    <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>(address, <span class="hljs-number">9898</span>);
 
+    <span class="hljs-comment">//通过输入输出流和服务端进行交互  </span>
+    <span class="hljs-type">InputStream</span> <span class="hljs-variable">inputStream</span> <span class="hljs-operator">=</span> socket.getInputStream();
+    <span class="hljs-type">BufferedReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span>
+            <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(inputStream));
+    System.out.println(<span class="hljs-string">&quot;^_^:&quot;</span> + reader.readLine());
+
+    inputStream.close();
+    reader.close();
+    socket.close();
+&#125;
+<span class="hljs-comment">//服务端</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testServerSocket</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-comment">//创建ServerSocket对象 </span>
+    <span class="hljs-type">ServerSocket</span> <span class="hljs-variable">serverSocket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerSocket</span>(<span class="hljs-number">9898</span>);
+    <span class="hljs-comment">//接受客户端的请求，并得到Socket对象</span>
+    <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> serverSocket.accept();
+
+    <span class="hljs-comment">//通过输入输出流和客户端进行交互  </span>
+    <span class="hljs-type">OutputStream</span> <span class="hljs-variable">outputStream</span> <span class="hljs-operator">=</span> socket.getOutputStream();
+    <span class="hljs-type">PrintWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PrintWriter</span>(outputStream);
+    writer.write(<span class="hljs-string">&quot;来自服务端的问候  &quot;</span>);
+
+    writer.close();
+    outputStream.close();
+    socket.close();
+&#125;
+<span class="hljs-comment">//^_^:来自服务端的问候</span></code></pre></div>
+<p>练习：服务端向客户端传递一个文件﹐客户端读取文件并保存到本地。</p>
+<p>图示：<br><img src="/./img/Socket.png" srcset="/img/loading.gif" lazyload alt="Socket"></p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testServerSocket1</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-type">ServerSocket</span> <span class="hljs-variable">serverSocket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerSocket</span>(<span class="hljs-number">8888</span>);
+    <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> serverSocket.accept();
+    <span class="hljs-type">InputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;flyCat.gif&quot;</span>);
+    <span class="hljs-type">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];
+    <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-type">OutputStream</span> <span class="hljs-variable">outputStream</span> <span class="hljs-operator">=</span> socket.getOutputStream();
+    <span class="hljs-keyword">while</span> ((len = in.read(buffer)) != -<span class="hljs-number">1</span>) &#123;
+        outputStream.write(buffer, <span class="hljs-number">0</span>, len);
+    &#125;
+    outputStream.close();
+    in.close();
+    socket.close();
+    serverSocket.close();
+&#125;
+<span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClientSocket1</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;127.0.0.1&quot;</span>);
+    <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>(address, <span class="hljs-number">8888</span>);
+    <span class="hljs-type">InputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> socket.getInputStream();
+    <span class="hljs-type">OutputStream</span> <span class="hljs-variable">outputStream</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;d:\\flyCat.gif&quot;</span>);
+    <span class="hljs-type">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];
+    <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> ((len = in.read(buffer)) != -<span class="hljs-number">1</span>) &#123;
+        outputStream.write(buffer, <span class="hljs-number">0</span>, len);
+    &#125;
+    in.close();
+    outputStream.close();
+    socket.close();
+&#125;</code></pre></div>
+
+<h2 id="URL-amp-URLConnection"><a href="#URL-amp-URLConnection" class="headerlink" title="URL &amp; URLConnection"></a>URL &amp; URLConnection</h2><p>URL (Uniform Resource Locator) ：统一资源定位符，它表示 Internet上某一资源的地址。通过URL我们可以访问Internet 上的各种网络资源，比如最常见的www , ftp站点。浏览器通过解析给定的URL可以在网络上查找相应的文件或其他资源。</p>
+<p>URL的基本结构由5部分组成：</p>
+<ul>
+<li>&lt;传输协议&gt;:&#x2F;&#x2F;&lt;主机名&gt;:&lt;端口号&gt;&#x2F;&lt;文件名&gt;</li>
+<li>例如：<a target="_blank" rel="noopener" href="http://192.168.1.100:8080/helloworld/index.jsp">http://192.168.1.100:8080/helloworld/index.jsp</a></li>
+</ul>
+<p>示例：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testURL</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">URL</span>(<span class="hljs-string">&quot;http://127.0.0.1:8080/examples/hello.txt&quot;</span>);
+    System.out.println(url.getPath());
+    System.out.println(url.getFile());
+    System.out.println(url.getQuery());
+    <span class="hljs-comment">//如url为：http://127.0.0.1:8080/examples/hello.txt?name=Yorick</span>
+    <span class="hljs-comment">//获取name=Yorick</span>
+    <span class="hljs-type">URLConnection</span> <span class="hljs-variable">urlConnection</span> <span class="hljs-operator">=</span> url.openConnection();
+    System.out.println(urlConnection);
+    <span class="hljs-type">InputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> urlConnection.getInputStream();
+    <span class="hljs-type">FileOutputStream</span> <span class="hljs-variable">outputStream</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;test.txt&quot;</span>);
+    <span class="hljs-type">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[<span class="hljs-number">1024</span>];
+    <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> ((len = in.read(buffer)) != -<span class="hljs-number">1</span>) &#123;
+        outputStream.write(buffer, <span class="hljs-number">0</span>, len);
+    &#125;
+    in.close();
+    outputStream.close();
+&#125;</code></pre></div>
                 
               </div>
             
@@ -348,7 +485,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
   
 
@@ -360,6 +497,19 @@
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/TCP-IP/">#TCP/IP</a>
+      
+        <a href="/tags/UDP/">#UDP</a>
+      
+        <a href="/tags/%E7%BD%91%E7%BB%9C/">#网络</a>
+      
+        <a href="/tags/socket/">#socket</a>
+      
+    </div>
+  
 </div>
 
 
@@ -368,8 +518,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算机基础</div>
-      <div>http://yorick.love/2022/11/28/计算机基础/</div>
+      <div>Java网络编程</div>
+      <div>http://yorick.love/2022/05/21/Java网络编程/</div>
     </div>
     <div class="license-meta">
       
@@ -381,7 +531,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月28日</div>
+          <div>2022年5月21日</div>
         </div>
       
       
@@ -413,9 +563,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/28/%E8%A7%86%E5%9B%BE%EF%BC%88View%EF%BC%89/" title="视图（View）">
+                      <a href="/2022/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" title="计算机基础">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">视图（View）</span>
+                        <span class="hidden-mobile">计算机基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -423,8 +573,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/28/TextView%EF%BC%88%E6%96%87%E6%9C%AC%E6%8E%A7%E4%BB%B6%EF%BC%89/" title="TextView（文本控件）">
-                        <span class="hidden-mobile">TextView（文本控件）</span>
+                      <a href="/2022/05/15/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="Java多线程">
+                        <span class="hidden-mobile">Java多线程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
