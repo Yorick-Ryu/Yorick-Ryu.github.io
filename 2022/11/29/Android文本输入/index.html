@@ -16,24 +16,26 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="图像视图(ImageView) 图像视图(ImageView) 图像视图的缩放类型   图像按钮(lmageButton) ImageButton的使用场合   同时展示文本与图像  图像视图展示的图片通常位于res&#x2F;drawable***目录，设置图像视图的显示图片有两种方式：  在XML文件中，通过属性android:src设置图片资源，属性值格式形如@drawable&#x2F;apple。（appl">
+    <meta name="description" content="文本输入 文本输入 编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Andorid图像视图（ImageView）">
-<meta property="og:url" content="http://yorick.love/2022/11/29/Andorid%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%EF%BC%88ImageView%EF%BC%89/index.html">
+<meta property="og:title" content="Android文本输入">
+<meta property="og:url" content="http://yorick.love/2022/11/29/Android%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="图像视图(ImageView) 图像视图(ImageView) 图像视图的缩放类型   图像按钮(lmageButton) ImageButton的使用场合   同时展示文本与图像  图像视图展示的图片通常位于res&#x2F;drawable***目录，设置图像视图的显示图片有两种方式：  在XML文件中，通过属性android:src设置图片资源，属性值格式形如@drawable&#x2F;apple。（appl">
+<meta property="og:description" content="文本输入 文本输入 编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2022-11-29T10:14:23.000Z">
-<meta property="article:modified_time" content="2022-12-08T11:07:42.665Z">
+<meta property="article:published_time" content="2022-11-29T10:54:43.000Z">
+<meta property="article:modified_time" content="2022-12-17T04:16:50.730Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="view">
+<meta property="article:tag" content="控件">
+<meta property="article:tag" content="textview">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Andorid图像视图（ImageView） | Yorick Harbor</title>
+  <title>Android文本输入 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Andorid图像视图（ImageView）"></span>
+            <span id="subtitle" data-typed-text="Android文本输入"></span>
           
         </div>
 
@@ -239,7 +241,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-29 18:14" pubdate>
+        <time datetime="2022-11-29 18:54" pubdate>
           2022年11月29日 晚上
         </time>
       </span>
@@ -251,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.6k 字
         
       </span>
     
@@ -308,12 +310,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Andorid图像视图（ImageView）</h1>
+            <h1 style="display: none">Android文本输入</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月8日 晚上
+                    本文最后更新于：2022年12月17日 中午
                   
                 
               </p>
@@ -321,86 +323,94 @@
             
               <div class="markdown-body">
                 
-                <h1 id="图像视图-ImageView"><a href="#图像视图-ImageView" class="headerlink" title="图像视图(ImageView)"></a>图像视图(ImageView)</h1><ul>
-<li><a href="#%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BEimageview">图像视图(ImageView)</a><ul>
-<li><a href="#%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%E7%9A%84%E7%BC%A9%E6%94%BE%E7%B1%BB%E5%9E%8B">图像视图的缩放类型</a></li>
+                <h1 id="文本输入"><a href="#文本输入" class="headerlink" title="文本输入"></a>文本输入</h1><ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5">文本输入</a><ul>
+<li><a href="#%E7%BC%96%E8%BE%91%E6%A1%86edittext">编辑框EditText</a></li>
+<li><a href="#%E7%84%A6%E7%82%B9%E5%8F%98%E6%9B%B4%E7%9B%91%E5%90%AC%E5%99%A8">焦点变更监听器</a></li>
+<li><a href="#%E6%96%87%E6%9C%AC%E5%8F%98%E5%8C%96%E7%9B%91%E5%90%AC%E5%99%A8">文本变化监听器</a></li>
+<li><a href="#textinputedittext">TextInputEditText</a></li>
 </ul>
 </li>
-<li><a href="#%E5%9B%BE%E5%83%8F%E6%8C%89%E9%92%AElmagebutton">图像按钮(lmageButton)</a><ul>
-<li><a href="#imagebutton%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E5%90%88">ImageButton的使用场合</a></li>
 </ul>
-</li>
-<li><a href="#%E5%90%8C%E6%97%B6%E5%B1%95%E7%A4%BA%E6%96%87%E6%9C%AC%E4%B8%8E%E5%9B%BE%E5%83%8F">同时展示文本与图像</a></li>
-</ul>
-<p>图像视图展示的图片通常位于<code>res/drawable***</code>目录，设置图像视图的显示图片有两种方式：</p>
+<h2 id="编辑框EditText"><a href="#编辑框EditText" class="headerlink" title="编辑框EditText"></a>编辑框EditText</h2><p>编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。</p>
 <ul>
-<li>在XML文件中，通过属性<code>android:src</code>设置图片资源，属性值格式形如<code>@drawable/apple</code>。（apple为不含扩展名的图片名称）</li>
-<li>在Java代码中，调用<code>setlmageResource</code>方法设置图片资源，方法参数格式形如<code>R.drawable.apple</code>。</li>
+<li>inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多种文本类型，则可使用竖线”|”把多种文本类型拼接起来。</li>
+<li>maxLength:指定文本允许输入的最大长度。</li>
+<li>hint:指定提示文本的内容。</li>
+<li>textColorHint:指定提示文本的颜色。</li>
 </ul>
-<h2 id="图像视图的缩放类型"><a href="#图像视图的缩放类型" class="headerlink" title="图像视图的缩放类型"></a>图像视图的缩放类型</h2><p>lmageView本身默认图片居中显示（<code>fitCenter</code>），若要改变图片的显示方式，可通过<code>scaleType</code>属性设定，该属性的取值说明如下：</p>
 <table>
 <thead>
 <tr>
-<th>XML中的缩放类型</th>
-<th>ScaleType类中的缩放类型</th>
+<th>输入类型</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>fitXY</td>
-<td>FIT_XY</td>
-<td>拉伸图片使其正好填满视图（图片可能被拉伸变形)</td>
+<td>text</td>
+<td>文本</td>
 </tr>
 <tr>
-<td>fitStart</td>
-<td>FIT_START</td>
-<td>保持宽高比例，拉伸图片使其位于视图上方或左侧</td>
+<td>textPassword</td>
+<td>文本密码。显示时用圆点”·”代替</td>
 </tr>
 <tr>
-<td>fitCenter</td>
-<td>FIT_CENTER</td>
-<td>保持宽高比例，拉伸图片使其位于视图中间</td>
+<td>number</td>
+<td>整型数</td>
 </tr>
 <tr>
-<td>fitEnd</td>
-<td>FIT_END</td>
-<td>保持宽高比例，拉伸图片使其位于视图下方或右侧</td>
+<td>numberSigned</td>
+<td>带符号的数字。允许在开头带负号”- “</td>
 </tr>
 <tr>
-<td>center</td>
-<td>CENTER</td>
-<td>保持图片原尺寸，并使其位于视图中间</td>
+<td>numberDecimal</td>
+<td>带小数点的数字</td>
 </tr>
 <tr>
-<td>centerCrop</td>
-<td>CENTER_CROP</td>
-<td>拉伸图片使其充满视图，并位于视图中间</td>
+<td>numberPassword</td>
+<td>数字密码。显示时用圆点”·”代替</td>
 </tr>
 <tr>
-<td>centerlnside</td>
-<td>CENTER_INSIDE</td>
-<td>保持宽高比例，缩小图片使之位于视图中间(只缩小不放大)</td>
+<td>datetime</td>
+<td>时间日期格式。除了数字外，还允许输入横线、斜杆、空格、冒号</td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期格式。除了数字外，还允许输入横线”-“和斜杆”&#x2F;“</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间格式。除了数字外，还允许输入冒号”:”</td>
 </tr>
 </tbody></table>
-<p>java代码中设置图片缩放属性：<br><code>iv_scale.setScaleType(ImageView.ScaleType.CENTER);</code></p>
-<p>很多情况下，可以注意到<code>centernside</code>和<code>center</code>的显示效果居然一模一样，这缘于它们的缩放规则设定。表面上<code>fitCenter</code>、<code>centerinside</code>、<code>center</code>三个类型都是居中显示，且均不越过图像视图的边界。它们之间的区别在于：<code>fitCenter</code>既允许缩小图片、也允许放大图片，<code>centerInside</code>只允许缩小图片、不允许放大图标，而center自始至终保持原始尺寸(既不允许缩小图片、也不允许放大图片)。因此，当图片尺寸大于视图宽高，<code>centerInside</code>与<code>fitCenter</code>都会缩小图片，此时它俩的显示效果相同；当图片尺寸小于视图宽高，<code>centernside</code>与<code>center</code>都保持图片大小不变，此时它俩的显示效果相同。</p>
-<h1 id="图像按钮-lmageButton"><a href="#图像按钮-lmageButton" class="headerlink" title="图像按钮(lmageButton)"></a>图像按钮(lmageButton)</h1><p><code>lmageButton</code>是显示图片的图像按钮，但它继承自<code>lmageView</code>，而非继承<code>Button</code>。<br><code>lmageButton</code>和<code>Button</code>之间的区别有：</p>
+<h2 id="焦点变更监听器"><a href="#焦点变更监听器" class="headerlink" title="焦点变更监听器"></a>焦点变更监听器</h2><p>编辑框点击两次后才会触发点击事件，因为第一次点击只触发焦点变更事件，第二次点击才触发点击事件。</p>
+<p>若要判断是否切换编辑框输入，应当监听焦点变更事件，而非监听点击事件。</p>
+<p>调用编辑框对象的setOnFocusChangeListener方法，即可在光标切换之时（获得光标和失去光标）触发焦点变更事件。</p>
+<p>应用：用于限制文本长度</p>
+<h2 id="文本变化监听器"><a href="#文本变化监听器" class="headerlink" title="文本变化监听器"></a>文本变化监听器</h2><p>调用编辑框对象的addTextChangedListener方法即可注册文本监听器。</p>
+<p>文本监听器的接口名称为TextWatcher，该接口提供了3个监控方法，具体说明如下。</p>
 <ul>
-<li><code>Button</code>既可显示文本也可显示图片，<code>lmageButton</code>只能显示图片不能显示文本。</li>
-<li><code>lmageButton</code>上的图像可按比例缩放，而<code>Button</code>通过背景设置的图像会拉伸变形。</li>
-<li><code>Button</code>只能靠背景显示一张图片，而<code>lmageButton</code>可分别在前景和背景显示图片，从而实现两张图片叠加的效果。</li>
+<li>beforeTextChanged：在文本改变之前触发。</li>
+<li>onTextChanged：在文本改变过程中触发。 </li>
+<li>afterTextChanged：在文本改变之后触发。</li>
 </ul>
-<h2 id="ImageButton的使用场合"><a href="#ImageButton的使用场合" class="headerlink" title="ImageButton的使用场合"></a>ImageButton的使用场合</h2><p>在某些场合，有的字符无法由输入法打出来，或者某些文字以特殊字体展示，就适合先切图再放到<code>ImageButton</code>。例如：开平方符号$\sqrt{n}$，等等。</p>
-<p><code>lmageButton</code>与<code>lmageView</code>之间的区别有：</p>
-<ul>
-<li><code>lmageButton</code>有默认的按钮背景，<code>ImageView</code>默认无背景。</li>
-<li><code>lmageButton</code>默认的缩放类型为<code>center</code>，而<code>ImageView</code>默认的缩放类型为<code>fitCenter</code>。</li>
-</ul>
-<h1 id="同时展示文本与图像"><a href="#同时展示文本与图像" class="headerlink" title="同时展示文本与图像"></a>同时展示文本与图像</h1><p>同时展示文本与图像的可能途径包括：</p>
-<p>(1）利用<code>LinearLayout</code>对<code>ImageView</code>和<code>TextView</code>组合布局。<br>(2）通过按钮控件<code>Button</code>的<code>drawable***</code>属性设置文本周围的图标。</p>
-<p><code>drawableTop</code>:指定文字上方的图片。<br><code>drawableBottom</code>:指定文字下方的图片。<br><code>drawableLeft</code>:指定文字左边的图片。<br><code>drawableRight</code>:指定文字右边的图片。<br><code>drawablePadding</code>:指定图片与文字的间距。</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19U4y1R7zV?p=33&t=170.1">修改背景不起作用</a></p>
+<p>应用：监听文本位数自动关闭软键盘</p>
+<h2 id="TextInputEditText"><a href="#TextInputEditText" class="headerlink" title="TextInputEditText"></a>TextInputEditText</h2><p>TextInputEditText是遵循Material Design设计的文本输入框。</p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.textfield.TextInputLayout</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:endIconDrawable</span>=<span class="hljs-string">&quot;@drawable/ic_baseline_clear_24&quot;</span> <span class="hljs-attr">这里可以修改end图标的样式</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:endIconMode</span>=<span class="hljs-string">&quot;clear_text&quot;</span> <span class="hljs-attr">这里可以修改end图标的模式</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;@+id/guideline2&quot;</span>&gt;</span>
 
+    <span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.textfield.TextInputEditText</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;56dp&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:hint</span>=<span class="hljs-string">&quot;Text&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">com.google.android.material.textfield.TextInputLayout</span>&gt;</span></code></pre></div>
                 
               </div>
             
@@ -418,7 +428,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Andorid/" class="category-chain-item">Andorid</a>
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
   
   
 
@@ -435,6 +445,10 @@
       
         <a href="/tags/view/">#view</a>
       
+        <a href="/tags/%E6%8E%A7%E4%BB%B6/">#控件</a>
+      
+        <a href="/tags/textview/">#textview</a>
+      
     </div>
   
 </div>
@@ -445,8 +459,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Andorid图像视图（ImageView）</div>
-      <div>http://yorick.love/2022/11/29/Andorid图像视图（ImageView）/</div>
+      <div>Android文本输入</div>
+      <div>http://yorick.love/2022/11/29/Android文本输入/</div>
     </div>
     <div class="license-meta">
       
@@ -490,9 +504,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/29/Andorid%E6%B4%BB%E5%8A%A8%EF%BC%88Activity%EF%BC%89/" title="Andorid活动（Activity）">
+                      <a href="/2022/11/29/Android_SeekBar/" title="Android_SeekBar">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Andorid活动（Activity）</span>
+                        <span class="hidden-mobile">Android_SeekBar</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -500,8 +514,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/29/Andorid%E6%8C%89%E9%92%AE%EF%BC%88Button%EF%BC%89/" title="Andorid按钮（Button）">
-                        <span class="hidden-mobile">Andorid按钮（Button）</span>
+                      <a href="/2022/11/29/Android%E9%80%89%E6%8B%A9%E6%8C%89%E9%92%AE/" title="Android选择按钮">
+                        <span class="hidden-mobile">Android选择按钮</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
