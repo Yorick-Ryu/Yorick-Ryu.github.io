@@ -31,31 +31,6 @@
   
   
   <entry>
-    <title>Android应用图标</title>
-    <link href="/2022/12/17/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
-    <url>/2022/12/17/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
-    
-    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Icon</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Android屏幕旋转ScreenOrientation</title>
     <link href="/2022/12/17/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
     <url>/2022/12/17/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
@@ -73,6 +48,31 @@
     <tags>
       
       <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android应用图标</title>
+    <link href="/2022/12/17/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
+    <url>/2022/12/17/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Icon</tag>
       
     </tags>
     
@@ -839,9 +839,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -879,6 +879,35 @@
   
   
   <entry>
+    <title>ViewModel</title>
+    <link href="/2022/11/05/AndroidViewModel/"/>
+    <url>/2022/11/05/AndroidViewModel/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h1><p>[TOC]</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/ViewModel">ViewModel  | Android Developers (google.cn)</a></p><p>ViewModel is a class that is responsible for preparing and managing the data for an <code>Activity</code> or a <code>Fragment</code>. It also handles the communication of the Activity &#x2F; Fragment with the rest of the application (e.g. calling the business logic classes).</p><p><img src="/./img/mvc.png" alt="image-20221102170743112"></p><p>ViewModel将数据从UI层抽象出来</p><p><img src="/./img/image-20221102190253813.png" alt="image-20221102190253813"></p><p>由ViewModel管理的数据独立于Activity的生命周期之外。</p><p>ViewModel与LiveData配合实现对数据的监听。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol><li><p>创建MyViewModel类，并声明需要存放的数据，由于将可变的 LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的 LiveData 类型对外部进行提供；</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewModel</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> number: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _number    <span class="hljs-keyword">init</span> &#123;        _number.value = <span class="hljs-number">0</span>    &#125;&#125;</code></pre></div></li><li><p>在Activity实例化MyViewModel有两种方法</p><ul><li><p>在Activity中声明MyViewModel类，延迟加载</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> myViewModel: MyViewModel</code></pre></div><p>在onCreate方法中实例化</p><div class="code-wrapper"><pre><code class="hljs kotlin">myViewModel = ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java]</code></pre></div></li><li><p>懒加载，随用随加载</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;</code></pre></div></li></ul></li><li><p>若在Fragment中使用</p><div class="code-wrapper"><pre><code class="hljs kotlin">myViewModel = ViewModelProvider(requireActivity())[MyViewModel::<span class="hljs-keyword">class</span>.java]</code></pre></div></li><li><p>使用MyViewModel中的成员变量</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = myViewModel.number.toString()</code></pre></div></li></ol><h2 id="ViewModelSavedState"><a href="#ViewModelSavedState" class="headerlink" title="ViewModelSavedState"></a>ViewModelSavedState</h2><p><img src="/./img/image-20221109170013398.png" alt="image-20221109170013398"></p><p>虽然<code>viewModel</code>要比<code>onSaveInstanceState</code>简单，但是<code>viewModel</code>只能在屏幕旋转和语言切换后（即配置变更时）的页面重建维持数据，当页面意外销毁时数据无法恢复（viewModel也会重建），而这点<code>onSaveInstanceState</code>可以做到。关于意外销毁，我们暂且理解成非配置变更引起的销毁重建，比如内存不足等场景。</p><p><a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel-savedstate?hl=zh-cn#kotlin">ViewModel 的已保存状态模块  | Android 开发者  | Android Developers (google.cn)</a></p><h3 id="使用SavedInstanceState保存数据"><a href="#使用SavedInstanceState保存数据" class="headerlink" title="使用SavedInstanceState保存数据"></a>使用SavedInstanceState保存数据</h3><ol><li><p>在Activity重写<code>onSaveInstanceState()</code>方法，以键值对的形式保存数据</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> key: String = <span class="hljs-string">&quot;title&quot;</span><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(key, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate()</code>方法中获取数据</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)    setContentView(R.layout.activity_main)    textView = findViewById(R.id.textView)    button1 = findViewById(R.id.button)    textView.text = savedInstanceState?.getString(key) ?: textView.text    ...&#125;</code></pre></div></li></ol><h3 id="使用ViewModelSavedState保存数据"><a href="#使用ViewModelSavedState保存数据" class="headerlink" title="使用ViewModelSavedState保存数据"></a>使用ViewModelSavedState保存数据</h3><p>解决当进程被系统回收后，如何保存数据。</p><ol><li><p>在module的<code>build.gradle</code>引入依赖</p><div class="code-wrapper"><pre><code class="hljs groovy">dependencies &#123;    ...    implementation <span class="hljs-string">&#x27;androidx.lifecycle:lifecycle-extensions:2.2.0&#x27;</span>    ...&#125;</code></pre></div></li><li><p>创建ViewModel</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">package</span> com.yorick.viewmodelsavedstate<span class="hljs-keyword">import</span> androidx.lifecycle.MutableLiveData<span class="hljs-keyword">import</span> androidx.lifecycle.SavedStateHandle<span class="hljs-keyword">import</span> androidx.lifecycle.ViewModel<span class="hljs-keyword">class</span> <span class="hljs-title class_">SavedStateViewModel</span>(    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> handle: SavedStateHandle) : ViewModel() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">init</span> &#123;        number.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">()</span></span> &#123;        getNumber().value = getNumber().value?.plus(<span class="hljs-number">1</span>)    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getNumber</span><span class="hljs-params">()</span></span>: MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt; &#123;        <span class="hljs-keyword">if</span> (!handle.contains(MainActivity.KEY_NUMBER)) &#123;            handle.<span class="hljs-keyword">set</span>(MainActivity.KEY_NUMBER, <span class="hljs-number">0</span>)        &#125;        <span class="hljs-keyword">return</span> handle.getLiveData(MainActivity.KEY_NUMBER)    &#125;&#125;</code></pre></div></li><li><p>创建布局，包括一个<code>TextView</code>和一个<code>Button</code></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">layout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">data</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">variable</span></span><span class="hljs-tag">            <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;data&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.yorick.viewmodelsavedstate.SavedStateViewModel&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@&#123;data.number.toString()&#125;&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.352&quot;</span> /&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;@&#123;()-&gt;data.add()&#125;&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.653&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span></code></pre></div></li><li><p>创建Activity</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">package</span> com.yorick.viewmodelsavedstate<span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity<span class="hljs-keyword">import</span> android.os.Bundle<span class="hljs-keyword">import</span> androidx.databinding.DataBindingUtil<span class="hljs-keyword">import</span> androidx.lifecycle.SavedStateViewModelFactory<span class="hljs-keyword">import</span> androidx.lifecycle.ViewModelProvider<span class="hljs-keyword">import</span> com.yorick.viewmodelsavedstate.databinding.ActivityMainBinding<span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> savedStateViewModel <span class="hljs-keyword">by</span> lazy &#123;        ViewModelProvider(            <span class="hljs-keyword">this</span>,            SavedStateViewModelFactory(application, <span class="hljs-keyword">this</span>)        )[SavedStateViewModel::<span class="hljs-keyword">class</span>.java]    &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;        DataBindingUtil.setContentView(<span class="hljs-keyword">this</span>, R.layout.activity_main)    &#125;    <span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> &#123;        <span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> KEY_NUMBER = <span class="hljs-string">&quot;KEY_NUMBER&quot;</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        binding.<span class="hljs-keyword">data</span> = savedStateViewModel        binding.lifecycleOwner = <span class="hljs-keyword">this</span>    &#125;&#125;</code></pre></div></li></ol><h3 id="使用ViewModel-amp-SharedPreference存储数据"><a href="#使用ViewModel-amp-SharedPreference存储数据" class="headerlink" title="使用ViewModel&amp;SharedPreference存储数据"></a>使用ViewModel&amp;SharedPreference存储数据</h3><p><a href="../../14_SharedPreferences.md">使用ViewModel和SharedPreference以键值对的形式存储数据</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Jetpack</tag>
+      
+      <tag>Architecture</tag>
+      
+      <tag>ViewModel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>DataBinding</title>
     <link href="/2022/11/05/AndroidDataBinding/"/>
     <url>/2022/11/05/AndroidDataBinding/</url>
@@ -897,11 +926,11 @@
       
       <tag>Jetpack</tag>
       
-      <tag>DataBinding</tag>
-      
       <tag>Architecture</tag>
       
       <tag>ViewModel</tag>
+      
+      <tag>DataBinding</tag>
       
     </tags>
     
@@ -931,35 +960,6 @@
       <tag>Architecture</tag>
       
       <tag>LiveData</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>ViewModel</title>
-    <link href="/2022/11/05/AndroidViewModel/"/>
-    <url>/2022/11/05/AndroidViewModel/</url>
-    
-    <content type="html"><![CDATA[<h1 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h1><p>[TOC]</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/ViewModel">ViewModel  | Android Developers (google.cn)</a></p><p>ViewModel is a class that is responsible for preparing and managing the data for an <code>Activity</code> or a <code>Fragment</code>. It also handles the communication of the Activity &#x2F; Fragment with the rest of the application (e.g. calling the business logic classes).</p><p><img src="/./img/mvc.png" alt="image-20221102170743112"></p><p>ViewModel将数据从UI层抽象出来</p><p><img src="/./img/image-20221102190253813.png" alt="image-20221102190253813"></p><p>由ViewModel管理的数据独立于Activity的生命周期之外。</p><p>ViewModel与LiveData配合实现对数据的监听。</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol><li><p>创建MyViewModel类，并声明需要存放的数据，由于将可变的 LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的 LiveData 类型对外部进行提供；</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewModel</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> number: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _number    <span class="hljs-keyword">init</span> &#123;        _number.value = <span class="hljs-number">0</span>    &#125;&#125;</code></pre></div></li><li><p>在Activity实例化MyViewModel有两种方法</p><ul><li><p>在Activity中声明MyViewModel类，延迟加载</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> myViewModel: MyViewModel</code></pre></div><p>在onCreate方法中实例化</p><div class="code-wrapper"><pre><code class="hljs kotlin">myViewModel = ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java]</code></pre></div></li><li><p>懒加载，随用随加载</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;</code></pre></div></li></ul></li><li><p>若在Fragment中使用</p><div class="code-wrapper"><pre><code class="hljs kotlin">myViewModel = ViewModelProvider(requireActivity())[MyViewModel::<span class="hljs-keyword">class</span>.java]</code></pre></div></li><li><p>使用MyViewModel中的成员变量</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = myViewModel.number.toString()</code></pre></div></li></ol><h2 id="ViewModelSavedState"><a href="#ViewModelSavedState" class="headerlink" title="ViewModelSavedState"></a>ViewModelSavedState</h2><p><img src="/./img/image-20221109170013398.png" alt="image-20221109170013398"></p><p>虽然<code>viewModel</code>要比<code>onSaveInstanceState</code>简单，但是<code>viewModel</code>只能在屏幕旋转和语言切换后（即配置变更时）的页面重建维持数据，当页面意外销毁时数据无法恢复（viewModel也会重建），而这点<code>onSaveInstanceState</code>可以做到。关于意外销毁，我们暂且理解成非配置变更引起的销毁重建，比如内存不足等场景。</p><p><a href="https://developer.android.google.cn/topic/libraries/architecture/viewmodel-savedstate?hl=zh-cn#kotlin">ViewModel 的已保存状态模块  | Android 开发者  | Android Developers (google.cn)</a></p><h3 id="使用SavedInstanceState保存数据"><a href="#使用SavedInstanceState保存数据" class="headerlink" title="使用SavedInstanceState保存数据"></a>使用SavedInstanceState保存数据</h3><ol><li><p>在Activity重写<code>onSaveInstanceState()</code>方法，以键值对的形式保存数据</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> key: String = <span class="hljs-string">&quot;title&quot;</span><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(key, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate()</code>方法中获取数据</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)    setContentView(R.layout.activity_main)    textView = findViewById(R.id.textView)    button1 = findViewById(R.id.button)    textView.text = savedInstanceState?.getString(key) ?: textView.text    ...&#125;</code></pre></div></li></ol><h3 id="使用ViewModelSavedState保存数据"><a href="#使用ViewModelSavedState保存数据" class="headerlink" title="使用ViewModelSavedState保存数据"></a>使用ViewModelSavedState保存数据</h3><p>解决当进程被系统回收后，如何保存数据。</p><ol><li><p>在module的<code>build.gradle</code>引入依赖</p><div class="code-wrapper"><pre><code class="hljs groovy">dependencies &#123;    ...    implementation <span class="hljs-string">&#x27;androidx.lifecycle:lifecycle-extensions:2.2.0&#x27;</span>    ...&#125;</code></pre></div></li><li><p>创建ViewModel</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">package</span> com.yorick.viewmodelsavedstate<span class="hljs-keyword">import</span> androidx.lifecycle.MutableLiveData<span class="hljs-keyword">import</span> androidx.lifecycle.SavedStateHandle<span class="hljs-keyword">import</span> androidx.lifecycle.ViewModel<span class="hljs-keyword">class</span> <span class="hljs-title class_">SavedStateViewModel</span>(    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> handle: SavedStateHandle) : ViewModel() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">init</span> &#123;        number.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">()</span></span> &#123;        getNumber().value = getNumber().value?.plus(<span class="hljs-number">1</span>)    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getNumber</span><span class="hljs-params">()</span></span>: MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt; &#123;        <span class="hljs-keyword">if</span> (!handle.contains(MainActivity.KEY_NUMBER)) &#123;            handle.<span class="hljs-keyword">set</span>(MainActivity.KEY_NUMBER, <span class="hljs-number">0</span>)        &#125;        <span class="hljs-keyword">return</span> handle.getLiveData(MainActivity.KEY_NUMBER)    &#125;&#125;</code></pre></div></li><li><p>创建布局，包括一个<code>TextView</code>和一个<code>Button</code></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">layout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">data</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">variable</span></span><span class="hljs-tag">            <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;data&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.yorick.viewmodelsavedstate.SavedStateViewModel&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@&#123;data.number.toString()&#125;&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.352&quot;</span> /&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:onClick</span>=<span class="hljs-string">&quot;@&#123;()-&gt;data.add()&#125;&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.653&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span></code></pre></div></li><li><p>创建Activity</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">package</span> com.yorick.viewmodelsavedstate<span class="hljs-keyword">import</span> androidx.appcompat.app.AppCompatActivity<span class="hljs-keyword">import</span> android.os.Bundle<span class="hljs-keyword">import</span> androidx.databinding.DataBindingUtil<span class="hljs-keyword">import</span> androidx.lifecycle.SavedStateViewModelFactory<span class="hljs-keyword">import</span> androidx.lifecycle.ViewModelProvider<span class="hljs-keyword">import</span> com.yorick.viewmodelsavedstate.databinding.ActivityMainBinding<span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> savedStateViewModel <span class="hljs-keyword">by</span> lazy &#123;        ViewModelProvider(            <span class="hljs-keyword">this</span>,            SavedStateViewModelFactory(application, <span class="hljs-keyword">this</span>)        )[SavedStateViewModel::<span class="hljs-keyword">class</span>.java]    &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;        DataBindingUtil.setContentView(<span class="hljs-keyword">this</span>, R.layout.activity_main)    &#125;    <span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> &#123;        <span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> KEY_NUMBER = <span class="hljs-string">&quot;KEY_NUMBER&quot;</span>    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        binding.<span class="hljs-keyword">data</span> = savedStateViewModel        binding.lifecycleOwner = <span class="hljs-keyword">this</span>    &#125;&#125;</code></pre></div></li></ol><h3 id="使用ViewModel-amp-SharedPreference存储数据"><a href="#使用ViewModel-amp-SharedPreference存储数据" class="headerlink" title="使用ViewModel&amp;SharedPreference存储数据"></a>使用ViewModel&amp;SharedPreference存储数据</h3><p><a href="../../14_SharedPreferences.md">使用ViewModel和SharedPreference以键值对的形式存储数据</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Jetpack</tag>
-      
-      <tag>Architecture</tag>
-      
-      <tag>ViewModel</tag>
       
     </tags>
     
@@ -1321,9 +1321,9 @@
       
       <tag>Graph</tag>
       
-      <tag>Floyd</tag>
-      
       <tag>最短路径</tag>
+      
+      <tag>Floyd</tag>
       
     </tags>
     
@@ -1354,9 +1354,9 @@
       
       <tag>Graph</tag>
       
-      <tag>最短路径</tag>
-      
       <tag>Dijkstra</tag>
+      
+      <tag>最短路径</tag>
       
     </tags>
     
@@ -2889,22 +2889,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">      Headline    </h3>    <div class="body-medum margin-bottom-3">      Text    </div>    <div class="display-flex justify-content-flex-end">      <button type="button" class="button button--filled">        Action      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">      Headline    </h3>    <div class="body-medum margin-bottom-3">      Text    </div>    <div class="display-flex justify-content-flex-end">      <button type="button" class="button button--filled">        Action      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
