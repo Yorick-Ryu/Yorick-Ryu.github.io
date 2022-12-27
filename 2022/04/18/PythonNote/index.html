@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/img1.png">
 <meta property="article:published_time" content="2022-04-18T08:13:49.000Z">
-<meta property="article:modified_time" content="2022-12-17T03:44:34.099Z">
+<meta property="article:modified_time" content="2022-12-27T03:15:27.079Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary_large_image">
@@ -315,7 +315,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月17日 中午
+                    本文最后更新于：2022年12月27日 上午
                   
                 
               </p>
@@ -389,17 +389,17 @@ abc(a = <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<s
     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;有&#123;&#125;个参数&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">len</span>(args)))
     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第二个参数是：&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(args[<span class="hljs-number">1</span>]))
 myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
-<span class="hljs-comment">#输出：</span>
-<span class="hljs-comment">#有3个参数</span>
-<span class="hljs-comment">#第二个参数是：2</span></code></pre></div>
+<span class="hljs-comment"># 输出：</span>
+<span class="hljs-comment"># 有3个参数</span>
+<span class="hljs-comment"># 第二个参数是：2</span></code></pre></div>
 <p>当某函数的参数列表中存在收集参数时，收集参数右侧只能为关键字参数,左侧不限。（同22）</p>
 </li>
 <li><p><code>**</code>字典形式的收集参数</p>
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">a,*b,**c</span>):
     <span class="hljs-built_in">print</span>(a,b,c)
 myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,x=<span class="hljs-number">5</span>,y=<span class="hljs-number">6</span>)
-<span class="hljs-comment">#输出：</span>
-<span class="hljs-comment">#1 (2, 3, 4) &#123;&#x27;x&#x27;: 5, &#x27;y&#x27;: 6&#125;</span></code></pre></div>
+<span class="hljs-comment"># 输出：</span>
+<span class="hljs-comment"># 1 (2, 3, 4) &#123;&#x27;x&#x27;: 5, &#x27;y&#x27;: 6&#125;</span></code></pre></div>
 <p>常见于<code>format</code>函数：</p>
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">help</span>(<span class="hljs-built_in">str</span>.<span class="hljs-built_in">format</span>)
 Help on method_descriptor:
@@ -570,6 +570,7 @@ g = (i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</spa
 [i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]
 <span class="hljs-comment">#输出：[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></code></pre></div></li>
 </ol>
+<p>​    </p>
 
                 
               </div>
