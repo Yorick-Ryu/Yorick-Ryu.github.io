@@ -18,28 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Floyd算法弗洛伊德(Floyd)算法介绍（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。 （4）弗洛伊德">
+    <meta name="description" content="问题描述　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法# 获取m,n m, n &#x3D; map(in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Floyd算法">
-<meta property="og:url" content="http://yorick.love/2022/08/14/%E7%AE%97%E6%B3%95_Floyd%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="蓝桥杯回形取数">
+<meta property="og:url" content="http://yorick.love/2023/01/01/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Floyd算法弗洛伊德(Floyd)算法介绍（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。 （4）弗洛伊德">
+<meta property="og:description" content="问题描述　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法# 获取m,n m, n &#x3D; map(in">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2022-08-14T09:07:41.000Z">
-<meta property="article:modified_time" content="2022-12-08T11:11:52.420Z">
+<meta property="article:published_time" content="2023-01-01T11:53:09.000Z">
+<meta property="article:modified_time" content="2023-01-05T11:20:43.877Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="图">
-<meta property="article:tag" content="Graph">
-<meta property="article:tag" content="最短路径">
-<meta property="article:tag" content="Floyd">
+<meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Floyd算法 | Yorick Harbor</title>
+  <title>蓝桥杯回形取数 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Floyd算法"></span>
+            <span id="subtitle" data-typed-text="蓝桥杯回形取数"></span>
           
         </div>
 
@@ -245,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-14 17:07" pubdate>
-          2022年8月14日 下午
+        <time datetime="2023-01-01 19:53" pubdate>
+          2023年1月1日 晚上
         </time>
       </span>
     
@@ -257,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          731 字
         
       </span>
     
@@ -268,7 +264,7 @@
         
         
         
-          13 分钟
+          5 分钟
         
       </span>
     
@@ -314,12 +310,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Floyd算法</h1>
+            <h1 style="display: none">蓝桥杯回形取数</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月8日 晚上
+                    本文最后更新于：2023年1月5日 晚上
                   
                 
               </p>
@@ -327,77 +323,54 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h1><h2 id="弗洛伊德-Floyd-算法介绍"><a href="#弗洛伊德-Floyd-算法介绍" class="headerlink" title="弗洛伊德(Floyd)算法介绍"></a>弗洛伊德(Floyd)算法介绍</h2><p>（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。</p>
-<p>（2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。</p>
-<p>（3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。</p>
-<p>（4）弗洛伊德算法VS迪杰斯特拉算法：迪杰斯特拉算法通过选定的被访问顶点，求出从出发访问顶点到其他顶点的最短路径；弗洛伊德算法中每一个顶点都是出发访问点，所以需要将每一个顶点看做被访问顶点，求出从每一个顶点到其他顶点的最短路径。</p>
-<h2 id="弗洛伊德-Floyd-算法分析"><a href="#弗洛伊德-Floyd-算法分析" class="headerlink" title="弗洛伊德(Floyd)算法分析"></a>弗洛伊德(Floyd)算法分析</h2><p>（1）设置顶点vi到顶点vk的最短路径已知为Lik，顶点vk到vj的最短路径已知为Lkj，顶点vi到vj的路径为Lij，则vi到vj的最短路径为: min((Lik+Lkj),Lij)，vk的取值为图中所有顶点，则可获得vi到vj的最短路径</p>
-<p>（2）至于vi到vk的最短路径Lik或者k到vj的最短路径Lkj，是以同样的方式获得</p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;
+                <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。</p>
+<h2 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 获取m,n</span>
+m, n = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split())
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Floyd</span> &#123;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
-        <span class="hljs-type">char</span>[] vertex = &#123;<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-string">&#x27;G&#x27;</span>&#125;;
-        <span class="hljs-type">int</span>[][] matrix = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[vertex.length][vertex.length];
-        <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> <span class="hljs-number">65535</span>; <span class="hljs-comment">// 表示不可连接</span>
-        matrix[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, N, N, N, <span class="hljs-number">2</span>&#125;;
-        matrix[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, N, <span class="hljs-number">9</span>, N, N, <span class="hljs-number">3</span>&#125;;
-        matrix[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">7</span>, N, <span class="hljs-number">0</span>, N, <span class="hljs-number">8</span>, N, N&#125;;
-        matrix[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;N, <span class="hljs-number">9</span>, N, <span class="hljs-number">0</span>, N, <span class="hljs-number">4</span>, N&#125;;
-        matrix[<span class="hljs-number">4</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;N, N, <span class="hljs-number">8</span>, N, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;;
-        matrix[<span class="hljs-number">5</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;N, N, N, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-number">6</span>&#125;;
-        matrix[<span class="hljs-number">6</span>] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, N, N, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">0</span>&#125;;
-        <span class="hljs-type">Graph</span> <span class="hljs-variable">graph</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Graph</span>(vertex, matrix);
-        graph.floyd();
-        graph.show();
-    &#125;
-&#125;
+<span class="hljs-comment"># 获取数组</span>
+arr = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):
+    arr.append(<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split())))
 
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span> &#123;
-    <span class="hljs-keyword">final</span> <span class="hljs-keyword">private</span> <span class="hljs-type">char</span>[] vertex; <span class="hljs-comment">// 存放顶点的数组</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] dis; <span class="hljs-comment">// 保存从各个顶点出发到其他顶点的距离</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] pre; <span class="hljs-comment">// 保存前驱结点</span>
+<span class="hljs-comment"># 存放结果</span>
+res = []
 
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Graph</span><span class="hljs-params">(<span class="hljs-type">char</span>[] vertex, <span class="hljs-type">int</span>[][] matrix)</span> &#123;
-        <span class="hljs-built_in">this</span>.vertex = vertex;
-        <span class="hljs-built_in">this</span>.dis = matrix;
-        <span class="hljs-built_in">this</span>.pre = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[vertex.length][vertex.length];
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; vertex.length; i++) &#123;
-            Arrays.fill(pre[i], i);
-        &#125;
-    &#125;
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(arr) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> arr[<span class="hljs-number">0</span>] != []:
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">show</span><span class="hljs-params">()</span> &#123;
-        <span class="hljs-type">char</span>[] vertex = &#123;<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>, <span class="hljs-string">&#x27;G&#x27;</span>&#125;;
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; dis.length; k++) &#123;
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; pre.length; i++) &#123;
-                System.out.print(vertex[pre[k][i]] + <span class="hljs-string">&quot;       &quot;</span>);
-            &#125;
-            System.out.println();
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; dis.length; i++) &#123;
-                System.out.print(vertex[k] + <span class="hljs-string">&quot;-&gt;&quot;</span> + vertex[i] + <span class="hljs-string">&quot;:&quot;</span> + dis[k][i] + <span class="hljs-string">&quot; &quot;</span>);
-            &#125;
-            System.out.println();
-            System.out.println();
-        &#125;
-    &#125;
+    <span class="hljs-comment"># 最左列向下</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr)):
+        res.append(arr[i].pop(<span class="hljs-number">0</span>))
 
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">floyd</span><span class="hljs-params">()</span> &#123;
-        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-        <span class="hljs-comment">// k为中间结点</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; vertex.length; k++) &#123;
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; vertex.length; i++) &#123;
-                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; vertex.length; j++) &#123;
-                    len = dis[i][k] + dis[k][j];
-                    <span class="hljs-keyword">if</span> (len &lt; dis[i][j]) &#123;
-                        dis[i][j] = len;
-                        pre[i][j] = pre[k][j];
-                    &#125;
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-&#125;</code></pre></div>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> arr[<span class="hljs-number">0</span>] == []:
+        <span class="hljs-keyword">break</span>
+
+    <span class="hljs-comment"># 最下行向右</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr[<span class="hljs-number">0</span>])):
+        res.append(arr[<span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>][i])
+
+    arr.pop(<span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> arr[<span class="hljs-number">0</span>] == []:
+        <span class="hljs-keyword">break</span>
+
+    <span class="hljs-comment"># 最右列向上</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr)):
+        res.append(arr[<span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span> - i].pop(<span class="hljs-built_in">len</span>(arr[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>))
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> arr[<span class="hljs-number">0</span>] == []:
+        <span class="hljs-keyword">break</span>
+
+    <span class="hljs-comment"># 最上行向左</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr[<span class="hljs-number">0</span>])):
+        res.append(arr[<span class="hljs-number">0</span>][<span class="hljs-built_in">len</span>(arr[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span> - i])
+
+    arr.pop(<span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># 输出结果</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> res:
+    <span class="hljs-built_in">print</span>(i, end=<span class="hljs-string">&quot; &quot;</span>)</code></pre></div>
                 
               </div>
             
@@ -430,15 +403,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
-      
-        <a href="/tags/%E5%9B%BE/">#图</a>
-      
-        <a href="/tags/Graph/">#Graph</a>
-      
-        <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">#最短路径</a>
-      
-        <a href="/tags/Floyd/">#Floyd</a>
+        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">#蓝桥杯</a>
       
     </div>
   
@@ -450,8 +415,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Floyd算法</div>
-      <div>http://yorick.love/2022/08/14/算法_Floyd算法/</div>
+      <div>蓝桥杯回形取数</div>
+      <div>http://yorick.love/2023/01/01/蓝桥杯回形取数/</div>
     </div>
     <div class="license-meta">
       
@@ -463,7 +428,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月14日</div>
+          <div>2023年1月1日</div>
         </div>
       
       
@@ -495,18 +460,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/15/%E7%AE%97%E6%B3%95_%E9%AA%91%E5%A3%AB%E5%91%A8%E6%B8%B8%E9%97%AE%E9%A2%98/" title="骑士周游问题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">骑士周游问题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/13/%E7%AE%97%E6%B3%95_Dijkstra%E7%AE%97%E6%B3%95/" title="Dijkstra算法">
-                        <span class="hidden-mobile">Dijkstra算法</span>
+                      <a href="/2022/12/17/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/" title="Android可视化UI设计">
+                        <span class="hidden-mobile">Android可视化UI设计</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
