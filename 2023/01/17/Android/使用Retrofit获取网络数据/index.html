@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2023-01-17T06:33:39.000Z">
-<meta property="article:modified_time" content="2023-01-17T12:15:44.169Z">
+<meta property="article:modified_time" content="2023-01-25T08:31:09.152Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="Retrofit">
 <meta name="twitter:card" content="summary_large_image">
@@ -264,7 +264,7 @@
         
         
         
-          71 分钟
+          72 分钟
         
       </span>
     
@@ -315,7 +315,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年1月17日 晚上
+                    本文最后更新于：2023年1月25日 下午
                   
                 
               </p>
@@ -401,6 +401,13 @@ implementation <span class="hljs-string">&quot;com.squareup.retrofit2:converter-
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
     <span class="hljs-meta">@GET(<span class="hljs-string">&quot;photos&quot;</span>)</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>: String
+&#125;</code></pre></div>
+</li>
+<li><p>创建MarsApi对象</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">object</span> MarsApi &#123;
+    <span class="hljs-keyword">val</span> retrofitService: MarsApiService <span class="hljs-keyword">by</span> lazy &#123;
+        retrofit.create(MarsApiService::<span class="hljs-keyword">class</span>.java)
+    &#125;
 &#125;</code></pre></div></li>
 </ol>
 <h2 id="在-ViewModel-中调用网络服务"><a href="#在-ViewModel-中调用网络服务" class="headerlink" title="在 ViewModel 中调用网络服务"></a>在 ViewModel 中调用网络服务</h2><p>前提：使用ViewModel管理状态。</p>
@@ -607,9 +614,12 @@ marsUiState = MarsUiState.Success(listResult)</code></pre></div>
 <li><p>打开 **build.gradle (Module: app)**。</p>
 </li>
 <li><p>在 <code>plugins</code> 代码块中，添加 <code>kotlinx serialization</code> 插件。</p>
+   <div class="code-wrapper"><pre><code class="hljs groovy">id <span class="hljs-string">&#x27;org.jetbrains.kotlin.plugin.serialization&#x27;</span> version <span class="hljs-string">&#x27;1.7.10&#x27;</span></code></pre></div>
+
 </li>
 <li><p>在“dependencies”部分，添加以下代码以包含 <code>kotlinx.serialization</code> 依赖项。此依赖项可为 Kotlin 项目提供 JSON 序列化。</p>
-   <div class="code-wrapper"><pre><code class="hljs groovy">id <span class="hljs-string">&#x27;org.jetbrains.kotlin.plugin.serialization&#x27;</span> version <span class="hljs-string">&#x27;1.7.10&#x27;</span></code></pre></div>
+   <div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// Kotlin serialization</span>
+implementation <span class="hljs-string">&quot;org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1&quot;</span></code></pre></div>
 </li>
 <li><p>在 <code>dependencies</code> 代码块中，找到 Retrofit 标量转换器所在的代码行，并将其更改为使用 <code>kotlinx-serialization-converter</code>：</p>
 <p><strong>将以下代码</strong></p>
