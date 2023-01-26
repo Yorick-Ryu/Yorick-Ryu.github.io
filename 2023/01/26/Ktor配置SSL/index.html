@@ -18,24 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="应用图标自适应图标  | Android 开发者  | Android Developers (google.cn) Vector drawables overview  | Android Developers (google.cn) &lt;vector xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;">
+    <meta name="description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android应用图标">
-<meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/index.html">
+<meta property="og:title" content="Ktor配置SSL">
+<meta property="og:url" content="http://yorick.love/2023/01/26/Ktor%E9%85%8D%E7%BD%AESSL/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="应用图标自适应图标  | Android 开发者  | Android Developers (google.cn) Vector drawables overview  | Android Developers (google.cn) &lt;vector xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;">
+<meta property="og:description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
-<meta property="article:modified_time" content="2022-12-17T03:38:25.358Z">
+<meta property="article:published_time" content="2023-01-26T14:37:45.000Z">
+<meta property="article:modified_time" content="2023-01-26T15:03:25.508Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="Icon">
+<meta property="article:tag" content="ktor">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Android应用图标 | Yorick Harbor</title>
+  <title>Ktor配置SSL | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Android应用图标"></span>
+            <span id="subtitle" data-typed-text="Ktor配置SSL"></span>
           
         </div>
 
@@ -241,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-17 10:57" pubdate>
-          2022年12月17日 上午
+        <time datetime="2023-01-26 22:37" pubdate>
+          2023年1月26日 晚上
         </time>
       </span>
     
@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          504 字
+          698 字
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -310,12 +310,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Android应用图标</h1>
+            <h1 style="display: none">Ktor配置SSL</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月17日 中午
+                    本文最后更新于：2023年1月26日 晚上
                   
                 
               </p>
@@ -323,25 +323,46 @@
             
               <div class="markdown-body">
                 
-                <h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p>
-<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span>
-<span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span>
-<span class="hljs-string"><span class="hljs-tag">        M0,0</span></span>
-<span class="hljs-string"><span class="hljs-tag">        L108,108</span></span>
-<span class="hljs-string"><span class="hljs-tag">        H0</span></span>
-<span class="hljs-string"><span class="hljs-tag">        V0</span></span>
-<span class="hljs-string"><span class="hljs-tag">        H108</span></span>
-<span class="hljs-string"><span class="hljs-tag">        V108</span></span>
-<span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>
+                <h1 id="Ktor配置SSL实现https"><a href="#Ktor配置SSL实现https" class="headerlink" title="Ktor配置SSL实现https"></a>Ktor配置SSL实现https</h1><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://ktor.io/docs/ssl.html">SSL and certificates | Ktor</a></p>
+<p><a target="_blank" rel="noopener" href="https://ktor.kotlincn.net/quickstart/guides/ssl.html">SSL - 快速入门 - Ktor (kotlincn.net)</a></p>
+<h2 id="生成SSL证书"><a href="#生成SSL证书" class="headerlink" title="生成SSL证书"></a>生成SSL证书</h2><p>我直接在阿里云白嫖了免费SSL证书：<a target="_blank" rel="noopener" href="https://promotion.aliyun.com/ntms/act/sslbuy.html">选购SSL证书 (aliyun.com)</a></p>
+<p>选择<code>jks</code>格式并下载解压</p>
+<p>应该有一个<code>xxx.jks</code>文件和一个<code>jks-password.txt</code>密钥文件</p>
+<h2 id="查看证书别名-keyAlias"><a href="#查看证书别名-keyAlias" class="headerlink" title="查看证书别名(keyAlias)"></a>查看证书别名(keyAlias)</h2><ol>
+<li>找到电脑的JDK路径</li>
+<li>在<code>\bin</code>中找到<code>keytool.exe</code>复制到证书所在目录</li>
+<li>在证书所在目录运行cmd</li>
+<li>输入<code>keytool -list -v -keystore file.jks -storepass password</code>，其中<code>file.jks</code>是证书名字，<code>password</code>要用密钥来代替。</li>
+</ol>
+<h2 id="在Ktor中配置SSL"><a href="#在Ktor中配置SSL" class="headerlink" title="在Ktor中配置SSL"></a>在Ktor中配置SSL</h2><p>首先，打开<code>application.conf</code></p>
+<ol>
+<li><p>添加<code>sslPort</code></p>
+<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
+    deployment &#123;
+        sslPort = 8443
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>添加security组，<code>keyStore</code>为证书路径，本地放在项目根目录，服务器和Jar包同级。</p>
+<p><code>keyAlias</code>填入证书别称</p>
+<p><code>keyStorePassword</code>和<code>privateKeyPassword</code>填入证书密码</p>
+<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
+    security &#123;
+        ssl &#123;
+            keyStore = keystore.jks
+            keyAlias = sampleAlias 
+            keyStorePassword = foobar
+            privateKeyPassword = foobar
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>重新生成Jar包并上传到服务器，同时上传jks证书文件，和Jar包在同级目录。</p>
+<p>参考：<a href="https://yorick.love/2023/01/26/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">Ktor部署到云服务器</a></p>
+</li>
+</ol>
+
                 
               </div>
             
@@ -359,7 +380,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  <a href="/categories/BackEnd/" class="category-chain-item">BackEnd</a>
   
   
 
@@ -374,7 +395,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Icon/">#Icon</a>
+        <a href="/tags/ktor/">#ktor</a>
       
     </div>
   
@@ -386,8 +407,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Android应用图标</div>
-      <div>http://yorick.love/2022/12/17/Android/Android应用图标/</div>
+      <div>Ktor配置SSL</div>
+      <div>http://yorick.love/2023/01/26/Ktor配置SSL/</div>
     </div>
     <div class="license-meta">
       
@@ -399,7 +420,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月17日</div>
+          <div>2023年1月26日</div>
         </div>
       
       
@@ -431,18 +452,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/" title="Android屏幕旋转ScreenOrientation">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Android屏幕旋转ScreenOrientation</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/17/Android/Android%E6%9C%AC%E5%9C%B0%E5%8C%96/" title="Android本地化">
-                        <span class="hidden-mobile">Android本地化</span>
+                      <a href="/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Ktor部署到云服务器">
+                        <span class="hidden-mobile">Ktor部署到云服务器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
