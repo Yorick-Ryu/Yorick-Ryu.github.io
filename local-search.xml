@@ -237,31 +237,6 @@
   
   
   <entry>
-    <title>Android应用图标</title>
-    <link href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
-    <url>/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
-    
-    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Icon</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Android屏幕旋转ScreenOrientation</title>
     <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
     <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
@@ -279,6 +254,31 @@
     <tags>
       
       <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android应用图标</title>
+    <link href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
+    <url>/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Icon</tag>
       
     </tags>
     
@@ -509,7 +509,7 @@
     <link href="/2022/12/09/Android/AndroidCompose%E4%B8%BB%E9%A2%98/"/>
     <url>/2022/12/09/Android/AndroidCompose%E4%B8%BB%E9%A2%98/</url>
     
-    <content type="html"><![CDATA[<h1 id="Compose主题"><a href="#Compose主题" class="headerlink" title="Compose主题"></a>Compose主题</h1><p><a href="https://developer.android.com/jetpack/compose/themes/material#material3">Compose 中的 Material Design 2  | Jetpack Compose  | Android Developers</a></p><p><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary">androidx.compose.material3  | Android Developers</a></p><p>Compose Material Catalog</p><h1 id="创建主题资源"><a href="#创建主题资源" class="headerlink" title="创建主题资源"></a>创建主题资源</h1><ol><li>进入<a href="https://m3.material.io/theme-builder#/custom">Material Design</a></li><li>选择品牌颜色，即Primary Color</li><li>点击右上角Export按钮，选择<code>Jetpack Compose(Theme.kt)</code>，下载主题文件</li><li>放入项目</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="Compose主题"><a href="#Compose主题" class="headerlink" title="Compose主题"></a>Compose主题</h1><p><a href="https://developer.android.com/jetpack/compose/themes/material#material3">Compose 中的 Material Design 2  | Jetpack Compose  | Android Developers</a></p><p><a href="https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary">androidx.compose.material3  | Android Developers</a></p><h2 id="创建主题资源"><a href="#创建主题资源" class="headerlink" title="创建主题资源"></a>创建主题资源</h2><ol><li><p>进入<a href="https://m3.material.io/theme-builder#/custom">Material Design</a></p></li><li><p>选择品牌颜色，即<code>Primary Color</code>，也是种子颜色</p></li><li><p>点击右上角Export按钮，选择<code>Jetpack Compose(Theme.kt)</code>，下载主题文件并放入项目包下</p></li><li><p>配置主题，引入颜色，字体，形状等预定义元素</p><p>示例：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">CokoToolsTheme</span><span class="hljs-params">(</span></span><span class="hljs-params"><span class="hljs-function">    darkTheme: <span class="hljs-type">Boolean</span> = isSystemInDarkTheme()</span></span>, <span class="hljs-comment">// 深色主题</span>    dynamicColor: <span class="hljs-built_in">Boolean</span> = <span class="hljs-literal">true</span>, <span class="hljs-comment">// 动态取色（Android12+）</span>    content: <span class="hljs-meta">@Composable</span> () -&gt; <span class="hljs-built_in">Unit</span> <span class="hljs-comment">// 这里就是主题作用域</span>) &#123;    <span class="hljs-keyword">val</span> cokeToolsColorScheme = <span class="hljs-keyword">when</span> &#123;        dynamicColor &amp;&amp; Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.S -&gt; &#123;            <span class="hljs-keyword">val</span> context = LocalContext.current            <span class="hljs-keyword">if</span> (darkTheme) dynamicDarkColorScheme(context) <span class="hljs-keyword">else</span> dynamicLightColorScheme(context)        &#125;        darkTheme -&gt; DarkColors        <span class="hljs-keyword">else</span> -&gt; LightColors    &#125;    MaterialTheme(        colorScheme = cokeToolsColorScheme,        shapes = cokoToolsShapes,        typography = cokoToolsTypography,        content = content    )&#125;</code></pre></div><p>实际上，就是<strong>替换</strong>默认主题<code>MaterialTheme</code>里的元素。</p></li></ol><h2 id="使用主题资源"><a href="#使用主题资源" class="headerlink" title="使用主题资源"></a>使用主题资源</h2><p>首先，将使用自定义主题的内容放在主题作用域中：</p><p>示例：在<code>MainActivity.kt</code>的<code>setContent</code>中放入我们的主题可组合项，并在其作用域内放入<code>HomeScreen</code>可组合项</p><div class="code-wrapper"><pre><code class="hljs kotlin">setContent &#123;    CokoToolsTheme &#123;        HomeScreen()    &#125;&#125;</code></pre></div><p>然后就可以在作用域内使用预定义资源：</p><ul><li><p>使用颜色：</p><div class="code-wrapper"><pre><code class="hljs kotlin">color = MaterialTheme.colorScheme.primary</code></pre></div></li><li><p>使用字体</p><div class="code-wrapper"><pre><code class="hljs kotlin">style = MaterialTheme.typography.titleLarge</code></pre></div></li><li><p>使用形状</p><div class="code-wrapper"><pre><code class="hljs kotlin">shape = MaterialTheme.shapes.large</code></pre></div></li></ul>]]></content>
     
     
     <categories>
@@ -1085,35 +1085,6 @@
   
   
   <entry>
-    <title>LiveData</title>
-    <link href="/2022/11/05/Android/AndroidLiveData/"/>
-    <url>/2022/11/05/Android/AndroidLiveData/</url>
-    
-    <content type="html"><![CDATA[<h1 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h1><p><a href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/LiveData">LiveData  | Android Developers (google.cn)</a></p><p>[TOC]</p><h2 id="LiveData的定义"><a href="#LiveData的定义" class="headerlink" title="LiveData的定义"></a>LiveData的定义</h2><p><a href="https://developer.android.google.cn/reference/androidx/lifecycle/LiveData"><code>LiveData</code></a> 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有<a href="https://so.csdn.net/so/search?q=%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F&spm=1001.2101.3001.7020">生命周期</a>感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期状态的应用组件观察者。</p><p>从上述定义可以知道：</p><ul><li>LiveData 是一个<code>可观察</code>的<code>数据存储类</code>；</li><li>LiveData 具有<code>生命周期感知</code>能力；</li><li>LivaData <code>仅更新</code>处于<code>活跃生命周期状态（ STARTED 或 RESUMED 状态）</code>的应用组件观察者。</li></ul><h2 id="LiveData的优势"><a href="#LiveData的优势" class="headerlink" title="LiveData的优势"></a>LiveData的优势</h2><ul><li>确保界面符合数据状态；</li><li>不会发生内存泄漏；</li><li>不会因 Activity 的停止而导致崩溃</li><li>不需要手动处理生命周期</li><li>数据始终保持最新状态</li><li>共享资源</li><li>适当的配置修改</li></ul><h2 id="LiveData的使用"><a href="#LiveData的使用" class="headerlink" title="LiveData的使用"></a>LiveData的使用</h2><h3 id="LiveData-基本使用"><a href="#LiveData-基本使用" class="headerlink" title="LiveData 基本使用"></a>LiveData 基本使用</h3><p>类型为 LiveData 的对象没有公开的方法给更新其 value，要想更新 LiveData 对象的 value，需要使用 类型为 MutableLiveData 的LiveData 对象，其提供了 <a href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#setValue(T)"><code>setValue(T)</code></a> 和 <a href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#postValue(T)"><code>postValue(T)</code></a> 方法，其中如果想在多线程中更新数据只能使用 <code>postValue(T)</code> 方法。</p><p>使用步骤主要分三步：</p><ol><li>创建 LiveData 对象实例（常在 ViewModel 中）；</li><li>创建 Observer 对象（常在 Activity 或者 Fragment 中）；</li><li>使用 observer() 方法将 Observer 对象附加到 LiveData 对象（通常在 Activity 或者 Fragment 中）。</li></ol><p>示例：</p><ol><li><p>创建 LiveData 对象实例（常在 ViewModel 中），由于将可变的 LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的 LiveData 类型对外部进行提供；</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ViewModelWithLiveData</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _likedNumber = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> likedNumber: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _likedNumber    <span class="hljs-keyword">init</span> &#123;        _likedNumber.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">addLikedNumber</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span> &#123;        _likedNumber.value = _likedNumber.value?.plus(n)    &#125;&#125;</code></pre></div><p>将用来用来界面展示的可更新的数据 LiveData 对象创建在 ViewModel 中，而不是创建在对应的 Activity 或 <a href="https://so.csdn.net/so/search?q=Fragment&spm=1001.2101.3001.7020">Fragment</a> 中是为了避免是的对应的 Activity 或 Fragment 太过庞大不易后续维护，同时将其实例和 Activity 或 Fragment 分开可以使得 LiveData 对象在配置更改后继续存在。</p></li><li><p>通常在 Activity  或者 Fragment 中的<code>onCreate()</code>方法中进行 Observer 对象的创建并将其附加到 LiveData 对象，这样做是为了系统不会从 Activity 或 Fragment 的 <code>onResume()</code> 方法进行冗余调用（从生命周期图中可以看出 onCreate() 的执行的次数一般是少于 onResume() 的）。</p><p>同时其作用为当 Activity 或 Fragment 在变为活跃状态后就具有可以立即显示的数据，当应用组件处于 STARTED 状态，就会从正在观察的 LiveData 对象接收最新的数据。观察示例代码如下：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> viewModelWithLiveData <span class="hljs-keyword">by</span> lazy &#123;        ViewModelProvider(<span class="hljs-keyword">this</span>).<span class="hljs-keyword">get</span>(ViewModelWithLiveData::<span class="hljs-keyword">class</span>.java)    &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> textView: TextView    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> imageButtonLike: ImageButton    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> imageButtonDislike: ImageButton    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        textView = findViewById(R.id.textView)        imageButtonLike = findViewById(R.id.imageButton)        imageButtonDislike = findViewById(R.id.imageButton2)        viewModelWithLiveData.likedNumber.observe(<span class="hljs-keyword">this</span>) &#123;            textView.text = it.toString()        &#125;        imageButtonLike.setOnClickListener &#123;            viewModelWithLiveData.addLikedNumber(<span class="hljs-number">1</span>)        &#125;        imageButtonDislike.setOnClickListener &#123;            viewModelWithLiveData.addLikedNumber(-<span class="hljs-number">1</span>)        &#125;    &#125;&#125;</code></pre></div></li></ol><h3 id="转换-LiveData"><a href="#转换-LiveData" class="headerlink" title="转换 LiveData"></a>转换 LiveData</h3><p>对于转换 LiveData 来说，可以使用 Transformations 提供的 map() 与 switchMap() 方法。</p><ul><li><p>map() 方法主要应用在给你提供的信息内容较多，但是我们只需要其内容的一部分这种情况。例如有一个 User 类，其属性有姓名，年龄，性别等，但是我们只需要姓名，就可以使用 map()。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = UserLiveData()<span class="hljs-keyword">val</span> userName: LiveData&lt;String&gt; = Transformations.map(userLiveData) &#123;    user -&gt; <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;user.name&#125;</span>&quot;</span>&#125;</code></pre></div></li><li><p>switchMap() 方法则更多的适用于 ViewModel 中的某个 LiveData 对象是调用其他的方法获取到的，此时可以使用 switchMap() 方法将其转换为一个可观察的 LiveData 对象。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getUser</span><span class="hljs-params">(id: <span class="hljs-type">String</span>)</span></span>: LiveData&lt;User&gt; &#123;  ...&#125;<span class="hljs-keyword">val</span> userId: LiveData&lt;String&gt; = ...<span class="hljs-keyword">val</span> user = Transformations.switchMap(userId) &#123; id -&gt; getUser(id) &#125;</code></pre></div></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Jetpack</tag>
-      
-      <tag>Architecture</tag>
-      
-      <tag>LiveData</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>DataBinding</title>
     <link href="/2022/11/05/Android/AndroidDataBinding/"/>
     <url>/2022/11/05/Android/AndroidDataBinding/</url>
@@ -1137,6 +1108,35 @@
       <tag>DataBinding</tag>
       
       <tag>ViewModel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LiveData</title>
+    <link href="/2022/11/05/Android/AndroidLiveData/"/>
+    <url>/2022/11/05/Android/AndroidLiveData/</url>
+    
+    <content type="html"><![CDATA[<h1 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h1><p><a href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/LiveData">LiveData  | Android Developers (google.cn)</a></p><p>[TOC]</p><h2 id="LiveData的定义"><a href="#LiveData的定义" class="headerlink" title="LiveData的定义"></a>LiveData的定义</h2><p><a href="https://developer.android.google.cn/reference/androidx/lifecycle/LiveData"><code>LiveData</code></a> 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有<a href="https://so.csdn.net/so/search?q=%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F&spm=1001.2101.3001.7020">生命周期</a>感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期状态的应用组件观察者。</p><p>从上述定义可以知道：</p><ul><li>LiveData 是一个<code>可观察</code>的<code>数据存储类</code>；</li><li>LiveData 具有<code>生命周期感知</code>能力；</li><li>LivaData <code>仅更新</code>处于<code>活跃生命周期状态（ STARTED 或 RESUMED 状态）</code>的应用组件观察者。</li></ul><h2 id="LiveData的优势"><a href="#LiveData的优势" class="headerlink" title="LiveData的优势"></a>LiveData的优势</h2><ul><li>确保界面符合数据状态；</li><li>不会发生内存泄漏；</li><li>不会因 Activity 的停止而导致崩溃</li><li>不需要手动处理生命周期</li><li>数据始终保持最新状态</li><li>共享资源</li><li>适当的配置修改</li></ul><h2 id="LiveData的使用"><a href="#LiveData的使用" class="headerlink" title="LiveData的使用"></a>LiveData的使用</h2><h3 id="LiveData-基本使用"><a href="#LiveData-基本使用" class="headerlink" title="LiveData 基本使用"></a>LiveData 基本使用</h3><p>类型为 LiveData 的对象没有公开的方法给更新其 value，要想更新 LiveData 对象的 value，需要使用 类型为 MutableLiveData 的LiveData 对象，其提供了 <a href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#setValue(T)"><code>setValue(T)</code></a> 和 <a href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#postValue(T)"><code>postValue(T)</code></a> 方法，其中如果想在多线程中更新数据只能使用 <code>postValue(T)</code> 方法。</p><p>使用步骤主要分三步：</p><ol><li>创建 LiveData 对象实例（常在 ViewModel 中）；</li><li>创建 Observer 对象（常在 Activity 或者 Fragment 中）；</li><li>使用 observer() 方法将 Observer 对象附加到 LiveData 对象（通常在 Activity 或者 Fragment 中）。</li></ol><p>示例：</p><ol><li><p>创建 LiveData 对象实例（常在 ViewModel 中），由于将可变的 LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的 LiveData 类型对外部进行提供；</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ViewModelWithLiveData</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _likedNumber = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> likedNumber: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _likedNumber    <span class="hljs-keyword">init</span> &#123;        _likedNumber.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">addLikedNumber</span><span class="hljs-params">(n: <span class="hljs-type">Int</span>)</span></span> &#123;        _likedNumber.value = _likedNumber.value?.plus(n)    &#125;&#125;</code></pre></div><p>将用来用来界面展示的可更新的数据 LiveData 对象创建在 ViewModel 中，而不是创建在对应的 Activity 或 <a href="https://so.csdn.net/so/search?q=Fragment&spm=1001.2101.3001.7020">Fragment</a> 中是为了避免是的对应的 Activity 或 Fragment 太过庞大不易后续维护，同时将其实例和 Activity 或 Fragment 分开可以使得 LiveData 对象在配置更改后继续存在。</p></li><li><p>通常在 Activity  或者 Fragment 中的<code>onCreate()</code>方法中进行 Observer 对象的创建并将其附加到 LiveData 对象，这样做是为了系统不会从 Activity 或 Fragment 的 <code>onResume()</code> 方法进行冗余调用（从生命周期图中可以看出 onCreate() 的执行的次数一般是少于 onResume() 的）。</p><p>同时其作用为当 Activity 或 Fragment 在变为活跃状态后就具有可以立即显示的数据，当应用组件处于 STARTED 状态，就会从正在观察的 LiveData 对象接收最新的数据。观察示例代码如下：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> viewModelWithLiveData <span class="hljs-keyword">by</span> lazy &#123;        ViewModelProvider(<span class="hljs-keyword">this</span>).<span class="hljs-keyword">get</span>(ViewModelWithLiveData::<span class="hljs-keyword">class</span>.java)    &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> textView: TextView    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> imageButtonLike: ImageButton    <span class="hljs-keyword">private</span> <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> imageButtonDislike: ImageButton    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(R.layout.activity_main)        textView = findViewById(R.id.textView)        imageButtonLike = findViewById(R.id.imageButton)        imageButtonDislike = findViewById(R.id.imageButton2)        viewModelWithLiveData.likedNumber.observe(<span class="hljs-keyword">this</span>) &#123;            textView.text = it.toString()        &#125;        imageButtonLike.setOnClickListener &#123;            viewModelWithLiveData.addLikedNumber(<span class="hljs-number">1</span>)        &#125;        imageButtonDislike.setOnClickListener &#123;            viewModelWithLiveData.addLikedNumber(-<span class="hljs-number">1</span>)        &#125;    &#125;&#125;</code></pre></div></li></ol><h3 id="转换-LiveData"><a href="#转换-LiveData" class="headerlink" title="转换 LiveData"></a>转换 LiveData</h3><p>对于转换 LiveData 来说，可以使用 Transformations 提供的 map() 与 switchMap() 方法。</p><ul><li><p>map() 方法主要应用在给你提供的信息内容较多，但是我们只需要其内容的一部分这种情况。例如有一个 User 类，其属性有姓名，年龄，性别等，但是我们只需要姓名，就可以使用 map()。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = UserLiveData()<span class="hljs-keyword">val</span> userName: LiveData&lt;String&gt; = Transformations.map(userLiveData) &#123;    user -&gt; <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;user.name&#125;</span>&quot;</span>&#125;</code></pre></div></li><li><p>switchMap() 方法则更多的适用于 ViewModel 中的某个 LiveData 对象是调用其他的方法获取到的，此时可以使用 switchMap() 方法将其转换为一个可观察的 LiveData 对象。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getUser</span><span class="hljs-params">(id: <span class="hljs-type">String</span>)</span></span>: LiveData&lt;User&gt; &#123;  ...&#125;<span class="hljs-keyword">val</span> userId: LiveData&lt;String&gt; = ...<span class="hljs-keyword">val</span> user = Transformations.switchMap(userId) &#123; id -&gt; getUser(id) &#125;</code></pre></div></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Jetpack</tag>
+      
+      <tag>Architecture</tag>
+      
+      <tag>LiveData</tag>
       
     </tags>
     
@@ -1247,9 +1247,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -1333,13 +1333,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Array</tag>
+      <tag>Set</tag>
       
       <tag>List</tag>
       
-      <tag>Set</tag>
-      
       <tag>Map</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1886,11 +1886,11 @@
       
       <tag>Java</tag>
       
-      <tag>Sort</tag>
-      
       <tag>树</tag>
       
       <tag>Tree</tag>
+      
+      <tag>Sort</tag>
       
       <tag>Srarch</tag>
       
@@ -2827,17 +2827,17 @@
     
     <tags>
       
-      <tag>Collection</tag>
+      <tag>集合</tag>
       
-      <tag>List</tag>
+      <tag>Collection</tag>
       
       <tag>Set</tag>
       
-      <tag>Map</tag>
-      
-      <tag>集合</tag>
-      
       <tag>TreeSet</tag>
+      
+      <tag>List</tag>
+      
+      <tag>Map</tag>
       
       <tag>HashMap</tag>
       
@@ -2866,9 +2866,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
