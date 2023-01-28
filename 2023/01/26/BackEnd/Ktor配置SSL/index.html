@@ -18,26 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ktor部署到云服务器(Linux)部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提 一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击这里">
+    <meta name="description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ktor部署到云服务器">
-<meta property="og:url" content="http://yorick.love/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:title" content="Ktor配置SSL">
+<meta property="og:url" content="http://yorick.love/2023/01/26/BackEnd/Ktor%E9%85%8D%E7%BD%AESSL/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Ktor部署到云服务器(Linux)部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提 一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击这里">
+<meta property="og:description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ktor.io/docs/images/ktor_logo.svg">
-<meta property="article:published_time" content="2023-01-26T09:22:29.000Z">
-<meta property="article:modified_time" content="2023-01-26T13:04:56.454Z">
+<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="article:published_time" content="2023-01-26T14:37:45.000Z">
+<meta property="article:modified_time" content="2023-01-26T15:37:37.794Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="ktor">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="CentOS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ktor.io/docs/images/ktor_logo.svg">
+<meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Ktor部署到云服务器 | Yorick Harbor</title>
+  <title>Ktor配置SSL | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Ktor部署到云服务器"></span>
+            <span id="subtitle" data-typed-text="Ktor配置SSL"></span>
           
         </div>
 
@@ -243,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-26 17:22" pubdate>
-          2023年1月26日 下午
+        <time datetime="2023-01-26 22:37" pubdate>
+          2023年1月26日 晚上
         </time>
       </span>
     
@@ -255,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          752 字
         
       </span>
     
@@ -266,7 +264,7 @@
         
         
         
-          7 分钟
+          5 分钟
         
       </span>
     
@@ -312,7 +310,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Ktor部署到云服务器</h1>
+            <h1 style="display: none">Ktor配置SSL</h1>
             
               <p class="note note-info">
                 
@@ -325,67 +323,45 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Ktor部署到云服务器-Linux"><a href="#Ktor部署到云服务器-Linux" class="headerlink" title="Ktor部署到云服务器(Linux)"></a>Ktor部署到云服务器(Linux)</h1><p>部署 Ktor 项目有很多种方式，包括 <strong>war、jar 或是打包在 Docker 容器内</strong>。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
-<li>一个准备部署的<a target="_blank" rel="noopener" href="https://ktor.io/">Ktor</a>项目</li>
-<li>一台Linux服务器（CentOS7.6），如果没有服务器可以点击<a target="_blank" rel="noopener" href="https://www.aliyun.com/minisite/goods?userCode=cucsy8ip">这里</a>购买，新用户超低价！</li>
-</ul>
-<h2 id="打包为Jar"><a href="#打包为Jar" class="headerlink" title="打包为Jar"></a>打包为Jar</h2><p>参考：<a target="_blank" rel="noopener" href="https://ktor.io/docs/fatjar.html">Creating fat JARs using the Ktor Gradle plugin | Ktor</a></p>
-<p>To build a fat JAR, you need to configure the Ktor plugin first:</p>
-<p>在打包为<code>fat Jar</code>之前，你需要先配置<code>Ktor plugin</code></p>
+                <h1 id="Ktor配置SSL实现https"><a href="#Ktor配置SSL实现https" class="headerlink" title="Ktor配置SSL实现https"></a>Ktor配置SSL实现https</h1><p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://ktor.io/docs/ssl.html">SSL and certificates | Ktor</a></p>
+<p><a target="_blank" rel="noopener" href="https://ktor.kotlincn.net/quickstart/guides/ssl.html">SSL - 快速入门 - Ktor (kotlincn.net)</a></p>
+<h2 id="生成SSL证书"><a href="#生成SSL证书" class="headerlink" title="生成SSL证书"></a>生成SSL证书</h2><p>我直接在阿里云白嫖了免费SSL证书：<a target="_blank" rel="noopener" href="https://promotion.aliyun.com/ntms/act/sslbuy.html">选购SSL证书 (aliyun.com)</a></p>
+<p>选择<code>jks</code>格式并下载解压</p>
+<p>应该有一个<code>xxx.jks</code>文件和一个<code>jks-password.txt</code>密钥文件</p>
+<h2 id="查看证书别名-keyAlias"><a href="#查看证书别名-keyAlias" class="headerlink" title="查看证书别名(keyAlias)"></a>查看证书别名(keyAlias)</h2><ol>
+<li>找到电脑的JDK路径</li>
+<li>在<code>\bin</code>中找到<code>keytool.exe</code>复制到证书所在目录</li>
+<li>在证书所在目录运行cmd</li>
+<li>输入<code>keytool -list -v -keystore file.jks -storepass password</code>，其中<code>file.jks</code>是证书名字，<code>password</code>要用密钥来代替。</li>
+</ol>
+<h2 id="在Ktor中配置SSL"><a href="#在Ktor中配置SSL" class="headerlink" title="在Ktor中配置SSL"></a>在Ktor中配置SSL</h2><p>首先，打开<code>application.conf</code></p>
 <ol>
-<li><p>打开<code>build.gradle.kts</code>，在plugins中添加插件：</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin">plugins &#123;
-    id(<span class="hljs-string">&quot;io.ktor.plugin&quot;</span>) version <span class="hljs-string">&quot;2.2.2&quot;</span>
-&#125;</code></pre></div>
-
-
-</li>
-<li><p>确保<code>application</code>中填入<a target="_blank" rel="noopener" href="https://ktor.io/docs/server-dependencies.html#create-entry-point">main</a>方法所在类名：</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin">application &#123;
-    mainClass.<span class="hljs-keyword">set</span>(<span class="hljs-string">&quot;com.example.ApplicationKt&quot;</span>) <span class="hljs-comment">// main方法所在类名</span>
-&#125;</code></pre></div>
-
-
-</li>
-<li><p>可选项，配置打包后的文件名称 ：</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin">ktor &#123;
-    fatJar &#123;
-        archiveFileName.<span class="hljs-keyword">set</span>(<span class="hljs-string">&quot;fat.jar&quot;</span>)
+<li><p>添加<code>sslPort</code></p>
+<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
+    deployment &#123;
+        sslPort = 8443
     &#125;
 &#125;</code></pre></div>
 </li>
-<li><p>点击<code>Gradle</code>同步项目，找到buildFatJar并双击构建Jar包：</p>
-<p><img src="/./img/image-20230126174449384.png" srcset="/img/loading.gif" lazyload alt="image-20230126174449384"></p>
+<li><p>添加security组，<code>keyStore</code>为证书路径，本地放在项目根目录，服务器和Jar包同级。</p>
+<p><code>keyAlias</code>填入证书别称</p>
+<p><code>keyStorePassword</code>和<code>privateKeyPassword</code>填入证书密码</p>
+<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
+    security &#123;
+        ssl &#123;
+            keyStore = keystore.jks
+            keyAlias = sampleAlias 
+            keyStorePassword = foobar
+            privateKeyPassword = foobar
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 </li>
-<li><p>打包好的文件在<code>build/libs</code>：</p>
-<p><img src="/./img/image-20230126174735567.png" srcset="/img/loading.gif" lazyload alt="image-20230126174735567"></p>
+<li><p>重新生成Jar包并上传到服务器，同时上传jks证书文件，和Jar包在同级目录。</p>
+<p>参考：[Ktor部署到云服务器](<a href="https://yorick.love/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">https://yorick.love/2023/01/26/BackEnd/Ktor部署到云服务器/</a></p>
 </li>
 </ol>
-<h2 id="上传Jar包并运行"><a href="#上传Jar包并运行" class="headerlink" title="上传Jar包并运行"></a>上传Jar包并运行</h2><p>服务器配置和Jar包上传参考<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/zh-hans/2020/05/29/ktor-cloud/#%E5%88%9B%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91_ECS_%E5%AE%9E%E4%BE%8B">部署 Ktor 应用至云服务器 | The JetBrains Blog</a></p>
-<ol>
-<li><p>服务器安装JDK，版本与项目版本一致</p>
-<div class="code-wrapper"><pre><code class="hljs shell">yum install java-11-openjdk-devel</code></pre></div>
-</li>
-<li><p>上传打包好的Jar包，运行Jar包，输出日志<code>msg.log</code></p>
-<div class="code-wrapper"><pre><code class="hljs shell">nohup java -jar ktor-sample-all.jar &gt;msg.log 2&gt;&amp;1 &amp;</code></pre></div>
-</li>
-<li><p>查看日志或者访问Api测试，可以直接关闭shell后台运行</p>
-</li>
-<li><p>停止项目</p>
-<p>查找进程：</p>
-<div class="code-wrapper"><pre><code class="hljs shell">ps -ef|grep java</code></pre></div>
-
-<p>输出：</p>
-<div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>     <span class="hljs-number">26847</span>     <span class="hljs-number">1</span>  <span class="hljs-number">0</span> <span class="hljs-number">16</span>:<span class="hljs-number">55</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">12</span> java -jar ktor-sample-<span class="hljs-literal">all</span>.jar</code></pre></div>
-
-<p>找到进程ID:26847，杀死进程：</p>
-<div class="code-wrapper"><pre><code class="hljs shell">kill -9 26847</code></pre></div></li>
-</ol>
-<p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://ktor.io/docs/fatjar.html">Creating fat JARs using the Ktor Gradle plugin | Ktor</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.jetbrains.com/zh-hans/2020/05/29/ktor-cloud/#%E5%88%9B%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91_ECS_%E5%AE%9E%E4%BE%8B">部署 Ktor 应用至云服务器 | The JetBrains Blog</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lzg-blog/p/15013598.html">Java部署jar包并后台运行 - 李宗光 - 博客园 (cnblogs.com)</a></p>
 
                 
               </div>
@@ -421,10 +397,6 @@
       
         <a href="/tags/ktor/">#ktor</a>
       
-        <a href="/tags/Linux/">#Linux</a>
-      
-        <a href="/tags/CentOS/">#CentOS</a>
-      
     </div>
   
 </div>
@@ -435,8 +407,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Ktor部署到云服务器</div>
-      <div>http://yorick.love/2023/01/26/BackEnd/Ktor部署到云服务器/</div>
+      <div>Ktor配置SSL</div>
+      <div>http://yorick.love/2023/01/26/BackEnd/Ktor配置SSL/</div>
     </div>
     <div class="license-meta">
       
@@ -480,9 +452,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/26/BackEnd/Ktor%E9%85%8D%E7%BD%AESSL/" title="Ktor配置SSL">
+                      <a href="/2023/01/28/Android%E5%BC%80%E5%B1%8F%E5%8A%A8%E7%94%BB/" title="Android开屏动画">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Ktor配置SSL</span>
+                        <span class="hidden-mobile">Android开屏动画</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -490,8 +462,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/17/Android/%E4%BD%BF%E7%94%A8Retrofit%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE/" title="安卓使用Retrofit获取网络数据">
-                        <span class="hidden-mobile">安卓使用Retrofit获取网络数据</span>
+                      <a href="/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Ktor部署到云服务器">
+                        <span class="hidden-mobile">Ktor部署到云服务器</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
