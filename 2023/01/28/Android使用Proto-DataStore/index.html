@@ -18,24 +18,25 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
+    <meta name="description" content="使用Proto DataStore存储数据摘自： 应用架构：数据层 - DataStore - Android 开发者  | Android Developers 使用 Proto DataStore  | Android Developers 什么是 DataStore？DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ktor配置SSL">
-<meta property="og:url" content="http://yorick.love/2023/01/26/BackEnd/Ktor%E9%85%8D%E7%BD%AESSL/index.html">
+<meta property="og:title" content="Android使用Proto_DataStore">
+<meta property="og:url" content="http://yorick.love/2023/01/28/Android%E4%BD%BF%E7%94%A8Proto-DataStore/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Ktor配置SSL实现https参考： SSL and certificates | Ktor SSL - 快速入门 - Ktor (kotlincn.net) 生成SSL证书我直接在阿里云白嫖了免费SSL证书：选购SSL证书 (aliyun.com) 选择jks格式并下载解压 应该有一个xxx.jks文件和一个jks-password.txt密钥文件 查看证书别名(keyAlias) 找到电脑的">
+<meta property="og:description" content="使用Proto DataStore存储数据摘自： 应用架构：数据层 - DataStore - Android 开发者  | Android Developers 使用 Proto DataStore  | Android Developers 什么是 DataStore？DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/default.png">
-<meta property="article:published_time" content="2023-01-26T14:37:45.000Z">
-<meta property="article:modified_time" content="2023-01-26T15:37:37.794Z">
+<meta property="og:image" content="http://yorick.love/img/android-jetpack.svg">
+<meta property="article:published_time" content="2023-01-28T11:02:05.000Z">
+<meta property="article:modified_time" content="2023-01-28T11:22:46.732Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="ktor">
+<meta property="article:tag" content="Jetpack">
+<meta property="article:tag" content="DataStore">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/default.png">
+<meta name="twitter:image" content="http://yorick.love/img/android-jetpack.svg">
   
   
   
-  <title>Ktor配置SSL | Yorick Harbor</title>
+  <title>Android使用Proto_DataStore | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Ktor配置SSL"></span>
+            <span id="subtitle" data-typed-text="Android使用Proto_DataStore"></span>
           
         </div>
 
@@ -241,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-26 22:37" pubdate>
-          2023年1月26日 晚上
+        <time datetime="2023-01-28 19:02" pubdate>
+          2023年1月28日 晚上
         </time>
       </span>
     
@@ -253,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          752 字
+          4.5k 字
         
       </span>
     
@@ -264,7 +265,7 @@
         
         
         
-          5 分钟
+          26 分钟
         
       </span>
     
@@ -310,12 +311,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Ktor配置SSL</h1>
+            <h1 style="display: none">Android使用Proto_DataStore</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年1月26日 晚上
+                    本文最后更新于：2023年1月28日 晚上
                   
                 
               </p>
@@ -323,45 +324,178 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Ktor配置SSL实现https"><a href="#Ktor配置SSL实现https" class="headerlink" title="Ktor配置SSL实现https"></a>Ktor配置SSL实现https</h1><p>参考：</p>
-<p><a target="_blank" rel="noopener" href="https://ktor.io/docs/ssl.html">SSL and certificates | Ktor</a></p>
-<p><a target="_blank" rel="noopener" href="https://ktor.kotlincn.net/quickstart/guides/ssl.html">SSL - 快速入门 - Ktor (kotlincn.net)</a></p>
-<h2 id="生成SSL证书"><a href="#生成SSL证书" class="headerlink" title="生成SSL证书"></a>生成SSL证书</h2><p>我直接在阿里云白嫖了免费SSL证书：<a target="_blank" rel="noopener" href="https://promotion.aliyun.com/ntms/act/sslbuy.html">选购SSL证书 (aliyun.com)</a></p>
-<p>选择<code>jks</code>格式并下载解压</p>
-<p>应该有一个<code>xxx.jks</code>文件和一个<code>jks-password.txt</code>密钥文件</p>
-<h2 id="查看证书别名-keyAlias"><a href="#查看证书别名-keyAlias" class="headerlink" title="查看证书别名(keyAlias)"></a>查看证书别名(keyAlias)</h2><ol>
-<li>找到电脑的JDK路径</li>
-<li>在<code>\bin</code>中找到<code>keytool.exe</code>复制到证书所在目录</li>
-<li>在证书所在目录运行cmd</li>
-<li>输入<code>keytool -list -v -keystore file.jks -storepass password</code>，其中<code>file.jks</code>是证书名字，<code>password</code>要用密钥来代替。</li>
-</ol>
-<h2 id="在Ktor中配置SSL"><a href="#在Ktor中配置SSL" class="headerlink" title="在Ktor中配置SSL"></a>在Ktor中配置SSL</h2><p>首先，打开<code>application.conf</code></p>
-<ol>
-<li><p>添加<code>sslPort</code></p>
-<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
-    deployment &#123;
-        sslPort = 8443
+                <h1 id="使用Proto-DataStore存储数据"><a href="#使用Proto-DataStore存储数据" class="headerlink" title="使用Proto DataStore存储数据"></a>使用Proto DataStore存储数据</h1><p>摘自：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn">应用架构：数据层 - DataStore - Android 开发者  | Android Developers</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/codelabs/android-proto-datastore?hl=zh-cn">使用 Proto DataStore  | Android Developers</a></p>
+<h2 id="什么是-DataStore？"><a href="#什么是-DataStore？" class="headerlink" title="什么是 DataStore？"></a><strong>什么是 DataStore？</strong></h2><p>DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于 Kotlin 协程和 Flow 构建，提供以下两种不同的实现：<strong>Proto DataStore</strong>，用于存储<strong>类型化对象</strong>（由<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>支持）；<strong>Preferences DataStore</strong>，用于存储<strong>键值对</strong>。DataStore 以异步、一致的事务方式存储数据，克服了 SharedPreferences 的一些缺点。</p>
+<h2 id="DataStore-基础知识"><a href="#DataStore-基础知识" class="headerlink" title="DataStore - 基础知识"></a>DataStore - 基础知识</h2><p>您可能经常需要存储较小或简单的数据集。为此，您过去可能使用过 SharedPreferences，但此 API 也存在一系列缺点。Jetpack DataStore 库旨在解决这些问题，从而创建一个简单、安全性更高的异步 API 来存储数据。它提供 2 种不同的实现：</p>
+<ul>
+<li>Preferences DataStore</li>
+<li>Proto DataStore</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>功能</strong></th>
+<th><strong>SharedPreferences</strong></th>
+<th><strong>PreferencesDataStore</strong></th>
+<th><strong>ProtoDataStore</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>异步 API</td>
+<td>✅（仅用于通过<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/content/SharedPreferences.OnSharedPreferenceChangeListener?hl=zh-cn">监听器</a>读取已更改的值）</td>
+<td>✅（通过 <code>Flow</code> 以及 RxJava 2 和 3 <code>Flowable</code>）</td>
+<td>✅（通过 <code>Flow</code> 以及 RxJava 2 和 3 <code>Flowable</code>）</td>
+</tr>
+<tr>
+<td>同步 API</td>
+<td>✅（但无法在界面线程上安全调用）</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>可在界面线程上安全调用</td>
+<td>❌(1)</td>
+<td>✅（这项工作已在后台移至 <code>Dispatchers.IO</code>）</td>
+<td>✅（这项工作已在后台移至 <code>Dispatchers.IO</code>）</td>
+</tr>
+<tr>
+<td>可以提示错误</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>不受运行时异常影响</td>
+<td>❌(2)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>包含一个具有强一致性保证的事务性 API</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>处理数据迁移</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>类型安全</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅ 使用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a></td>
+</tr>
+</tbody></table>
+<p>(1) SharedPreferences 有一个看上去可以在界面线程中安全调用的同步 API，但是该 API 实际上执行磁盘 I&#x2F;O 操作。此外，<code>apply()</code> 会阻断 <code>fsync()</code> 上的界面线程。每次有服务启动或停止以及每次 activity 在应用中的任何地方启动或停止时，系统都会触发待处理的 <code>fsync()</code> 调用。界面线程在 <code>apply()</code> 调度的待处理 <code>fsync()</code> 调用上会被阻断，这通常会导致 <a target="_blank" rel="noopener" href="https://developer.android.com/topic/performance/vitals/anr?hl=zh-cn">ANR</a>。</p>
+<p>(2) SharedPreferences 会将解析错误作为运行时异常抛出。</p>
+<h3 id="Preferences-DataStore-与-Proto-DataStore"><a href="#Preferences-DataStore-与-Proto-DataStore" class="headerlink" title="Preferences DataStore 与 Proto DataStore"></a><strong>Preferences DataStore 与 Proto DataStore</strong></h3><p>虽然 Preferences DataStore 和 Proto DataStore 都允许保存数据，但它们保存数据的方式不同：</p>
+<ul>
+<li>与 SharedPreferences 一样，<strong>Preferences DataStore</strong> 根据键访问数据，而无需事先定义架构。</li>
+<li><strong>Proto DataStore</strong> 使用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>来定义架构。使用协议缓冲区可<strong>持久保留强类型数据</strong>。与 XML 和其他类似的数据格式相比，协议缓冲区速度更快、规格更小、使用更简单，并且更清楚明了。虽然使用 Proto DataStore 需要学习新的序列化机制，但我们认为 Proto DataStore 有着强大的类型优势，值得学习。</li>
+</ul>
+<h3 id="Room-与-DataStore"><a href="#Room-与-DataStore" class="headerlink" title="Room 与 DataStore"></a><strong>Room 与 DataStore</strong></h3><p>如果您需要实现部分更新、引用完整性或大型&#x2F;复杂数据集，您应考虑使用 Room，而不是 DataStore。DataStore 非常适合小型或简单的数据集，但不支持部分更新或引用完整性。</p>
+<h2 id="Proto-DataStore-概览"><a href="#Proto-DataStore-概览" class="headerlink" title="Proto DataStore - 概览"></a>Proto DataStore - 概览</h2><p>SharedPreferences 和 Preferences DataStore 的一个缺点是无法定义架构，保证不了存取键时使用了正确的数据类型。Proto DataStore 可利用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>定义架构来解决此问题。通过使用协议，DataStore 可以知道存储的类型，并且无需使用键便能提供类型。</p>
+<h2 id="添加依赖项"><a href="#添加依赖项" class="headerlink" title="添加依赖项"></a><strong>添加依赖项</strong></h2><p>为了使用 Proto DataStore，让协议缓冲区为我们的架构生成代码，我们需要对 build.gradle 文件进行一些更改：</p>
+<ul>
+<li>添加协议缓冲区插件</li>
+<li>添加协议缓冲区和 Proto DataStore 依赖项</li>
+<li>配置协议缓冲区</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs groovy">plugins &#123;
+    ...
+    id <span class="hljs-string">&quot;com.google.protobuf&quot;</span> version <span class="hljs-string">&quot;0.8.17&quot;</span>
+&#125;
+
+dependencies &#123;
+    implementation  <span class="hljs-string">&quot;androidx.datastore:datastore-core:1.0.0&quot;</span>
+    implementation  <span class="hljs-string">&quot;com.google.protobuf:protobuf-javalite:3.18.0&quot;</span>
+    ...
+&#125;
+
+protobuf &#123;
+    protoc &#123;
+        artifact = <span class="hljs-string">&quot;com.google.protobuf:protoc:3.14.0&quot;</span>
     &#125;
-&#125;</code></pre></div>
-</li>
-<li><p>添加security组，<code>keyStore</code>为证书路径，本地放在项目根目录，服务器和Jar包同级。</p>
-<p><code>keyAlias</code>填入证书别称</p>
-<p><code>keyStorePassword</code>和<code>privateKeyPassword</code>填入证书密码</p>
-<div class="code-wrapper"><pre><code class="hljs conf">ktor &#123;
-    security &#123;
-        ssl &#123;
-            keyStore = keystore.jks
-            keyAlias = sampleAlias 
-            keyStorePassword = foobar
-            privateKeyPassword = foobar
+
+    <span class="hljs-comment">// Generates the java Protobuf-lite code for the Protobufs in this project. See</span>
+    <span class="hljs-comment">// https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation</span>
+    <span class="hljs-comment">// for more information.</span>
+    generateProtoTasks &#123;
+        all().each &#123; task -&gt;
+            task.builtins &#123;
+                java &#123;
+                    option <span class="hljs-string">&#x27;lite&#x27;</span>
+                &#125;
+            &#125;
         &#125;
     &#125;
 &#125;</code></pre></div>
-</li>
-<li><p>重新生成Jar包并上传到服务器，同时上传jks证书文件，和Jar包在同级目录。</p>
-<p>参考：[Ktor部署到云服务器](<a href="https://yorick.love/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">https://yorick.love/2023/01/26/BackEnd/Ktor部署到云服务器/</a></p>
-</li>
+
+<h2 id="使用Proto-DataStore"><a href="#使用Proto-DataStore" class="headerlink" title="使用Proto DataStore"></a>使用Proto DataStore</h2><h3 id="定义架构"><a href="#定义架构" class="headerlink" title="定义架构"></a>定义架构</h3><h4 id="定义和使用-protobuf-对象"><a href="#定义和使用-protobuf-对象" class="headerlink" title="定义和使用 protobuf 对象"></a>定义和使用 protobuf 对象</h4><p>协议缓冲区是一种对结构化数据进行序列化的机制。您只需对数据结构化的方式进行一次定义，编译器便会生成源代码，轻松写入和读取结构化数据。</p>
+<h4 id="创建-proto-文件"><a href="#创建-proto-文件" class="headerlink" title="创建 proto 文件"></a><strong>创建 proto 文件</strong></h4><p>您可以在 proto 文件中定义架构。在此 Codelab 中，我们有两个用户偏好设置：<code>show_completed</code> 和 <code>sort_order</code>；目前两者以两种不同的对象来表示。因此，我们的一个目标是将这两个标志统一到存储在 DataStore 中的一个 <code>UserPreferences</code> 类下。我们将在协议缓冲区架构而非 Kotlin 中定义该类。</p>
+<p>请查看 <a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers/docs/overview?hl=zh-cn">Proto 语言指南</a>，深入了解关于语法的信息。在此 Codelab 中，我们仅关注我们需要使用的类型。</p>
+<p>在 <code>app/src/main/proto</code> 目录中创建一个名为 <code>user_prefs.proto</code> 的新文件。如果您未看到此文件夹结构，请切换到<strong>项目视图</strong>。在协议缓冲区中，每个结构都使用一个 <code>message</code> 关键字进行定义，并且结构中的每一个成员都会根据类型和名称在消息内进行定义，从而获得从 1 开始的排序。</p>
+<p>示例：</p>
+<div class="code-wrapper"><pre><code class="hljs protobuf">syntax = <span class="hljs-string">&quot;proto3&quot;</span>;
+
+<span class="hljs-keyword">option</span> java_package = <span class="hljs-string">&quot;com.example.application&quot;</span>;
+<span class="hljs-keyword">option</span> java_multiple_files = <span class="hljs-literal">true</span>;
+
+<span class="hljs-keyword">message </span><span class="hljs-title class_">Settings</span> &#123;
+  <span class="hljs-type">int32</span> example_counter = <span class="hljs-number">1</span>;
+&#125;</code></pre></div>
+
+<p class="note note-warning">注意：您的存储对象的类在编译时由 proto 文件中定义的 message 生成。请务必重新构建您的项目。</p>
+
+<h3 id="创建-Proto-DataStore"><a href="#创建-Proto-DataStore" class="headerlink" title="创建 Proto DataStore"></a>创建 Proto DataStore</h3><p>创建 Proto DataStore 来存储类型化对象涉及两个步骤：</p>
+<ol>
+<li>定义一个实现 <code>Serializer&lt;T&gt;</code> 的类，其中 <code>T</code> 是 proto 文件中定义的类型。此序列化器类会告知 DataStore 如何读取和写入您的数据类型。请务必为该序列化器添加默认值，以便在尚未创建任何文件时使用。</li>
+<li>使用由 <code>dataStore</code> 创建的属性委托来创建 <code>DataStore&lt;T&gt;</code> 的实例，其中 <code>T</code> 是在 proto 文件中定义的类型。在您的 Kotlin 文件顶层调用该实例一次，便可在应用的所有其余部分通过此属性委托访问该实例。<code>filename</code> 参数会告知 DataStore 使用哪个文件存储数据，而 <code>serializer</code> 参数会告知 DataStore 第 1 步中定义的序列化器类的名称。</li>
 </ol>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">object</span> SettingsSerializer : Serializer&lt;Settings&gt; &#123;
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> defaultValue: Settings = Settings.getDefaultInstance()
+
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">readFrom</span><span class="hljs-params">(input: <span class="hljs-type">InputStream</span>)</span></span>: Settings &#123;
+    <span class="hljs-keyword">try</span> &#123;
+      <span class="hljs-keyword">return</span> Settings.parseFrom(input)
+    &#125; <span class="hljs-keyword">catch</span> (exception: InvalidProtocolBufferException) &#123;
+      <span class="hljs-keyword">throw</span> CorruptionException(<span class="hljs-string">&quot;Cannot read proto.&quot;</span>, exception)
+    &#125;
+  &#125;
+
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">writeTo</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    t: <span class="hljs-type">Settings</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">    output: <span class="hljs-type">OutputStream</span>)</span></span> = t.writeTo(output)
+&#125;
+
+<span class="hljs-keyword">val</span> Context.settingsDataStore: DataStore&lt;Settings&gt; <span class="hljs-keyword">by</span> dataStore(
+  fileName = <span class="hljs-string">&quot;settings.pb&quot;</span>,
+  serializer = SettingsSerializer
+)</code></pre></div>
+
+<h3 id="从-Proto-DataStore-读取内容"><a href="#从-Proto-DataStore-读取内容" class="headerlink" title="从 Proto DataStore 读取内容"></a>从 Proto DataStore 读取内容</h3><p>使用 <code>DataStore.data</code> 显示所存储对象中相应属性的 <code>Flow</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> exampleCounterFlow: Flow&lt;<span class="hljs-built_in">Int</span>&gt; = context.settingsDataStore.<span class="hljs-keyword">data</span>
+  .map &#123; settings -&gt;
+    <span class="hljs-comment">// The exampleCounter property is generated from the proto schema.</span>
+    settings.exampleCounter
+  &#125;</code></pre></div>
+
+<h3 id="将内容写入-Proto-DataStore"><a href="#将内容写入-Proto-DataStore" class="headerlink" title="将内容写入 Proto DataStore"></a>将内容写入 Proto DataStore</h3><p>Proto DataStore 提供了一个 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore?hl=zh-cn#updatedata"><code>updateData()</code></a> 函数，用于以事务方式更新存储的对象。<code>updateData()</code> 为您提供数据的当前状态，作为数据类型的一个实例，并在原子读-写-修改操作中以事务方式更新数据。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">incrementCounter</span><span class="hljs-params">()</span></span> &#123;
+  context.settingsDataStore.updateData &#123; currentSettings -&gt;
+    currentSettings.toBuilder()
+      .setExampleCounter(currentSettings.exampleCounter + <span class="hljs-number">1</span>)
+      .build()
+    &#125;
+&#125;</code></pre></div>
+
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn#synchronous">在同步代码中使用 DataStore</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn#multiprocess">在多进程代码中使用 DataStore</a></p>
 
                 
               </div>
@@ -380,7 +514,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/BackEnd/" class="category-chain-item">BackEnd</a>
+  <a href="/categories/Andorid/" class="category-chain-item">Andorid</a>
   
   
 
@@ -395,7 +529,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ktor/">#ktor</a>
+        <a href="/tags/Jetpack/">#Jetpack</a>
+      
+        <a href="/tags/DataStore/">#DataStore</a>
       
     </div>
   
@@ -407,8 +543,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Ktor配置SSL</div>
-      <div>http://yorick.love/2023/01/26/BackEnd/Ktor配置SSL/</div>
+      <div>Android使用Proto_DataStore</div>
+      <div>http://yorick.love/2023/01/28/Android使用Proto-DataStore/</div>
     </div>
     <div class="license-meta">
       
@@ -420,7 +556,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年1月26日</div>
+          <div>2023年1月28日</div>
         </div>
       
       
@@ -452,18 +588,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/28/Android/Android%E5%BC%80%E5%B1%8F%E5%8A%A8%E7%94%BB/" title="Android开屏动画">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Android开屏动画</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Ktor部署到云服务器">
-                        <span class="hidden-mobile">Ktor部署到云服务器</span>
+                      <a href="/2023/01/28/Android/Android%E5%BC%80%E5%B1%8F%E5%8A%A8%E7%94%BB/" title="Android开屏动画">
+                        <span class="hidden-mobile">Android开屏动画</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
