@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="可视化UI设计 [TOC] 约束布局ConstraintLayout 约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束  直接拖动蓝">
+    <meta name="description" content="可视化UI设计[TOC] 约束布局ConstraintLayout约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束 直接拖动蓝点。首先认识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android可视化UI设计">
 <meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="可视化UI设计 [TOC] 约束布局ConstraintLayout 约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束  直接拖动蓝">
+<meta property="og:description" content="可视化UI设计[TOC] 约束布局ConstraintLayout约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束 直接拖动蓝点。首先认识">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221104183622446.png">
 <meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
@@ -104,7 +104,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -254,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          1.9k 字
         
       </span>
     
@@ -265,7 +269,7 @@
         
         
         
-          13 分钟
+          11 分钟
         
       </span>
     
@@ -324,26 +328,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="可视化ui设计">可视化UI设计</h1>
-<p>[TOC]</p>
-<h2 id="约束布局constraintlayout">约束布局ConstraintLayout</h2>
-<p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在
-2016 年 Google I/O
-中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p>
-<h3 id="基本位置约束">基本位置约束</h3>
-<ol type="1">
+                <h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p>
+<h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p>
+<h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol>
 <li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p>
-<figure>
-<img src="./img/image-20221104183622446.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104183622446" />
-<figcaption aria-hidden="true">image-20221104183622446</figcaption>
-</figure>
+<p><img src="/./img/image-20221104183622446.png" srcset="/img/loading.gif" lazyload alt="image-20221104183622446"></p>
 <p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p>
-<figure>
-<img src="./img/image-20221104182427025.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104182427025" />
-<figcaption aria-hidden="true">image-20221104182427025</figcaption>
-</figure>
+<p><img src="/./img/image-20221104182427025.png" srcset="/img/loading.gif" lazyload alt="image-20221104182427025"></p>
 <p>查看生成的代码</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span>
 <span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span>
@@ -355,126 +346,73 @@ alt="image-20221104182427025" />
 <span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>		// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span>
 <span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
 <span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div>
+
 <p>若我们拖动控件，则会增加如下代码：</p>
 <div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1
-app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div></li>
+app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div>
+</li>
 <li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p>
-<figure>
-<img src="./img/image-20221104192615537.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104192615537" />
-<figcaption aria-hidden="true">image-20221104192615537</figcaption>
-</figure>
+<p><img src="/./img/image-20221104192615537.png" srcset="/img/loading.gif" lazyload alt="image-20221104192615537"></p>
 <div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;
 android:layout_marginBottom=&quot;240dp&quot;
 app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
 app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li>
 </ol>
-<h3 id="对多个控件操作">对多个控件操作</h3>
-<h4 id="pack">Pack</h4>
-<ol type="1">
+<h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol>
 <li><p>选择多个控件</p>
-<figure>
-<img src="./img/image-20221104193649706.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104193649706" />
-<figcaption aria-hidden="true">image-20221104193649706</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104193649706.png" srcset="/img/loading.gif" lazyload alt="image-20221104193649706"></p>
+</li>
 <li><p>点击<code>Pack</code></p>
-<figure>
-<img src="./img/image-20221104193845078.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104193845078" />
-<figcaption aria-hidden="true">image-20221104193845078</figcaption>
-</figure></li>
-<li><p>Pack
-Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p>
-<figure>
-<img src="./img/image-20221104193954355.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104193954355" />
-<figcaption aria-hidden="true">image-20221104193954355</figcaption>
-</figure>
+<p><img src="/./img/image-20221104193845078.png" srcset="/img/loading.gif" lazyload alt="image-20221104193845078"></p>
+</li>
+<li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p>
+<p><img src="/./img/image-20221104193954355.png" srcset="/img/loading.gif" lazyload alt="image-20221104193954355"></p>
 <p>下面是有阻挡得情况</p>
-<figure>
-<img src="./img/image-20221104194800428.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104194800428" />
-<figcaption aria-hidden="true">image-20221104194800428</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104194800428.png" srcset="/img/loading.gif" lazyload alt="image-20221104194800428"></p>
+</li>
 <li><p>Pack Vertically，同理，Buttom</p>
-<figure>
-<img src="./img/image-20221104194533125.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104194533125" />
-<figcaption aria-hidden="true">image-20221104194533125</figcaption>
-</figure>
-<figure>
-<img src="./img/image-20221104194859939.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104194859939" />
-<figcaption aria-hidden="true">image-20221104194859939</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104194533125.png" srcset="/img/loading.gif" lazyload alt="image-20221104194533125"></p>
+<p><img src="/./img/image-20221104194859939.png" srcset="/img/loading.gif" lazyload alt="image-20221104194859939"></p>
+</li>
 <li><p>Expand Horizontally，水平拉伸</p>
-<figure>
-<img src="./img/image-20221104195145603.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104195145603" />
-<figcaption aria-hidden="true">image-20221104195145603</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104195145603.png" srcset="/img/loading.gif" lazyload alt="image-20221104195145603"></p>
+</li>
 <li><p>Expand Vertically，竖直拉伸</p>
-<figure>
-<img src="./img/image-20221104195319243.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104195319243" />
-<figcaption aria-hidden="true">image-20221104195319243</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104195319243.png" srcset="/img/loading.gif" lazyload alt="image-20221104195319243"></p>
+</li>
 <li><p>Distribute Horizontally，添加水平方向相互约束</p>
-<figure>
-<img src="./img/image-20221104195748648.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104195748648" />
-<figcaption aria-hidden="true">image-20221104195748648</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104195748648.png" srcset="/img/loading.gif" lazyload alt="image-20221104195748648"></p>
+</li>
 <li><p>Distribute Vertically，添加竖直方向相互约束</p>
-<figure>
-<img src="./img/image-20221104195933250.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104195933250" />
-<figcaption aria-hidden="true">image-20221104195933250</figcaption>
-</figure></li>
+<p><img src="/./img/image-20221104195933250.png" srcset="/img/loading.gif" lazyload alt="image-20221104195933250"></p>
+</li>
 </ol>
 <p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p>
 <div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置
 tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div>
+
 <p>Expend操作会修改控件大小</p>
 <div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;
 android:layout_height=&quot;200dp&quot;</code></pre></div>
+
 <p>Distribute操作会添加约束，如：</p>
 <div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div>
-<h4 id="align">Align</h4>
-<p>多选后点击Align，直接看图标就能理解作用。</p>
-<figure>
-<img src="./img/image-20221104202313658.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104202313658" />
-<figcaption aria-hidden="true">image-20221104202313658</figcaption>
-</figure>
+
+<h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p>
+<p><img src="/./img/image-20221104202313658.png" srcset="/img/loading.gif" lazyload alt="image-20221104202313658"></p>
 <p>注意点：</p>
-<ol type="1">
+<ol>
 <li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p>
-<p><img src="./img/image-20221104202740560.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104202740560" /><img
-src="./img/image-20221104202810457.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104202810457" /></p></li>
+<p><img src="/./img/image-20221104202740560.png" srcset="/img/loading.gif" lazyload alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" srcset="/img/loading.gif" lazyload alt="image-20221104202810457"></p>
+</li>
 <li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p>
-<figure>
-<img src="./img/image-20221104203110925.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104203110925" />
-<figcaption aria-hidden="true">image-20221104203110925</figcaption>
-</figure>
+<p><img src="/./img/image-20221104203110925.png" srcset="/img/loading.gif" lazyload alt="image-20221104203110925"></p>
 <p>然后拖到想要约束的位置，一般是另一个控件的基线</p>
-<figure>
-<img src="./img/image-20221104203338181.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104203338181" />
-<figcaption aria-hidden="true">image-20221104203338181</figcaption>
-</figure></li>
+<p>   <img src="/./img/image-20221104203338181.png" srcset="/img/loading.gif" lazyload alt="image-20221104203338181"></p>
+</li>
 </ol>
-<h4 id="清除控件所有约束">清除控件所有约束</h4>
-<p>所有约束都会被清除</p>
-<figure>
-<img src="./img/image-20221104203611415.png" srcset="/img/loading.gif" lazyload
-alt="image-20221104203611415" />
-<figcaption aria-hidden="true">image-20221104203611415</figcaption>
-</figure>
+<h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p>
+<p><img src="/./img/image-20221104203611415.png" srcset="/img/loading.gif" lazyload alt="image-20221104203611415"></p>
 
                 
               </div>
@@ -577,8 +515,8 @@ alt="image-20221104203611415" />
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/" title="Android屏幕旋转ScreenOrientation">
-                        <span class="hidden-mobile">Android屏幕旋转ScreenOrientation</span>
+                      <a href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/" title="Android应用图标">
+                        <span class="hidden-mobile">Android应用图标</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

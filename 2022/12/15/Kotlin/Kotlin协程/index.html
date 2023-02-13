@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Kotlin协程 [TOC] 本篇以Android中的Kotlin协程为例 Android 上的 Kotlin 协程 | Android 开发者 | Android Developers (google.cn) 协程基本介绍 协程是一项 Kotlin 功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。 为了避免用户在使用您的应用时感觉到任何卡顿，主线程必">
+    <meta name="description" content="Kotlin协程[TOC] 本篇以Android中的Kotlin协程为例 Android 上的 Kotlin 协程  | Android 开发者  | Android Developers (google.cn) 协程基本介绍协程是一项 Kotlin 功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。 为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须每隔 16 毫秒">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin协程">
 <meta property="og:url" content="http://yorick.love/2022/12/15/Kotlin/Kotlin%E5%8D%8F%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Kotlin协程 [TOC] 本篇以Android中的Kotlin协程为例 Android 上的 Kotlin 协程 | Android 开发者 | Android Developers (google.cn) 协程基本介绍 协程是一项 Kotlin 功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。 为了避免用户在使用您的应用时感觉到任何卡顿，主线程必">
+<meta property="og:description" content="Kotlin协程[TOC] 本篇以Android中的Kotlin协程为例 Android 上的 Kotlin 协程  | Android 开发者  | Android Developers (google.cn) 协程基本介绍协程是一项 Kotlin 功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。 为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须每隔 16 毫秒">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221216114040628.png">
 <meta property="article:published_time" content="2022-12-15T08:27:41.000Z">
@@ -104,7 +104,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -254,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.7k 字
+          4.6k 字
         
       </span>
     
@@ -265,7 +269,7 @@
         
         
         
-          27 分钟
+          26 分钟
         
       </span>
     
@@ -324,20 +328,11 @@
             
               <div class="markdown-body">
                 
-                <h1 id="kotlin协程">Kotlin协程</h1>
-<p>[TOC]</p>
+                <h1 id="Kotlin协程"><a href="#Kotlin协程" class="headerlink" title="Kotlin协程"></a>Kotlin协程</h1><p>[TOC]</p>
 <p>本篇以Android中的Kotlin协程为例</p>
-<p><a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/kotlin/coroutines?hl=zh-cn">Android
-上的 Kotlin 协程 | Android 开发者 | Android Developers
-(google.cn)</a></p>
-<h2 id="协程基本介绍">协程基本介绍</h2>
-<p>协程是一项 Kotlin
-功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。</p>
-<p>为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须<a
-target="_blank" rel="noopener" href="https://medium.com/androiddevelopers/exceed-the-android-speed-limit-b73a0692abc1">每隔
-16 毫秒或更短时间</a>更新一次屏幕，也就是每秒约 60
-帧，这个过程中会执行<code>onDraw()</code>方法来渲染UI。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/kotlin/coroutines?hl=zh-cn">Android 上的 Kotlin 协程  | Android 开发者  | Android Developers (google.cn)</a></p>
+<h2 id="协程基本介绍"><a href="#协程基本介绍" class="headerlink" title="协程基本介绍"></a>协程基本介绍</h2><p>协程是一项 Kotlin 功能，可将长时间运行的任务（例如数据库或网络访问）的异步回调转换为顺序代码。</p>
+<p>为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须<a target="_blank" rel="noopener" href="https://medium.com/androiddevelopers/exceed-the-android-speed-limit-b73a0692abc1">每隔 16 毫秒或更短时间</a>更新一次屏幕，也就是每秒约 60 帧，这个过程中会执行<code>onDraw()</code>方法来渲染UI。</p>
 <p>下面的代码向网络请求数据。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onDataNeeded</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> result = networkRequest()
@@ -345,12 +340,9 @@ target="_blank" rel="noopener" href="https://medium.com/androiddevelopers/exceed
     databaseSave(result)
     <span class="hljs-comment">// Result saved</span>
 &#125;</code></pre></div>
+
 <p>但是会阻塞主线程。</p>
-<figure>
-<img src="./img/image-20221216112959847.png" srcset="/img/loading.gif" lazyload
-alt="image-20221216112959847" />
-<figcaption aria-hidden="true">image-20221216112959847</figcaption>
-</figure>
+<p><img src="/./img/image-20221216112959847.png" srcset="/img/loading.gif" lazyload alt="image-20221216112959847"></p>
 <p>我们可以使用回调函数实现相同的功能，这样不会阻塞。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onDataNeeded</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// Async callbacks</span>
@@ -361,12 +353,9 @@ alt="image-20221216112959847" />
        &#125;
     &#125;
 &#125;</code></pre></div>
+
 <p>网络库将在另一个线程上请求网络，当数据准备好时，传递数据或回调到主线程。</p>
-<figure>
-<img src="./img/image-20221216112031955.png" srcset="/img/loading.gif" lazyload
-alt="image-20221216112031955" />
-<figcaption aria-hidden="true">image-20221216112031955</figcaption>
-</figure>
+<p><img src="/./img/image-20221216112031955.png" srcset="/img/loading.gif" lazyload alt="image-20221216112031955"></p>
 <p>系统使用协程将基于回调的代码转换为顺序代码，我们的网络库仍然使用另一个线程来运行网络。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onDataNeeded</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// The same code with coroutines</span>
@@ -375,52 +364,32 @@ alt="image-20221216112031955" />
     databaseSave(result)
     <span class="hljs-comment">// Result saved</span>
 &#125;</code></pre></div>
+
 <p>挂起函数内的代码和普通函数的执行方式不同，它执行每一行代码，直到到达一个调用，这时他会复制当前的状态然后挂起，等待网络请求完成，再恢复保存的状态。</p>
-<figure>
-<img src="./img/image-20221216114040628.png" srcset="/img/loading.gif" lazyload
-alt="image-20221216114040628" />
-<figcaption aria-hidden="true">image-20221216114040628</figcaption>
-</figure>
-<p>关键字 <code>suspend</code> 是 Kotlin
-将函数（即函数类型）标记为可供协程使用的方式。当协程调用标记为
-<code>suspend</code>
-的函数时，它不会像常规函数调用一样在函数返回之前进行阻塞，而是<strong>挂起</strong>执行，直到结果就绪为止，然后从上次停止的位置<strong>恢复</strong>并使用返回的结果。当它挂起并等待结果时，<strong>它会取消阻塞正在运行它的线程</strong>，以便其他函数或协程可以运行。</p>
+<p><img src="/./img/image-20221216114040628.png" srcset="/img/loading.gif" lazyload alt="image-20221216114040628"></p>
+<p>关键字 <code>suspend</code> 是 Kotlin 将函数（即函数类型）标记为可供协程使用的方式。当协程调用标记为 <code>suspend</code> 的函数时，它不会像常规函数调用一样在函数返回之前进行阻塞，而是<strong>挂起</strong>执行，直到结果就绪为止，然后从上次停止的位置<strong>恢复</strong>并使用返回的结果。当它挂起并等待结果时，<strong>它会取消阻塞正在运行它的线程</strong>，以便其他函数或协程可以运行。</p>
 <p>协程的优点：</p>
 <ul>
-<li>不用写复杂的回调函数（Replace callbacks）</li>
+<li>不用写复杂的回调函数（Replace  callbacks）</li>
 <li>线程安全（Main safety）</li>
 </ul>
-<p>在 Android
-上，避免阻塞主线程是非常必要的。主线程是一个处理所有界面更新的线程，也是调用所有点击处理程序和其他界面回调的线程。因此，主线程必须顺畅运行才能确保出色的用户体验。</p>
-<p>为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须<a
-target="_blank" rel="noopener" href="https://medium.com/androiddevelopers/exceed-the-android-speed-limit-b73a0692abc1">每隔
-16 毫秒或更短时间</a>更新一次屏幕，也就是每秒约 60
-帧。许多常见任务所需的时间都比这个时间长，例如解析大型 JSON
-数据集、将数据写入数据库或从网络提取数据。因此，从主线程调用此类代码可能会导致应用暂停、卡顿甚至冻结。如果您阻塞主线程太久，应用甚至可能会崩溃并显示一个<strong>应用无响应</strong>对话框。</p>
-<h2 id="向项目添加协程">向项目添加协程</h2>
-<p>要在 Kotlin 中使用协程，您必须在项目的
-<code>build.gradle (Module: app)</code> 文件中添加
-<code>coroutines-core</code> 库。</p>
+<p>在 Android 上，避免阻塞主线程是非常必要的。主线程是一个处理所有界面更新的线程，也是调用所有点击处理程序和其他界面回调的线程。因此，主线程必须顺畅运行才能确保出色的用户体验。</p>
+<p>为了避免用户在使用您的应用时感觉到任何卡顿，主线程必须<a target="_blank" rel="noopener" href="https://medium.com/androiddevelopers/exceed-the-android-speed-limit-b73a0692abc1">每隔 16 毫秒或更短时间</a>更新一次屏幕，也就是每秒约 60 帧。许多常见任务所需的时间都比这个时间长，例如解析大型 JSON 数据集、将数据写入数据库或从网络提取数据。因此，从主线程调用此类代码可能会导致应用暂停、卡顿甚至冻结。如果您阻塞主线程太久，应用甚至可能会崩溃并显示一个<strong>应用无响应</strong>对话框。</p>
+<h2 id="向项目添加协程"><a href="#向项目添加协程" class="headerlink" title="向项目添加协程"></a>向项目添加协程</h2><p>要在 Kotlin 中使用协程，您必须在项目的 <code>build.gradle (Module: app)</code> 文件中添加 <code>coroutines-core</code> 库。</p>
 <p>Android 上的协程作为核心库和 Android 专用扩展函数提供：</p>
 <ul>
-<li><strong>kotlinx-coroutines-core</strong> - 用于在 Kotlin
-中使用协程的主接口</li>
-<li><strong>kotlinx-coroutines-android</strong> - 在协程中支持 Android
-主线程</li>
+<li><strong>kotlinx-coroutines-core</strong> - 用于在 Kotlin 中使用协程的主接口</li>
+<li><strong>kotlinx-coroutines-android</strong> - 在协程中支持 Android 主线程</li>
 </ul>
-<p>此初始应用已在 <code>build.gradle.</code>
-中包含依赖项。创建新的应用项目时，您需要打开
-<code>build.gradle (Module: app)</code> 并将协程依赖项添加到项目中。</p>
+<p>此初始应用已在 <code>build.gradle.</code> 中包含依赖项。创建新的应用项目时，您需要打开 <code>build.gradle (Module: app)</code> 并将协程依赖项添加到项目中。</p>
 <div class="code-wrapper"><pre><code class="hljs groovy">dependencies &#123;
   ...
   implementation <span class="hljs-string">&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:x.x.x&quot;</span>
   implementation <span class="hljs-string">&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:x.x.x&quot;</span>
 &#125;</code></pre></div>
-<p>您可以在 <a
-target="_blank" rel="noopener" href="https://github.com/Kotlin/kotlinx.coroutines/releases">Kotlin
-协程版本页面</a>上找到协程库的最新版版本号，以替代“xxx”。</p>
-<h2 id="回调模式">回调模式</h2>
-<p>在不阻塞主线程的情况下执行长时间运行的任务的一种模式是回调。通过使用回调，您可以在后台线程上启动长时间运行的任务。任务完成后，系统会调用回调函数，以在主线程上告知您结果。</p>
+
+<p>您可以在 <a target="_blank" rel="noopener" href="https://github.com/Kotlin/kotlinx.coroutines/releases">Kotlin 协程版本页面</a>上找到协程库的最新版版本号，以替代“xxx”。</p>
+<h2 id="回调模式"><a href="#回调模式" class="headerlink" title="回调模式"></a>回调模式</h2><p>在不阻塞主线程的情况下执行长时间运行的任务的一种模式是回调。通过使用回调，您可以在后台线程上启动长时间运行的任务。任务完成后，系统会调用回调函数，以在主线程上告知您结果。</p>
 <p>我们来看一个回调模式的示例。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// Slow request with callbacks</span>
 <span class="hljs-meta">@UiThread</span>
@@ -432,24 +401,13 @@ target="_blank" rel="noopener" href="https://github.com/Kotlin/kotlinx.coroutine
     &#125;
     <span class="hljs-comment">// makeNetworkRequest() exits after calling slowFetch without waiting for the result</span>
 &#125;</code></pre></div>
-<p>由于此代码带有 <a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/support/annotation/UiThread?hl=zh-cn"><code>@UiThread</code></a>
-注解，因此它必须足够快地运行以在主线程上执行。也就是说，它需要非常快地返回，以便下一次屏幕更新不会出现延迟。不过，由于
-<code>slowFetch</code>
-需要几秒钟甚至几分钟才能完成，因此主线程不能等待结果。<code>show(result)</code>
-回调允许 <code>slowFetch</code>
-在后台线程上运行，并在准备就绪后返回结果。</p>
-<h2 id="使用协程移除回调">使用协程移除回调</h2>
-<p>回调是一种很好的模式，但也存在缺点。过多使用回调的代码可能会变得难以读取和推演。此外，回调也不允许使用某些语言功能，例如异常。</p>
-<p>Kotlin
-协程使您能够将基于回调的代码转换为顺序代码。顺序编写的代码通常更易于阅读，甚至可以使用异常等语言功能。</p>
+
+<p>由于此代码带有 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/support/annotation/UiThread?hl=zh-cn"><code>@UiThread</code></a> 注解，因此它必须足够快地运行以在主线程上执行。也就是说，它需要非常快地返回，以便下一次屏幕更新不会出现延迟。不过，由于 <code>slowFetch</code> 需要几秒钟甚至几分钟才能完成，因此主线程不能等待结果。<code>show(result)</code> 回调允许 <code>slowFetch</code> 在后台线程上运行，并在准备就绪后返回结果。</p>
+<h2 id="使用协程移除回调"><a href="#使用协程移除回调" class="headerlink" title="使用协程移除回调"></a>使用协程移除回调</h2><p>回调是一种很好的模式，但也存在缺点。过多使用回调的代码可能会变得难以读取和推演。此外，回调也不允许使用某些语言功能，例如异常。</p>
+<p>Kotlin 协程使您能够将基于回调的代码转换为顺序代码。顺序编写的代码通常更易于阅读，甚至可以使用异常等语言功能。</p>
 <p>最后，两者所做的事情完全相同：等待长时间运行的任务获得结果，然后继续执行。不过，两者的代码看起来却截然不同。</p>
-<p>关键字 <code>suspend</code> 是 Kotlin
-将函数（即函数类型）标记为可供协程使用的方式。当协程调用标记为
-<code>suspend</code>
-的函数时，它不会像常规函数调用一样在函数返回之前进行阻塞，而是<strong>挂起</strong>执行，直到结果就绪为止，然后从上次停止的位置<strong>恢复</strong>并使用返回的结果。当它挂起并等待结果时，<strong>它会取消阻塞正在运行它的线程</strong>，以便其他函数或协程可以运行。</p>
-<p>例如，在下面的代码中，<code>makeNetworkRequest()</code> 和
-<code>slowFetch()</code> 都是 <code>suspend</code> 函数。</p>
+<p>关键字 <code>suspend</code> 是 Kotlin 将函数（即函数类型）标记为可供协程使用的方式。当协程调用标记为 <code>suspend</code> 的函数时，它不会像常规函数调用一样在函数返回之前进行阻塞，而是<strong>挂起</strong>执行，直到结果就绪为止，然后从上次停止的位置<strong>恢复</strong>并使用返回的结果。当它挂起并等待结果时，<strong>它会取消阻塞正在运行它的线程</strong>，以便其他函数或协程可以运行。</p>
+<p>例如，在下面的代码中，<code>makeNetworkRequest()</code> 和 <code>slowFetch()</code> 都是 <code>suspend</code> 函数。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// Slow request with coroutines</span>
 <span class="hljs-meta">@UiThread</span>
 <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">makeNetworkRequest</span><span class="hljs-params">()</span></span> &#123;
@@ -463,13 +421,13 @@ target="_blank" rel="noopener" href="https://developer.android.google.cn/referen
 
 <span class="hljs-comment">// slowFetch is main-safe using coroutines</span>
 <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">slowFetch</span><span class="hljs-params">()</span></span>: SlowResult &#123; ... &#125;</code></pre></div>
-<p>与回调版本一样，<code>makeNetworkRequest</code>
-必须立即从主线程返回，因为它被标记为
-<code>@UiThread</code>。这意味着，它通常无法调用 <code>slowFetch</code>
-等阻塞方法。这里体现了 <code>suspend</code> 关键字的神奇之处。</p>
+
+<p>与回调版本一样，<code>makeNetworkRequest</code> 必须立即从主线程返回，因为它被标记为 <code>@UiThread</code>。这意味着，它通常无法调用 <code>slowFetch</code> 等阻塞方法。这里体现了 <code>suspend</code> 关键字的神奇之处。</p>
 <div class="note note-success">
-            <p><strong>重要提示</strong>：<code>suspend</code>关键字不指定运行代码的线程。挂起函数可以在后台线程或主线程上运行。</p>
+            <p><strong>重要提示</strong>：<code>suspend</code> 关键字不指定运行代码的线程。挂起函数可以在后台线程或主线程上运行。</p>
           </div>
+
+
 <p>与基于回调的代码相比，协程代码可以利用更少的代码实现取消阻塞当前线程的相同效果。由于它具有顺序样式，因此可以轻松地链接多个长时间运行的任务，而无需创建多个回调。例如，如果代码从两个网络端点提取结果并将结果保存到数据库，则此代码可以编写为协程中的函数，而无需回调。类似以下代码：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// Request data from network and save it to database with coroutines</span>
 
@@ -488,30 +446,14 @@ target="_blank" rel="noopener" href="https://developer.android.google.cn/referen
 <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">slowFetch</span><span class="hljs-params">()</span></span>: SlowResult &#123; ... &#125;
 <span class="hljs-comment">// anotherFetch is main-safe using coroutines</span>
 <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">anotherFetch</span><span class="hljs-params">()</span></span>: AnotherResult &#123; ... &#125;</code></pre></div>
-<h2 id="了解-coroutinescope">了解 CoroutineScope</h2>
-<p>在 Kotlin 中，所有协程都在 <a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.experimental/-coroutine-scope/"><code>CoroutineScope</code></a>
-中运行。作用域在其整个作业期间会控制协程的生命周期。如果取消某个作用域的作业，则该作用域内启动的所有协程也将取消。在
-Android 上，在一些情况下，例如当用户离开 <code>Activity</code> 或
-<code>Fragment</code>
-时，您可以使用作用域取消所有正在运行的协程。作用域还允许您指定默认调度程序。调度程序可以控制哪个线程运行协程。</p>
-<p>对于界面启动的协程，通常在 <a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Dispatchers.Main</code></a>（Android
-上的主线程）上启动这类协程是正确的。在 <a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Dispatchers.Main</code></a>
-上启动的协程在挂起期间不会阻塞主线程。由于 <code>ViewModel</code>
-协程几乎总是在主线程上更新界面，因此在主线程上启动协程可避免额外的线程切换。在主线程上启动的协程可在启动后随时切换调度程序。例如，它可以使用另一个调度程序从主线程外解析大型
-JSON 结果。</p>
+
+<h2 id="了解-CoroutineScope"><a href="#了解-CoroutineScope" class="headerlink" title="了解 CoroutineScope"></a>了解 CoroutineScope</h2><p>在 Kotlin 中，所有协程都在 <a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.experimental/-coroutine-scope/"><code>CoroutineScope</code></a> 中运行。作用域在其整个作业期间会控制协程的生命周期。如果取消某个作用域的作业，则该作用域内启动的所有协程也将取消。在 Android 上，在一些情况下，例如当用户离开 <code>Activity</code> 或 <code>Fragment</code> 时，您可以使用作用域取消所有正在运行的协程。作用域还允许您指定默认调度程序。调度程序可以控制哪个线程运行协程。</p>
+<p>对于界面启动的协程，通常在 <a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Dispatchers.Main</code></a>（Android 上的主线程）上启动这类协程是正确的。在 <a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Dispatchers.Main</code></a> 上启动的协程在挂起期间不会阻塞主线程。由于 <code>ViewModel</code> 协程几乎总是在主线程上更新界面，因此在主线程上启动协程可避免额外的线程切换。在主线程上启动的协程可在启动后随时切换调度程序。例如，它可以使用另一个调度程序从主线程外解析大型 JSON 结果。</p>
 <div class="note note-secondary">
-            <p><strong>协程提供主线程安全</strong>由于协程可以随时轻松地切换线程并将结果传递回原始线程，因此最好在主线程上启动与界面相关的协程。</p><p>使用协程时，<atarget="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/releases/room?hl=zh-cn"><code>Room</code></a>和 <atarget="_blank" rel="noopener" href="https://github.com/square/retrofit"><code>Retrofit</code></a>等库原生提供<strong>主线程安全</strong>，因此您无需管理线程来进行网络或数据库调用。这往往能大幅简化代码。</p><p>但是，即便使用协程，<strong>阻塞代码</strong>（例如对列表进行排序或从文件读取数据）仍然需要显式代码来创建<strong>主线程安全</strong>。如果您使用的网络或数据库（还）不支持协程，情况也是如此。</p>
+            <p><strong>协程提供主线程安全</strong><br>由于协程可以随时轻松地切换线程并将结果传递回原始线程，因此最好在主线程上启动与界面相关的协程。</p><p>使用协程时，<a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/releases/room?hl=zh-cn"><code>Room</code></a> 和 <a target="_blank" rel="noopener" href="https://github.com/square/retrofit"><code>Retrofit</code></a> 等库原生提供<strong>主线程安全</strong>，因此您无需管理线程来进行网络或数据库调用。这往往能大幅简化代码。</p><p>但是，即便使用协程，<strong>阻塞代码</strong>（例如对列表进行排序或从文件读取数据）仍然需要显式代码来创建<strong>主线程安全</strong>。如果您使用的网络或数据库（还）不支持协程，情况也是如此。</p>
           </div>
-<p>Kotlin 协程默认提供三个调度程序：<a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Main</code></a>、<a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html"><code>IO</code></a>
-和 <a
-target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html"><code>Default</code></a>。IO
-调度程序针对 IO 工作进行了优化，例如从网络或磁盘读取内容，而 Default
-调度程序则针对 CPU 密集型任务进行了优化。</p>
+
+<p>Kotlin 协程默认提供三个调度程序：<a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html"><code>Main</code></a>、<a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html"><code>IO</code></a> 和 <a target="_blank" rel="noopener" href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html"><code>Default</code></a>。IO 调度程序针对 IO 工作进行了优化，例如从网络或磁盘读取内容，而 Default 调度程序则针对 CPU 密集型任务进行了优化。</p>
 
                 
               </div>

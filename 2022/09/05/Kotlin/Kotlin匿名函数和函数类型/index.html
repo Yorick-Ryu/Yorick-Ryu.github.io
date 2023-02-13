@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="匿名函数和函数类型  匿名函数和函数类型  匿名函数  函数类型与隐式返回 函数参数 it关键字  类型推断 什么是lambda 定义参数是函数的函数 函数內联 函数引用 函数类型作为返回值类型 lambda与闭包 lambda与内部匿名类   匿名函数 定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。 匿名">
+    <meta name="description" content="匿名函数和函数类型 匿名函数和函数类型 匿名函数 函数类型与隐式返回 函数参数 it关键字   类型推断 什么是lambda 定义参数是函数的函数 函数內联 函数引用 函数类型作为返回值类型 lambda与闭包 lambda与内部匿名类    匿名函数定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。 匿名函数对Kotlin来说很重要，有了它，我们能够根">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin匿名函数和函数类型">
 <meta property="og:url" content="http://yorick.love/2022/09/05/Kotlin/Kotlin%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%92%8C%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="匿名函数和函数类型  匿名函数和函数类型  匿名函数  函数类型与隐式返回 函数参数 it关键字  类型推断 什么是lambda 定义参数是函数的函数 函数內联 函数引用 函数类型作为返回值类型 lambda与闭包 lambda与内部匿名类   匿名函数 定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。 匿名">
+<meta property="og:description" content="匿名函数和函数类型 匿名函数和函数类型 匿名函数 函数类型与隐式返回 函数参数 it关键字   类型推断 什么是lambda 定义参数是函数的函数 函数內联 函数引用 函数类型作为返回值类型 lambda与闭包 lambda与内部匿名类    匿名函数定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。 匿名函数对Kotlin来说很重要，有了它，我们能够根">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-05T03:04:38.000Z">
@@ -102,7 +102,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -322,28 +326,26 @@
             
               <div class="markdown-body">
                 
-                <h2 id="匿名函数和函数类型">匿名函数和函数类型</h2>
-<ul>
-<li><a href="#匿名函数和函数类型">匿名函数和函数类型</a>
-<ul>
-<li><a href="#匿名函数">匿名函数</a>
-<ul>
-<li><a href="#函数类型与隐式返回">函数类型与隐式返回</a></li>
-<li><a href="#函数参数">函数参数</a></li>
-<li><a href="#it关键字">it关键字</a></li>
-</ul></li>
-<li><a href="#类型推断">类型推断</a></li>
-<li><a href="#什么是lambda">什么是lambda</a></li>
-<li><a href="#定义参数是函数的函数">定义参数是函数的函数</a></li>
-<li><a href="#函数內联">函数內联</a></li>
-<li><a href="#函数引用">函数引用</a></li>
-<li><a href="#函数类型作为返回值类型">函数类型作为返回值类型</a></li>
-<li><a href="#lambda与闭包">lambda与闭包</a></li>
-<li><a href="#lambda与内部匿名类">lambda与内部匿名类</a></li>
-</ul></li>
+                <h2 id="匿名函数和函数类型"><a href="#匿名函数和函数类型" class="headerlink" title="匿名函数和函数类型"></a>匿名函数和函数类型</h2><ul>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%92%8C%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B">匿名函数和函数类型</a><ul>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">匿名函数</a><ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B%E4%B8%8E%E9%9A%90%E5%BC%8F%E8%BF%94%E5%9B%9E">函数类型与隐式返回</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0">函数参数</a></li>
+<li><a href="#it%E5%85%B3%E9%94%AE%E5%AD%97">it关键字</a></li>
 </ul>
-<h3 id="匿名函数">匿名函数</h3>
-<p>定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。</p>
+</li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">类型推断</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFlambda">什么是lambda</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E6%98%AF%E5%87%BD%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0">定义参数是函数的函数</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%85%A7%E8%81%94">函数內联</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%BC%95%E7%94%A8">函数引用</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA%E8%BF%94%E5%9B%9E%E5%80%BC%E7%B1%BB%E5%9E%8B">函数类型作为返回值类型</a></li>
+<li><a href="#lambda%E4%B8%8E%E9%97%AD%E5%8C%85">lambda与闭包</a></li>
+<li><a href="#lambda%E4%B8%8E%E5%86%85%E9%83%A8%E5%8C%BF%E5%90%8D%E7%B1%BB">lambda与内部匿名类</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>定义时不取名字的函数，我们称之为匿名函数，匿名函数通常整体传递给其他函数，或者从其他函数返回。</p>
 <p>匿名函数对Kotlin来说很重要，有了它，我们能够根据需要制定特殊规则，轻松定制标准库里的内置函数。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> total = <span class="hljs-string">&quot;MISSSSSSSYOU&quot;</span>.count()
@@ -353,8 +355,8 @@
     println(total)
     println(count)
 &#125;</code></pre></div>
-<h4 id="函数类型与隐式返回">函数类型与隐式返回</h4>
-<p>匿名函数也有类型，可以直接赋值给函数类型变量。</p>
+
+<h4 id="函数类型与隐式返回"><a href="#函数类型与隐式返回" class="headerlink" title="函数类型与隐式返回"></a>函数类型与隐式返回</h4><p>匿名函数也有类型，可以直接赋值给函数类型变量。</p>
 <p>匿名函数一般不需要return，会隐式或自动返回函数体最后一行语句的结果。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-comment">// 定义变量，类型为返回值为String的匿名函数</span>
 <span class="hljs-keyword">val</span> blessingFun:()-&gt;String = &#123;
@@ -368,8 +370,8 @@ blessingFun = &#123;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;National Day&quot;</span>
     <span class="hljs-string">&quot;Happy <span class="hljs-variable">$holiday</span>&quot;</span>
 &#125;</code></pre></div>
-<h4 id="函数参数">函数参数</h4>
-<p>匿名函数需要带参数时，参数的类型放在匿名函数的参数定义中，参数名(形参)放在函数定义中。</p>
+
+<h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><p>匿名函数需要带参数时，参数的类型放在匿名函数的参数定义中，参数名(形参)放在函数定义中。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-comment">//               参数类型   返回值类型  参数名(形参)</span>
 <span class="hljs-keyword">val</span> blessingFun: (String) -&gt; String = &#123; name -&gt;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;New Year&quot;</span>
@@ -378,8 +380,7 @@ blessingFun = &#123;
 println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>))
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Yorick,Happy New Year!</span></code></pre></div>
-<h4 id="it关键字">it关键字</h4>
-<p>定义只有一个参数的匿名函数时，可以用<code>it</code>关键字表示参数名。
+<h4 id="it关键字"><a href="#it关键字" class="headerlink" title="it关键字"></a>it关键字</h4><p>定义只有一个参数的匿名函数时，可以用<code>it</code>关键字表示参数名。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun: (String) -&gt; String = &#123;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;New Year&quot;</span>
     <span class="hljs-comment">// it关键字表示参数名</span>
@@ -387,9 +388,9 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>))
 &#125;
 println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>))
 <span class="hljs-comment">// 输出</span>
-<span class="hljs-comment">// Yorick,Happy New Year!</span></code></pre></div></p>
-<h3 id="类型推断">类型推断</h3>
-<p>定义变量时，如果已把匿名函数作为变量赋值，就不需要显式指明变量类型。
+<span class="hljs-comment">// Yorick,Happy New Year!</span></code></pre></div>
+
+<h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>定义变量时，如果已把匿名函数作为变量赋值，就不需要显式指明变量类型。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun = &#123;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;National Day&quot;</span>
     <span class="hljs-string">&quot;Happy <span class="hljs-variable">$holiday</span>&quot;</span>
@@ -397,16 +398,16 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>))
 println(blessingFun())
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Happy National Day</span></code></pre></div>
-当匿名函数有参数时，也可以省略变量类型，但是在匿名函数內要定义参数类型。</p>
+<p>当匿名函数有参数时，也可以省略变量类型，但是在匿名函数內要定义参数类型。</p>
 <ul>
-<li>不省略变量类型 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun:(String,<span class="hljs-built_in">Int</span>)-&gt;String=&#123;name,year-&gt;
+<li>不省略变量类型<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun:(String,<span class="hljs-built_in">Int</span>)-&gt;String=&#123;name,year-&gt;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;New Year&quot;</span>
     <span class="hljs-string">&quot;<span class="hljs-variable">$name</span>,Happy <span class="hljs-variable">$holiday</span> <span class="hljs-variable">$year</span>!&quot;</span>
 &#125;
 println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span class="hljs-number">2022</span>))
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Yorick,Happy New Year 2022!</span></code></pre></div></li>
-<li>省略变量类型 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun = &#123; name: String, year: <span class="hljs-built_in">Int</span> -&gt;
+<li>省略变量类型<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">val</span> blessingFun = &#123; name: String, year: <span class="hljs-built_in">Int</span> -&gt;
     <span class="hljs-keyword">val</span> holiday = <span class="hljs-string">&quot;New Year&quot;</span>
     <span class="hljs-string">&quot;<span class="hljs-variable">$name</span>,Happy <span class="hljs-variable">$holiday</span> <span class="hljs-variable">$year</span>!&quot;</span>
 &#125;
@@ -414,10 +415,8 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Yorick,Happy New Year 2022!</span></code></pre></div></li>
 </ul>
-<h3 id="什么是lambda">什么是lambda</h3>
-<p>我们将匿名函数称为lambda，将它的定义称为lambda表达式，它返回的数据称为lambda结果。</p>
-<h3 id="定义参数是函数的函数">定义参数是函数的函数</h3>
-<p>函数的参数是另一个函数</p>
+<h3 id="什么是lambda"><a href="#什么是lambda" class="headerlink" title="什么是lambda"></a>什么是lambda</h3><p>我们将匿名函数称为lambda，将它的定义称为lambda表达式，它返回的数据称为lambda结果。</p>
+<h3 id="定义参数是函数的函数"><a href="#定义参数是函数的函数" class="headerlink" title="定义参数是函数的函数"></a>定义参数是函数的函数</h3><p>函数的参数是另一个函数</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> getRefreshWords = &#123; name: String, sec: <span class="hljs-built_in">Int</span> -&gt;
         <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;name&#125;</span>还有<span class="hljs-subst">$&#123;sec&#125;</span>秒刷新！&quot;</span>
@@ -432,7 +431,7 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
 <span class="hljs-comment">// 输出示例</span>
 <span class="hljs-comment">// 主宰还有18秒刷新！</span></code></pre></div>
 <p>可怕的是，它还有省略写法！</p>
-<p>如果一个函数的lambda参数排在最后，或者是唯一的参数，那么括住lambda值参的一对圆括号就可以稍等。
+<p>如果一个函数的lambda参数排在最后，或者是唯一的参数，那么括住lambda值参的一对圆括号就可以稍等。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     showOnBoard(<span class="hljs-string">&quot;主宰&quot;</span>) &#123; name: String, sec: <span class="hljs-built_in">Int</span> -&gt;
         <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;name&#125;</span>还有<span class="hljs-subst">$&#123;sec&#125;</span>秒刷新！&quot;</span>
@@ -444,10 +443,10 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
     println(getRefreshWords(name, sec))
 &#125;
 <span class="hljs-comment">// 输出示例</span>
-<span class="hljs-comment">// 主宰还有18秒刷新！</span></code></pre></div> ### 函数內联</p>
-<p>lambda使用方便灵活，但是灵活是有代价的。
-在JVM上，你定义的lambda会以对象的实例形式存在，JVM会为所有同lambda打交道的变量分配内存，这就产生了内存开销，这会带来严重的性能问题。幸运的是，kotlin有一种优化机制叫内联，有了内联，JVM就不需要使用lambda对象实例了，因而避免了变量内存分配。哪里需要使用lambda，编译器就会将函数体复制粘贴到哪里。</p>
-<p>没有使用内联的Kotlin代码 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+<span class="hljs-comment">// 主宰还有18秒刷新！</span></code></pre></div>
+<h3 id="函数內联"><a href="#函数內联" class="headerlink" title="函数內联"></a>函数內联</h3><p>lambda使用方便灵活，但是灵活是有代价的。<br>在JVM上，你定义的lambda会以对象的实例形式存在，JVM会为所有同lambda打交道的变量分配内存，这就产生了内存开销，这会带来严重的性能问题。幸运的是，kotlin有一种优化机制叫内联，有了内联，JVM就不需要使用lambda对象实例了，因而避免了变量内存分配。哪里需要使用lambda，编译器就会将函数体复制粘贴到哪里。</p>
+<p>没有使用内联的Kotlin代码</p>
+<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> getRefreshWords = &#123; name: String, sec: <span class="hljs-built_in">Int</span> -&gt;
         <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;name&#125;</span>还有<span class="hljs-subst">$&#123;sec&#125;</span>秒刷新！&quot;</span>
     &#125;
@@ -457,7 +456,8 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
 <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">showOnBoard</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, getRefreshWords: (<span class="hljs-type">String</span>, <span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">String</span>)</span></span> &#123;
     <span class="hljs-keyword">val</span> sec = (<span class="hljs-number">1.</span><span class="hljs-number">.60</span>).shuffled().last()
     println(getRefreshWords(name, sec))
-&#125;</code></pre></div> 反编译成Java的部分代码
+&#125;</code></pre></div>
+<p>反编译成Java的部分代码</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AnonymousFunc2Kt</span> &#123;
    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;
       <span class="hljs-type">Function2</span> <span class="hljs-variable">getRefreshWords</span> <span class="hljs-operator">=</span> (Function2)<span class="hljs-literal">null</span>.INSTANCE;
@@ -476,11 +476,13 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
       System.out.println(var4);
    &#125;
 &#125;</code></pre></div>
-我们发现main函数里只有两行代码，需要调用实例化后的lambda函数才能运行。</p>
-<p>在函数showOnBoard的private后加入inline <div class="code-wrapper"><pre><code class="hljs Kotlin">...
+<p>我们发现main函数里只有两行代码，需要调用实例化后的lambda函数才能运行。</p>
+<p>在函数showOnBoard的private后加入inline</p>
+<div class="code-wrapper"><pre><code class="hljs Kotlin">...
 <span class="hljs-keyword">private</span> <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">showOnBoard</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, getRefreshWords: (<span class="hljs-type">String</span>, <span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">String</span>)</span></span>
 ...</code></pre></div>
-此时反编译后的Java代码的主方法： <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;
+<p>此时反编译后的Java代码的主方法：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;
     <span class="hljs-type">Function2</span> <span class="hljs-variable">getRefreshWords</span> <span class="hljs-operator">=</span> (Function2)<span class="hljs-literal">null</span>.INSTANCE;
     <span class="hljs-type">String</span> <span class="hljs-variable">name$iv</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;主宰&quot;</span>;
     <span class="hljs-type">int</span> <span class="hljs-variable">$i$f$showOnBoard</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
@@ -489,9 +491,10 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
     <span class="hljs-type">Object</span> <span class="hljs-variable">var5</span> <span class="hljs-operator">=</span> getRefreshWords.invoke(name$iv, sec$iv);
     System.out.println(var5);
 &#125;</code></pre></div>
-我们发现主方法多了很多，这是因为他复制了lambda函数体里的代码，直接运行，不再去实例化lambda函数。</p>
+<p>我们发现主方法多了很多，这是因为他复制了lambda函数体里的代码，直接运行，不再去实例化lambda函数。</p>
 <p>但是，使用lambda递归函数无法内联，因为会导致复制粘贴无限循环，编译会发出警告。</p>
-<p>例如，这里的递归函数就不能使用内联。 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+<p>例如，这里的递归函数就不能使用内联。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, show)
 &#125;
 
@@ -508,9 +511,9 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
         <span class="hljs-comment">// 递归</span>
         add(num2, sum, show)
     &#125;
-&#125;</code></pre></div></p>
-<h3 id="函数引用">函数引用</h3>
-<p>要把函数作为参数传给其他函数使用，除了传lambda表达式，kotlin还提供了其他方法，传递函数引用，函数引用可以把一个具名函数转换成一个值参，可以使用lambda表达式的地方，都可以使用函数引用。
+&#125;</code></pre></div>
+
+<h3 id="函数引用"><a href="#函数引用" class="headerlink" title="函数引用"></a>函数引用</h3><p>要把函数作为参数传给其他函数使用，除了传lambda表达式，kotlin还提供了其他方法，传递函数引用，函数引用可以把一个具名函数转换成一个值参，可以使用lambda表达式的地方，都可以使用函数引用。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// ::表示把一个方法当做一个参数，传递到另一个方法中进行使用，通俗的来讲就是引用一个方法。</span>
     showOnBoard(<span class="hljs-string">&quot;主宰&quot;</span>, ::getRefreshWords)
@@ -523,9 +526,9 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
 <span class="hljs-keyword">private</span> <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">showOnBoard</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, getRefreshWords: (<span class="hljs-type">String</span>, <span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">String</span>)</span></span> &#123;
     <span class="hljs-keyword">val</span> sec = (<span class="hljs-number">1.</span><span class="hljs-number">.60</span>).shuffled().last()
     println(getRefreshWords(name, sec))
-&#125;</code></pre></div></p>
-<h3 id="函数类型作为返回值类型">函数类型作为返回值类型</h3>
-<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+&#125;</code></pre></div>
+
+<h3 id="函数类型作为返回值类型"><a href="#函数类型作为返回值类型" class="headerlink" title="函数类型作为返回值类型"></a>函数类型作为返回值类型</h3><div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> getRefreshWords = configRefreshWords()
     println(getRefreshWords(<span class="hljs-string">&quot;主宰&quot;</span>))
 &#125;
@@ -538,12 +541,12 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
 &#125;
 <span class="hljs-comment">// 输出示例</span>
 <span class="hljs-comment">// 主宰还54有秒刷新！</span></code></pre></div>
-<h3 id="lambda与闭包">lambda与闭包</h3>
-<p>闭包：能够读取其他函数内部变量的函数</p>
+
+<h3 id="lambda与闭包"><a href="#lambda与闭包" class="headerlink" title="lambda与闭包"></a>lambda与闭包</h3><p>闭包：能够读取其他函数内部变量的函数</p>
 <p>在Kotlin中，匿名函数能修改并引用定义在自己的作用域之外的变量。lambda就是匿名函数，所以Kotlin中的lambda就是闭包。</p>
-<h3 id="lambda与内部匿名类">lambda与内部匿名类</h3>
-<p>我们知道Kotlin可以把函数作为另一个函数的参数，那如何用Java实现呢？</p>
-<p>这就要使用Java里的接口和内部类 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;
+<h3 id="lambda与内部匿名类"><a href="#lambda与内部匿名类" class="headerlink" title="lambda与内部匿名类"></a>lambda与内部匿名类</h3><p>我们知道Kotlin可以把函数作为另一个函数的参数，那如何用Java实现呢？</p>
+<p>这就要使用Java里的接口和内部类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaAnonymousClass</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
@@ -565,7 +568,8 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
             <span class="hljs-keyword">return</span> name + <span class="hljs-string">&quot;还有&quot;</span> + sec + <span class="hljs-string">&quot;秒刷新！&quot;</span>;
         &#125;
     &#125;
-&#125;</code></pre></div> 或者使用匿名内部类
+&#125;</code></pre></div>
+<p>或者使用匿名内部类</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaAnonymousClass</span> &#123;
@@ -586,11 +590,12 @@ println(blessingFun(<span class="hljs-string">&quot;Yorick&quot;</span>,<span cl
         <span class="hljs-type">int</span> <span class="hljs-variable">sec</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>().nextInt(<span class="hljs-number">60</span>);
         System.out.println(refreshWords.getRefreshWords(name, sec));
     &#125;
-&#125;</code></pre></div> Java8 以后支持lambda表达式，那么main方法可以写成：
+&#125;</code></pre></div>
+<p>Java8 以后支持lambda表达式，那么main方法可以写成：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
     showOnBoard(<span class="hljs-string">&quot;主宰&quot;</span>, (name, sec) -&gt; name + <span class="hljs-string">&quot;还有&quot;</span> + sec + <span class="hljs-string">&quot;秒刷新！&quot;</span>);
 &#125;</code></pre></div>
-可以看出，还是kotlin的简洁，函数类型可以让开发者少写模式代码，写出更灵活的代码。</p>
+<p>可以看出，还是kotlin的简洁，函数类型可以让开发者少写模式代码，写出更灵活的代码。</p>
 
                 
               </div>

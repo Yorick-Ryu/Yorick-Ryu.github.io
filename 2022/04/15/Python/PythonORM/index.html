@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python编写ORM框架 ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。 要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。 首先来定义Field类，它负责保存数据库表的字段名和字段类型： class">
+    <meta name="description" content="Python编写ORM框架ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。 要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。 首先来定义Field类，它负责保存数据库表的字段名和字段类型： class Field">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python编写ORM框架">
 <meta property="og:url" content="http://yorick.love/2022/04/15/Python/PythonORM/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Python编写ORM框架 ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。 要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。 首先来定义Field类，它负责保存数据库表的字段名和字段类型： class">
+<meta property="og:description" content="Python编写ORM框架ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。 要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。 首先来定义Field类，它负责保存数据库表的字段名和字段类型： class Field">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-04-15T08:17:04.000Z">
@@ -104,7 +104,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -324,11 +328,9 @@
             
               <div class="markdown-body">
                 
-                <h1 id="python编写orm框架">Python编写ORM框架</h1>
-<p>ORM全称“Object Relational
-Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。</p>
+                <h1 id="Python编写ORM框架"><a href="#Python编写ORM框架" class="headerlink" title="Python编写ORM框架"></a>Python编写ORM框架</h1><p>ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。</p>
 <p>要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。</p>
-<p>首先来定义Field类，它负责保存数据库表的字段名和字段类型：
+<p>首先来定义Field类，它负责保存数据库表的字段名和字段类型：</p>
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Field</span>(<span class="hljs-title class_ inherited__">object</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, column_type</span>):
@@ -338,7 +340,7 @@ Mapping”，即对象-关系映射，就是把关系数据库的一行映射为
     <span class="hljs-comment"># __str__方法，重写print()函数返回值</span>
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&lt;%s:%s&gt;&#x27;</span> % (self.__class__.__name__, self.name)</code></pre></div>
-在Field的基础上，进一步定义各种类型的Field，比如StringField，IntegerField等等：
+<p>在Field的基础上，进一步定义各种类型的Field，比如StringField，IntegerField等等：</p>
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">StringField</span>(<span class="hljs-title class_ inherited__">Field</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
@@ -348,7 +350,9 @@ Mapping”，即对象-关系映射，就是把关系数据库的一行映射为
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">IntegerField</span>(<span class="hljs-title class_ inherited__">Field</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
-        <span class="hljs-built_in">super</span>().__init__(name, <span class="hljs-string">&#x27;bigint&#x27;</span>)</code></pre></div> 下一步，就是编写最复杂的ModelMetaclass了： <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ModelMetaclass</span>(<span class="hljs-title class_ inherited__">type</span>):
+        <span class="hljs-built_in">super</span>().__init__(name, <span class="hljs-string">&#x27;bigint&#x27;</span>)</code></pre></div>
+<p>下一步，就是编写最复杂的ModelMetaclass了：</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ModelMetaclass</span>(<span class="hljs-title class_ inherited__">type</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, name, bases, attrs</span>):
         <span class="hljs-comment"># attrs是一个字典，包含Model类及其子类的所有属性</span>
         <span class="hljs-comment"># 排除掉对Model类的修改，只修改其子类</span>
@@ -368,7 +372,8 @@ Mapping”，即对象-关系映射，就是把关系数据库的一行映射为
         attrs[<span class="hljs-string">&#x27;__mappings__&#x27;</span>] = mappings <span class="hljs-comment"># 保存属性和列的映射关系</span>
         attrs[<span class="hljs-string">&#x27;__table__&#x27;</span>] = name <span class="hljs-comment"># 假设表名和类名一致</span>
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">type</span>.__new__(cls, name, bases, attrs)</code></pre></div>
-然后，编写User类的基类Model <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Model</span>(<span class="hljs-built_in">dict</span>, metaclass=ModelMetaclass):
+<p>然后，编写User类的基类Model</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Model</span>(<span class="hljs-built_in">dict</span>, metaclass=ModelMetaclass):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, **kw</span>):
         <span class="hljs-built_in">super</span>(Model, self).__init__(**kw)
@@ -396,23 +401,30 @@ Mapping”，即对象-关系映射，就是把关系数据库的一行映射为
             args.append(<span class="hljs-built_in">getattr</span>(self, k, <span class="hljs-literal">None</span>))
         sql = <span class="hljs-string">&#x27;insert into %s (%s) values (%s)&#x27;</span> % (self.__table__, <span class="hljs-string">&#x27;,&#x27;</span>.join(fields), <span class="hljs-string">&#x27;,&#x27;</span>.join(params))
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;SQL: %s&#x27;</span> % sql)
-        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ARGS: %s&#x27;</span> % <span class="hljs-built_in">str</span>(args))</code></pre></div> 最后定义User类 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(<span class="hljs-title class_ inherited__">Model</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ARGS: %s&#x27;</span> % <span class="hljs-built_in">str</span>(args))</code></pre></div>
+<p>最后定义User类</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(<span class="hljs-title class_ inherited__">Model</span>):
     <span class="hljs-comment"># 定义类的属性到列的映射：</span>
     <span class="hljs-built_in">id</span> = IntegerField(<span class="hljs-string">&#x27;id&#x27;</span>)
     name = StringField(<span class="hljs-string">&#x27;username&#x27;</span>)
     email = StringField(<span class="hljs-string">&#x27;email&#x27;</span>)
     password = StringField(<span class="hljs-string">&#x27;password&#x27;</span>)</code></pre></div>
-测试： <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># 创建一个实例：</span>
+<p>测试：</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># 创建一个实例：</span>
 u = User(<span class="hljs-built_in">id</span>=<span class="hljs-number">12345</span>, name=<span class="hljs-string">&#x27;Yorick&#x27;</span>, email=<span class="hljs-string">&#x27;test@orm.org&#x27;</span>, password=<span class="hljs-string">&#x27;my-pwd&#x27;</span>)
 <span class="hljs-comment"># 保存到数据库：</span>
-u.save()</code></pre></div> 输出： <div class="code-wrapper"><pre><code class="hljs py">Found model: User
+u.save()</code></pre></div>
+<p>输出：</p>
+<div class="code-wrapper"><pre><code class="hljs py">Found model: User
 Found mapping: <span class="hljs-built_in">id</span> ==&gt; &lt;IntegerField:<span class="hljs-built_in">id</span>&gt;
 Found mapping: name ==&gt; &lt;StringField:username&gt;
 Found mapping: email ==&gt; &lt;StringField:email&gt;
 Found mapping: password ==&gt; &lt;StringField:password&gt;
 SQL: insert into User (<span class="hljs-built_in">id</span>,username,email,password) values (?,?,?,?)
-ARGS: [<span class="hljs-number">12345</span>, <span class="hljs-string">&#x27;Yorick&#x27;</span>, <span class="hljs-string">&#x27;test@orm.org&#x27;</span>, <span class="hljs-string">&#x27;my-pwd&#x27;</span>]</code></pre></div></p>
-<p>完整代码： <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Field</span>(<span class="hljs-title class_ inherited__">object</span>):
+ARGS: [<span class="hljs-number">12345</span>, <span class="hljs-string">&#x27;Yorick&#x27;</span>, <span class="hljs-string">&#x27;test@orm.org&#x27;</span>, <span class="hljs-string">&#x27;my-pwd&#x27;</span>]</code></pre></div>
+
+<p>完整代码：</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Field</span>(<span class="hljs-title class_ inherited__">object</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, column_type</span>):
         self.name = name
         self.column_type = column_type
@@ -489,8 +501,7 @@ ARGS: [<span class="hljs-number">12345</span>, <span class="hljs-string">&#x27;Y
 <span class="hljs-comment"># 创建一个实例：</span>
 u = User(<span class="hljs-built_in">id</span>=<span class="hljs-number">12345</span>, name=<span class="hljs-string">&#x27;Yorick&#x27;</span>, email=<span class="hljs-string">&#x27;test@orm.org&#x27;</span>, password=<span class="hljs-string">&#x27;my-pwd&#x27;</span>)
 <span class="hljs-comment"># 保存到数据库：</span>
-u.save()</code></pre></div></p>
-
+u.save()</code></pre></div>
                 
               </div>
             

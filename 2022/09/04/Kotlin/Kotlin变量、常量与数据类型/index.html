@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="变量、常量与数据类型  变量、常量与数据类型  声明变量 内置数据类型 类型推断 编译时常量 Kotlin的引用类型与基本数据类型   声明变量        var        max   :    Int      &#x3D;     5; &#x2F;&#x2F; 变量定义关键字 变量名  : 类型定义 赋值运算符 赋值; 声明可变变量关键字：var 声明只读变量关键字：val 内置数据">
+    <meta name="description" content="变量、常量与数据类型 变量、常量与数据类型 声明变量 内置数据类型 类型推断 编译时常量 Kotlin的引用类型与基本数据类型    声明变量       var        max   :    Int      &#x3D;     5; &#x2F;&#x2F; 变量定义关键字 变量名  : 类型定义 赋值运算符 赋值; 声明可变变量关键字：var声明只读变量关键字：val 内置数据类型   类型 描述 示例    S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin变量、常量与数据类型">
 <meta property="og:url" content="http://yorick.love/2022/09/04/Kotlin/Kotlin%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="变量、常量与数据类型  变量、常量与数据类型  声明变量 内置数据类型 类型推断 编译时常量 Kotlin的引用类型与基本数据类型   声明变量        var        max   :    Int      &#x3D;     5; &#x2F;&#x2F; 变量定义关键字 变量名  : 类型定义 赋值运算符 赋值; 声明可变变量关键字：var 声明只读变量关键字：val 内置数据">
+<meta property="og:description" content="变量、常量与数据类型 变量、常量与数据类型 声明变量 内置数据类型 类型推断 编译时常量 Kotlin的引用类型与基本数据类型    声明变量       var        max   :    Int      &#x3D;     5; &#x2F;&#x2F; 变量定义关键字 变量名  : 类型定义 赋值运算符 赋值; 声明可变变量关键字：var声明只读变量关键字：val 内置数据类型   类型 描述 示例    S">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-04T10:08:40.000Z">
@@ -102,7 +102,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -252,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          630 字
+          627 字
         
       </span>
     
@@ -322,83 +326,74 @@
             
               <div class="markdown-body">
                 
-                <h2 id="变量常量与数据类型">变量、常量与数据类型</h2>
-<ul>
-<li><a href="#变量常量与数据类型">变量、常量与数据类型</a>
-<ul>
-<li><a href="#声明变量">声明变量</a></li>
-<li><a href="#内置数据类型">内置数据类型</a></li>
-<li><a href="#类型推断">类型推断</a></li>
-<li><a href="#编译时常量">编译时常量</a></li>
-<li><a
-href="#kotlin的引用类型与基本数据类型">Kotlin的引用类型与基本数据类型</a></li>
-</ul></li>
+                <h2 id="变量、常量与数据类型"><a href="#变量、常量与数据类型" class="headerlink" title="变量、常量与数据类型"></a>变量、常量与数据类型</h2><ul>
+<li><a href="#%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">变量、常量与数据类型</a><ul>
+<li><a href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F">声明变量</a></li>
+<li><a href="#%E5%86%85%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">内置数据类型</a></li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">类型推断</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E6%97%B6%E5%B8%B8%E9%87%8F">编译时常量</a></li>
+<li><a href="#kotlin%E7%9A%84%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Kotlin的引用类型与基本数据类型</a></li>
 </ul>
-<h3 id="声明变量">声明变量</h3>
-<div class="code-wrapper"><pre><code class="hljs kotlin">       <span class="hljs-keyword">var</span>        max   :    <span class="hljs-built_in">Int</span>      =     <span class="hljs-number">5</span>;
+</li>
+</ul>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><div class="code-wrapper"><pre><code class="hljs kotlin">       <span class="hljs-keyword">var</span>        max   :    <span class="hljs-built_in">Int</span>      =     <span class="hljs-number">5</span>;
 <span class="hljs-comment">// 变量定义关键字 变量名  : 类型定义 赋值运算符 赋值;</span></code></pre></div>
-<p>声明可变变量关键字：<code>var</code>
-声明只读变量关键字：<code>val</code></p>
-<h3 id="内置数据类型">内置数据类型</h3>
-<table>
+<p>声明可变变量关键字：<code>var</code><br>声明只读变量关键字：<code>val</code></p>
+<h3 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h3><table>
 <thead>
-<tr class="header">
+<tr>
 <th>类型</th>
 <th>描述</th>
 <th>示例</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
+<tbody><tr>
 <td>String</td>
 <td>字符串</td>
-<td>"Hello World"</td>
+<td>“Hello World”</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Char</td>
 <td>单字符</td>
-<td>'A'</td>
+<td>‘A’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Boolean</td>
 <td>true false</td>
 <td>true false</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Int</td>
 <td>整数</td>
 <td>5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Double</td>
 <td>小数</td>
 <td>3.14</td>
 </tr>
-<tr class="even">
+<tr>
 <td>List</td>
 <td>元素集合</td>
-<td>1,8,10 "Jack","rose","Jack"</td>
+<td>1,8,10 “Jack”,”rose”,”Jack”</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Set</td>
 <td>无重复元素的集合</td>
-<td>"Jack","Jason","Jacky"</td>
+<td>“Jack”,”Jason”,”Jacky”</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Map</td>
 <td>键值对集合</td>
-<td>"small" to 5, "medium" to 8, "large" to 9</td>
+<td>“small” to 5, “medium” to 8, “large” to 9</td>
 </tr>
-</tbody>
-</table>
-<h3 id="类型推断">类型推断</h3>
-<p>允许省略类型定义，如： <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;Yorick&quot;</span>;</code></pre></div> ### 编译时常量</p>
-<p>只读变量并非绝对只读。</p>
+</tbody></table>
+<h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>允许省略类型定义，如：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;Yorick&quot;</span>;</code></pre></div>
+<h3 id="编译时常量"><a href="#编译时常量" class="headerlink" title="编译时常量"></a>编译时常量</h3><p>只读变量并非绝对只读。</p>
 <p>编译时常量只能在函数之外定义，因为编译时常量必须在编译时赋值，而函数都是在运行时才调用，函数内的变量也是在运行时赋值，编译时常量要在这些变量赋值前就已存在。</p>
 <p>编译时常量只能是常见的基本数据类型：String、Int、Double、Float、Long、Short、Byte、Char、Boolean。</p>
-<h3
-id="kotlin的引用类型与基本数据类型">Kotlin的引用类型与基本数据类型</h3>
-<p>Java有两种数据类型：引用类型与基本数据类型。</p>
+<h3 id="Kotlin的引用类型与基本数据类型"><a href="#Kotlin的引用类型与基本数据类型" class="headerlink" title="Kotlin的引用类型与基本数据类型"></a>Kotlin的引用类型与基本数据类型</h3><p>Java有两种数据类型：引用类型与基本数据类型。</p>
 <p>Kotlin只提供引用类型这一种数据类型，出于更高性能的需要，Kotlin编译器会在Java字节码中改用基本数据类型。</p>
 
                 

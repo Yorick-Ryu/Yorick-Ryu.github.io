@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SeekBar [TOC] 参考：  SeekBar | Android Developers (google.cn) Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)  Seekbar介绍 Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设">
+    <meta name="description" content="SeekBar[TOC] 参考：  SeekBar  | Android Developers (google.cn) Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)  Seekbar介绍Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android_SeekBar">
 <meta property="og:url" content="http://yorick.love/2022/11/29/Android/Android_SeekBar/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="SeekBar [TOC] 参考：  SeekBar | Android Developers (google.cn) Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)  Seekbar介绍 Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设">
+<meta property="og:description" content="SeekBar[TOC] 参考：  SeekBar  | Android Developers (google.cn) Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)  Seekbar介绍Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221129173639697.png">
 <meta property="article:published_time" content="2022-11-29T10:58:11.000Z">
@@ -105,7 +105,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -255,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          2.6k 字
         
       </span>
     
@@ -325,42 +329,24 @@
             
               <div class="markdown-body">
                 
-                <h1 id="seekbar">SeekBar</h1>
-<p>[TOC]</p>
+                <h1 id="SeekBar"><a href="#SeekBar" class="headerlink" title="SeekBar"></a>SeekBar</h1><p>[TOC]</p>
 <p><strong>参考：</strong></p>
 <ul>
-<li><a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/widget/SeekBar?hl=en">SeekBar
-| Android Developers (google.cn)</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://verytoolz.com/blog/cf7594a53a/#:~:text=SeekBar">Kotlin
-中的 SeekBar | 码农参考 (verytoolz.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/android/widget/SeekBar?hl=en">SeekBar  | Android Developers (google.cn)</a></li>
+<li><a target="_blank" rel="noopener" href="https://verytoolz.com/blog/cf7594a53a/#:~:text=SeekBar">Kotlin 中的 SeekBar | 码农参考 (verytoolz.com)</a></li>
 </ul>
-<h2 id="seekbar介绍">Seekbar介绍</h2>
-<p>Android seekBar 是progressBar
-的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度控制、音量控制等。</p>
-<p>它是重要的用户界面元素之一，它提供了在定义的范围内选择整数值的功能，例如
-1 到 100。</p>
-<p>通过在 SeekBar 中拖动拇指，我们可以来回滑动，在使用
-<code>android:min</code> 和 <code>android:max</code>
-属性定义的最小和最大整数值之间选择一个值。</p>
+<h2 id="Seekbar介绍"><a href="#Seekbar介绍" class="headerlink" title="Seekbar介绍"></a>Seekbar介绍</h2><p>Android seekBar 是progressBar 的修改版本，具有可拖动的拇指，用户可以在其中来回拖动拇指以设置当前进度值。我们可以在我们的安卓设备中使用控制栏，比如亮度控制、音量控制等。</p>
+<p>它是重要的用户界面元素之一，它提供了在定义的范围内选择整数值的功能，例如 1 到 100。</p>
+<p>通过在 SeekBar 中拖动拇指，我们可以来回滑动，在使用 <code>android:min</code> 和 <code>android:max</code> 属性定义的最小和最大整数值之间选择一个值。</p>
 <p>使用<code>android:progress</code>定义初始值。</p>
 <p>在控件列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。</p>
-<figure>
-<img src="./img/image-20221129173639697.png" srcset="/img/loading.gif" lazyload
-alt="image-20221129173639697" />
-<figcaption aria-hidden="true">image-20221129173639697</figcaption>
-</figure>
-<h2 id="使用seekbar">使用SeekBar</h2>
-<p>以两个SeekBar数据同步为例。</p>
-<ol type="1">
-<li><p>创建项目，打开<code>activity_main.xml</code>的Design界面，</p></li>
+<p><img src="/./img/image-20221129173639697.png" srcset="/img/loading.gif" lazyload alt="image-20221129173639697"></p>
+<h2 id="使用SeekBar"><a href="#使用SeekBar" class="headerlink" title="使用SeekBar"></a>使用SeekBar</h2><p>以两个SeekBar数据同步为例。</p>
+<ol>
+<li><p>创建项目，打开<code>activity_main.xml</code>的Design界面，</p>
+</li>
 <li><p>在Widgets列表中有两种SeekBar可供选择，一种是连续的，一种是离散的。根据需要选择不同的类型。这里我们都选上并约束布局。</p>
-<figure>
-<img src="./img/image-20221129173639697.png" srcset="/img/loading.gif" lazyload
-alt="image-20221129173639697" />
-<figcaption aria-hidden="true">image-20221129173639697</figcaption>
-</figure>
+<p><img src="/./img/image-20221129173639697.png" srcset="/img/loading.gif" lazyload alt="image-20221129173639697"></p>
 <ul>
 <li><p>SeekBar连续</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span>
@@ -374,7 +360,8 @@ alt="image-20221129173639697" />
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintHorizontal_bias</span>=<span class="hljs-string">&quot;0.5&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.8&quot;</span> /&gt;</span></code></pre></div></li>
+<span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.8&quot;</span> /&gt;</span></code></pre></div>
+</li>
 <li><p>SeekBar离散</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">SeekBar</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/seekBar&quot;</span></span>
@@ -388,7 +375,8 @@ alt="image-20221129173639697" />
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.9&quot;</span> /&gt;</span></code></pre></div></li>
-</ul></li>
+</ul>
+</li>
 <li><p>在对应的Activity或者Fragment中绑定控件</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;
     <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> seekBar: SeekBar
@@ -399,11 +387,13 @@ alt="image-20221129173639697" />
         seekBar = findViewById(R.id.seekBar)
         seekBar2 = findViewById(R.id.seekBar2)
     &#125;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 <li><p>让两个控件的进度一致，在<code>onCreate</code>加入以下代码</p>
 <div class="note note-warning">
             <p>注意默认的TODO要删掉</p>
           </div>
+
 <div class="code-wrapper"><pre><code class="hljs kotlin">seekBar.progress = seekBar2.progress / <span class="hljs-number">10</span>
 
 seekBar.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : OnSeekBarChangeListener &#123;
@@ -426,8 +416,10 @@ seekBar2.setOnSeekBarChangeListener(<span class="hljs-keyword">object</span> : O
     &#125;
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onStopTrackingTouch</span><span class="hljs-params">(seekBar: <span class="hljs-type">SeekBar</span>?)</span></span> &#123;
     &#125;
-&#125;)</code></pre></div></li>
-<li><p><code>build</code>并运行，发现实现了两个SeekBar数据同步的效果。</p></li>
+&#125;)</code></pre></div>
+</li>
+<li><p><code>build</code>并运行，发现实现了两个SeekBar数据同步的效果。</p>
+</li>
 </ol>
 
                 

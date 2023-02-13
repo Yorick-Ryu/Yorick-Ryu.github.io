@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LiveData LiveData | Android Developers (google.cn) [TOC] LiveData的定义 LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更">
+    <meta name="description" content="LiveDataLiveData  | Android Developers (google.cn) [TOC] LiveData的定义LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LiveData">
 <meta property="og:url" content="http://yorick.love/2022/11/05/Android/AndroidLiveData/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="LiveData LiveData | Android Developers (google.cn) [TOC] LiveData的定义 LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更">
+<meta property="og:description" content="LiveDataLiveData  | Android Developers (google.cn) [TOC] LiveData的定义LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/android-jetpack.svg">
 <meta property="article:published_time" content="2022-11-05T12:42:55.000Z">
@@ -105,7 +105,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -325,27 +329,16 @@
             
               <div class="markdown-body">
                 
-                <h1 id="livedata">LiveData</h1>
-<p><a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/LiveData">LiveData
-| Android Developers (google.cn)</a></p>
+                <h1 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/lifecycle/LiveData">LiveData  | Android Developers (google.cn)</a></p>
 <p>[TOC]</p>
-<h2 id="livedata的定义">LiveData的定义</h2>
-<p><a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/LiveData"><code>LiveData</code></a>
-是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有<a
-target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=生命周期&amp;spm=1001.2101.3001.7020">生命周期</a>感知能力，意指它遵循其他应用组件（如
-Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData
-仅更新处于活跃生命周期状态的应用组件观察者。</p>
+<h2 id="LiveData的定义"><a href="#LiveData的定义" class="headerlink" title="LiveData的定义"></a>LiveData的定义</h2><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/LiveData"><code>LiveData</code></a> 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F&spm=1001.2101.3001.7020">生命周期</a>感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期状态的应用组件观察者。</p>
 <p>从上述定义可以知道：</p>
 <ul>
 <li>LiveData 是一个<code>可观察</code>的<code>数据存储类</code>；</li>
 <li>LiveData 具有<code>生命周期感知</code>能力；</li>
-<li>LivaData
-<code>仅更新</code>处于<code>活跃生命周期状态（ STARTED 或 RESUMED 状态）</code>的应用组件观察者。</li>
+<li>LivaData <code>仅更新</code>处于<code>活跃生命周期状态（ STARTED 或 RESUMED 状态）</code>的应用组件观察者。</li>
 </ul>
-<h2 id="livedata的优势">LiveData的优势</h2>
-<ul>
+<h2 id="LiveData的优势"><a href="#LiveData的优势" class="headerlink" title="LiveData的优势"></a>LiveData的优势</h2><ul>
 <li>确保界面符合数据状态；</li>
 <li>不会发生内存泄漏；</li>
 <li>不会因 Activity 的停止而导致崩溃</li>
@@ -354,28 +347,16 @@ Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 
 <li>共享资源</li>
 <li>适当的配置修改</li>
 </ul>
-<h2 id="livedata的使用">LiveData的使用</h2>
-<h3 id="livedata-基本使用">LiveData 基本使用</h3>
-<p>类型为 LiveData 的对象没有公开的方法给更新其 value，要想更新 LiveData
-对象的 value，需要使用 类型为 MutableLiveData 的LiveData 对象，其提供了
-<a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#setValue(T)"><code>setValue(T)</code></a>
-和 <a
-target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#postValue(T)"><code>postValue(T)</code></a>
-方法，其中如果想在多线程中更新数据只能使用 <code>postValue(T)</code>
-方法。</p>
+<h2 id="LiveData的使用"><a href="#LiveData的使用" class="headerlink" title="LiveData的使用"></a>LiveData的使用</h2><h3 id="LiveData-基本使用"><a href="#LiveData-基本使用" class="headerlink" title="LiveData 基本使用"></a>LiveData 基本使用</h3><p>类型为 LiveData 的对象没有公开的方法给更新其 value，要想更新 LiveData 对象的 value，需要使用 类型为 MutableLiveData 的LiveData 对象，其提供了 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#setValue(T)"><code>setValue(T)</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/lifecycle/MutableLiveData#postValue(T)"><code>postValue(T)</code></a> 方法，其中如果想在多线程中更新数据只能使用 <code>postValue(T)</code> 方法。</p>
 <p>使用步骤主要分三步：</p>
-<ol type="1">
+<ol>
 <li>创建 LiveData 对象实例（常在 ViewModel 中）；</li>
 <li>创建 Observer 对象（常在 Activity 或者 Fragment 中）；</li>
-<li>使用 observer() 方法将 Observer 对象附加到 LiveData 对象（通常在
-Activity 或者 Fragment 中）。</li>
+<li>使用 observer() 方法将 Observer 对象附加到 LiveData 对象（通常在 Activity 或者 Fragment 中）。</li>
 </ol>
 <p>示例：</p>
-<ol type="1">
-<li><p>创建 LiveData 对象实例（常在 ViewModel 中），由于将可变的
-LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的
-LiveData 类型对外部进行提供；</p>
+<ol>
+<li><p>创建 LiveData 对象实例（常在 ViewModel 中），由于将可变的 LiveData 暴露给外部是不安全的，因此常见的作法是将其转换为不可变的 LiveData 类型对外部进行提供；</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ViewModelWithLiveData</span> : <span class="hljs-type">ViewModel</span>() &#123;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _likedNumber = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()
     <span class="hljs-keyword">val</span> likedNumber: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;
@@ -389,21 +370,11 @@ LiveData 类型对外部进行提供；</p>
         _likedNumber.value = _likedNumber.value?.plus(n)
     &#125;
 &#125;</code></pre></div>
-<p>将用来用来界面展示的可更新的数据 LiveData 对象创建在 ViewModel
-中，而不是创建在对应的 Activity 或 <a
-target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Fragment&amp;spm=1001.2101.3001.7020">Fragment</a>
-中是为了避免是的对应的 Activity 或 Fragment
-太过庞大不易后续维护，同时将其实例和 Activity 或 Fragment 分开可以使得
-LiveData 对象在配置更改后继续存在。</p></li>
-<li><p>通常在 Activity 或者 Fragment
-中的<code>onCreate()</code>方法中进行 Observer 对象的创建并将其附加到
-LiveData 对象，这样做是为了系统不会从 Activity 或 Fragment 的
-<code>onResume()</code> 方法进行冗余调用（从生命周期图中可以看出
-onCreate() 的执行的次数一般是少于 onResume() 的）。</p>
-<p>同时其作用为当 Activity 或 Fragment
-在变为活跃状态后就具有可以立即显示的数据，当应用组件处于 STARTED
-状态，就会从正在观察的 LiveData
-对象接收最新的数据。观察示例代码如下：</p>
+
+<p>将用来用来界面展示的可更新的数据 LiveData 对象创建在 ViewModel 中，而不是创建在对应的 Activity 或 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Fragment&spm=1001.2101.3001.7020">Fragment</a> 中是为了避免是的对应的 Activity 或 Fragment 太过庞大不易后续维护，同时将其实例和 Activity 或 Fragment 分开可以使得 LiveData 对象在配置更改后继续存在。</p>
+</li>
+<li><p>通常在 Activity  或者 Fragment 中的<code>onCreate()</code>方法中进行 Observer 对象的创建并将其附加到 LiveData 对象，这样做是为了系统不会从 Activity 或 Fragment 的 <code>onResume()</code> 方法进行冗余调用（从生命周期图中可以看出 onCreate() 的执行的次数一般是少于 onResume() 的）。</p>
+<p>同时其作用为当 Activity 或 Fragment 在变为活跃状态后就具有可以立即显示的数据，当应用组件处于 STARTED 状态，就会从正在观察的 LiveData 对象接收最新的数据。观察示例代码如下：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> viewModelWithLiveData <span class="hljs-keyword">by</span> lazy &#123;
         ViewModelProvider(<span class="hljs-keyword">this</span>).<span class="hljs-keyword">get</span>(ViewModelWithLiveData::<span class="hljs-keyword">class</span>.java)
@@ -431,21 +402,15 @@ onCreate() 的执行的次数一般是少于 onResume() 的）。</p>
     &#125;
 &#125;</code></pre></div></li>
 </ol>
-<h3 id="转换-livedata">转换 LiveData</h3>
-<p>对于转换 LiveData 来说，可以使用 Transformations 提供的 map() 与
-switchMap() 方法。</p>
+<h3 id="转换-LiveData"><a href="#转换-LiveData" class="headerlink" title="转换 LiveData"></a>转换 LiveData</h3><p>对于转换 LiveData 来说，可以使用 Transformations 提供的 map() 与 switchMap() 方法。</p>
 <ul>
-<li><p>map()
-方法主要应用在给你提供的信息内容较多，但是我们只需要其内容的一部分这种情况。例如有一个
-User 类，其属性有姓名，年龄，性别等，但是我们只需要姓名，就可以使用
-map()。</p>
+<li><p>map() 方法主要应用在给你提供的信息内容较多，但是我们只需要其内容的一部分这种情况。例如有一个 User 类，其属性有姓名，年龄，性别等，但是我们只需要姓名，就可以使用 map()。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> userLiveData: LiveData&lt;User&gt; = UserLiveData()
 <span class="hljs-keyword">val</span> userName: LiveData&lt;String&gt; = Transformations.map(userLiveData) &#123;
     user -&gt; <span class="hljs-string">&quot;<span class="hljs-subst">$&#123;user.name&#125;</span>&quot;</span>
-&#125;</code></pre></div></li>
-<li><p>switchMap() 方法则更多的适用于 ViewModel 中的某个 LiveData
-对象是调用其他的方法获取到的，此时可以使用 switchMap()
-方法将其转换为一个可观察的 LiveData 对象。</p>
+&#125;</code></pre></div>
+</li>
+<li><p>switchMap() 方法则更多的适用于 ViewModel 中的某个 LiveData 对象是调用其他的方法获取到的，此时可以使用 switchMap() 方法将其转换为一个可观察的 LiveData 对象。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getUser</span><span class="hljs-params">(id: <span class="hljs-type">String</span>)</span></span>: LiveData&lt;User&gt; &#123;
   ...
 &#125;
