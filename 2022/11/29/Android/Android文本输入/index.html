@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="文本输入 文本输入 编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多">
+    <meta name="description" content="文本输入  文本输入  编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText 编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android文本输入">
 <meta property="og:url" content="http://yorick.love/2022/11/29/Android/Android%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="文本输入 文本输入 编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多">
+<meta property="og:description" content="文本输入  文本输入  编辑框EditText 焦点变更监听器 文本变化监听器 TextInputEditText    编辑框EditText 编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。  inputType:指定输入的文本类型。输入类型的取值说明见表，若同时">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-11-29T10:54:43.000Z">
@@ -105,11 +105,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -259,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.7k 字
         
       </span>
     
@@ -329,8 +325,10 @@
             
               <div class="markdown-body">
                 
-                <h1 id="文本输入"><a href="#文本输入" class="headerlink" title="文本输入"></a>文本输入</h1><ul>
-<li><a href="#%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5">文本输入</a><ul>
+                <h1>文本输入</h1>
+<ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5">文本输入</a>
+<ul>
 <li><a href="#%E7%BC%96%E8%BE%91%E6%A1%86edittext">编辑框EditText</a></li>
 <li><a href="#%E7%84%A6%E7%82%B9%E5%8F%98%E6%9B%B4%E7%9B%91%E5%90%AC%E5%99%A8">焦点变更监听器</a></li>
 <li><a href="#%E6%96%87%E6%9C%AC%E5%8F%98%E5%8C%96%E7%9B%91%E5%90%AC%E5%99%A8">文本变化监听器</a></li>
@@ -338,9 +336,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="编辑框EditText"><a href="#编辑框EditText" class="headerlink" title="编辑框EditText"></a>编辑框EditText</h2><p>编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。</p>
+<h2 id="编辑框EditText">编辑框EditText</h2>
+<p>编辑框EditText用于接收软键盘输入的文字，例如用户名、密码、评价内容等，它由文本视图派生而来，除了TextView已有的各种属性和方法，EditText还支持下列XML属性。</p>
 <ul>
-<li>inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多种文本类型，则可使用竖线”|”把多种文本类型拼接起来。</li>
+<li>inputType:指定输入的文本类型。输入类型的取值说明见表，若同时使用多种文本类型，则可使用竖线&quot;|&quot;把多种文本类型拼接起来。</li>
 <li>maxLength:指定文本允许输入的最大长度。</li>
 <li>hint:指定提示文本的内容。</li>
 <li>textColorHint:指定提示文本的颜色。</li>
@@ -352,13 +351,14 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>text</td>
 <td>文本</td>
 </tr>
 <tr>
 <td>textPassword</td>
-<td>文本密码。显示时用圆点”·”代替</td>
+<td>文本密码。显示时用圆点&quot;·&quot;代替</td>
 </tr>
 <tr>
 <td>number</td>
@@ -366,7 +366,7 @@
 </tr>
 <tr>
 <td>numberSigned</td>
-<td>带符号的数字。允许在开头带负号”- “</td>
+<td>带符号的数字。允许在开头带负号&quot;- &quot;</td>
 </tr>
 <tr>
 <td>numberDecimal</td>
@@ -374,7 +374,7 @@
 </tr>
 <tr>
 <td>numberPassword</td>
-<td>数字密码。显示时用圆点”·”代替</td>
+<td>数字密码。显示时用圆点&quot;·&quot;代替</td>
 </tr>
 <tr>
 <td>datetime</td>
@@ -382,26 +382,30 @@
 </tr>
 <tr>
 <td>date</td>
-<td>日期格式。除了数字外，还允许输入横线”-“和斜杆”&#x2F;“</td>
+<td>日期格式。除了数字外，还允许输入横线&quot;-“和斜杆”/&quot;</td>
 </tr>
 <tr>
 <td>time</td>
-<td>时间格式。除了数字外，还允许输入冒号”:”</td>
+<td>时间格式。除了数字外，还允许输入冒号&quot;:&quot;</td>
 </tr>
-</tbody></table>
-<h2 id="焦点变更监听器"><a href="#焦点变更监听器" class="headerlink" title="焦点变更监听器"></a>焦点变更监听器</h2><p>编辑框点击两次后才会触发点击事件，因为第一次点击只触发焦点变更事件，第二次点击才触发点击事件。</p>
+</tbody>
+</table>
+<h2 id="焦点变更监听器">焦点变更监听器</h2>
+<p>编辑框点击两次后才会触发点击事件，因为第一次点击只触发焦点变更事件，第二次点击才触发点击事件。</p>
 <p>若要判断是否切换编辑框输入，应当监听焦点变更事件，而非监听点击事件。</p>
 <p>调用编辑框对象的setOnFocusChangeListener方法，即可在光标切换之时（获得光标和失去光标）触发焦点变更事件。</p>
 <p>应用：用于限制文本长度</p>
-<h2 id="文本变化监听器"><a href="#文本变化监听器" class="headerlink" title="文本变化监听器"></a>文本变化监听器</h2><p>调用编辑框对象的addTextChangedListener方法即可注册文本监听器。</p>
+<h2 id="文本变化监听器">文本变化监听器</h2>
+<p>调用编辑框对象的addTextChangedListener方法即可注册文本监听器。</p>
 <p>文本监听器的接口名称为TextWatcher，该接口提供了3个监控方法，具体说明如下。</p>
 <ul>
 <li>beforeTextChanged：在文本改变之前触发。</li>
-<li>onTextChanged：在文本改变过程中触发。 </li>
+<li>onTextChanged：在文本改变过程中触发。</li>
 <li>afterTextChanged：在文本改变之后触发。</li>
 </ul>
 <p>应用：监听文本位数自动关闭软键盘</p>
-<h2 id="TextInputEditText"><a href="#TextInputEditText" class="headerlink" title="TextInputEditText"></a>TextInputEditText</h2><p>TextInputEditText是遵循Material Design设计的文本输入框。</p>
+<h2 id="TextInputEditText">TextInputEditText</h2>
+<p>TextInputEditText是遵循Material Design设计的文本输入框。</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">com.google.android.material.textfield.TextInputLayout</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>

@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java注解 Java注解 注解概述 基本的Annotation 自定义Annotation 提取Annotation信息 JDK的元Annotation    注解概述Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。Annotation可以像修饰">
+    <meta name="description" content="Java注解  Java注解  注解概述 基本的Annotation 自定义Annotation 提取Annotation信息 JDK的元Annotation    注解概述 Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。 Annotation可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java注解">
 <meta property="og:url" content="http://yorick.love/2022/04/30/Java/Java%E6%B3%A8%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Java注解 Java注解 注解概述 基本的Annotation 自定义Annotation 提取Annotation信息 JDK的元Annotation    注解概述Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。Annotation可以像修饰">
+<meta property="og:description" content="Java注解  Java注解  注解概述 基本的Annotation 自定义Annotation 提取Annotation信息 JDK的元Annotation    注解概述 Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。 Annotation可">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-04-30T02:33:57.000Z">
@@ -104,11 +104,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -328,8 +324,10 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><ul>
-<li><a href="#java%E6%B3%A8%E8%A7%A3">Java注解</a><ul>
+                <h1>Java注解</h1>
+<ul>
+<li><a href="#java%E6%B3%A8%E8%A7%A3">Java注解</a>
+<ul>
 <li><a href="#%E6%B3%A8%E8%A7%A3%E6%A6%82%E8%BF%B0">注解概述</a></li>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84annotation">基本的Annotation</a></li>
 <li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89annotation">自定义Annotation</a></li>
@@ -338,8 +336,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="注解概述"><a href="#注解概述" class="headerlink" title="注解概述"></a>注解概述</h3><p>Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。<br>Annotation可以像修饰符一样被使用，可用于修饰包，类，构造器，方法，成员变量，参数，局部变量的声明，这些信息被保存在Annotation的<code>name = value</code>对中。</p>
-<h3 id="基本的Annotation"><a href="#基本的Annotation" class="headerlink" title="基本的Annotation"></a>基本的Annotation</h3><p>使用Annotation时要在其前面增加@符号，并把该Annotation当成一个修饰符使用，用于修饰它支持的程序元素。  </p>
+<h3 id="注解概述">注解概述</h3>
+<p>Annotation其实就是代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过使用Annotation，程序员可以在不改变原有逻辑的情况下，在源文件中嵌入一些补充信息。<br>
+Annotation可以像修饰符一样被使用，可用于修饰包，类，构造器，方法，成员变量，参数，局部变量的声明，这些信息被保存在Annotation的<code>name = value</code>对中。</p>
+<h3 id="基本的Annotation">基本的Annotation</h3>
+<p>使用Annotation时要在其前面增加@符号，并把该Annotation当成一个修饰符使用，用于修饰它支持的程序元素。</p>
 <p>三个基本的Annotation:</p>
 <ul>
 <li>@Override:限定重写父类方法，该注释只能用于方法。</li>
@@ -370,8 +371,11 @@
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">method1</span><span class="hljs-params">()</span>&#123;&#125;
 &#125;</code></pre></div>
-
-<h3 id="自定义Annotation"><a href="#自定义Annotation" class="headerlink" title="自定义Annotation"></a>自定义Annotation</h3><p>定义新的Annotation类型使用<code>@interface</code>关键字。<br>Annotation的成员变量在Annotation定义中以无参数方法的形式来声明，其方法名和返回值定义了该成员的名字和类型（类似接口方法声明）。<br>可以在定义Annotation的成员变量时为其指定初始值，指定成员变量的初始值可使用default关键字。<br>没有成员定义的Annotation称为标记；包含成员变量的Annotation称为元数据Annotation。</p>
+<h3 id="自定义Annotation">自定义Annotation</h3>
+<p>定义新的Annotation类型使用<code>@interface</code>关键字。<br>
+Annotation的成员变量在Annotation定义中以无参数方法的形式来声明，其方法名和返回值定义了该成员的名字和类型（类似接口方法声明）。<br>
+可以在定义Annotation的成员变量时为其指定初始值，指定成员变量的初始值可使用default关键字。<br>
+没有成员定义的Annotation称为标记；包含成员变量的Annotation称为元数据Annotation。</p>
 <p>实例：</p>
 <p>定义注解HelloAnnotation</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> HelloAnnotation &#123;
@@ -384,8 +388,10 @@
     <span class="hljs-meta">@HelloAnnotation(name = &quot;method&quot;)</span>
     <span class="hljs-keyword">void</span> <span class="hljs-title function_">method1</span><span class="hljs-params">()</span>&#123;&#125;
 &#125;</code></pre></div>
-<h3 id="提取Annotation信息"><a href="#提取Annotation信息" class="headerlink" title="提取Annotation信息"></a>提取Annotation信息</h3><p>反射</p>
-<h3 id="JDK的元Annotation"><a href="#JDK的元Annotation" class="headerlink" title="JDK的元Annotation"></a>JDK的元Annotation</h3><p>JDK的元Annotation用于修饰其他Annotation定义</p>
+<h3 id="提取Annotation信息">提取Annotation信息</h3>
+<p>反射</p>
+<h3 id="JDK的元Annotation">JDK的元Annotation</h3>
+<p>JDK的元Annotation用于修饰其他Annotation定义</p>
 <p>@Retention:只能用于修饰一个Annotation定义，用于指定该Annotation可以保留多长时间，@Rentention包含一个RetentionPolicy类型的成员变量，使用@Rentention时必须为该value成员变量指定值:</p>
 <ul>
 <li>RetentionPolicy.CLASS:编译器将把注释记录在class文件中.当运行Java程序时，JVM不会保留注释。这是默认值</li>
@@ -398,7 +404,8 @@
 <span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> HelloAnnotation &#123;
     <span class="hljs-keyword">public</span> String <span class="hljs-title function_">name</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> <span class="hljs-string">&quot;&quot;</span>;
 &#125;</code></pre></div>
-<p>@Documented:用于指定被该元Annotation修饰的Annotation类将被javadoc工具提取成文档。<br>@Inherited:被它修饰的Annotation将具有继承性。如果某个类使用了被@Inherited修饰的Annotation，则其子类将自动具有该注释</p>
+<p>@Documented:用于指定被该元Annotation修饰的Annotation类将被javadoc工具提取成文档。<br>
+@Inherited:被它修饰的Annotation将具有继承性。如果某个类使用了被@Inherited修饰的Annotation，则其子类将自动具有该注释</p>
 
                 
               </div>

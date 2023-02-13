@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="比特(bit)和字节(bytet)（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3）负">
+    <meta name="description" content="比特(bit)和字节(bytet) （1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码 （1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机基础">
 <meta property="og:url" content="http://yorick.love/2022/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="比特(bit)和字节(bytet)（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3）负">
+<meta property="og:description" content="比特(bit)和字节(bytet) （1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。 （2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。 二进制的原码、反码、补码 （1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°） （2）正数的原码，反码，补码都一样（三码合一） （3">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-07-29T04:58:05.000Z">
@@ -104,11 +104,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -258,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          356 字
+          341 字
         
       </span>
     
@@ -328,12 +324,14 @@
             
               <div class="markdown-body">
                 
-                <h2 id="比特-bit-和字节-bytet"><a href="#比特-bit-和字节-bytet" class="headerlink" title="比特(bit)和字节(bytet)"></a>比特(bit)和字节(bytet)</h2><p>（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。</p>
+                <h2 id="比特-bit-和字节-bytet">比特(bit)和字节(bytet)</h2>
+<p>（1）一个 0 或者一个 1 存储为一个比特(bit)，是计算机中最小的存储单位。</p>
 <p>（2）计算机中是最基本的存储单元是字节(byte)。每个字节由 8 个比特构成。</p>
-<h2 id="二进制的原码、反码、补码"><a href="#二进制的原码、反码、补码" class="headerlink" title="二进制的原码、反码、补码"></a>二进制的原码、反码、补码</h2><p>（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°）</p>
+<h2 id="二进制的原码、反码、补码">二进制的原码、反码、补码</h2>
+<p>（1）二进制的最高位是符号位：0表示正数，1表示负数（老韩口诀：0 -&gt; 0 1 -&gt; - ，旋转90°）</p>
 <p>（2）正数的原码，反码，补码都一样（三码合一）</p>
-<p>（3）负数的反码 &#x3D; 它的原码符号位不变，其它位取反（0 -&gt; 1，1 -&gt; 0）</p>
-<p>（4）负数的补码 &#x3D; 它的反码 +1，负数的反码 &#x3D; 负数的补码 -1</p>
+<p>（3）负数的反码 = 它的原码符号位不变，其它位取反（0 -&gt; 1，1 -&gt; 0）</p>
+<p>（4）负数的补码 = 它的反码 +1，负数的反码 = 负数的补码 -1</p>
 <p>（5）0的反码，补码都是 0</p>
 <p>（6） java没有无符号数，换言之，java中的数都是有符号的</p>
 <p>（7）在计算机运算的时候，都是以补码的方式来运算的。</p>

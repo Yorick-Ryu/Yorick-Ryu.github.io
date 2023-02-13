@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="活动(Activity)  启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初始状态。">
+    <meta name="description" content="活动(Activity)  启停活动页面 Activity的启动和结束  从当前页面跳到新页面，跳转代码如下： startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下： finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期  onCreate：创建活动。把页面布局加载进内存，进入了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android活动（Activity）">
 <meta property="og:url" content="http://yorick.love/2022/11/29/Android/Android%E6%B4%BB%E5%8A%A8%EF%BC%88Activity%EF%BC%89/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="活动(Activity)  启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初始状态。">
+<meta property="og:description" content="活动(Activity)  启停活动页面 Activity的启动和结束  从当前页面跳到新页面，跳转代码如下： startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下： finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期  onCreate：创建活动。把页面布局加载进内存，进入了">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/activity_life_cycle.png">
 <meta property="article:published_time" content="2022-11-29T10:15:48.000Z">
@@ -103,11 +103,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -268,7 +264,7 @@
         
         
         
-          63 分钟
+          64 分钟
         
       </span>
     
@@ -327,53 +323,78 @@
             
               <div class="markdown-body">
                 
-                <h1 id="活动-Activity"><a href="#活动-Activity" class="headerlink" title="活动(Activity)"></a>活动(Activity)</h1><!-- toc -->
-
-<h2 id="启停活动页面"><a href="#启停活动页面" class="headerlink" title="启停活动页面"></a>启停活动页面</h2><h3 id="Activity的启动和结束"><a href="#Activity的启动和结束" class="headerlink" title="Activity的启动和结束"></a>Activity的启动和结束</h3><ul>
-<li>从当前页面跳到新页面，跳转代码如下：<br><code>startActivity(new Intent(源页面.this,目标页面.class));</code></li>
-<li>从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：<br><code>finish();//结束当前的活动页面</code></li>
+                <h1>活动(Activity)</h1>
+<!-- toc -->
+<h2 id="启停活动页面">启停活动页面</h2>
+<h3 id="Activity的启动和结束">Activity的启动和结束</h3>
+<ul>
+<li>从当前页面跳到新页面，跳转代码如下：<br>
+<code>startActivity(new Intent(源页面.this,目标页面.class));</code></li>
+<li>从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：<br>
+<code>finish();//结束当前的活动页面</code></li>
 </ul>
-<h3 id="Activity的生命周期"><a href="#Activity的生命周期" class="headerlink" title="Activity的生命周期"></a>Activity的生命周期</h3><p><img src="/./img/activity_life_cycle.png" srcset="/img/loading.gif" lazyload alt="activity_life_cycle"></p>
-<p>onCreate：创建活动。把页面布局加载进内存，进入了初始状态。<br>onStart：开始活动。把活动页面显示在屏幕上，进入了就绪状态。<br>onResume：恢复活动。活动页面进入活跃状态，能够与用户正常交互，例如允许响应用户的点击动作、允许用户输入文字等等。<br>onPause：暂停活动。页面进入暂停状态，无法与用户正常交互。<br>onStop：停止活动。页面将不在屏幕上显示。<br>onDestroy：销毁活动。回收活动占用的系统资源，把页面从内存中清除。onRestart：重启活动。重新加载内存中的页面数据。<br>onNewlntent：重用已有的活动实例。</p>
+<h3 id="Activity的生命周期">Activity的生命周期</h3>
+<p><img src="./img/activity_life_cycle.png" srcset="/img/loading.gif" lazyload alt="activity_life_cycle"></p>
+<p>onCreate：创建活动。把页面布局加载进内存，进入了初始状态。<br>
+onStart：开始活动。把活动页面显示在屏幕上，进入了就绪状态。<br>
+onResume：恢复活动。活动页面进入活跃状态，能够与用户正常交互，例如允许响应用户的点击动作、允许用户输入文字等等。<br>
+onPause：暂停活动。页面进入暂停状态，无法与用户正常交互。<br>
+onStop：停止活动。页面将不在屏幕上显示。<br>
+onDestroy：销毁活动。回收活动占用的系统资源，把页面从内存中清除。onRestart：重启活动。重新加载内存中的页面数据。<br>
+onNewlntent：重用已有的活动实例。</p>
 <p>如果一个Activity已经启动过，并且存在当前应用的Activity任务栈中，启动模式为singieTask，singlelnstance或singleTop(此时已在任务栈顶端)，那么在此启动或回到这个Activity的时候，不会创建新的实例，也就是不会执行onCreate方法，而是执行onNewlntent方法。</p>
 <p><strong>各状态的切换过程：</strong></p>
-<p><img src="/./img/activity_state.png" srcset="/img/loading.gif" lazyload alt="activity_state"></p>
-<h3 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h3><p>打开AndroidManifest.xml，给activity节点添加属性<code>android:launchMode</code>，属性值填入<code>standard</code>表示采取标准模式，当然不添加属性的话默认就是标准模式。具体的activity节点配置内容示例如下:</p>
-<h4 id="默认启动模式-standard"><a href="#默认启动模式-standard" class="headerlink" title="默认启动模式 standard"></a>默认启动模式 standard</h4><p>该模式可以被设定，不在manifest 设定时候，Activity 的默认模式就是standard。在该模式下，启动的 Activity 会依照启动顺序被依次压入Task栈中：</p>
-<p><img src="/img/standard_mode.png" srcset="/img/loading.gif" lazyload alt="standard_mode"></p>
-<h4 id="栈顶复用模式-singleTop"><a href="#栈顶复用模式-singleTop" class="headerlink" title="栈顶复用模式 singleTop"></a>栈顶复用模式 singleTop</h4><p>在该模式下，如果栈顶Activity为我们要新建的Activity(目标Activity)，那么就不会重复创建新的Activity。</p>
-<p><img src="/img/single_top_mode.png" srcset="/img/loading.gif" lazyload alt="single_top_mode"></p>
+<p><img src="./img/activity_state.png" srcset="/img/loading.gif" lazyload alt="activity_state"></p>
+<h3 id="Activity的启动模式">Activity的启动模式</h3>
+<p>打开AndroidManifest.xml，给activity节点添加属性<code>android:launchMode</code>，属性值填入<code>standard</code>表示采取标准模式，当然不添加属性的话默认就是标准模式。具体的activity节点配置内容示例如下:</p>
+<h4 id="默认启动模式-standard">默认启动模式 standard</h4>
+<p>该模式可以被设定，不在manifest 设定时候，Activity 的默认模式就是standard。在该模式下，启动的 Activity 会依照启动顺序被依次压入Task栈中：</p>
+<p><img src="img/standard_mode.png" srcset="/img/loading.gif" lazyload alt="standard_mode"></p>
+<h4 id="栈顶复用模式-singleTop">栈顶复用模式 singleTop</h4>
+<p>在该模式下，如果栈顶Activity为我们要新建的Activity(目标Activity)，那么就不会重复创建新的Activity。</p>
+<p><img src="img/single_top_mode.png" srcset="/img/loading.gif" lazyload alt="single_top_mode"></p>
 <p><strong>应用场景</strong></p>
 <p>适合开启渠道多、多应用开启调用的Activity，通过这种设置可以避免已经创建过的Activity被重复创建，多数通过动态设置使用。</p>
-<h4 id="栈内复用模式-singleTask"><a href="#栈内复用模式-singleTask" class="headerlink" title="栈内复用模式 singleTask"></a>栈内复用模式 singleTask</h4><p>与singleTop模式相似，只不过singleTop模式是只是针对栈顶的元素，而singleTask模式下，如果task栈内存在目标Activity实例，则将task内的对应Activity 实例之上的所有Activity弹出栈，并将对应Activity置于栈顶，获得焦点。</p>
-<p><img src="/img/single_task_mode.png" srcset="/img/loading.gif" lazyload alt="single_task_mode"></p>
+<h4 id="栈内复用模式-singleTask">栈内复用模式 singleTask</h4>
+<p>与singleTop模式相似，只不过singleTop模式是只是针对栈顶的元素，而singleTask模式下，如果task栈内存在目标Activity实例，则将task内的对应Activity 实例之上的所有Activity弹出栈，并将对应Activity置于栈顶，获得焦点。</p>
+<p><img src="img/single_task_mode.png" srcset="/img/loading.gif" lazyload alt="single_task_mode"></p>
 <p><strong>应用场景</strong></p>
 <p><strong>程序主界面</strong>：我们肯定不希望主界面被创建多次，而且在主界面退出的时候退出整个App是最好的效果。</p>
 <p><strong>耗费系统资源的Activity</strong>：对于那些及其耗费系统资源的Activity，我们可以考虑将其设为singleTask模式，减少资源耗费。</p>
-<h4 id="全局唯一模式-singlelnstance"><a href="#全局唯一模式-singlelnstance" class="headerlink" title="全局唯一模式 singlelnstance"></a>全局唯一模式 singlelnstance</h4><p>在该模式下，我们会为目标Activity创建一个新的Task栈，将目标Activity放入新的Task，并让目标Activity获得焦点。新的Task有且只有这一个Activity 实例。如果已经创建过目标Activity实例，则不会创建新的Task，而是将以前创建过的Activity唤醒。</p>
-<p><img src="/./img/single_instance_mode.png" srcset="/img/loading.gif" lazyload alt="single_instance_mode"></p>
-<h4 id="动态设置启动模式"><a href="#动态设置启动模式" class="headerlink" title="动态设置启动模式"></a>动态设置启动模式</h4><p>可以为intend设置不同启动标志</p>
+<h4 id="全局唯一模式-singlelnstance">全局唯一模式 singlelnstance</h4>
+<p>在该模式下，我们会为目标Activity创建一个新的Task栈，将目标Activity放入新的Task，并让目标Activity获得焦点。新的Task有且只有这一个Activity 实例。如果已经创建过目标Activity实例，则不会创建新的Task，而是将以前创建过的Activity唤醒。</p>
+<p><img src="./img/single_instance_mode.png" srcset="/img/loading.gif" lazyload alt="single_instance_mode"></p>
+<h4 id="动态设置启动模式">动态设置启动模式</h4>
+<p>可以为intend设置不同启动标志</p>
 <p><code>intent.setF1ags(Intent.FLAG_ACTIVITY_CLEAR_TOP);</code></p>
-<h5 id="FLAG-ACTIVITY-NEW-TASK"><a href="#FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="FLAG_ACTIVITY_NEW_TASK"></a>FLAG_ACTIVITY_NEW_TASK</h5><p>该标志用于开辟新任务的活动栈</p>
-<h5 id="FLAG-ACTIVITY-SINGLE-TOP"><a href="#FLAG-ACTIVITY-SINGLE-TOP" class="headerlink" title="FLAG_ACTIVITY_SINGLE_TOP"></a>FLAG_ACTIVITY_SINGLE_TOP</h5><p>当栈顶为待跳转的活动实例之时，则重用栈顶的实例</p>
-<h5 id="FLAG-ACTIVITY-CLEAR-TASK"><a href="#FLAG-ACTIVITY-CLEAR-TASK" class="headerlink" title="FLAG_ACTIVITY_CLEAR_TASK"></a>FLAG_ACTIVITY_CLEAR_TASK</h5><p>该标志会清空当前活动栈里的所有实例</p>
-<h5 id="FLAG-ACTIVITY-CLEAR-TOP"><a href="#FLAG-ACTIVITY-CLEAR-TOP" class="headerlink" title="FLAG_ACTIVITY_CLEAR_TOP"></a>FLAG_ACTIVITY_CLEAR_TOP</h5><p>当设置此Flag时，目标 Activity 会检查Task 中是否存在此实例，如果没有则添加压入栈。如果有，就将位于Task中的对应Activity其上的所有Activity弹出栈，此时有以下两种情况：</p>
+<h5 id="FLAG-ACTIVITY-NEW-TASK">FLAG_ACTIVITY_NEW_TASK</h5>
+<p>该标志用于开辟新任务的活动栈</p>
+<h5 id="FLAG-ACTIVITY-SINGLE-TOP">FLAG_ACTIVITY_SINGLE_TOP</h5>
+<p>当栈顶为待跳转的活动实例之时，则重用栈顶的实例</p>
+<h5 id="FLAG-ACTIVITY-CLEAR-TASK">FLAG_ACTIVITY_CLEAR_TASK</h5>
+<p>该标志会清空当前活动栈里的所有实例</p>
+<h5 id="FLAG-ACTIVITY-CLEAR-TOP">FLAG_ACTIVITY_CLEAR_TOP</h5>
+<p>当设置此Flag时，目标 Activity 会检查Task 中是否存在此实例，如果没有则添加压入栈。如果有，就将位于Task中的对应Activity其上的所有Activity弹出栈，此时有以下两种情况：</p>
 <ul>
-<li>如果同时设置Flag_ACTIVITY_SINGLE_TOP，则直接使用栈内的对应Activity。<br><code>intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);</code></li>
+<li>如果同时设置Flag_ACTIVITY_SINGLE_TOP，则直接使用栈内的对应Activity。<br>
+<code>intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);</code></li>
 <li>没有设置，则将栈内的对应Activity 销毁重新创建。</li>
 </ul>
-<h5 id="FLAG-ACTIVITY-NO-HISTORY"><a href="#FLAG-ACTIVITY-NO-HISTORY" class="headerlink" title="FLAG_ACTIVITY_NO_HISTORY"></a>FLAG_ACTIVITY_NO_HISTORY</h5><p>栈中不保存新启动的活动实例</p>
+<h5 id="FLAG-ACTIVITY-NO-HISTORY">FLAG_ACTIVITY_NO_HISTORY</h5>
+<p>栈中不保存新启动的活动实例</p>
 <p><strong>应用场景示例：</strong></p>
 <p>对于不允许重复返回的情况，可以设置启动标志<code>FLAG_ACTIVITY_CLEAR_TOP</code>，即使活动栈里面存在待跳转的活动实例，也会重新创建该活动的实例，并清除原实例上方的所有实例，保证栈中最多只有该活动的唯一实例，从而避免了无谓的重复返回。</p>
 <p>对于回不去的登录页面情况，可以设置启动标志<code>FLAG_ACTMTY_CLEAR_TASK</code>，该标志会清空当前活动栈里的所有实例。不过全部清空之后，意味着当前栈没法用了，必须另外找个活动栈才行，也就是同时设置启动标志<code>FLAG_ACTIVTY_ NEW_TASK</code>，该标志用于开辟新任务的活动栈。</p>
 <p><code>intent.setF1ags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);</code></p>
-<h2 id="在活动之间传递消息"><a href="#在活动之间传递消息" class="headerlink" title="在活动之间传递消息"></a>在活动之间传递消息</h2><p>Intent是各个组件之间信息沟通的桥梁，它用于Android各组件之间的通信，主要完成下列工作：</p>
+<h2 id="在活动之间传递消息">在活动之间传递消息</h2>
+<p>Intent是各个组件之间信息沟通的桥梁，它用于Android各组件之间的通信，主要完成下列工作：</p>
 <ul>
 <li>标明本次通信请求从哪里来、到哪里去、要怎么走。</li>
 <li>发起方携带本次通信需要的数据内容，接收方从收到的意图中解析数据。</li>
 <li>发起方若想判断接收方的处理结果，意图就要负责让接收方传回应答的数据内容。</li>
 </ul>
-<h3 id="Intent的组成部分"><a href="#Intent的组成部分" class="headerlink" title="Intent的组成部分"></a>Intent的组成部分</h3><table>
+<h3 id="Intent的组成部分">Intent的组成部分</h3>
+<table>
 <thead>
 <tr>
 <th>元素名称</th>
@@ -381,7 +402,8 @@
 <th>说明与用途</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Component</td>
 <td>setComponent</td>
 <td>组件，它指定意图的来源与目标</td>
@@ -416,19 +438,19 @@
 <td>setFlags</td>
 <td>标志位，它指定活动的启动标志</td>
 </tr>
-</tbody></table>
-<h3 id="显式lntent和隐式Intent"><a href="#显式lntent和隐式Intent" class="headerlink" title="显式lntent和隐式Intent"></a>显式lntent和隐式Intent</h3><p><strong>显式lntent，直接指定来源活动与目标活动，属于精确匹配</strong></p>
-<p>在构建一个意图对象时，需要指定两个参数，第一个参数表示跳转的来源页面，即”来源<code>Activity.this</code>“；第二个参数表示待跳转的页面，即”目标<code>Activity.class</code>“。具体的意图构建方式有如下3种：</p>
+</tbody>
+</table>
+<h3 id="显式lntent和隐式Intent">显式lntent和隐式Intent</h3>
+<p><strong>显式lntent，直接指定来源活动与目标活动，属于精确匹配</strong></p>
+<p>在构建一个意图对象时，需要指定两个参数，第一个参数表示跳转的来源页面，即&quot;来源<code>Activity.this</code>&quot;；第二个参数表示待跳转的页面，即&quot;目标<code>Activity.class</code>&quot;。具体的意图构建方式有如下3种：</p>
 <p>(1) 在Intent的构造函数中指定，示例代码如下：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个目标确定的意图</span>
 <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(<span class="hljs-built_in">this</span>,ActNextActivity.class);</code></pre></div>
-
 <p>(2) 调用意图对象的<code>setClass</code>方法指定，示例代码如下：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个新意图</span>
 <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
 <span class="hljs-comment">// 设置意图要跳转的目标活动</span>
 intent.setclass(<span class="hljs-built_in">this</span>,ActNextActivity.class);</code></pre></div>
-
 <p>(3) 调用意图对象的<code>setComponent</code>方法指定，示例代码如下：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个新意图</span>
 <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
@@ -436,11 +458,9 @@ intent.setclass(<span class="hljs-built_in">this</span>,ActNextActivity.class);<
 <span class="hljs-type">ComponentName</span> <span class="hljs-variable">component</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">componentName</span>(<span class="hljs-built_in">this</span>,ActNextActivity.c1ass);
 <span class="hljs-comment">// 设置意图携带的组件信息</span>
 intent.setcomponent(component);</code></pre></div>
-
 <p>这种方式可用于启动其他应用（包括系统应用）的Activity</p>
 <p>只需知道包名和类名即可</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">ComponentName</span> <span class="hljs-variable">component</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ComponentName</span>(pkg:<span class="hljs-string">&quot;&quot;</span>,cls:<span class="hljs-string">&quot;&quot;</span>);</code></pre></div>
-
 <p><strong>隐式Intent，没有明确指定要跳转的目标活动，只给出一个动作字符串让系统自动匹配，属于模糊匹配</strong></p>
 <p>通常App不希望向外部暴露活动名称，只给出一个事先定义好的标记串，这样大家约定俗成、按图索骥就好，隐式lntent便起到了标记过滤作用。这个动作名称标记串，可以是自己定义的动作，也可以是已有的系统动作。常见系统动作的取值说明见表。</p>
 <table>
@@ -451,7 +471,8 @@ intent.setcomponent(component);</code></pre></div>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>ACTION_MAIN</td>
 <td>android.intent.action.MAIN</td>
 <td>App启动时的入口</td>
@@ -486,21 +507,20 @@ intent.setcomponent(component);</code></pre></div>
 <td>android.intent.action.ANSWER</td>
 <td>接听电话</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>示例：拨打指定电话</strong></p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
 intent.setAction(Intent.ACTION_DIAL);
 <span class="hljs-type">Uri</span> <span class="hljs-variable">uri</span> <span class="hljs-operator">=</span>  Uri.parse(<span class="hljs-string">&quot;tel:&quot;</span>+phoneNo);
 intent.setData(uri);
 startActivity(intent);</code></pre></div>
-
 <p><strong>示例：发送短信到指定号码</strong></p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
 intent.setAction(Intent.ACTION_SENDTO);
 <span class="hljs-type">Uri</span> <span class="hljs-variable">uri</span> <span class="hljs-operator">=</span>  Uri.parse(<span class="hljs-string">&quot;smsto:&quot;</span>+phoneNo);
 intent.setData(uri);
 startActivity(intent);</code></pre></div>
-
 <p><strong>示例：自定义隐式  intent</strong></p>
 <p>在目标Activity的清单文件中加入<code>&lt;intent-filter&gt;</code></p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
@@ -523,8 +543,9 @@ startActivity(intent);</code></pre></div>
 intent.setAction(<span class="hljs-string">&quot;android.intent.action.YUR&quot;</span>);
 intent.addCategory(Intent.CATEGORY_DEFAULT);
 startActivity(intent);</code></pre></div>
-
-<h3 id="向下一个Activity发送数据"><a href="#向下一个Activity发送数据" class="headerlink" title="向下一个Activity发送数据"></a>向下一个Activity发送数据</h3><p>Intent使用Bundle对象存放待传递的数据信息。<br>Bundle对象操作各类型数据的读写方法说明见下表。</p>
+<h3 id="向下一个Activity发送数据">向下一个Activity发送数据</h3>
+<p>Intent使用Bundle对象存放待传递的数据信息。<br>
+Bundle对象操作各类型数据的读写方法说明见下表。</p>
 <table>
 <thead>
 <tr>
@@ -533,7 +554,8 @@ startActivity(intent);</code></pre></div>
 <th>写方法</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>整型数</td>
 <td>getlnt</td>
 <td>putlnt</td>
@@ -573,8 +595,10 @@ startActivity(intent);</code></pre></div>
 <td>getSerializable</td>
 <td>putSerializable</td>
 </tr>
-</tbody></table>
-<h3 id="向上一个Activity返回数据"><a href="#向上一个Activity返回数据" class="headerlink" title="向上一个Activity返回数据"></a>向上一个Activity返回数据</h3><p>请求类</p>
+</tbody>
+</table>
+<h3 id="向上一个Activity返回数据">向上一个Activity返回数据</h3>
+<p>请求类</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ActRequestActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
 
     <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">mRequest</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;你睡了吗？&quot;</span>;
@@ -613,7 +637,6 @@ startActivity(intent);</code></pre></div>
         register.launch(intent);
     &#125;
 &#125;</code></pre></div>
-
 <p>回应类</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ActResponseActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
 
@@ -650,13 +673,15 @@ startActivity(intent);</code></pre></div>
         finish();
     &#125;
 &#125;</code></pre></div>
-
-<h2 id="为活动补充附加信息"><a href="#为活动补充附加信息" class="headerlink" title="为活动补充附加信息"></a>为活动补充附加信息</h2><h3 id="利用资源文件配置字符串"><a href="#利用资源文件配置字符串" class="headerlink" title="利用资源文件配置字符串"></a>利用资源文件配置字符串</h3><p>示例：</p>
+<h2 id="为活动补充附加信息">为活动补充附加信息</h2>
+<h3 id="利用资源文件配置字符串">利用资源文件配置字符串</h3>
+<p>示例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> getString(R.string.weather_str);
 tv_resource.setText(value);</code></pre></div>
-
 <p>优点： 无需编译，使用灵活。</p>
-<h3 id="利用元数据传递配置信息"><a href="#利用元数据传递配置信息" class="headerlink" title="利用元数据传递配置信息"></a>利用元数据传递配置信息</h3><h4 id="什么是元数据"><a href="#什么是元数据" class="headerlink" title="什么是元数据"></a>什么是元数据</h4><p>放在清单文件里的数据</p>
+<h3 id="利用元数据传递配置信息">利用元数据传递配置信息</h3>
+<h4 id="什么是元数据">什么是元数据</h4>
+<p>放在清单文件里的数据</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.MetaDataActivity&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
@@ -664,9 +689,10 @@ tv_resource.setText(value);</code></pre></div>
 <span class="hljs-tag">        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;MetaDate&quot;</span></span>
 <span class="hljs-tag">        <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;Hello Meta&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span></code></pre></div>
-
-<h4 id="元数据应用场景"><a href="#元数据应用场景" class="headerlink" title="元数据应用场景"></a>元数据应用场景</h4><p>调用第三方SDK是，使用token进行身份验证</p>
-<h4 id="获取元数据信息"><a href="#获取元数据信息" class="headerlink" title="获取元数据信息"></a>获取元数据信息</h4><p>在Java代码中，获取元数据信息的步骤分为下列三步：</p>
+<h4 id="元数据应用场景">元数据应用场景</h4>
+<p>调用第三方SDK是，使用token进行身份验证</p>
+<h4 id="获取元数据信息">获取元数据信息</h4>
+<p>在Java代码中，获取元数据信息的步骤分为下列三步：</p>
 <ul>
 <li>调用<code>getPackageManager</code>方法获得当前应用的包管理器；</li>
 <li>调用包管理器的<code>getActivitylnfo</code>方法获得当前活动的信息对象；</li>
@@ -685,9 +711,10 @@ tv_resource.setText(value);</code></pre></div>
 &#125; <span class="hljs-keyword">catch</span> (PackageManager.NameNotFoundException e) &#123;
     e.printStackTrace();
 &#125;</code></pre></div>
-
-<h3 id="给应用页面注册快捷方式"><a href="#给应用页面注册快捷方式" class="headerlink" title="给应用页面注册快捷方式"></a>给应用页面注册快捷方式</h3><p>元数据不仅能传递简单的字符串参数，还能传送更复杂的资源数据，比如实现应用的快捷方式菜单。</p>
-<p><strong>示例：</strong><br>清单文件：</p>
+<h3 id="给应用页面注册快捷方式">给应用页面注册快捷方式</h3>
+<p>元数据不仅能传递简单的字符串参数，还能传送更复杂的资源数据，比如实现应用的快捷方式菜单。</p>
+<p><strong>示例：</strong><br>
+清单文件：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.ButtonClickActivity&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>

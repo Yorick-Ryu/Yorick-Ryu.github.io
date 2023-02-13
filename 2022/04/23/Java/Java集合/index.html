@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java集合目录：  Java集合 Collection 添加元素 访问集合的方法 移除集合中的元素 检测集合的方法 集合的其他方法   Set HashSet LinkedHashSet TreeSet 自然排序 定制排序     List Map HashMap Hashtable LinkedHashMap TreeMap Properties   Collections 工具类 排序方法">
+    <meta name="description" content="Java集合 目录：  Java集合  Collection  添加元素 访问集合的方法 移除集合中的元素 检测集合的方法 集合的其他方法   Set  HashSet LinkedHashSet TreeSet  自然排序 定制排序     List Map  HashMap Hashtable LinkedHashMap TreeMap Properties   Collections 工具类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java集合">
 <meta property="og:url" content="http://yorick.love/2022/04/23/Java/Java%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Java集合目录：  Java集合 Collection 添加元素 访问集合的方法 移除集合中的元素 检测集合的方法 集合的其他方法   Set HashSet LinkedHashSet TreeSet 自然排序 定制排序     List Map HashMap Hashtable LinkedHashMap TreeMap Properties   Collections 工具类 排序方法">
+<meta property="og:description" content="Java集合 目录：  Java集合  Collection  添加元素 访问集合的方法 移除集合中的元素 检测集合的方法 集合的其他方法   Set  HashSet LinkedHashSet TreeSet  自然排序 定制排序     List Map  HashMap Hashtable LinkedHashMap TreeMap Properties   Collections 工具类">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/javaAssemble.png">
 <meta property="article:published_time" content="2022-04-23T13:26:16.000Z">
@@ -110,11 +110,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -334,10 +330,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h1><p>目录：</p>
+                <h1>Java集合</h1>
+<p>目录：</p>
 <ul>
-<li><a href="#java%E9%9B%86%E5%90%88">Java集合</a><ul>
-<li><a href="#collection">Collection</a><ul>
+<li><a href="#java%E9%9B%86%E5%90%88">Java集合</a>
+<ul>
+<li><a href="#collection">Collection</a>
+<ul>
 <li><a href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0">添加元素</a></li>
 <li><a href="#%E8%AE%BF%E9%97%AE%E9%9B%86%E5%90%88%E7%9A%84%E6%96%B9%E6%B3%95">访问集合的方法</a></li>
 <li><a href="#%E7%A7%BB%E9%99%A4%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0">移除集合中的元素</a></li>
@@ -345,10 +344,12 @@
 <li><a href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">集合的其他方法</a></li>
 </ul>
 </li>
-<li><a href="#set">Set</a><ul>
+<li><a href="#set">Set</a>
+<ul>
 <li><a href="#hashset">HashSet</a></li>
 <li><a href="#linkedhashset">LinkedHashSet</a></li>
-<li><a href="#treeset">TreeSet</a><ul>
+<li><a href="#treeset">TreeSet</a>
+<ul>
 <li><a href="#%E8%87%AA%E7%84%B6%E6%8E%92%E5%BA%8F">自然排序</a></li>
 <li><a href="#%E5%AE%9A%E5%88%B6%E6%8E%92%E5%BA%8F">定制排序</a></li>
 </ul>
@@ -356,7 +357,8 @@
 </ul>
 </li>
 <li><a href="#list">List</a></li>
-<li><a href="#map">Map</a><ul>
+<li><a href="#map">Map</a>
+<ul>
 <li><a href="#hashmap">HashMap</a></li>
 <li><a href="#hashtable">Hashtable</a></li>
 <li><a href="#linkedhashmap">LinkedHashMap</a></li>
@@ -364,7 +366,8 @@
 <li><a href="#properties">Properties</a></li>
 </ul>
 </li>
-<li><a href="#collections-%E5%B7%A5%E5%85%B7%E7%B1%BB">Collections 工具类</a><ul>
+<li><a href="#collections-%E5%B7%A5%E5%85%B7%E7%B1%BB">Collections 工具类</a>
+<ul>
 <li><a href="#%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95">排序方法</a></li>
 <li><a href="#%E6%9F%A5%E6%89%BE%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95">查找&amp;替换方法</a></li>
 <li><a href="#%E5%90%8C%E6%AD%A5%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95">同步控制方法</a></li>
@@ -374,7 +377,7 @@
 </ul>
 </li>
 </ul>
-<p>Java集合就像一种容器，可以把多个对象的引用放入容器中。  </p>
+<p>Java集合就像一种容器，可以把多个对象的引用放入容器中。</p>
 <p>Java集合类可以用于存储数量不等的多个对象，还可用于保存具有映射关系的关联数组。</p>
 <p>Java集合可分为 Set、List 和 Map 三种体系</p>
 <ul>
@@ -383,52 +386,70 @@
 <li>Map：具有映射关系的集合</li>
 </ul>
 <p>在Java5之前，Java集合会丢失容器中所有对象的数据类型，把所有对象都当成Object类型处理；从Java5增加了<strong>泛型</strong>以后，Java集合可以记住容器中对象的数据类型。</p>
-<p><img src="/./img/javaAssemble.png" srcset="/img/loading.gif" lazyload alt="JavaAssemble"></p>
-<h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p>创建一个Collection接口的对象</p>
+<p><img src="./img/javaAssemble.png" srcset="/img/loading.gif" lazyload alt="JavaAssemble"></p>
+<h3 id="Collection">Collection</h3>
+<p>创建一个Collection接口的对象</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Collection</span> <span class="hljs-variable">collection</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();</code></pre></div>
-
-<h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><ol>
-<li><code>add()</code>参数为要添加的元素对象 <div class="code-wrapper"><pre><code class="hljs java">collection.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());</code></pre></div></li>
+<h4 id="添加元素">添加元素</h4>
+<ol>
+<li><code>add()</code>参数为要添加的元素对象 <div class="code-wrapper"><pre><code class="hljs java">collection.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());</code></pre></div>
+</li>
 <li><code>addAll()</code>参数为要添加的集合对象 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Collection</span> <span class="hljs-variable">collection2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();
 collection2.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());
 collection2.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());
-collection.addAll(collection2);</code></pre></div></li>
+collection.addAll(collection2);</code></pre></div>
+</li>
 </ol>
-<h4 id="访问集合的方法"><a href="#访问集合的方法" class="headerlink" title="访问集合的方法"></a>访问集合的方法</h4><ol>
-<li><code>size()</code>获取集合长度 <div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.size());</code></pre></div></li>
-<li><code>iterator()</code>对集合进行遍历，<code>iterator()</code>可以得到对应的<code>Iterator</code>对象。<br><code>Iterator</code>:迭代器<br>使用方法： <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//获取Iterator接口对象</span>
+<h4 id="访问集合的方法">访问集合的方法</h4>
+<ol>
+<li><code>size()</code>获取集合长度 <div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.size());</code></pre></div>
+</li>
+<li><code>iterator()</code>对集合进行遍历，<code>iterator()</code>可以得到对应的<code>Iterator</code>对象。<br>
+<code>Iterator</code>:迭代器<br>
+使用方法： <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//获取Iterator接口对象</span>
 <span class="hljs-type">Iterator</span> <span class="hljs-variable">iterator</span> <span class="hljs-operator">=</span> collection.iterator();
 <span class="hljs-comment">//使用while循环和Iterator遍历集合的每一个元素。</span>
 <span class="hljs-comment">//具体使用Iterator接口的hasNext()和next()方法。</span>
 <span class="hljs-keyword">while</span> (iterator.hasNext())&#123;
     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> iterator.next();
     System.out.println(obj);
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 <li>使用增强for循环的方式来对集合进行遍历 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(Object obj: collection)&#123;
     System.out.println(obj);
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 </ol>
-<h4 id="移除集合中的元素"><a href="#移除集合中的元素" class="headerlink" title="移除集合中的元素"></a>移除集合中的元素</h4><ol>
-<li><code>remove()</code>移除某一个指定的对象。通过<code>equals()</code>方法来判断要移除的那个元素在集合中是否存在，以及是否能够成功移除。参数为要移除的元素对象，返回是否成功的布尔值。   <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> collection.remove(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());
+<h4 id="移除集合中的元素">移除集合中的元素</h4>
+<ol>
+<li><code>remove()</code>移除某一个指定的对象。通过<code>equals()</code>方法来判断要移除的那个元素在集合中是否存在，以及是否能够成功移除。参数为要移除的元素对象，返回是否成功的布尔值。 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> collection.remove(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>());
 System.out.printIn(result);
-<span class="hljs-comment">//返回：false</span></code></pre></div></li>
+<span class="hljs-comment">//返回：false</span></code></pre></div>
+</li>
 <li><code>removeAll()</code>参数为要移除的元素集合对象。 <div class="code-wrapper"><pre><code class="hljs java">    <span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> collection.removeAll(collection2);
     System.out.printIn(result);
 <span class="hljs-number">3.</span> `clear()`使集合元素置空。
    ```java
-   collection.clear()</code></pre></div></li>
+   collection.clear()</code></pre></div>
+</li>
 </ol>
-<h4 id="检测集合的方法"><a href="#检测集合的方法" class="headerlink" title="检测集合的方法"></a>检测集合的方法</h4><ol>
+<h4 id="检测集合的方法">检测集合的方法</h4>
+<ol>
 <li><code>contains()</code>检测集合是否包含某一元素<div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.contains(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>()));
-<span class="hljs-comment">//返回：false</span></code></pre></div></li>
-<li><code>containsAll()</code>检测集合是否包含某一元素集合<div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.containsAll(collection2));</code></pre></div></li>
+<span class="hljs-comment">//返回：false</span></code></pre></div>
+</li>
+<li><code>containsAll()</code>检测集合是否包含某一元素集合<div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.containsAll(collection2));</code></pre></div>
+</li>
 <li><code>isEmpty()</code>检测集合是否为空<div class="code-wrapper"><pre><code class="hljs java">System.out.println(collection.isEmpty());<span class="hljs-comment">//false</span>
 collection.clear();
-System.out.println(collection.isEmpty());<span class="hljs-comment">//true</span></code></pre></div></li>
+System.out.println(collection.isEmpty());<span class="hljs-comment">//true</span></code></pre></div>
+</li>
 </ol>
-<h4 id="集合的其他方法"><a href="#集合的其他方法" class="headerlink" title="集合的其他方法"></a>集合的其他方法</h4><ol>
+<h4 id="集合的其他方法">集合的其他方法</h4>
+<ol>
 <li><code>toArry()</code> <div class="code-wrapper"><pre><code class="hljs java">Object [] objects = collection.toArray();
-System.out.println(objects.length);</code></pre></div></li>
+System.out.println(objects.length);</code></pre></div>
+</li>
 <li><code>toArry(T[])</code>涉及泛型</li>
 <li><code>equals()</code>比较两集合是否相等<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//有序集合</span>
 <span class="hljs-type">Collection</span> <span class="hljs-variable">collection3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();
@@ -448,18 +469,22 @@ collection3.add(p2);
 collection4.add(p2);
 collection4.add(p1);
 System.out.println(collection3.equals(collection4));
-<span class="hljs-comment">//返回true</span></code></pre></div></li>
+<span class="hljs-comment">//返回true</span></code></pre></div>
+</li>
 <li><code>hasCode()</code></li>
 <li>使用增强for循环的方式来对集合进行遍历<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">for</span> (Object obj : collection) &#123;
     System.out.println(obj);
-    &#125;</code></pre></div></li>
+    &#125;</code></pre></div>
+</li>
 </ol>
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><ol>
+<h3 id="Set">Set</h3>
+<ol>
 <li>Set是 Collection 的子接口</li>
 <li>Set中不允许存放相同的元素。</li>
 <li>判定相同元素的标准是，两个对象<strong>各</strong>调用<code>equals()</code>方法，返回<code>true</code>。</li>
 </ol>
-<h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p>HashSet是Set接口的典型实现。</p>
+<h4 id="HashSet">HashSet</h4>
+<p>HashSet是Set接口的典型实现。</p>
 <p>基本特征：</p>
 <ol>
 <li>不能保证元素的排列顺序（无序）</li>
@@ -467,7 +492,8 @@ System.out.println(collection3.equals(collection4));
 <li>集合元素可以使<code>null</code><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Set</span> <span class="hljs-variable">set</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>();
 set.add(<span class="hljs-literal">null</span>);
 System.out.println(set.size());
-<span class="hljs-comment">//输出1</span></code></pre></div></li>
+<span class="hljs-comment">//输出1</span></code></pre></div>
+</li>
 <li>对于 HashSet：如果两个对象通过<code>equals()</code>方法返回 true，这两个对象的 hashCode 值也应该相同。<div class="code-wrapper"><pre><code class="hljs java">
 set.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;xx&quot;</span>,<span class="hljs-number">12</span>));
 set.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;xx&quot;</span>,<span class="hljs-number">12</span>));
@@ -486,22 +512,27 @@ System.out.println(set.size());
 <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;
      <span class="hljs-keyword">return</span> Objects.hash(name, age);
 &#125;
-<span class="hljs-comment">//重写后返回3</span></code></pre></div></li>
+<span class="hljs-comment">//重写后返回3</span></code></pre></div>
+</li>
 <li>由根据元素自身属性计算的 hashCode 决定位置，所以可重写hashCode实现重复（不推荐）和有序类似 LinkedHashSet<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//在Person类中重写hashCode方法</span>
 <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">init</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 <span class="hljs-meta">@Override</span>
 <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;
     <span class="hljs-keyword">return</span> init++;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 </ol>
-<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><ol>
+<h4 id="LinkedHashSet">LinkedHashSet</h4>
+<ol>
 <li>LinkedHashSet 是 HashSet 的子类</li>
 <li>使用链表维护元素的次序，这使得元素看起来是以插入顺序保存的，也因此性能稍弱</li>
 <li>LinkedHashset 不允许集合元素重复</li>
 <li>重写类的<code>hashCode()</code>方法也可以在 HashSet 实现序列化</li>
 </ol>
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>TreeSet是SortedSet接口的实现类，TreeSet可以确保集合元素处于排序状态</p>
-<h5 id="自然排序"><a href="#自然排序" class="headerlink" title="自然排序"></a>自然排序</h5><p>TreeSet 会调用集合元素的<code>compareTo(Object obj)</code>方法来比较元素之间的大小关系，然后将集合元素按升序排列如果试图把一个对象添加到 TreeSet 时，则该对象的类必须实现 Comparable 接口。</p>
+<h4 id="TreeSet">TreeSet</h4>
+<p>TreeSet是SortedSet接口的实现类，TreeSet可以确保集合元素处于排序状态</p>
+<h5 id="自然排序">自然排序</h5>
+<p>TreeSet 会调用集合元素的<code>compareTo(Object obj)</code>方法来比较元素之间的大小关系，然后将集合元素按升序排列如果试图把一个对象添加到 TreeSet 时，则该对象的类必须实现 Comparable 接口。</p>
 <p>实现 Comparable 的类必须实现<code>compareTo(Object obj)</code>方法，两个对象即通过<code>compareTo(Object obj)</code>方法的返回值来比较大小，返回值类型为int，正数表示当前元素大，负数表示参数元素大，返回0代表两元素相等。</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//实现Comparable接口</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Students</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span> &#123;
@@ -529,11 +560,12 @@ System.out.println(set.size());
         <span class="hljs-built_in">this</span>.score = score;
     &#125;
 &#125;</code></pre></div>
-
 <ol>
-<li><p>因为只有相同类的两个实例才会比较大小，所以向 TreeSet 中添加的应该是<strong>同一个类</strong>的对象，否则可能发生类型转换异常。</p>
+<li>
+<p>因为只有相同类的两个实例才会比较大小，所以向 TreeSet 中添加的应该是<strong>同一个类</strong>的对象，否则可能发生类型转换异常。</p>
 </li>
-<li><p>当需要把一个对象放入 TreeSet 中,重写该对象对应的<code>equals()</code>方法时，应保证该方法与<code>compareTo(Object obj)</code>方法有一致的结果：如果两个对象通过<code>equals()</code>方法比较返回<code>true</code>，则通过<code>compareTo(Object obj)</code>方法比较应返回<code>0</code>。</p>
+<li>
+<p>当需要把一个对象放入 TreeSet 中,重写该对象对应的<code>equals()</code>方法时，应保证该方法与<code>compareTo(Object obj)</code>方法有一致的结果：如果两个对象通过<code>equals()</code>方法比较返回<code>true</code>，则通过<code>compareTo(Object obj)</code>方法比较应返回<code>0</code>。</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(Object o)</span> &#123;
      <span class="hljs-keyword">if</span> (o <span class="hljs-keyword">instanceof</span> Students) &#123;
          <span class="hljs-type">Students</span> <span class="hljs-variable">stu</span> <span class="hljs-operator">=</span> (Students) o;
@@ -543,9 +575,11 @@ System.out.println(set.size());
      &#125; <span class="hljs-keyword">else</span> &#123;
          <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassCastException</span>(<span class="hljs-string">&quot;不是一个Student对象&quot;</span>);
      &#125;
- &#125;</code></pre></div></li>
+ &#125;</code></pre></div>
+</li>
 </ol>
-<h5 id="定制排序"><a href="#定制排序" class="headerlink" title="定制排序"></a>定制排序</h5><p>创建 TreeSet 对象时，传入 Comparator 的接口实现类。</p>
+<h5 id="定制排序">定制排序</h5>
+<p>创建 TreeSet 对象时，传入 Comparator 的接口实现类。</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Comparator</span> <span class="hljs-variable">comparator</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>() &#123;
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Object o1, Object o2)</span> &#123;
@@ -572,8 +606,10 @@ set1.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">P
 <span class="hljs-comment">//Person&#123;name=&#x27;AA&#x27;, age=15&#125;</span>
 <span class="hljs-comment">//Person&#123;name=&#x27;AA&#x27;, age=12&#125;</span>
 <span class="hljs-comment">///Person&#123;name=&#x27;AA&#x27;, age=9&#125;</span></code></pre></div>
-<p>这样Person就不需要实现<code>compareTo</code>接口<br>要求：Comparator 接口的<code>compare()</code>方法的返回值和两个元素的<code>equals()</code>要一致。</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ol>
+<p>这样Person就不需要实现<code>compareTo</code>接口<br>
+要求：Comparator 接口的<code>compare()</code>方法的返回值和两个元素的<code>equals()</code>要一致。</p>
+<h3 id="List">List</h3>
+<ol>
 <li>List 代表一个元素有序、且可重复的集合，集合中的每个元素都有其对应的顺序索引。</li>
 <li>List 允许使用重复元素，可以通过索引来访间指定位置的集合元素。</li>
 <li>List 默认按元素的添加顺序设置元素的索引。</li>
@@ -599,15 +635,12 @@ set1.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">P
 <span class="hljs-keyword">for</span> (Object obj : list2) &#123;
     System.out.println(obj);
 &#125;</code></pre></div>
-
 <p>List额外提供了一个listIterator()方法，该方法返回一个ListLterator对象，Listerator接口继承了Iterator接口，提供了专门操作List的方法：</p>
 <div class="code-wrapper"><pre><code class="hljs java">- <span class="hljs-type">boolean</span> <span class="hljs-title function_">hasPrevious</span><span class="hljs-params">()</span>
 - Object <span class="hljs-title function_">previous</span><span class="hljs-params">()</span>
 - <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">()</span></code></pre></div>
-
 <p>ArrayList是List接口的典型实现</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">List</span> <span class="hljs-variable">list</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();</code></pre></div>
-
 <p>遍历：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//使用Iterator</span>
 <span class="hljs-type">Iterator</span> <span class="hljs-variable">it</span> <span class="hljs-operator">=</span> list.iterator();
@@ -632,14 +665,15 @@ set1.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">P
 <div class="code-wrapper"><pre><code class="hljs java">System.out.println(Arrays.asList(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;MM&quot;</span>,<span class="hljs-number">23</span>),
 <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;NN&quot;</span>,<span class="hljs-number">22</span>)));
 <span class="hljs-comment">//[Person&#123;name=&#x27;MM&#x27;, age=23&#125;, Person&#123;name=&#x27;NN&#x27;, age=22&#125;]</span></code></pre></div>
-
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<h3 id="Map">Map</h3>
+<ul>
 <li>Map用于保存具有映射关系的数据，因此Map集合里保存着两组值，一组值用于保存Map里的 Key，另外一组用于保存Map里的Value。</li>
 <li>Map中的 key 和 value 都可以是任何引用类型的数据</li>
 <li><strong>Map中的 Key 不允许重复</strong>，即同一个Map对象的任何两个Key通过equals方法比较中返回false</li>
 <li>Key和 Value之间存在单向一对一关系，即通过指定的Key总能找到唯一的，确定的Value。</li>
 </ul>
-<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>HashMap是Map接口的典型实现</p>
+<h4 id="HashMap">HashMap</h4>
+<p>HashMap是Map接口的典型实现</p>
 <div class="code-wrapper"><pre><code class="hljs java">Map&lt;String, Object&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();</code></pre></div>
 <p>常用方法：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//1.添加元素</span>
@@ -675,9 +709,17 @@ System.out.println(map);
 System.out.println(map.containsKey(<span class="hljs-string">&quot;CC&quot;</span>));<span class="hljs-comment">//true</span>
 System.out.println(map.isEmpty());<span class="hljs-comment">//false</span></code></pre></div>
 <p>HashMap和HashSet：<a href="#hashset">HashSet</a> 是由HashMap定义的</p>
-<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><p>HashMap是Map接口的古老典型实现，不建议使用<br>Hashtable不允许使用null 作为key和 value，而 HashMap可以</p>
-<h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>LinkedHashMap 是 HashMap 的子类<br>LinkedHashMap可以维护 Map 的迭代顺序:迭代顺序与Key-Value对的插入顺序一致<br><a href="#linkedhashset">LinkedHashSet</a> 是由 LinkedHashMap 定义的</p>
-<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>TreeMap存储Key-Value 对时，需要根据Key对key-value 对进行排序。TreeMap可以保证所有<br>的Key-Value对处于有序状态。<br>方法参考 <a href="#treeset">TreeSet</a></p>
+<h4 id="Hashtable">Hashtable</h4>
+<p>HashMap是Map接口的古老典型实现，不建议使用<br>
+Hashtable不允许使用null 作为key和 value，而 HashMap可以</p>
+<h4 id="LinkedHashMap">LinkedHashMap</h4>
+<p>LinkedHashMap 是 HashMap 的子类<br>
+LinkedHashMap可以维护 Map 的迭代顺序:迭代顺序与Key-Value对的插入顺序一致<br>
+<a href="#linkedhashset">LinkedHashSet</a> 是由 LinkedHashMap 定义的</p>
+<h4 id="TreeMap">TreeMap</h4>
+<p>TreeMap存储Key-Value 对时，需要根据Key对key-value 对进行排序。TreeMap可以保证所有<br>
+的Key-Value对处于有序状态。<br>
+方法参考 <a href="#treeset">TreeSet</a></p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Comparator</span> <span class="hljs-variable">comparator</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>() &#123;
     <span class="hljs-meta">@Override</span>
     <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Object o1, Object o2)</span>&#123;
@@ -704,7 +746,9 @@ keySet = tm.keySet();
 <span class="hljs-comment">Person [name=&#x27;CC&#x27;, age=25]：AAA</span>
 <span class="hljs-comment">Person [name=&#x27;BB&#x27;, age=32]：AAA</span>
 <span class="hljs-comment">*/</span></code></pre></div>
-<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><p>Properties类是Hashtable的子类，该对象用于处理属性文件<br>由于属性文件里的key、value都是字符串类型，所以properties里的 Key和 Value都是字符串类型的</p>
+<h4 id="Properties">Properties</h4>
+<p>Properties类是Hashtable的子类，该对象用于处理属性文件<br>
+由于属性文件里的key、value都是字符串类型，所以properties里的 Key和 Value都是字符串类型的</p>
 <p>properties文件在Java中对一个的是一个 Properties类的对象</p>
 <div class="code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">url</span>=<span class="hljs-string">jdbc:mysql:///test</span>
 <span class="hljs-attr">driver</span>=<span class="hljs-string">com.mysql.jdbc.Driver</span>
@@ -719,10 +763,10 @@ properties.load(<span class="hljs-keyword">new</span> <span class="hljs-title cl
 <span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> properties.getProperty(<span class="hljs-string">&quot;url&quot;</span>);
 System.out.println(url);
 <span class="hljs-comment">//输出：jdbc:mysql:///test</span></code></pre></div>
-
-
-<h3 id="Collections-工具类"><a href="#Collections-工具类" class="headerlink" title="Collections 工具类"></a>Collections 工具类</h3><p>Collections是一个操作Set、List和 Map等集合的工具类</p>
-<h4 id="排序方法"><a href="#排序方法" class="headerlink" title="排序方法"></a>排序方法</h4><div class="code-wrapper"><pre><code class="hljs java">reverse(List)
+<h3 id="Collections-工具类">Collections 工具类</h3>
+<p>Collections是一个操作Set、List和 Map等集合的工具类</p>
+<h4 id="排序方法">排序方法</h4>
+<div class="code-wrapper"><pre><code class="hljs java">reverse(List)
 <span class="hljs-comment">//反转List中元素的顺序</span>
 shuffle(List)
 <span class="hljs-comment">//对List集合元素进行随机排序</span>
@@ -742,7 +786,8 @@ swap(List , <span class="hljs-type">int</span> , <span class="hljs-type">int</sp
         <span class="hljs-keyword">return</span> p1.getAge() - p2.getAge();
     &#125;
 &#125;);</code></pre></div>
-<h4 id="查找-amp-替换方法"><a href="#查找-amp-替换方法" class="headerlink" title="查找&amp;替换方法"></a>查找&amp;替换方法</h4><div class="code-wrapper"><pre><code class="hljs java">Object <span class="hljs-title function_">max</span><span class="hljs-params">(Collection)</span>
+<h4 id="查找-替换方法">查找&amp;替换方法</h4>
+<div class="code-wrapper"><pre><code class="hljs java">Object <span class="hljs-title function_">max</span><span class="hljs-params">(Collection)</span>
 <span class="hljs-comment">//根据元素的自然顺序,返回给定集合中的最大元素</span>
 Object <span class="hljs-title function_">max</span><span class="hljs-params">(Collection , Comparator)</span>
 <span class="hljs-comment">//根据Comparator指定的顺序,返回给定集合中的最大元素</span>
@@ -762,10 +807,12 @@ Object <span class="hljs-title function_">min</span><span class="hljs-params">(C
         <span class="hljs-keyword">return</span> p1.getAge() - p2.getAge();
     &#125;
 &#125;));</code></pre></div>
-<h4 id="同步控制方法"><a href="#同步控制方法" class="headerlink" title="同步控制方法"></a>同步控制方法</h4><p>使用 synchronizedList(),将参数里的集合变成线程安全的</p>
+<h4 id="同步控制方法">同步控制方法</h4>
+<p>使用 synchronizedList(),将参数里的集合变成线程安全的</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//获取线程安全的List 对象，使用 synchronizedList()</span>
 <span class="hljs-type">List</span> <span class="hljs-variable">list2</span> <span class="hljs-operator">=</span> Collections.synchronizedList(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;());</code></pre></div>
-<h3 id="Enumeration"><a href="#Enumeration" class="headerlink" title="Enumeration"></a>Enumeration</h3><p>Enumeration 接口是lterator迭代器的“古老版本”</p>
+<h3 id="Enumeration">Enumeration</h3>
+<p>Enumeration 接口是lterator迭代器的“古老版本”</p>
 <p>实例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//对Enumeration对象进行遍历 hasMoreElements() nextElement()</span>
 <span class="hljs-type">Enumeration</span> <span class="hljs-variable">names</span> <span class="hljs-operator">=</span> Collections.enumerati(list);

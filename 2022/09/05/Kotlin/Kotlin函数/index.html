@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Kotlin函数 Kotlin函数 函数头 函数参数 Unit函数 Nothing类型 反引号中的函数名    函数头     private       fun        doSomething(age:Int, flag:Boolean) : String &#x2F;&#x2F; 可见行修饰符  函数声明关键字   函数名            函数参数          返回类型  函数参数（1）默认值参">
+    <meta name="description" content="Kotlin函数  Kotlin函数  函数头 函数参数 Unit函数 Nothing类型 反引号中的函数名    函数头      private       fun        doSomething(age:Int, flag:Boolean) : String &#x2F;&#x2F; 可见行修饰符  函数声明关键字   函数名            函数参数          返回类型 函数参数 （1）默">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin函数">
 <meta property="og:url" content="http://yorick.love/2022/09/05/Kotlin/Kotlin%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Kotlin函数 Kotlin函数 函数头 函数参数 Unit函数 Nothing类型 反引号中的函数名    函数头     private       fun        doSomething(age:Int, flag:Boolean) : String &#x2F;&#x2F; 可见行修饰符  函数声明关键字   函数名            函数参数          返回类型  函数参数（1）默认值参">
+<meta property="og:description" content="Kotlin函数  Kotlin函数  函数头 函数参数 Unit函数 Nothing类型 反引号中的函数名    函数头      private       fun        doSomething(age:Int, flag:Boolean) : String &#x2F;&#x2F; 可见行修饰符  函数声明关键字   函数名            函数参数          返回类型 函数参数 （1）默">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-05T01:53:57.000Z">
@@ -102,11 +102,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -326,8 +322,10 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Kotlin函数"><a href="#Kotlin函数" class="headerlink" title="Kotlin函数"></a>Kotlin函数</h2><ul>
-<li><a href="#kotlin%E5%87%BD%E6%95%B0">Kotlin函数</a><ul>
+                <h2 id="Kotlin函数">Kotlin函数</h2>
+<ul>
+<li><a href="#kotlin%E5%87%BD%E6%95%B0">Kotlin函数</a>
+<ul>
 <li><a href="#%E5%87%BD%E6%95%B0%E5%A4%B4">函数头</a></li>
 <li><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0">函数参数</a></li>
 <li><a href="#unit%E5%87%BD%E6%95%B0">Unit函数</a></li>
@@ -336,10 +334,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="函数头"><a href="#函数头" class="headerlink" title="函数头"></a>函数头</h3><div class="code-wrapper"><pre><code class="hljs Kotlin">     <span class="hljs-keyword">private</span>       <span class="hljs-function"><span class="hljs-keyword">fun</span>        <span class="hljs-title">doSomething</span><span class="hljs-params">(age:<span class="hljs-type">Int</span>, flag:<span class="hljs-type">Boolean</span>)</span></span> : String
+<h3 id="函数头">函数头</h3>
+<div class="code-wrapper"><pre><code class="hljs Kotlin">     <span class="hljs-keyword">private</span>       <span class="hljs-function"><span class="hljs-keyword">fun</span>        <span class="hljs-title">doSomething</span><span class="hljs-params">(age:<span class="hljs-type">Int</span>, flag:<span class="hljs-type">Boolean</span>)</span></span> : String
 <span class="hljs-comment">// 可见行修饰符  函数声明关键字   函数名            函数参数          返回类型</span></code></pre></div>
-
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>（1）默认值参</p>
+<h3 id="函数参数">函数参数</h3>
+<p>（1）默认值参</p>
 <p>如果不打算传入值参，可以预先给参数指定默认值</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fix</span><span class="hljs-params">(name: <span class="hljs-type">String</span>, age: <span class="hljs-type">Int</span> = <span class="hljs-number">6</span>)</span></span> &#123;
     println(name + age)
@@ -348,27 +347,26 @@
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     fix(<span class="hljs-string">&quot;Yorick&quot;</span>)
 &#125;</code></pre></div>
-
 <p>（2）具名函数参数</p>
 <p>如果使用命名值参，就可以不用管值参的顺序</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     fix(age = <span class="hljs-number">9</span>, name = <span class="hljs-string">&quot;Jerry&quot;</span>)
 &#125;</code></pre></div>
-
-<h3 id="Unit函数"><a href="#Unit函数" class="headerlink" title="Unit函数"></a>Unit函数</h3><p>不是所有函数都有返回值，Kotlin中没有返回值的函数叫Unit函数，也就是说他们的返回类型是Unit。在Kotlin之前，函数不返回任何东西用void描述，意思是”没有返回类型，不会带来什么，忽略它”，也就是说如果函数不返回任何东西，就忽略类型。但是，void这种解决方案无法解释现代语言的一个重要特征，泛型。</p>
+<h3 id="Unit函数">Unit函数</h3>
+<p>不是所有函数都有返回值，Kotlin中没有返回值的函数叫Unit函数，也就是说他们的返回类型是Unit。在Kotlin之前，函数不返回任何东西用void描述，意思是&quot;没有返回类型，不会带来什么，忽略它&quot;，也就是说如果函数不返回任何东西，就忽略类型。但是，void这种解决方案无法解释现代语言的一个重要特征，泛型。</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin">println(fix(<span class="hljs-string">&quot;Yorick&quot;</span>))
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Yorick6</span>
 <span class="hljs-comment">// kotlin.Unit</span></code></pre></div>
-
-<h3 id="Nothing类型"><a href="#Nothing类型" class="headerlink" title="Nothing类型"></a>Nothing类型</h3><p>TODO函数的任务就是抛出异常，就是永远别指望它运行成功，返回Nothing类型</p>
+<h3 id="Nothing类型">Nothing类型</h3>
+<p>TODO函数的任务就是抛出异常，就是永远别指望它运行成功，返回Nothing类型</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin">TODO(<span class="hljs-string">&quot;nothing&quot;</span>)
 <span class="hljs-comment">// 下面语句不会被执行</span>
 println(<span class="hljs-string">&quot;after nothing&quot;</span>)</code></pre></div>
 <p>TODO函数本身就是返回一个异常</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">public</span> <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">TODO</span><span class="hljs-params">(reason: <span class="hljs-type">String</span>)</span></span>: <span class="hljs-built_in">Nothing</span> = <span class="hljs-keyword">throw</span> NotImplementedError(<span class="hljs-string">&quot;An operation is not implemented: <span class="hljs-variable">$reason</span>&quot;</span>)</code></pre></div>
-
-<h3 id="反引号中的函数名"><a href="#反引号中的函数名" class="headerlink" title="反引号中的函数名"></a>反引号中的函数名</h3><p>（1）可以给函数起奇怪的名字（小心被打死qaq）</p>
+<h3 id="反引号中的函数名">反引号中的函数名</h3>
+<p>（1）可以给函数起奇怪的名字（小心被打死qaq）</p>
 <div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-comment">// 定义</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> `****Yorick <span class="hljs-keyword">is</span> the best****`<span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span>&#123;
     println(name+<span class="hljs-string">&quot;666&quot;</span>)
@@ -379,18 +377,21 @@ println(<span class="hljs-string">&quot;after nothing&quot;</span>)</code></pre>
 <span class="hljs-comment">// Yorick666</span></code></pre></div>
 <p>（2）由于Java和Kotlin可以相互调用，但是两者关键字不同，众所周知，关键字不能作为变量名或者标识符，所以有时候要加反引号。</p>
 <ul>
-<li>新建MyJava类定义is静态方法<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyJava</span> &#123;
+<li>新建MyJava类定义is静态方法</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyJava</span> &#123;
     <span class="hljs-keyword">public</span> static void <span class="hljs-keyword">is</span>()&#123;
         System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;IS&quot;</span>);
     &#125;
-&#125;</code></pre></div></li>
-<li>在Kotlin中调用is方法<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+&#125;</code></pre></div>
+<ul>
+<li>在Kotlin中调用is方法</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs Kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     MyJava.`<span class="hljs-keyword">is</span>`();
 &#125;
 <span class="hljs-comment">// 输出</span>
-IS</code></pre></div></li>
-</ul>
-
+IS</code></pre></div>
                 
               </div>
             

@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="递归 递归 基本介绍 递归需要遵守的重要规则 递归可解决的问题 迷宫回溯问题 代码实现   八皇后问题 基本介绍 解决思路 方法一：递归解决          基本介绍递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。  递归需要遵守的重要规则 执行一个方法时，就创建一个新的受保护的独立空间(栈空间) 方法的局部变量是">
+    <meta name="description" content="递归  递归  基本介绍  递归需要遵守的重要规则 递归可解决的问题 迷宫回溯问题  代码实现   八皇后问题  基本介绍 解决思路  方法一：递归解决          基本介绍 递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。  递归需要遵守的重要规则  执行一个方法时，就创建一个新的受保护的独立空间(栈空间)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="递归">
 <meta property="og:url" content="http://yorick.love/2022/07/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E9%80%92%E5%BD%92/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="递归 递归 基本介绍 递归需要遵守的重要规则 递归可解决的问题 迷宫回溯问题 代码实现   八皇后问题 基本介绍 解决思路 方法一：递归解决          基本介绍递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。  递归需要遵守的重要规则 执行一个方法时，就创建一个新的受保护的独立空间(栈空间) 方法的局部变量是">
+<meta property="og:description" content="递归  递归  基本介绍  递归需要遵守的重要规则 递归可解决的问题 迷宫回溯问题  代码实现   八皇后问题  基本介绍 解决思路  方法一：递归解决          基本介绍 递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。  递归需要遵守的重要规则  执行一个方法时，就创建一个新的受保护的独立空间(栈空间)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/recursion.png">
 <meta property="article:published_time" content="2022-07-06T08:09:09.000Z">
@@ -105,11 +105,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -329,18 +325,24 @@
             
               <div class="markdown-body">
                 
-                <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><ul>
-<li><a href="#%E9%80%92%E5%BD%92">递归</a><ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a><ul>
+                <h1>递归</h1>
+<ul>
+<li><a href="#%E9%80%92%E5%BD%92">递归</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a>
+<ul>
 <li><a href="#%E9%80%92%E5%BD%92%E9%9C%80%E8%A6%81%E9%81%B5%E5%AE%88%E7%9A%84%E9%87%8D%E8%A6%81%E8%A7%84%E5%88%99">递归需要遵守的重要规则</a></li>
 <li><a href="#%E9%80%92%E5%BD%92%E5%8F%AF%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98">递归可解决的问题</a></li>
-<li><a href="#%E8%BF%B7%E5%AE%AB%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98">迷宫回溯问题</a><ul>
+<li><a href="#%E8%BF%B7%E5%AE%AB%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98">迷宫回溯问题</a>
+<ul>
 <li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a></li>
 </ul>
 </li>
-<li><a href="#%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98">八皇后问题</a><ul>
+<li><a href="#%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98">八皇后问题</a>
+<ul>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D-1">基本介绍</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF">解决思路</a><ul>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF">解决思路</a>
+<ul>
 <li><a href="#%E6%96%B9%E6%B3%95%E4%B8%80%E9%80%92%E5%BD%92%E8%A7%A3%E5%86%B3">方法一：递归解决</a></li>
 </ul>
 </li>
@@ -351,23 +353,28 @@
 </ul>
 </li>
 </ul>
-<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。</p>
-<p><img src="/img/recursion.png" srcset="/img/loading.gif" lazyload alt="recursion"></p>
-<h3 id="递归需要遵守的重要规则"><a href="#递归需要遵守的重要规则" class="headerlink" title="递归需要遵守的重要规则"></a>递归需要遵守的重要规则</h3><ol>
+<h2 id="基本介绍">基本介绍</h2>
+<p>递归（recursion）就是方法自己调用自己，每次调用时传入不同的变量。递归有助于编程者解决复杂的问题，同时可以让代码变得简洁。</p>
+<p><img src="img/recursion.png" srcset="/img/loading.gif" lazyload alt="recursion"></p>
+<h3 id="递归需要遵守的重要规则">递归需要遵守的重要规则</h3>
+<ol>
 <li>执行一个方法时，就创建一个新的受保护的独立空间(栈空间)</li>
 <li>方法的局部变量是独立的，不会相互影响</li>
 <li>如果方法中使用的是引用类型变量，就会共享该引用类型的数据。</li>
 <li>递归必须向退出递归的条件逼近，否则就是无限递归，死龟了:)</li>
 <li>当一个方法执行完毕，或者遇到 return，就会返回，遵守谁调用，就将结果返回给谁，同时当方法执行完毕或者返回时，该方法也就执行完毕。</li>
 </ol>
-<h3 id="递归可解决的问题"><a href="#递归可解决的问题" class="headerlink" title="递归可解决的问题"></a>递归可解决的问题</h3><ol>
+<h3 id="递归可解决的问题">递归可解决的问题</h3>
+<ol>
 <li>各种数学问题如：8皇后问题，汉诺塔，阶乘问题，迷宫问题，球和篮子的问题(google编程大赛)</li>
 <li>各种算法中也会使用到递归，比如快排，归并排序，二分查找，分治算法等。</li>
 <li>将用栈解决的问题-&gt;第归代码比较简洁</li>
 </ol>
-<h3 id="迷宫回溯问题"><a href="#迷宫回溯问题" class="headerlink" title="迷宫回溯问题"></a>迷宫回溯问题</h3><p>使用递归解决迷宫回溯问题</p>
+<h3 id="迷宫回溯问题">迷宫回溯问题</h3>
+<p>使用递归解决迷宫回溯问题</p>
 <p>得到的路径，和程序员设置的找路策略有关即找路的上下左右的顺序相关</p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;
+<h4 id="代码实现">代码实现</h4>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Random;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Maze</span> &#123;
 
@@ -562,12 +569,15 @@
         maze.printMap();
     &#125;
 &#125;</code></pre></div>
-
-<h3 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h3><h4 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h4><p>八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出:在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即：<strong>任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法</strong>。</p>
-<h4 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h4><h5 id="方法一：递归解决"><a href="#方法一：递归解决" class="headerlink" title="方法一：递归解决"></a>方法一：递归解决</h5><ol>
+<h3 id="八皇后问题">八皇后问题</h3>
+<h4 id="基本介绍-2">基本介绍</h4>
+<p>八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出:在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即：<strong>任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法</strong>。</p>
+<h4 id="解决思路">解决思路</h4>
+<h5 id="方法一：递归解决">方法一：递归解决</h5>
+<ol>
 <li>第一个皇后先放第一行第一列</li>
 <li>第二个皇后放在第二行第一列，然后判断是否ok，如果不ok，继续放在第二列、第三列、依次把所有列都放完，找到一个合适</li>
-<li>继续第三个皇后，还是第一列、第二.列….直到第8个皇后也能放在一个不冲突的位置，算是找到了一个正确解</li>
+<li>继续第三个皇后，还是第一列、第二.列…直到第8个皇后也能放在一个不冲突的位置，算是找到了一个正确解</li>
 <li>当得到一个正确解时，在栈回退到上一个栈时，就会开始回溯，即将第一个皇后，放到第一列的所有正确解，全部得到。</li>
 <li>然后回头继续第一个皇后放第二列，后面继续循环执行1，2，3，4的步骤</li>
 </ol>
@@ -575,7 +585,6 @@
 <div class="code-wrapper"><pre><code class="hljs java">arr[<span class="hljs-number">8</span>] =&#123;<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">6</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>&#125;
 <span class="hljs-comment">// 对应arr下标表示第几行，即第几个皇后，arr[i] = val </span>
 <span class="hljs-comment">// val表示第i+1个皇后，放在第i+1行的第val+1列</span></code></pre></div>
-
 <p>代码实现：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EightQueensPuzzle</span> &#123;
     <span class="hljs-comment">// 定义一个 max表示共有多少个皇后</span>

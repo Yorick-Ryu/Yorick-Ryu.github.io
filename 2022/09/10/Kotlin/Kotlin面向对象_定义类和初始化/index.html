@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="面向对象 面向对象 定义类 定义类与field关键字 计算属性 防范竞态条件   初始化 主构造函数 在主构造函数里定义属性 次构造函数 默认参数 初始化块 初始化顺序 延迟初始化 惰性初始化 初始化陷阱      定义类定义类与field关键字在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如p.name的方法获取或者修改对象属性时，本质是调用">
+    <meta name="description" content="面向对象  面向对象  定义类  定义类与field关键字 计算属性 防范竞态条件   初始化  主构造函数 在主构造函数里定义属性 次构造函数 默认参数 初始化块 初始化顺序 延迟初始化 惰性初始化 初始化陷阱      定义类 定义类与field关键字 在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如p.name的方法获取或者修改对象属性时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin面向对象_定义类和初始化">
 <meta property="og:url" content="http://yorick.love/2022/09/10/Kotlin/Kotlin%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="面向对象 面向对象 定义类 定义类与field关键字 计算属性 防范竞态条件   初始化 主构造函数 在主构造函数里定义属性 次构造函数 默认参数 初始化块 初始化顺序 延迟初始化 惰性初始化 初始化陷阱      定义类定义类与field关键字在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如p.name的方法获取或者修改对象属性时，本质是调用">
+<meta property="og:description" content="面向对象  面向对象  定义类  定义类与field关键字 计算属性 防范竞态条件   初始化  主构造函数 在主构造函数里定义属性 次构造函数 默认参数 初始化块 初始化顺序 延迟初始化 惰性初始化 初始化陷阱      定义类 定义类与field关键字 在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如p.name的方法获取或者修改对象属性时">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/init_order.png">
 <meta property="article:published_time" content="2022-09-10T08:22:35.000Z">
@@ -102,11 +102,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -326,15 +322,19 @@
             
               <div class="markdown-body">
                 
-                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
-<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a><ul>
-<li><a href="#%E5%AE%9A%E4%B9%89%E7%B1%BB">定义类</a><ul>
+                <h1>面向对象</h1>
+<ul>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>
+<ul>
+<li><a href="#%E5%AE%9A%E4%B9%89%E7%B1%BB">定义类</a>
+<ul>
 <li><a href="#%E5%AE%9A%E4%B9%89%E7%B1%BB%E4%B8%8Efield%E5%85%B3%E9%94%AE%E5%AD%97">定义类与field关键字</a></li>
 <li><a href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7">计算属性</a></li>
 <li><a href="#%E9%98%B2%E8%8C%83%E7%AB%9E%E6%80%81%E6%9D%A1%E4%BB%B6">防范竞态条件</a></li>
 </ul>
 </li>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a><ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a>
+<ul>
 <li><a href="#%E4%B8%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">主构造函数</a></li>
 <li><a href="#%E5%9C%A8%E4%B8%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E9%87%8C%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7">在主构造函数里定义属性</a></li>
 <li><a href="#%E6%AC%A1%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">次构造函数</a></li>
@@ -349,7 +349,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h2><h3 id="定义类与field关键字"><a href="#定义类与field关键字" class="headerlink" title="定义类与field关键字"></a>定义类与field关键字</h3><p>在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如<code>p.name</code>的方法获取或者修改对象属性时，本质是调用了自动生成的getter和setter方法，可以从反编译成java的代码中看出。</p>
+<h2 id="定义类">定义类</h2>
+<h3 id="定义类与field关键字">定义类与field关键字</h3>
+<p>在Kotlin中，定义类的属性后会自动生成默认getter和setter方法（可变属性才有），使用形如<code>p.name</code>的方法获取或者修改对象属性时，本质是调用了自动生成的getter和setter方法，可以从反编译成java的代码中看出。</p>
 <p>同时也会自动生成field关键字，来储存属性数据，只可以在重新getter和setter方法时使用。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-comment">// 定义类</span>
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;
@@ -393,8 +395,8 @@
     var1 = p.getName();
     System.out.println(var1);
 &#125;</code></pre></div>
-
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>计算属性是通过一个覆盖的get或set运算符来定义，这时field就不需要了。有点函数的意思。</p>
+<h3 id="计算属性">计算属性</h3>
+<p>计算属性是通过一个覆盖的get或set运算符来定义，这时field就不需要了。有点函数的意思。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;
     <span class="hljs-keyword">val</span> rolledValue
         <span class="hljs-keyword">get</span>() = (<span class="hljs-number">1.</span><span class="hljs-number">.6</span>).shuffled().first()
@@ -406,8 +408,8 @@
 &#125;
 <span class="hljs-comment">// 示例输出</span>
 <span class="hljs-comment">// 2</span></code></pre></div>
-
-<h3 id="防范竞态条件"><a href="#防范竞态条件" class="headerlink" title="防范竞态条件"></a>防范竞态条件</h3><p>如果一个类属性既可空又可变，那么引用它之前你必须保证它非空，一个办法是用also标准函数。</p>
+<h3 id="防范竞态条件">防范竞态条件</h3>
+<p>如果一个类属性既可空又可变，那么引用它之前你必须保证它非空，一个办法是用also标准函数。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;
     <span class="hljs-keyword">var</span> words: String? = <span class="hljs-string">&quot;Hello&quot;</span>
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">saySomething</span><span class="hljs-params">()</span></span> &#123;
@@ -423,8 +425,9 @@
 &#125;
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Hello HELLO</span></code></pre></div>
-
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><h3 id="主构造函数"><a href="#主构造函数" class="headerlink" title="主构造函数"></a>主构造函数</h3><p>我们在Player类的定义头中定义一个主构造函数，使用临时变量为Player的各个属性提供初始值，在Kotlin中，为便于识别，临时变量（包括仅引用一次的参数），通常都会以下划线开头的名字命名。</p>
+<h2 id="初始化">初始化</h2>
+<h3 id="主构造函数">主构造函数</h3>
+<p>我们在Player类的定义头中定义一个主构造函数，使用临时变量为Player的各个属性提供初始值，在Kotlin中，为便于识别，临时变量（包括仅引用一次的参数），通常都会以下划线开头的名字命名。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
     _name: String,
     _age: <span class="hljs-built_in">Int</span>,
@@ -443,7 +446,8 @@
     <span class="hljs-keyword">val</span> player = Player(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-literal">true</span>)
     println(player.name)
 &#125;</code></pre></div>
-<h3 id="在主构造函数里定义属性"><a href="#在主构造函数里定义属性" class="headerlink" title="在主构造函数里定义属性"></a>在主构造函数里定义属性</h3><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
+<h3 id="在主构造函数里定义属性">在主构造函数里定义属性</h3>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
     _name: String,
     <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span>,
     <span class="hljs-keyword">var</span> isNormal: <span class="hljs-built_in">Boolean</span>
@@ -459,8 +463,8 @@
     <span class="hljs-keyword">val</span> player = Player(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">22</span>, <span class="hljs-literal">true</span>)
     println(player.name)
 &#125;</code></pre></div>
-
-<h3 id="次构造函数"><a href="#次构造函数" class="headerlink" title="次构造函数"></a>次构造函数</h3><p>我们可以定义多个此构造函数来配置不同的参数组合，同时初始化代码逻辑。</p>
+<h3 id="次构造函数">次构造函数</h3>
+<p>我们可以定义多个此构造函数来配置不同的参数组合，同时初始化代码逻辑。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
     _name: String,
     <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span>,
@@ -486,8 +490,8 @@
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// Yorick</span>
 <span class="hljs-comment">// HOBO 10 true</span></code></pre></div>
-
-<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>定义构造函数时，可以给构造函数参数指定默认值，如果用户调用时不提供值参，就使用这个默认值。</p>
+<h3 id="默认参数">默认参数</h3>
+<p>定义构造函数时，可以给构造函数参数指定默认值，如果用户调用时不提供值参，就使用这个默认值。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
     _name: String,
     <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span> = <span class="hljs-number">20</span>,
@@ -509,8 +513,8 @@
     <span class="hljs-keyword">val</span> player = Player(<span class="hljs-string">&quot;Yorick&quot;</span>, isNormal = <span class="hljs-literal">true</span>)
     println(player.age) <span class="hljs-comment">// 20</span>
 &#125;</code></pre></div>
-
-<h3 id="初始化块"><a href="#初始化块" class="headerlink" title="初始化块"></a>初始化块</h3><p>初始化块可以设置变量或值，以及执行有效性检查，如检查传给某构造函数的值是否有效，初始化块代码会在构造类实例时执行。在次构造函数执行之前就执行。</p>
+<h3 id="初始化块">初始化块</h3>
+<p>初始化块可以设置变量或值，以及执行有效性检查，如检查传给某构造函数的值是否有效，初始化块代码会在构造类实例时执行。在次构造函数执行之前就执行。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span>(
     _name: String,
     <span class="hljs-keyword">var</span> age: <span class="hljs-built_in">Int</span>,
@@ -536,15 +540,16 @@
     <span class="hljs-keyword">val</span> player = Player(<span class="hljs-string">&quot;&quot;</span>, -<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>)
     <span class="hljs-comment">// 异常 IllegalArgumentException</span>
 &#125;</code></pre></div>
-
-<h3 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h3><ul>
+<h3 id="初始化顺序">初始化顺序</h3>
+<ul>
 <li>主构造函数里声明的属性</li>
 <li>类级别的属性赋值</li>
 <li>init初始化块里的属性赋值和函数调用</li>
 <li>次构造函数里的属性赋值和函数调用</li>
 </ul>
-<p><img src="/./img/init_order.png" srcset="/img/loading.gif" lazyload alt="init_order"></p>
-<h3 id="延迟初始化"><a href="#延迟初始化" class="headerlink" title="延迟初始化"></a>延迟初始化</h3><p>我们知道，一般来说，类的属性在初始化时不能为空，但有的时候我们不得不先让其为空，在使用之前赋值，然后再初始化使用。这时候就用到了延迟初始化。</p>
+<p><img src="./img/init_order.png" srcset="/img/loading.gif" lazyload alt="init_order"></p>
+<h3 id="延迟初始化">延迟初始化</h3>
+<p>我们知道，一般来说，类的属性在初始化时不能为空，但有的时候我们不得不先让其为空，在使用之前赋值，然后再初始化使用。这时候就用到了延迟初始化。</p>
 <p>使用lateinit关键字相当于做了一个约定：在用它之前负责初始化</p>
 <p>注意：</p>
 <ul>
@@ -567,7 +572,6 @@
     player.ready() <span class="hljs-comment">// 若注释掉此行，则异常 kotlin.UninitializedPropertyAccessException: lateinit property equipment has not been initialized</span>
     player.battle()
 &#125;</code></pre></div>
-
 <p>为了保证安全，只要无法确认lateinit变量是否完成初始化，可以执行isInitialized检查</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">BattlePlayer</span> &#123;
     <span class="hljs-comment">// 在使用之前初始化</span>
@@ -586,8 +590,8 @@
     player.ready()
     player.battle()
 &#125;</code></pre></div>
-
-<h3 id="惰性初始化"><a href="#惰性初始化" class="headerlink" title="惰性初始化"></a>惰性初始化</h3><p>延迟初始化并不是推后初始化的唯一方式，你也可以暂时不初始化某个变量，直到首次使用它，这个叫作惰性初始化。</p>
+<h3 id="惰性初始化">惰性初始化</h3>
+<p>延迟初始化并不是推后初始化的唯一方式，你也可以暂时不初始化某个变量，直到首次使用它，这个叫作惰性初始化。</p>
 <p>与lateinit的区别，惰性初始化是配置好的、自动执行的。而lateinit需要手动赋值。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LazyPayer</span>(_name: String) &#123;
     <span class="hljs-keyword">var</span> name = _name
@@ -619,7 +623,8 @@
     <span class="hljs-keyword">val</span> player = LazyPayer(<span class="hljs-string">&quot;Jerry&quot;</span>) <span class="hljs-comment">// 输出 loading...</span>
     println(player.config) <span class="hljs-comment">// 输出 Config is ready!</span>
 &#125;</code></pre></div>
-<h3 id="初始化陷阱"><a href="#初始化陷阱" class="headerlink" title="初始化陷阱"></a>初始化陷阱</h3><p>（1）Kotlin的编译顺序</p>
+<h3 id="初始化陷阱">初始化陷阱</h3>
+<p>（1）Kotlin的编译顺序</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">InitPlayer</span>() &#123;
     <span class="hljs-keyword">init</span> &#123;
         <span class="hljs-keyword">val</span> bloodBonus = blood.times(<span class="hljs-number">4</span>)
@@ -627,7 +632,6 @@
     <span class="hljs-keyword">val</span> blood = <span class="hljs-number">100</span>
 &#125;
 <span class="hljs-comment">// 编译报错：Variable &#x27;blood&#x27; must be initialized</span></code></pre></div>
-
 <p>编译报错：Variable ‘blood’ must be initialized</p>
 <p>原因：Kotlin是自上而下编译代码，所以应该先声明类属性</p>
 <p>修改后正常运行</p>
@@ -668,7 +672,6 @@
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     InitPlayer()
 &#125;</code></pre></div>
-
 <p>（3）</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">InitPlayer</span>(_name: String) &#123;
     <span class="hljs-keyword">val</span> playerName: String = initPlayerName()
@@ -692,7 +695,6 @@
     <span class="hljs-keyword">val</span> player = InitPlayer(<span class="hljs-string">&quot;Jimmy&quot;</span>)
     println(player.playerName) <span class="hljs-comment">// null</span>
 &#125;</code></pre></div>
-
 
                 
               </div>

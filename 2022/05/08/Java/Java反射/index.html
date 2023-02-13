@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java反射 Java反射 Class Class定义 获取Class对象 Class类的常用方法 类加载器   Method 获取类的方法 调用类的方法 获取类的父类 获取父类的方法   Field 获取Field 获取Field的值 设置Field的值   Constructor 获取Constructor构造器 调用构造器的方法创建对象   Annotation 获取Annotation">
+    <meta name="description" content="Java反射  Java反射  Class  Class定义 获取Class对象 Class类的常用方法 类加载器   Method  获取类的方法 调用类的方法 获取类的父类 获取父类的方法   Field  获取Field 获取Field的值 设置Field的值   Constructor  获取Constructor构造器 调用构造器的方法创建对象   Annotation  获取Annot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java反射">
 <meta property="og:url" content="http://yorick.love/2022/05/08/Java/Java%E5%8F%8D%E5%B0%84/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Java反射 Java反射 Class Class定义 获取Class对象 Class类的常用方法 类加载器   Method 获取类的方法 调用类的方法 获取类的父类 获取父类的方法   Field 获取Field 获取Field的值 设置Field的值   Constructor 获取Constructor构造器 调用构造器的方法创建对象   Annotation 获取Annotation">
+<meta property="og:description" content="Java反射  Java反射  Class  Class定义 获取Class对象 Class类的常用方法 类加载器   Method  获取类的方法 调用类的方法 获取类的父类 获取父类的方法   Field  获取Field 获取Field的值 设置Field的值   Constructor  获取Constructor构造器 调用构造器的方法创建对象   Annotation  获取Annot">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/classLoader.png">
 <meta property="article:published_time" content="2022-05-08T03:02:22.000Z">
@@ -104,11 +104,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -328,34 +324,41 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h1><ul>
-<li><a href="#java%E5%8F%8D%E5%B0%84">Java反射</a><ul>
-<li><a href="#class">Class</a><ul>
+                <h1>Java反射</h1>
+<ul>
+<li><a href="#java%E5%8F%8D%E5%B0%84">Java反射</a>
+<ul>
+<li><a href="#class">Class</a>
+<ul>
 <li><a href="#class%E5%AE%9A%E4%B9%89">Class定义</a></li>
 <li><a href="#%E8%8E%B7%E5%8F%96class%E5%AF%B9%E8%B1%A1">获取Class对象</a></li>
 <li><a href="#class%E7%B1%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">Class类的常用方法</a></li>
 <li><a href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">类加载器</a></li>
 </ul>
 </li>
-<li><a href="#method">Method</a><ul>
+<li><a href="#method">Method</a>
+<ul>
 <li><a href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95">获取类的方法</a></li>
 <li><a href="#%E8%B0%83%E7%94%A8%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95">调用类的方法</a></li>
 <li><a href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E7%88%B6%E7%B1%BB">获取类的父类</a></li>
 <li><a href="#%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95">获取父类的方法</a></li>
 </ul>
 </li>
-<li><a href="#field">Field</a><ul>
+<li><a href="#field">Field</a>
+<ul>
 <li><a href="#%E8%8E%B7%E5%8F%96field">获取Field</a></li>
 <li><a href="#%E8%8E%B7%E5%8F%96field%E7%9A%84%E5%80%BC">获取Field的值</a></li>
 <li><a href="#%E8%AE%BE%E7%BD%AEfield%E7%9A%84%E5%80%BC">设置Field的值</a></li>
 </ul>
 </li>
-<li><a href="#constructor">Constructor</a><ul>
+<li><a href="#constructor">Constructor</a>
+<ul>
 <li><a href="#%E8%8E%B7%E5%8F%96constructor%E6%9E%84%E9%80%A0%E5%99%A8">获取Constructor构造器</a></li>
 <li><a href="#%E8%B0%83%E7%94%A8%E6%9E%84%E9%80%A0%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1">调用构造器的方法创建对象</a></li>
 </ul>
 </li>
-<li><a href="#annotation">Annotation</a><ul>
+<li><a href="#annotation">Annotation</a>
+<ul>
 <li><a href="#%E8%8E%B7%E5%8F%96annotation">获取Annotation</a></li>
 </ul>
 </li>
@@ -363,22 +366,29 @@
 </ul>
 </li>
 </ul>
-<h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><h3 id="Class定义"><a href="#Class定义" class="headerlink" title="Class定义"></a>Class定义</h3><ul>
-<li><p>关于Class:</p>
+<h2 id="Class">Class</h2>
+<h3 id="Class定义">Class定义</h3>
+<ul>
+<li>
+<p>关于Class:</p>
 <ol>
 <li>class是一个类，是一个描述类的类；</li>
 <li>对象照镜子后可以得到的信息：某个类的数据成员名、方法和构造器、某个类到底实现了哪些接口；</li>
 <li>对于每个类而言，JRE 都为其保留一个不变的Class类型的对象。一个Class对象包含了特定某个类的有关信息。</li>
 </ol>
 </li>
-<li><p>Class对象只能由系统建立对象</p>
+<li>
+<p>Class对象只能由系统建立对象</p>
 </li>
-<li><p>一个类在JVM中只会有一个Class实例</p>
+<li>
+<p>一个类在JVM中只会有一个Class实例</p>
 </li>
-<li><p>每个类的实例都会记得自己是由哪个Class 实例所生成</p>
+<li>
+<p>每个类的实例都会记得自己是由哪个Class 实例所生成</p>
 </li>
 </ul>
-<h3 id="获取Class对象"><a href="#获取Class对象" class="headerlink" title="获取Class对象"></a>获取Class对象</h3><p>获取Class对象的三种方式</p>
+<h3 id="获取Class对象">获取Class对象</h3>
+<p>获取Class对象的三种方式</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClass</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ClassNotFoundException &#123;
     <span class="hljs-type">Class</span> <span class="hljs-variable">clazz</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
@@ -394,7 +404,9 @@
     <span class="hljs-comment">//Field[] fields= clazz.getDeclaredFields();//字段集合</span>
     System.out.println();
 &#125;</code></pre></div>
-<h3 id="Class类的常用方法"><a href="#Class类的常用方法" class="headerlink" title="Class类的常用方法"></a>Class类的常用方法</h3><p><code>getConstructor()</code>返回指定参数类型public的构造器。<br><code>getDeclaredConstructor()</code>返回指定参数类型的private和public构造器。但在使用private的构造器时，必须设置<code>setAccessible()</code>为true,才可以获取并操作该Constructor对象。</p>
+<h3 id="Class类的常用方法">Class类的常用方法</h3>
+<p><code>getConstructor()</code>返回指定参数类型public的构造器。<br>
+<code>getDeclaredConstructor()</code>返回指定参数类型的private和public构造器。但在使用private的构造器时，必须设置<code>setAccessible()</code>为true,才可以获取并操作该Constructor对象。</p>
 <p>实例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.yur.java;
 
@@ -473,8 +485,11 @@
     <span class="hljs-comment">//使用该够惨凄创建实例对象</span>
     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> constructor.newInstance(<span class="hljs-string">&quot;Yorick&quot;</span>);
 &#125;</code></pre></div>
-<h3 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h3><p>ClassLoader<br>类装载器是用来把类(class)装载进JVM的。<br>JVM规范定义了两种类型的类装载器：启动类装载器(bootstrap)和用户自定义装载器(user-defined class loader)。JVM在运行时会产生3个类加载器组成的初始化加载器层次结构，如下图所示：</p>
-<p><img src="/./img/classLoader.png" srcset="/img/loading.gif" lazyload alt="classLoader"></p>
+<h3 id="类加载器">类加载器</h3>
+<p>ClassLoader<br>
+类装载器是用来把类(class)装载进JVM的。<br>
+JVM规范定义了两种类型的类装载器：启动类装载器(bootstrap)和用户自定义装载器(user-defined class loader)。JVM在运行时会产生3个类加载器组成的初始化加载器层次结构，如下图所示：</p>
+<p><img src="./img/classLoader.png" srcset="/img/loading.gif" lazyload alt="classLoader"></p>
 <p>实例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClassLoader</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ClassNotFoundException, FileNotFoundException &#123;
@@ -500,13 +515,24 @@
     in = <span class="hljs-built_in">this</span>.getClass().getClassLoader().getResourceAsStream(<span class="hljs-string">&quot;test.properties&quot;</span>);
     System.out.println(in);
 &#125;</code></pre></div>
-<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p>Method: 对应类中的方法。</p>
-<h3 id="获取类的方法"><a href="#获取类的方法" class="headerlink" title="获取类的方法"></a>获取类的方法</h3><ul>
-<li>获取类的方法的数组:<br> <code>clazz.getDeclaredMethods();</code></li>
-<li>获取类的指定的方法:<br> <code>getDeclaredMethod(String name, class&lt;?&gt;... parameterTypes)</code><br> name：方法名<br> parameterTypes：方法的参数类型(使用Class来描述)的列表  <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Method</span> <span class="hljs-variable">method</span> <span class="hljs-operator">=</span> clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</span>, String.class);
-method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</span>, String.class, <span class="hljs-type">int</span>.class);</code></pre></div></li>
+<h2 id="Method">Method</h2>
+<p>Method: 对应类中的方法。</p>
+<h3 id="获取类的方法">获取类的方法</h3>
+<ul>
+<li>获取类的方法的数组:<br>
+<code>clazz.getDeclaredMethods();</code></li>
+<li>获取类的指定的方法:<br>
+<code>getDeclaredMethod(String name, class&lt;?&gt;... parameterTypes)</code><br>
+name：方法名<br>
+parameterTypes：方法的参数类型(使用Class来描述)的列表  <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Method</span> <span class="hljs-variable">method</span> <span class="hljs-operator">=</span> clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</span>, String.class);
+method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</span>, String.class, <span class="hljs-type">int</span>.class);</code></pre></div>
+</li>
 </ul>
-<h3 id="调用类的方法"><a href="#调用类的方法" class="headerlink" title="调用类的方法"></a>调用类的方法</h3><p>通过method对象执行方法：<br><code>public Object invoke(object obj, Object... args)</code><br>obj：执行哪个对象的方法；<br>args：执行方法时需要传入的参数。</p>
+<h3 id="调用类的方法">调用类的方法</h3>
+<p>通过method对象执行方法：<br>
+<code>public Object invoke(object obj, Object... args)</code><br>
+obj：执行哪个对象的方法；<br>
+args：执行方法时需要传入的参数。</p>
 <p>如果方法是 private 修饰的，需要先调用 Method 的 setAccessible(true)，使其变为可访间</p>
 <p>实例：获取类的方法并执行</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
@@ -533,8 +559,8 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> clazz.getConstructor().newInstance();
     method.invoke(obj, <span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">22</span>);
 &#125;</code></pre></div>
-
-<h3 id="获取类的父类"><a href="#获取类的父类" class="headerlink" title="获取类的父类"></a>获取类的父类</h3><p>获取当前类的父类，直接调用Class对象的<code>getSuperclass()</code>方法。</p>
+<h3 id="获取类的父类">获取类的父类</h3>
+<p>获取当前类的父类，直接调用Class对象的<code>getSuperclass()</code>方法。</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testGetSuperClass</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span>  Exception &#123;
     <span class="hljs-type">String</span> <span class="hljs-variable">className</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.yur.java.Student&quot;</span>;
@@ -543,7 +569,8 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
     System.out.println(superClazz);
     <span class="hljs-comment">//class com.yur.java.Person</span>
 &#125;</code></pre></div>
-<h3 id="获取父类的方法"><a href="#获取父类的方法" class="headerlink" title="获取父类的方法"></a>获取父类的方法</h3><p>实例：可以获取自身或父类的方法（包括私有方法）</p>
+<h3 id="获取父类的方法">获取父类的方法</h3>
+<p>实例：可以获取自身或父类的方法（包括私有方法）</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/**</span>
 <span class="hljs-comment"> * <span class="hljs-doctag">@param</span> className:  某个类的全类名</span>
 <span class="hljs-comment"> * <span class="hljs-doctag">@param</span> methodName: 类的一个方法的方法名。（包括私有方法或者父类方法）</span>
@@ -579,7 +606,6 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
     <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> invoke2(<span class="hljs-string">&quot;com.yur.java.Student&quot;</span>, <span class="hljs-string">&quot;method2&quot;</span>);
     System.out.println(result);
 &#125;</code></pre></div>
-
 <p>练习：将通过反射读取并调用类的方法封装为一个工具类</p>
 <p>Code1：接收全类名，使用<code>getMethod()</code>可读取父级方法,但是无法获取私有方法</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/**</span>
@@ -648,17 +674,28 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> invoke(<span class="hljs-string">&quot;java.text.SimpleDateFormat&quot;</span>,<span class="hljs-string">&quot;format&quot;</span>,<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());
     System.out.println(obj);
 &#125;</code></pre></div>
-<h2 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h2><p>字段</p>
-<h3 id="获取Field"><a href="#获取Field" class="headerlink" title="获取Field"></a>获取Field</h3><ul>
-<li>获取 Field 的数组<br><code>clazz.getDeclaredFields()</code></li>
-<li>获取指定名字的 Field<br><code>clazz.getDeclaredField(String fieldName);</code></li>
+<h2 id="Field">Field</h2>
+<p>字段</p>
+<h3 id="获取Field">获取Field</h3>
+<ul>
+<li>获取 Field 的数组<br>
+<code>clazz.getDeclaredFields()</code></li>
+<li>获取指定名字的 Field<br>
+<code>clazz.getDeclaredField(String fieldName);</code></li>
 </ul>
-<h3 id="获取Field的值"><a href="#获取Field的值" class="headerlink" title="获取Field的值"></a>获取Field的值</h3><ul>
-<li>若该字段是私有的，需要调用<br><code>setAccessible(true</code>)</li>
-<li>获取对象所对应的字段值<br><code>field.get(Object obj)</code></li>
+<h3 id="获取Field的值">获取Field的值</h3>
+<ul>
+<li>若该字段是私有的，需要调用<br>
+<code>setAccessible(true</code>)</li>
+<li>获取对象所对应的字段值<br>
+<code>field.get(Object obj)</code></li>
 </ul>
-<h3 id="设置Field的值"><a href="#设置Field的值" class="headerlink" title="设置Field的值"></a>设置Field的值</h3><ul>
-<li>设置指定对象的Field的值<br><code>field.set(Object obj, Object value);</code><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/**</span>
+<h3 id="设置Field的值">设置Field的值</h3>
+<ul>
+<li>设置指定对象的Field的值<br>
+<code>field.set(Object obj, Object value);</code></li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/**</span>
 <span class="hljs-comment"> * Filed:封装了字段的信息</span>
 <span class="hljs-comment"> */</span>
 <span class="hljs-meta">@Test</span>
@@ -684,7 +721,8 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
     field.set(person,<span class="hljs-string">&quot;Yorick&quot;</span>);
     System.out.println(person.getName());
 &#125;</code></pre></div>
-工具方法：<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+<p>工具方法：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClassField</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;
     <span class="hljs-type">String</span> <span class="hljs-variable">className</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;com.yur.java.Student&quot;</span>;
     <span class="hljs-type">String</span> <span class="hljs-variable">fieldName</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;age&quot;</span>;<span class="hljs-comment">//可能为私有，可能再其父类中</span>
@@ -708,14 +746,18 @@ method = clazz.getDeclaredMethod(<span class="hljs-string">&quot;setName&quot;</
         &#125;
     &#125;
     <span class="hljs-keyword">return</span> field;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+<h2 id="Constructor">Constructor</h2>
+<p>构造器</p>
+<h3 id="获取Constructor构造器">获取Constructor构造器</h3>
+<ul>
+<li>获取全部Constructor对象<br>
+<code>getConstructors()</code></li>
+<li>获取某一个指定的Constructor对象<br>
+<code>getConstructor(class&lt;?&gt;... parameterTypes)</code></li>
 </ul>
-<h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><p>构造器</p>
-<h3 id="获取Constructor构造器"><a href="#获取Constructor构造器" class="headerlink" title="获取Constructor构造器"></a>获取Constructor构造器</h3><ul>
-<li>获取全部Constructor对象<br><code>getConstructors()</code></li>
-<li>获取某一个指定的Constructor对象<br><code>getConstructor(class&lt;?&gt;... parameterTypes)</code></li>
-</ul>
-<h3 id="调用构造器的方法创建对象"><a href="#调用构造器的方法创建对象" class="headerlink" title="调用构造器的方法创建对象"></a>调用构造器的方法创建对象</h3><p><code>Object obj = constructor.newInstance(&quot;Yorick&quot;, 21);</code></p>
+<h3 id="调用构造器的方法创建对象">调用构造器的方法创建对象</h3>
+<p><code>Object obj = constructor.newInstance(&quot;Yorick&quot;, 21);</code></p>
 <p>实例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/**</span>
 <span class="hljs-comment"> * Constructor：构造器</span>
@@ -743,11 +785,14 @@ InvocationTargetException, InstantiationException, IllegalAccessException &#123;
     <span class="hljs-comment">//3.调用构造器的newInstance()方法创建对象</span>
     <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> constructor.newInstance(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">21</span>);
 &#125;</code></pre></div>
-<h2 id="Annotation"><a href="#Annotation" class="headerlink" title="Annotation"></a>Annotation</h2><h3 id="获取Annotation"><a href="#获取Annotation" class="headerlink" title="获取Annotation"></a>获取Annotation</h3><ul>
+<h2 id="Annotation">Annotation</h2>
+<h3 id="获取Annotation">获取Annotation</h3>
+<ul>
 <li><code>getAnnotation()</code></li>
 <li><code>getDeclaredAnnotations()</code></li>
 </ul>
-<p>实例：<br>新建注解类：AgeValidator</p>
+<p>实例：<br>
+新建注解类：AgeValidator</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
 <span class="hljs-keyword">import</span> java.lang.annotation.Retention;
 <span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
@@ -786,9 +831,12 @@ InvocationTargetException, InstantiationException, IllegalAccessException &#123;
     method.invoke(obj, val);
     System.out.println(obj);
 &#125;</code></pre></div>
-<h2 id="泛型和反射"><a href="#泛型和反射" class="headerlink" title="泛型和反射"></a>泛型和反射</h2><p>实例：<br>通过反射，获得定义Class 时声明的父类的泛型参数的类型</p>
+<h2 id="泛型和反射">泛型和反射</h2>
+<p>实例：<br>
+通过反射，获得定义Class 时声明的父类的泛型参数的类型</p>
 <ul>
-<li>获取带泛型参数的父类<br><code>getGenericSuperclass()</code></li>
+<li>获取带泛型参数的父类<br>
+<code>getGenericSuperclass()</code></li>
 <li><code>Type</code> 的子接口：<code>ParameterizedType</code></li>
 <li>可以调用<code>ParameterizedType</code>的<code>Type[] getActualTypeArguments()</code>获取泛型参数的数组。</li>
 </ul>

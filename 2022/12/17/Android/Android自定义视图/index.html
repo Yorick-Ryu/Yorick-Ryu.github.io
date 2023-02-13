@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="自定义视图自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.com)">
+    <meta name="description" content="自定义视图 自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View 下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android自定义视图">
 <meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="自定义视图自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.com)">
+<meta property="og:description" content="自定义视图 自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View 下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.co">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221124172128201.png">
 <meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
@@ -104,11 +104,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -328,15 +324,17 @@
             
               <div class="markdown-body">
                 
-                <h1 id="自定义视图"><a href="#自定义视图" class="headerlink" title="自定义视图"></a>自定义视图</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/custom-components?hl=zh_cn">自定义视图组件  | Android 开发者  | Android Developers (google.cn)</a></p>
+                <h1>自定义视图</h1>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/custom-components?hl=zh_cn">自定义视图组件  | Android 开发者  | Android Developers (google.cn)</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/custom-views/create-view?hl=zh_cn">创建视图类  | Android 开发者  | Android Developers (google.cn)</a></p>
-<h2 id="系统如何绘制View"><a href="#系统如何绘制View" class="headerlink" title="系统如何绘制View"></a>系统如何绘制View</h2><p>下图是布局树</p>
-<p><img src="/./img/image-20221124172128201.png" srcset="/img/loading.gif" lazyload alt="image-20221124172128201"></p>
+<h2 id="系统如何绘制View">系统如何绘制View</h2>
+<p>下图是布局树</p>
+<p><img src="./img/image-20221124172128201.png" srcset="/img/loading.gif" lazyload alt="image-20221124172128201"></p>
 <p>视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a978a6250f9e">Android系统显示原理简介 - 简书 (jianshu.com)</a></p>
-<p><img src="/./img/image-20221124185323496.png" srcset="/img/loading.gif" lazyload alt="image-20221124185323496"></p>
+<p><img src="./img/image-20221124185323496.png" srcset="/img/loading.gif" lazyload alt="image-20221124185323496"></p>
 <p>要在<code>16ms</code>内画完每一个界面</p>
-<p><img src="/./img/image-20221124185524584.png" srcset="/img/loading.gif" lazyload alt="image-20221124185524584"></p>
+<p><img src="./img/image-20221124185524584.png" srcset="/img/loading.gif" lazyload alt="image-20221124185524584"></p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyView</span> <span class="hljs-meta">@JvmOverloads</span> <span class="hljs-keyword">constructor</span>(
     context: Context, attrs: AttributeSet? = <span class="hljs-literal">null</span>, defStyleAttr: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
 ) : View(context, attrs, defStyleAttr) &#123;
@@ -376,7 +374,6 @@
         Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onDetachedFromWindow: &quot;</span>)
     &#125;
 &#125;</code></pre></div>
-
 <p>启动输出</p>
 <div class="code-wrapper"><pre><code class="hljs pf"><span class="hljs-keyword">on</span>FinishInflate：   
 <span class="hljs-keyword">on</span>AttachedToWindow:
@@ -385,10 +382,8 @@
 <span class="hljs-keyword">on</span>SizeChanged:     
 <span class="hljs-keyword">on</span>Layout:          
 <span class="hljs-keyword">on</span>Draw:</code></pre></div>
-
-
 <ul>
-<li><strong>DashPathEffect</strong>：将Path的线段虚线化，intervals为虚线的ON和OFF的数组，数组中元素数目需要 &gt;&#x3D; 2； 而phase则为绘制时的偏移量。</li>
+<li><strong>DashPathEffect</strong>：将Path的线段虚线化，intervals为虚线的ON和OFF的数组，数组中元素数目需要 &gt;= 2； 而phase则为绘制时的偏移量。</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6999603842845261860">Android自定义view之利用PathEffect实现动态效果 - 掘金 (juejin.cn)</a></p>
 

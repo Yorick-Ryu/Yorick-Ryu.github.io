@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="屏幕旋转ScreenOrientation性质 对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。 对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。 屏幕旋转时，Activity会重新加载。  控制旋转在manifest文件中为Activity添加属性：  android:screenOrientation&#x3D;&quot;portrait&amp;qu">
+    <meta name="description" content="屏幕旋转ScreenOrientation 性质  对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。 对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。 屏幕旋转时，Activity会重新加载。  控制旋转 在manifest文件中为Activity添加属性：  android:screenOrientation&#x3D;&quot;portrait">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android屏幕旋转ScreenOrientation">
 <meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="屏幕旋转ScreenOrientation性质 对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。 对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。 屏幕旋转时，Activity会重新加载。  控制旋转在manifest文件中为Activity添加属性：  android:screenOrientation&#x3D;&quot;portrait&amp;qu">
+<meta property="og:description" content="屏幕旋转ScreenOrientation 性质  对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。 对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。 屏幕旋转时，Activity会重新加载。  控制旋转 在manifest文件中为Activity添加属性：  android:screenOrientation&#x3D;&quot;portrait">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/orientation_land.png">
 <meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
@@ -103,11 +103,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -327,29 +323,37 @@
             
               <div class="markdown-body">
                 
-                <h1 id="屏幕旋转ScreenOrientation"><a href="#屏幕旋转ScreenOrientation" class="headerlink" title="屏幕旋转ScreenOrientation"></a>屏幕旋转ScreenOrientation</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol>
+                <h1>屏幕旋转ScreenOrientation</h1>
+<h2 id="性质">性质</h2>
+<ol>
 <li>对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。</li>
 <li>对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。</li>
 <li>屏幕旋转时，Activity会重新加载。</li>
 </ol>
-<h2 id="控制旋转"><a href="#控制旋转" class="headerlink" title="控制旋转"></a>控制旋转</h2><p>在manifest文件中为Activity添加属性：</p>
+<h2 id="控制旋转">控制旋转</h2>
+<p>在manifest文件中为Activity添加属性：</p>
 <ul>
 <li><code>android:screenOrientation=&quot;portrait&quot;</code> 保持竖屏</li>
 <li><code>android:screenOrientation=&quot;landscape&quot;</code> 保持横屏</li>
 </ul>
-<h2 id="实现横屏竖屏两种布局"><a href="#实现横屏竖屏两种布局" class="headerlink" title="实现横屏竖屏两种布局"></a>实现横屏竖屏两种布局</h2><p><img src="/./img/orientation_land.png" srcset="/img/loading.gif" lazyload alt="orientation_land"></p>
+<h2 id="实现横屏竖屏两种布局">实现横屏竖屏两种布局</h2>
+<p><img src="./img/orientation_land.png" srcset="/img/loading.gif" lazyload alt="orientation_land"></p>
 <p>在这里新建一个Landscape的副本，可以重新调整控件位置。</p>
-<h2 id="实现状态保存"><a href="#实现状态保存" class="headerlink" title="实现状态保存"></a>实现状态保存</h2><p>实现横竖屏切换时的状态保存</p>
+<h2 id="实现状态保存">实现状态保存</h2>
+<p>实现横竖屏切换时的状态保存</p>
 <ol>
-<li><p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p>
+<li>
+<p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;
     <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)
     outState.putString(<span class="hljs-string">&quot;title&quot;</span>, textView.text.toString())
 &#125;</code></pre></div>
 </li>
-<li><p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p>
+<li>
+<p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = savedInstanceState?.getString(<span class="hljs-string">&quot;title&quot;</span>) ?: textView.text
-<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div></li>
+<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div>
+</li>
 </ol>
 <p>这里只能临时保存数据，当Activity被销毁后，数据仍然会丢失。</p>
 

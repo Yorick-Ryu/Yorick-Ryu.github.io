@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="栈 栈 基本介绍 应用场景 实现思路 代码实现 使用数组模拟栈 使用双链表模拟栈   使用栈实现综合计算器 思路分析 代码实现   前缀、中缀、后缀表达式（逆波兰表达式） 前缀表达式 中缀表达式 后缀表达式   中缀表达式转后缀表达式 代码实现      基本介绍 栈(stack)是一个先入后出(FILO-First ln Last Out)的有序列表。 栈是限制线性表中元素的插入和删除只能在线性">
+    <meta name="description" content="栈  栈  基本介绍 应用场景 实现思路 代码实现  使用数组模拟栈 使用双链表模拟栈   使用栈实现综合计算器  思路分析 代码实现   前缀、中缀、后缀表达式（逆波兰表达式）  前缀表达式 中缀表达式 后缀表达式   中缀表达式转后缀表达式  代码实现      基本介绍  栈(stack)是一个先入后出(FILO-First ln Last Out)的有序列表。 栈是限制线性表中元素的插入和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="栈">
 <meta property="og:url" content="http://yorick.love/2022/07/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E6%A0%88/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="栈 栈 基本介绍 应用场景 实现思路 代码实现 使用数组模拟栈 使用双链表模拟栈   使用栈实现综合计算器 思路分析 代码实现   前缀、中缀、后缀表达式（逆波兰表达式） 前缀表达式 中缀表达式 后缀表达式   中缀表达式转后缀表达式 代码实现      基本介绍 栈(stack)是一个先入后出(FILO-First ln Last Out)的有序列表。 栈是限制线性表中元素的插入和删除只能在线性">
+<meta property="og:description" content="栈  栈  基本介绍 应用场景 实现思路 代码实现  使用数组模拟栈 使用双链表模拟栈   使用栈实现综合计算器  思路分析 代码实现   前缀、中缀、后缀表达式（逆波兰表达式）  前缀表达式 中缀表达式 后缀表达式   中缀表达式转后缀表达式  代码实现      基本介绍  栈(stack)是一个先入后出(FILO-First ln Last Out)的有序列表。 栈是限制线性表中元素的插入和">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-07-02T07:18:00.000Z">
@@ -105,11 +105,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -259,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          10k 字
+          11k 字
         
       </span>
     
@@ -329,54 +325,67 @@
             
               <div class="markdown-body">
                 
-                <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><ul>
-<li><a href="#%E6%A0%88">栈</a><ul>
+                <h1>栈</h1>
+<ul>
+<li><a href="#%E6%A0%88">栈</a>
+<ul>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a></li>
 <li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
 <li><a href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF">实现思路</a></li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a><ul>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a>
+<ul>
 <li><a href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E6%A0%88">使用数组模拟栈</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8%E5%8F%8C%E9%93%BE%E8%A1%A8%E6%A8%A1%E6%8B%9F%E6%A0%88">使用双链表模拟栈</a></li>
 </ul>
 </li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E7%BB%BC%E5%90%88%E8%AE%A1%E7%AE%97%E5%99%A8">使用栈实现综合计算器</a><ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E7%BB%BC%E5%90%88%E8%AE%A1%E7%AE%97%E5%99%A8">使用栈实现综合计算器</a>
+<ul>
 <li><a href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90">思路分析</a></li>
 <li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1">代码实现</a></li>
 </ul>
 </li>
-<li><a href="#%E5%89%8D%E7%BC%80%E4%B8%AD%E7%BC%80%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F">前缀、中缀、后缀表达式（逆波兰表达式）</a><ul>
+<li><a href="#%E5%89%8D%E7%BC%80%E4%B8%AD%E7%BC%80%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F">前缀、中缀、后缀表达式（逆波兰表达式）</a>
+<ul>
 <li><a href="#%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">前缀表达式</a></li>
 <li><a href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">中缀表达式</a></li>
 <li><a href="#%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">后缀表达式</a></li>
 </ul>
 </li>
-<li><a href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">中缀表达式转后缀表达式</a><ul>
+<li><a href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F">中缀表达式转后缀表达式</a>
+<ul>
 <li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2">代码实现</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ol>
+<h2 id="基本介绍">基本介绍</h2>
+<ol>
 <li>栈(stack)是一个先入后出(FILO-First ln Last Out)的有序列表。</li>
 <li>栈是限制线性表中元素的插入和删除只能在线性表的同一端进行的一种特殊线性表。允许插入和删除的一端，为变化的一端，称为栈顶(Top)，另—端为固定的一端，称为栈底(Bottom)。</li>
 <li>根据栈的定义可知，最先放入栈中元素在栈底，最后放入的元素在栈顶，而删除元素刚好相反，最后放入的元素最先删除，最先放入的元素最后删除。</li>
 <li>出栈(pop)，入栈(push)</li>
 </ol>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<h2 id="应用场景">应用场景</h2>
+<ol>
 <li>子程序的调用：在跳往子程序前，会先将下个指令的地址存到堆栈中，直到子程序执行完后再将地址取出，以回到原来的程序中。</li>
 <li>处理递归调用：和子程序的调用类似，只是除了储存下一个指令的地址外，也将参数、区域变量等数据存入堆栈中。</li>
 <li>表达式的转换与求值（实际解决）。</li>
 <li>二叉树的遍历（中缀表达式转后缀表达式）。</li>
 <li>图形的深度优先(depth—first)搜索法。</li>
 </ol>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><ol>
+<h2 id="实现思路">实现思路</h2>
+<ol>
 <li>使用数组模拟栈</li>
 <li>定义一个 top 来表示栈顶，初始化为 -1</li>
-<li>入栈的操作：当有数据加入到栈时，<br><code>top++; stack[top] = data;</code></li>
-<li>出栈的操作：<br><code>int value = stack[top]; top--; return value;</code></li>
+<li>入栈的操作：当有数据加入到栈时，<br>
+<code>top++; stack[top] = data;</code></li>
+<li>出栈的操作：<br>
+<code>int value = stack[top]; top--; return value;</code></li>
 </ol>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="使用数组模拟栈"><a href="#使用数组模拟栈" class="headerlink" title="使用数组模拟栈"></a>使用数组模拟栈</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayStackDemo</span> &#123;
+<h2 id="代码实现">代码实现</h2>
+<h3 id="使用数组模拟栈">使用数组模拟栈</h3>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayStackDemo</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
         <span class="hljs-type">ArrayStack</span> <span class="hljs-variable">arrayStack</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayStack</span>(<span class="hljs-number">4</span>);
         <span class="hljs-type">String</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;
@@ -470,7 +479,8 @@
         &#125;
     &#125;
 &#125;</code></pre></div>
-<h3 id="使用双链表模拟栈"><a href="#使用双链表模拟栈" class="headerlink" title="使用双链表模拟栈"></a>使用双链表模拟栈</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.yur.stack;
+<h3 id="使用双链表模拟栈">使用双链表模拟栈</h3>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.yur.stack;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkedListStackDemo</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
@@ -547,7 +557,9 @@
 &#125;
 
 </code></pre></div>
-<h2 id="使用栈实现综合计算器"><a href="#使用栈实现综合计算器" class="headerlink" title="使用栈实现综合计算器"></a>使用栈实现综合计算器</h2><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><ol>
+<h2 id="使用栈实现综合计算器">使用栈实现综合计算器</h2>
+<h3 id="思路分析">思路分析</h3>
+<ol>
 <li>创建两个栈，分别存放数字和符号；</li>
 <li>通过一个<code>index</code>值（索引），来遍历我们的表达式；</li>
 <li>如果是一个数字，就直接入数栈；</li>
@@ -562,7 +574,8 @@
 <li>当表达式扫描完毕，就顺序的从数栈和符号栈中pop出相应的数和符号，并运行；</li>
 <li>最后在数栈只有一个数字，就是表达式的结果；</li>
 </ol>
-<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> &#123;
+<h3 id="代码实现-2">代码实现</h3>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
         <span class="hljs-type">String</span> <span class="hljs-variable">expression</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;7-9*8+2*6&quot;</span>;
         <span class="hljs-comment">// 创建两个栈，分别存放数字和符号</span>
@@ -734,23 +747,33 @@
         <span class="hljs-keyword">return</span> res;
     &#125;
 &#125;</code></pre></div>
-
-<h2 id="前缀、中缀、后缀表达式（逆波兰表达式）"><a href="#前缀、中缀、后缀表达式（逆波兰表达式）" class="headerlink" title="前缀、中缀、后缀表达式（逆波兰表达式）"></a>前缀、中缀、后缀表达式（逆波兰表达式）</h2><h3 id="前缀表达式"><a href="#前缀表达式" class="headerlink" title="前缀表达式"></a>前缀表达式</h3><p>运算符再数字之前，从右向左扫描</p>
-<p>例如: $(3+4)×5-6$ 对应的前缀表达式就是 $-×+3456$</p>
-<h3 id="中缀表达式"><a href="#中缀表达式" class="headerlink" title="中缀表达式"></a>中缀表达式</h3><p>例如: $(3+4)×5-6$ </p>
-<h3 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h3><p>运算符再数字之后，从左向右扫描</p>
-<p>例如: $(3+4)×5-6$ 对应的后缀表达式就是 $34+5×6-$</p>
-<h2 id="中缀表达式转后缀表达式"><a href="#中缀表达式转后缀表达式" class="headerlink" title="中缀表达式转后缀表达式"></a>中缀表达式转后缀表达式</h2><ol>
+<h2 id="前缀、中缀、后缀表达式（逆波兰表达式）">前缀、中缀、后缀表达式（逆波兰表达式）</h2>
+<h3 id="前缀表达式">前缀表达式</h3>
+<p>运算符再数字之前，从右向左扫描</p>
+<p>例如: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>×</mo><mn>5</mn><mo>−</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">(3+4)×5-6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> 对应的前缀表达式就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mo>×</mo><mo>+</mo><mn>3456</mn></mrow><annotation encoding="application/x-tex">-×+3456</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">3456</span></span></span></span></p>
+<h3 id="中缀表达式">中缀表达式</h3>
+<p>例如: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>×</mo><mn>5</mn><mo>−</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">(3+4)×5-6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span></p>
+<h3 id="后缀表达式">后缀表达式</h3>
+<p>运算符再数字之后，从左向右扫描</p>
+<p>例如: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>×</mo><mn>5</mn><mo>−</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">(3+4)×5-6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> 对应的后缀表达式就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>34</mn><mo>+</mo><mn>5</mn><mo>×</mo><mn>6</mn><mo>−</mo></mrow><annotation encoding="application/x-tex">34+5×6-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">34</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">6</span><span class="mord">−</span></span></span></span></p>
+<h2 id="中缀表达式转后缀表达式">中缀表达式转后缀表达式</h2>
+<ol>
 <li>初始化两个栈：运算符栈s1和储存中间结果的栈s2；</li>
 <li>从左至右扫描中缀表达式；</li>
 <li>遇到操作数时，将其压s2；</li>
-<li>遇到运算符时，比较其与s1栈顶运算符的优先级：<br> 4.1 如果s1为空，或栈顶运算符为左括号“(”，则直接将此运算符入栈；<br> 4.2 否则，若优先级比栈顶运算符的高，也将运算符压入s1;<br> 4.3 否则，将s1栈顶的运算符弹出并压入到s2中，再次转到(4.1)与s1中新的栈顶运算符相比较；</li>
-<li>遇到括号时：<br> 5.1 如果是左括号“(”，则直接压入s1；<br> 5.2 如果是右括号“)”，则依次弹出s1栈顶的运算符，并压入s2，直到遇到左括号为止，此时将这一对括号丢弃；</li>
+<li>遇到运算符时，比较其与s1栈顶运算符的优先级：<br>
+4.1 如果s1为空，或栈顶运算符为左括号“(”，则直接将此运算符入栈；<br>
+4.2 否则，若优先级比栈顶运算符的高，也将运算符压入s1;<br>
+4.3 否则，将s1栈顶的运算符弹出并压入到s2中，再次转到(4.1)与s1中新的栈顶运算符相比较；</li>
+<li>遇到括号时：<br>
+5.1 如果是左括号“(”，则直接压入s1；<br>
+5.2 如果是右括号“)”，则依次弹出s1栈顶的运算符，并压入s2，直到遇到左括号为止，此时将这一对括号丢弃；</li>
 <li>重复步骤2至5，直到表达式的最右边；</li>
 <li>将s1中剩余的运算符依次弹出并压入s2；</li>
 <li>依次弹出s2中的元素并输出，结果的逆序即为中缀表达式对应的后缀表达式；</li>
 </ol>
-<h3 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PolandNotation</span> &#123;
+<h3 id="代码实现-3">代码实现</h3>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PolandNotation</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
         <span class="hljs-comment">// 定义中缀表达式</span>
         <span class="hljs-type">String</span> <span class="hljs-variable">expression</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;1+((2+3)*4)-5&quot;</span>;

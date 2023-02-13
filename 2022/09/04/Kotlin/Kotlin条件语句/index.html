@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="条件语句 条件语句 if&#x2F;else if表达式 range表达式 when表达式 string模板    if&#x2F;else if表达式同Java range表达式in A..B，in关键字用来检查某个值是否在指定范围之内。 val age &#x3D; 4 if (age in 0..3)&amp;#123;     println(&quot;婴幼儿&quot;) &amp;#125;else&amp;#123">
+    <meta name="description" content="条件语句  条件语句  if&#x2F;else if表达式 range表达式 when表达式 string模板    if&#x2F;else if表达式 同Java range表达式 in A…B，in关键字用来检查某个值是否在指定范围之内。 val age &#x3D; 4 if (age in 0..3)&amp;#123;     println(&quot;婴幼儿&quot;) &amp;#125;else&amp;#123;     p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin条件语句">
 <meta property="og:url" content="http://yorick.love/2022/09/04/Kotlin/Kotlin%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="条件语句 条件语句 if&#x2F;else if表达式 range表达式 when表达式 string模板    if&#x2F;else if表达式同Java range表达式in A..B，in关键字用来检查某个值是否在指定范围之内。 val age &#x3D; 4 if (age in 0..3)&amp;#123;     println(&quot;婴幼儿&quot;) &amp;#125;else&amp;#123">
+<meta property="og:description" content="条件语句  条件语句  if&#x2F;else if表达式 range表达式 when表达式 string模板    if&#x2F;else if表达式 同Java range表达式 in A…B，in关键字用来检查某个值是否在指定范围之内。 val age &#x3D; 4 if (age in 0..3)&amp;#123;     println(&quot;婴幼儿&quot;) &amp;#125;else&amp;#123;     p">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-04T14:38:07.000Z">
@@ -102,11 +102,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -256,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          867 字
+          856 字
         
       </span>
     
@@ -326,17 +322,21 @@
             
               <div class="markdown-body">
                 
-                <h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><ul>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5">条件语句</a><ul>
-<li><a href="#ifelse-if%E8%A1%A8%E8%BE%BE%E5%BC%8F">if&#x2F;else if表达式</a></li>
+                <h2 id="条件语句">条件语句</h2>
+<ul>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5">条件语句</a>
+<ul>
+<li><a href="#ifelse-if%E8%A1%A8%E8%BE%BE%E5%BC%8F">if/else if表达式</a></li>
 <li><a href="#range%E8%A1%A8%E8%BE%BE%E5%BC%8F">range表达式</a></li>
 <li><a href="#when%E8%A1%A8%E8%BE%BE%E5%BC%8F">when表达式</a></li>
 <li><a href="#string%E6%A8%A1%E6%9D%BF">string模板</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="if-x2F-else-if表达式"><a href="#if-x2F-else-if表达式" class="headerlink" title="if&#x2F;else if表达式"></a>if&#x2F;else if表达式</h3><p>同Java</p>
-<h3 id="range表达式"><a href="#range表达式" class="headerlink" title="range表达式"></a>range表达式</h3><p>in A..B，in关键字用来检查某个值是否在指定范围之内。</p>
+<h3 id="if-else-if表达式">if/else if表达式</h3>
+<p>同Java</p>
+<h3 id="range表达式">range表达式</h3>
+<p>in A…B，in关键字用来检查某个值是否在指定范围之内。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> age = <span class="hljs-number">4</span>
 <span class="hljs-keyword">if</span> (age <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.3</span>)&#123;
     println(<span class="hljs-string">&quot;婴幼儿&quot;</span>)
@@ -347,8 +347,8 @@
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">if</span> (age !<span class="hljs-keyword">in</span> <span class="hljs-number">0.</span><span class="hljs-number">.3</span>)&#123;
     println(<span class="hljs-string">&quot;少儿&quot;</span>)
 &#125;</code></pre></div>
-
-<h3 id="when表达式"><a href="#when表达式" class="headerlink" title="when表达式"></a>when表达式</h3><p>允许你编写条件式，在某个条件满足时，执行对应的代码。</p>
+<h3 id="when表达式">when表达式</h3>
+<p>允许你编写条件式，在某个条件满足时，执行对应的代码。</p>
 <p>只要代码包含else if分支，都建议改用when表达式。</p>
 <p>类似switch case，但是更简洁。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> school = <span class="hljs-string">&quot;小学&quot;</span>
@@ -361,8 +361,8 @@
     &#125;
 &#125;
 println(level)</code></pre></div>
-
-<h3 id="string模板"><a href="#string模板" class="headerlink" title="string模板"></a>string模板</h3><p>模板支持在字符串的引号内放入变量值。</p>
+<h3 id="string模板">string模板</h3>
+<p>模板支持在字符串的引号内放入变量值。</p>
 <p>还支持字符串里计算表达式的值并插入结果，添加在<code>$&#123;&#125;</code>中的任何表达式，都会作为字符串的一部分求值。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> origin = <span class="hljs-string">&quot;Jack&quot;</span>

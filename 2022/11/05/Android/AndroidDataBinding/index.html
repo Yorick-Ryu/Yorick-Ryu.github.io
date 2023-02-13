@@ -18,20 +18,20 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DataBinding DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。 使用DataBinding示例App要实现的功能是，点击按钮Button，TextView的数字+1  项目中引入dataBinding &#x2F;&#x2F; 在build.gradle文件添加 android&amp;#123;    ...    dataBinding&amp;#123;">
+    <meta name="description" content="DataBinding  DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。 使用DataBinding 示例App要实现的功能是，点击按钮Button，TextView的数字+1   项目中引入dataBinding &#x2F;&#x2F; 在build.gradle文件添加 android&amp;#123;    ...    dataBinding&amp;#123">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DataBinding">
 <meta property="og:url" content="http://yorick.love/2022/11/05/Android/AndroidDataBinding/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="DataBinding DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。 使用DataBinding示例App要实现的功能是，点击按钮Button，TextView的数字+1  项目中引入dataBinding &#x2F;&#x2F; 在build.gradle文件添加 android&amp;#123;    ...    dataBinding&amp;#123;">
+<meta property="og:description" content="DataBinding  DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。 使用DataBinding 示例App要实现的功能是，点击按钮Button，TextView的数字+1   项目中引入dataBinding &#x2F;&#x2F; 在build.gradle文件添加 android&amp;#123;    ...    dataBinding&amp;#123">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221105181749287.png">
 <meta property="article:published_time" content="2022-11-05T12:42:55.000Z">
 <meta property="article:modified_time" content="2022-12-17T02:54:55.757Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="Jetpack">
-<meta property="article:tag" content="DataBinding">
 <meta property="article:tag" content="Architecture">
+<meta property="article:tag" content="DataBinding">
 <meta property="article:tag" content="ViewModel">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/image-20221105181749287.png">
@@ -106,11 +106,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -330,11 +326,14 @@
             
               <div class="markdown-body">
                 
-                <h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p><img src="/./img/image-20221105181749287.png" srcset="/img/loading.gif" lazyload alt="image-20221105181749287"></p>
+                <h1>DataBinding</h1>
+<p><img src="./img/image-20221105181749287.png" srcset="/img/loading.gif" lazyload alt="image-20221105181749287"></p>
 <p>DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。</p>
-<h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><p>示例App要实现的功能是，点击按钮Button，TextView的数字<code>+1</code></p>
+<h2 id="使用DataBinding">使用DataBinding</h2>
+<p>示例App要实现的功能是，点击按钮Button，TextView的数字<code>+1</code></p>
 <ol>
-<li><p>项目中引入dataBinding</p>
+<li>
+<p>项目中引入dataBinding</p>
 <div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// 在build.gradle文件添加</span>
 android&#123;
    ...
@@ -344,7 +343,8 @@ android&#123;
    ...
 &#125;</code></pre></div>
 </li>
-<li><p>新建activity和对应的layout布局文件。包括一个Button和一个Text View。</p>
+<li>
+<p>新建activity和对应的layout布局文件。包括一个Button和一个Text View。</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
@@ -375,7 +375,9 @@ android&#123;
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></code></pre></div>
 </li>
-<li><p>布局文件格式转换（普通layout➡️databing对应的layout）<br>光标在布局文件的根布局➡️按<code>Alt</code> +<code> Enter</code>➡️点击 <code>Convert to data binding layout</code></p>
+<li>
+<p>布局文件格式转换（普通layout➡️databing对应的layout）<br>
+光标在布局文件的根布局➡️按<code>Alt</code> +<code> Enter</code>➡️点击 <code>Convert to data binding layout</code></p>
 <p>得到转换后的layout布局文件，内容如下：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">layout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
@@ -417,7 +419,8 @@ android&#123;
 <span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span></code></pre></div>
 <p>观察到外层嵌套了layout标签，里面增加了data标签。</p>
 </li>
-<li><p>创建MyViewModel类</p>
+<li>
+<p>创建MyViewModel类</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewModel</span> : <span class="hljs-type">ViewModel</span>() &#123;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()
     <span class="hljs-keyword">val</span> number: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;
@@ -432,12 +435,15 @@ android&#123;
     &#125;
 &#125;</code></pre></div>
 </li>
-<li><p>这里有两种方式实现<code>+1</code>功能</p>
+<li>
+<p>这里有两种方式实现<code>+1</code>功能</p>
 <ul>
-<li><p><strong>方式一：</strong></p>
+<li>
+<p><strong>方式一：</strong></p>
 <p><code>DataBinding</code>会基于<code>layout</code>创建一个<code>Binding class</code>，这个类包含了布局属性(定义的变量)到相关视图的所有绑定，并且会为布局中的数据元素生成<code>setter</code>，生成的类的名称是基于<code>layout</code>的名称(驼峰命名，加上<code>Binding</code>后缀)。比如布局名是<code>activity_main.xml</code>，生成的类就是<code>ActivityMainBinding</code>。你能通过这个类去<code>inflate</code>布局和数据模型，也可以通过<code>DataBindingUtil</code>类。</p>
 <ul>
-<li><p>在<code>MainActivity</code>使用<code>DataBindingUtils</code>加载布局，这里使用了懒加载，即随用随加载。</p>
+<li>
+<p>在<code>MainActivity</code>使用<code>DataBindingUtils</code>加载布局，这里使用了懒加载，即随用随加载。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;
     DataBindingUtil.setContentView(
         <span class="hljs-keyword">this</span>,
@@ -445,7 +451,8 @@ android&#123;
     )
 &#125;</code></pre></div>
 </li>
-<li><p><code>inflate</code>加载布局（此方法也能用于<code>RecyclerView</code>, <code>ViewPager</code>）</p>
+<li>
+<p><code>inflate</code>加载布局（此方法也能用于<code>RecyclerView</code>, <code>ViewPager</code>）</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding <span class="hljs-keyword">by</span> lazy &#123; ActivityMainBinding.inflate(layoutInflater) &#125;
@@ -455,7 +462,8 @@ android&#123;
         setContentView(binding.root)
         ...
     &#125;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 </ul>
 <p>上述两种方法大家二选一，一般在<code>Activity</code>中我们都用第一种。</p>
 <p>如果在fragment中绑定布局</p>
@@ -476,7 +484,6 @@ android&#123;
         binding.lifecycleOwner = requireActivity()
         <span class="hljs-keyword">return</span> binding.root
 &#125;</code></pre></div>
-
 <p>然后在<code>MainActivity</code>的<code>onCreate</code>方法添加Observe和按钮点击事件</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">  myViewModel.number.observe(<span class="hljs-keyword">this</span>) &#123;
   	binding.textView.text = it.toString()
@@ -497,7 +504,6 @@ android&#123;
       	name=<span class="hljs-string">&quot;data&quot;</span>
       	type=<span class="hljs-string">&quot;com.yorick.databinding.MyViewModel&quot;</span> /&gt;
   &lt;/<span class="hljs-keyword">data</span>&gt;</code></pre></div>
-
 <p>修改TextView的text属性：</p>
 <div class="code-wrapper"><pre><code class="hljs xml">android:text=&quot;@&#123;data.number.toString()&#125;&quot;</code></pre></div>
 <p>Button增加onClick属性：</p>
@@ -516,7 +522,8 @@ android&#123;
         binding.<span class="hljs-keyword">data</span> = myViewModel
         binding.lifecycleOwner = <span class="hljs-keyword">this</span>
     &#125;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 </ul>
 </li>
 </ol>
@@ -560,9 +567,9 @@ android&#123;
       
         <a href="/tags/Jetpack/">#Jetpack</a>
       
-        <a href="/tags/DataBinding/">#DataBinding</a>
-      
         <a href="/tags/Architecture/">#Architecture</a>
+      
+        <a href="/tags/DataBinding/">#DataBinding</a>
       
         <a href="/tags/ViewModel/">#ViewModel</a>
       

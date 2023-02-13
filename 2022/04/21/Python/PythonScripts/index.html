@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="python实用脚本收集图片压缩BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):     if">
+    <meta name="description" content="python实用脚本收集 图片压缩 BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python实用脚本收集">
 <meta property="og:url" content="http://yorick.love/2022/04/21/Python/PythonScripts/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="python实用脚本收集图片压缩BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):     if">
+<meta property="og:description" content="python实用脚本收集 图片压缩 BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-04-21T08:50:41.000Z">
@@ -103,11 +103,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -327,7 +323,9 @@
             
               <div class="markdown-body">
                 
-                <h1 id="python实用脚本收集"><a href="#python实用脚本收集" class="headerlink" title="python实用脚本收集"></a>python实用脚本收集</h1><h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>BUG:部分图片压缩后体积反而变大</p>
+                <h1>python实用脚本收集</h1>
+<h2 id="图片压缩">图片压缩</h2>
+<p>BUG:部分图片压缩后体积反而变大</p>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
 <span class="hljs-keyword">import</span> os
 
@@ -384,8 +382,8 @@
     <span class="hljs-comment"># 这里填写图片的路径和输出路径</span>
     compress_image(<span class="hljs-string">r&quot;E:\download\yorick.love.png&quot;</span>)
    <span class="hljs-comment">#resize_image(r&#x27;D:\learn\space.jpg&#x27;)</span></code></pre></div>
-
-<h2 id="QQ-x2F-TimOCR转md表格"><a href="#QQ-x2F-TimOCR转md表格" class="headerlink" title="QQ&#x2F;TimOCR转md表格"></a>QQ&#x2F;TimOCR转md表格</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将表格内容的QCR文本结果还原为Markdown文档的表格格式</span>
+<h2 id="QQ-TimOCR转md表格">QQ/TimOCR转md表格</h2>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将表格内容的QCR文本结果还原为Markdown文档的表格格式</span>
 <span class="hljs-comment"># 暂不支持空单元格</span>
 <span class="hljs-comment"># 使用方法：</span>
 <span class="hljs-comment"># 1. 运行脚本</span>
@@ -430,8 +428,8 @@
     keyboard.add_hotkey(<span class="hljs-string">&quot;shift+alt+4&quot;</span>, formatTable, args=(<span class="hljs-number">4</span>,))
     keyboard.record(<span class="hljs-string">&quot;shift+alt+1&quot;</span>)
 </code></pre></div>
-
-<h2 id="hexo博客格式化"><a href="#hexo博客格式化" class="headerlink" title="hexo博客格式化"></a>hexo博客格式化</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将任意路径下的所有md文档格式化为Hexo博客并转移到Hexo目录下，同时转移图片文件</span>
+<h2 id="hexo博客格式化">hexo博客格式化</h2>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将任意路径下的所有md文档格式化为Hexo博客并转移到Hexo目录下，同时转移图片文件</span>
 <span class="hljs-keyword">import</span> os
 <span class="hljs-keyword">import</span> re
 <span class="hljs-keyword">import</span> datetime

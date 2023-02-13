@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="相对布局(RelativeLayout)相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：  与该视图自身平级的视图； 该视图的上级视图(也就是它归属的RelativeLayout)  如果不设定下级视图的参照物，那么下级视图默认显示在RelativeLayout内部的左上角。 相对位置取值   相对位置的属性取值 相对位置说明    layout_toLeftOf 当前视">
+    <meta name="description" content="相对布局(RelativeLayout) 相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：  与该视图自身平级的视图； 该视图的上级视图(也就是它归属的RelativeLayout)  如果不设定下级视图的参照物，那么下级视图默认显示在RelativeLayout内部的左上角。 相对位置取值    相对位置的属性取值 相对位置说明     layout_toLeftOf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android相对布局（RelativeLayout）">
 <meta property="og:url" content="http://yorick.love/2022/11/28/Android/Android%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80%EF%BC%88RelativeLayout%EF%BC%89/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="相对布局(RelativeLayout)相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：  与该视图自身平级的视图； 该视图的上级视图(也就是它归属的RelativeLayout)  如果不设定下级视图的参照物，那么下级视图默认显示在RelativeLayout内部的左上角。 相对位置取值   相对位置的属性取值 相对位置说明    layout_toLeftOf 当前视">
+<meta property="og:description" content="相对布局(RelativeLayout) 相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：  与该视图自身平级的视图； 该视图的上级视图(也就是它归属的RelativeLayout)  如果不设定下级视图的参照物，那么下级视图默认显示在RelativeLayout内部的左上角。 相对位置取值    相对位置的属性取值 相对位置说明     layout_toLeftOf">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-11-28T11:23:16.000Z">
@@ -103,11 +103,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -327,20 +323,23 @@
             
               <div class="markdown-body">
                 
-                <h1 id="相对布局-RelativeLayout"><a href="#相对布局-RelativeLayout" class="headerlink" title="相对布局(RelativeLayout)"></a>相对布局(RelativeLayout)</h1><p>相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：</p>
+                <h1>相对布局(RelativeLayout)</h1>
+<p>相对布局的下级视图位置由其他视图决定。用于确定下级视图位置的参照物分两种：</p>
 <ul>
 <li>与该视图自身平级的视图；</li>
 <li>该视图的上级视图(也就是它归属的<code>RelativeLayout</code>)</li>
 </ul>
 <p>如果不设定下级视图的参照物，那么下级视图默认显示在<code>RelativeLayout</code>内部的左上角。</p>
-<h2 id="相对位置取值"><a href="#相对位置取值" class="headerlink" title="相对位置取值"></a>相对位置取值</h2><table>
+<h2 id="相对位置取值">相对位置取值</h2>
+<table>
 <thead>
 <tr>
 <th>相对位置的属性取值</th>
 <th>相对位置说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>layout_toLeftOf</td>
 <td>当前视图在指定视图的左边</td>
 </tr>
@@ -400,7 +399,8 @@
 <td>layout_alignParentBottom</td>
 <td>当前视图与上级视图的底部对齐</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
                 
               </div>

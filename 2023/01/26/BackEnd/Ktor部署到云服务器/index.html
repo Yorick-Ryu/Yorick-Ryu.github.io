@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ktor部署到云服务器(Linux)部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提 一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击这里">
+    <meta name="description" content="Ktor部署到云服务器(Linux) 部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提  一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ktor部署到云服务器">
 <meta property="og:url" content="http://yorick.love/2023/01/26/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Ktor部署到云服务器(Linux)部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提 一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击这里">
+<meta property="og:description" content="Ktor部署到云服务器(Linux) 部署 Ktor 项目有很多种方式，包括 war、jar 或是打包在 Docker 容器内。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。 前提  一个准备部署的Ktor项目 一台Linux服务器（CentOS7.6），如果没有服务器可以点击">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ktor.io/docs/images/ktor_logo.svg">
 <meta property="article:published_time" content="2023-01-26T09:22:29.000Z">
@@ -105,11 +105,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -329,62 +325,70 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Ktor部署到云服务器-Linux"><a href="#Ktor部署到云服务器-Linux" class="headerlink" title="Ktor部署到云服务器(Linux)"></a>Ktor部署到云服务器(Linux)</h1><p>部署 Ktor 项目有很多种方式，包括 <strong>war、jar 或是打包在 Docker 容器内</strong>。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。</p>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+                <h1>Ktor部署到云服务器(Linux)</h1>
+<p>部署 Ktor 项目有很多种方式，包括 <strong>war、jar 或是打包在 Docker 容器内</strong>。 jar 是一种 Java 档案文件，可以将类文件打包成一个单一可运行的文件。 生成 jar 文件后，就可以通过 java -jar *.jar 的方式将程序运行起来。</p>
+<h2 id="前提">前提</h2>
+<ul>
 <li>一个准备部署的<a target="_blank" rel="noopener" href="https://ktor.io/">Ktor</a>项目</li>
 <li>一台Linux服务器（CentOS7.6），如果没有服务器可以点击<a target="_blank" rel="noopener" href="https://www.aliyun.com/minisite/goods?userCode=cucsy8ip">这里</a>购买，新用户超低价！</li>
 </ul>
-<h2 id="打包为Jar"><a href="#打包为Jar" class="headerlink" title="打包为Jar"></a>打包为Jar</h2><p>参考：<a target="_blank" rel="noopener" href="https://ktor.io/docs/fatjar.html">Creating fat JARs using the Ktor Gradle plugin | Ktor</a></p>
+<h2 id="打包为Jar">打包为Jar</h2>
+<p>参考：<a target="_blank" rel="noopener" href="https://ktor.io/docs/fatjar.html">Creating fat JARs using the Ktor Gradle plugin | Ktor</a></p>
 <p>To build a fat JAR, you need to configure the Ktor plugin first:</p>
 <p>在打包为<code>fat Jar</code>之前，你需要先配置<code>Ktor plugin</code></p>
 <ol>
-<li><p>打开<code>build.gradle.kts</code>，在plugins中添加插件：</p>
+<li>
+<p>打开<code>build.gradle.kts</code>，在plugins中添加插件：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">plugins &#123;
     id(<span class="hljs-string">&quot;io.ktor.plugin&quot;</span>) version <span class="hljs-string">&quot;2.2.2&quot;</span>
 &#125;</code></pre></div>
-
-
 </li>
-<li><p>确保<code>application</code>中填入<a target="_blank" rel="noopener" href="https://ktor.io/docs/server-dependencies.html#create-entry-point">main</a>方法所在类名：</p>
+<li>
+<p>确保<code>application</code>中填入<a target="_blank" rel="noopener" href="https://ktor.io/docs/server-dependencies.html#create-entry-point">main</a>方法所在类名：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">application &#123;
     mainClass.<span class="hljs-keyword">set</span>(<span class="hljs-string">&quot;com.example.ApplicationKt&quot;</span>) <span class="hljs-comment">// main方法所在类名</span>
 &#125;</code></pre></div>
-
-
 </li>
-<li><p>可选项，配置打包后的文件名称 ：</p>
+<li>
+<p>可选项，配置打包后的文件名称 ：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">ktor &#123;
     fatJar &#123;
         archiveFileName.<span class="hljs-keyword">set</span>(<span class="hljs-string">&quot;fat.jar&quot;</span>)
     &#125;
 &#125;</code></pre></div>
 </li>
-<li><p>点击<code>Gradle</code>同步项目，找到buildFatJar并双击构建Jar包：</p>
-<p><img src="/./img/image-20230126174449384.png" srcset="/img/loading.gif" lazyload alt="image-20230126174449384"></p>
+<li>
+<p>点击<code>Gradle</code>同步项目，找到buildFatJar并双击构建Jar包：</p>
+<p><img src="./img/image-20230126174449384.png" srcset="/img/loading.gif" lazyload alt="image-20230126174449384"></p>
 </li>
-<li><p>打包好的文件在<code>build/libs</code>：</p>
-<p><img src="/./img/image-20230126174735567.png" srcset="/img/loading.gif" lazyload alt="image-20230126174735567"></p>
+<li>
+<p>打包好的文件在<code>build/libs</code>：</p>
+<p><img src="./img/image-20230126174735567.png" srcset="/img/loading.gif" lazyload alt="image-20230126174735567"></p>
 </li>
 </ol>
-<h2 id="上传Jar包并运行"><a href="#上传Jar包并运行" class="headerlink" title="上传Jar包并运行"></a>上传Jar包并运行</h2><p>服务器配置和Jar包上传参考<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/zh-hans/2020/05/29/ktor-cloud/#%E5%88%9B%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91_ECS_%E5%AE%9E%E4%BE%8B">部署 Ktor 应用至云服务器 | The JetBrains Blog</a></p>
+<h2 id="上传Jar包并运行">上传Jar包并运行</h2>
+<p>服务器配置和Jar包上传参考<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/zh-hans/2020/05/29/ktor-cloud/#%E5%88%9B%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91_ECS_%E5%AE%9E%E4%BE%8B">部署 Ktor 应用至云服务器 | The JetBrains Blog</a></p>
 <ol>
-<li><p>服务器安装JDK，版本与项目版本一致</p>
+<li>
+<p>服务器安装JDK，版本与项目版本一致</p>
 <div class="code-wrapper"><pre><code class="hljs shell">yum install java-11-openjdk-devel</code></pre></div>
 </li>
-<li><p>上传打包好的Jar包，运行Jar包，输出日志<code>msg.log</code></p>
+<li>
+<p>上传打包好的Jar包，运行Jar包，输出日志<code>msg.log</code></p>
 <div class="code-wrapper"><pre><code class="hljs shell">nohup java -jar ktor-sample-all.jar &gt;msg.log 2&gt;&amp;1 &amp;</code></pre></div>
 </li>
-<li><p>查看日志或者访问Api测试，可以直接关闭shell后台运行</p>
+<li>
+<p>查看日志或者访问Api测试，可以直接关闭shell后台运行</p>
 </li>
-<li><p>停止项目</p>
+<li>
+<p>停止项目</p>
 <p>查找进程：</p>
 <div class="code-wrapper"><pre><code class="hljs shell">ps -ef|grep java</code></pre></div>
-
 <p>输出：</p>
 <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">root</span>     <span class="hljs-number">26847</span>     <span class="hljs-number">1</span>  <span class="hljs-number">0</span> <span class="hljs-number">16</span>:<span class="hljs-number">55</span> ?        <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">12</span> java -jar ktor-sample-<span class="hljs-literal">all</span>.jar</code></pre></div>
-
 <p>找到进程ID:26847，杀死进程：</p>
-<div class="code-wrapper"><pre><code class="hljs shell">kill -9 26847</code></pre></div></li>
+<div class="code-wrapper"><pre><code class="hljs shell">kill -9 26847</code></pre></div>
+</li>
 </ol>
 <p>参考：</p>
 <p><a target="_blank" rel="noopener" href="https://ktor.io/docs/fatjar.html">Creating fat JARs using the Ktor Gradle plugin | Ktor</a></p>

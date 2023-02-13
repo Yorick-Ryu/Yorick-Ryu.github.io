@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java多线程 Java多线程 程序、进程与多任务 线程 创建多线程 方式一：继承Thread类 方式二：实现Runnable接口   线程的生命周期 线程调度 线程同步 线程安全 Synchronized关键字   线程通信      程序、进程与多任务程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。 进程（process）是程序的一次执行过程，是系统运行程序的基本单">
+    <meta name="description" content="Java多线程  Java多线程  程序、进程与多任务 线程  创建多线程  方式一：继承Thread类 方式二：实现Runnable接口   线程的生命周期 线程调度 线程同步  线程安全 Synchronized关键字   线程通信      程序、进程与多任务 程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。 进程（process）是程序的一次执行过程，是系统运行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java多线程">
 <meta property="og:url" content="http://yorick.love/2022/05/15/Java/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Java多线程 Java多线程 程序、进程与多任务 线程 创建多线程 方式一：继承Thread类 方式二：实现Runnable接口   线程的生命周期 线程调度 线程同步 线程安全 Synchronized关键字   线程通信      程序、进程与多任务程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。 进程（process）是程序的一次执行过程，是系统运行程序的基本单">
+<meta property="og:description" content="Java多线程  Java多线程  程序、进程与多任务 线程  创建多线程  方式一：继承Thread类 方式二：实现Runnable接口   线程的生命周期 线程调度 线程同步  线程安全 Synchronized关键字   线程通信      程序、进程与多任务 程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。 进程（process）是程序的一次执行过程，是系统运行">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/threadLife.png">
 <meta property="article:published_time" content="2022-05-15T08:14:47.000Z">
@@ -104,11 +104,7 @@
 
 
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -328,18 +324,23 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><ul>
-<li><a href="#java%E5%A4%9A%E7%BA%BF%E7%A8%8B">Java多线程</a><ul>
+                <h1>Java多线程</h1>
+<ul>
+<li><a href="#java%E5%A4%9A%E7%BA%BF%E7%A8%8B">Java多线程</a>
+<ul>
 <li><a href="#%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%A4%9A%E4%BB%BB%E5%8A%A1">程序、进程与多任务</a></li>
-<li><a href="#%E7%BA%BF%E7%A8%8B">线程</a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B">创建多线程</a><ul>
+<li><a href="#%E7%BA%BF%E7%A8%8B">线程</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B">创建多线程</a>
+<ul>
 <li><a href="#%E6%96%B9%E5%BC%8F%E4%B8%80%E7%BB%A7%E6%89%BFthread%E7%B1%BB">方式一：继承Thread类</a></li>
 <li><a href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%E5%AE%9E%E7%8E%B0runnable%E6%8E%A5%E5%8F%A3">方式二：实现Runnable接口</a></li>
 </ul>
 </li>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">线程的生命周期</a></li>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6">线程调度</a></li>
-<li><a href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5">线程同步</a><ul>
+<li><a href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5">线程同步</a>
+<ul>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8">线程安全</a></li>
 <li><a href="#synchronized%E5%85%B3%E9%94%AE%E5%AD%97">Synchronized关键字</a></li>
 </ul>
@@ -350,19 +351,24 @@
 </ul>
 </li>
 </ul>
-<h2 id="程序、进程与多任务"><a href="#程序、进程与多任务" class="headerlink" title="程序、进程与多任务"></a>程序、进程与多任务</h2><p>程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。</p>
+<h2 id="程序、进程与多任务">程序、进程与多任务</h2>
+<p>程序（program）是对数据描述与操作的代码的集合，是应用程序执行的脚本。</p>
 <p>进程（process）是程序的一次执行过程，是系统运行程序的基本单位。程序是静态的，进程是动态的。系统运行一个程序即是一个进程从创建运行到消亡的过程。</p>
 <p>多任务（multi task）在一个系统中可以同时运行多个程序，即有多个独立运行的任务﹐每个任务对应一个进程。</p>
-<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程（thread）：比进程更小的运行单位，是程序中单个顺序的流控制。一个进程中可以包含多个线程。</p>
+<h2 id="线程">线程</h2>
+<p>线程（thread）：比进程更小的运行单位，是程序中单个顺序的流控制。一个进程中可以包含多个线程。</p>
 <p>简单来讲,线程是一个独立的执行流，是进程内部的一个独立执行单元，相当于一个子程序。</p>
 <p>一个进程中的所有线程都在该进程的虚拟地址空间中，<strong>使用该进程的全局变量和系统资源</strong>。</p>
 <p>操作系统给每个线程分配不同的CPU时间片,在某一时刻，CPU只执行一个时间片内的线程,多个时间片中的相应线程在CPU内轮流执行。</p>
-<h3 id="创建多线程"><a href="#创建多线程" class="headerlink" title="创建多线程"></a>创建多线程</h3><p>每个Java程序启动后，虚拟机将自动创建一个主线程<br>可以通过以下两种方式自定义线程类：</p>
+<h3 id="创建多线程">创建多线程</h3>
+<p>每个Java程序启动后，虚拟机将自动创建一个主线程<br>
+可以通过以下两种方式自定义线程类：</p>
 <ul>
 <li>创建<code>java.lang.Thread</code>类的子类，重写该类的run方法</li>
 <li>创建<code>java.lang.Runnable</code>接口的实现类，实现接口中的run方法</li>
 </ul>
-<h4 id="方式一：继承Thread类"><a href="#方式一：继承Thread类" class="headerlink" title="方式一：继承Thread类"></a>方式一：继承Thread类</h4><p>实例：</p>
+<h4 id="方式一：继承Thread类">方式一：继承Thread类</h4>
+<p>实例：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FirstThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
     <span class="hljs-comment">/**</span>
 <span class="hljs-comment">     * 线程体在 run()方法中</span>
@@ -500,7 +506,8 @@ Thread_1 : <span class="hljs-number">31</span>
 Thread_2 : <span class="hljs-number">32</span>
 Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 <p>发现除了存在部分线程安全问题，两个线程同时对 i 实施自增操作的。</p>
-<h4 id="方式二：实现Runnable接口"><a href="#方式二：实现Runnable接口" class="headerlink" title="方式二：实现Runnable接口"></a>方式二：实现Runnable接口</h4><p>当需要定义的线程类已经显式继承了一个其他的类，即无法继承Thread类时，我们可以使用Runnable接口来实现多线程</p>
+<h4 id="方式二：实现Runnable接口">方式二：实现Runnable接口</h4>
+<p>当需要定义的线程类已经显式继承了一个其他的类，即无法继承Thread类时，我们可以使用Runnable接口来实现多线程</p>
 <p>Runnable接口中只有一个未实现的run方法，实现该接口的类必须重写该方法。</p>
 <p>Runnable接口和Thread类之间的区别</p>
 <ul>
@@ -540,7 +547,8 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
         thread2.start();
     &#125;
 &#125;</code></pre></div>
-<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p>线程的生命周期：</p>
+<h3 id="线程的生命周期">线程的生命周期</h3>
+<p>线程的生命周期：</p>
 <ul>
 <li>指线程从创建到启动，直至运行结束</li>
 <li>可以通过调用Thread类的相关方法影响线程的运行状态</li>
@@ -553,7 +561,7 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 <li>阻塞（Blocking)</li>
 <li>死亡 (Dead)</li>
 </ul>
-<p><img src="/./img/threadLife.png" srcset="/img/loading.gif" lazyload alt="ThreadLife"></p>
+<p><img src="./img/threadLife.png" srcset="/img/loading.gif" lazyload alt="ThreadLife"></p>
 <p>新建状态(New)</p>
 <ul>
 <li>当创建了一个Thread对象时，该对象就处于“新建状态”</li>
@@ -566,7 +574,8 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 </ul>
 <p>运行状态（Running )</p>
 <ul>
-<li>处在“可执行状态”的线程对象一旦获得了CPU控制权就会转换到“执行状态”<br>在“执行状态”下,线程状态占用CPU时间片段 , 执行 run 方法中的代码</li>
+<li>处在“可执行状态”的线程对象一旦获得了CPU控制权就会转换到“执行状态”<br>
+在“执行状态”下,线程状态占用CPU时间片段 , 执行 run 方法中的代码</li>
 <li>处在“执行状态”下的线程可以调用yield方法,该方法用于主动出让CPU 控制权。线程对象出让控制器后回到“可执行状态”，重新等待调度。<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">YieldThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
 
   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
@@ -597,10 +606,13 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 </ul>
 <p>进入阻塞状态的三种情况</p>
 <ul>
-<li><p>调用<code>sleep</code>方法</p>
+<li>
+<p>调用<code>sleep</code>方法</p>
 <ul>
 <li>Thread类的sleep方法用于让当前线程暂时休眠一段时间</li>
-<li>参数 millis 的单位是毫秒<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SleepThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
+<li>参数 millis 的单位是毫秒</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SleepThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
       <span class="hljs-keyword">new</span> <span class="hljs-title class_">SleepThreadTest</span>().start();
   &#125;
@@ -615,13 +627,15 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
           System.out.println(getName() + <span class="hljs-string">&quot; : &quot;</span> + i);
       &#125;
   &#125;
-&#125;</code></pre></div></li>
-</ul>
+&#125;</code></pre></div>
 </li>
-<li><p>调用<code>join</code>方法（合并某个线程）</p>
+<li>
+<p>调用<code>join</code>方法（合并某个线程）</p>
 <ul>
 <li>处在“执行状态”的线程如果调用了其他线程的<code>join</code>方法，将被挂起进入“阻塞状态”</li>
-<li>目标线程执行完毕后才会解除阻塞，回到“可执行状态”<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JoinThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
+<li>目标线程执行完毕后才会解除阻塞，回到“可执行状态”</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JoinThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
       <span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JoinThreadTest</span>();
       thread.start();
@@ -643,24 +657,28 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
           System.out.println(getName() + <span class="hljs-string">&quot; : &quot;</span> + i);
       &#125;
   &#125;
-&#125;</code></pre></div></li>
-</ul>
+&#125;</code></pre></div>
 </li>
-<li><p>执行IO操作</p>
+<li>
+<p>执行IO操作</p>
 <ul>
-<li>线程在执行过程中如果因为访问外部资源（等待用户键盘输入、访问网络）时发生了阻塞，也会导致当前线程进入“阻塞状态”。</li>
+<li>线程在执行过程中如果因为访问外部资源（等待用户键盘输入、访问网络）时发生了阻塞，也会导致当前线程进入“阻塞状态&quot;。</li>
 </ul>
 </li>
 </ul>
 <p>解除阻塞</p>
 <ul>
-<li><p>睡眠状态超时</p>
+<li>
+<p>睡眠状态超时</p>
 </li>
-<li><p>调用<code>join</code>后等待其他线程执行完毕</p>
+<li>
+<p>调用<code>join</code>后等待其他线程执行完毕</p>
 </li>
-<li><p>I&#x2F;O操作执行完毕</p>
+<li>
+<p>I/O操作执行完毕</p>
 </li>
-<li><p>调用阻塞线程的<code>interrupt</code>方法（线程睡眠时，调用该线程的<code>interrupt</code>方法会抛出<code>InterruptedException</code>）</p>
+<li>
+<p>调用阻塞线程的<code>interrupt</code>方法（线程睡眠时，调用该线程的<code>interrupt</code>方法会抛出<code>InterruptedException</code>）</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InterruptThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
       <span class="hljs-type">InterruptThreadTest</span> <span class="hljs-variable">itt</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">InterruptThreadTest</span>();
@@ -684,11 +702,14 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 &#125;</code></pre></div>
 <p>死亡状态(Dead)</p>
 </li>
-<li><p>处于“执行状态”的线程一旦从<code>run</code>方法返回(无论是正常退出还是抛出异常)就会进入“死亡状态”。</p>
+<li>
+<p>处于“执行状态”的线程一旦从<code>run</code>方法返回(无论是正常退出还是抛出异常)就会进入“死亡状态”。</p>
 </li>
-<li><p>已经“死亡”的线程不能重新运行，否则会抛出<code>IllegalThreadStateException</code></p>
+<li>
+<p>已经“死亡”的线程不能重新运行，否则会抛出<code>IllegalThreadStateException</code></p>
 </li>
-<li><p>可以使用 Thread类的<code>isAlive</code>方法判断线程是否活着</p>
+<li>
+<p>可以使用 Thread类的<code>isAlive</code>方法判断线程是否活着</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">IsAliveThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Thread</span> &#123;
   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
       <span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IsAliveThreadTest</span>();
@@ -711,9 +732,11 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
           System.out.println(getName() + <span class="hljs-string">&quot; : &quot;</span> + i);
       &#125;
   &#125;
-&#125;</code></pre></div></li>
+&#125;</code></pre></div>
+</li>
 </ul>
-<h3 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h3><p>线程调度</p>
+<h3 id="线程调度">线程调度</h3>
+<p>线程调度</p>
 <ul>
 <li>按照特定机制为线程分配CPU时间片段的行为</li>
 <li>Java程序运行时，由Java虚拟机负责线程的调度</li>
@@ -723,12 +746,15 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 <li>分时调度模型：让所有线程轮流获得CPU的控制权，并且为每个线程平均分配CPU时间片段</li>
 <li>抢占式调度模型：选择优先级相对较高的线程执行，如果所有线程的优先级相同，则随机选择一个线程执行。Java虚拟机采用此种调度模型。</li>
 </ul>
-<h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><p>Java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查），将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。</p>
-<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>多线程应用程序同时访问共享对象时，由于线程间相互抢占CPU的控制权，造成一个线程夹在另一个线程的执行过程中运行，所以可能导致错误的执行结果。</p>
-<h4 id="Synchronized关键字"><a href="#Synchronized关键字" class="headerlink" title="Synchronized关键字"></a>Synchronized关键字</h4><p>为了防止共享对象在并发访问时出现错误Java中提供了<code>synchronized</code>关键字。</p>
+<h3 id="线程同步">线程同步</h3>
+<p>Java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查），将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。</p>
+<h4 id="线程安全">线程安全</h4>
+<p>多线程应用程序同时访问共享对象时，由于线程间相互抢占CPU的控制权，造成一个线程夹在另一个线程的执行过程中运行，所以可能导致错误的执行结果。</p>
+<h4 id="Synchronized关键字">Synchronized关键字</h4>
+<p>为了防止共享对象在并发访问时出现错误Java中提供了<code>synchronized</code>关键字。</p>
 <p><code>synchronized</code>关键字</p>
 <ul>
-<li>确保共享对象在同一时刻只能被一个线程访问，这种处理机制称为“线程同步”或“线程互斥”。Java中的“线程同步”基于“对象锁”的概念。</li>
+<li>确保共享对象在同一时刻只能被一个线程访问，这种处理机制称为“线程同步”或“线程互斥”。Java中的“线程同步&quot;基于“对象锁”的概念。</li>
 </ul>
 <p>使用<code>synchronized</code>关键字</p>
 <ul>
@@ -737,9 +763,11 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 </ul>
 <p>注意：</p>
 <ul>
-<li><p>同步块的作用与同步方法一样，只是控制范围有所区别</p>
+<li>
+<p>同步块的作用与同步方法一样，只是控制范围有所区别</p>
 </li>
-<li><p>使用synchronized 代码块解决线程安全的问题：需要在synchronized 代码块中参照共同的一个对象</p>
+<li>
+<p>使用synchronized 代码块解决线程安全的问题：需要在synchronized 代码块中参照共同的一个对象</p>
 </li>
 </ul>
 <p>实例：两个线程同步打印26个字母</p>
@@ -796,7 +824,8 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
 &#125;</code></pre></div>
-<h3 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h3><p>当一个线程正在使用同步方法时，其他线程就不能使用这个同步方法，而有时涉及一些特殊情况：</p>
+<h3 id="线程通信">线程通信</h3>
+<p>当一个线程正在使用同步方法时，其他线程就不能使用这个同步方法，而有时涉及一些特殊情况：</p>
 <ul>
 <li>当一个人在一个售票窗口排队买电影票时，如果她给售票员的不是零钱，而售票员有没有售票员找她，那么她必须等待，并允许后面的人买票，以便售票员获取零钱找她，如果第2个人也没有零钱，那么她俩必须同时等待。</li>
 </ul>
@@ -809,58 +838,60 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 <ul>
 <li>唤醒由于使用这个同步方法而处于等待线程的某一个结束等待</li>
 </ul>
-<p><code>notifyall()</code>方法：  </p>
+<p><code>notifyall()</code>方法：</p>
 <ul>
-<li>唤醒所有由于使用这个同步方法而处于等待的线程结束等待<br>实例：刘关张买票，票价五元一张，售票员只有五元零钱，张飞有二十元整钱，刘关各有五元</li>
+<li>唤醒所有由于使用这个同步方法而处于等待的线程结束等待<br>
+实例：刘关张买票，票价五元一张，售票员只有五元零钱，张飞有二十元整钱，刘关各有五元</li>
 </ul>
-<p>&#96;&#96;&#96;java<br>public class TicketHouse implements Runnable {</p>
-<div class="code-wrapper"><pre><code class="hljs">private int fiveCount = 1, tenCount = 0, twentyCount = 0;
+<div class="code-wrapper"><pre><code class="language-java">public class TicketHouse implements Runnable &#123;
 
-public synchronized void buy() &#123;
+    private int fiveCount = 1, tenCount = 0, twentyCount = 0;
 
-    String name = Thread.currentThread().getName();
+    public synchronized void buy() &#123;
 
-    if (&quot;zf&quot;.equals(name)) &#123;
-        if (fiveCount &lt; 3) &#123;
-            try &#123;
-                System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，张飞必须等待&quot;);
-                wait();
-                System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，卖一张票给张飞，找零 15&quot;);
-            &#125; catch (InterruptedException e) &#123;
-                e.printStackTrace();
+        String name = Thread.currentThread().getName();
+
+        if (&quot;zf&quot;.equals(name)) &#123;
+            if (fiveCount &lt; 3) &#123;
+                try &#123;
+                    System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，张飞必须等待&quot;);
+                    wait();
+                    System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，卖一张票给张飞，找零 15&quot;);
+                &#125; catch (InterruptedException e) &#123;
+                    e.printStackTrace();
+                &#125;
             &#125;
+        &#125; else if (&quot;gy&quot;.equals(name)) &#123;
+            fiveCount++;
+            System.out.println(&quot;卖一张票给关羽，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
+        &#125; else if (&quot;lb&quot;.equals(name)) &#123;
+            fiveCount++;
+            System.out.println(&quot;卖一张票给刘备，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
         &#125;
-    &#125; else if (&quot;gy&quot;.equals(name)) &#123;
-        fiveCount++;
-        System.out.println(&quot;卖一张票给关羽，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
-    &#125; else if (&quot;lb&quot;.equals(name)) &#123;
-        fiveCount++;
-        System.out.println(&quot;卖一张票给刘备，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
+        //唤醒
+        if (fiveCount == 3)
+            notifyAll();
     &#125;
-    //唤醒
-    if (fiveCount == 3)
-        notifyAll();
-&#125;
 
-@Override
-public void run() &#123;
-    buy();
-&#125;
+    @Override
+    public void run() &#123;
+        buy();
+    &#125;
 
-public static void main(String[] args) &#123;
-    Runnable runnable = new TicketHouse();
-    Thread th1 = new Thread(runnable);
-    th1.setName(&quot;zf&quot;);
-    Thread th2 = new Thread(runnable);
-    th2.setName(&quot;gy&quot;);
-    Thread th3 = new Thread(runnable);
-    th3.setName(&quot;lb&quot;);
-    th1.start();
-    th2.start();
-    th3.start();
+    public static void main(String[] args) &#123;
+        Runnable runnable = new TicketHouse();
+        Thread th1 = new Thread(runnable);
+        th1.setName(&quot;zf&quot;);
+        Thread th2 = new Thread(runnable);
+        th2.setName(&quot;gy&quot;);
+        Thread th3 = new Thread(runnable);
+        th3.setName(&quot;lb&quot;);
+        th1.start();
+        th2.start();
+        th3.start();
+    &#125;
 &#125;
-</code></pre></div>
-<p>}<br>&#96;&#96;</p>
+``</code></pre></div>
 
                 
               </div>
