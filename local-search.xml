@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>线性回归算法</title>
+    <link href="/2023/02/13/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/"/>
+    <url>/2023/02/13/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="线性回归算法"><a href="#线性回归算法" class="headerlink" title="线性回归算法"></a>线性回归算法</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>机器学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ML</tag>
+      
+      <tag>线性回归</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器学习入门</title>
     <link href="/2023/02/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
     <url>/2023/02/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/</url>
@@ -1122,9 +1149,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Lifecycles</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>Lifecycles</tag>
       
     </tags>
     
@@ -1180,9 +1207,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>DataBinding</tag>
+      
+      <tag>Architecture</tag>
       
       <tag>ViewModel</tag>
       
@@ -1324,9 +1351,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
@@ -1410,13 +1437,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Set</tag>
+      <tag>Array</tag>
       
       <tag>List</tag>
       
-      <tag>Map</tag>
+      <tag>Set</tag>
       
-      <tag>Array</tag>
+      <tag>Map</tag>
       
     </tags>
     
@@ -2904,17 +2931,17 @@
     
     <tags>
       
-      <tag>集合</tag>
-      
       <tag>Collection</tag>
-      
-      <tag>Set</tag>
-      
-      <tag>TreeSet</tag>
       
       <tag>List</tag>
       
+      <tag>Set</tag>
+      
       <tag>Map</tag>
+      
+      <tag>集合</tag>
+      
+      <tag>TreeSet</tag>
       
       <tag>HashMap</tag>
       
@@ -2943,9 +2970,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
