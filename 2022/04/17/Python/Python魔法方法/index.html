@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python的魔法方法目录：  Python的魔法方法 构造方法__new__ __str__和__repr__ __getattr__、__setattr__和__delattr__    参考链接：  Python魔法方法指南 Python常用魔术方法一览表 Python 魔法方法  Python中的魔法方法像是Java中的重载，Python中的魔法方法可以理解为：对类中的内置方法的重载，注意">
+    <meta name="description" content="Python的魔法方法 目录： - Python的魔法方法 - 构造方法__new__ - __str__和__repr__ - __getattr__、__setattr__和__delattr__ 参考链接： - Python魔法方法指南 - Python常用魔术方法一览表 - Python 魔法方法 Python中的魔法方法像是Java中的重载，Python中的魔法方法可以理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python魔法方法">
 <meta property="og:url" content="http://yorick.love/2022/04/17/Python/Python%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Python的魔法方法目录：  Python的魔法方法 构造方法__new__ __str__和__repr__ __getattr__、__setattr__和__delattr__    参考链接：  Python魔法方法指南 Python常用魔术方法一览表 Python 魔法方法  Python中的魔法方法像是Java中的重载，Python中的魔法方法可以理解为：对类中的内置方法的重载，注意">
+<meta property="og:description" content="Python的魔法方法 目录： - Python的魔法方法 - 构造方法__new__ - __str__和__repr__ - __getattr__、__setattr__和__delattr__ 参考链接： - Python魔法方法指南 - Python常用魔术方法一览表 - Python 魔法方法 Python中的魔法方法像是Java中的重载，Python中的魔法方法可以理解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-04-17T08:05:22.000Z">
@@ -322,27 +322,26 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Python的魔法方法"><a href="#Python的魔法方法" class="headerlink" title="Python的魔法方法"></a>Python的魔法方法</h1><p>目录：</p>
-<ul>
-<li><a href="#python%E7%9A%84%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95">Python的魔法方法</a><ul>
-<li><a href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95__new__">构造方法<code>__new__</code></a></li>
-<li><a href="#__str__%E5%92%8C__repr__"><code>__str__</code>和<code>__repr__</code></a></li>
-<li><a href="#__getattr____setattr__%E5%92%8C__delattr__"><code>__getattr__</code>、<code>__setattr__</code>和<code>__delattr__</code></a></li>
-</ul>
-</li>
-</ul>
-<p>参考链接：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://url.cy/0wKANr">Python魔法方法指南</a></li>
-<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7817.html">Python常用魔术方法一览表</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yusuiyu/article/details/87945149">Python 魔法方法</a></li>
-</ul>
+                <h1 id="python的魔法方法">Python的魔法方法</h1>
+<p>目录： - <a href="#python的魔法方法">Python的魔法方法</a> - <a
+href="#构造方法__new__">构造方法<code>__new__</code></a> - <a
+href="#__str__和__repr__"><code>__str__</code>和<code>__repr__</code></a>
+- <a
+href="#__getattr____setattr__和__delattr__"><code>__getattr__</code>、<code>__setattr__</code>和<code>__delattr__</code></a></p>
+<p>参考链接： - <a target="_blank" rel="noopener" href="https://url.cy/0wKANr">Python魔法方法指南</a> -
+<a
+target="_blank" rel="noopener" href="http://c.biancheng.net/view/7817.html">Python常用魔术方法一览表</a>
+- <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/yusuiyu/article/details/87945149">Python
+魔法方法</a></p>
 <p>Python中的魔法方法像是Java中的重载，Python中的魔法方法可以理解为：对类中的内置方法的重载，注意这里不是重写。</p>
 <p>下面列出部分常用的方法：</p>
-<h3 id="构造方法-new"><a href="#构造方法-new" class="headerlink" title="构造方法__new__"></a>构造方法<code>__new__</code></h3><p><a href="./__new__%E6%96%B9%E6%B3%95.md">__init__方法</a></p>
-<h3 id="str-和-repr"><a href="#str-和-repr" class="headerlink" title="__str__和__repr__"></a><code>__str__</code>和<code>__repr__</code></h3><p><code>__str__</code>定义对类的实例调用<code>str()</code>时的行为。而<code>__repr__</code>定义对类的实例调用<code>repr()</code>的行为，这两者的区别就是<code>repr</code>面向开发者，<code>str</code>面向用户。定义类的输出的时候经常会使用这两个其中的魔法。</p>
-<p>实例：</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span>(<span class="hljs-title class_ inherited__">object</span>):
+<h3 id="构造方法__new__">构造方法<code>__new__</code></h3>
+<p><a href="./__new__%E6%96%B9%E6%B3%95.md">__init__方法</a></p>
+<h3
+id="str__和__repr__"><code>__str__</code>和<code>__repr__</code></h3>
+<p><code>__str__</code>定义对类的实例调用<code>str()</code>时的行为。而<code>__repr__</code>定义对类的实例调用<code>repr()</code>的行为，这两者的区别就是<code>repr</code>面向开发者，<code>str</code>面向用户。定义类的输出的时候经常会使用这两个其中的魔法。</p>
+<p>实例： <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span>(<span class="hljs-title class_ inherited__">object</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,name,weight</span>):
         self.name = name
@@ -353,12 +352,16 @@
 
 <span class="hljs-built_in">print</span>(Apple(<span class="hljs-string">&#x27;A&#x27;</span>,<span class="hljs-string">&#x27;30g&#x27;</span>))
 <span class="hljs-comment"># 输出；A:30g</span></code></pre></div>
-<p>这里可以看见<code>__str__</code>起作用了，但是如果我们在命令行里运行<code>Apple(&#39;A&#39;,&#39;30g&#39;)</code>的话，输出的可能是：</p>
+这里可以看见<code>__str__</code>起作用了，但是如果我们在命令行里运行<code>Apple('A','30g')</code>的话，输出的可能是：
 <div class="code-wrapper"><pre><code class="hljs py">&lt;__main__.Apple <span class="hljs-built_in">object</span> at <span class="hljs-number">0x000001785036DEE0</span>&gt;</code></pre></div>
-<p>因为这里是<code>__repr__控制的</code>，修改Apple类，添加<code>__repr__ = __str__</code>则可以输出：</p>
-<div class="code-wrapper"><pre><code class="hljs py">A:30g</code></pre></div>
-<h3 id="getattr-、-setattr-和-delattr"><a href="#getattr-、-setattr-和-delattr" class="headerlink" title="__getattr__、__setattr__和__delattr__"></a><code>__getattr__</code>、<code>__setattr__</code>和<code>__delattr__</code></h3><p><code>__getattr__</code>定义对象访问不存在的属性或方法时的行为(对象访问不存在的属性或者调用方法时调用)<br><code>__setattr__</code>定义对属性或方法进行修改操作时的行为,在实例化的时候，会在<code>__init__</code>里初始化，对value的属性值进行了设置，这时候会调用<code>__setattr__</code>方法。<br>需要注意的地方是，在重写<code>__setattr__</code>方法的时候千万不要重复调用造成死循环。<br><code>__delattr__</code>定义定义删除属性时的行为</p>
-<p>实例：<br>可以参考<a href="./orm.md">ORM框架</a>的<code>Model</code>类</p>
+因为这里是<code>__repr__控制的</code>，修改Apple类，添加<code>__repr__ = __str__</code>则可以输出：
+<div class="code-wrapper"><pre><code class="hljs py">A:30g</code></pre></div> ###
+<code>__getattr__</code>、<code>__setattr__</code>和<code>__delattr__</code></p>
+<p><code>__getattr__</code>定义对象访问不存在的属性或方法时的行为(对象访问不存在的属性或者调用方法时调用)
+<code>__setattr__</code>定义对属性或方法进行修改操作时的行为,在实例化的时候，会在<code>__init__</code>里初始化，对value的属性值进行了设置，这时候会调用<code>__setattr__</code>方法。
+需要注意的地方是，在重写<code>__setattr__</code>方法的时候千万不要重复调用造成死循环。
+<code>__delattr__</code>定义定义删除属性时的行为</p>
+<p>实例： 可以参考<a href="./orm.md">ORM框架</a>的<code>Model</code>类
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span>(<span class="hljs-title class_ inherited__">object</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, weight</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;进入__init__初始化对象属性&quot;</span>)
@@ -384,9 +387,7 @@ a = Apple(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-stri
 <span class="hljs-built_in">print</span>(a.key)
 <span class="hljs-keyword">del</span> a.name
 <span class="hljs-keyword">del</span> a.weight
-<span class="hljs-built_in">print</span>(a.name,a.weight)</code></pre></div>
-<p>结果：</p>
-<div class="code-wrapper"><pre><code class="hljs py">进入__init__初始化对象属性
+<span class="hljs-built_in">print</span>(a.name,a.weight)</code></pre></div> 结果： <div class="code-wrapper"><pre><code class="hljs py">进入__init__初始化对象属性
 正在生成实例化对象的name属性，值为A
 正在生成实例化对象的weight属性，值为30g
 a.name: A
@@ -394,7 +395,8 @@ a.weight 30g
 不存在key属性
 正在删除name属性
 正在删除weight属性
-不存在name属性 不存在weight属性</code></pre></div>
+不存在name属性 不存在weight属性</code></pre></div></p>
+
                 
               </div>
             

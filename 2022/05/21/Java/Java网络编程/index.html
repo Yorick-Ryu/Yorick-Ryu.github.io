@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java网络编程 Java网络编程 TCP&#x2F;IP编程基础 lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程   URL &amp; URLConnection    网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题，  如何准确地定位网络上一台或多台主机 找到主机后如何可靠高效地进行数据传输。  要想让处于网络中的主机互相">
+    <meta name="description" content="Java网络编程  Java网络编程  TCP&#x2F;IP编程基础  lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程  URL &amp; URLConnection   网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题， - 如何准确地定位网络上一台或多台主机 - 找到主机后如何可靠高效地进行数据传输。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java网络编程">
 <meta property="og:url" content="http://yorick.love/2022/05/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Java网络编程 Java网络编程 TCP&#x2F;IP编程基础 lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程   URL &amp; URLConnection    网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题，  如何准确地定位网络上一台或多台主机 找到主机后如何可靠高效地进行数据传输。  要想让处于网络中的主机互相">
+<meta property="og:description" content="Java网络编程  Java网络编程  TCP&#x2F;IP编程基础  lnetAdress类 IP和端口号 TCP程序设计 TCP网络编程  URL &amp; URLConnection   网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。 网络编程中有两个主要的问题， - 如何准确地定位网络上一台或多台主机 - 找到主机后如何可靠高效地进行数据传输。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/TCPSocket.png">
 <meta property="article:published_time" content="2022-05-21T06:37:43.000Z">
@@ -256,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k 字
+          3.6k 字
         
       </span>
     
@@ -326,41 +326,44 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h1><ul>
-<li><a href="#java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">Java网络编程</a><ul>
-<li><a href="#tcpip%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80">TCP&#x2F;IP编程基础</a><ul>
-<li><a href="#lnetadress%E7%B1%BB">lnetAdress类</a></li>
-<li><a href="#ip%E5%92%8C%E7%AB%AF%E5%8F%A3%E5%8F%B7">IP和端口号</a></li>
-<li><a href="#tcp%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">TCP程序设计</a></li>
-<li><a href="#tcp%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B">TCP网络编程</a></li>
-</ul>
-</li>
+                <h1 id="java网络编程">Java网络编程</h1>
+<ul>
+<li><a href="#java网络编程">Java网络编程</a>
+<ul>
+<li><a href="#tcpip编程基础">TCP/IP编程基础</a>
+<ul>
+<li><a href="#lnetadress类">lnetAdress类</a></li>
+<li><a href="#ip和端口号">IP和端口号</a></li>
+<li><a href="#tcp程序设计">TCP程序设计</a></li>
+<li><a href="#tcp网络编程">TCP网络编程</a></li>
+</ul></li>
 <li><a href="#url--urlconnection">URL &amp; URLConnection</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>网络编程的目的就是指值接或间接地通过网络协议与其它计算机进行通讯。</p>
-<p>网络编程中有两个主要的问题，</p>
-<ul>
-<li>如何准确地定位网络上一台或多台主机</li>
-<li>找到主机后如何可靠高效地进行数据传输。</li>
-</ul>
+<p>网络编程中有两个主要的问题， - 如何准确地定位网络上一台或多台主机 -
+找到主机后如何可靠高效地进行数据传输。</p>
 <p>要想让处于网络中的主机互相通信，只是知道通信双方地址还是不够的了，还必须遵循一定的规则。有两套参考模型：</p>
 <ul>
 <li>OSI参考模型:模型过于理想化，未能在因特网上进行广泛推广</li>
-<li>TCP&#x2F;IP参考模型(或TCPAIP协议)：事实上的国际标准。</li>
+<li>TCP/IP参考模型(或TCPAIP协议)：事实上的国际标准。</li>
 </ul>
-<h2 id="TCP-x2F-IP编程基础"><a href="#TCP-x2F-IP编程基础" class="headerlink" title="TCP&#x2F;IP编程基础"></a>TCP&#x2F;IP编程基础</h2><h3 id="lnetAdress类"><a href="#lnetAdress类" class="headerlink" title="lnetAdress类"></a>lnetAdress类</h3><p>InetAddress类对象含有一个Internet主机地址的域名和IP地址:<code>www.yorick.com/101.43.43.234</code></p>
+<h2 id="tcpip编程基础">TCP/IP编程基础</h2>
+<h3 id="lnetadress类">lnetAdress类</h3>
+<p>InetAddress类对象含有一个Internet主机地址的域名和IP地址:<code>www.yorick.com/101.43.43.234</code>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;www.yorick.com&quot;</span>);
 System.out.println(address);
 <span class="hljs-type">InetAddress</span> <span class="hljs-variable">address1</span> <span class="hljs-operator">=</span> InetAddress.getLocalHost();
 System.out.println(address1);
 <span class="hljs-comment">//www.yorick.com/35.186.238.101</span>
-<span class="hljs-comment">//YursPC/10.12.0.16</span></code></pre></div>
-<h3 id="IP和端口号"><a href="#IP和端口号" class="headerlink" title="IP和端口号"></a>IP和端口号</h3><p>IP地址标识Internet 上的计算机，端口号标识正在计算机上运行的进程（程序)。</p>
+<span class="hljs-comment">//YursPC/10.12.0.16</span></code></pre></div> ### IP和端口号</p>
+<p>IP地址标识Internet
+上的计算机，端口号标识正在计算机上运行的进程（程序)。</p>
 <p>端口号与IP地址的组合得出一个网络套接字。</p>
-<p>端口号被规定为一个16位的整数<code>0~65535</code>。其中，<br><code>0~1023</code>被预先定义的服务通信占用（如telnet占用端口23，http占用端口80等）。除非我们需要访问这些特定服务否则，就应该使用<code>1024~65535</code>这些端口中的某一个进行通信，以免发生端口冲突。</p>
-<h3 id="TCP程序设计"><a href="#TCP程序设计" class="headerlink" title="TCP程序设计"></a>TCP程序设计</h3><p>利用套接字(Socket)接口开发网络应用程序早已被广泛的采用，以至于成为事实上的标准。套接字能执行7种基本操作：</p>
+<p>端口号被规定为一个16位的整数<code>0~65535</code>。其中，
+<code>0~1023</code>被预先定义的服务通信占用（如telnet占用端口23，http占用端口80等）。除非我们需要访问这些特定服务否则，就应该使用<code>1024~65535</code>这些端口中的某一个进行通信，以免发生端口冲突。</p>
+<h3 id="tcp程序设计">TCP程序设计</h3>
+<p>利用套接字(Socket)接口开发网络应用程序早已被广泛的采用，以至于成为事实上的标准。套接字能执行7种基本操作：</p>
 <ul>
 <li>连接到远程主机</li>
 <li>绑定到端口</li>
@@ -370,11 +373,14 @@ System.out.println(address1);
 <li>接收数据</li>
 <li>关闭连接TCP网络编程</li>
 </ul>
-<h3 id="TCP网络编程"><a href="#TCP网络编程" class="headerlink" title="TCP网络编程"></a>TCP网络编程</h3><p>两个Java应用程序可通过一个双向的网络通信连接实现数据交换，这个双向链路的一段称为一个Socket（套接字）。Socket通常用来实现<code>Client/Server</code>连接。</p>
+<h3 id="tcp网络编程">TCP网络编程</h3>
+<p>两个Java应用程序可通过一个双向的网络通信连接实现数据交换，这个双向链路的一段称为一个Socket（套接字）。Socket通常用来实现<code>Client/Server</code>连接。</p>
 <p>Java语言的基于套接字编程分为服务器编程和客户端编程，其通信模型如图所示：</p>
-<p><img src="/./img/TCPSocket.png" srcset="/img/loading.gif" lazyload alt="TCPSocket"></p>
-<p>实例：</p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//客户端</span>
+<figure>
+<img src="./img/TCPSocket.png" srcset="/img/loading.gif" lazyload alt="TCPSocket" />
+<figcaption aria-hidden="true">TCPSocket</figcaption>
+</figure>
+<p>实例： <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">//客户端</span>
 <span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testClientSocket</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
     <span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;127.0.0.1&quot;</span>);
@@ -409,9 +415,8 @@ System.out.println(address1);
     socket.close();
 &#125;
 <span class="hljs-comment">//^_^:来自服务端的问候</span></code></pre></div>
-<p>练习：服务端向客户端传递一个文件﹐客户端读取文件并保存到本地。</p>
-<p>图示：<br><img src="/./img/Socket.png" srcset="/img/loading.gif" lazyload alt="Socket"></p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+练习：服务端向客户端传递一个文件﹐客户端读取文件并保存到本地。</p>
+<p>图示： <img src="./img/Socket.png" srcset="/img/loading.gif" lazyload alt="Socket" /> <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testServerSocket1</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
     <span class="hljs-type">ServerSocket</span> <span class="hljs-variable">serverSocket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServerSocket</span>(<span class="hljs-number">8888</span>);
     <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> serverSocket.accept();
@@ -441,16 +446,15 @@ System.out.println(address1);
     in.close();
     outputStream.close();
     socket.close();
-&#125;</code></pre></div>
-
-<h2 id="URL-amp-URLConnection"><a href="#URL-amp-URLConnection" class="headerlink" title="URL &amp; URLConnection"></a>URL &amp; URLConnection</h2><p>URL (Uniform Resource Locator) ：统一资源定位符，它表示 Internet上某一资源的地址。通过URL我们可以访问Internet 上的各种网络资源，比如最常见的www , ftp站点。浏览器通过解析给定的URL可以在网络上查找相应的文件或其他资源。</p>
-<p>URL的基本结构由5部分组成：</p>
-<ul>
-<li>&lt;传输协议&gt;:&#x2F;&#x2F;&lt;主机名&gt;:&lt;端口号&gt;&#x2F;&lt;文件名&gt;</li>
-<li>例如：<a target="_blank" rel="noopener" href="http://192.168.1.100:8080/helloworld/index.jsp">http://192.168.1.100:8080/helloworld/index.jsp</a></li>
-</ul>
-<p>示例：</p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+&#125;</code></pre></div></p>
+<h2 id="url-urlconnection">URL &amp; URLConnection</h2>
+<p>URL (Uniform Resource Locator) ：统一资源定位符，它表示
+Internet上某一资源的地址。通过URL我们可以访问Internet
+上的各种网络资源，比如最常见的www ,
+ftp站点。浏览器通过解析给定的URL可以在网络上查找相应的文件或其他资源。</p>
+<p>URL的基本结构由5部分组成： - <传输协议>://<主机名>:<端口号>/<文件名>
+- 例如：http://192.168.1.100:8080/helloworld/index.jsp</p>
+<p>示例： <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testURL</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;
     <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">URL</span>(<span class="hljs-string">&quot;http://127.0.0.1:8080/examples/hello.txt&quot;</span>);
     System.out.println(url.getPath());
@@ -469,7 +473,8 @@ System.out.println(address1);
     &#125;
     in.close();
     outputStream.close();
-&#125;</code></pre></div>
+&#125;</code></pre></div></p>
+
                 
               </div>
             

@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题描述　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法# 获取m,n m, n &#x3D; map(in">
+    <meta name="description" content="问题描述 　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式 　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式 　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法 # 获取m,n m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝桥杯回形取数">
 <meta property="og:url" content="http://yorick.love/2023/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="问题描述　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法# 获取m,n m, n &#x3D; map(in">
+<meta property="og:description" content="问题描述 　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。 输入格式 　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。 输出格式 　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。 我的解法 # 获取m,n m">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2023-01-01T11:53:09.000Z">
@@ -323,10 +323,15 @@
             
               <div class="markdown-body">
                 
-                <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>　　输入第一行是两个不超过200的正整数m, n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。</p>
-<h2 id="我的解法"><a href="#我的解法" class="headerlink" title="我的解法"></a>我的解法</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 获取m,n</span>
+                <h2 id="问题描述">问题描述</h2>
+<p>　　回形取数就是沿矩阵的边取数，若当前方向上无数可取或已经取过，则左转90度。一开始位于矩阵左上角，方向向下。</p>
+<h2 id="输入格式">输入格式</h2>
+<p>　　输入第一行是两个不超过200的正整数m,
+n，表示矩阵的行和列。接下来m行每行n个整数，表示这个矩阵。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>　　输出只有一行，共mn个数，为输入矩阵回形取数得到的结果。数之间用一个空格分隔，行末不要有多余的空格。</p>
+<h2 id="我的解法">我的解法</h2>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 获取m,n</span>
 m, n = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split())
 
 <span class="hljs-comment"># 获取数组</span>
@@ -371,6 +376,7 @@ res = []
 <span class="hljs-comment"># 输出结果</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> res:
     <span class="hljs-built_in">print</span>(i, end=<span class="hljs-string">&quot; &quot;</span>)</code></pre></div>
+
                 
               </div>
             

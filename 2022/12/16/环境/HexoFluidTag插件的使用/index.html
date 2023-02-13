@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo Fluid Tag插件的使用配置指南 | Hexo Fluid 用户手册 (fluid-dev.com) Tag 插件#便签在 markdown 中加入如下的代码来使用便签： &amp;#123;% note success %&amp;#125; 文字 或者 &#96;markdown&#96; 均可 &amp;#123;% endnote %&amp;#125;  或者使用 HTML 形式： &lt;p class&#x3D;&quot;n">
+    <meta name="description" content="Hexo Fluid Tag插件的使用 配置指南 | Hexo Fluid 用户手册 (fluid-dev.com) Tag 插件 #便签 在 markdown 中加入如下的代码来使用便签： &amp;#123;% note success %&amp;#125; 文字 或者 &#96;markdown&#96; 均可 &amp;#123;% endnote %&amp;#125; 或者使用 HTML 形式： &lt;p cla">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo_Fluid_Tag插件的使用">
 <meta property="og:url" content="http://yorick.love/2022/12/16/%E7%8E%AF%E5%A2%83/HexoFluidTag%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Hexo Fluid Tag插件的使用配置指南 | Hexo Fluid 用户手册 (fluid-dev.com) Tag 插件#便签在 markdown 中加入如下的代码来使用便签： &amp;#123;% note success %&amp;#125; 文字 或者 &#96;markdown&#96; 均可 &amp;#123;% endnote %&amp;#125;  或者使用 HTML 形式： &lt;p class&#x3D;&quot;n">
+<meta property="og:description" content="Hexo Fluid Tag插件的使用 配置指南 | Hexo Fluid 用户手册 (fluid-dev.com) Tag 插件 #便签 在 markdown 中加入如下的代码来使用便签： &amp;#123;% note success %&amp;#125; 文字 或者 &#96;markdown&#96; 均可 &amp;#123;% endnote %&amp;#125; 或者使用 HTML 形式： &lt;p cla">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-12-16T06:44:37.000Z">
@@ -324,47 +324,61 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo-Fluid-Tag插件的使用"><a href="#Hexo-Fluid-Tag插件的使用" class="headerlink" title="Hexo Fluid Tag插件的使用"></a>Hexo Fluid Tag插件的使用</h1><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#tag-%E6%8F%92%E4%BB%B6">配置指南 | Hexo Fluid 用户手册 (fluid-dev.com)</a></p>
-<h3 id="Tag-插件"><a href="#Tag-插件" class="headerlink" title="Tag 插件"></a>Tag 插件</h3><h4 id="便签"><a href="#便签" class="headerlink" title="#便签"></a><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E4%BE%BF%E7%AD%BE">#</a>便签</h4><p>在 markdown 中加入如下的代码来使用便签：</p>
+                <h1 id="hexo-fluid-tag插件的使用">Hexo Fluid Tag插件的使用</h1>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#tag-插件">配置指南 |
+Hexo Fluid 用户手册 (fluid-dev.com)</a></p>
+<h3 id="tag-插件">Tag 插件</h3>
+<h4 id="便签"><a
+target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#便签">#</a>便签</h4>
+<p>在 markdown 中加入如下的代码来使用便签：</p>
 <div class="code-wrapper"><pre><code class="hljs markdown">&#123;% note success %&#125;
 文字 或者 <span class="hljs-code">`markdown`</span> 均可
 &#123;% endnote %&#125;</code></pre></div>
-
 <p>或者使用 HTML 形式：</p>
 <div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div>
-
 <p>可选便签：</p>
-<p class="note note-primary">primary</p>
-
-<p class="note note-secondary">secondary</p>
-
-<p class="note note-success">success</p>
-
-<p class="note note-danger">danger</p>
-
-<p class="note note-warning">warning</p>
-
-<p class="note note-info">info</p>
-
-<p class="note note-light">light</p>
-
+<p class="note note-primary">
+primary
+</p>
+<p class="note note-secondary">
+secondary
+</p>
+<p class="note note-success">
+success
+</p>
+<p class="note note-danger">
+danger
+</p>
+<p class="note note-warning">
+warning
+</p>
+<p class="note note-info">
+info
+</p>
+<p class="note note-light">
+light
+</p>
 <div class="code-wrapper"><pre><code class="hljs autohotkey">WARNING
 使用时 `&#123;% note primary %&#125;` 和 `&#123;% endnote %&#125;` 需单独一行，否则会出现问题</code></pre></div>
-
-<h4 id="行内标签"><a href="#行内标签" class="headerlink" title="#行内标签"></a><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%A1%8C%E5%86%85%E6%A0%87%E7%AD%BE">#</a>行内标签</h4><p>在 markdown 中加入如下的代码来使用 Label：</p>
+<h4 id="行内标签"><a
+target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#行内标签">#</a>行内标签</h4>
+<p>在 markdown 中加入如下的代码来使用 Label：</p>
 <div class="code-wrapper"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;</code></pre></div>
-
 <p>或者使用 HTML 形式：</p>
 <div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label label-primary&quot;</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre></div>
-
 <p>可选 Label：</p>
-<p><span class="label label-primary">primary</span><br><span class="label label-default">default</span><br><span class="label label-info">info</span><br><span class="label label-success">success</span><br><span class="label label-warning">warning</span><br><span class="label label-danger">danger</span></p>
+<p><span class="label label-primary">primary</span> <span
+class="label label-default">default</span> <span
+class="label label-info">info</span> <span
+class="label label-success">success</span> <span
+class="label label-warning">warning</span> <span
+class="label label-danger">danger</span></p>
 <div class="code-wrapper"><pre><code class="hljs pgsql"><span class="hljs-built_in">WARNING</span>
 若使用 `&#123;% label <span class="hljs-keyword">primary</span> @<span class="hljs-type">text</span> %&#125;`，<span class="hljs-type">text</span> 不能以 @ 开头</code></pre></div>
-
-<h4 id="勾选框"><a href="#勾选框" class="headerlink" title="#勾选框"></a><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E5%8B%BE%E9%80%89%E6%A1%86">#</a>勾选框</h4><p>在 markdown 中加入如下的代码来使用 Checkbox：</p>
+<h4 id="勾选框"><a
+target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#勾选框">#</a>勾选框</h4>
+<p>在 markdown 中加入如下的代码来使用 Checkbox：</p>
 <div class="code-wrapper"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;</code></pre></div>
-
 <ul>
 <li>text：显示的文字</li>
 <li>checked：默认是否已勾选，默认 false</li>
@@ -374,25 +388,21 @@
 <div>
             <input type="checkbox" disabled >普通示例
           </div>
-
 <div>
             <input type="checkbox" disabled checked="checked">默认选中
           </div>
 
-
             <input type="checkbox" disabled >内联示例
-           后面文字不换行  
-
-<input type="checkbox" disabled > 也可以只传入一个参数，文字写在后边（这样不支持外联）
-
-
-
-<h4 id="按钮"><a href="#按钮" class="headerlink" title="#按钮"></a><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E6%8C%89%E9%92%AE">#</a>按钮</h4><p>你可以在 markdown 中加入如下的代码来使用 Button：</p>
+          
+<p>后面文字不换行</p>
+<input type="checkbox" disabled >
+<p>也可以只传入一个参数，文字写在后边（这样不支持外联）</p>
+<h4 id="按钮"><a
+target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#按钮">#</a>按钮</h4>
+<p>你可以在 markdown 中加入如下的代码来使用 Button：</p>
 <div class="code-wrapper"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;</code></pre></div>
-
 <p>或者使用 HTML 形式：</p>
 <div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div>
-
 <ul>
 <li>url：跳转链接</li>
 <li>text：显示的文字</li>

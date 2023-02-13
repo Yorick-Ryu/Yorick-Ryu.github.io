@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python_Mini_Note import random 随机数库  import decimal 十进制库，提供精准的浮点数  &#x2F;&#x2F;地板除,两数相除后向下取整的结果  一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y)  divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b)  ads(x)返回x的绝对值，若x是复数，则返回x的模  pow(x,y)和x ** y都表示x的y次">
+    <meta name="description" content="Python_Mini_Note  import random 随机数库 import decimal 十进制库，提供精准的浮点数 &#x2F;&#x2F;地板除,两数相除后向下取整的结果 一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y) divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b) ads(x)返回x的绝对值，若x是复数，则返回x的模 pow(x,y)和x ** y都表示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记">
 <meta property="og:url" content="http://yorick.love/2022/04/18/Python/PythonNote/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Python_Mini_Note import random 随机数库  import decimal 十进制库，提供精准的浮点数  &#x2F;&#x2F;地板除,两数相除后向下取整的结果  一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y)  divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b)  ads(x)返回x的绝对值，若x是复数，则返回x的模  pow(x,y)和x ** y都表示x的y次">
+<meta property="og:description" content="Python_Mini_Note  import random 随机数库 import decimal 十进制库，提供精准的浮点数 &#x2F;&#x2F;地板除,两数相除后向下取整的结果 一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y) divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b) ads(x)返回x的绝对值，若x是复数，则返回x的模 pow(x,y)和x ** y都表示">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/img1.png">
 <meta property="article:published_time" content="2022-04-18T08:13:49.000Z">
@@ -323,68 +323,53 @@
             
               <div class="markdown-body">
                 
-                <h3 id="Python-Mini-Note"><a href="#Python-Mini-Note" class="headerlink" title="Python_Mini_Note"></a>Python_Mini_Note</h3><ol>
-<li><p>import random 随机数库</p>
-</li>
-<li><p>import decimal 十进制库，提供精准的浮点数</p>
-</li>
-<li><p><code>//</code>地板除,两数相除后向下取整的结果</p>
-</li>
-<li><p>一个公式：<code>x == (x // y) * y+(x % y)</code></p>
-</li>
-<li><p><code>divmod(a,b)</code> 得到 <code>(a // b,a % b)</code></p>
-</li>
-<li><p><code>ads(x)</code>返回x的绝对值，若x是复数，则返回x的模</p>
-</li>
-<li><p><code>pow(x,y)</code>和<code>x ** y</code>都表示x的y次方 </p>
-</li>
-<li><p><code>pow(x,y,z)</code>表示x的y次方除以z的余数</p>
-</li>
+                <h3 id="python_mini_note">Python_Mini_Note</h3>
+<ol type="1">
+<li><p>import random 随机数库</p></li>
+<li><p>import decimal 十进制库，提供精准的浮点数</p></li>
+<li><p><code>//</code>地板除,两数相除后向下取整的结果</p></li>
+<li><p>一个公式：<code>x == (x // y) * y+(x % y)</code></p></li>
+<li><p><code>divmod(a,b)</code> 得到
+<code>(a // b,a % b)</code></p></li>
+<li><p><code>ads(x)</code>返回x的绝对值，若x是复数，则返回x的模</p></li>
+<li><p><code>pow(x,y)</code>和<code>x ** y</code>都表示x的y次方</p></li>
+<li><p><code>pow(x,y,z)</code>表示x的y次方除以z的余数</p></li>
 <li><p>流程图</p>
-<p> <img src="/img/img1.png" srcset="/img/loading.gif" lazyload alt="流程图"></p>
-</li>
-<li><p>for in </p>
-</li>
-<li><p>深拷贝和浅拷贝 <code>import copy</code></p>
-</li>
-<li><p>列表推导式</p>
-</li>
-<li><p>元组不可以修改，只支持查</p>
-</li>
-<li><p>打包和解包</p>
-<div class="code-wrapper"><pre><code class="hljs py">t = (<span class="hljs-number">123</span>,<span class="hljs-number">222</span>,<span class="hljs-string">&quot;hh&quot;</span>)
+<figure>
+<img src="img/img1.png" srcset="/img/loading.gif" lazyload alt="流程图" />
+<figcaption aria-hidden="true">流程图</figcaption>
+</figure></li>
+<li><p>for in</p></li>
+<li><p>深拷贝和浅拷贝 <code>import copy</code></p></li>
+<li><p>列表推导式</p></li>
+<li><p>元组不可以修改，只支持查</p></li>
+<li><p>打包和解包 <div class="code-wrapper"><pre><code class="hljs py">t = (<span class="hljs-number">123</span>,<span class="hljs-number">222</span>,<span class="hljs-string">&quot;hh&quot;</span>)
 x,y,z = t
 a,b,c,d,e,f = <span class="hljs-string">&#x27;Yorick&#x27;</span>
-a,b,c,*d = <span class="hljs-string">&#x27;Yorick&#x27;</span></code></pre></div></li>
-<li><p>多重赋值<code>x,y = 1,2</code></p>
-</li>
-<li><p>元组里放列表就可变</p>
-</li>
-<li><p><code>zip(x,y,z)</code>以最短的为准,可以<code>import itertools</code> 使用<code>itertools.zip_longest(x,y,z)</code>可以按照最长的来，空用<code>None</code>填充</p>
-</li>
-<li><p>map()</p>
- <div class="code-wrapper"><pre><code class="hljs py">mapped = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">pow</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+a,b,c,*d = <span class="hljs-string">&#x27;Yorick&#x27;</span></code></pre></div></p></li>
+<li><p>多重赋值<code>x,y = 1,2</code></p></li>
+<li><p>元组里放列表就可变</p></li>
+<li><p><code>zip(x,y,z)</code>以最短的为准,可以<code>import itertools</code>
+使用<code>itertools.zip_longest(x,y,z)</code>可以按照最长的来，空用<code>None</code>填充</p></li>
+<li><p>map() <div class="code-wrapper"><pre><code class="hljs py">mapped = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">pow</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
 <span class="hljs-comment">#等价：</span>
-mapped = [<span class="hljs-built_in">pow</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)]</code></pre></div>
-</li>
-<li><p>filter()</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.islower,<span class="hljs-string">&quot;Yorick&quot;</span>))
-<span class="hljs-comment">#返回orick</span></code></pre></div></li>
-<li><p>set 集合元素具有唯一性</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>])
+mapped = [<span class="hljs-built_in">pow</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)]</code></pre></div></p></li>
+<li><p>filter() <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.islower,<span class="hljs-string">&quot;Yorick&quot;</span>))
+<span class="hljs-comment">#返回orick</span></code></pre></div></p></li>
+<li><p>set 集合元素具有唯一性 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>])
 <span class="hljs-comment">#输出去重集合</span>
-&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;</code></pre></div></li>
-<li><p>参数列表里<code>/</code>左边只能传递位置参数，不能传递关键字参数。</p>
+&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;</code></pre></div></p></li>
+<li><p>参数列表里<code>/</code>左边只能传递位置参数，不能传递关键字参数。
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">abc</span>(<span class="hljs-params">a,/,b,c</span>):
  <span class="hljs-built_in">print</span>(a,b,c)
 abc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
 <span class="hljs-comment">#正常输出 1 2 3</span>
 abc(a = <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
-<span class="hljs-comment">#报错SyntaxError: positional argument follows keyword argument</span></code></pre></div></li>
-<li><p><code>*</code>限制参数列表,<code>*</code>号右侧只能为关键字参数,左侧不限</p>
+<span class="hljs-comment">#报错SyntaxError: positional argument follows keyword argument</span></code></pre></div></p></li>
+<li><p><code>*</code>限制参数列表,<code>*</code>号右侧只能为关键字参数,左侧不限
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">abc</span>(<span class="hljs-params">a,*,b,c</span>):
- <span class="hljs-built_in">print</span>(a,b,c)</code></pre></div></li>
-<li><p>收集参数，利用元组（tuple）的打包解包功能实现动态参数</p>
+ <span class="hljs-built_in">print</span>(a,b,c)</code></pre></div></p></li>
+<li><p>收集参数，利用元组（tuple）的打包解包功能实现动态参数
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">*args</span>):
     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;有&#123;&#125;个参数&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">len</span>(args)))
     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第二个参数是：&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(args[<span class="hljs-number">1</span>]))
@@ -392,24 +377,21 @@ myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<sp
 <span class="hljs-comment"># 输出：</span>
 <span class="hljs-comment"># 有3个参数</span>
 <span class="hljs-comment"># 第二个参数是：2</span></code></pre></div>
-<p>当某函数的参数列表中存在收集参数时，收集参数右侧只能为关键字参数,左侧不限。（同22）</p>
-</li>
-<li><p><code>**</code>字典形式的收集参数</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">a,*b,**c</span>):
+当某函数的参数列表中存在收集参数时，收集参数右侧只能为关键字参数,左侧不限。（同22）</p></li>
+<li><p><code>**</code>字典形式的收集参数 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">a,*b,**c</span>):
     <span class="hljs-built_in">print</span>(a,b,c)
 myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,x=<span class="hljs-number">5</span>,y=<span class="hljs-number">6</span>)
 <span class="hljs-comment"># 输出：</span>
 <span class="hljs-comment"># 1 (2, 3, 4) &#123;&#x27;x&#x27;: 5, &#x27;y&#x27;: 6&#125;</span></code></pre></div>
-<p>常见于<code>format</code>函数：</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">help</span>(<span class="hljs-built_in">str</span>.<span class="hljs-built_in">format</span>)
+常见于<code>format</code>函数： <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">help</span>(<span class="hljs-built_in">str</span>.<span class="hljs-built_in">format</span>)
 Help on method_descriptor:
 
 <span class="hljs-built_in">format</span>(...)
     S.<span class="hljs-built_in">format</span>(*args, **kwargs) -&gt; <span class="hljs-built_in">str</span>
 
     Return a formatted version of S, using substitutions <span class="hljs-keyword">from</span> args <span class="hljs-keyword">and</span> kwargs.
-    The substitutions are identified by braces (<span class="hljs-string">&#x27;&#123;&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;&#125;&#x27;</span>).</code></pre></div></li>
-<li><p>解包参数<br>调用时解包元组<code>*</code>，解包字典<code>**</code>。</p>
+    The substitutions are identified by braces (<span class="hljs-string">&#x27;&#123;&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;&#125;&#x27;</span>).</code></pre></div></p></li>
+<li><p>解包参数 调用时解包元组<code>*</code>，解包字典<code>**</code>。
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#定义一个元组</span>
 arg = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
 <span class="hljs-comment">#定义一函数，需要4个参数</span>
@@ -418,9 +400,9 @@ arg = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<sp
 <span class="hljs-comment">#第一个报错</span>
 myfunc(arg)
 <span class="hljs-comment">#第二个正常输出1 2 3 4，解包了</span>
-myfunc(*arg)</code></pre></div></li>
-<li><p>全局变量无法在函数中改变，只能访问。<br>如果非要改，用<code>global</code>关键字，但不提倡</p>
-<div class="code-wrapper"><pre><code class="hljs py">    x = <span class="hljs-number">880</span>
+myfunc(*arg)</code></pre></div></p></li>
+<li><p>全局变量无法在函数中改变，只能访问。
+如果非要改，用<code>global</code>关键字，但不提倡 <div class="code-wrapper"><pre><code class="hljs py">    x = <span class="hljs-number">880</span>
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>():
         <span class="hljs-keyword">global</span> x
         x = <span class="hljs-number">520</span>
@@ -483,8 +465,7 @@ myfunc(*arg)</code></pre></div></li>
     <span class="hljs-comment">#Hello Yorick</span>
     <span class="hljs-comment">#ending...</span>
     <span class="hljs-comment">#time:2.00秒</span></code></pre></div>
-<p>语法糖：</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> time
+语法糖： <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> time
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">time_master</span>(<span class="hljs-params">func</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">call_func</span>():
@@ -511,14 +492,11 @@ myfunc()
 <span class="hljs-comment">#Starting...</span>
 <span class="hljs-comment">#Hello Yorick</span>
 <span class="hljs-comment">#ending...</span>
-<span class="hljs-comment">#time:2.00秒</span></code></pre></div>
-</li>
-<li><p>lambda函数，匿名函数，一行流</p>
-<div class="code-wrapper"><pre><code class="hljs py">y = [<span class="hljs-keyword">lambda</span> x : x * x,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+<span class="hljs-comment">#time:2.00秒</span></code></pre></div></p></li>
+<li><p>lambda函数，匿名函数，一行流 <div class="code-wrapper"><pre><code class="hljs py">y = [<span class="hljs-keyword">lambda</span> x : x * x,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
 y[<span class="hljs-number">0</span>](y[<span class="hljs-number">1</span>])
-<span class="hljs-comment">#结果：4</span></code></pre></div>
-</li>
-<li><p>生成器：每次调用提供一份数据，并保留函数内部状态，下次调用重复以上过程</p>
+<span class="hljs-comment">#结果：4</span></code></pre></div></p></li>
+<li><p>生成器：每次调用提供一份数据，并保留函数内部状态，下次调用重复以上过程
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">counter</span>():
     i = <span class="hljs-number">0</span>
     <span class="hljs-keyword">while</span> i &lt;= <span class="hljs-number">5</span>:
@@ -540,9 +518,7 @@ y[<span class="hljs-number">0</span>](y[<span class="hljs-number">1</span>])
 <span class="hljs-string">5</span>
 <span class="hljs-string">&quot;&quot;&quot;</span>
 
-<span class="hljs-comment">#也可以用next()语句，不支持下表索引</span></code></pre></div>
-<p>斐波那契数列:</p>
-<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#斐波那契数列生成器函数</span>
+<span class="hljs-comment">#也可以用next()语句，不支持下表索引</span></code></pre></div> 斐波那契数列: <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#斐波那契数列生成器函数</span>
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">fib</span>():
  back1,back2 = <span class="hljs-number">0</span>,<span class="hljs-number">1</span>
  <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
@@ -556,8 +532,8 @@ f = fib()
 
 <span class="hljs-comment">#打印斐波那契数列</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f:
-    <span class="hljs-built_in">print</span>(i)</code></pre></div></li>
-<li><p>生成器表达式和列表表达式：生成器表达式每次调用只输出一个数据，而列表表达式一次调用全部输出为列表形式。</p>
+    <span class="hljs-built_in">print</span>(i)</code></pre></div></p></li>
+<li><p>生成器表达式和列表表达式：生成器表达式每次调用只输出一个数据，而列表表达式一次调用全部输出为列表形式。
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#生成器表式</span>
 g = (i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>))
 <span class="hljs-built_in">next</span>(g)
@@ -568,9 +544,9 @@ g = (i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</spa
 
 <span class="hljs-comment">#列表表达式</span>
 [i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]
-<span class="hljs-comment">#输出：[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></code></pre></div></li>
+<span class="hljs-comment">#输出：[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></code></pre></div></p></li>
 </ol>
-<p>​    </p>
+<p>​</p>
 
                 
               </div>

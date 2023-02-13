@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="堆排序堆排序基本介绍 堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为 O(nlogn)，它也是不稳定排序。 堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。注意：没有要求结点的左孩子的值和右孩子的值的大小关系。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆 一般升序采用大顶堆，降序采用小顶堆">
+    <meta name="description" content="堆排序 堆排序基本介绍  堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为 O(nlogn)，它也是不稳定排序。 堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。注意：没有要求结点的左孩子的值和右孩子的值的大小关系。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆 一般升序采用大顶堆">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆排序">
 <meta property="og:url" content="http://yorick.love/2022/07/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%A0%86%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="堆排序堆排序基本介绍 堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为 O(nlogn)，它也是不稳定排序。 堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。注意：没有要求结点的左孩子的值和右孩子的值的大小关系。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆 一般升序采用大顶堆，降序采用小顶堆">
+<meta property="og:description" content="堆排序 堆排序基本介绍  堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为 O(nlogn)，它也是不稳定排序。 堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。注意：没有要求结点的左孩子的值和右孩子的值的大小关系。 每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆 一般升序采用大顶堆">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-07-26T08:46:18.000Z">
@@ -325,26 +325,33 @@
             
               <div class="markdown-body">
                 
-                <h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><h2 id="堆排序基本介绍"><a href="#堆排序基本介绍" class="headerlink" title="堆排序基本介绍"></a>堆排序基本介绍</h2><ol>
-<li>堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为 O(nlogn)，它也是不稳定排序。</li>
+                <h1 id="堆排序">堆排序</h1>
+<h2 id="堆排序基本介绍">堆排序基本介绍</h2>
+<ol type="1">
+<li>堆排序是利用堆这种数据结构而设计的一种排序算法，堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为
+O(nlogn)，它也是不稳定排序。</li>
 <li>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆。注意：没有要求结点的左孩子的值和右孩子的值的大小关系。</li>
 <li>每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆</li>
 <li>一般升序采用大顶堆，降序采用小顶堆</li>
 </ol>
-<h2 id="堆排序的实现思路"><a href="#堆排序的实现思路" class="headerlink" title="堆排序的实现思路"></a>堆排序的实现思路</h2><ol>
+<h2 id="堆排序的实现思路">堆排序的实现思路</h2>
+<ol type="1">
 <li>将待排序序列构造成一个大顶堆</li>
 <li>此时，整个序列的最大值就是堆顶的根节点。</li>
 <li>将其与末尾元素进行交换，此时末尾就为最大值。</li>
-<li>然后将剩余 n-1 个元素重新构造成一个堆，这样会得到 n 个元素的次小值。如此反复执行，便能得到一个有序序列了。<br>可以看到在构建大顶堆的过程中，元素的个数逐渐减少，最后就得到一个有序序列了。</li>
+<li>然后将剩余 n-1 个元素重新构造成一个堆，这样会得到 n
+个元素的次小值。如此反复执行，便能得到一个有序序列了。
+可以看到在构建大顶堆的过程中，元素的个数逐渐减少，最后就得到一个有序序列了。</li>
 </ol>
 <p><strong>那么我们如何将待排序序列构造成一个大顶堆？</strong></p>
-<ol>
+<ol type="1">
 <li>设结点个数为n（即数组长度为n），则最后一个非叶子结点的下标为<code>n/2-1</code></li>
 <li>判断此节点的值是否大于左右子树的值，是则需要交换。</li>
-<li>依次向前重复2过程，直到n&#x3D;0，即到根结点</li>
+<li>依次向前重复2过程，直到n=0，即到根结点</li>
 <li>因为向前重复的过程中可能存在改变了左右孩子的值的情况，从而影响了下面的树，所以在每次循环中，都要向下进行验证，保证每个父结点的值都大于左右孩子的值。</li>
 </ol>
-<h2 id="堆排序的代码实现"><a href="#堆排序的代码实现" class="headerlink" title="堆排序的代码实现"></a>堆排序的代码实现</h2><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">heapSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;
+<h2 id="堆排序的代码实现">堆排序的代码实现</h2>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">heapSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;
     <span class="hljs-type">int</span> temp;
     <span class="hljs-comment">// 自下而上初始化堆</span>
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> arr.length / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
@@ -381,7 +388,6 @@
         arr[i] = temp;
     &#125;
 &#125;</code></pre></div>
-
 
                 
               </div>

@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="标准库函数 标准库函数 apply let run with also takeIf takeUnless    applyapply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。 fun main() &amp;#123;     &#x2F;&#x2F; 配置一个File实例     val file1 &#x3D; File(&amp;quo">
+    <meta name="description" content="标准库函数  标准库函数  apply let run with also takeIf takeUnless   apply apply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。 fun main() &amp;#123;     &#x2F;&#x2F; 配置一个File实例     val">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin标准库函数">
 <meta property="og:url" content="http://yorick.love/2022/09/08/Kotlin/Kotlin%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="标准库函数 标准库函数 apply let run with also takeIf takeUnless    applyapply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。 fun main() &amp;#123;     &#x2F;&#x2F; 配置一个File实例     val file1 &#x3D; File(&amp;quo">
+<meta property="og:description" content="标准库函数  标准库函数  apply let run with also takeIf takeUnless   apply apply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。 fun main() &amp;#123;     &#x2F;&#x2F; 配置一个File实例     val">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-08T02:43:04.000Z">
@@ -322,8 +322,10 @@
             
               <div class="markdown-body">
                 
-                <h2 id="标准库函数"><a href="#标准库函数" class="headerlink" title="标准库函数"></a>标准库函数</h2><ul>
-<li><a href="#%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0">标准库函数</a><ul>
+                <h2 id="标准库函数">标准库函数</h2>
+<ul>
+<li><a href="#标准库函数">标准库函数</a>
+<ul>
 <li><a href="#apply">apply</a></li>
 <li><a href="#let">let</a></li>
 <li><a href="#run">run</a></li>
@@ -331,10 +333,10 @@
 <li><a href="#also">also</a></li>
 <li><a href="#takeif">takeIf</a></li>
 <li><a href="#takeunless">takeUnless</a></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>apply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。</p>
+<h3 id="apply">apply</h3>
+<p>apply函数可看作一个配置函数，你可以传入一个接收者，然后调用一系列配置以便它使用，如果提供lambda给apply函数执行，它会返回配置好的接收者。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// 配置一个File实例</span>
     <span class="hljs-keyword">val</span> file1 = File(<span class="hljs-string">&quot;E://demo.txt&quot;</span>)
@@ -351,7 +353,8 @@
         setExecutable(<span class="hljs-literal">false</span>)
     &#125;
 &#125;</code></pre></div>
-<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>和上面apply差不多，但是会返回lambda函数的最后一行的结果，并赋值给接收者，但是不支持隐式调用。</p>
+<h3 id="let">let</h3>
+<p>和上面apply差不多，但是会返回lambda函数的最后一行的结果，并赋值给接收者，但是不支持隐式调用。
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// 求集合第一个元素的平方</span>
     <span class="hljs-keyword">val</span> res = listOf(<span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>).first().let &#123;
@@ -362,9 +365,7 @@
     <span class="hljs-keyword">val</span> firstElement = listOf(<span class="hljs-number">8</span>, <span class="hljs-number">6</span>, <span class="hljs-number">9</span>).first()
     <span class="hljs-keyword">val</span> res2 = firstElement * firstElement
     println(res2)
-&#125;</code></pre></div>
-<p>配合安全操作符使用。</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+&#125;</code></pre></div> 配合安全操作符使用。 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     println(formatGreeting(<span class="hljs-literal">null</span>)) <span class="hljs-comment">// What&#x27;s your name?</span>
     println(formatGreeting(<span class="hljs-string">&quot;Yorick&quot;</span>)) <span class="hljs-comment">// Hello! Yorick.</span>
     println(formatGreeting1(<span class="hljs-literal">null</span>)) <span class="hljs-comment">// What&#x27;s your name?</span>
@@ -383,8 +384,8 @@
     &#125; <span class="hljs-keyword">else</span> &#123;
         <span class="hljs-string">&quot;What&#x27;s your name?&quot;</span>
     &#125;
-&#125;</code></pre></div>
-<h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><p>结合了let和apply，可以像let一样返回lambda最后一行结果，同时可以像apply一样隐式调用。</p>
+&#125;</code></pre></div> ### run</p>
+<p>结合了let和apply，可以像let一样返回lambda最后一行结果，同时可以像apply一样隐式调用。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// 判断文件是否包含某字符</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> file = File(<span class="hljs-string">&quot;E://demo.txt&quot;</span>)
@@ -393,7 +394,6 @@
     &#125;
     println(res) <span class="hljs-comment">// true</span>
 &#125;</code></pre></div>
-
 <p>另外，run也能用来执行函数引用</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">//::表示把一个方法当做一个参数，传递到另一个方法中进行使用，通俗的来讲就是引用一个方法。</span>
@@ -414,8 +414,8 @@
 &#125;
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// String is too long!</span></code></pre></div>
-
-<h3 id="with"><a href="#with" class="headerlink" title="with"></a>with</h3><p>with函数是run的变体，他们的功能行为是一样的，但with的调用方式不同，调用with时需要值参作为其第一个参数传入。</p>
+<h3 id="with">with</h3>
+<p>with函数是run的变体，他们的功能行为是一样的，但with的调用方式不同，调用with时需要值参作为其第一个参数传入。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-comment">// 使用run</span>
     <span class="hljs-keyword">val</span> res1 = <span class="hljs-string">&quot;The People&#x27;s Republic of China&quot;</span>.run &#123;
@@ -431,8 +431,8 @@
 <span class="hljs-comment">// 输出</span>
 <span class="hljs-comment">// true</span>
 <span class="hljs-comment">// true</span></code></pre></div>
-
-<h3 id="also"><a href="#also" class="headerlink" title="also"></a>also</h3><p>和let相似，把接收者传给lambda，但是返回的是原始对象，常用于链式调用。</p>
+<h3 id="also">also</h3>
+<p>和let相似，把接收者传给lambda，但是返回的是原始对象，常用于链式调用。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> fileContents: List&lt;String&gt;
     File(<span class="hljs-string">&quot;E://demo.txt&quot;</span>)
@@ -446,23 +446,24 @@
 <span class="hljs-comment">// 输出示例</span>
 <span class="hljs-comment">// demo.txt</span>
 <span class="hljs-comment">// [demo, demo, hhhh, edited by Yorick, 2022年9月8日11点32分]</span></code></pre></div>
-
-<h3 id="takeIf"><a href="#takeIf" class="headerlink" title="takeIf"></a>takeIf</h3><p>类似if，判断接收者是否满足lambda的表达式，满足返回接收者，不满足则返回null。</p>
+<h3 id="takeif">takeIf</h3>
+<p>类似if，判断接收者是否满足lambda的表达式，满足返回接收者，不满足则返回null。
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> res = File(<span class="hljs-string">&quot;E://demo.txt&quot;</span>)
         .takeIf &#123; it.exists() &amp;&amp; it.canRead() &#125;
         ?.readText()
     println(res)
 &#125;
-<span class="hljs-comment">// 输出文件内容</span></code></pre></div>
-
-<h3 id="takeUnless"><a href="#takeUnless" class="headerlink" title="takeUnless"></a>takeUnless</h3><p>takeIf的否定，false才返回对象，true返回null</p>
+<span class="hljs-comment">// 输出文件内容</span></code></pre></div></p>
+<h3 id="takeunless">takeUnless</h3>
+<p>takeIf的否定，false才返回对象，true返回null</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> res = File(<span class="hljs-string">&quot;E://demo.txt&quot;</span>)
         .takeUnless &#123; it.isHidden &#125;
         ?.readText()
     println(res)
 &#125;</code></pre></div>
+
                 
               </div>
             

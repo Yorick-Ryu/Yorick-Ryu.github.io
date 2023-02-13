@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Floyd算法弗洛伊德(Floyd)算法介绍（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。 （4）弗洛伊德">
+    <meta name="description" content="Floyd算法 弗洛伊德(Floyd)算法介绍 （1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Floyd算法">
 <meta property="og:url" content="http://yorick.love/2022/08/14/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_Floyd%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Floyd算法弗洛伊德(Floyd)算法介绍（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。 （4）弗洛伊德">
+<meta property="og:description" content="Floyd算法 弗洛伊德(Floyd)算法介绍 （1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。 （2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。 （3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-08-14T09:07:41.000Z">
@@ -327,11 +327,15 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h1><h2 id="弗洛伊德-Floyd-算法介绍"><a href="#弗洛伊德-Floyd-算法介绍" class="headerlink" title="弗洛伊德(Floyd)算法介绍"></a>弗洛伊德(Floyd)算法介绍</h2><p>（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。</p>
+                <h1 id="floyd算法">Floyd算法</h1>
+<h2 id="弗洛伊德floyd算法介绍">弗洛伊德(Floyd)算法介绍</h2>
+<p>（1）和Dijkstra算法一样，弗洛伊德(Floyd)算法也是一种用于寻找给定的加权图中顶点间最短路径的算法。该算法名称以创始人之一、1978年图灵奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德命名。</p>
 <p>（2）弗洛伊德算法(Floyd)计算图中各个顶点之间的最短路径。</p>
 <p>（3）迪杰斯特拉算法用于计算图中某一个顶点到其他顶点的最短路径。</p>
 <p>（4）弗洛伊德算法VS迪杰斯特拉算法：迪杰斯特拉算法通过选定的被访问顶点，求出从出发访问顶点到其他顶点的最短路径；弗洛伊德算法中每一个顶点都是出发访问点，所以需要将每一个顶点看做被访问顶点，求出从每一个顶点到其他顶点的最短路径。</p>
-<h2 id="弗洛伊德-Floyd-算法分析"><a href="#弗洛伊德-Floyd-算法分析" class="headerlink" title="弗洛伊德(Floyd)算法分析"></a>弗洛伊德(Floyd)算法分析</h2><p>（1）设置顶点vi到顶点vk的最短路径已知为Lik，顶点vk到vj的最短路径已知为Lkj，顶点vi到vj的路径为Lij，则vi到vj的最短路径为: min((Lik+Lkj),Lij)，vk的取值为图中所有顶点，则可获得vi到vj的最短路径</p>
+<h2 id="弗洛伊德floyd算法分析">弗洛伊德(Floyd)算法分析</h2>
+<p>（1）设置顶点vi到顶点vk的最短路径已知为Lik，顶点vk到vj的最短路径已知为Lkj，顶点vi到vj的路径为Lij，则vi到vj的最短路径为:
+min((Lik+Lkj),Lij)，vk的取值为图中所有顶点，则可获得vi到vj的最短路径</p>
 <p>（2）至于vi到vk的最短路径Lik或者k到vj的最短路径Lkj，是以同样的方式获得</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;
 
@@ -398,6 +402,7 @@
         &#125;
     &#125;
 &#125;</code></pre></div>
+
                 
               </div>
             

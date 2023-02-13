@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="对话框 对话框 提醒对话框AlertDialog 日期对话框DatePickerDialog 时间对话框TimePickerDialog    提醒对话框AlertDialogAlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于AlertDialog没有公开的构造方法，因此必须借助建造器AlertDialog.Build">
+    <meta name="description" content="对话框  对话框  提醒对话框AlertDialog 日期对话框DatePickerDialog 时间对话框TimePickerDialog   提醒对话框AlertDialog AlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于 AlertDialog没有公开的构造方法，因此必须借助建造器Ale">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android对话框">
 <meta property="og:url" content="http://yorick.love/2022/11/29/Android/Android%E5%AF%B9%E8%AF%9D%E6%A1%86/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="对话框 对话框 提醒对话框AlertDialog 日期对话框DatePickerDialog 时间对话框TimePickerDialog    提醒对话框AlertDialogAlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于AlertDialog没有公开的构造方法，因此必须借助建造器AlertDialog.Build">
+<meta property="og:description" content="对话框  对话框  提醒对话框AlertDialog 日期对话框DatePickerDialog 时间对话框TimePickerDialog   提醒对话框AlertDialog AlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于 AlertDialog没有公开的构造方法，因此必须借助建造器Ale">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-11-29T11:02:56.000Z">
@@ -323,15 +323,20 @@
             
               <div class="markdown-body">
                 
-                <h1 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h1><ul>
-<li><a href="#%E5%AF%B9%E8%AF%9D%E6%A1%86">对话框</a><ul>
-<li><a href="#%E6%8F%90%E9%86%92%E5%AF%B9%E8%AF%9D%E6%A1%86alertdialog">提醒对话框AlertDialog</a></li>
-<li><a href="#%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%AF%9D%E6%A1%86datepickerdialog">日期对话框DatePickerDialog</a></li>
-<li><a href="#%E6%97%B6%E9%97%B4%E5%AF%B9%E8%AF%9D%E6%A1%86timepickerdialog">时间对话框TimePickerDialog</a></li>
+                <h1 id="对话框">对话框</h1>
+<ul>
+<li><a href="#对话框">对话框</a>
+<ul>
+<li><a href="#提醒对话框alertdialog">提醒对话框AlertDialog</a></li>
+<li><a
+href="#日期对话框datepickerdialog">日期对话框DatePickerDialog</a></li>
+<li><a
+href="#时间对话框timepickerdialog">时间对话框TimePickerDialog</a></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="提醒对话框AlertDialog"><a href="#提醒对话框AlertDialog" class="headerlink" title="提醒对话框AlertDialog"></a>提醒对话框AlertDialog</h2><p>AlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于<br>AlertDialog没有公开的构造方法，因此必须借助建造器<code>AlertDialog.Builder</code>才能完成参数设置，<code>AlertDialog.Builder</code>的常用方法说明如下。</p>
+<h2 id="提醒对话框alertdialog">提醒对话框AlertDialog</h2>
+<p>AlertDialog名为提醒对话框，它是Android中最常用的对话框，可以完成常见的交互操作，例如提示、确认、选择等功能。由于
+AlertDialog没有公开的构造方法，因此必须借助建造器<code>AlertDialog.Builder</code>才能完成参数设置，<code>AlertDialog.Builder</code>的常用方法说明如下。</p>
 <ul>
 <li>setIcon：设置对话框的标题图标。</li>
 <li>setTitle：设置对话框的标题文本。</li>
@@ -355,9 +360,14 @@
             <span class="hljs-comment">// Respond to positive button press</span>
         &#125;
         .show()</code></pre></div>
-
-<p><a target="_blank" rel="noopener" href="https://github.com/material-components/material-components-android/blob/master/docs/components/Dialog.md">material-components-android&#x2F;Dialog.md at master · material-components&#x2F;material-components-android (github.com)</a></p>
-<h2 id="日期对话框DatePickerDialog"><a href="#日期对话框DatePickerDialog" class="headerlink" title="日期对话框DatePickerDialog"></a>日期对话框DatePickerDialog</h2><p>虽然EditText提供了<code>inputType=&quot;date&quot;</code>的日期输入，但是很少有人会手工输入完整日期，况且EditText还不支持”年 ** 月 ** 日”这样的中文日期，所以系统提供了专门的日期选择器DatePicker，供用户选择具体的年月日。不过，DatePicker并非弹窗模式而是在当前页面占据一块区域，并且不会自动关闭。按习惯来说，日期控件应该弹出对话框，选择完日期就要自动关闭对话框。因此，很少直接在界面上显示DatePicker，而是利用已经封装好的日期选择对话框DatePickerDialog。</p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/material-components/material-components-android/blob/master/docs/components/Dialog.md">material-components-android/Dialog.md
+at master · material-components/material-components-android
+(github.com)</a></p>
+<h2 id="日期对话框datepickerdialog">日期对话框DatePickerDialog</h2>
+<p>虽然EditText提供了<code>inputType="date"</code>的日期输入，但是很少有人会手工输入完整日期，况且EditText还不支持"年
+** 月 **
+日"这样的中文日期，所以系统提供了专门的日期选择器DatePicker，供用户选择具体的年月日。不过，DatePicker并非弹窗模式而是在当前页面占据一块区域，并且不会自动关闭。按习惯来说，日期控件应该弹出对话框，选择完日期就要自动关闭对话框。因此，很少直接在界面上显示DatePicker，而是利用已经封装好的日期选择对话框DatePickerDialog。</p>
 <p>DatePickerDialog相当于在AlertDialog上装载了DatePicker，编码时只需调用构造方法设置当前的年、月、日，然后调用show方法即可弹出日期对话框。日期选择事件则由监听器OnDateSetListener负责响应，在该监听器的onDateSet方法中，开发者获取用户选择的具体日期，再做后续处理。特别注意onDateSet的月份参数，它的起始值不是1而是0。也就是说，一月份对应的参数值为0，十二月份对应的参数值为11，中间月份的数值以此类推。</p>
 <p>示例：</p>
 <p>日期选择器DatePicker</p>
@@ -368,18 +378,16 @@
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:calendarViewShown</span>=<span class="hljs-string">&quot;false&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:datePickerMode</span>=<span class="hljs-string">&quot;spinner&quot;</span> /&gt;</span></code></pre></div>
-
 <p><code>android:datePickerMode</code>属性可以选择模式。</p>
 <p>新建按钮点击事件为：</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;您选择的日期是%d年%d月%d日&quot;</span>, dpDate.getYear(), dpDate.getMonth() + <span class="hljs-number">1</span>, dpDate.getDayOfMonth());
 tvDate.setText(desc);</code></pre></div>
-
 <p>日期对话框DatePickerDialog</p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Calendar</span> <span class="hljs-variable">calendar</span> <span class="hljs-operator">=</span> Calendar.getInstance();
 <span class="hljs-type">DatePickerDialog</span> <span class="hljs-variable">dialog</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DatePickerDialog</span>(<span class="hljs-built_in">this</span>, <span class="hljs-built_in">this</span>, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 dialog.show();</code></pre></div>
-
-<h2 id="时间对话框TimePickerDialog"><a href="#时间对话框TimePickerDialog" class="headerlink" title="时间对话框TimePickerDialog"></a>时间对话框TimePickerDialog</h2><p>时间选择器TimePicker可以让用户选择具体的小时和分钟。</p>
+<h2 id="时间对话框timepickerdialog">时间对话框TimePickerDialog</h2>
+<p>时间选择器TimePicker可以让用户选择具体的小时和分钟。</p>
 <p>TimePickerDialog 的用法类似 DatePickerDialog。</p>
 
                 

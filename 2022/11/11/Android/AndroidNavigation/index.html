@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Navigation[TOC] Navigation 组件使用入门  | Android 开发者  | Android Developers (google.cn) 使用 NavigationUI 更新界面组件  | Android 开发者  | Android Developers (google.cn) Navigation的用法-CSDN博客 Navigation介绍 导航是指支持用户导航、">
+    <meta name="description" content="Navigation [TOC] Navigation 组件使用入门 | Android 开发者 | Android Developers (google.cn) 使用 NavigationUI 更新界面组件 | Android 开发者 | Android Developers (google.cn) Navigation的用法-CSDN博客 Navigation介绍   i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Navigation">
 <meta property="og:url" content="http://yorick.love/2022/11/11/Android/AndroidNavigation/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Navigation[TOC] Navigation 组件使用入门  | Android 开发者  | Android Developers (google.cn) 使用 NavigationUI 更新界面组件  | Android 开发者  | Android Developers (google.cn) Navigation的用法-CSDN博客 Navigation介绍 导航是指支持用户导航、">
+<meta property="og:description" content="Navigation [TOC] Navigation 组件使用入门 | Android 开发者 | Android Developers (google.cn) 使用 NavigationUI 更新界面组件 | Android 开发者 | Android Developers (google.cn) Navigation的用法-CSDN博客 Navigation介绍   i">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221114184612702.png">
 <meta property="article:published_time" content="2022-11-11T14:19:08.000Z">
@@ -266,7 +266,7 @@
         
         
         
-          79 分钟
+          78 分钟
         
       </span>
     
@@ -325,19 +325,42 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h1><p>[TOC]</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn">Navigation 组件使用入门  | Android 开发者  | Android Developers (google.cn)</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-ui?hl=zh-cn#kotlin">使用 NavigationUI 更新界面组件  | Android 开发者  | Android Developers (google.cn)</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33235287/article/details/104512251">Navigation的用法-CSDN博客</a></p>
-<h2 id="Navigation介绍"><a href="#Navigation介绍" class="headerlink" title="Navigation介绍"></a>Navigation介绍</h2><p><img src="/./img/image-20221114184612702.png" srcset="/img/loading.gif" lazyload alt="image-20221114184612702"></p>
-<p>导航是指支持用户导航、进入和退出应用中不同内容片段的交互。Android Jetpack 的导航组件可帮助您实现导航，无论是简单的按钮点击，还是应用栏和抽屉式导航栏等更为复杂的模式，该组件均可应对。导航组件还通过遵循<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-principles?hl=zh-cn">一套既定原则</a>来确保一致且可预测的用户体验。</p>
+                <h1 id="navigation">Navigation</h1>
+<p>[TOC]</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn">Navigation
+组件使用入门 | Android 开发者 | Android Developers (google.cn)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-ui?hl=zh-cn#kotlin">使用
+NavigationUI 更新界面组件 | Android 开发者 | Android Developers
+(google.cn)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33235287/article/details/104512251">Navigation的用法-CSDN博客</a></p>
+<h2 id="navigation介绍">Navigation介绍</h2>
+<figure>
+<img src="./img/image-20221114184612702.png" srcset="/img/loading.gif" lazyload
+alt="image-20221114184612702" />
+<figcaption aria-hidden="true">image-20221114184612702</figcaption>
+</figure>
+<p>导航是指支持用户导航、进入和退出应用中不同内容片段的交互。Android
+Jetpack
+的导航组件可帮助您实现导航，无论是简单的按钮点击，还是应用栏和抽屉式导航栏等更为复杂的模式，该组件均可应对。导航组件还通过遵循<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-principles?hl=zh-cn">一套既定原则</a>来确保一致且可预测的用户体验。</p>
 <p>导航组件由以下三个关键部分组成：</p>
 <ul>
-<li>导航图：在一个集中位置包含所有导航相关信息的 XML 资源。这包括应用内所有单个内容区域（称为<em>目标</em>）以及用户可以通过应用获取的可能路径。</li>
-<li><code>NavHost</code>：显示导航图中目标的空白容器。导航组件包含一个默认 <code>NavHost</code> 实现 (<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn"><code>NavHostFragment</code></a>)，可显示 Fragment 目标。</li>
-<li><code>NavController</code>：在 <code>NavHost</code> 中管理应用导航的对象。当用户在整个应用中移动时，<code>NavController</code> 会安排 <code>NavHost</code> 中目标内容的交换。</li>
+<li>导航图：在一个集中位置包含所有导航相关信息的 XML
+资源。这包括应用内所有单个内容区域（称为<em>目标</em>）以及用户可以通过应用获取的可能路径。</li>
+<li><code>NavHost</code>：显示导航图中目标的空白容器。导航组件包含一个默认
+<code>NavHost</code> 实现 (<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn"><code>NavHostFragment</code></a>)，可显示
+Fragment 目标。</li>
+<li><code>NavController</code>：在 <code>NavHost</code>
+中管理应用导航的对象。当用户在整个应用中移动时，<code>NavController</code>
+会安排 <code>NavHost</code> 中目标内容的交换。</li>
 </ul>
-<p>在应用中导航时，您告诉 <code>NavController</code>，您想沿导航图中的特定路径导航至特定目标，或直接导航至特定目标。<code>NavController</code> 便会在 <code>NavHost</code> 中显示相应目标。</p>
+<p>在应用中导航时，您告诉
+<code>NavController</code>，您想沿导航图中的特定路径导航至特定目标，或直接导航至特定目标。<code>NavController</code>
+便会在 <code>NavHost</code> 中显示相应目标。</p>
 <p>导航组件提供各种其他优势，包括以下内容：</p>
 <ul>
 <li>处理 Fragment 事务。</li>
@@ -345,11 +368,18 @@
 <li>为动画和转换提供标准化资源。</li>
 <li>实现和处理深层链接。</li>
 <li>包括导航界面模式（例如抽屉式导航栏和底部导航），用户只需完成极少的额外工作。</li>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-pass-data?hl=zh-cn#Safe-args">Safe Args</a> - 可在目标之间导航和传递数据时提供类型安全的 Gradle 插件。</li>
-<li><code>ViewModel</code> 支持 - 您可以将 <code>ViewModel</code> 的范围限定为导航图，以在图表的目标之间共享与界面相关的数据。</li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-pass-data?hl=zh-cn#Safe-args">Safe
+Args</a> - 可在目标之间导航和传递数据时提供类型安全的 Gradle 插件。</li>
+<li><code>ViewModel</code> 支持 - 您可以将 <code>ViewModel</code>
+的范围限定为导航图，以在图表的目标之间共享与界面相关的数据。</li>
 </ul>
-<p>此外，您还可以使用 Android Studio 的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn">Navigation Editor</a> 来查看和编辑导航图。</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>如需在您的项目中添加 Navigation 支持，请向应用的 <code>build.gradle</code> 文件添加以下依赖项：</p>
+<p>此外，您还可以使用 Android Studio 的 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn">Navigation
+Editor</a> 来查看和编辑导航图。</p>
+<h2 id="配置环境">配置环境</h2>
+<p>如需在您的项目中添加 Navigation 支持，请向应用的
+<code>build.gradle</code> 文件添加以下依赖项：</p>
 <div class="code-wrapper"><pre><code class="hljs groovy">dependencies &#123;
   <span class="hljs-keyword">def</span> nav_version = <span class="hljs-string">&quot;2.5.3&quot;</span>
 
@@ -370,43 +400,82 @@
   <span class="hljs-comment">// Jetpack Compose Integration</span>
   implementation <span class="hljs-string">&quot;androidx.navigation:navigation-compose:$nav_version&quot;</span>
 &#125;</code></pre></div>
-
-<h2 id="创建导航图"><a href="#创建导航图" class="headerlink" title="创建导航图"></a>创建导航图</h2><p>导航发生在应用中的各个目的地（即您的应用中用户可以导航到的任意位置）之间。这些目的地是通过操作连接的。</p>
+<h2 id="创建导航图">创建导航图</h2>
+<p>导航发生在应用中的各个目的地（即您的应用中用户可以导航到的任意位置）之间。这些目的地是通过操作连接的。</p>
 <p>导航图是一种资源文件，其中包含您的所有目的地和操作。该图表会显示应用的所有导航路径。</p>
-<p>图 1 直观显示了一个示例应用的导航图，该应用包含 6 个目的地（通过 5 个操作连接）。每个目的地均由一个预览缩略图表示，连接操作由箭头表示，该箭头表示用户可以如何从一个目的地导航到另一个目的地。</p>
-<p><img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-graph_2x-callouts.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"><strong>图 1.</strong> 一个导航图，显示了由 5 个操作连接的 6 个不同目的地的预览。</p>
-<ol>
+<p>图 1 直观显示了一个示例应用的导航图，该应用包含 6 个目的地（通过 5
+个操作连接）。每个目的地均由一个预览缩略图表示，连接操作由箭头表示，该箭头表示用户可以如何从一个目的地导航到另一个目的地。</p>
+<p><img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-graph_2x-callouts.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /><strong>图 1.</strong> 一个导航图，显示了由 5 个操作连接的 6
+个不同目的地的预览。</p>
+<ol type="1">
 <li>“目的地”是指应用中的不同内容区域。</li>
 <li>“操作”是指目的地之间的逻辑连接，表示用户可以采取的路径。</li>
 </ol>
 <p>如需向项目添加导航图，请执行以下操作：</p>
-<ol>
-<li>在“Project”窗口中，右键点击 <code>res</code> 目录，然后依次选择 <strong>New &gt; Android Resource File</strong>。此时系统会显示 <strong>New Resource File</strong> 对话框。</li>
+<ol type="1">
+<li>在“Project”窗口中，右键点击 <code>res</code> 目录，然后依次选择
+<strong>New &gt; Android Resource File</strong>。此时系统会显示
+<strong>New Resource File</strong> 对话框。</li>
 <li>在 <strong>File name</strong> 字段中输入名称，例如“nav_graph”。</li>
-<li>从 <strong>Resource type</strong> 下拉列表中选择 <strong>Navigation</strong>，然后点击 <strong>OK</strong>。</li>
+<li>从 <strong>Resource type</strong> 下拉列表中选择
+<strong>Navigation</strong>，然后点击 <strong>OK</strong>。</li>
 </ol>
-<p>当您添加首个导航图时，Android Studio 会在 <code>res</code> 目录内创建一个 <code>navigation</code> 资源目录。该目录包含您的导航图资源文件（例如 <code>nav_graph.xml</code>）。</p>
-<p><strong>注意</strong>：向您的项目添加导航图时，如果您尚未将导航依赖项添加到应用的 <code>build.gradle</code> 文件中，Android Studio 会显示一条提示，并为您提供添加依赖项的选项。但请注意，Android Studio 3.4 添加了非 KTX 1.0.0 版本的依赖项，因此，如果您使用的是 Kotlin 或打算使用 2.0.0 或更高版本，请务必替换这些值。</p>
-<h2 id="Navigation-Editor"><a href="#Navigation-Editor" class="headerlink" title="Navigation Editor"></a>Navigation Editor</h2><p>添加图表后，Android Studio 会在 Navigation Editor 中打开该图表。在 Navigation Editor 中，您可以直观地修改导航图，或直接修改底层 XML。</p>
-<p><img src="https://developer.android.google.cn/static/images/guide/navigation/nav-editor-2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"><strong>图 2.</strong> Navigation Editor</p>
-<ol>
-<li><strong>Destinations panel</strong>：列出了导航宿主和目前位于 <strong>Graph Editor</strong> 中的所有目的地。</li>
-<li><strong>Graph Editor</strong>：包含导航图的视觉表示形式。您可以在 <strong>Design</strong> 视图和 <strong>Text</strong> 视图中的底层 XML 表示形式之间切换。</li>
+<p>当您添加首个导航图时，Android Studio 会在 <code>res</code>
+目录内创建一个 <code>navigation</code>
+资源目录。该目录包含您的导航图资源文件（例如
+<code>nav_graph.xml</code>）。</p>
+<p><strong>注意</strong>：向您的项目添加导航图时，如果您尚未将导航依赖项添加到应用的
+<code>build.gradle</code> 文件中，Android Studio
+会显示一条提示，并为您提供添加依赖项的选项。但请注意，Android Studio 3.4
+添加了非 KTX 1.0.0 版本的依赖项，因此，如果您使用的是 Kotlin 或打算使用
+2.0.0 或更高版本，请务必替换这些值。</p>
+<h2 id="navigation-editor">Navigation Editor</h2>
+<p>添加图表后，Android Studio 会在 Navigation Editor 中打开该图表。在
+Navigation Editor 中，您可以直观地修改导航图，或直接修改底层 XML。</p>
+<p><img
+src="https://developer.android.google.cn/static/images/guide/navigation/nav-editor-2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /><strong>图 2.</strong> Navigation Editor</p>
+<ol type="1">
+<li><strong>Destinations panel</strong>：列出了导航宿主和目前位于
+<strong>Graph Editor</strong> 中的所有目的地。</li>
+<li><strong>Graph Editor</strong>：包含导航图的视觉表示形式。您可以在
+<strong>Design</strong> 视图和 <strong>Text</strong> 视图中的底层 XML
+表示形式之间切换。</li>
 <li><strong>Attributes</strong>：显示导航图中当前所选项的属性。</li>
 </ol>
-<p>点击 <strong>Text</strong> 标签页可查看相应的 XML，它应类似于以下代码段：</p>
+<p>点击 <strong>Text</strong> 标签页可查看相应的
+XML，它应类似于以下代码段：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">navigation</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
 <span class="hljs-tag">            <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
 <span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/nav_graph&quot;</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">navigation</span>&gt;</span></code></pre></div>
-
-<p><code>&lt;navigation&gt;</code> 元素是导航图的根元素。当您向图表添加目的地和连接操作时，可以看到相应的 <code>&lt;destination&gt;</code> 和 <code>&lt;action&gt;</code> 元素在此处显示为子元素。如果您有<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-nested-graphs?hl=zh-cn">嵌套图表</a>，它们将显示为子 <code>&lt;navigation&gt;</code> 元素。</p>
-<h2 id="向-Activity-添加-NavHost"><a href="#向-Activity-添加-NavHost" class="headerlink" title="向 Activity 添加 NavHost"></a>向 Activity 添加 NavHost</h2><p>导航宿主是 Navigation 组件的核心部分之一。导航宿主是一个空容器，用户在您的应用中导航时，目的地会在该容器中交换进出。</p>
-<p>导航宿主必须派生于 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavHost?hl=zh-cn"><code>NavHost</code></a>。Navigation 组件的默认 <code>NavHost</code> 实现 (<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn"><code>NavHostFragment</code></a>) 负责处理 Fragment 目的地的交换。</p>
-<p><strong>注意</strong>：Navigation 组件旨在用于具有一个主 activity 和多个 fragment 目的地的应用。主 activity 与导航图相关联，且包含一个负责根据需要交换目的地的 <code>NavHostFragment</code>。在具有多个 activity 目的地的应用中，每个 activity 均拥有其自己的导航图。</p>
-<h3 id="通过-XML-添加-NavHostFragment"><a href="#通过-XML-添加-NavHostFragment" class="headerlink" title="通过 XML 添加 NavHostFragment"></a>通过 XML 添加 NavHostFragment</h3><p>以下 XML 示例显示了作为应用主 Activity 一部分的 <code>NavHostFragment</code>：</p>
+<p><code>&lt;navigation&gt;</code>
+元素是导航图的根元素。当您向图表添加目的地和连接操作时，可以看到相应的
+<code>&lt;destination&gt;</code> 和 <code>&lt;action&gt;</code>
+元素在此处显示为子元素。如果您有<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-nested-graphs?hl=zh-cn">嵌套图表</a>，它们将显示为子
+<code>&lt;navigation&gt;</code> 元素。</p>
+<h2 id="向-activity-添加-navhost">向 Activity 添加 NavHost</h2>
+<p>导航宿主是 Navigation
+组件的核心部分之一。导航宿主是一个空容器，用户在您的应用中导航时，目的地会在该容器中交换进出。</p>
+<p>导航宿主必须派生于 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavHost?hl=zh-cn"><code>NavHost</code></a>。Navigation
+组件的默认 <code>NavHost</code> 实现 (<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn"><code>NavHostFragment</code></a>)
+负责处理 Fragment 目的地的交换。</p>
+<p><strong>注意</strong>：Navigation 组件旨在用于具有一个主 activity
+和多个 fragment 目的地的应用。主 activity
+与导航图相关联，且包含一个负责根据需要交换目的地的
+<code>NavHostFragment</code>。在具有多个 activity 目的地的应用中，每个
+activity 均拥有其自己的导航图。</p>
+<h3 id="通过-xml-添加-navhostfragment">通过 XML 添加
+NavHostFragment</h3>
+<p>以下 XML 示例显示了作为应用主 Activity 一部分的
+<code>NavHostFragment</code>：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
@@ -436,38 +505,78 @@
 <span class="hljs-tag">        <span class="hljs-attr">...</span>/&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></code></pre></div>
-
 <p>请注意以下几点：</p>
 <ul>
-<li><code>android:name</code> 属性包含 <code>NavHost</code> 实现的类名称。</li>
-<li><code>app:navGraph</code> 属性将 <code>NavHostFragment</code> 与导航图相关联。导航图会在此 <code>NavHostFragment</code> 中指定用户可以导航到的所有目的地。</li>
-<li><code>app:defaultNavHost=&quot;true&quot;</code> 属性确保您的 <code>NavHostFragment</code> 会拦截系统返回按钮。请注意，只能有一个默认 <code>NavHost</code>。如果同一布局（例如，双窗格布局）中有多个托管容器，请务必仅指定一个默认 <code>NavHost</code>。</li>
+<li><code>android:name</code> 属性包含 <code>NavHost</code>
+实现的类名称。</li>
+<li><code>app:navGraph</code> 属性将 <code>NavHostFragment</code>
+与导航图相关联。导航图会在此 <code>NavHostFragment</code>
+中指定用户可以导航到的所有目的地。</li>
+<li><code>app:defaultNavHost="true"</code> 属性确保您的
+<code>NavHostFragment</code> 会拦截系统返回按钮。请注意，只能有一个默认
+<code>NavHost</code>。如果同一布局（例如，双窗格布局）中有多个托管容器，请务必仅指定一个默认
+<code>NavHost</code>。</li>
 </ul>
-<p>您也可以使用<a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/write/layout-editor?hl=zh-cn">布局编辑器</a>向 activity 添加 <code>NavHostFragment</code>，具体操作步骤如下：</p>
-<ol>
-<li>在项目文件列表中，双击 Activity 的布局 XML 文件，以在 Layout Editor 中将其打开。</li>
-<li>在 <strong>Palette</strong> 窗格内，选择 <strong>Containers</strong> 类别，或者搜索“NavHostFragment”。</li>
+<p>您也可以使用<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/write/layout-editor?hl=zh-cn">布局编辑器</a>向
+activity 添加 <code>NavHostFragment</code>，具体操作步骤如下：</p>
+<ol type="1">
+<li>在项目文件列表中，双击 Activity 的布局 XML 文件，以在 Layout Editor
+中将其打开。</li>
+<li>在 <strong>Palette</strong> 窗格内，选择 <strong>Containers</strong>
+类别，或者搜索“NavHostFragment”。</li>
 <li>将 <code>NavHostFragment</code> 视图拖动到您的 Activity 上。</li>
-<li>接下来，在随即显示的 <strong>Navigation Graphs</strong> 对话框中，选择需要与此 <code>NavHostFragment</code> 相关联的相应导航图，然后点击 <strong>OK</strong>。</li>
+<li>接下来，在随即显示的 <strong>Navigation Graphs</strong>
+对话框中，选择需要与此 <code>NavHostFragment</code>
+相关联的相应导航图，然后点击 <strong>OK</strong>。</li>
 </ol>
-<h2 id="向导航图添加目的地"><a href="#向导航图添加目的地" class="headerlink" title="向导航图添加目的地"></a>向导航图添加目的地</h2><p>您可以从现有的 Fragment 或 Activity 创建目的地。您还可以使用 Navigation Editor 创建新目的地，或创建占位符以便稍后替换为 fragment 或 activity。</p>
-<p>在本示例中，我们来创建一个新目的地。如需使用 Navigation Editor 添加新目的地，请执行以下操作：</p>
-<ol>
-<li>在 Navigation Editor 中，点击 <strong>New Destination</strong> 图标 <img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-new-destination-icon.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img">，然后点击 <strong>Create new destination</strong>。</li>
-<li>在随即显示的 <strong>New Android Component</strong> 对话框中，创建您的 Fragment。如需详细了解 Fragment，请参阅 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/fragments?hl=zh-cn">Fragment 文档</a>。</li>
+<h2 id="向导航图添加目的地">向导航图添加目的地</h2>
+<p>您可以从现有的 Fragment 或 Activity 创建目的地。您还可以使用
+Navigation Editor 创建新目的地，或创建占位符以便稍后替换为 fragment 或
+activity。</p>
+<p>在本示例中，我们来创建一个新目的地。如需使用 Navigation Editor
+添加新目的地，请执行以下操作：</p>
+<ol type="1">
+<li>在 Navigation Editor 中，点击 <strong>New Destination</strong> 图标
+<img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-new-destination-icon.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" />，然后点击 <strong>Create new destination</strong>。</li>
+<li>在随即显示的 <strong>New Android Component</strong>
+对话框中，创建您的 Fragment。如需详细了解 Fragment，请参阅 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/components/fragments?hl=zh-cn">Fragment
+文档</a>。</li>
 </ol>
-<p>当您返回到 Navigation Editor 中时，会发现 Android Studio 已将此目的地添加到图中。</p>
-<p>图 1 显示了目的地和<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-create-destinations?hl=zh-cn#placeholders">占位符目的地</a>的示例。</p>
-<p><img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-destination-and-placeholder_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"><strong>图 3.</strong> 目的地和占位符</p>
-<p>如需了解向导航图添加目的地的其他方式，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-create-destinations?hl=zh-cn">创建目的地</a>。</p>
-<h2 id="目的地详解"><a href="#目的地详解" class="headerlink" title="目的地详解"></a>目的地详解</h2><p>点击一个目的地以将其选中，并注意 <strong>Attributes</strong> 面板中显示的以下属性：</p>
+<p>当您返回到 Navigation Editor 中时，会发现 Android Studio
+已将此目的地添加到图中。</p>
+<p>图 1 显示了目的地和<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-create-destinations?hl=zh-cn#placeholders">占位符目的地</a>的示例。</p>
+<p><img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-destination-and-placeholder_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /><strong>图 3.</strong> 目的地和占位符</p>
+<p>如需了解向导航图添加目的地的其他方式，请参阅<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-create-destinations?hl=zh-cn">创建目的地</a>。</p>
+<h2 id="目的地详解">目的地详解</h2>
+<p>点击一个目的地以将其选中，并注意 <strong>Attributes</strong>
+面板中显示的以下属性：</p>
 <ul>
-<li><strong>Type</strong> 字段指示在您的源代码中，该目的地是作为 fragment、activity 还是其他自定义类实现的。</li>
-<li><strong>Label</strong> 字段包含该目的地的用户可读名称。例如，如果您使用 [<code>setupWithNavController()</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/ui/NavigationUI?hl=zh-cn#setupWithNavController">https://developer.android.google.cn/reference/androidx/navigation/ui/NavigationUI?hl=zh-cn#setupWithNavController</a>(androidx.appcompat.widget.Toolbar, androidx.navigation.NavController)) 将 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavGraph?hl=zh-cn"><code>NavGraph</code></a> 连接到 <code>Toolbar</code>，就可能在界面上看到此字段。因此，我们建议您对此值使用资源字符串。</li>
-<li><strong>ID</strong> 字段包含该目的地的 ID，它用于在代码中引用该目的地。</li>
-<li><strong>Class</strong> 下拉列表显示与该目的地相关联的类的名称。您可以点击此下拉列表，将相关联的类更改为其他目的地类型。</li>
+<li><strong>Type</strong> 字段指示在您的源代码中，该目的地是作为
+fragment、activity 还是其他自定义类实现的。</li>
+<li><strong>Label</strong>
+字段包含该目的地的用户可读名称。例如，如果您使用 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/ui/NavigationUI?hl=zh-cn#setupWithNavController(androidx.appcompat.widget.Toolbar,%20androidx.navigation.NavController)"><code>setupWithNavController()</code></a>
+将 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavGraph?hl=zh-cn"><code>NavGraph</code></a>
+连接到
+<code>Toolbar</code>，就可能在界面上看到此字段。因此，我们建议您对此值使用资源字符串。</li>
+<li><strong>ID</strong> 字段包含该目的地的
+ID，它用于在代码中引用该目的地。</li>
+<li><strong>Class</strong>
+下拉列表显示与该目的地相关联的类的名称。您可以点击此下拉列表，将相关联的类更改为其他目的地类型。</li>
 </ul>
-<p>点击 <strong>Text</strong> 标签页可查看导航图的 XML 视图。XML 中同样包含该目的地的 <code>id</code>、<code>name</code>、<code>label</code> 和 <code>layout</code> 属性，如下所示：</p>
+<p>点击 <strong>Text</strong> 标签页可查看导航图的 XML 视图。XML
+中同样包含该目的地的
+<code>id</code>、<code>name</code>、<code>label</code> 和
+<code>layout</code> 属性，如下所示：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">navigation</span> <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
@@ -479,31 +588,52 @@
 <span class="hljs-tag">        <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/label_blank&quot;</span></span>
 <span class="hljs-tag">        <span class="hljs-attr">tools:layout</span>=<span class="hljs-string">&quot;@layout/fragment_blank&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">navigation</span>&gt;</span></code></pre></div>
-
-<h2 id="将某个屏幕指定为起始目的地"><a href="#将某个屏幕指定为起始目的地" class="headerlink" title="将某个屏幕指定为起始目的地"></a>将某个屏幕指定为起始目的地</h2><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-principles?hl=zh-cn">起始目的地</a>是用户打开您的应用时看到的第一个屏幕，也是用户退出您的应用时看到的最后一个屏幕。Navigation Editor 使用房子图标 <img src="https://developer.android.google.cn/static/studio/images/buttons/navigation-house.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"> 表示起始目的地。</p>
+<h2 id="将某个屏幕指定为起始目的地">将某个屏幕指定为起始目的地</h2>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-principles?hl=zh-cn">起始目的地</a>是用户打开您的应用时看到的第一个屏幕，也是用户退出您的应用时看到的最后一个屏幕。Navigation
+Editor 使用房子图标 <img
+src="https://developer.android.google.cn/static/studio/images/buttons/navigation-house.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /> 表示起始目的地。</p>
 <p>所有目的地就绪后，您便可以选择起始目的地，具体操作步骤如下：</p>
-<ol>
-<li>在 <strong>Design</strong> 标签页中，点击相应目的地，使其突出显示。</li>
-<li>点击 <strong>Assign start destination</strong> 按钮 <img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-start-destination-icon.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img">。或者，您可以右键点击该目的地，然后点击 <strong>Set as Start Destination</strong>。</li>
+<ol type="1">
+<li>在 <strong>Design</strong>
+标签页中，点击相应目的地，使其突出显示。</li>
+<li>点击 <strong>Assign start destination</strong> 按钮 <img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-start-destination-icon.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" />。或者，您可以右键点击该目的地，然后点击 <strong>Set as
+Start Destination</strong>。</li>
 </ol>
-<h2 id="连接目的地"><a href="#连接目的地" class="headerlink" title="连接目的地"></a>连接目的地</h2><p>操作是指目的地之间的逻辑连接。操作在导航图中以箭头表示。操作通常会将一个目的地连接到另一个目的地，不过您也可以创建<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-global-action?hl=zh-cn">全局操作</a>，此类操作可让您从应用中的任意位置转到特定目的地。</p>
-<p>借助操作，您可以表示用户在您的应用中导航时可以采取的不同路径。请注意，如需实际导航到各个目的地，您仍然需要编写代码以执行导航操作。如需了解详情，请参阅本主题后面的<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#navigate">导航到目的地</a>部分。</p>
-<p>您可以使用 Navigation Editor 将两个目的地连接起来，具体操作步骤如下：</p>
-<ol>
-<li><p>在 <strong>Design</strong> 标签页中，将鼠标悬停在目的地的右侧，该目的地为您希望用户从中导航出来的目的地。该目的地右侧上方会显示一个圆圈，如图 4 所示。</p>
-<p><img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-actioncircle_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"><br><strong>图 4.</strong> 一个包含操作连接圆圈的目的地</p>
-</li>
-<li><p>点击您希望用户导航到的目的地，并将光标拖动到该目的地的上方，然后松开。这两个目的地之间生成的线条表示操作，如图 5 所示。</p>
-<p><img src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-connected_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload alt="img"><strong>图 5.</strong> 通过操作连接目的地</p>
-</li>
-<li><p>点击箭头以突出显示该操作。此时 <strong>Attributes</strong> 面板中会显示以下属性：</p>
+<h2 id="连接目的地">连接目的地</h2>
+<p>操作是指目的地之间的逻辑连接。操作在导航图中以箭头表示。操作通常会将一个目的地连接到另一个目的地，不过您也可以创建<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-global-action?hl=zh-cn">全局操作</a>，此类操作可让您从应用中的任意位置转到特定目的地。</p>
+<p>借助操作，您可以表示用户在您的应用中导航时可以采取的不同路径。请注意，如需实际导航到各个目的地，您仍然需要编写代码以执行导航操作。如需了解详情，请参阅本主题后面的<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#navigate">导航到目的地</a>部分。</p>
+<p>您可以使用 Navigation Editor
+将两个目的地连接起来，具体操作步骤如下：</p>
+<ol type="1">
+<li><p>在 <strong>Design</strong>
+标签页中，将鼠标悬停在目的地的右侧，该目的地为您希望用户从中导航出来的目的地。该目的地右侧上方会显示一个圆圈，如图
+4 所示。</p>
+<p><img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-actioncircle_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /> <strong>图 4.</strong>
+一个包含操作连接圆圈的目的地</p></li>
+<li><p>点击您希望用户导航到的目的地，并将光标拖动到该目的地的上方，然后松开。这两个目的地之间生成的线条表示操作，如图
+5 所示。</p>
+<p><img
+src="https://developer.android.google.cn/static/images/topic/libraries/architecture/navigation-connected_2x.png?hl=zh-cn" srcset="/img/loading.gif" lazyload
+alt="img" /><strong>图 5.</strong> 通过操作连接目的地</p></li>
+<li><p>点击箭头以突出显示该操作。此时 <strong>Attributes</strong>
+面板中会显示以下属性：</p>
 <ul>
 <li><strong>Type</strong> 字段包含“Action”。</li>
 <li><strong>ID</strong> 字段包含该操作的 ID。</li>
-<li><strong>Destination</strong> 字段包含目的地 Fragment 或 Activity 的 ID。</li>
-</ul>
-</li>
-<li><p>点击 <strong>Text</strong> 标签，以切换到 XML 视图。现在，一个 action 元素已添加到源目的地中。该操作有一个 ID 和一个目的地属性（其中包含下一个目的地的 ID），如以下示例所示：</p>
+<li><strong>Destination</strong> 字段包含目的地 Fragment 或 Activity 的
+ID。</li>
+</ul></li>
+<li><p>点击 <strong>Text</strong> 标签，以切换到 XML 视图。现在，一个
+action 元素已添加到源目的地中。该操作有一个 ID
+和一个目的地属性（其中包含下一个目的地的 ID），如以下示例所示：</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">navigation</span> <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
@@ -525,30 +655,58 @@
 <span class="hljs-tag">        <span class="hljs-attr">tools:layout</span>=<span class="hljs-string">&quot;@layout/fragment_blank_fragment2&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">navigation</span>&gt;</span></code></pre></div></li>
 </ol>
-<p>在导航图中，操作由 <code>&lt;action&gt;</code> 元素表示。操作至少应包含自己的 ID 和用户应转到的目的地的 ID。</p>
-<h2 id="导航到目的地"><a href="#导航到目的地" class="headerlink" title="导航到目的地"></a>导航到目的地</h2><p>导航到目的地是使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavController?hl=zh-cn"><code>NavController</code></a> 完成的，它是一个在 <code>NavHost</code> 中管理应用导航的对象。每个 <code>NavHost</code> 均有自己的相应 <code>NavController</code>。您可以使用以下方法之一检索 <code>NavController</code>：</p>
+<p>在导航图中，操作由 <code>&lt;action&gt;</code>
+元素表示。操作至少应包含自己的 ID 和用户应转到的目的地的 ID。</p>
+<h2 id="导航到目的地">导航到目的地</h2>
+<p>导航到目的地是使用 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/NavController?hl=zh-cn"><code>NavController</code></a>
+完成的，它是一个在 <code>NavHost</code> 中管理应用导航的对象。每个
+<code>NavHost</code> 均有自己的相应
+<code>NavController</code>。您可以使用以下方法之一检索
+<code>NavController</code>：</p>
 <p><strong>Kotlin</strong>：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/fragment/package-summary?hl=zh-cn#(androidx.fragment.app.Fragment).findNavController()"><code>Fragment.findNavController()</code></a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/package-summary?hl=zh-cn#(android.view.View).findNavController()"><code>View.findNavController()</code></a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/package-summary?hl=zh-cn#(android.app.Activity).findNavController(kotlin.Int)"><code>Activity.findNavController(viewId: Int)</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/fragment/package-summary?hl=zh-cn#(androidx.fragment.app.Fragment).findNavController()"><code>Fragment.findNavController()</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/package-summary?hl=zh-cn#(android.view.View).findNavController()"><code>View.findNavController()</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/kotlin/androidx/navigation/package-summary?hl=zh-cn#(android.app.Activity).findNavController(kotlin.Int)"><code>Activity.findNavController(viewId: Int)</code></a></li>
 </ul>
 <p><strong>Java</strong>：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn#findNavController(android.support.v4.app.Fragment)"><code>NavHostFragment.findNavController(Fragment)</code></a></li>
-<li>[<code>Navigation.findNavController(Activity, @IdRes int viewId)</code>](<a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/Navigation?hl=zh-cn#findNavController">https://developer.android.google.cn/reference/androidx/navigation/Navigation?hl=zh-cn#findNavController</a>(android.app.Activity, int))</li>
-<li><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/Navigation?hl=zh-cn#findNavController(android.view.View)"><code>Navigation.findNavController(View)</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/fragment/NavHostFragment?hl=zh-cn#findNavController(android.support.v4.app.Fragment)"><code>NavHostFragment.findNavController(Fragment)</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/Navigation?hl=zh-cn#findNavController(android.app.Activity,%20int)"><code>Navigation.findNavController(Activity, @IdRes int viewId)</code></a></li>
+<li><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/navigation/Navigation?hl=zh-cn#findNavController(android.view.View)"><code>Navigation.findNavController(View)</code></a></li>
 </ul>
-<p>使用 <code>FragmentContainerView</code> 创建 <code>NavHostFragment</code>，或通过 <code>FragmentTransaction</code> 手动将 <code>NavHostFragment</code> 添加到您的 Activity 时，尝试通过 <code>Navigation.findNavController(Activity, @IdRes int)</code> 检索 Activity 的 <code>onCreate()</code> 中的 <code>NavController</code> 将失败。您应改为直接从 <code>NavHostFragment</code> 检索 <code>NavController</code>。</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#java">Java</a></p>
+<p>使用 <code>FragmentContainerView</code> 创建
+<code>NavHostFragment</code>，或通过 <code>FragmentTransaction</code>
+手动将 <code>NavHostFragment</code> 添加到您的 Activity 时，尝试通过
+<code>Navigation.findNavController(Activity, @IdRes int)</code> 检索
+Activity 的 <code>onCreate()</code> 中的 <code>NavController</code>
+将失败。您应改为直接从 <code>NavHostFragment</code> 检索
+<code>NavController</code>。</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#java">Java</a></p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> navHostFragment =
         supportFragmentManager.findFragmentById(R.id.nav_host_fragment) <span class="hljs-keyword">as</span> NavHostFragment
 <span class="hljs-keyword">val</span> navController = navHostFragment.navController</code></pre></div>
-
-<h3 id="使用-Safe-Args-确保类型安全"><a href="#使用-Safe-Args-确保类型安全" class="headerlink" title="使用 Safe Args 确保类型安全"></a>使用 Safe Args 确保类型安全</h3><p>如需在目的地之间导航，建议使用 Safe Args Gradle 插件。该插件可以生成简单的对象和构建器类，这些类支持在目的地之间进行类型安全的导航和参数传递。</p>
-<p><strong>注意</strong>：如需了解其他导航方式，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-navigate?hl=zh-cn">导航到目的地</a>。</p>
-<p>如需将 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/navigation/navigation-pass-data?hl=zh-cn#Safe-args">Safe Args</a> 添加到您的项目，请在顶层 <code>build.gradle</code> 文件中包含以下 <code>classpath</code>：</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
+<h3 id="使用-safe-args-确保类型安全">使用 Safe Args 确保类型安全</h3>
+<p>如需在目的地之间导航，建议使用 Safe Args Gradle
+插件。该插件可以生成简单的对象和构建器类，这些类支持在目的地之间进行类型安全的导航和参数传递。</p>
+<p><strong>注意</strong>：如需了解其他导航方式，请参阅<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-navigate?hl=zh-cn">导航到目的地</a>。</p>
+<p>如需将 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/navigation/navigation-pass-data?hl=zh-cn#Safe-args">Safe
+Args</a> 添加到您的项目，请在顶层 <code>build.gradle</code>
+文件中包含以下 <code>classpath</code>：</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
 <div class="code-wrapper"><pre><code class="hljs groovy">buildscript &#123;
     repositories &#123;
         google()
@@ -558,67 +716,121 @@
         classpath <span class="hljs-string">&quot;androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version&quot;</span>
     &#125;
 &#125;</code></pre></div>
-
 <p>您还必须应用以下两个可用插件之一。</p>
-<p>如需生成适用于 Java 模块或 Java 和 Kotlin 混合模块的 Java 语言代码，请将以下行添加到<strong>应用或模块</strong>的 <code>build.gradle</code> 文件中：</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
+<p>如需生成适用于 Java 模块或 Java 和 Kotlin 混合模块的 Java
+语言代码，请将以下行添加到<strong>应用或模块</strong>的
+<code>build.gradle</code> 文件中：</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
 <div class="code-wrapper"><pre><code class="hljs groovy">plugins &#123;
   id <span class="hljs-string">&#x27;androidx.navigation.safeargs&#x27;</span>
 &#125;</code></pre></div>
-
-<p>此外，如需生成仅适用于 Kotlin 模块的 Kotlin 语言代码，请添加以下行：</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
+<p>此外，如需生成仅适用于 Kotlin 模块的 Kotlin
+语言代码，请添加以下行：</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#groovy">Groovy</a><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a></p>
 <div class="code-wrapper"><pre><code class="hljs groovy">plugins &#123;
   id <span class="hljs-string">&#x27;androidx.navigation.safeargs.kotlin&#x27;</span>
 &#125;</code></pre></div>
-
-<p>根据<a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/migrate?hl=zh-cn#migrate">迁移到 AndroidX</a>) 文档，您的 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/build?hl=zh-cn#properties-files"><code>gradle.properties</code> 文件</a>中必须具有 <code>android.useAndroidX=true</code>。</p>
-<p>启用 Safe Args 后，该插件会生成代码，其中包含您定义的每个操作的类和方法。对于每个操作，Safe Args 还会为每个源目的地（生成相应操作的目的地）生成一个类。生成的类的名称由源目的地类的名称和“Directions”一词组成。例如，如果目的地的名称为 <code>SpecifyAmountFragment</code>，生成的类的名称为 <code>SpecifyAmountFragmentDirections</code>。生成的类为源目的地中定义的每个操作提供了一个静态方法。该方法会将任何定义的操作参数作为参数，并返回可传递到 <code>navigate()</code> 的 <code>NavDirections</code> 对象。</p>
-<p>例如，假设我们的导航图包含一个操作，该操作将源目的地 <code>SpecifyAmountFragment</code> 和接收目的地 <code>ConfirmationFragment</code> 连接起来。</p>
-<p>Safe Args 会生成一个 <code>SpecifyAmountFragmentDirections</code> 类，其中只包含一个 <code>actionSpecifyAmountFragmentToConfirmationFragment()</code> 方法（该方法会返回 <code>NavDirections</code> 对象）。然后，您可以将返回的 <code>NavDirections</code> 对象直接传递到 <code>navigate()</code>，如以下示例所示：</p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#java">Java</a></p>
+<p>根据<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/migrate?hl=zh-cn#migrate">迁移到
+AndroidX</a>) 文档，您的 <a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/build?hl=zh-cn#properties-files"><code>gradle.properties</code>
+文件</a>中必须具有 <code>android.useAndroidX=true</code>。</p>
+<p>启用 Safe Args
+后，该插件会生成代码，其中包含您定义的每个操作的类和方法。对于每个操作，Safe
+Args
+还会为每个源目的地（生成相应操作的目的地）生成一个类。生成的类的名称由源目的地类的名称和“Directions”一词组成。例如，如果目的地的名称为
+<code>SpecifyAmountFragment</code>，生成的类的名称为
+<code>SpecifyAmountFragmentDirections</code>。生成的类为源目的地中定义的每个操作提供了一个静态方法。该方法会将任何定义的操作参数作为参数，并返回可传递到
+<code>navigate()</code> 的 <code>NavDirections</code> 对象。</p>
+<p>例如，假设我们的导航图包含一个操作，该操作将源目的地
+<code>SpecifyAmountFragment</code> 和接收目的地
+<code>ConfirmationFragment</code> 连接起来。</p>
+<p>Safe Args 会生成一个 <code>SpecifyAmountFragmentDirections</code>
+类，其中只包含一个
+<code>actionSpecifyAmountFragmentToConfirmationFragment()</code>
+方法（该方法会返回 <code>NavDirections</code>
+对象）。然后，您可以将返回的 <code>NavDirections</code> 对象直接传递到
+<code>navigate()</code>，如以下示例所示：</p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#kotlin">Kotlin</a><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-getting-started?hl=zh-cn#java">Java</a></p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onClick</span><span class="hljs-params">(view: <span class="hljs-type">View</span>)</span></span> &#123;
     <span class="hljs-keyword">val</span> action =
         SpecifyAmountFragmentDirections
             .actionSpecifyAmountFragmentToConfirmationFragment()
     view.findNavController().navigate(action)
 &#125;</code></pre></div>
-
-<p>如需详细了解如何使用 Safe Args 在目的地之间传递数据，请参阅<a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-pass-data?hl=zh-cn#Safe-args">使用 Safe Args 传递类型安全的数据</a>。</p>
-<h2 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h2><h3 id="创建Navigation"><a href="#创建Navigation" class="headerlink" title="创建Navigation"></a>创建Navigation</h3><ol>
+<p>如需详细了解如何使用 Safe Args 在目的地之间传递数据，请参阅<a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/navigation/navigation-pass-data?hl=zh-cn#Safe-args">使用
+Safe Args 传递类型安全的数据</a>。</p>
+<h2 id="具体使用">具体使用</h2>
+<h3 id="创建navigation">创建Navigation</h3>
+<ol type="1">
 <li><p><strong>新建Fragment</strong>，并创建对应的布局文件</p>
-<p><img src="/./img/image-20221112181122669.png" srcset="/img/loading.gif" lazyload alt="image-20221112181122669"></p>
+<figure>
+<img src="./img/image-20221112181122669.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112181122669" />
+<figcaption aria-hidden="true">image-20221112181122669</figcaption>
+</figure>
 <p>默认的布局是<code>FrameLayout</code>，我们可以改为或者嵌套<code>ConstraintLayout</code></p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
 <span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.HomeFragment&quot;</span> /&gt;</span></code></pre></div>
-</li>
+<span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.HomeFragment&quot;</span> /&gt;</span></code></pre></div></li>
 <li><p><strong>创建Navigation资源文件</strong></p>
-<p><img src="/./img/image-20221112181644495.png" srcset="/img/loading.gif" lazyload alt="image-20221112181644495"></p>
+<figure>
+<img src="./img/image-20221112181644495.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112181644495" />
+<figcaption aria-hidden="true">image-20221112181644495</figcaption>
+</figure>
 <p>配置如下</p>
-<p><img src="/./img/image-20221112181906028.png" srcset="/img/loading.gif" lazyload alt="image-20221112181906028"></p>
+<figure>
+<img src="./img/image-20221112181906028.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112181906028" />
+<figcaption aria-hidden="true">image-20221112181906028</figcaption>
+</figure>
 <p>这里AndroidStudio有个小Bug，可能会一直加载布局文件，别慌，我们关掉所有的xml文件，重新打开<code>my_nav.xml</code>文件，不出意外会提示缺少依赖：</p>
-<p><img src="/./img/image-20221112182300752.png" srcset="/img/loading.gif" lazyload alt="image-20221112182300752"></p>
+<figure>
+<img src="./img/image-20221112182300752.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112182300752" />
+<figcaption aria-hidden="true">image-20221112182300752</figcaption>
+</figure>
 <p>点击<code>OK</code>会自动补全依赖。</p>
 <p>打开<code>build.gradle</code>发现自动导入的依赖如下：</p>
 <div class="code-wrapper"><pre><code class="hljs groovy">implementation <span class="hljs-string">&#x27;androidx.navigation:navigation-fragment-ktx:2.5.3&#x27;</span>
-implementation <span class="hljs-string">&#x27;androidx.navigation:navigation-ui-ktx:2.5.3&#x27;</span></code></pre></div>
-</li>
+implementation <span class="hljs-string">&#x27;androidx.navigation:navigation-ui-ktx:2.5.3&#x27;</span></code></pre></div></li>
 <li><p><strong>设计跳转逻辑</strong></p>
 <p>进入Navigation Editor，添加目的地</p>
-<p><img src="/./img/image-20221112183751474.png" srcset="/img/loading.gif" lazyload alt="image-20221112183751474"></p>
+<figure>
+<img src="./img/image-20221112183751474.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112183751474" />
+<figcaption aria-hidden="true">image-20221112183751474</figcaption>
+</figure>
 <p>根据跳转逻辑连接目的地，带房子图标的是<strong>主页</strong>，就是NavHost显示的首个界面</p>
-<p><img src="/./img/image-20221112184034079.png" srcset="/img/loading.gif" lazyload alt="image-20221112184034079"></p>
-</li>
+<figure>
+<img src="./img/image-20221112184034079.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112184034079" />
+<figcaption aria-hidden="true">image-20221112184034079</figcaption>
+</figure></li>
 <li><p><strong>向 Activity 添加 NavHost</strong></p>
 <p>找到<code>fragmentContainerView</code>拖到布局中（一定是布局的导航栏中），并添加约束</p>
-<p><img src="/./img/image-20221112190307587.png" srcset="/img/loading.gif" lazyload alt="image-20221112190307587"></p>
+<figure>
+<img src="./img/image-20221112190307587.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112190307587" />
+<figcaption aria-hidden="true">image-20221112190307587</figcaption>
+</figure>
 <p>选择刚刚创建好的Navigation布局文件</p>
-<p><img src="/./img/image-20221112184740090.png" srcset="/img/loading.gif" lazyload alt="image-20221112184740090"></p>
-</li>
+<figure>
+<img src="./img/image-20221112184740090.png" srcset="/img/loading.gif" lazyload
+alt="image-20221112184740090" />
+<figcaption aria-hidden="true">image-20221112184740090</figcaption>
+</figure></li>
 <li><p><strong>为控件绑定跳转事件</strong></p>
 <p>实现<code>onViewCreated()</code>方法</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onViewCreated</span><span class="hljs-params">(view: <span class="hljs-type">View</span>, savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;
@@ -629,7 +841,6 @@ implementation <span class="hljs-string">&#x27;androidx.navigation:navigation-ui
             controller.navigate(R.id.action_homeFragment_to_detailFragment)
         &#125;
 &#125;</code></pre></div>
-
 <p>或者</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onViewCreated</span><span class="hljs-params">(view: <span class="hljs-type">View</span>, savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;
     <span class="hljs-keyword">super</span>.onViewCreated(view, savedInstanceState)
@@ -637,36 +848,39 @@ implementation <span class="hljs-string">&#x27;androidx.navigation:navigation-ui
             .setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_detailFragment))
 &#125;</code></pre></div></li>
 </ol>
-<h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><ul>
+<h3 id="参数传递">参数传递</h3>
+<ul>
 <li><p><strong>第一种：可视化</strong></p>
-<p>在Navigation Edit中添加参数，在Attributes栏的Argument中，也是以键值对的形式添加。</p>
-<p><img src="/./img/image-20221113165722681.png" srcset="/img/loading.gif" lazyload alt="image-20221113165722681"></p>
+<p>在Navigation
+Edit中添加参数，在Attributes栏的Argument中，也是以键值对的形式添加。</p>
+<figure>
+<img src="./img/image-20221113165722681.png" srcset="/img/loading.gif" lazyload
+alt="image-20221113165722681" />
+<figcaption aria-hidden="true">image-20221113165722681</figcaption>
+</figure>
 <p>添加后fragment标签内增加</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">argument</span></span>
 <span class="hljs-tag">   <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;name&quot;</span></span>
 <span class="hljs-tag"> <span class="hljs-attr">app:argType</span>=<span class="hljs-string">&quot;string&quot;</span></span>
 <span class="hljs-tag">   <span class="hljs-attr">android:defaultValue</span>=<span class="hljs-string">&quot;Jack&quot;</span> /&gt;</span></code></pre></div>
-
 <p>在fragment中通过键值获取参数</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> string = arguments?.getString(<span class="hljs-string">&quot;name&quot;</span>)</code></pre></div></li>
 </ul>
-<p>   可以点击action对改值进行重写，会覆盖掉原来的值。</p>
-<p>   注意跳转时目的地不同，携带的参数也不同</p>
-   <div class="code-wrapper"><pre><code class="hljs kotlin">controller.navigate(R.id.action_homeFragment_to_detailFragment) <span class="hljs-comment">// Tom</span>
-controller.navigate(R.id.detailFragment) <span class="hljs-comment">// Jack</span></code></pre></div>
-
+<p>可以点击action对改值进行重写，会覆盖掉原来的值。</p>
+<p>注意跳转时目的地不同，携带的参数也不同</p>
+<p><div class="code-wrapper"><pre><code class="hljs kotlin">controller.navigate(R.id.action_homeFragment_to_detailFragment) <span class="hljs-comment">// Tom</span>
+controller.navigate(R.id.detailFragment) <span class="hljs-comment">// Jack</span></code></pre></div></p>
 <ul>
 <li><p><strong>第二种：通过Bundle传递参数</strong></p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">bundle.putString(<span class="hljs-string">&quot;my_name&quot;</span>, text)
 <span class="hljs-keyword">val</span> controller = Navigation.findNavController(v)
 controller.navigate(R.id.action_homeFragment_to_detailFragment, bundle) <span class="hljs-comment">// Tom</span></code></pre></div>
-
 <p>接收参数，和上面一样</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> string1 = arguments?.getString(<span class="hljs-string">&quot;my_name&quot;</span>)</code></pre></div></li>
 </ul>
-<h3 id="添加动画"><a href="#添加动画" class="headerlink" title="添加动画"></a>添加动画</h3><ol>
-<li><p>创建anim资源文件，类似导航资源文件的创建</p>
-</li>
+<h3 id="添加动画">添加动画</h3>
+<ol type="1">
+<li><p>创建anim资源文件，类似导航资源文件的创建</p></li>
 <li><p>创建动画效果，</p>
 <p>示例：从中间向右平移<code>slide_to_right</code></p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
@@ -678,7 +892,6 @@ controller.navigate(R.id.action_homeFragment_to_detailFragment, bundle) <span cl
 
     <span class="hljs-tag">&lt;/<span class="hljs-name">translate</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span></code></pre></div>
-
 <p>示例：从左向中间平移<code>slide_from_left</code></p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">set</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
@@ -689,7 +902,6 @@ controller.navigate(R.id.action_homeFragment_to_detailFragment, bundle) <span cl
 
     <span class="hljs-tag">&lt;/<span class="hljs-name">translate</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span></code></pre></div>
-
 <p>示例：简单缩放和旋转，从中间放大</p>
 <div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">set</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
@@ -709,10 +921,15 @@ controller.navigate(R.id.action_homeFragment_to_detailFragment, bundle) <span cl
 <span class="hljs-tag">        <span class="hljs-attr">android:toDegrees</span>=<span class="hljs-string">&quot;360&quot;</span> /&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span></code></pre></div></li>
-<li><p>在Navigation Editor中为Action添加动画即可。</p>
-</li>
+<li><p>在Navigation Editor中为Action添加动画即可。</p></li>
 </ol>
-<h2 id="使用ViewModel管理导航之间的数据"><a href="#使用ViewModel管理导航之间的数据" class="headerlink" title="使用ViewModel管理导航之间的数据"></a>使用ViewModel管理导航之间的数据</h2><p><img src="/./img/image-20221114184723610.png" srcset="/img/loading.gif" lazyload alt="image-20221114184723610"></p>
+<h2
+id="使用viewmodel管理导航之间的数据">使用ViewModel管理导航之间的数据</h2>
+<figure>
+<img src="./img/image-20221114184723610.png" srcset="/img/loading.gif" lazyload
+alt="image-20221114184723610" />
+<figcaption aria-hidden="true">image-20221114184723610</figcaption>
+</figure>
 
                 
               </div>

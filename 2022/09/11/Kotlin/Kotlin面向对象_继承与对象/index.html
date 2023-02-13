@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="面向对象 面向对象 继承 open关键字 类型检测与转换 智能类型转换 Any超类   对象 Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类      继承open关键字类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。 open class Product(val name:">
+    <meta name="description" content="面向对象  面向对象  继承  open关键字 类型检测与转换 智能类型转换 Any超类  对象  Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类    继承 open关键字 类默认都是封闭的，要让某个类开放继承，必须使用open关键">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin面向对象_继承与对象">
 <meta property="og:url" content="http://yorick.love/2022/09/11/Kotlin/Kotlin%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%AF%B9%E8%B1%A1/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="面向对象 面向对象 继承 open关键字 类型检测与转换 智能类型转换 Any超类   对象 Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类      继承open关键字类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。 open class Product(val name:">
+<meta property="og:description" content="面向对象  面向对象  继承  open关键字 类型检测与转换 智能类型转换 Any超类  对象  Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类    继承 open关键字 类默认都是封闭的，要让某个类开放继承，必须使用open关键">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-09-11T03:39:43.000Z">
@@ -252,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.9k 字
+          7k 字
         
       </span>
     
@@ -322,35 +322,38 @@
             
               <div class="markdown-body">
                 
-                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
-<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a><ul>
-<li><a href="#%E7%BB%A7%E6%89%BF">继承</a><ul>
-<li><a href="#open%E5%85%B3%E9%94%AE%E5%AD%97">open关键字</a></li>
-<li><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2">类型检测与转换</a></li>
-<li><a href="#%E6%99%BA%E8%83%BD%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">智能类型转换</a></li>
-<li><a href="#any%E8%B6%85%E7%B1%BB">Any超类</a></li>
+                <h1 id="面向对象">面向对象</h1>
+<ul>
+<li><a href="#面向对象">面向对象</a>
+<ul>
+<li><a href="#继承">继承</a>
+<ul>
+<li><a href="#open关键字">open关键字</a></li>
+<li><a href="#类型检测与转换">类型检测与转换</a></li>
+<li><a href="#智能类型转换">智能类型转换</a></li>
+<li><a href="#any超类">Any超类</a></li>
+</ul></li>
+<li><a href="#对象">对象</a>
+<ul>
+<li><a href="#object关键字">Object关键字</a></li>
+<li><a href="#对象声明">对象声明</a></li>
+<li><a href="#对象表达式">对象表达式</a></li>
+<li><a href="#伴生对象">伴生对象</a></li>
+<li><a href="#嵌套类">嵌套类</a></li>
+<li><a href="#数据类">数据类</a></li>
+<li><a href="#copy关键字">copy关键字</a></li>
+<li><a href="#结构声明">结构声明</a></li>
+<li><a href="#运算符重载">运算符重载</a></li>
+<li><a href="#枚举类">枚举类</a></li>
+<li><a href="#枚举类定义函数">枚举类定义函数</a></li>
+<li><a href="#代数数据类型">代数数据类型</a></li>
+<li><a href="#密封类">密封类</a></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-<li><a href="#%E5%AF%B9%E8%B1%A1">对象</a><ul>
-<li><a href="#object%E5%85%B3%E9%94%AE%E5%AD%97">Object关键字</a></li>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E">对象声明</a></li>
-<li><a href="#%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F">对象表达式</a></li>
-<li><a href="#%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1">伴生对象</a></li>
-<li><a href="#%E5%B5%8C%E5%A5%97%E7%B1%BB">嵌套类</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB">数据类</a></li>
-<li><a href="#copy%E5%85%B3%E9%94%AE%E5%AD%97">copy关键字</a></li>
-<li><a href="#%E7%BB%93%E6%9E%84%E5%A3%B0%E6%98%8E">结构声明</a></li>
-<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">运算符重载</a></li>
-<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB">枚举类</a></li>
-<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0">枚举类定义函数</a></li>
-<li><a href="#%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">代数数据类型</a></li>
-<li><a href="#%E5%AF%86%E5%B0%81%E7%B1%BB">密封类</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="open关键字"><a href="#open关键字" class="headerlink" title="open关键字"></a>open关键字</h3><p>类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。</p>
+<h2 id="继承">继承</h2>
+<h3 id="open关键字">open关键字</h3>
+<p>类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Product</span>(<span class="hljs-keyword">val</span> name: String) &#123;
     <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">desc</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Product: <span class="hljs-variable">$name</span>&quot;</span>
     <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Nothing&quot;</span>
@@ -365,7 +368,8 @@
     <span class="hljs-keyword">val</span> p:Product = LuxuryProduct()
     println(p.load()) <span class="hljs-comment">// LuxuryProduct loading...</span>
 &#125;</code></pre></div>
-<h3 id="类型检测与转换"><a href="#类型检测与转换" class="headerlink" title="类型检测与转换"></a>类型检测与转换</h3><p>使用<code>is</code>进行类型检测<br>使用<code>as</code>进行类型转换</p>
+<h3 id="类型检测与转换">类型检测与转换</h3>
+<p>使用<code>is</code>进行类型检测 使用<code>as</code>进行类型转换
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">import</span> java.io.File
 
 <span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Product</span>(<span class="hljs-keyword">val</span> name: String) &#123;
@@ -390,22 +394,24 @@
         <span class="hljs-comment">// 类型转换</span>
         println((p <span class="hljs-keyword">as</span> LuxuryProduct).special()) <span class="hljs-comment">// LuxuryProduct special function</span>
     &#125;
-&#125;</code></pre></div>
-<h3 id="智能类型转换"><a href="#智能类型转换" class="headerlink" title="智能类型转换"></a>智能类型转换</h3><p>Kotlin编译器很聪明，只要能确定any is 父类条件检查属实，它就会将any当做子类类型对待，因此，编译器允许你不经类型转换直接使用。</p>
+&#125;</code></pre></div> ### 智能类型转换</p>
+<p>Kotlin编译器很聪明，只要能确定any is
+父类条件检查属实，它就会将any当做子类类型对待，因此，编译器允许你不经类型转换直接使用。</p>
 <div class="code-wrapper"><pre><code class="hljs kt">println((p <span class="hljs-keyword">as</span> LuxuryProduct).special())
 p.special() <span class="hljs-comment">// 再次调用无需转换</span></code></pre></div>
-
-<h3 id="Any超类"><a href="#Any超类" class="headerlink" title="Any超类"></a>Any超类</h3><p>类似Java里的Object，Kotlin所有类的共同超类为Any</p>
-<div class="code-wrapper"><pre><code class="hljs kt">println(p <span class="hljs-keyword">is</span> Any) <span class="hljs-comment">// true</span></code></pre></div>
-
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="Object关键字"><a href="#Object关键字" class="headerlink" title="Object关键字"></a>Object关键字</h3><p>使用object关键字，你可以定义一个只能产生一个实例的类-单例</p>
+<h3 id="any超类">Any超类</h3>
+<p>类似Java里的Object，Kotlin所有类的共同超类为Any <div class="code-wrapper"><pre><code class="hljs kt">println(p <span class="hljs-keyword">is</span> Any) <span class="hljs-comment">// true</span></code></pre></div></p>
+<h2 id="对象">对象</h2>
+<h3 id="object关键字">Object关键字</h3>
+<p>使用object关键字，你可以定义一个只能产生一个实例的类-单例</p>
 <p>使用object关键字有三种方式</p>
 <ul>
 <li>对象声明</li>
 <li>对象表达式</li>
 <li>伴生对象</li>
 </ul>
-<h3 id="对象声明"><a href="#对象声明" class="headerlink" title="对象声明"></a>对象声明</h3><p>对象声明有利于组织代码和管理状态，尤其是管理整个应用运行生命周期内的某些一致性状态。</p>
+<h3 id="对象声明">对象声明</h3>
+<p>对象声明有利于组织代码和管理状态，尤其是管理整个应用运行生命周期内的某些一致性状态。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">object</span> ApplicationConfig &#123;
     <span class="hljs-keyword">init</span> &#123;
         println(<span class="hljs-string">&quot;ApplicationConfig is loading...&quot;</span>)
@@ -422,8 +428,8 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(ApplicationConfig) <span class="hljs-comment">// ApplicationConfig@52cc8049</span>
     println(ApplicationConfig) <span class="hljs-comment">//ApplicationConfig@52cc8049</span>
 &#125;</code></pre></div>
-
-<h3 id="对象表达式"><a href="#对象表达式" class="headerlink" title="对象表达式"></a>对象表达式</h3><p>有时候你不一定非要定义一个新的命名类不可，也许你需要某个现有类的一种变体实例，但只需用一次就行了，对于这种用完就丢的类实例，连命名都可以省了。</p>
+<h3 id="对象表达式">对象表达式</h3>
+<p>有时候你不一定非要定义一个新的命名类不可，也许你需要某个现有类的一种变体实例，但只需用一次就行了，对于这种用完就丢的类实例，连命名都可以省了。</p>
 <p>这个匿名类依然遵循object关键字的一个规则，即一旦实例化，该匿名类只能有唯一一个实例存在。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;
     <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;loading something...&quot;</span>
@@ -436,8 +442,8 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     &#125;
     println(p.load())
 &#125;</code></pre></div>
-
-<h3 id="伴生对象"><a href="#伴生对象" class="headerlink" title="伴生对象"></a>伴生对象</h3><p>使用companion修饰符，将对象伴生在类上，一个类只能有一个伴生对象。</p>
+<h3 id="伴生对象">伴生对象</h3>
+<p>使用companion修饰符，将对象伴生在类上，一个类只能有一个伴生对象。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">import</span> java.io.File
 
 <span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConfigMap</span> &#123;
@@ -450,8 +456,8 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     ConfigMap.load()
 &#125;</code></pre></div>
-
-<h3 id="嵌套类"><a href="#嵌套类" class="headerlink" title="嵌套类"></a>嵌套类</h3><p>如果一个类只对另一个类有用，那么将其嵌入到该类中并使这两个类保持在一起是合乎逻辑的，可以使用嵌套类。</p>
+<h3 id="嵌套类">嵌套类</h3>
+<p>如果一个类只对另一个类有用，那么将其嵌入到该类中并使这两个类保持在一起是合乎逻辑的，可以使用嵌套类。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Play</span> &#123;
     <span class="hljs-keyword">class</span> <span class="hljs-title class_">Equipment</span>(<span class="hljs-keyword">var</span> name: String) &#123;
         <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span> = println(<span class="hljs-string">&quot;equipment: <span class="hljs-variable">$name</span>&quot;</span>)
@@ -466,14 +472,13 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     <span class="hljs-comment">// 直接调用</span>
     Play.Equipment(<span class="hljs-string">&quot;M416&quot;</span>).show() <span class="hljs-comment">// equipment: M416</span>
 &#125;</code></pre></div>
-
-<h3 id="数据类"><a href="#数据类" class="headerlink" title="数据类"></a>数据类</h3><p>数据类，是专门设计用来存储数据的类</p>
+<h3 id="数据类">数据类</h3>
+<p>数据类，是专门设计用来存储数据的类</p>
 <ul>
 <li>数据类提供了<code>toString</code>的个性化实现</li>
 <li><code>==</code>符号默认情况下，比较对象就是比较它们的引用值，数据类提供了<code>equals</code>和<code>hashCode</code>的个性化实现</li>
 </ul>
-<p>使用数据类</p>
-<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
+<p>使用数据类 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
     <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
 &#125;
 
@@ -482,9 +487,7 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>) == Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>))
 &#125;
 <span class="hljs-comment">// Coordinate(x=10, y=20)</span>
-<span class="hljs-comment">// true</span></code></pre></div>
-<p>使用普通类</p>
-<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
+<span class="hljs-comment">// true</span></code></pre></div> 使用普通类 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
     <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
 &#125;
 
@@ -493,16 +496,16 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>) == Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>))
 &#125;
 <span class="hljs-comment">// Coordinate@52cc8049</span>
-<span class="hljs-comment">// false</span></code></pre></div>
-
+<span class="hljs-comment">// false</span></code></pre></div></p>
 <p>正是因为上述这些特性，你才倾向于用数据类来表示存储数据的简单对象，对于那些经常需要比较、复制或打印自身内容的类，数据类尤其适合它们。然而，一个类要成为数据类，也要符合一定条件。总结下来，主要有三个方面：</p>
 <ul>
 <li>数据类必须有至少带一个参数的主构造函数</li>
 <li>数据类主构造函数的参数必须是val或var</li>
 <li>数据类不能使用abstract、open、sealed和inner修饰符</li>
 </ul>
-<h3 id="copy关键字"><a href="#copy关键字" class="headerlink" title="copy关键字"></a>copy关键字</h3><p>data还提供了复制对象的方法copy。</p>
-<p>但是，copy时不会执行次构造函数里的语句，所以次构造函数里的赋值不会被copy到新对象。</p>
+<h3 id="copy关键字">copy关键字</h3>
+<p>data还提供了复制对象的方法copy。</p>
+<p>但是，copy时不会执行次构造函数里的语句，所以次构造函数里的赋值不会被copy到新对象。
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>(<span class="hljs-keyword">var</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) &#123;
     <span class="hljs-keyword">var</span> score = <span class="hljs-number">10</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> bobby = <span class="hljs-string">&quot;music&quot;</span>
@@ -533,10 +536,9 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
 <span class="hljs-comment">// constructor</span>
 <span class="hljs-comment">// initializing subject</span>
 <span class="hljs-comment">// Student(name=&#x27;John&#x27;, age=10, score=20, bobby=&#x27;music&#x27;, subject=&#x27;math&#x27;)</span>
-<span class="hljs-comment">// Student(name=&#x27;Alice&#x27;, age=10, score=10, bobby=&#x27;music&#x27;, subject=&#x27;math&#x27;)</span></code></pre></div>
-<h3 id="结构声明"><a href="#结构声明" class="headerlink" title="结构声明"></a>结构声明</h3><p>解构声明的后台实现就是声明component1、component2等若干个组件函数，让每个函数负责管理你想返回的一个属性数据。</p>
-<p>普通类</p>
-<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerScore</span>(<span class="hljs-keyword">val</span> exp: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">val</span> level: <span class="hljs-built_in">Int</span>) &#123;
+<span class="hljs-comment">// Student(name=&#x27;Alice&#x27;, age=10, score=10, bobby=&#x27;music&#x27;, subject=&#x27;math&#x27;)</span></code></pre></div> ### 结构声明</p>
+<p>解构声明的后台实现就是声明component1、component2等若干个组件函数，让每个函数负责管理你想返回的一个属性数据。</p>
+<p>普通类 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerScore</span>(<span class="hljs-keyword">val</span> exp: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">val</span> level: <span class="hljs-built_in">Int</span>) &#123;
     <span class="hljs-comment">// 需要组件函数</span>
     <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">component1</span><span class="hljs-params">()</span></span> = exp
     <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">component2</span><span class="hljs-params">()</span></span> = level
@@ -545,14 +547,15 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> (x, y) = PlayerScore(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
     println(<span class="hljs-string">&quot;<span class="hljs-variable">$x</span>,<span class="hljs-variable">$y</span>&quot;</span>) <span class="hljs-comment">// 10,20</span></code></pre></div>
-<p>如果你定义一个数据类，它会自动为所有定义在主构造函数的属性添加对应的组件函数。</p>
+如果你定义一个数据类，它会自动为所有定义在主构造函数的属性添加对应的组件函数。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerScore</span>(<span class="hljs-keyword">val</span> exp: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">val</span> level: <span class="hljs-built_in">Int</span>) &#123;&#125;
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     <span class="hljs-keyword">val</span> (x, y) = PlayerScore(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
     println(<span class="hljs-string">&quot;<span class="hljs-variable">$x</span>,<span class="hljs-variable">$y</span>&quot;</span>) <span class="hljs-comment">// 10,20</span>
 &#125;</code></pre></div>
-<h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><p>如果要将内置运算符应用在自定义类身上，你必须重写运算符函数，告诉编译器该如何操作自定义类。</p>
+<h3 id="运算符重载">运算符重载</h3>
+<p>如果要将内置运算符应用在自定义类身上，你必须重写运算符函数，告诉编译器该如何操作自定义类。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
     <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
     <span class="hljs-comment">// 重载加法运算符</span>
@@ -565,52 +568,16 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     <span class="hljs-keyword">val</span> p3 = p1 + p2
     println(p3) <span class="hljs-comment">// Coordinate(x=30, y=30)</span>
 &#125;</code></pre></div>
-<p>常见操作符</p>
-<table>
-<thead>
-<tr>
-<th>操作符</th>
-<th>函数名</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>+</td>
-<td>plus</td>
-<td>把一个对象添加到另一个对象里</td>
-</tr>
-<tr>
-<td>+&#x3D;</td>
-<td>plusAssign</td>
-<td>把一个对象添加到另一个对象里，然后将结果赋值给第一个对象</td>
-</tr>
-<tr>
-<td>&#x3D;&#x3D;</td>
-<td>equals</td>
-<td>如果两个对象相等，则返回true，否则返回false</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>compareTo</td>
-<td>如果左边的对象大于右边的对象，则返回true，否则返回false</td>
-</tr>
-<tr>
-<td>[ ]</td>
-<td>get</td>
-<td>返回集合中指定位置的元素</td>
-</tr>
-<tr>
-<td>..</td>
-<td>rangeTo</td>
-<td>创建一个range对象</td>
-</tr>
-<tr>
-<td>in</td>
-<td>contains</td>
-<td>如果对象包含在集合里，则返回true</td>
-</tr>
-</tbody></table>
-<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><p>枚举类,用来定义常量集合的一种特殊类。</p>
+<p>常见操作符 | 操作符 | 函数名 | 作用 | | ------ | ---------- |
+------------------------------------------------------- | | + | plus |
+把一个对象添加到另一个对象里 | | += | plusAssign |
+把一个对象添加到另一个对象里，然后将结果赋值给第一个对象 | | == | equals
+| 如果两个对象相等，则返回true，否则返回false | | &gt; | compareTo |
+如果左边的对象大于右边的对象，则返回true，否则返回false | | [ ] | get |
+返回集合中指定位置的元素 | | .. | rangeTo | 创建一个range对象 | | in |
+contains | 如果对象包含在集合里，则返回true |</p>
+<h3 id="枚举类">枚举类</h3>
+<p>枚举类,用来定义常量集合的一种特殊类。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Direction</span> &#123;
     EAST,
     WEST,
@@ -622,8 +589,8 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(Direction.EAST) <span class="hljs-comment">// EAST</span>
     println(Direction.EAST <span class="hljs-keyword">is</span> Direction) <span class="hljs-comment">// true</span>
 &#125;</code></pre></div>
-
-<h3 id="枚举类定义函数"><a href="#枚举类定义函数" class="headerlink" title="枚举类定义函数"></a>枚举类定义函数</h3><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Direction</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> coordinate: Coordinate) &#123;
+<h3 id="枚举类定义函数">枚举类定义函数</h3>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Direction</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> coordinate: Coordinate) &#123;
     <span class="hljs-comment">// 实例</span>
     EAST(Coordinate(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)),
     WEST(Coordinate(-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)),
@@ -638,7 +605,8 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(Direction.EAST.updateCoordinate(Coordinate(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)))
 &#125;
 <span class="hljs-comment">// Coordinate(x=11, y=20)</span></code></pre></div>
-<h3 id="代数数据类型"><a href="#代数数据类型" class="headerlink" title="代数数据类型"></a>代数数据类型</h3><p>可以用来表示一组子类型的闭集,枚举类就是一种简单的ADT。</p>
+<h3 id="代数数据类型">代数数据类型</h3>
+<p>可以用来表示一组子类型的闭集,枚举类就是一种简单的ADT。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LicenseStatus</span> &#123;
     UNQUALIFIED,
     LEARNING,
@@ -658,8 +626,9 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
     println(Driver(LicenseStatus.QUALIFIED).checkLicense())
 &#125;</code></pre></div>
-
-<h3 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h3><p>对于更复杂的ADT，你可以使用Kotlin的密封类(sealed class）来实现更复杂的定义，密封类可以用来定义一个类似于枚举类的ADT，但你可以更灵活地控制某个子类型。</p>
+<h3 id="密封类">密封类</h3>
+<p>对于更复杂的ADT，你可以使用Kotlin的密封类(sealed
+class）来实现更复杂的定义，密封类可以用来定义一个类似于枚举类的ADT，但你可以更灵活地控制某个子类型。</p>
 <p>密封类可以有若干个子类，要继承密封类，这些子类必须和它定义在同一个文件里。</p>
 <div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LicenseStatus</span> &#123;
     <span class="hljs-comment">// 没有属性，所以用单例模式</span>
@@ -685,6 +654,7 @@ p.special() <span class="hljs-comment">// 再次调用无需转换</span></code>
     println(driver.checkLicense())
     <span class="hljs-comment">// 有资格，驾驶证编号：2225211</span>
 &#125;</code></pre></div>
+
                 
               </div>
             

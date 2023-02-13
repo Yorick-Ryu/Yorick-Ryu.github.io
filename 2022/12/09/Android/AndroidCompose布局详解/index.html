@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
+    <meta name="description" content="深入了解 Jetpack Compose 布局 [TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Compose布局详解">
 <meta property="og:url" content="http://yorick.love/2022/12/09/Android/AndroidCompose%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
+<meta property="og:description" content="深入了解 Jetpack Compose 布局 [TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20221209183304625.png">
 <meta property="article:published_time" content="2022-12-09T10:29:00.000Z">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.4k 字
+          6.7k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          36 分钟
+          38 分钟
         
       </span>
     
@@ -325,35 +325,64 @@
             
               <div class="markdown-body">
                 
-                <h1 id="深入了解-Jetpack-Compose-布局"><a href="#深入了解-Jetpack-Compose-布局" class="headerlink" title="深入了解 Jetpack Compose 布局"></a>深入了解 Jetpack Compose 布局</h1><p>[TOC]</p>
-<p>Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。</p>
-<p>内容来自<a target="_blank" rel="noopener" href="https://youtu.be/zMKMwh9gZuI">深入了解 Jetpack Compose 布局 - YouTube</a></p>
-<h2 id="Compose布局系统的目标"><a href="#Compose布局系统的目标" class="headerlink" title="Compose布局系统的目标"></a>Compose布局系统的目标</h2><ul>
+                <h1 id="深入了解-jetpack-compose-布局">深入了解 Jetpack Compose
+布局</h1>
+<p>[TOC]</p>
+<p>Jetpack Compose
+提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解
+Compose
+的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。</p>
+<p>内容来自<a target="_blank" rel="noopener" href="https://youtu.be/zMKMwh9gZuI">深入了解 Jetpack
+Compose 布局 - YouTube</a></p>
+<h2 id="compose布局系统的目标">Compose布局系统的目标</h2>
+<ul>
 <li>简化布局的创建，尤其是自定义布局</li>
 <li>提供强大的布局系统</li>
 <li>实现卓越的性能</li>
 </ul>
-<p><img src="/./img/image-20221209183304625.png" srcset="/img/loading.gif" lazyload alt="image-20221209183304625"></p>
+<figure>
+<img src="./img/image-20221209183304625.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209183304625" />
+<figcaption aria-hidden="true">image-20221209183304625</figcaption>
+</figure>
 <p><strong>如何实现以上目标？</strong></p>
-<h2 id="Jetpack-Compose-如何将状态转为界面"><a href="#Jetpack-Compose-如何将状态转为界面" class="headerlink" title="Jetpack Compose 如何将状态转为界面"></a>Jetpack Compose 如何将状态转为界面</h2><p>这个流程包含三个阶段</p>
+<h2 id="jetpack-compose-如何将状态转为界面">Jetpack Compose
+如何将状态转为界面</h2>
+<p>这个流程包含三个阶段</p>
 <ul>
 <li>组合</li>
 <li>布局</li>
 <li>绘制</li>
 </ul>
-<p><img src="/./img/image-20221209183505668.png" srcset="/img/loading.gif" lazyload alt="image-20221209183505668"></p>
-<h3 id="组合阶段（Composition）"><a href="#组合阶段（Composition）" class="headerlink" title="组合阶段（Composition）"></a>组合阶段（Composition）</h3><p>组合阶段会执行可组合函数，这些函数会创建界面并组建界面树。</p>
+<figure>
+<img src="./img/image-20221209183505668.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209183505668" />
+<figcaption aria-hidden="true">image-20221209183505668</figcaption>
+</figure>
+<h3 id="组合阶段composition">组合阶段（Composition）</h3>
+<p>组合阶段会执行可组合函数，这些函数会创建界面并组建界面树。</p>
 <p>例如，执行这个SearchResult可组合函数，就会生成这样一个界面树。</p>
-<p><img src="/./img/image-20221209184149125.png" srcset="/img/loading.gif" lazyload alt="image-20221209184149125"></p>
+<figure>
+<img src="./img/image-20221209184149125.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209184149125" />
+<figcaption aria-hidden="true">image-20221209184149125</figcaption>
+</figure>
 <p>可组合项包含逻辑和控制流，在不同的状态下产生不同的界面树。</p>
-<h3 id="布局阶段（Layout）"><a href="#布局阶段（Layout）" class="headerlink" title="布局阶段（Layout）"></a>布局阶段（Layout）</h3><p>布局阶段会遍历整个界面树，测量每个界面元素并将它们放置在屏幕上的二维空间。也就是说，每个节点会确定其宽度和高度以及x和y坐标。</p>
-<h3 id="绘制阶段（Drawing）"><a href="#绘制阶段（Drawing）" class="headerlink" title="绘制阶段（Drawing）"></a>绘制阶段（Drawing）</h3><p>绘制阶段会重新遍历界面树并呈现全部元素。</p>
-<h2 id="布局阶段的深入介绍"><a href="#布局阶段的深入介绍" class="headerlink" title="布局阶段的深入介绍"></a>布局阶段的深入介绍</h2><p>布局阶段包含两个环节：</p>
+<h3 id="布局阶段layout">布局阶段（Layout）</h3>
+<p>布局阶段会遍历整个界面树，测量每个界面元素并将它们放置在屏幕上的二维空间。也就是说，每个节点会确定其宽度和高度以及x和y坐标。</p>
+<h3 id="绘制阶段drawing">绘制阶段（Drawing）</h3>
+<p>绘制阶段会重新遍历界面树并呈现全部元素。</p>
+<h2 id="布局阶段的深入介绍">布局阶段的深入介绍</h2>
+<p>布局阶段包含两个环节：</p>
 <ul>
 <li>测量（Measure）</li>
 <li>放置（Place）</li>
 </ul>
-<p><img src="/./img/image-20221209185018210.png" srcset="/img/loading.gif" lazyload alt="image-20221209185018210"></p>
+<figure>
+<img src="./img/image-20221209185018210.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209185018210" />
+<figcaption aria-hidden="true">image-20221209185018210</figcaption>
+</figure>
 <p>大致相当于View中的<code>onMeasure</code>和<code>onLayout</code></p>
 <p>不过在Compose中，这两个环节是相互交织的，因此我们暂且将它们视作一个布局环节。</p>
 <p>界面树中每个节点的布局流程包含三个步骤：</p>
@@ -362,16 +391,32 @@
 <li>决定自身尺寸</li>
 <li>放置子项</li>
 </ul>
-<p><img src="/./img/image-20221209185722752.png" srcset="/img/loading.gif" lazyload alt="image-20221209185722752"></p>
+<figure>
+<img src="./img/image-20221209185722752.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209185722752" />
+<figcaption aria-hidden="true">image-20221209185722752</figcaption>
+</figure>
 <p>具体过程如下：</p>
-<p><img src="/./img/image-20221209185904184.png" srcset="/img/loading.gif" lazyload alt="image-20221209185904184"></p>
+<figure>
+<img src="./img/image-20221209185904184.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209185904184" />
+<figcaption aria-hidden="true">image-20221209185904184</figcaption>
+</figure>
 <p>这样以来，跟布局在确定了所有子项的尺寸和位置后，就可以确定自己的尺寸和位置（放置指令），然后就可以进入放置环节，系统重新遍历界面树，并执行所有放置指令。</p>
 <p>上述过程如何实现？</p>
 <p>实际上，每个高级别可组合项都是通过低级别可组合项构造而成的。</p>
-<p><img src="/./img/image-20221209190725298.png" srcset="/img/loading.gif" lazyload alt="image-20221209190725298"></p>
+<figure>
+<img src="./img/image-20221209190725298.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209190725298" />
+<figcaption aria-hidden="true">image-20221209190725298</figcaption>
+</figure>
 <p>每一个在屏幕上放置元素的可组合项都包含了一个或多个Layout可组合项，这个Layout可组合项是Compose界面的基础构建块。</p>
 <p>Layout可组合项发出LayoutNode，在Compose中，界面树或组合是LayoutNode的树。</p>
-<p><img src="/./img/image-20221209190949564.png" srcset="/img/loading.gif" lazyload alt="image-20221209190949564"></p>
+<figure>
+<img src="./img/image-20221209190949564.png" srcset="/img/loading.gif" lazyload
+alt="image-20221209190949564" />
+<figcaption aria-hidden="true">image-20221209190949564</figcaption>
+</figure>
 <p>下面是<code>Layout</code>的源码</p>
 <p>参数：</p>
 <ul>
@@ -401,7 +446,6 @@
         content = content
     )
 &#125;</code></pre></div>
-
 <p>自定义Layout</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyCustomLayout</span><span class="hljs-params">(</span></span>
@@ -416,7 +460,6 @@
         <span class="hljs-comment">// TODO measure and place items</span>
     &#125;
 &#125;</code></pre></div>
-
 <p>在本例的MyCustomLayout可组合项中，我们调用Layout函数，并以尾随lambda的形式提供measurePolicy用于实现所需的测量函数，这个函数接受<code>Constraints</code>对象，定义布局的大小。</p>
 <p><code>Constraints</code>是一个简单的类，用于对布局可以采用的宽度和高度上下限进行建模。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span> &#123;
@@ -425,7 +468,6 @@
     <span class="hljs-keyword">val</span> minHeight: <span class="hljs-built_in">Int</span>
     <span class="hljs-keyword">val</span> maxHeight: <span class="hljs-built_in">Int</span>
 &#125;</code></pre></div>
-
 <p>例如，<code>Constrains</code>可以表达布局可以采用任意尺寸</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> bigAsYouLike = <span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span>(
     minWidth = <span class="hljs-number">0</span>,
@@ -433,7 +475,6 @@
     minHeight = <span class="hljs-number">0</span>,
     maxHeight = Constraints.Infinity,
 )</code></pre></div>
-
 <p>也可以表达布局必须采用确切的尺寸</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> bigAsYouLike = <span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span>(
     minWidth = <span class="hljs-number">50</span>,
@@ -441,7 +482,6 @@
     minHeight = <span class="hljs-number">50</span>,
     maxHeight = <span class="hljs-number">50</span>,
 )</code></pre></div>
-
 <p>测量函数还会接收可测量项的列表，此列表表示传入的子项元素，Measurable类型公开用于测量项目的函数。</p>
 <p>每个元素的布局流程具体实现：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
@@ -475,7 +515,6 @@
         &#125;
     &#125;
 &#125;</code></pre></div>
-
 <p>place方法仅能用于measure方法返回的放置项，这样的API设计可以防止放置没有测量过的元素。在View中，onMeasure和onLayout的调用顺序没有强制性要求，容易产生bug。</p>
 <p>示例：实现自定义Colum</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
@@ -505,7 +544,6 @@
         &#125;
     &#125;
 &#125;</code></pre></div>
-
 <p>示例：</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">VerticalGrid</span><span class="hljs-params">(</span></span>
@@ -532,9 +570,12 @@
         ...
     &#125;
 &#125;</code></pre></div>
-
 <p>这种为子项内容创建新约束条件的理念，就是实现自定义测量逻辑的方式，能够创建不同约束条件来测量子项，这是这个模型的关键。</p>
-<p><img src="/./img/image-20221213213747607.png" srcset="/img/loading.gif" lazyload alt="image-20221213213747607"></p>
+<figure>
+<img src="./img/image-20221213213747607.png" srcset="/img/loading.gif" lazyload
+alt="image-20221213213747607" />
+<figcaption aria-hidden="true">image-20221213213747607</figcaption>
+</figure>
 <p>最后父项7传递一系列可选的尺寸供子项选择，一旦子项选择了自己的尺寸，父项就必须接受并进行处理。</p>
 <p>优点是可以通过单次测量遍历整个界面树，并且禁止多个测量循环（测试多次会报错），这样可以提高性能，例如用动画效果呈现布局。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// try out different constraints</span>
@@ -542,7 +583,6 @@
 <span class="hljs-keyword">val</span> constraints2 = ...
 <span class="hljs-keyword">val</span> placeable1 = measurable.measure(constraints1)
 <span class="hljs-keyword">val</span> placeable2 = measurable.measure(constraints2)</code></pre></div>
-
 <p>什么时候用自定义布局</p>
 <ul>
 <li>无法用标准布局实现</li>
@@ -550,9 +590,12 @@
 <li>实现布局动画</li>
 <li>需要更高的性能</li>
 </ul>
-<h2 id="Modifier修饰符"><a href="#Modifier修饰符" class="headerlink" title="Modifier修饰符"></a>Modifier修饰符</h2><p>Layout函数接受修饰符链作为参数，修饰符修饰自己所关联到的元素，并且在布局自行进行测量和放置之前参与测量和放置。 </p>
+<h2 id="modifier修饰符">Modifier修饰符</h2>
+<p>Layout函数接受修饰符链作为参数，修饰符修饰自己所关联到的元素，并且在布局自行进行测量和放置之前参与测量和放置。</p>
 <p>如何实现？</p>
-<p>有很多影响不同行为的各类修饰符，例如drawing修饰符，pointerInput修饰符和focus修饰符，和我们密切相关的是LayoutModifier。 它提供了measure方法，此方法几乎与Layout组合项完全一样，但是它只作用于单个可测量项，而不是可测量项列表，因为修饰符就是应用于单个项目的 。 </p>
+<p>有很多影响不同行为的各类修饰符，例如drawing修饰符，pointerInput修饰符和focus修饰符，和我们密切相关的是LayoutModifier。
+它提供了measure方法，此方法几乎与Layout组合项完全一样，但是它只作用于单个可测量项，而不是可测量项列表，因为修饰符就是应用于单个项目的
+。</p>
 <p>这个示例中，修饰符可像布局一样修改约束条件或实现自定义放置逻辑。这意味着，你并不总是需要编写自定义布局，如果只需要作用于单个项目，就可以改为使用修饰符。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">LayoutModifier</span> : <span class="hljs-type">Modifier.Element</span> &#123;
     
@@ -562,7 +605,6 @@
 <span class="hljs-params"><span class="hljs-function">)</span></span>: MeasureResult
     ...
 &#125;</code></pre></div>
-
 <p>例如，我们看看PaddingModifier如何工作。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> Modifier.<span class="hljs-title">padding</span><span class="hljs-params">(all: <span class="hljs-type">Dp</span>)</span></span> = 
 	<span class="hljs-keyword">this</span>.then(PaddingModifier(
@@ -581,8 +623,10 @@
 ) : LayoutModifier &#123;
 ...
 &#125;</code></pre></div>
-
-<h2 id="高级布局功能"><a href="#高级布局功能" class="headerlink" title="高级布局功能"></a>高级布局功能</h2><h3 id="固有测量属性（Intrinsic-Measurement）"><a href="#固有测量属性（Intrinsic-Measurement）" class="headerlink" title="固有测量属性（Intrinsic Measurement）"></a>固有测量属性（Intrinsic Measurement）</h3><p>Compose不总是使用单传递布局系统。例如，下拉列表需要使用固有最大宽度来确定具体尺寸。</p>
+<h2 id="高级布局功能">高级布局功能</h2>
+<h3 id="固有测量属性intrinsic-measurement">固有测量属性（Intrinsic
+Measurement）</h3>
+<p>Compose不总是使用单传递布局系统。例如，下拉列表需要使用固有最大宽度来确定具体尺寸。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin">Column(Modifier.width(IntrinsicSize.Max)) &#123;
     Text(Modifier.fillMaxWidth())
     Text(Modifier.fillMaxWidth()) 
@@ -590,17 +634,26 @@
     Text(Modifier.fillMaxWidth()) 
     Text(Modifier.fillMaxWidth())
 &#125;</code></pre></div>
-
-<p>下拉列表的宽度 &#x3D; 每个文本不换行的情况下的最大宽度</p>
+<p>下拉列表的宽度 = 每个文本不换行的情况下的最大宽度</p>
 <p>文本的最小固有宽度是每行一个单词的宽度，多了会换行。</p>
-<h3 id="ParentData修饰符"><a href="#ParentData修饰符" class="headerlink" title="ParentData修饰符"></a>ParentData修饰符</h3><p>某个布局行为需要从子项获取信息，就需要使用ParentData。</p>
+<h3 id="parentdata修饰符">ParentData修饰符</h3>
+<p>某个布局行为需要从子项获取信息，就需要使用ParentData。</p>
 <p>Box中的align就是ParentData修饰符，它向父项传递信息，供父项确定子项布局，如果不在Box中，就无法使用。</p>
 <p>基线对齐</p>
-<p><img src="/./img/image-20221214113056005.png" srcset="/img/loading.gif" lazyload alt="image-20221214113056005"></p>
+<figure>
+<img src="./img/image-20221214113056005.png" srcset="/img/loading.gif" lazyload
+alt="image-20221214113056005" />
+<figcaption aria-hidden="true">image-20221214113056005</figcaption>
+</figure>
 <p>对齐会穿透至子项</p>
-<p><img src="/./img/image-20221214113124913.png" srcset="/img/loading.gif" lazyload alt="image-20221214113124913"></p>
-<h3 id="BoxWithConstraints"><a href="#BoxWithConstraints" class="headerlink" title="BoxWithConstraints"></a>BoxWithConstraints</h3><p>这是一个类似Box的可组合项，但是它会将对其内容的组合操作一直延迟到布局环节，那时就有布局信息可用了。</p>
-<p> BoxWithConstraints中的内容在公开约束条件的接收器作用域中运行，这些约束条件是在布局环节以像素或DPI值确定的，因此，里面的内容可以使用这些约束条件来选择要组合的内容。</p>
+<figure>
+<img src="./img/image-20221214113124913.png" srcset="/img/loading.gif" lazyload
+alt="image-20221214113124913" />
+<figcaption aria-hidden="true">image-20221214113124913</figcaption>
+</figure>
+<h3 id="boxwithconstraints">BoxWithConstraints</h3>
+<p>这是一个类似Box的可组合项，但是它会将对其内容的组合操作一直延迟到布局环节，那时就有布局信息可用了。</p>
+<p>BoxWithConstraints中的内容在公开约束条件的接收器作用域中运行，这些约束条件是在布局环节以像素或DPI值确定的，因此，里面的内容可以使用这些约束条件来选择要组合的内容。</p>
 <p>例如，根据最大宽度选择不同的呈现内容。</p>
 <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyApp</span><span class="hljs-params">(...)</span></span> &#123; 
@@ -612,9 +665,11 @@
 		&#125;
 	&#125;
 &#125;</code></pre></div>
-
-<p>但是BoxWithConstraints会在布局阶段启动子组合，这会影响性能。除非信息的类型会随着大小一起改变，请尽量避免使用BoxWithConstraints。<img src="/./img/image-20221214114817861.png" srcset="/img/loading.gif" lazyload alt="image-20221214114817861"></p>
-<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><ul>
+<p>但是BoxWithConstraints会在布局阶段启动子组合，这会影响性能。除非信息的类型会随着大小一起改变，请尽量避免使用BoxWithConstraints。<img
+src="./img/image-20221214114817861.png" srcset="/img/loading.gif" lazyload
+alt="image-20221214114817861" /></p>
+<h2 id="性能">性能</h2>
+<ul>
 <li>只有在改变显示内容时才需要重组，而改变显示位置或显示方法时则不需要。</li>
 <li>除非信息的类型会随着大小一起改变，请尽量避免使用BoxWithConstraints。</li>
 <li>有时无需测量自己的所有子项来确定布局大小</li>

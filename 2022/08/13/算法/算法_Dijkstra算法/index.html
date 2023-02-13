@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="迪杰斯特拉(Dijkstra)算法基本介绍迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 实现思路设置出发顶点为v，顶点集合V{v1,v2,vi…}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di…}]，Dis集合记录着v到图中各顶点的距离(到自身可以看">
+    <meta name="description" content="迪杰斯特拉(Dijkstra)算法 基本介绍 迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 实现思路 设置出发顶点为v，顶点集合V{v1,v2,vi...}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di...}]，Dis集合记录着v到图中各顶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dijkstra算法">
 <meta property="og:url" content="http://yorick.love/2022/08/13/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95_Dijkstra%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="迪杰斯特拉(Dijkstra)算法基本介绍迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 实现思路设置出发顶点为v，顶点集合V{v1,v2,vi…}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di…}]，Dis集合记录着v到图中各顶点的距离(到自身可以看">
+<meta property="og:description" content="迪杰斯特拉(Dijkstra)算法 基本介绍 迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 实现思路 设置出发顶点为v，顶点集合V{v1,v2,vi...}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di...}]，Dis集合记录着v到图中各顶">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2022-08-13T07:14:27.000Z">
@@ -327,12 +327,16 @@
             
               <div class="markdown-body">
                 
-                <h1 id="迪杰斯特拉-Dijkstra-算法"><a href="#迪杰斯特拉-Dijkstra-算法" class="headerlink" title="迪杰斯特拉(Dijkstra)算法"></a>迪杰斯特拉(Dijkstra)算法</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。</p>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>设置出发顶点为v，顶点集合V{v1,v2,vi…}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di…}]，Dis集合记录着v到图中各顶点的距离(到自身可以看作0，v到vi距离对应为di)</p>
+                <h1 id="迪杰斯特拉dijkstra算法">迪杰斯特拉(Dijkstra)算法</h1>
+<h2 id="基本介绍">基本介绍</h2>
+<p>迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算一个结点到其他结点的最短路径。它的主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。</p>
+<h2 id="实现思路">实现思路</h2>
+<p>设置出发顶点为v，顶点集合V{v1,v2,vi...}，v到V中各顶点的距离构成距离集合Dis，Dis{d1,d2,di...}]，Dis集合记录着v到图中各顶点的距离(到自身可以看作0，v到vi距离对应为di)</p>
 <p>（1）从Dis中选择值最小的di并移出Dis集合，同时移出V集合中对应的顶点vi，此时的v到vi即为最短路径</p>
 <p>（2）更新Dis集合，更新规则为：比较v到V集合中顶点的距离值，与v通过vi到v集合中顶点的距离值，保留值较小的一个(同时也应该更新顶点的前驱节点为vi，表明是通过vi到达的)</p>
 <p>（3）重复执行两步骤，直到最短路径顶点为目标顶点即可结束</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;
+<h2 id="代码实现">代码实现</h2>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;
 
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Dijkstra</span> &#123;
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
@@ -448,7 +452,6 @@
                 <span class="hljs-string">&#x27;&#125;&#x27;</span>;
     &#125;
 &#125;</code></pre></div>
-
 
                 
               </div>

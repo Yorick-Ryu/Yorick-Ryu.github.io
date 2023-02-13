@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="时间复杂度与空间复杂度 时间复杂度与空间复杂度 度量程序(算法)执行时间的方法 事后统计 事前估算   时间频度 基本介绍 举例说明 时间频度的性质 忽略常数项 忽略高次项的系数和低次项     时间复杂度 常见的时间复杂度 常数阶 $O(1)$ 对数阶 $O(\log_{2}{n})$ 线性阶 $O(n)$ 线性对数阶 $O(n\log_{2}{n})$ 平方阶 $O(n^2)$ 立方阶 $O(">
+    <meta name="description" content="时间复杂度与空间复杂度  时间复杂度与空间复杂度  度量程序(算法)执行时间的方法  事后统计 事前估算  时间频度  基本介绍 举例说明 时间频度的性质  忽略常数项 忽略高次项的系数和低次项   时间复杂度  常见的时间复杂度  常数阶 \(O(1)\) 对数阶 \(O(\log_{2}{n})\) 线性阶 \(O(n)\) 线性对数阶 \(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间复杂度与空间复杂度">
 <meta property="og:url" content="http://yorick.love/2022/07/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="时间复杂度与空间复杂度 时间复杂度与空间复杂度 度量程序(算法)执行时间的方法 事后统计 事前估算   时间频度 基本介绍 举例说明 时间频度的性质 忽略常数项 忽略高次项的系数和低次项     时间复杂度 常见的时间复杂度 常数阶 $O(1)$ 对数阶 $O(\log_{2}{n})$ 线性阶 $O(n)$ 线性对数阶 $O(n\log_{2}{n})$ 平方阶 $O(n^2)$ 立方阶 $O(">
+<meta property="og:description" content="时间复杂度与空间复杂度  时间复杂度与空间复杂度  度量程序(算法)执行时间的方法  事后统计 事前估算  时间频度  基本介绍 举例说明 时间频度的性质  忽略常数项 忽略高次项的系数和低次项   时间复杂度  常见的时间复杂度  常数阶 \(O(1)\) 对数阶 \(O(\log_{2}{n})\) 线性阶 \(O(n)\) 线性对数阶 \(">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/time_complexity.png">
 <meta property="article:published_time" content="2022-07-09T10:27:06.000Z">
@@ -323,124 +323,201 @@
             
               <div class="markdown-body">
                 
-                <h1 id="时间复杂度与空间复杂度"><a href="#时间复杂度与空间复杂度" class="headerlink" title="时间复杂度与空间复杂度"></a>时间复杂度与空间复杂度</h1><ul>
-<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度与空间复杂度</a><ul>
-<li><a href="#%E5%BA%A6%E9%87%8F%E7%A8%8B%E5%BA%8F%E7%AE%97%E6%B3%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95">度量程序(算法)执行时间的方法</a><ul>
-<li><a href="#%E4%BA%8B%E5%90%8E%E7%BB%9F%E8%AE%A1">事后统计</a></li>
-<li><a href="#%E4%BA%8B%E5%89%8D%E4%BC%B0%E7%AE%97">事前估算</a></li>
+                <h1 id="时间复杂度与空间复杂度">时间复杂度与空间复杂度</h1>
+<ul>
+<li><a href="#时间复杂度与空间复杂度">时间复杂度与空间复杂度</a>
+<ul>
+<li><a
+href="#度量程序算法执行时间的方法">度量程序(算法)执行时间的方法</a>
+<ul>
+<li><a href="#事后统计">事后统计</a></li>
+<li><a href="#事前估算">事前估算</a></li>
+</ul></li>
+<li><a href="#时间频度">时间频度</a>
+<ul>
+<li><a href="#基本介绍">基本介绍</a></li>
+<li><a href="#举例说明">举例说明</a></li>
+<li><a href="#时间频度的性质">时间频度的性质</a>
+<ul>
+<li><a href="#忽略常数项">忽略常数项</a></li>
+<li><a
+href="#忽略高次项的系数和低次项">忽略高次项的系数和低次项</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#时间复杂度">时间复杂度</a>
+<ul>
+<li><a href="#常见的时间复杂度">常见的时间复杂度</a>
+<ul>
+<li><a href="#常数阶-o1">常数阶 <span
+class="math inline">\(O(1)\)</span></a></li>
+<li><a href="#对数阶-olog_2n">对数阶 <span
+class="math inline">\(O(\log_{2}{n})\)</span></a></li>
+<li><a href="#线性阶-on">线性阶 <span
+class="math inline">\(O(n)\)</span></a></li>
+<li><a href="#线性对数阶-onlog_2n">线性对数阶 <span
+class="math inline">\(O(n\log_{2}{n})\)</span></a></li>
+<li><a href="#平方阶-on2">平方阶 <span
+class="math inline">\(O(n^2)\)</span></a></li>
+<li><a href="#立方阶-on3">立方阶 <span
+class="math inline">\(O(n^3)\)</span></a></li>
+<li><a href="#k次方阶-onk">k次方阶 <span
+class="math inline">\(O(n^k)\)</span></a></li>
+</ul></li>
+<li><a
+href="#平均时间复杂度和最坏时间复杂度">平均时间复杂度和最坏时间复杂度</a></li>
+</ul></li>
+<li><a href="#空间复杂度">空间复杂度</a>
+<ul>
+<li><a href="#基本介绍-1">基本介绍</a></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-<li><a href="#%E6%97%B6%E9%97%B4%E9%A2%91%E5%BA%A6">时间频度</a><ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a></li>
-<li><a href="#%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E">举例说明</a></li>
-<li><a href="#%E6%97%B6%E9%97%B4%E9%A2%91%E5%BA%A6%E7%9A%84%E6%80%A7%E8%B4%A8">时间频度的性质</a><ul>
-<li><a href="#%E5%BF%BD%E7%95%A5%E5%B8%B8%E6%95%B0%E9%A1%B9">忽略常数项</a></li>
-<li><a href="#%E5%BF%BD%E7%95%A5%E9%AB%98%E6%AC%A1%E9%A1%B9%E7%9A%84%E7%B3%BB%E6%95%B0%E5%92%8C%E4%BD%8E%E6%AC%A1%E9%A1%B9">忽略高次项的系数和低次项</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a><ul>
-<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">常见的时间复杂度</a><ul>
-<li><a href="#%E5%B8%B8%E6%95%B0%E9%98%B6-o1">常数阶 $O(1)$</a></li>
-<li><a href="#%E5%AF%B9%E6%95%B0%E9%98%B6-olog_2n">对数阶 $O(\log_{2}{n})$</a></li>
-<li><a href="#%E7%BA%BF%E6%80%A7%E9%98%B6-on">线性阶 $O(n)$</a></li>
-<li><a href="#%E7%BA%BF%E6%80%A7%E5%AF%B9%E6%95%B0%E9%98%B6-onlog_2n">线性对数阶 $O(n\log_{2}{n})$</a></li>
-<li><a href="#%E5%B9%B3%E6%96%B9%E9%98%B6-on2">平方阶 $O(n^2)$</a></li>
-<li><a href="#%E7%AB%8B%E6%96%B9%E9%98%B6-on3">立方阶 $O(n^3)$</a></li>
-<li><a href="#k%E6%AC%A1%E6%96%B9%E9%98%B6-onk">k次方阶 $O(n^k)$</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B9%B3%E5%9D%87%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%92%8C%E6%9C%80%E5%9D%8F%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">平均时间复杂度和最坏时间复杂度</a></li>
-</ul>
-</li>
-<li><a href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">空间复杂度</a><ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D-1">基本介绍</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="度量程序-算法-执行时间的方法"><a href="#度量程序-算法-执行时间的方法" class="headerlink" title="度量程序(算法)执行时间的方法"></a>度量程序(算法)执行时间的方法</h2><h3 id="事后统计"><a href="#事后统计" class="headerlink" title="事后统计"></a>事后统计</h3><p>这种方法可行，但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素,这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。</p>
-<h3 id="事前估算"><a href="#事前估算" class="headerlink" title="事前估算"></a>事前估算</h3><p>通过分析某个算法的时间复杂度来判断哪个算法更优。</p>
-<h2 id="时间频度"><a href="#时间频度" class="headerlink" title="时间频度"></a>时间频度</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>时间频度：一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度。记为 $T(n)$。</p>
-<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>计算1-100所有数字之和</p>
-<ol>
-<li><p>使用for循环计算</p>
-<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+<h2 id="度量程序算法执行时间的方法">度量程序(算法)执行时间的方法</h2>
+<h3 id="事后统计">事后统计</h3>
+<p>这种方法可行，但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素,这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。</p>
+<h3 id="事前估算">事前估算</h3>
+<p>通过分析某个算法的时间复杂度来判断哪个算法更优。</p>
+<h2 id="时间频度">时间频度</h2>
+<h3 id="基本介绍">基本介绍</h3>
+<p>时间频度：一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度。记为
+<span class="math inline">\(T(n)\)</span>。</p>
+<h3 id="举例说明">举例说明</h3>
+<p>计算1-100所有数字之和</p>
+<ol type="1">
+<li><p>使用for循环计算 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;
 <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;i &lt;= end;i++)&#123;
     total++;
-&#125;</code></pre></div>
-<p>$T(n)&#x3D;n+1$</p>
-</li>
-<li><p>直接用公式计算</p>
-<div class="code-wrapper"><pre><code class="hljs java">total = (<span class="hljs-number">1</span>+end)*end/<span class="hljs-number">2</span></code></pre></div>
-<p>$T(n)&#x3D;1$</p>
-</li>
+&#125;</code></pre></div> <span
+class="math inline">\(T(n)=n+1\)</span></p></li>
+<li><p>直接用公式计算 <div class="code-wrapper"><pre><code class="hljs java">total = (<span class="hljs-number">1</span>+end)*end/<span class="hljs-number">2</span></code></pre></div> <span
+class="math inline">\(T(n)=1\)</span></p></li>
 </ol>
-<h3 id="时间频度的性质"><a href="#时间频度的性质" class="headerlink" title="时间频度的性质"></a>时间频度的性质</h3><p>时间频度随着 $n$ 趋近无限大有以下性质</p>
-<h4 id="忽略常数项"><a href="#忽略常数项" class="headerlink" title="忽略常数项"></a>忽略常数项</h4><p>$T(n)&#x3D;2n+10 \Rightarrow T(n)&#x3D;2n$</p>
-<h4 id="忽略高次项的系数和低次项"><a href="#忽略高次项的系数和低次项" class="headerlink" title="忽略高次项的系数和低次项"></a>忽略高次项的系数和低次项</h4><p>$T(n)&#x3D;2n^2+3n+10 \Rightarrow T(n)&#x3D;n^2$</p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ol>
-<li><p>一般情况下，算法中的基本操作语句的重复执行次数是问题规模 $n$ 的某个函数，用 $T(n)$ 表示，若有某个辅助函数 $f(n)$，使得当n趋近于无穷大时， $T(n) &#x2F; f(n)$ 的极限值为不等于零的常数，则称 $f(n)$ 是 $T(n)$ 的同数量级函数。记作 $T(n)&#x3D;O(f(n))$，称 $O(f(n))$ 为算法的渐进时间复杂度，简称时间复杂度。</p>
-</li>
-<li><p>$T(n)$不同，但时间复杂度可能相同。如: $T(n)&#x3D;n^2+7n+6$ 与 $T(n)&#x3D;3n^2+2n+2$ 它们的 $T(n)$ 不同，但时间复杂度相同，都为 $O(n^2)$ 。</p>
-</li>
-<li><p>计算时间复杂度的方法:</p>
-</li>
+<h3 id="时间频度的性质">时间频度的性质</h3>
+<p>时间频度随着 <span class="math inline">\(n\)</span>
+趋近无限大有以下性质</p>
+<h4 id="忽略常数项">忽略常数项</h4>
+<p><span class="math inline">\(T(n)=2n+10 \Rightarrow
+T(n)=2n\)</span></p>
+<h4 id="忽略高次项的系数和低次项">忽略高次项的系数和低次项</h4>
+<p><span class="math inline">\(T(n)=2n^2+3n+10 \Rightarrow
+T(n)=n^2\)</span></p>
+<h2 id="时间复杂度">时间复杂度</h2>
+<ol type="1">
+<li><p>一般情况下，算法中的基本操作语句的重复执行次数是问题规模 <span
+class="math inline">\(n\)</span> 的某个函数，用 <span
+class="math inline">\(T(n)\)</span> 表示，若有某个辅助函数 <span
+class="math inline">\(f(n)\)</span>，使得当n趋近于无穷大时， <span
+class="math inline">\(T(n) / f(n)\)</span>
+的极限值为不等于零的常数，则称 <span class="math inline">\(f(n)\)</span>
+是 <span class="math inline">\(T(n)\)</span> 的同数量级函数。记作 <span
+class="math inline">\(T(n)=O(f(n))\)</span>，称 <span
+class="math inline">\(O(f(n))\)</span>
+为算法的渐进时间复杂度，简称时间复杂度。</p></li>
+<li><p><span
+class="math inline">\(T(n)\)</span>不同，但时间复杂度可能相同。如: <span
+class="math inline">\(T(n)=n^2+7n+6\)</span> 与 <span
+class="math inline">\(T(n)=3n^2+2n+2\)</span> 它们的 <span
+class="math inline">\(T(n)\)</span> 不同，但时间复杂度相同，都为 <span
+class="math inline">\(O(n^2)\)</span> 。</p></li>
+<li><p>计算时间复杂度的方法:</p></li>
 </ol>
 <ul>
-<li>用常数 $1$ 代替运行时间中的所有加法常数</li>
+<li>用常数 <span class="math inline">\(1\)</span>
+代替运行时间中的所有加法常数</li>
 <li>修改后的运行次数函数中，只保留最高阶项</li>
 <li>去除最高阶项的系数</li>
 </ul>
-<h3 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h3><ol>
-<li>常数阶 $O(1)$</li>
-<li>对数阶 $O(\log_{2}{n})$</li>
-<li>线性阶 $O(n)$</li>
-<li>线性对数阶 $O(n\log_{2}{n})$</li>
-<li>平方阶 $O(n^2)$</li>
-<li>立方阶 $O(n^3)$</li>
-<li>k次方阶 $O(n^k)$</li>
-<li>指数阶 $O(2^n)$</li>
+<h3 id="常见的时间复杂度">常见的时间复杂度</h3>
+<ol type="1">
+<li>常数阶 <span class="math inline">\(O(1)\)</span></li>
+<li>对数阶 <span class="math inline">\(O(\log_{2}{n})\)</span></li>
+<li>线性阶 <span class="math inline">\(O(n)\)</span></li>
+<li>线性对数阶 <span class="math inline">\(O(n\log_{2}{n})\)</span></li>
+<li>平方阶 <span class="math inline">\(O(n^2)\)</span></li>
+<li>立方阶 <span class="math inline">\(O(n^3)\)</span></li>
+<li>k次方阶 <span class="math inline">\(O(n^k)\)</span></li>
+<li>指数阶 <span class="math inline">\(O(2^n)\)</span></li>
 </ol>
 <ul>
-<li>常见的算法时间复杂度由小到大依次为：<br>$O(1)&lt;O(\log_{2}{n})&lt;O(n)&lt;O(n\log_{2}{n})&lt;O(n^2)&lt;O(n^3)&lt;O(n^k)&lt;O(2^n)$，随着问题规模 $n$ 的不断增大，上述时间复杂度不断增大，算法的执行效率越低。</li>
+<li>常见的算法时间复杂度由小到大依次为： <span
+class="math inline">\(O(1)&lt;O(\log_{2}{n})&lt;O(n)&lt;O(n\log_{2}{n})&lt;O(n^2)&lt;O(n^3)&lt;O(n^k)&lt;O(2^n)\)</span>，随着问题规模
+<span class="math inline">\(n\)</span>
+的不断增大，上述时间复杂度不断增大，算法的执行效率越低。</li>
 <li>由图可见，我们应该尽可能避免使用指数阶的算法</li>
 </ul>
-<p><img src="/./img/time_complexity.png" srcset="/img/loading.gif" lazyload alt="time_complexity"></p>
-<h4 id="常数阶-O-1"><a href="#常数阶-O-1" class="headerlink" title="常数阶 $O(1)$"></a>常数阶 $O(1)$</h4><p>无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是 $O(1)$</p>
-<h4 id="对数阶-O-log-2-n"><a href="#对数阶-O-log-2-n" class="headerlink" title="对数阶 $O(\log_{2}{n})$"></a>对数阶 $O(\log_{2}{n})$</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+<figure>
+<img src="./img/time_complexity.png" srcset="/img/loading.gif" lazyload alt="time_complexity" />
+<figcaption aria-hidden="true">time_complexity</figcaption>
+</figure>
+<h4 id="常数阶-o1">常数阶 <span class="math inline">\(O(1)\)</span></h4>
+<p>无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是
+<span class="math inline">\(O(1)\)</span></p>
+<h4 id="对数阶-olog_2n">对数阶 <span
+class="math inline">\(O(\log_{2}{n})\)</span></h4>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
 <span class="hljs-keyword">while</span>(i &lt; n)&#123;
   i = i * <span class="hljs-number">2</span>;
 &#125;</code></pre></div>
-<p>说明：在while循环里面，每次都将 i 乘以 2 ，乘完之后，i 距离 n 就越来越近了。假设循环 x 次之后，i 就大于 2 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 $x&#x3D;\log_{2}{n}$ 也就是说当循环 $\log_{2}{n}$ 次以后，这个代码就结束了。因此这个代码的时间复杂度为：$O(\log_{2}{n})$ 。$O(\log_{2}{n})$ 的这个 2 时间上是根据代码变化的，若<code>i = i * 3</code>，则是 $O(\log_{3}{n})$。</p>
-<h4 id="线性阶-O-n"><a href="#线性阶-O-n" class="headerlink" title="线性阶 $O(n)$"></a>线性阶 $O(n)$</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+<p>说明：在while循环里面，每次都将 i 乘以 2 ，乘完之后，i 距离 n
+就越来越近了。假设循环 x 次之后，i 就大于 2
+了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 <span
+class="math inline">\(x=\log_{2}{n}\)</span> 也就是说当循环 <span
+class="math inline">\(\log_{2}{n}\)</span>
+次以后，这个代码就结束了。因此这个代码的时间复杂度为：<span
+class="math inline">\(O(\log_{2}{n})\)</span> 。<span
+class="math inline">\(O(\log_{2}{n})\)</span> 的这个 2
+时间上是根据代码变化的，若<code>i = i * 3</code>，则是 <span
+class="math inline">\(O(\log_{3}{n})\)</span>。</p>
+<h4 id="线性阶-on">线性阶 <span class="math inline">\(O(n)\)</span></h4>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i &lt; n;i++)&#123;
   j++;
 &#125;</code></pre></div>
-<p>说明：这段代码，for循环里面的代码会执行 n 遍，因此它消耗的时间是随着 n 的变化而变化的，因此这类代码都可以用 $O(n)$ 来表示它的时间复杂度。</p>
-<h4 id="线性对数阶-O-n-log-2-n"><a href="#线性对数阶-O-n-log-2-n" class="headerlink" title="线性对数阶 $O(n\log_{2}{n})$"></a>线性对数阶 $O(n\log_{2}{n})$</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;m &lt; n;m++)&#123;
+<p>说明：这段代码，for循环里面的代码会执行 n 遍，因此它消耗的时间是随着
+n 的变化而变化的，因此这类代码都可以用 <span
+class="math inline">\(O(n)\)</span> 来表示它的时间复杂度。</p>
+<h4 id="线性对数阶-onlog_2n">线性对数阶 <span
+class="math inline">\(O(n\log_{2}{n})\)</span></h4>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;m &lt; n;m++)&#123;
   <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
   <span class="hljs-keyword">while</span>(i &lt; n)&#123;
     i = i * <span class="hljs-number">2</span>;
   &#125;
 &#125;</code></pre></div>
-
-<p>说明：线性对数阶 $O(n\log_{2}{n})$ 其实非常容易理解，将时间复杂度为 $O(\log_{2}{n})$ 的代码循环 $n$ 遍的话，那么它的时间复杂度就是  $n*O(\log_{2}{n})$ ，也就是 $O(n\log_{2}{n})$ 。</p>
-<h4 id="平方阶-O-n-2"><a href="#平方阶-O-n-2" class="headerlink" title="平方阶 $O(n^2)$"></a>平方阶 $O(n^2)$</h4><p>常见于双层循环嵌套</p>
-<h4 id="立方阶-O-n-3"><a href="#立方阶-O-n-3" class="headerlink" title="立方阶 $O(n^3)$"></a>立方阶 $O(n^3)$</h4><p>常见于三层循环嵌套</p>
-<h4 id="k次方阶-O-n-k"><a href="#k次方阶-O-n-k" class="headerlink" title="k次方阶 $O(n^k)$"></a>k次方阶 $O(n^k)$</h4><p>常见于 k 层循环嵌套</p>
-<h3 id="平均时间复杂度和最坏时间复杂度"><a href="#平均时间复杂度和最坏时间复杂度" class="headerlink" title="平均时间复杂度和最坏时间复杂度"></a>平均时间复杂度和最坏时间复杂度</h3><ol>
+<p>说明：线性对数阶 <span class="math inline">\(O(n\log_{2}{n})\)</span>
+其实非常容易理解，将时间复杂度为 <span
+class="math inline">\(O(\log_{2}{n})\)</span> 的代码循环 <span
+class="math inline">\(n\)</span> 遍的话，那么它的时间复杂度就是 <span
+class="math inline">\(n*O(\log_{2}{n})\)</span> ，也就是 <span
+class="math inline">\(O(n\log_{2}{n})\)</span> 。</p>
+<h4 id="平方阶-on2">平方阶 <span
+class="math inline">\(O(n^2)\)</span></h4>
+<p>常见于双层循环嵌套</p>
+<h4 id="立方阶-on3">立方阶 <span
+class="math inline">\(O(n^3)\)</span></h4>
+<p>常见于三层循环嵌套</p>
+<h4 id="k次方阶-onk">k次方阶 <span
+class="math inline">\(O(n^k)\)</span></h4>
+<p>常见于 k 层循环嵌套</p>
+<h3
+id="平均时间复杂度和最坏时间复杂度">平均时间复杂度和最坏时间复杂度</h3>
+<ol type="1">
 <li>平均时间复杂度是指所有可能的输入实例均以等概率出现的情况下，该算法的运行时间。</li>
 <li>最坏情况下的时间复杂度称最坏时间复杂度。一般讨论的时间复杂度均是最坏情况下的时间复杂度。这样做的原因是:最坏情况下的时间复杂度是算法在任何输入实例上运行时间的界限，这就保证了算法的运行时间不会比最坏情况更长。</li>
 <li>平均时间复杂度和最坏时间复杂度是否一致，和算法有关。</li>
 </ol>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><ol>
-<li>类似于时间复杂度的讨论，一个算法的空间复杂度(Space Complexity)定义为该算法所耗费的存储空间，它也是问题规模n的函数。</li>
-<li>空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。有的算法需要占用的临时工作单元数与解决问题的规模 n 有关，它随着 n 的增大而增大，当 n 较大时，将占用较多的存储单元，例如快速排序和归并排序算法就属于这种情况。</li>
-<li>在做算法分析时，主要讨论的是时间复杂度。从用户使用体验上看，更看重的程序执行的速度。一些缓存产品(redis, memcache)和算法(基数排序)本质就是用空间换时间。</li>
+<h2 id="空间复杂度">空间复杂度</h2>
+<h3 id="基本介绍-1">基本介绍</h3>
+<ol type="1">
+<li>类似于时间复杂度的讨论，一个算法的空间复杂度(Space
+Complexity)定义为该算法所耗费的存储空间，它也是问题规模n的函数。</li>
+<li>空间复杂度(Space
+Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度。有的算法需要占用的临时工作单元数与解决问题的规模
+n 有关，它随着 n 的增大而增大，当 n
+较大时，将占用较多的存储单元，例如快速排序和归并排序算法就属于这种情况。</li>
+<li>在做算法分析时，主要讨论的是时间复杂度。从用户使用体验上看，更看重的程序执行的速度。一些缓存产品(redis,
+memcache)和算法(基数排序)本质就是用空间换时间。</li>
 </ol>
 
                 

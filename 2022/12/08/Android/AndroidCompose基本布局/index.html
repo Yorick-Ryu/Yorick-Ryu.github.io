@@ -18,12 +18,12 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Compose基本布局Compose 布局基础知识  | Jetpack Compose  | Android Developers Compose 中的布局  | Jetpack Compose  | Android Developers (google.cn) 编写可组合项时，您可以使用修饰符执行以下操作：  更改可组合项的尺寸、布局、行为和外观。 添加信息，例如无障碍标签。 处理用户输入。">
+    <meta name="description" content="Compose基本布局 Compose 布局基础知识 | Jetpack Compose | Android Developers Compose 中的布局 | Jetpack Compose | Android Developers (google.cn) 编写可组合项时，您可以使用修饰符执行以下操作：  更改可组合项的尺寸、布局、行为和外观。 添加信息，例如无障碍标签。 处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Compose基本布局">
 <meta property="og:url" content="http://yorick.love/2022/12/08/Android/AndroidCompose%E5%9F%BA%E6%9C%AC%E5%B8%83%E5%B1%80/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Compose基本布局Compose 布局基础知识  | Jetpack Compose  | Android Developers Compose 中的布局  | Jetpack Compose  | Android Developers (google.cn) 编写可组合项时，您可以使用修饰符执行以下操作：  更改可组合项的尺寸、布局、行为和外观。 添加信息，例如无障碍标签。 处理用户输入。">
+<meta property="og:description" content="Compose基本布局 Compose 布局基础知识 | Jetpack Compose | Android Developers Compose 中的布局 | Jetpack Compose | Android Developers (google.cn) 编写可组合项时，您可以使用修饰符执行以下操作：  更改可组合项的尺寸、布局、行为和外观。 添加信息，例如无障碍标签。 处理">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/c1e6c40e30136af2.gif">
 <meta property="article:published_time" content="2022-12-08T05:39:36.000Z">
@@ -325,8 +325,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Compose基本布局"><a href="#Compose基本布局" class="headerlink" title="Compose基本布局"></a>Compose基本布局</h1><p><a target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/layouts/basics#slot-based-layouts">Compose 布局基础知识  | Jetpack Compose  | Android Developers</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/compose/layouts?hl=zh-cn">Compose 中的布局  | Jetpack Compose  | Android Developers (google.cn)</a></p>
+                <h1 id="compose基本布局">Compose基本布局</h1>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/layouts/basics#slot-based-layouts">Compose
+布局基础知识 | Jetpack Compose | Android Developers</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/compose/layouts?hl=zh-cn">Compose
+中的布局 | Jetpack Compose | Android Developers (google.cn)</a></p>
 <p>编写可组合项时，您可以使用<strong>修饰符</strong>执行以下操作：</p>
 <ul>
 <li>更改可组合项的尺寸、布局、行为和外观。</li>
@@ -334,22 +339,29 @@
 <li>处理用户输入。</li>
 <li>添加高级互动，例如使元素可点击、可滚动、可拖动或可缩放。</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/modifiers">Compose 修饰符  | Jetpack Compose  | Android Developers</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/modifiers-list">Compose 修饰符列表  | Jetpack Compose  | Android Developers</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/modifiers">Compose
+修饰符 | Jetpack Compose | Android Developers</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://developer.android.com/jetpack/compose/modifiers-list">Compose
+修饰符列表 | Jetpack Compose | Android Developers</a></p>
 <p>一般来说，若要对齐父容器中的可组合项，您应设置该父容器的<strong>对齐方式</strong>。因此，您应告知父项如何对齐其子项，而不是告知子项将其自身放置在父项中。</p>
-<p>对于 <code>Column</code>，您可以决定其子项的水平对齐方式。具体选项包括：</p>
+<p>对于
+<code>Column</code>，您可以决定其子项的水平对齐方式。具体选项包括：</p>
 <ul>
 <li>Start</li>
 <li>CenterHorizontally</li>
 <li>End</li>
 </ul>
-<p>对于 <code>Row</code>，您可以设置垂直对齐。具体选项类似于 <code>Column</code> 的选项：</p>
+<p>对于 <code>Row</code>，您可以设置垂直对齐。具体选项类似于
+<code>Column</code> 的选项：</p>
 <ul>
 <li>Top</li>
 <li>CenterVertically</li>
 <li>Bottom</li>
 </ul>
-<p>对于 <code>Box</code>，您可以同时使用水平对齐和垂直对齐。具体选项包括：</p>
+<p>对于
+<code>Box</code>，您可以同时使用水平对齐和垂直对齐。具体选项包括：</p>
 <ul>
 <li>TopStart</li>
 <li>TopCenter</li>
@@ -361,17 +373,40 @@
 <li>BottomCenter</li>
 <li>BottomEnd</li>
 </ul>
-<p>容器的所有子项都将遵循这一相同的对齐模式。您可以通过向单个子项添加 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/ColumnScope#(androidx.compose.ui.Modifier).align(androidx.compose.ui.Alignment.Horizontal)"><code>align</code></a> 修饰符来替换其行为。</p>
-<p>在上一步中，您了解了对齐方式，它用于在<strong>交叉轴</strong>上对齐容器的子项。对于 <code>Column</code>，交叉轴是水平轴；对于 <code>Row</code>，交叉轴则是垂直轴。</p>
-<p>不过，我们也可以决定如何在容器的<strong>主轴</strong>（对于 <code>Row</code>，是水平轴；对于 <code>Column</code>，是垂直轴）上放置可组合子项。</p>
+<p>容器的所有子项都将遵循这一相同的对齐模式。您可以通过向单个子项添加 <a
+target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/ColumnScope#(androidx.compose.ui.Modifier).align(androidx.compose.ui.Alignment.Horizontal)"><code>align</code></a>
+修饰符来替换其行为。</p>
+<p>在上一步中，您了解了对齐方式，它用于在<strong>交叉轴</strong>上对齐容器的子项。对于
+<code>Column</code>，交叉轴是水平轴；对于
+<code>Row</code>，交叉轴则是垂直轴。</p>
+<p>不过，我们也可以决定如何在容器的<strong>主轴</strong>（对于
+<code>Row</code>，是水平轴；对于
+<code>Column</code>，是垂直轴）上放置可组合子项。</p>
 <p>对于 <code>Row</code>，您可以选择以下排列方式：</p>
-<p><img src="/./img/c1e6c40e30136af2.gif" srcset="/img/loading.gif" lazyload alt="c1e6c40e30136af2.gif"></p>
+<figure>
+<img src="./img/c1e6c40e30136af2.gif" srcset="/img/loading.gif" lazyload alt="c1e6c40e30136af2.gif" />
+<figcaption aria-hidden="true">c1e6c40e30136af2.gif</figcaption>
+</figure>
 <p>对于 <code>Column</code>：</p>
-<p><img src="/./img/df69881d07b064d0.gif" srcset="/img/loading.gif" lazyload alt="df69881d07b064d0.gif"></p>
-<p>除了这些排列方式之外，您还可以使用 <code>Arrangement.spacedBy()</code> 方法，在每个可组合子项之间添加固定间距。</p>
+<figure>
+<img src="./img/df69881d07b064d0.gif" srcset="/img/loading.gif" lazyload alt="df69881d07b064d0.gif" />
+<figcaption aria-hidden="true">df69881d07b064d0.gif</figcaption>
+</figure>
+<p>除了这些排列方式之外，您还可以使用
+<code>Arrangement.spacedBy()</code>
+方法，在每个可组合子项之间添加固定间距。</p>
 <p><strong>基于槽位的布局</strong>会在界面中留出空白区域，让开发者按照自己的意愿来填充。您可以使用它们创建更灵活的布局。</p>
 <p>虽然设计与大多数设备尺寸都非常契合，但如果设备的高度不足（例如在横屏模式下），设计需要能够垂直滚动。这就需要您添加滚动行为。</p>
-<p>如前所述，<code>LazyRow</code> 和 <code>LazyHorizontalGrid</code> 等延迟布局会自动添加滚动行为。但是，您不一定总是需要延迟布局。一般来说，<strong>在列表中有许多元素或需要加载大型数据集时，您需要使用延迟布局</strong>，因此一次发出所有项不仅会降低性能，还会拖慢应用的运行速度。如果列表中的元素数量有限，您也可以选择使用简单的 <code>Column</code> 或 <code>Row</code>，然后<strong>手动添加滚动行为</strong>。为此，您可以使用 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).verticalScroll(androidx.compose.foundation.ScrollState,kotlin.Boolean,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean)"><code>verticalScroll</code></a> 或 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).horizontalScroll(androidx.compose.foundation.ScrollState,kotlin.Boolean,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean)"><code>horizontalScroll</code></a> 修饰符。这些修饰符需要 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/ScrollState"><code>ScrollState</code></a>，后者包含当前的滚动状态，可用于从外部修改滚动状态。</p>
+<p>如前所述，<code>LazyRow</code> 和 <code>LazyHorizontalGrid</code>
+等延迟布局会自动添加滚动行为。但是，您不一定总是需要延迟布局。一般来说，<strong>在列表中有许多元素或需要加载大型数据集时，您需要使用延迟布局</strong>，因此一次发出所有项不仅会降低性能，还会拖慢应用的运行速度。如果列表中的元素数量有限，您也可以选择使用简单的
+<code>Column</code> 或
+<code>Row</code>，然后<strong>手动添加滚动行为</strong>。为此，您可以使用
+<a
+target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).verticalScroll(androidx.compose.foundation.ScrollState,kotlin.Boolean,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean)"><code>verticalScroll</code></a>
+或 <a
+target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#(androidx.compose.ui.Modifier).horizontalScroll(androidx.compose.foundation.ScrollState,kotlin.Boolean,androidx.compose.foundation.gestures.FlingBehavior,kotlin.Boolean)"><code>horizontalScroll</code></a>
+修饰符。这些修饰符需要 <a
+target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/compose/foundation/ScrollState"><code>ScrollState</code></a>，后者包含当前的滚动状态，可用于从外部修改滚动状态。</p>
 
                 
               </div>
