@@ -125,7 +125,7 @@
     <link href="/2023/02/11/Project/CookTools-doc/"/>
     <url>/2023/02/11/Project/CookTools-doc/</url>
     
-    <content type="html"><![CDATA[<h1 id="酷客工具箱使用文档"><a href="#酷客工具箱使用文档" class="headerlink" title="酷客工具箱使用文档"></a>酷客工具箱使用文档</h1><ul><li><a href="#%E9%85%B7%E5%AE%A2%E5%B7%A5%E5%85%B7%E7%AE%B1%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3">酷客工具箱使用文档</a><ul><li><a href="#%E6%BB%A1%E8%A1%80%E5%85%85%E7%94%B5%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">满血充电使用指南</a><ul><li><a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></li><li><a href="#%E6%BF%80%E6%B4%BBshizuku%E5%B9%B6%E6%8E%88%E6%9D%83">激活Shizuku并授权</a></li><li><a href="#%E9%99%8D%E7%BA%A7%E5%AE%89%E8%A3%85%E7%BB%84%E4%BB%B6">降级安装组件</a></li><li><a href="#%E4%BD%BF%E7%94%A8%E6%BB%A1%E8%A1%80%E5%85%85%E7%94%B5">使用满血充电</a><ul><li><a href="#%E6%96%87%E5%AD%97%E6%95%99%E7%A8%8B">文字教程</a></li><li><a href="#%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B">视频教程</a></li></ul></li></ul></li><li><a href="#%E9%9A%90%E7%A7%81%E5%8D%8F%E8%AE%AE">隐私协议</a></li><li><a href="#%E5%8F%AF%E7%94%A8%E5%90%8D%E5%8D%95">可用名单</a></li></ul></li></ul><h2 id="满血充电使用指南"><a href="#满血充电使用指南" class="headerlink" title="满血充电使用指南"></a>满血充电使用指南</h2><p><strong>仅部分vivo&#x2F;iqoo手机可用</strong>，<a href="">可用名单</a>正在更新中…</p><p>这个功能就是借助系统的<strong>开发测试工具</strong>解除系统充电功率限制，实现<strong>满血充电</strong>，但是可能会带来<strong>发热</strong>等不可预知的问题。视频教程注意，最后要<strong>点充放</strong>防止因为异常降低功率！</p><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul><li>使用<strong>原装</strong>充电器和数据线良好的<strong>散热环境</strong>，建议使用<strong>散热背夹</strong>。</li><li>系统应用<strong>电源信息</strong>版本符合条件(1.2或1.6，不同机型不同版本)。</li></ul><p><img src="/./img/image-20230215212701019.png" alt="image-20230215212701019"></p><p>出现这个问题<strong>很正常</strong>，请<strong>严格</strong>按照以下步骤启用：</p><h3 id="激活Shizuku并授权"><a href="#激活Shizuku并授权" class="headerlink" title="激活Shizuku并授权"></a>激活Shizuku并授权</h3><ol><li><p>下载Shizuku</p><p>(<a href="https://shizuku.rikka.app/zh-hans/download/">下载 | Shizuku (rikka.app)</a>)</p></li><li><p>激活SHizuku</p><p>激活方法：<a href="https://shizuku.rikka.app/zh-hans/guide/setup/">用户手册 | Shizuku (rikka.app)</a></p></li></ol><p>下图为<strong>激活正常界面</strong>：<strong>只有出现这个界面才能正常使用工具箱的功能</strong></p><p><img src="/./img/image-20230215214000030.png" alt="image-20230215214000030"></p><h3 id="降级安装组件"><a href="#降级安装组件" class="headerlink" title="降级安装组件"></a>降级安装组件</h3><ol><li><p>下载组件，两个版本<strong>二选一</strong>，详见<a href="">可用名单</a></p><table><thead><tr><th>名称</th><th>版本</th><th>链接</th></tr></thead><tbody><tr><td>电源信息</td><td>1.2</td><td><a href="https://yorick.love/file/%E7%94%B5%E6%BA%90%E4%BF%A1%E6%81%AF-com.vivo.fuelsummary-1.2.apk">点此下载</a></td></tr><tr><td>电源信息</td><td>1.6</td><td><a href="https://yorick.love/file/%E7%94%B5%E6%BA%90%E4%BF%A1%E6%81%AF-com.vivo.fuelsummary-1.6.apk">点此下载</a></td></tr></tbody></table></li><li><p>下载后找到<strong>安装包</strong>，点击后选择<strong>降级安装</strong>：</p><p><img src="/./img/image-20230215212820439.png" alt="image-20230215212820439"></p><p>如果找不到上面这个界面，进入<strong>酷客工具箱——Shell界面——点击安装应用</strong>，找到安装包并安装。</p><p><img src="/./img/image-20230215214322048.png" alt="image-20230215214322048"></p></li></ol><h3 id="使用满血充电"><a href="#使用满血充电" class="headerlink" title="使用满血充电"></a>使用满血充电</h3><p>完成<a href="">激活Shizuku并授权</a>、<a href="">降级安装组件</a>后，你就可用正式使用<strong>满血充电</strong>：</p><h4 id="文字教程"><a href="#文字教程" class="headerlink" title="文字教程"></a>文字教程</h4><p>感谢群友@张三提供的文字教程</p><p><img src="/./img/IMG_20221003_000108.jpg" alt="IMG_20221003_000108"></p><h4 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h4><p>注意，最后要<strong>点充放</strong>，防止因为异常降低充电功率！（视频没提到）</p><p><a href="https://www.bilibili.com/video/BV1GT411P71Y/">vivo&#x2F;iQOO满血充电演示_哔哩哔哩_bilibili</a></p><p>这是老版本的软件界面，但是教程同样适用</p><h2 id="隐私协议"><a href="#隐私协议" class="headerlink" title="隐私协议"></a>隐私协议</h2><p>本软件所需的互联网访问权限仅用于：</p><ul><li>获取服务器的工具数据</li><li>采用Bugly采集应用崩溃信息，完善应用功能。<a href="https://bugly.qq.com/v2/contract">Bugly隐私协议</a></li></ul><p>使用本软件代表您同意本软件的隐私协议。</p><h2 id="可用名单"><a href="#可用名单" class="headerlink" title="可用名单"></a>可用名单</h2><p>满血充电</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="酷客工具箱使用文档"><a href="#酷客工具箱使用文档" class="headerlink" title="酷客工具箱使用文档"></a>酷客工具箱使用文档</h1><ul><li><a href="#%E9%85%B7%E5%AE%A2%E5%B7%A5%E5%85%B7%E7%AE%B1%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3">酷客工具箱使用文档</a><ul><li><a href="#%E6%BB%A1%E8%A1%80%E5%85%85%E7%94%B5%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">满血充电使用指南</a><ul><li><a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></li><li><a href="#%E6%BF%80%E6%B4%BBshizuku%E5%B9%B6%E6%8E%88%E6%9D%83">激活Shizuku并授权</a></li><li><a href="#%E9%99%8D%E7%BA%A7%E5%AE%89%E8%A3%85%E7%BB%84%E4%BB%B6">降级安装组件</a></li><li><a href="#%E4%BD%BF%E7%94%A8%E6%BB%A1%E8%A1%80%E5%85%85%E7%94%B5">使用满血充电</a><ul><li><a href="#%E6%96%87%E5%AD%97%E6%95%99%E7%A8%8B">文字教程</a></li><li><a href="#%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B">视频教程</a></li></ul></li></ul></li><li><a href="#%E9%9A%90%E7%A7%81%E5%8D%8F%E8%AE%AE">隐私协议</a></li><li><a href="#%E5%8F%AF%E7%94%A8%E5%90%8D%E5%8D%95">可用名单</a></li></ul></li></ul><h2 id="满血充电使用指南"><a href="#满血充电使用指南" class="headerlink" title="满血充电使用指南"></a>满血充电使用指南</h2><p><strong>仅部分vivo&#x2F;iqoo手机可用</strong>，<a href="">可用名单</a>正在更新中…</p><p>这个功能就是借助系统的<strong>开发测试工具</strong>解除系统充电功率限制，实现<strong>满血充电</strong>，但是可能会带来<strong>发热</strong>等不可预知的问题。视频教程注意，最后要<strong>点充放</strong>防止因为异常降低功率！</p><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul><li>使用<strong>原装</strong>充电器和数据线良好的<strong>散热环境</strong>，建议使用<strong>散热背夹</strong>。</li><li>系统应用<strong>电源信息</strong>版本符合条件(1.2或1.6，不同机型不同版本)。</li></ul><p><img src="/./img/image-20230215212701019.png" alt="image-20230215212701019"></p><p>出现这个问题<strong>很正常</strong>，请<strong>严格</strong>按照以下步骤启用：</p><h3 id="激活Shizuku并授权"><a href="#激活Shizuku并授权" class="headerlink" title="激活Shizuku并授权"></a>激活Shizuku并授权</h3><ol><li><p>下载Shizuku</p><p>(<a href="https://shizuku.rikka.app/zh-hans/download/">下载 | Shizuku (rikka.app)</a>)</p></li><li><p>激活SHizuku</p><p>激活方法：<a href="https://shizuku.rikka.app/zh-hans/guide/setup/">用户手册 | Shizuku (rikka.app)</a></p></li></ol><p>下图为<strong>激活正常界面</strong>：<strong>只有出现这个界面才能正常使用工具箱的功能</strong></p><p><img src="/./img/image-20230215214000030.png" alt="image-20230215214000030"></p><h3 id="降级安装组件"><a href="#降级安装组件" class="headerlink" title="降级安装组件"></a>降级安装组件</h3><ol><li><p>下载组件，两个版本<strong>二选一</strong>，详见<a href="">可用名单</a></p><table><thead><tr><th>名称</th><th>版本</th><th>链接</th></tr></thead><tbody><tr><td>电源信息</td><td>1.2</td><td><a href="https://yorick.love/file/%E7%94%B5%E6%BA%90%E4%BF%A1%E6%81%AF-com.vivo.fuelsummary-1.2.apk">点此下载</a></td></tr><tr><td>电源信息</td><td>1.6</td><td><a href="https://yorick.love/file/%E7%94%B5%E6%BA%90%E4%BF%A1%E6%81%AF-com.vivo.fuelsummary-1.6.apk">点此下载</a></td></tr></tbody></table></li><li><p>下载后找到<strong>安装包</strong>，点击后选择<strong>降级安装</strong>：</p><p><img src="/./img/image-20230215212820439.png" alt="image-20230215212820439"></p><p>如果找不到上面这个界面，进入<strong>酷客工具箱——Shell界面——点击安装应用</strong>，找到安装包并安装。</p><p><img src="/./img/image-20230215214322048.png" alt="image-20230215214322048"></p></li></ol><h3 id="使用满血充电"><a href="#使用满血充电" class="headerlink" title="使用满血充电"></a>使用满血充电</h3><p>完成<a href="">激活Shizuku并授权</a>、<a href="">降级安装组件</a>后，你就可用正式使用<strong>满血充电</strong>：</p><h4 id="文字教程"><a href="#文字教程" class="headerlink" title="文字教程"></a>文字教程</h4><p>感谢群友@张三提供的文字教程</p><p><img src="/./img/IMG_20221003_000108.jpg" alt="IMG_20221003_000108"></p><h4 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h4><p>注意，最后要<strong>点充放</strong>，防止因为异常降低充电功率！（视频没提到）</p><p><a href="https://www.bilibili.com/video/BV1GT411P71Y/">vivo&#x2F;iQOO满血充电演示_哔哩哔哩_bilibili</a></p><p>这是老版本的软件界面，但是教程同样适用</p><p>更多内容正在编辑中：请暂时参考老版教程：<br><a href="https://shimo.im/docs/R13j8x5vQ1ieogk5">https://shimo.im/docs/R13j8x5vQ1ieogk5</a></p><h2 id="隐私协议"><a href="#隐私协议" class="headerlink" title="隐私协议"></a>隐私协议</h2><p>本软件所需的互联网访问权限仅用于：</p><ul><li>获取服务器的工具数据</li><li>采用Bugly采集应用崩溃信息，完善应用功能。<a href="https://bugly.qq.com/v2/contract">Bugly隐私协议</a></li></ul><p>使用本软件代表您同意本软件的隐私协议。</p><h2 id="可用名单"><a href="#可用名单" class="headerlink" title="可用名单"></a>可用名单</h2><p>满血充电</p>]]></content>
     
     
     <categories>
@@ -1389,9 +1389,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -1475,13 +1475,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Array</tag>
+      <tag>Set</tag>
       
       <tag>List</tag>
       
-      <tag>Set</tag>
-      
       <tag>Map</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2969,17 +2969,17 @@
     
     <tags>
       
-      <tag>Collection</tag>
+      <tag>集合</tag>
       
-      <tag>List</tag>
+      <tag>Collection</tag>
       
       <tag>Set</tag>
       
-      <tag>Map</tag>
-      
-      <tag>集合</tag>
-      
       <tag>TreeSet</tag>
+      
+      <tag>List</tag>
+      
+      <tag>Map</tag>
       
       <tag>HashMap</tag>
       
@@ -3008,9 +3008,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -3275,22 +3275,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
