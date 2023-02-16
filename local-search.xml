@@ -1707,9 +1707,9 @@
       
       <tag>Graph</tag>
       
-      <tag>Floyd</tag>
-      
       <tag>最短路径</tag>
+      
+      <tag>Floyd</tag>
       
     </tags>
     
@@ -1740,9 +1740,9 @@
       
       <tag>Graph</tag>
       
-      <tag>最短路径</tag>
-      
       <tag>Dijkstra</tag>
+      
+      <tag>最短路径</tag>
       
     </tags>
     
