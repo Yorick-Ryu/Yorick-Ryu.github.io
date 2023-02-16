@@ -403,31 +403,6 @@
   
   
   <entry>
-    <title>Android应用图标</title>
-    <link href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
-    <url>/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
-    
-    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Icon</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Android屏幕旋转ScreenOrientation</title>
     <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
     <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
@@ -445,6 +420,31 @@
     <tags>
       
       <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android应用图标</title>
+    <link href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
+    <url>/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><p><a href="https://developer.android.google.cn/guide/practices/ui_guidelines/icon_design_adaptive?hl=zh-cn">自适应图标  | Android 开发者  | Android Developers (google.cn)</a></p><p><a href="https://developer.android.google.cn/develop/ui/views/graphics/vector-drawable-resources?hl=en">Vector drawables overview  | Android Developers (google.cn)</a></p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">vector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:height</span>=<span class="hljs-string">&quot;108dp&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:tint</span>=<span class="hljs-string">&quot;@color/color_ic_back&quot;</span> // </span><span class="hljs-tag">    <span class="hljs-attr">android:viewportWidth</span>=<span class="hljs-string">&quot;108&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:viewportHeight</span>=<span class="hljs-string">&quot;108&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">path</span></span><span class="hljs-tag">        <span class="hljs-attr">android:fillColor</span>=<span class="hljs-string">&quot;#96C8FF&quot;</span> // <span class="hljs-attr">填充颜色</span>，<span class="hljs-attr">切换夜间模式会变成此色</span></span><span class="hljs-tag">        <span class="hljs-attr">android:pathData</span>=<span class="hljs-string">&quot;</span></span><span class="hljs-string"><span class="hljs-tag">        M0,0</span></span><span class="hljs-string"><span class="hljs-tag">        L108,108</span></span><span class="hljs-string"><span class="hljs-tag">        H0</span></span><span class="hljs-string"><span class="hljs-tag">        V0</span></span><span class="hljs-string"><span class="hljs-tag">        H108</span></span><span class="hljs-string"><span class="hljs-tag">        V108</span></span><span class="hljs-string"><span class="hljs-tag">&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">vector</span>&gt;</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Icon</tag>
       
     </tags>
     
@@ -1211,9 +1211,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1269,9 +1269,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>DataBinding</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>DataBinding</tag>
       
       <tag>ViewModel</tag>
       
@@ -3241,9 +3241,9 @@
     
     <tags>
       
-      <tag>sql</tag>
-      
       <tag>ORM</tag>
+      
+      <tag>sql</tag>
       
     </tags>
     
@@ -3299,22 +3299,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
