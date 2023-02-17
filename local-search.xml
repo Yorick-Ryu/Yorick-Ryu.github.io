@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>python复习题</title>
+    <link href="/2023/02/17/python%E5%A4%8D%E4%B9%A0%E9%A2%98/"/>
+    <url>/2023/02/17/python%E5%A4%8D%E4%B9%A0%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Python复习题"><a href="#Python复习题" class="headerlink" title="Python复习题"></a>Python复习题</h1><p>1、用if分支结构完成程序设计(三选一):</p><ul><li><p>输入成绩，查询等级(90分及以上优秀、60-89合格、低于60不合格)</p><div class="code-wrapper"><pre><code class="hljs python">score = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;Scroe:&quot;</span>))<span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">90</span> <span class="hljs-keyword">and</span> score &lt;= <span class="hljs-number">100</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;优秀&quot;</span>)<span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">60</span> <span class="hljs-keyword">and</span> score &lt; <span class="hljs-number">90</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;合格&quot;</span>)<span class="hljs-keyword">elif</span> score &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> score &lt; <span class="hljs-number">60</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;不合格&quot;</span>)<span class="hljs-keyword">else</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Score must in 0-100&quot;</span>)</code></pre></div></li><li><p>输入年龄，查询公园门票价格(70岁以上老人免票，18岁以下儿童及60岁以上半票，18岁以上全价)</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">while</span>(<span class="hljs-literal">True</span>):    age = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入年龄：&quot;</span>)    age = <span class="hljs-built_in">float</span>(age)    <span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">70</span>:        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;免票&quot;</span>)    <span class="hljs-keyword">elif</span> <span class="hljs-number">60</span> &lt; age &lt; <span class="hljs-number">70</span> <span class="hljs-keyword">or</span> <span class="hljs-number">0</span> &lt; age &lt; <span class="hljs-number">18</span>:        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;半票&quot;</span>)    <span class="hljs-keyword">elif</span> <span class="hljs-number">18</span> &lt;= age &lt;= <span class="hljs-number">60</span>:        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;全价&quot;</span>)    <span class="hljs-keyword">else</span>:        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;年龄不合法&quot;</span>)</code></pre></div></li><li><p>输入身高、体重，查询健康情况(BMI&#x3D;体重(kg) &#x2F;身高(m)的平方低于18.5偏瘦; 18.5-24 正常，超过24偏胖，超过28肥胖)</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 输入身高、体重</span>height = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入身高（cm）：&quot;</span>)weight = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入体重（kg）：&quot;</span>)<span class="hljs-comment"># 查询健康</span><span class="hljs-comment"># BMI = 体重（kg）/ 身高（m）的平方</span>BMI = <span class="hljs-built_in">float</span>(weight) / (<span class="hljs-built_in">float</span>(height)/<span class="hljs-number">100</span>)**<span class="hljs-number">2</span><span class="hljs-comment"># 低于18.5 偏瘦</span><span class="hljs-keyword">if</span> BMI &lt; <span class="hljs-number">18.5</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;偏瘦&quot;</span>)<span class="hljs-comment"># 18.5-24 正常</span><span class="hljs-keyword">elif</span> <span class="hljs-number">18.5</span> &lt;= BMI &lt;= <span class="hljs-number">24</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正常&quot;</span>)<span class="hljs-comment"># 超过24偏胖</span><span class="hljs-keyword">elif</span> <span class="hljs-number">24</span> &lt; BMI &lt;= <span class="hljs-number">28</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;偏胖&quot;</span>)<span class="hljs-comment"># 超过28肥胖</span><span class="hljs-keyword">elif</span> BMI &gt; <span class="hljs-number">28</span>:    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;肥胖&quot;</span>)</code></pre></div></li></ul><p>2、编程完成(三选一)：</p><ul><li><p>求1-100范围内所有3的倍数的和。如3+6+9+…</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">101</span>):    <span class="hljs-keyword">if</span> i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>:        <span class="hljs-built_in">sum</span> += i<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;result:&quot;</span> , <span class="hljs-built_in">sum</span>)</code></pre></div></li><li><p>一个数如果恰好等于它的因子(不包含自身)之和，则称之为”完数”。 例如6&#x3D;1+2+3。编程找出100以内的所有完数并输出。</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">101</span>):    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>    <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, i):        <span class="hljs-keyword">if</span> i % n == <span class="hljs-number">0</span>:            <span class="hljs-built_in">sum</span> += n    <span class="hljs-keyword">if</span>(i == <span class="hljs-built_in">sum</span>):        <span class="hljs-built_in">print</span>(i)<span class="hljs-comment"># 0 6 28</span></code></pre></div></li><li><p>输出100以内的质数</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,<span class="hljs-number">100</span>):    num = <span class="hljs-number">0</span>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, i):        <span class="hljs-keyword">if</span> i % j == <span class="hljs-number">0</span>:            num += <span class="hljs-number">1</span>    <span class="hljs-keyword">if</span> num == <span class="hljs-number">0</span>:        <span class="hljs-built_in">print</span>(i)    num = <span class="hljs-number">0</span><span class="hljs-comment"># 25个</span></code></pre></div></li></ul><p>3、编程完成(三选一)：</p><ul><li><p>己知字符串s&#x3D; ‘AbcDeFGhIJkmN’， 请计算该字符串中小写字母的数量。</p><div class="code-wrapper"><pre><code class="hljs python">num = <span class="hljs-number">0</span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s:    <span class="hljs-keyword">if</span> i.islower():        num += <span class="hljs-number">1</span><span class="hljs-built_in">print</span>(num) <span class="hljs-comment"># 7</span></code></pre></div></li><li><p>检查字符串”Life is short. I use python.”中是否包含字符串”python”，若包含则替换为 “Python”后输出新字符串，否则输出原字符串。</p></li></ul>  <div class="code-wrapper"><pre><code class="hljs python">s = <span class="hljs-string">&quot;Life is short. I use python&quot;</span><span class="hljs-keyword">if</span> s.find(<span class="hljs-string">&quot;python&quot;</span>):    <span class="hljs-built_in">print</span>(s.replace(<span class="hljs-string">&quot;python&quot;</span>, <span class="hljs-string">&quot;Python&quot;</span>))<span class="hljs-keyword">else</span>:    <span class="hljs-built_in">print</span>(s)</code></pre></div><ul><li><p>把“HAPPY BIRTHDAY”改成“Happy Birthday” 并输出。</p><div class="code-wrapper"><pre><code class="hljs python">s = <span class="hljs-string">&quot;HAPPY BIRTHDAY&quot;</span><span class="hljs-built_in">print</span>(s.title())<span class="hljs-comment"># Happy Birthday</span></code></pre></div></li></ul><p>4、编程实现(三选一)：<br>定义一个三角形类，输入三条边，判断能否构成三角形，如果能，计算并输出三角<br>形的面积，否则返回0。假设三角形三条边分别为a、 b、c，则周长的一半s&#x3D;(a+ b<br>+c)&#x2F;2，面积area&#x3D;√s*(s-a)*(s-b)*(s-c)。</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">triangle</span>:    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, a, b, c</span>):        self.a = a        self.b = b        self.c = c    <span class="hljs-keyword">def</span> <span class="hljs-title function_">canTri</span>(<span class="hljs-params">self, a, b, c</span>) -&gt; <span class="hljs-built_in">bool</span>:        <span class="hljs-keyword">return</span> a + b &gt; c <span class="hljs-keyword">and</span> b + c &gt; a <span class="hljs-keyword">and</span> a + c &gt; b    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getS</span>(<span class="hljs-params">self, a, b, c</span>) -&gt; <span class="hljs-built_in">float</span>:        <span class="hljs-keyword">return</span> (a + b + c) / <span class="hljs-number">2</span>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getArea</span>(<span class="hljs-params">self, a, b, c</span>) -&gt; <span class="hljs-built_in">float</span>:        s = self.getS(a, b, c)        <span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(s * (s - a) * (s - b) * (s - c), <span class="hljs-number">0.5</span>)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getRes</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">float</span>:        <span class="hljs-keyword">if</span> self.canTri(self.a, self.b, self.c):            <span class="hljs-keyword">return</span> self.getArea(self.a, self.b, self.c)        <span class="hljs-keyword">else</span>:            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>tri = triangle(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)<span class="hljs-built_in">print</span>(tri.getRes())</code></pre></div><p>5、逄7拍手游戏</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>):    <span class="hljs-keyword">if</span> i % <span class="hljs-number">7</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;7&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">str</span>(i):        <span class="hljs-built_in">print</span>(i)<span class="hljs-comment"># 30 次</span></code></pre></div><p>6、菲波拉契数列前15项，例如: 0 1 1 2 3 5 8 13 21 … (递归兔子序列)</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">a</span>):    <span class="hljs-keyword">if</span> a == <span class="hljs-number">0</span>:        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>    <span class="hljs-keyword">if</span> a == <span class="hljs-number">1</span>:        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>    <span class="hljs-keyword">else</span>:        <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(a - <span class="hljs-number">1</span>) + <span class="hljs-built_in">sum</span>(a - <span class="hljs-number">2</span>)<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">15</span>):    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">sum</span>(i))</code></pre></div><p>7、重写加减乘除运算符合</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyNumber</span>:    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, v</span>) -&gt; <span class="hljs-literal">None</span>:        self.data = v    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):        v = self.data + other.data        <span class="hljs-keyword">return</span> MyNumber(v)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__sub__</span>(<span class="hljs-params">self, other</span>):        v = self.data - other.data        <span class="hljs-keyword">return</span> MyNumber(v)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__mul__</span>():        <span class="hljs-keyword">pass</span>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__div__</span>():        <span class="hljs-keyword">pass</span>n1 = MyNumber(<span class="hljs-number">100</span>)n2 = MyNumber(<span class="hljs-number">200</span>)<span class="hljs-built_in">print</span>((n1-n2).data) <span class="hljs-comment"># -100</span></code></pre></div><p>9、重写两个点坐标的比较符</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><span class="hljs-string">比较算术运算符的重载:</span><span class="hljs-string">        方法名                  运算符和表达式      说明</span><span class="hljs-string">        __lt__(self,rhs)       self &lt; rhs        小于</span><span class="hljs-string">        __le__(self,rhs)       self &lt;= rhs       小于等于</span><span class="hljs-string">        __gt__(self,rhs)       self &gt; rhs        大于</span><span class="hljs-string">        __ge__(self,rhs)       self &gt;= rhs       大于等于</span><span class="hljs-string">        __eq__(self,rhs)       self == rhs       等于</span><span class="hljs-string">        __ne__(self,rhs)       self != rhs       不等于</span><span class="hljs-string">&quot;&quot;&quot;</span><span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>:    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, x, y</span>):        self.x = x        self.y = y    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, p</span>):        <span class="hljs-keyword">return</span> Point(self.x + p.x, self.y + p.y)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__sub__</span>(<span class="hljs-params">self, p</span>):        <span class="hljs-keyword">return</span> Point(self.x - p.x, self.y - p.y)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__lt__</span>(<span class="hljs-params">self, p</span>):        <span class="hljs-keyword">return</span> ((<span class="hljs-built_in">pow</span>(self.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(self.y, <span class="hljs-number">2</span>)) - (<span class="hljs-built_in">pow</span>(p.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(p.y, <span class="hljs-number">2</span>))) &lt; <span class="hljs-number">0</span>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">printIt</span>(<span class="hljs-params">self</span>):        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;(<span class="hljs-subst">&#123;self.x&#125;</span>,<span class="hljs-subst">&#123;self.y&#125;</span>)&quot;</span>)p1 = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)p2 = Point(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)p3 = p1 + p2p4 = p1 - p2p3.printIt()   <span class="hljs-comment"># (4,6)</span>p4.printIt()   <span class="hljs-comment"># (2,2)</span><span class="hljs-built_in">print</span>(p1 &lt; p2) <span class="hljs-comment"># False</span></code></pre></div><p>10、编程，为二次方程式ax2+bx+c&#x3D;0设计一个名Equation 的类，判别方程有无实数解，并求解。</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Equation</span>(<span class="hljs-title class_ inherited__">object</span>):    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, a, b, c</span>):        self.a = <span class="hljs-built_in">float</span>(a)        self.b = <span class="hljs-built_in">float</span>(b)        self.c = <span class="hljs-built_in">float</span>(c)    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getDiscriminant</span>(<span class="hljs-params">self</span>):        <span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(self.b, <span class="hljs-number">2</span>) - <span class="hljs-number">4</span> * self.a * self.c    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getRoot1</span>(<span class="hljs-params">self</span>):        <span class="hljs-keyword">if</span> self.getDiscriminant() &lt; <span class="hljs-number">0</span>:            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;判别式小于0&quot;</span>)            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>        <span class="hljs-keyword">return</span> (-self.b + <span class="hljs-built_in">pow</span>(self.getDiscriminant(), <span class="hljs-number">0.5</span>)) / <span class="hljs-number">2</span> * self.a    <span class="hljs-keyword">def</span> <span class="hljs-title function_">getRoot2</span>(<span class="hljs-params">self</span>):        <span class="hljs-keyword">if</span> self.getDiscriminant() &lt; <span class="hljs-number">0</span>:            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;判别式小于0&quot;</span>)            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>        <span class="hljs-keyword">return</span> (-self.b - <span class="hljs-built_in">pow</span>(self.getDiscriminant(), <span class="hljs-number">0.5</span>)) / <span class="hljs-number">2</span> * self.aa = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入二次项系数&quot;</span>)b = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入一次项系数&quot;</span>)c = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入常数项系数&quot;</span>)equation = Equation(a, b, c)<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;判别式结果为：<span class="hljs-subst">&#123;equation.getDiscriminant()&#125;</span>&quot;</span>)<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;第一个根为：<span class="hljs-subst">&#123;equation.getRoot1()&#125;</span>&quot;</span>)<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;第二个根为：<span class="hljs-subst">&#123;equation.getRoot2()&#125;</span>&quot;</span>)</code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>复习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件工程概述</title>
     <link href="/2023/02/14/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0/"/>
     <url>/2023/02/14/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0/</url>
@@ -45,11 +70,11 @@
     
     <tags>
       
+      <tag>复习</tag>
+      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
-      
-      <tag>复习</tag>
       
     </tags>
     
@@ -67,16 +92,16 @@
     
     <categories>
       
-      <category>Pythinon</category>
+      <category>Python</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
       <tag>复习</tag>
+      
+      <tag>课程笔记</tag>
       
     </tags>
     
@@ -1211,9 +1236,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Lifecycles</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>Lifecycles</tag>
       
     </tags>
     
@@ -1269,9 +1294,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>LiveData</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1413,9 +1438,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
@@ -1499,13 +1524,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Set</tag>
+      <tag>Array</tag>
       
       <tag>List</tag>
       
-      <tag>Map</tag>
+      <tag>Set</tag>
       
-      <tag>Array</tag>
+      <tag>Map</tag>
       
     </tags>
     
@@ -2993,17 +3018,17 @@
     
     <tags>
       
-      <tag>集合</tag>
-      
       <tag>Collection</tag>
-      
-      <tag>Set</tag>
-      
-      <tag>TreeSet</tag>
       
       <tag>List</tag>
       
+      <tag>Set</tag>
+      
       <tag>Map</tag>
+      
+      <tag>集合</tag>
+      
+      <tag>TreeSet</tag>
       
       <tag>HashMap</tag>
       
@@ -3032,9 +3057,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
