@@ -18,16 +18,16 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Python复习一种解释型动态语言，语法简洁优雅但是性能低。 语法基础标识符和关键字标识符 区分大小写  关键字不能作为标识符。  标识符首位可以用下画线“_”但是不可以是数字。  除去首字母，其他位可以使用下画线“_”，数字和字母。  不能使用内置函数作为标识符。   关键字&gt;&gt;&gt; import keyword &gt;&gt;&gt; keyword.kwlist [&amp;#x2">
+    <meta name="description" content="Python复习 语法基础 标识符和关键字 标识符 关键字   变量和数据类型 数据类型 变量   字符串 格式化 索引(下标) 切片(顾头不顾尾) 跳取 首字母大写 全部大写 全部小写 大小写互换 标题化 查找 删除字符串前后的空格&#x2F;字符 计算某字符&#x2F;字符串的个数 分割字符串 替换字符串 字符串拼接   运算符 列表(list) 插入元素 删除元素 排序 列表推导式   元">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python复习">
 <meta property="og:url" content="http://yorick.love/2023/02/13/Python/Python%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="Python复习一种解释型动态语言，语法简洁优雅但是性能低。 语法基础标识符和关键字标识符 区分大小写  关键字不能作为标识符。  标识符首位可以用下画线“_”但是不可以是数字。  除去首字母，其他位可以使用下画线“_”，数字和字母。  不能使用内置函数作为标识符。   关键字&gt;&gt;&gt; import keyword &gt;&gt;&gt; keyword.kwlist [&amp;#x2">
+<meta property="og:description" content="Python复习 语法基础 标识符和关键字 标识符 关键字   变量和数据类型 数据类型 变量   字符串 格式化 索引(下标) 切片(顾头不顾尾) 跳取 首字母大写 全部大写 全部小写 大小写互换 标题化 查找 删除字符串前后的空格&#x2F;字符 计算某字符&#x2F;字符串的个数 分割字符串 替换字符串 字符串拼接   运算符 列表(list) 插入元素 删除元素 排序 列表推导式   元">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2023-02-13T06:17:46.000Z">
-<meta property="article:modified_time" content="2023-02-17T07:27:17.172Z">
+<meta property="article:modified_time" content="2023-02-21T02:01:39.229Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="复习">
 <meta property="article:tag" content="课程笔记">
@@ -258,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.7k 字
+          9.2k 字
         
       </span>
     
@@ -269,7 +269,7 @@
         
         
         
-          49 分钟
+          52 分钟
         
       </span>
     
@@ -320,7 +320,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月17日 下午
+                    本文最后更新于：2023年2月21日 上午
                   
                 
               </p>
@@ -328,7 +328,73 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Python复习"><a href="#Python复习" class="headerlink" title="Python复习"></a>Python复习</h1><p>一种解释型动态语言，语法简洁优雅但是性能低。</p>
+                <ul>
+<li><a href="#python%E5%A4%8D%E4%B9%A0">Python复习</a><ul>
+<li><a href="#%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80">语法基础</a><ul>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97">标识符和关键字</a><ul>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6">标识符</a></li>
+<li><a href="#%E5%85%B3%E9%94%AE%E5%AD%97">关键字</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">变量和数据类型</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F">变量</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a><ul>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E5%8C%96">格式化</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%A0%87">索引(下标)</a></li>
+<li><a href="#%E5%88%87%E7%89%87%E9%A1%BE%E5%A4%B4%E4%B8%8D%E9%A1%BE%E5%B0%BE">切片(顾头不顾尾)</a></li>
+<li><a href="#%E8%B7%B3%E5%8F%96">跳取</a></li>
+<li><a href="#%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99">首字母大写</a></li>
+<li><a href="#%E5%85%A8%E9%83%A8%E5%A4%A7%E5%86%99">全部大写</a></li>
+<li><a href="#%E5%85%A8%E9%83%A8%E5%B0%8F%E5%86%99">全部小写</a></li>
+<li><a href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E4%BA%92%E6%8D%A2">大小写互换</a></li>
+<li><a href="#%E6%A0%87%E9%A2%98%E5%8C%96">标题化</a></li>
+<li><a href="#%E6%9F%A5%E6%89%BE">查找</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%9A%84%E7%A9%BA%E6%A0%BC%E5%AD%97%E7%AC%A6">删除字符串前后的空格&#x2F;字符</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9F%90%E5%AD%97%E7%AC%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%AA%E6%95%B0">计算某字符&#x2F;字符串的个数</a></li>
+<li><a href="#%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2">分割字符串</a></li>
+<li><a href="#%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2">替换字符串</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">字符串拼接</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8list">列表(list)</a><ul>
+<li><a href="#%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0">插入元素</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0">删除元素</a></li>
+<li><a href="#%E6%8E%92%E5%BA%8F">排序</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F">列表推导式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%83%E7%BB%84tuple">元组(tuple)</a></li>
+<li><a href="#%E5%AD%97%E5%85%B8dict">字典(dict)</a><ul>
+<li><a href="#%E5%A2%9E%E5%8A%A0%E5%85%83%E7%B4%A0">增加元素</a></li>
+<li><a href="#%E8%AE%BF%E9%97%AE%E9%94%AE%E5%92%8C%E5%80%BC">访问键和值</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%86%E5%90%88set">集合(set)</a><ul>
+<li><a href="#%E5%88%9B%E5%BB%BAset">创建set</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0">添加元素</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0-1">删除元素</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a><ul>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">匿名函数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99">文件读写</a><ul>
+<li><a href="#%E8%AF%BB%E6%96%87%E4%BB%B6">读文件</a></li>
+<li><a href="#%E5%86%99%E6%96%87%E4%BB%B6">写文件</a></li>
+<li><a href="#%E5%BC%82%E5%B8%B8">异常</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Python复习"><a href="#Python复习" class="headerlink" title="Python复习"></a>Python复习</h1><p>一种解释型动态语言，语法简洁优雅但是性能低。</p>
 <h2 id="语法基础"><a href="#语法基础" class="headerlink" title="语法基础"></a>语法基础</h2><h3 id="标识符和关键字"><a href="#标识符和关键字" class="headerlink" title="标识符和关键字"></a>标识符和关键字</h3><h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ol>
 <li><p>区分大小写</p>
 </li>
@@ -775,6 +841,21 @@ f.close()
 
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;/Users/michael/test.txt&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> f:
     f.write(<span class="hljs-string">&#x27;Hello, world!&#x27;</span>)</code></pre></div>
+
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/321408784">python 异常捕获方法总结</a></p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;try...&#x27;</span>)
+    r = <span class="hljs-number">10</span> / <span class="hljs-built_in">int</span>(<span class="hljs-string">&#x27;2&#x27;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;result:&#x27;</span>, r)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ValueError:&#x27;</span>, e)
+<span class="hljs-keyword">except</span> ZeroDivisionError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ZeroDivisionError:&#x27;</span>, e)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;no error!&#x27;</span>)
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;finally...&#x27;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;END&#x27;</span>)</code></pre></div>
 
 
                 

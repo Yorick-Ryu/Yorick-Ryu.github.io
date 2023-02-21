@@ -18,20 +18,20 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="人工智能概论复习人工智能概论提出时间： 1956年 标志性事件：达特茅斯会议 4个发展阶段：  3个主要学派：  符号主义(symbolicism) 认为人工智能源于数理逻辑  连接主义(connectionism) 认为人工智能源于仿生学  行为主义(actionism)   概念：人工智能是研究使计算机来模拟人的某些思维过程和智能行为的学科 研究领域：  机器感知(计算机视觉、语音信息处理、模">
+    <meta name="description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 K近邻(KNN) DBSCAN聚类 K均值(K-Means) 聚类中心   贝叶斯分类 朴树贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲线   欠拟合和过拟合 过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能概论复习">
 <meta property="og:url" content="http://yorick.love/2023/02/14/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="人工智能概论复习人工智能概论提出时间： 1956年 标志性事件：达特茅斯会议 4个发展阶段：  3个主要学派：  符号主义(symbolicism) 认为人工智能源于数理逻辑  连接主义(connectionism) 认为人工智能源于仿生学  行为主义(actionism)   概念：人工智能是研究使计算机来模拟人的某些思维过程和智能行为的学科 研究领域：  机器感知(计算机视觉、语音信息处理、模">
+<meta property="og:description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 K近邻(KNN) DBSCAN聚类 K均值(K-Means) 聚类中心   贝叶斯分类 朴树贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲线   欠拟合和过拟合 过">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/image-20230214130706660.png">
 <meta property="article:published_time" content="2023-02-14T02:43:01.000Z">
-<meta property="article:modified_time" content="2023-02-19T12:12:48.772Z">
+<meta property="article:modified_time" content="2023-02-21T02:01:58.166Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="复习">
-<meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="AI">
+<meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://yorick.love/img/image-20230214130706660.png">
   
@@ -259,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.6k 字
+          7.9k 字
         
       </span>
     
@@ -270,7 +270,7 @@
         
         
         
-          43 分钟
+          44 分钟
         
       </span>
     
@@ -321,7 +321,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月19日 晚上
+                    本文最后更新于：2023年2月21日 上午
                   
                 
               </p>
@@ -329,7 +329,90 @@
             
               <div class="markdown-body">
                 
-                <h1 id="人工智能概论复习"><a href="#人工智能概论复习" class="headerlink" title="人工智能概论复习"></a>人工智能概论复习</h1><h2 id="人工智能概论"><a href="#人工智能概论" class="headerlink" title="人工智能概论"></a>人工智能概论</h2><p>提出时间： <strong>1956年</strong></p>
+                <h1 id="人工智能概论复习"><a href="#人工智能概论复习" class="headerlink" title="人工智能概论复习"></a>人工智能概论复习</h1><ul>
+<li><a href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0">人工智能概论复习</a><ul>
+<li><a href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA">人工智能概论</a></li>
+<li><a href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a><ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0">监督学习与无监督学习</a></li>
+<li><a href="#%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B">特征工程</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96">数据标准化</a></li>
+<li><a href="#%E7%89%B9%E6%80%A7%E9%99%8D%E7%BB%B4">特性降维</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">线性回归</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92">逻辑回归</a></li>
+<li><a href="#%E5%86%B3%E7%AD%96%E6%A0%91">决策树</a></li>
+<li><a href="#k%E8%BF%91%E9%82%BBknn">K近邻(KNN)</a></li>
+<li><a href="#dbscan%E8%81%9A%E7%B1%BB">DBSCAN聚类</a></li>
+<li><a href="#k%E5%9D%87%E5%80%BCk-means">K均值(K-Means)</a><ul>
+<li><a href="#%E8%81%9A%E7%B1%BB%E4%B8%AD%E5%BF%83">聚类中心</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">贝叶斯分类</a><ul>
+<li><a href="#%E6%9C%B4%E6%A0%91%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">朴树贝叶斯分类</a></li>
+</ul>
+</li>
+<li><a href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BAsvm">支持向量机(SVM)</a><ul>
+<li><a href="#%E6%A0%B8%E5%87%BD%E6%95%B0">核函数</a></li>
+<li><a href="#%E8%BD%AF%E9%97%B4%E9%9A%94">软间隔</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0">集成学习</a></li>
+<li><a href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D">梯度下降</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0">模型评估</a><ul>
+<li><a href="#mse">MSE</a></li>
+<li><a href="#r%E6%96%B9%E5%80%BC">R方值</a></li>
+<li><a href="#%E4%BA%A4%E5%8F%89%E7%86%B5">交叉熵</a></li>
+<li><a href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5">混淆矩阵</a></li>
+<li><a href="#roc%E6%9B%B2%E7%BA%BF">ROC曲线</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E5%92%8C%E8%BF%87%E6%8B%9F%E5%90%88">欠拟合和过拟合</a><ul>
+<li><a href="#%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0">过拟合的原因</a></li>
+<li><a href="#%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">过拟合的解决办法</a></li>
+<li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0">欠拟合的原因</a></li>
+<li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">欠拟合的解决办法</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96">模型优化</a><ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">常用方法</a></li>
+<li><a href="#%E4%BC%98%E5%8C%96%E6%AD%A5%E9%AA%A4">优化步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81">交叉验证</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a><ul>
+<li><a href="#%E4%BB%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">从机器学习到深度学习</a><ul>
+<li><a href="#%E6%B5%85%E5%B1%82%E5%AD%A6%E4%B9%A0shallow-learning">浅层学习(Shallow Learning)</a></li>
+<li><a href="#%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0">表示学习</a></li>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A6%82%E5%BF%B5">深度学习概念</a></li>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%AD%A5%E9%AA%A4">深度学习步骤</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">神经网络</a></li>
+<li><a href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%89%8D%E9%A6%88%E7%BD%91%E7%BB%9C">全连接前馈网络</a></li>
+<li><a href="#bp%E7%AE%97%E6%B3%95backpropagation">BP算法(Backpropagation)</a></li>
+<li><a href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn">卷积神经网络(CNN)</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn">循环神经网络(RNN)</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></li>
+<li><a href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86">自然语言处理</a><ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B">文本处理流程</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%A5%E5%85%B7">工具</a><ul>
+<li><a href="#scikit-learn">Scikit-Learn</a></li>
+<li><a href="#numpy">Numpy</a></li>
+<li><a href="#matplotlib">Matplotlib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="人工智能概论"><a href="#人工智能概论" class="headerlink" title="人工智能概论"></a>人工智能概论</h2><p>提出时间： <strong>1956年</strong></p>
 <p>标志性事件：<strong>达特茅斯会议</strong></p>
 <p>4个发展阶段：</p>
 <p><img src="/./img/image-20230214130706660.png" srcset="/img/loading.gif" lazyload alt="image-20230214130706660"></p>
@@ -753,9 +836,9 @@ X_train, X_test, y_train, y_test = train_test_split(train_data, train_target, te
       
         <a href="/tags/%E5%A4%8D%E4%B9%A0/">#复习</a>
       
-        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
-      
         <a href="/tags/AI/">#AI</a>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
       
     </div>
   
