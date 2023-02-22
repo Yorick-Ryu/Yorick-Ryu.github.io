@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2023-02-18T06:53:05.000Z">
-<meta property="article:modified_time" content="2023-02-21T07:53:03.010Z">
+<meta property="article:modified_time" content="2023-02-22T13:44:50.297Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="复习">
 <meta name="twitter:card" content="summary_large_image">
@@ -257,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.9k 字
+          7k 字
         
       </span>
     
@@ -319,7 +319,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月21日 下午
+                    本文最后更新于：2023年2月22日 晚上
                   
                 
               </p>
@@ -386,12 +386,12 @@
 <li>网络接口：提供了对各种网络标准的存取和各种网络硬件的支持；</li>
 <li>进程间通信： 支持进程间各种通信机制。</li>
 </ul>
-<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p><strong>虚拟机</strong>指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统。</p>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p><strong>虚拟机</strong>指通过<strong>软件模拟</strong>的具有完整<strong>硬件</strong>系统功能的、<strong>运行在</strong>一个完全<strong>隔离环境</strong>中的完整计算机<strong>系统</strong>。</p>
 <p>特点：</p>
 <ul>
-<li>可同时在同一台PC上运行多个操作系统。</li>
-<li>虚拟机之间共享文件、应用、网络资源等。 </li>
-<li>同一服务器上的虚拟机若有一台故障或者中病毒, 不会影响到其他虚批机的使用。</li>
+<li>可同时在同一台PC上运行<strong>多个</strong>操作系统。</li>
+<li>虚拟机之间<strong>共享</strong>文件、应用、网络资源等。 </li>
+<li>同一服务器上的虚拟机若有一台故障或者中病毒, <strong>不会影响</strong>到其他虚批机的使用。</li>
 <li>虚拟机的本质是以<strong>文件</strong>的形式存在于虚拟化系统中，可以通过移动文件或者复制粘贴的形式对虚拟机进行迁移。</li>
 </ul>
 <p><strong>快照</strong>是虚拟机磁盘文件（VMDK）在某个时间点的复本。</p>
@@ -433,10 +433,10 @@
 </ul>
 <h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><p><img src="/./img/640.jpeg" srcset="/img/loading.gif" lazyload alt="图片"></p>
 <ul>
-<li><p>chgrp：更改文件属组，R表示递归修改</p>
+<li><p>chgrp：更改文件<strong>属组</strong>，R表示递归修改</p>
 <div class="code-wrapper"><pre><code class="hljs shell">chgrp [-R] 属组名 文件名</code></pre></div>
 </li>
-<li><p>chown：更改文件属主，也可以同时更改文件属组</p>
+<li><p>chown：更改文件<strong>属主</strong>，也可以同时更改文件<strong>属组</strong></p>
 <div class="code-wrapper"><pre><code class="hljs shell">chown [–R] 属主名 文件名
 chown [-R] 属主名：属组名 文件名</code></pre></div>
 </li>
@@ -486,15 +486,15 @@ chown [-R] 属主名：属组名 文件名</code></pre></div>
 <li><p>tail 只看尾巴几行</p>
 </li>
 </ul>
-<p>查找文件或目录：find 和 loacta</p>
+<p>查找文件或目录：<code>find</code> 和 <code>loacta</code></p>
 <p>查看当前主机IP地址的命令是  <code>ipaddr</code></p>
-<p><code>who</code>  命令的作用是  查看当前在线用户</p>
+<p><code>who</code>  命令的作用是查看当前在线用户</p>
 <p><code>umask</code>查看系统默认文件和目录权限</p>
-<p>请用命令完成新建目录 newdir，在该目录下新建文件 newfile 并将该文件复制到&#x2F;tmp 目录下。</p>
+<p>请用命令完成新建目录 newdir，在该目录下新建文件 newfile 并将该文件复制到 &#x2F;tmp 目录下。</p>
 <div class="code-wrapper"><pre><code class="hljs shell">mkdir newdir
 cd newdir
 touch newfile
-cp newfile /tm</code></pre></div>
+cp newfile /tmp</code></pre></div>
 
 <h3 id="文件解压缩"><a href="#文件解压缩" class="headerlink" title="文件解压缩"></a>文件解压缩</h3><ol>
 <li><p>tar</p>
@@ -537,7 +537,7 @@ ln -s /path/to/target link_name</code></pre></div>
 <p>区别：</p>
 <ul>
 <li>删除源文件，软链接会失效，硬链接不会；</li>
-<li>软链接可以为<strong>文件和目录</strong>（允许不存在）创建链接，硬链接只可以为文件创建链接；</li>
+<li>软链接可以为<strong>文件和目录</strong>（允许不存在）创建链接，硬链接只可以为<strong>文件</strong>创建链接；</li>
 <li>软链接可以<strong>跨文件系统</strong>，硬链接必须是同一个文件系统；</li>
 <li>软链接的<strong>文件权限</strong>可以和源文件不一样，硬链接的文件权限一定和源文件一样；</li>
 </ul>
@@ -599,7 +599,7 @@ daemon:*::0:0::::
 
 <p>当使用<code>useradd</code>命令新建了一个用户之后，将在<code>/etc/passwd</code>文件中写入一行新建用户信息，在<code>/etc/shadow</code>文件中写入一行用户密码信息。</p>
 <p>通常用户标识号的取值范围是<code>0～65535</code>。0是超级用户root的标识号，1-99由系统保留作为管理账号，普通用户的标识号从<strong>100</strong>开始。在Linux系统中，这个界限是500。</p>
-<p>记录用户组信息的文件有两个，分别是 <code>/etc/gshadow</code> 和 <code>/etc/group</code></p>
+<p>记录<strong>用户组信息</strong>的文件有两个，分别是 <code>/etc/gshadow</code> 和 <code>/etc/group</code></p>
 <p><code>/etc/group</code>:</p>
 <div class="code-wrapper"><pre><code class="hljs shell">bin::2:root,bin
 组名:口令:组标识号:组内用户列表</code></pre></div>
@@ -626,10 +626,11 @@ userdel wangwu</code></pre></div>
 <h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p> vi命令既可以编辑文件，也可以<strong>创建文件</strong></p>
 <p><strong>vim有哪几种模式，之间该怎么切换：</strong></p>
 <ul>
-<li>任何情况下，不论用户处于什么模式，只要按一下<code>esc</code>   键，就可以进入vi的<strong>命令模式</strong>。</li>
+<li>任何情况下，不论用户处于什么模式，只要按一下<code>esc</code>键，就可以进入vi的<strong>命令模式</strong>。</li>
 <li><strong>底行模式</strong>也叫<strong>末行模式</strong>，在<strong>命令模式</strong>下输入<code>:</code>或者<code>/</code>就会进入<strong>底行模式</strong>。</li>
 <li>在<strong>底行模式</strong>模式下按<code>i</code>或者<code>a</code>键进入<strong>编辑模式</strong>。</li>
 </ul>
+<p><img src="/./img/vim_mode.jpeg" srcset="/img/loading.gif" lazyload alt="vim模式切换"></p>
 <p>进入<strong>底行模式</strong>，在<code>:</code>后面输入<code>wq</code>并回车，即可保存文件，强行退出<code>:q!</code>，</p>
 <p>进入<strong>底行模式</strong>，输入内容<code>:set nu</code>，即可显示文本的行号</p>
 <p>在<strong>命令模式</strong>下输入<code>nG</code>则可以  定位到第<code>n</code>行	  </p>
@@ -643,9 +644,9 @@ userdel wangwu</code></pre></div>
 </li>
 <li><p>光标移动到末行<code>G</code></p>
 </li>
-<li><p>以当前光标为准，向上移动n行<code>nk</code></p>
+<li><p>以当前光标为准，向上移动 n 行<code>nk</code></p>
 </li>
-<li><p>以当前光标为准，向下移动n行<code>nj</code>和<code>n&lt;Enter&gt;</code></p>
+<li><p>以当前光标为准，向下移动 n 行<code>nj</code>和<code>n&lt;Enter&gt;</code></p>
 </li>
 <li><p>以当前光标为准，向左&#x2F;右移动n个字符<code>nh/nl</code></p>
 </li>
@@ -762,7 +763,7 @@ n
 <span class="hljs-meta prompt_"># </span><span class="language-bash">查看一下磁盘分区</span>
 p
 <span class="hljs-meta prompt_"># </span><span class="language-bash">选择分区号（这里注意一下，加上扩展分区，主分区只能有四个，所以只能选择1-4，一般按顺序输入分区号）</span>
-1 
+1
 <span class="hljs-meta prompt_"># </span><span class="language-bash">保存</span>
 w
 <span class="hljs-meta prompt_"># </span><span class="language-bash">将新的分区表变更同步至操作系统。</span>
@@ -808,7 +809,7 @@ mount /dev/sdb1 /opt</code></pre></div>
 输入abc</code></pre></div>
 <ol start="4">
 <li><p><strong>shell输出九九乘法表</strong></p>
-<p><code>test</code> 和 <code>[ exp ]</code> 等价(注意两边空格)</p>
+<p><code>test</code> 和 <code>[ exp ]</code> 等价(注意两边<strong>空格</strong>)</p>
 </li>
 </ol>
 <div class="code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span>
@@ -820,15 +821,23 @@ do
                         echo -n &quot;$&#123;i&#125;*$&#123;j&#125;=$((i*j))  &quot;
                 fi
         done
-echo &quot;&quot;
+		echo &quot;&quot;
 done</code></pre></div>
 
 <ol start="5">
-<li><p>如果用rmdir命令删除某个已经存在的目录，但是无法成功，请给出原因和解决方法。</p>
-<p>(1)此目录可能不存在;</p>
-<p>(2)目录不为空;</p>
-<p>(3)目录中有隐含文件存在;</p>
-<p>(4)目录没有权限操作，解决方法：先修改权限，在使用<code>rm -r</code>命令删除。</p>
+<li><p>如果用<code>rmdir</code>命令删除某个已经存在的目录，但是无法成功，请给出原因和解决方法。</p>
+<ul>
+<li>此目录可能不存在;</li>
+<li>目录不为空;</li>
+<li>目录中有隐含文件存在;</li>
+<li>目录没有权限操作;</li>
+</ul>
+<p>解决方法：先修改权限，在使用<code>rm -rf</code>命令删除。</p>
+</li>
+<li><p>请简单叙述新增一个用户系统所做的操作。</p>
+<blockquote>
+<p>在<code>/etc/passwd</code>文件中新增一条用户信息，<br>在<code>/etc/shadow</code>文件中增加一条该用户<strong>密码</strong>信息，<br>在<code>/etc/group</code>文件中新增一条用户<strong>组</strong>信息，<br>在<code>/etc/gshadow</code>文件中新增一条用户<strong>组密码</strong>信息,<br>在<code>/home</code>目录下新增一个与用户名相同的目录，<br><code>/var/spool/mail</code>目录下新建与用户名相同的<strong>邮件</strong>目录。</p>
+</blockquote>
 </li>
 </ol>
 
