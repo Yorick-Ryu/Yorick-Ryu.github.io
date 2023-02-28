@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yorick.love/img/default.png">
 <meta property="article:published_time" content="2023-02-18T09:08:27.000Z">
-<meta property="article:modified_time" content="2023-02-23T15:15:30.591Z">
+<meta property="article:modified_time" content="2023-02-24T00:44:52.263Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="复习">
 <meta name="twitter:card" content="summary_large_image">
@@ -319,7 +319,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月23日 晚上
+                    本文最后更新于：2023年2月24日 早上
                   
                 
               </p>
@@ -406,7 +406,7 @@
 <p>用例编号、测试模块、用例标题、用例级别、前置条件、测试输入、执行操作、预期结果、实际结果</p>
 <h3 id="边界值"><a href="#边界值" class="headerlink" title="边界值"></a>边界值</h3><p>针对各种边界情况设计测试用例</p>
 <p>对于一个n变量的程序，边界值<strong>健壮性</strong>测试会产生<code>6n+1</code>个测试用例。</p>
-<h3 id="决策表"><a href="#决策表" class="headerlink" title="决策表"></a>决策表</h3><p>决策表(Decision Table)，又叫判定表，是分析和表达多逻辑条件下执行不同操作的工具。</p>
+<h3 id="决策表"><a href="#决策表" class="headerlink" title="决策表"></a>决策表</h3><p>决策表(Decision Table)，又叫<strong>判定表</strong>，是分析和表达<strong>多逻辑条件</strong>下执行<strong>不同操作</strong>的工具。</p>
 <p><strong>决策表法主要为了发现以下两种类型的缺陷</strong></p>
 <ol>
 <li>某种条件组合的情况下，系统采取错误操作，即执行了不应该执行的操作</li>
@@ -449,7 +449,7 @@
 <li>化简（合并规则）</li>
 </ol>
 <p><img src="/./img/image-20230218203636146.png" srcset="/img/loading.gif" lazyload alt="image-20230218203636146"></p>
-<h3 id="因果图"><a href="#因果图" class="headerlink" title="因果图"></a>因果图</h3><p>因果图（Cuase-effect Graph）是一种描述输入条件的组合以及每种组合对应的输出的图形化工具。在因果图的基础上可以设计测试用例。</p>
+<h3 id="因果图"><a href="#因果图" class="headerlink" title="因果图"></a>因果图</h3><p>因果图（Cuase-effect Graph）是一种描述<strong>输入条件</strong>的组合以及每种组合<strong>对应的输出</strong>的图形化工具。在因果图的基础上可以设计测试用例。</p>
 <p>原因与结果之间的关系<br><strong>恒等、非、或、与</strong> </p>
 <p>原因与原因之间的约束关系<br><strong>异、或、唯一、要求</strong> </p>
 <p>结果与结果之间的关系<br><strong>M约束</strong></p>
@@ -533,22 +533,22 @@
 
 <h3 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h3><p>集成测试是在<strong>单元测试</strong>的基础上，将所有已通过单元测试的模块按照概要设计的要求<strong>组装</strong>为子系统或系统，进行集成测试，目的是确保各单元模块<strong>组合</strong>在一 起后能够按既定意图<strong>协作运行</strong>，并确保<strong>增量</strong>的行为正确。</p>
 <h3 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h3><p>系统测试的定义 ： 系统测试是将整个软件，作为整个基于计算机系统的一个<strong>元素</strong>，与计算机硬件、外设、某些支持软件、数据和人员等其它系统元素<strong>结合</strong>在一起，在实际运行环境下，验证软件的功能和性能及其它特性是否与用户的要求一致。</p>
-<h3 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h3><p>集成测试仅针对软件系统展开测试，系统测试中所涉及的系统则不仅包括被测试的软件本身，还包括硬件及相关外围设备。</p>
+<h3 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h3><p>集成测试仅针对<strong>软件系统</strong>展开测试，系统测试中所涉及的系统则不仅包括被测试的软件本身，还包括<strong>硬件及相关外围设备</strong>。</p>
 <h3 id="缺陷属性"><a href="#缺陷属性" class="headerlink" title="缺陷属性"></a>缺陷属性</h3><p>最大原因：编制说明书</p>
-<p>严重程度</p>
+<p><strong>严重程度</strong></p>
 <ul>
 <li>微小的(Minor)</li>
 <li>一般的(Major)</li>
 <li>严重的(Critical)</li>
 <li>致命的(Fatal)</li>
 </ul>
-<p>优先级</p>
+<p><strong>优先级</strong></p>
 <ul>
 <li>低 Not Urgent</li>
 <li>中 Normal Queue</li>
 <li>高 Resolve Immediately</li>
 </ul>
-<p>缺陷产生的原因：</p>
+<p><strong>缺陷产生的原因</strong></p>
 <ul>
 <li>编写说明书存在问题</li>
 <li>设计存在问题</li>
@@ -987,6 +987,12 @@ findElement(By.cssSelector())</code></pre></div>
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/02/27/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" title="逻辑回归">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">逻辑回归</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
