@@ -18,25 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="可视化UI设计[TOC] 约束布局ConstraintLayout约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束 直接拖动蓝点。首先认识">
+    <meta name="description" content="软件需求工程软件需求做什么 用户需求系统需求 功能需求 非功能需求 领域需求  需求工程过程 获取需求 需求分析与建模 确认需求 进化需求  最终得到需求规格说明书 需求的分析方法数据流图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android可视化UI设计">
-<meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:title" content="软件需求工程">
+<meta property="og:url" content="http://yorick.love/2023/02/28/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="可视化UI设计[TOC] 约束布局ConstraintLayout约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。 基本位置约束 直接拖动蓝点。首先认识">
+<meta property="og:description" content="软件需求工程软件需求做什么 用户需求系统需求 功能需求 非功能需求 领域需求  需求工程过程 获取需求 需求分析与建模 确认需求 进化需求  最终得到需求规格说明书 需求的分析方法数据流图">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/image-20221104183622446.png">
-<meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
-<meta property="article:modified_time" content="2022-12-17T03:37:58.228Z">
+<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="article:published_time" content="2023-02-28T08:07:30.000Z">
+<meta property="article:modified_time" content="2023-02-28T10:47:47.871Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="layout">
-<meta property="article:tag" content="view">
+<meta property="article:tag" content="课程笔记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/image-20221104183622446.png">
+<meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Android可视化UI设计 | Yorick Harbor</title>
+  <title>软件需求工程 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -235,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Android可视化UI设计"></span>
+            <span id="subtitle" data-typed-text="软件需求工程"></span>
           
         </div>
 
@@ -246,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-17 10:57" pubdate>
-          2022年12月17日 上午
+        <time datetime="2023-02-28 16:07" pubdate>
+          2023年2月28日 下午
         </time>
       </span>
     
@@ -258,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          81 字
         
       </span>
     
@@ -269,7 +268,7 @@
         
         
         
-          11 分钟
+          1 分钟
         
       </span>
     
@@ -315,12 +314,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Android可视化UI设计</h1>
+            <h1 style="display: none">软件需求工程</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月17日 中午
+                    本文最后更新于：2023年2月28日 晚上
                   
                 
               </p>
@@ -328,91 +327,20 @@
             
               <div class="markdown-body">
                 
-                <h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p>
-<h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p>
-<h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol>
-<li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p>
-<p><img src="/./img/image-20221104183622446.png" srcset="/img/loading.gif" lazyload alt="image-20221104183622446"></p>
-<p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p>
-<p><img src="/./img/image-20221104182427025.png" srcset="/img/loading.gif" lazyload alt="image-20221104182427025"></p>
-<p>查看生成的代码</p>
-<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span>
-<span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;TextView&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span> // <span class="hljs-attr">代表控件底部在父布局的底部</span></span>
-<span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>		// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span>
-<span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
-<span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div>
-
-<p>若我们拖动控件，则会增加如下代码：</p>
-<div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1
-app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div>
-</li>
-<li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p>
-<p><img src="/./img/image-20221104192615537.png" srcset="/img/loading.gif" lazyload alt="image-20221104192615537"></p>
-<div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;
-android:layout_marginBottom=&quot;240dp&quot;
-app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
-app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li>
+                <h1 id="软件需求工程"><a href="#软件需求工程" class="headerlink" title="软件需求工程"></a>软件需求工程</h1><h2 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h2><p>做什么</p>
+<h3 id="用户需求"><a href="#用户需求" class="headerlink" title="用户需求"></a>用户需求</h3><h3 id="系统需求"><a href="#系统需求" class="headerlink" title="系统需求"></a>系统需求</h3><ul>
+<li>功能需求</li>
+<li>非功能需求</li>
+<li>领域需求</li>
+</ul>
+<h2 id="需求工程过程"><a href="#需求工程过程" class="headerlink" title="需求工程过程"></a>需求工程过程</h2><ol>
+<li>获取需求</li>
+<li>需求分析与建模</li>
+<li>确认需求</li>
+<li>进化需求</li>
 </ol>
-<h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol>
-<li><p>选择多个控件</p>
-<p><img src="/./img/image-20221104193649706.png" srcset="/img/loading.gif" lazyload alt="image-20221104193649706"></p>
-</li>
-<li><p>点击<code>Pack</code></p>
-<p><img src="/./img/image-20221104193845078.png" srcset="/img/loading.gif" lazyload alt="image-20221104193845078"></p>
-</li>
-<li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p>
-<p><img src="/./img/image-20221104193954355.png" srcset="/img/loading.gif" lazyload alt="image-20221104193954355"></p>
-<p>下面是有阻挡得情况</p>
-<p><img src="/./img/image-20221104194800428.png" srcset="/img/loading.gif" lazyload alt="image-20221104194800428"></p>
-</li>
-<li><p>Pack Vertically，同理，Buttom</p>
-<p><img src="/./img/image-20221104194533125.png" srcset="/img/loading.gif" lazyload alt="image-20221104194533125"></p>
-<p><img src="/./img/image-20221104194859939.png" srcset="/img/loading.gif" lazyload alt="image-20221104194859939"></p>
-</li>
-<li><p>Expand Horizontally，水平拉伸</p>
-<p><img src="/./img/image-20221104195145603.png" srcset="/img/loading.gif" lazyload alt="image-20221104195145603"></p>
-</li>
-<li><p>Expand Vertically，竖直拉伸</p>
-<p><img src="/./img/image-20221104195319243.png" srcset="/img/loading.gif" lazyload alt="image-20221104195319243"></p>
-</li>
-<li><p>Distribute Horizontally，添加水平方向相互约束</p>
-<p><img src="/./img/image-20221104195748648.png" srcset="/img/loading.gif" lazyload alt="image-20221104195748648"></p>
-</li>
-<li><p>Distribute Vertically，添加竖直方向相互约束</p>
-<p><img src="/./img/image-20221104195933250.png" srcset="/img/loading.gif" lazyload alt="image-20221104195933250"></p>
-</li>
-</ol>
-<p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p>
-<div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置
-tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div>
-
-<p>Expend操作会修改控件大小</p>
-<div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;
-android:layout_height=&quot;200dp&quot;</code></pre></div>
-
-<p>Distribute操作会添加约束，如：</p>
-<div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div>
-
-<h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p>
-<p><img src="/./img/image-20221104202313658.png" srcset="/img/loading.gif" lazyload alt="image-20221104202313658"></p>
-<p>注意点：</p>
-<ol>
-<li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p>
-<p><img src="/./img/image-20221104202740560.png" srcset="/img/loading.gif" lazyload alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" srcset="/img/loading.gif" lazyload alt="image-20221104202810457"></p>
-</li>
-<li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p>
-<p><img src="/./img/image-20221104203110925.png" srcset="/img/loading.gif" lazyload alt="image-20221104203110925"></p>
-<p>然后拖到想要约束的位置，一般是另一个控件的基线</p>
-<p>   <img src="/./img/image-20221104203338181.png" srcset="/img/loading.gif" lazyload alt="image-20221104203338181"></p>
-</li>
-</ol>
-<h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p>
-<p><img src="/./img/image-20221104203611415.png" srcset="/img/loading.gif" lazyload alt="image-20221104203611415"></p>
+<p>最终得到<strong>需求规格说明书</strong></p>
+<h2 id="需求的分析方法"><a href="#需求的分析方法" class="headerlink" title="需求的分析方法"></a>需求的分析方法</h2><p>数据流图</p>
 
                 
               </div>
@@ -431,7 +359,7 @@ android:layout_height=&quot;200dp&quot;</code></pre></div>
     
       <span class="category-chain">
         
-  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="category-chain-item">软件工程</a>
   
   
 
@@ -446,9 +374,7 @@ android:layout_height=&quot;200dp&quot;</code></pre></div>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/layout/">#layout</a>
-      
-        <a href="/tags/view/">#view</a>
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
       
     </div>
   
@@ -460,8 +386,8 @@ android:layout_height=&quot;200dp&quot;</code></pre></div>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Android可视化UI设计</div>
-      <div>http://yorick.love/2022/12/17/Android/Android可视化UI设计/</div>
+      <div>软件需求工程</div>
+      <div>http://yorick.love/2023/02/28/软件需求工程/</div>
     </div>
     <div class="license-meta">
       
@@ -473,7 +399,7 @@ android:layout_height=&quot;200dp&quot;</code></pre></div>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月17日</div>
+          <div>2023年2月28日</div>
         </div>
       
       
@@ -505,18 +431,12 @@ android:layout_height=&quot;200dp&quot;</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%9E%E5%BD%A2%E5%8F%96%E6%95%B0/" title="蓝桥杯回形取数">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">蓝桥杯回形取数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/" title="Android屏幕旋转ScreenOrientation">
-                        <span class="hidden-mobile">Android屏幕旋转ScreenOrientation</span>
+                      <a href="/2023/02/27/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" title="逻辑回归">
+                        <span class="hidden-mobile">逻辑回归</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
