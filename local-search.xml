@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>ChatGPT正确的提问方式</title>
+    <link href="/2023/04/01/ChatGPT%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%8F%90%E9%97%AE%E6%96%B9%E5%BC%8F/"/>
+    <url>/2023/04/01/ChatGPT%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%8F%90%E9%97%AE%E6%96%B9%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="ChatGPT正确的提问方式"><a href="#ChatGPT正确的提问方式" class="headerlink" title="ChatGPT正确的提问方式"></a>ChatGPT正确的提问方式</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ChatGPT</tag>
+      
+      <tag>prompt</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>大数据基础</title>
+    <link href="/2023/03/10/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%BA%E7%A1%80/"/>
+    <url>/2023/03/10/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="大数据基础"><a href="#大数据基础" class="headerlink" title="大数据基础"></a>大数据基础</h1><h2 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h2><p>三范式：</p><ol><li>第一范式(1NF)；原子性，字段不可分</li><li>第二范式(2NF)唯一性，有主键，非主键字段完全依赖主键</li><li>第三范式(3NF) ：非主键字段不能相互依赖</li></ol><h2 id="企业级数据仓库"><a href="#企业级数据仓库" class="headerlink" title="企业级数据仓库"></a>企业级数据仓库</h2><h3 id="为什么要构建数据仓库"><a href="#为什么要构建数据仓库" class="headerlink" title="为什么要构建数据仓库"></a>为什么要构建数据仓库</h3><p>历史数据积存</p><p>企业数据分析需要</p><ol><li>数据存储在互不兼容的系统中</li><li>关系型数据库一般不存储日志数据</li><li>决策者需要从业务角度观察分析数据，关系型数据库不支持。</li></ol><h3 id="什么是数据仓库"><a href="#什么是数据仓库" class="headerlink" title="什么是数据仓库"></a>什么是数据仓库</h3><p>数据仓库(DataWarehouse, DW, DWH)是<strong>面向主题的、集成的、相对稳定</strong>的、反应历史变化的数据集合，数<br>仓中的数据是有组织、有结构的存储数据集合,用于对管理决策过程的支持。</p><h2 id="数据仓库架构及建模"><a href="#数据仓库架构及建模" class="headerlink" title="数据仓库架构及建模"></a>数据仓库架构及建模</h2><h3 id="分层设计"><a href="#分层设计" class="headerlink" title="分层设计"></a>分层设计</h3><p><img src="/./img/image-20230310091909431.png" alt="image-20230310091909431"></p><h3 id="系统建模"><a href="#系统建模" class="headerlink" title="系统建模"></a>系统建模</h3><ul><li><p>OLTP(在线事务处理)</p></li><li><p>OLAP(在线联机分析)</p><ul><li>ROLAP (RelationOLAP， 关系型OLAP) ：使用关系模型构建，存储系统一般为RDBMS</li><li>MOLAP (Multidimensional OLAP，多维型OLAP)：预先聚合计算，使用多维数组的形式保存数据结果，加快查询分析时间</li><li>HOLAP (Hybrid OLAP,混合架构的OLAP)：ROLAP和MOLAP两者的集成；如低层是关系型的，高层是多维矩阵型的;查询效率高于ROLAP，低于MOLAP</li></ul></li></ul><h3 id="维度模型"><a href="#维度模型" class="headerlink" title="维度模型"></a>维度模型</h3><p>维度模型中，表被分为维度表、事实表，维度是对事实的一种组织。</p><ul><li>星型模型</li><li>雪花模型</li><li>星座模型</li></ul><p>模型对比</p><ol><li>星型模型违反范式建模，雪花模型符合范式建模</li><li>星型模型数据分析效率比雪花模型高</li><li>企业级数仓构建使用星型模型和星座模型居多</li></ol><h3 id="维度表设计"><a href="#维度表设计" class="headerlink" title="维度表设计"></a>维度表设计</h3><p>代理键</p><p>稳定维度</p><p>缓慢变化维度</p><p>拉链表</p><h3 id="事实表设计"><a href="#事实表设计" class="headerlink" title="事实表设计"></a>事实表设计</h3><h4 id="明细事实表"><a href="#明细事实表" class="headerlink" title="明细事实表"></a>明细事实表</h4><p>降维</p><h4 id="事实表存储S"><a href="#事实表存储S" class="headerlink" title="事实表存储S"></a>事实表存储S</h4><ul><li>增量存储</li><li>全量快照</li><li>拉链存储</li></ul><h4 id="聚合事实表"><a href="#聚合事实表" class="headerlink" title="聚合事实表"></a>聚合事实表</h4><p>DWS层</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>BigData</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>课程笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件需求工程</title>
     <link href="/2023/02/28/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/"/>
     <url>/2023/02/28/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E5%B7%A5%E7%A8%8B/</url>
@@ -45,9 +97,9 @@
     
     <tags>
       
-      <tag>ML</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>ML</tag>
       
       <tag>AI</tag>
       
@@ -230,11 +282,11 @@
     
     <tags>
       
+      <tag>课程笔记</tag>
+      
       <tag>ML</tag>
       
       <tag>线性回归</tag>
-      
-      <tag>课程笔记</tag>
       
       <tag>AI</tag>
       
@@ -261,9 +313,9 @@
     
     <tags>
       
-      <tag>ML</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>ML</tag>
       
       <tag>AI</tag>
       
@@ -1342,9 +1394,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1382,37 +1434,6 @@
   
   
   <entry>
-    <title>DataBinding</title>
-    <link href="/2022/11/05/Android/AndroidDataBinding/"/>
-    <url>/2022/11/05/Android/AndroidDataBinding/</url>
-    
-    <content type="html"><![CDATA[<h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p><img src="/./img/image-20221105181749287.png" alt="image-20221105181749287"></p><p>DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。</p><h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><p>示例App要实现的功能是，点击按钮Button，TextView的数字<code>+1</code></p><ol><li><p>项目中引入dataBinding</p><div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// 在build.gradle文件添加</span>android&#123;   ...   dataBinding&#123;      enabled <span class="hljs-literal">true</span>   &#125;   ...&#125;</code></pre></div></li><li><p>新建activity和对应的layout布局文件。包括一个Button和一个Text View。</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.422&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@string/button&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.71&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></code></pre></div></li><li><p>布局文件格式转换（普通layout➡️databing对应的layout）<br>光标在布局文件的根布局➡️按<code>Alt</code> +<code> Enter</code>➡️点击 <code>Convert to data binding layout</code></p><p>得到转换后的layout布局文件，内容如下：</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">layout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.422&quot;</span> /&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@string/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.71&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span></code></pre></div><p>观察到外层嵌套了layout标签，里面增加了data标签。</p></li><li><p>创建MyViewModel类</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewModel</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> number: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _number    <span class="hljs-keyword">init</span> &#123;        _number.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">()</span></span> &#123;        _number.value = _number.value?.plus(<span class="hljs-number">1</span>)    &#125;&#125;</code></pre></div></li><li><p>这里有两种方式实现<code>+1</code>功能</p><ul><li><p><strong>方式一：</strong></p><p><code>DataBinding</code>会基于<code>layout</code>创建一个<code>Binding class</code>，这个类包含了布局属性(定义的变量)到相关视图的所有绑定，并且会为布局中的数据元素生成<code>setter</code>，生成的类的名称是基于<code>layout</code>的名称(驼峰命名，加上<code>Binding</code>后缀)。比如布局名是<code>activity_main.xml</code>，生成的类就是<code>ActivityMainBinding</code>。你能通过这个类去<code>inflate</code>布局和数据模型，也可以通过<code>DataBindingUtil</code>类。</p><ul><li><p>在<code>MainActivity</code>使用<code>DataBindingUtils</code>加载布局，这里使用了懒加载，即随用随加载。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;    DataBindingUtil.setContentView(        <span class="hljs-keyword">this</span>,        R.layout.activity_main    )&#125;</code></pre></div></li><li><p><code>inflate</code>加载布局（此方法也能用于<code>RecyclerView</code>, <code>ViewPager</code>）</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding <span class="hljs-keyword">by</span> lazy &#123; ActivityMainBinding.inflate(layoutInflater) &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(binding.root)        ...    &#125;&#125;</code></pre></div></li></ul><p>上述两种方法大家二选一，一般在<code>Activity</code>中我们都用第一种。</p><p>如果在fragment中绑定布局</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MasterFragment</span> : <span class="hljs-type">Fragment</span>() &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreateView</span><span class="hljs-params">(</span></span><span class="hljs-params"><span class="hljs-function">        inflater: <span class="hljs-type">LayoutInflater</span>, container: <span class="hljs-type">ViewGroup</span>?,</span></span><span class="hljs-params"><span class="hljs-function">        savedInstanceState: <span class="hljs-type">Bundle</span>?</span></span><span class="hljs-params"><span class="hljs-function">    )</span></span>: View &#123;        <span class="hljs-keyword">val</span> viewModel = ViewModelProvider(requireActivity())[MyViewModel::<span class="hljs-keyword">class</span>.java]        <span class="hljs-keyword">val</span> binding = DataBindingUtil.inflate&lt;FragmentMasterBinding&gt;(            inflater,            R.layout.fragment_master,            container,            <span class="hljs-literal">false</span>        )        binding.<span class="hljs-keyword">data</span> = viewModel        binding.lifecycleOwner = requireActivity()        <span class="hljs-keyword">return</span> binding.root&#125;</code></pre></div><p>然后在<code>MainActivity</code>的<code>onCreate</code>方法添加Observe和按钮点击事件</p><div class="code-wrapper"><pre><code class="hljs kotlin">  myViewModel.number.observe(<span class="hljs-keyword">this</span>) &#123;  binding.textView.text = it.toString()  &#125;  binding.button.setOnClickListener &#123;  myViewModel.add()  &#125;  - **方式二：**  反向绑定，把数据数据绑定和按钮点击事件放在布局文件中  在layout的<span class="hljs-keyword">data</span>中添加：  ```xml  &lt;<span class="hljs-keyword">data</span>&gt;      &lt;variable      name=<span class="hljs-string">&quot;data&quot;</span>      type=<span class="hljs-string">&quot;com.yorick.databinding.MyViewModel&quot;</span> /&gt;  &lt;/<span class="hljs-keyword">data</span>&gt;</code></pre></div><p>修改TextView的text属性：</p><div class="code-wrapper"><pre><code class="hljs xml">android:text=&quot;@&#123;data.number.toString()&#125;&quot;</code></pre></div><p>Button增加onClick属性：</p><div class="code-wrapper"><pre><code class="hljs xml">android:onClick=&quot;@&#123;()-&gt;data.add()&#125;&quot;</code></pre></div><p>Activity仅保留以下代码：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;        DataBindingUtil.setContentView(            <span class="hljs-keyword">this</span>,            R.layout.activity_main        )    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        binding.<span class="hljs-keyword">data</span> = myViewModel        binding.lifecycleOwner = <span class="hljs-keyword">this</span>    &#125;&#125;</code></pre></div></li></ul></li></ol><p>参考：</p><ul><li><a href="https://blog.csdn.net/hncdcsm1/article/details/109505160">(在Android中使用DataBinding(Kotlin)_CSDN</a></li><li><a href="https://blog.51cto.com/baorant24/5768873">Jetpeck DataBinding实践——轻松上手DataBinding_51CTO</a></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Jetpack</tag>
-      
-      <tag>DataBinding</tag>
-      
-      <tag>Architecture</tag>
-      
-      <tag>ViewModel</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>LiveData</title>
     <link href="/2022/11/05/Android/AndroidLiveData/"/>
     <url>/2022/11/05/Android/AndroidLiveData/</url>
@@ -1434,6 +1455,37 @@
       <tag>Architecture</tag>
       
       <tag>LiveData</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DataBinding</title>
+    <link href="/2022/11/05/Android/AndroidDataBinding/"/>
+    <url>/2022/11/05/Android/AndroidDataBinding/</url>
+    
+    <content type="html"><![CDATA[<h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p><img src="/./img/image-20221105181749287.png" alt="image-20221105181749287"></p><p>DataBinding是Google提供给我们的数据绑定的支持库，实现在页面组件中直接绑定应用程序的数据源。</p><h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><p>示例App要实现的功能是，点击按钮Button，TextView的数字<code>+1</code></p><ol><li><p>项目中引入dataBinding</p><div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// 在build.gradle文件添加</span>android&#123;   ...   dataBinding&#123;      enabled <span class="hljs-literal">true</span>   &#125;   ...&#125;</code></pre></div></li><li><p>新建activity和对应的layout布局文件。包括一个Button和一个Text View。</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.422&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@string/button&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.71&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></code></pre></div></li><li><p>布局文件格式转换（普通layout➡️databing对应的layout）<br>光标在布局文件的根布局➡️按<code>Alt</code> +<code> Enter</code>➡️点击 <code>Convert to data binding layout</code></p><p>得到转换后的layout布局文件，内容如下：</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">layout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">data</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span><span class="hljs-tag">        <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.422&quot;</span> /&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span></span><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@string/button&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag">            <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.71&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span></code></pre></div><p>观察到外层嵌套了layout标签，里面增加了data标签。</p></li><li><p>创建MyViewModel类</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyViewModel</span> : <span class="hljs-type">ViewModel</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> _number = MutableLiveData&lt;<span class="hljs-built_in">Int</span>&gt;()    <span class="hljs-keyword">val</span> number: LiveData&lt;<span class="hljs-built_in">Int</span>&gt;        <span class="hljs-keyword">get</span>() = _number    <span class="hljs-keyword">init</span> &#123;        _number.value = <span class="hljs-number">0</span>    &#125;    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">add</span><span class="hljs-params">()</span></span> &#123;        _number.value = _number.value?.plus(<span class="hljs-number">1</span>)    &#125;&#125;</code></pre></div></li><li><p>这里有两种方式实现<code>+1</code>功能</p><ul><li><p><strong>方式一：</strong></p><p><code>DataBinding</code>会基于<code>layout</code>创建一个<code>Binding class</code>，这个类包含了布局属性(定义的变量)到相关视图的所有绑定，并且会为布局中的数据元素生成<code>setter</code>，生成的类的名称是基于<code>layout</code>的名称(驼峰命名，加上<code>Binding</code>后缀)。比如布局名是<code>activity_main.xml</code>，生成的类就是<code>ActivityMainBinding</code>。你能通过这个类去<code>inflate</code>布局和数据模型，也可以通过<code>DataBindingUtil</code>类。</p><ul><li><p>在<code>MainActivity</code>使用<code>DataBindingUtils</code>加载布局，这里使用了懒加载，即随用随加载。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;    DataBindingUtil.setContentView(        <span class="hljs-keyword">this</span>,        R.layout.activity_main    )&#125;</code></pre></div></li><li><p><code>inflate</code>加载布局（此方法也能用于<code>RecyclerView</code>, <code>ViewPager</code>）</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding <span class="hljs-keyword">by</span> lazy &#123; ActivityMainBinding.inflate(layoutInflater) &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        setContentView(binding.root)        ...    &#125;&#125;</code></pre></div></li></ul><p>上述两种方法大家二选一，一般在<code>Activity</code>中我们都用第一种。</p><p>如果在fragment中绑定布局</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MasterFragment</span> : <span class="hljs-type">Fragment</span>() &#123;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreateView</span><span class="hljs-params">(</span></span><span class="hljs-params"><span class="hljs-function">        inflater: <span class="hljs-type">LayoutInflater</span>, container: <span class="hljs-type">ViewGroup</span>?,</span></span><span class="hljs-params"><span class="hljs-function">        savedInstanceState: <span class="hljs-type">Bundle</span>?</span></span><span class="hljs-params"><span class="hljs-function">    )</span></span>: View &#123;        <span class="hljs-keyword">val</span> viewModel = ViewModelProvider(requireActivity())[MyViewModel::<span class="hljs-keyword">class</span>.java]        <span class="hljs-keyword">val</span> binding = DataBindingUtil.inflate&lt;FragmentMasterBinding&gt;(            inflater,            R.layout.fragment_master,            container,            <span class="hljs-literal">false</span>        )        binding.<span class="hljs-keyword">data</span> = viewModel        binding.lifecycleOwner = requireActivity()        <span class="hljs-keyword">return</span> binding.root&#125;</code></pre></div><p>然后在<code>MainActivity</code>的<code>onCreate</code>方法添加Observe和按钮点击事件</p><div class="code-wrapper"><pre><code class="hljs kotlin">  myViewModel.number.observe(<span class="hljs-keyword">this</span>) &#123;  binding.textView.text = it.toString()  &#125;  binding.button.setOnClickListener &#123;  myViewModel.add()  &#125;  - **方式二：**  反向绑定，把数据数据绑定和按钮点击事件放在布局文件中  在layout的<span class="hljs-keyword">data</span>中添加：  ```xml  &lt;<span class="hljs-keyword">data</span>&gt;      &lt;variable      name=<span class="hljs-string">&quot;data&quot;</span>      type=<span class="hljs-string">&quot;com.yorick.databinding.MyViewModel&quot;</span> /&gt;  &lt;/<span class="hljs-keyword">data</span>&gt;</code></pre></div><p>修改TextView的text属性：</p><div class="code-wrapper"><pre><code class="hljs xml">android:text=&quot;@&#123;data.number.toString()&#125;&quot;</code></pre></div><p>Button增加onClick属性：</p><div class="code-wrapper"><pre><code class="hljs xml">android:onClick=&quot;@&#123;()-&gt;data.add()&#125;&quot;</code></pre></div><p>Activity仅保留以下代码：</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> myViewModel <span class="hljs-keyword">by</span> lazy &#123; ViewModelProvider(<span class="hljs-keyword">this</span>)[MyViewModel::<span class="hljs-keyword">class</span>.java] &#125;    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> binding: ActivityMainBinding <span class="hljs-keyword">by</span> lazy &#123;        DataBindingUtil.setContentView(            <span class="hljs-keyword">this</span>,            R.layout.activity_main        )    &#125;    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)        binding.<span class="hljs-keyword">data</span> = myViewModel        binding.lifecycleOwner = <span class="hljs-keyword">this</span>    &#125;&#125;</code></pre></div></li></ul></li></ol><p>参考：</p><ul><li><a href="https://blog.csdn.net/hncdcsm1/article/details/109505160">(在Android中使用DataBinding(Kotlin)_CSDN</a></li><li><a href="https://blog.51cto.com/baorant24/5768873">Jetpeck DataBinding实践——轻松上手DataBinding_51CTO</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Jetpack</tag>
+      
+      <tag>Architecture</tag>
+      
+      <tag>DataBinding</tag>
+      
+      <tag>ViewModel</tag>
       
     </tags>
     
@@ -2183,11 +2235,11 @@
       
       <tag>Java</tag>
       
-      <tag>Sort</tag>
-      
       <tag>树</tag>
       
       <tag>Tree</tag>
+      
+      <tag>Sort</tag>
       
       <tag>Srarch</tag>
       
