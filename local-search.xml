@@ -586,31 +586,6 @@
   
   
   <entry>
-    <title>Android屏幕旋转ScreenOrientation</title>
-    <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
-    <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
-    
-    <content type="html"><![CDATA[<h1 id="屏幕旋转ScreenOrientation"><a href="#屏幕旋转ScreenOrientation" class="headerlink" title="屏幕旋转ScreenOrientation"></a>屏幕旋转ScreenOrientation</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol><li>对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。</li><li>对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。</li><li>屏幕旋转时，Activity会重新加载。</li></ol><h2 id="控制旋转"><a href="#控制旋转" class="headerlink" title="控制旋转"></a>控制旋转</h2><p>在manifest文件中为Activity添加属性：</p><ul><li><code>android:screenOrientation=&quot;portrait&quot;</code> 保持竖屏</li><li><code>android:screenOrientation=&quot;landscape&quot;</code> 保持横屏</li></ul><h2 id="实现横屏竖屏两种布局"><a href="#实现横屏竖屏两种布局" class="headerlink" title="实现横屏竖屏两种布局"></a>实现横屏竖屏两种布局</h2><p><img src="/./img/orientation_land.png" alt="orientation_land"></p><p>在这里新建一个Landscape的副本，可以重新调整控件位置。</p><h2 id="实现状态保存"><a href="#实现状态保存" class="headerlink" title="实现状态保存"></a>实现状态保存</h2><p>实现横竖屏切换时的状态保存</p><ol><li><p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(<span class="hljs-string">&quot;title&quot;</span>, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = savedInstanceState?.getString(<span class="hljs-string">&quot;title&quot;</span>) ?: textView.text<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div></li></ol><p>这里只能临时保存数据，当Activity被销毁后，数据仍然会丢失。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>view</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Android应用图标</title>
     <link href="/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/"/>
     <url>/2022/12/17/Android/Android%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87/</url>
@@ -628,6 +603,31 @@
     <tags>
       
       <tag>Icon</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android屏幕旋转ScreenOrientation</title>
+    <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
+    <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
+    
+    <content type="html"><![CDATA[<h1 id="屏幕旋转ScreenOrientation"><a href="#屏幕旋转ScreenOrientation" class="headerlink" title="屏幕旋转ScreenOrientation"></a>屏幕旋转ScreenOrientation</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol><li>对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。</li><li>对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。</li><li>屏幕旋转时，Activity会重新加载。</li></ol><h2 id="控制旋转"><a href="#控制旋转" class="headerlink" title="控制旋转"></a>控制旋转</h2><p>在manifest文件中为Activity添加属性：</p><ul><li><code>android:screenOrientation=&quot;portrait&quot;</code> 保持竖屏</li><li><code>android:screenOrientation=&quot;landscape&quot;</code> 保持横屏</li></ul><h2 id="实现横屏竖屏两种布局"><a href="#实现横屏竖屏两种布局" class="headerlink" title="实现横屏竖屏两种布局"></a>实现横屏竖屏两种布局</h2><p><img src="/./img/orientation_land.png" alt="orientation_land"></p><p>在这里新建一个Landscape的副本，可以重新调整控件位置。</p><h2 id="实现状态保存"><a href="#实现状态保存" class="headerlink" title="实现状态保存"></a>实现状态保存</h2><p>实现横竖屏切换时的状态保存</p><ol><li><p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(<span class="hljs-string">&quot;title&quot;</span>, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = savedInstanceState?.getString(<span class="hljs-string">&quot;title&quot;</span>) ?: textView.text<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div></li></ol><p>这里只能临时保存数据，当Activity被销毁后，数据仍然会丢失。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -1394,9 +1394,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1452,9 +1452,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>DataBinding</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>DataBinding</tag>
       
       <tag>ViewModel</tag>
       
@@ -3482,22 +3482,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
