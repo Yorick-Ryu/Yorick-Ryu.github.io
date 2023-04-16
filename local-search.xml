@@ -8,19 +8,21 @@
     <link href="/2023/04/16/%E9%80%9A%E5%90%91%20AGI%20%E4%B9%8B%E8%B7%AF/"/>
     <url>/2023/04/16/%E9%80%9A%E5%90%91%20AGI%20%E4%B9%8B%E8%B7%AF/</url>
     
-    <content type="html"><![CDATA[<h1 id="通向-AGI-之路"><a href="#通向-AGI-之路" class="headerlink" title="通向 AGI 之路"></a>通向 AGI 之路</h1><p>AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很多，可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>特斯拉前 AI 总监、刚刚回归 OpenAI 的 Andrej Karpathy 也大力宣传，并在推特赞扬：「AutoGPT 是 prompt 工程的下一个前沿。」</p><p>AutoGPT 正在互联网上掀起一场风暴，它无处不在。很快，已经有网友上手实验了，该用户让 AutoGPT 建立一个网站，不到 3 分钟 AutoGPT 就成功了。期间 AutoGPT 使用了 React 和 Tailwind CSS，全凭自己，人类没有插手。看来程序员之后真就不再需要编码了。</p><p>视频脚本：</p><p>一觉醒来，AI行业又变天了！</p><p>提示工程的下一个前言，会自主思考AutoGPT他来了！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。</p><p>有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。</p><p>更牛的是，它还可以自主访问互联网爬取需要的信息，并且保存下来使用。</p><p>AutoGPT 用处很多，不仅可以用来编写代码，也可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>我自己也实验了一下：</p><p>首先给他指定角色：一名前端程序员（a front-end developer）</p><p><img src="/./img/image-20230416150359239.png" alt="image-20230416150359239"></p><p>设定目标1：用前端框架写一个飞机大战小游戏。</p><p>Develop a airplane shooting game using a frontend framework.</p><p><img src="/./img/image-20230416150438609.png" alt="image-20230416150438609"></p><p>设定目标2：完成后打开网站。</p><p>After completing, open the website.</p><p><img src="/./img/image-20230416150454907.png" alt="image-20230416150454907"></p><p>AI正在对此任务自动进行规划，期间他还会主动访问互联网爬取所需数据。</p><p><img src="/./img/image-20230416150539825.png" alt="image-20230416150539825"></p><p><img src="/./img/image-20230416150611353.png" alt="image-20230416150611353"></p><p>官方Demo视频：</p><p><a href="https://github.com/Significant-Gravitas/Auto-GPT#-usage">Significant-Gravitas&#x2F;Auto-GPT: An experimental open-source attempt to make GPT-4 fully autonomous. (github.com)</a></p><p>程序员的门槛又降低了！</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="通向-AGI-之路"><a href="#通向-AGI-之路" class="headerlink" title="通向 AGI 之路"></a>通向 AGI 之路</h1><p>很多人都想知道下一代GPT可能会发展到怎样的程度。极有可能的情况是，ChatGPT 可能会走向通用型 AIGC，这将是实现人工通用智能(AGI)的重要一步。</p><h2 id="可能实现-AGI-的技术路径"><a href="#可能实现-AGI-的技术路径" class="headerlink" title="可能实现 AGI 的技术路径"></a>可能实现 AGI 的技术路径</h2><ol><li><p><strong>ChatGPT 这类大模型直接实现 AGI 能力。</strong></p><p>也就是很多人想象的 GPT-5， 看完了这个世界上所有的文本、图像和视频，听完了这个世界上所有的语音，可以直接操作文本、图像、语音等多种模态。优点是实现的 AGI 能力上限比较高，缺点是实现难度大。</p></li><li><p><strong>ChatGPT 作为控制中枢（大脑）控制各种 AI 工具（肢体）</strong></p></li></ol><p>   以并行的方式将各种AIGC工具集成到一个共享 agent 中，让 ChatGPT 来设计和调度任务。优点是简单可行，思路直观，缺点是不同任务之间独立性太强，缺乏交互。</p><p>   目前已经有类似做法，微软的 HuggingGPT 思路就是使用 ChatGPT 去调度操作 HuggingFace 上的各种模型来完成各种复杂任务，他们将这个系统命名为 JARVIS。</p><h2 id="AutoGPT"><a href="#AutoGPT" class="headerlink" title="AutoGPT"></a>AutoGPT</h2><p><a href="https://github.com/Significant-Gravitas/Auto-GPT">https://github.com/Significant-Gravitas/Auto-GPT</a></p><p>prompt 工程的下一个前沿，通向 AGI 之路！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很多，可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>特斯拉前 AI 总监、刚刚回归 OpenAI 的 Andrej Karpathy 也大力宣传，并在推特赞扬：「AutoGPT 是 prompt 工程的下一个前沿。」</p><p>AutoGPT 正在互联网上掀起一场风暴，它无处不在。很快，已经有网友上手实验了，该用户让 AutoGPT 建立一个网站，不到 3 分钟 AutoGPT 就成功了。期间 AutoGPT 使用了 React 和 Tailwind CSS，全凭自己，人类没有插手。看来程序员之后真就不再需要编码了。</p><h2 id="BabyAGI"><a href="#BabyAGI" class="headerlink" title="BabyAGI"></a>BabyAGI</h2><p><a href="https://github.com/yoheinakajima/babyagi">yoheinakajima&#x2F;babyagi (github.com)</a></p><p>babyagi 是一个智能任务管理和解决工具，它结合了OpenAI GPT-4和Pinecone向量搜索引擎的力量，以自动完成和管理一系列任务，从一个初始任务开始，babyagi使用GPT4生成解决方案和新任务，并将解决方案存储在Pinecone中以便进一步检索。</p><h2 id="AgentGPT"><a href="#AgentGPT" class="headerlink" title="AgentGPT"></a>AgentGPT</h2><p>通过AgentGPT配置和部署“Autonomous AI agent”。命名你自己的自定义AI，让它开始任何你能想到的目标。它会通过思考要做的任务，执行它们，并从结果中学习来试图达到目标.</p><h2 id="视频脚本"><a href="#视频脚本" class="headerlink" title="视频脚本"></a>视频脚本</h2><p>一觉醒来，AI行业又变天了！</p><p>很多人都想知道下一代GPT可能会发展到怎样的程度，极有可能的情况是，ChatGPT 可能会走向通用型 AIGC。</p><p>目前来讲，有两种可能的方式：</p><p>一是ChatGPT 这类大模型直接实现 AGI 能力。也就是很多人想象的 GPT-5， 看完了这个世界上所有的文本、图像和视频，听完了这个世界上所有的语音，可以直接操作文本、图像、语音等多种模态。优点是实现的 AGI 能力上限比较高，缺点是实现难度大。</p><p>二是ChatGPT 作为“大脑”控制各种 AI 工具来完成任务，优点是简单可行，思路直观，缺点是不同任务之间独立性太强，缺乏交互。</p><p>目前已经有类似做法，微软的 HuggingGPT 思路就是使用 ChatGPT 去调度操作 HuggingFace 上的各种模型来完成各种复杂任务，他们将这个系统命名为 JARVIS。</p><p>还有一些使用提示工程技巧和目前的ChatGPT的来实现类似AGI的功能如：</p><p><strong>AutoGPT、BabyAGI、AgentGPT</strong></p><p><strong>AutoGPT</strong></p><p>AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。</p><p>有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。</p><p>更牛的是，它还可以自主访问互联网爬取需要的信息，并且保存下来使用。</p><p>AutoGPT 用处很多，不仅可以用来编写代码，也可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p><strong>BabyAGI</strong></p><p>babyagi 是一个智能任务管理和解决工具，它结合了OpenAI GPT-4和Pinecone向量搜索引擎的力量，以自动完成和管理一系列任务，从一个初始任务开始，babyagi使用GPT4生成解决方案和新任务，并将解决方案存储在Pinecone中以便进一步检索。</p><p><strong>AgentGPT</strong></p><p>AgentGPT通过配置和部署“Autonomous AI agent”。命名你自己的自定义AI，让它开始任何你能想到的目标。它会通过思考要做的任务，执行它们，并从结果中学习来试图达到目标.</p><p>可以说他们是生成性AI的一小步，却是通用人工智能的一大步！</p><p>本期内容就到这里，了解最新AI资讯，欢迎关注Chat Gap 说！</p><p>我自己也实验了一下：</p><p>首先给他指定角色：一名前端程序员（a front-end developer）</p><p><img src="/./img/image-20230416150359239.png" alt="image-20230416150359239"></p><p>设定目标1：用前端框架写一个飞机大战小游戏。</p><p>Develop a airplane shooting game using a frontend framework.</p><p><img src="/./img/image-20230416150438609.png" alt="image-20230416150438609"></p><p>设定目标2：完成后打开网站。</p><p>After completing, open the website.</p><p><img src="/./img/image-20230416150454907.png" alt="image-20230416150454907"></p><p>AI正在对此任务自动进行规划，期间他还会主动访问互联网爬取所需数据。</p><p><img src="/./img/image-20230416150539825.png" alt="image-20230416150539825"></p><p><img src="/./img/image-20230416150611353.png" alt="image-20230416150611353"></p><p>官方Demo视频：</p><p><a href="https://github.com/Significant-Gravitas/Auto-GPT#-usage">Significant-Gravitas&#x2F;Auto-GPT: An experimental open-source attempt to make GPT-4 fully autonomous. (github.com)</a></p><p>程序员的门槛又降低了！</p>]]></content>
     
     
     <categories>
       
-      <category>Android</category>
+      <category>AI</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>view</tag>
+      <tag>ChatGPT</tag>
+      
+      <tag>prompt</tag>
       
     </tags>
     
@@ -253,9 +255,9 @@
       
       <tag>课程笔记</tag>
       
-      <tag>AI</tag>
-      
       <tag>复习</tag>
+      
+      <tag>AI</tag>
       
     </tags>
     
@@ -584,6 +586,31 @@
   
   
   <entry>
+    <title>Android屏幕旋转ScreenOrientation</title>
+    <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
+    <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
+    
+    <content type="html"><![CDATA[<h1 id="屏幕旋转ScreenOrientation"><a href="#屏幕旋转ScreenOrientation" class="headerlink" title="屏幕旋转ScreenOrientation"></a>屏幕旋转ScreenOrientation</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol><li>对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。</li><li>对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。</li><li>屏幕旋转时，Activity会重新加载。</li></ol><h2 id="控制旋转"><a href="#控制旋转" class="headerlink" title="控制旋转"></a>控制旋转</h2><p>在manifest文件中为Activity添加属性：</p><ul><li><code>android:screenOrientation=&quot;portrait&quot;</code> 保持竖屏</li><li><code>android:screenOrientation=&quot;landscape&quot;</code> 保持横屏</li></ul><h2 id="实现横屏竖屏两种布局"><a href="#实现横屏竖屏两种布局" class="headerlink" title="实现横屏竖屏两种布局"></a>实现横屏竖屏两种布局</h2><p><img src="/./img/orientation_land.png" alt="orientation_land"></p><p>在这里新建一个Landscape的副本，可以重新调整控件位置。</p><h2 id="实现状态保存"><a href="#实现状态保存" class="headerlink" title="实现状态保存"></a>实现状态保存</h2><p>实现横竖屏切换时的状态保存</p><ol><li><p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(<span class="hljs-string">&quot;title&quot;</span>, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = savedInstanceState?.getString(<span class="hljs-string">&quot;title&quot;</span>) ?: textView.text<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div></li></ol><p>这里只能临时保存数据，当Activity被销毁后，数据仍然会丢失。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Android可视化UI设计</title>
     <link href="/2022/12/17/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/"/>
     <url>/2022/12/17/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/</url>
@@ -600,32 +627,7 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>layout</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Android屏幕旋转ScreenOrientation</title>
-    <link href="/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
-    <url>/2022/12/17/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
-    
-    <content type="html"><![CDATA[<h1 id="屏幕旋转ScreenOrientation"><a href="#屏幕旋转ScreenOrientation" class="headerlink" title="屏幕旋转ScreenOrientation"></a>屏幕旋转ScreenOrientation</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><ol><li>对于ConstraintLayout，如果使用绝对布局，旋转可能会导致控件显示异常。</li><li>对于相对位置的控件，在大多数情况下还可以正常显示，但是有可能存在异常。</li><li>屏幕旋转时，Activity会重新加载。</li></ol><h2 id="控制旋转"><a href="#控制旋转" class="headerlink" title="控制旋转"></a>控制旋转</h2><p>在manifest文件中为Activity添加属性：</p><ul><li><code>android:screenOrientation=&quot;portrait&quot;</code> 保持竖屏</li><li><code>android:screenOrientation=&quot;landscape&quot;</code> 保持横屏</li></ul><h2 id="实现横屏竖屏两种布局"><a href="#实现横屏竖屏两种布局" class="headerlink" title="实现横屏竖屏两种布局"></a>实现横屏竖屏两种布局</h2><p><img src="/./img/orientation_land.png" alt="orientation_land"></p><p>在这里新建一个Landscape的副本，可以重新调整控件位置。</p><h2 id="实现状态保存"><a href="#实现状态保存" class="headerlink" title="实现状态保存"></a>实现状态保存</h2><p>实现横竖屏切换时的状态保存</p><ol><li><p>在Activity中重写父类的<code>onSaveInstanceState</code>方法，Bundle是一种采用键值对方式存储的数据类型，这里使用它的<code>putString</code>方法存放数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(outState: <span class="hljs-type">Bundle</span>)</span></span> &#123;    <span class="hljs-keyword">super</span>.onSaveInstanceState(outState)    outState.putString(<span class="hljs-string">&quot;title&quot;</span>, textView.text.toString())&#125;</code></pre></div></li><li><p>在<code>onCreate</code>方法中添加，使用<code>getString</code>方法获取数据。</p><div class="code-wrapper"><pre><code class="hljs kotlin">textView.text = savedInstanceState?.getString(<span class="hljs-string">&quot;title&quot;</span>) ?: textView.text<span class="hljs-comment">// savedInstanceState为空则不执行getString方法，?: 前为空则使用后面的内容</span></code></pre></div></li></ol><p>这里只能临时保存数据，当Activity被销毁后，数据仍然会丢失。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
       
       <tag>view</tag>
       
@@ -702,9 +704,9 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>layout</tag>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -866,11 +868,11 @@
     
     <tags>
       
-      <tag>view</tag>
-      
       <tag>Jetpack</tag>
       
       <tag>Compose</tag>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -1419,9 +1421,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Lifecycles</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>Lifecycles</tag>
       
     </tags>
     
@@ -1477,9 +1479,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>DataBinding</tag>
+      
+      <tag>Architecture</tag>
       
       <tag>ViewModel</tag>
       
@@ -1621,9 +1623,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -1707,13 +1709,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Array</tag>
+      <tag>Set</tag>
       
       <tag>List</tag>
       
-      <tag>Set</tag>
-      
       <tag>Map</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3201,17 +3203,17 @@
     
     <tags>
       
-      <tag>Collection</tag>
+      <tag>集合</tag>
       
-      <tag>List</tag>
+      <tag>Collection</tag>
       
       <tag>Set</tag>
       
-      <tag>Map</tag>
-      
-      <tag>集合</tag>
-      
       <tag>TreeSet</tag>
+      
+      <tag>List</tag>
+      
+      <tag>Map</tag>
       
       <tag>HashMap</tag>
       
@@ -3240,9 +3242,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
