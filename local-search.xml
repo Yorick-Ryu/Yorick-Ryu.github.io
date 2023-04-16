@@ -8,7 +8,7 @@
     <link href="/2023/04/16/%E9%80%9A%E5%90%91%20AGI%20%E4%B9%8B%E8%B7%AF/"/>
     <url>/2023/04/16/%E9%80%9A%E5%90%91%20AGI%20%E4%B9%8B%E8%B7%AF/</url>
     
-    <content type="html"><![CDATA[<h1 id="通向-AGI-之路"><a href="#通向-AGI-之路" class="headerlink" title="通向 AGI 之路"></a>通向 AGI 之路</h1><p>AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很多，可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>特斯拉前 AI 总监、刚刚回归 OpenAI 的 Andrej Karpathy 也大力宣传，并在推特赞扬：「AutoGPT 是 prompt 工程的下一个前沿。」</p><p>AutoGPT 正在互联网上掀起一场风暴，它无处不在。很快，已经有网友上手实验了，该用户让 AutoGPT 建立一个网站，不到 3 分钟 AutoGPT 就成功了。期间 AutoGPT 使用了 React 和 Tailwind CSS，全凭自己，人类没有插手。看来程序员之后真就不再需要编码了。</p><p>视频脚本：</p><p>一觉醒来，AI行业又变天了！</p><p>提示工程的下一个前言，会自主思考AutoGPT他来了！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。</p><p>有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。</p><p>更牛的是，它还可以自主访问互联网爬取需要的信息，并且保存下来使用。</p><p>AutoGPT 用处很多，不仅可以用来编写代码，也可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>我自己也实验了一下：</p><p>首先给他指定角色：一名前端程序员（a front-end developer）</p><p><img src="/./img/image-20230416150359239.png" alt="image-20230416150359239"></p><p>设定目标1：用前端框架写一个飞机大战小游戏。</p><p>Develop a airplane shooting game using a frontend framework.</p><p><img src="/./img/image-20230416150438609.png" alt="image-20230416150438609"></p><p>设定目标2：完成后打开网站。</p><p>After completing, open the website.</p><p><img src="/./img/image-20230416150454907.png" alt="image-20230416150454907"></p><p>AI正在对此任务自动进行规划，期间他还会主动访问互联网爬取所需数据。</p><p><img src="/./img/image-20230416150539825.png" alt="image-20230416150539825"></p><p><img src="/./img/image-20230416150611353.png" alt="image-20230416150611353"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="通向-AGI-之路"><a href="#通向-AGI-之路" class="headerlink" title="通向 AGI 之路"></a>通向 AGI 之路</h1><p>AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很多，可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>特斯拉前 AI 总监、刚刚回归 OpenAI 的 Andrej Karpathy 也大力宣传，并在推特赞扬：「AutoGPT 是 prompt 工程的下一个前沿。」</p><p>AutoGPT 正在互联网上掀起一场风暴，它无处不在。很快，已经有网友上手实验了，该用户让 AutoGPT 建立一个网站，不到 3 分钟 AutoGPT 就成功了。期间 AutoGPT 使用了 React 和 Tailwind CSS，全凭自己，人类没有插手。看来程序员之后真就不再需要编码了。</p><p>视频脚本：</p><p>一觉醒来，AI行业又变天了！</p><p>提示工程的下一个前言，会自主思考AutoGPT他来了！</p><p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。</p><p>有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。</p><p>更牛的是，它还可以自主访问互联网爬取需要的信息，并且保存下来使用。</p><p>AutoGPT 用处很多，不仅可以用来编写代码，也可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p><p>我自己也实验了一下：</p><p>首先给他指定角色：一名前端程序员（a front-end developer）</p><p><img src="/./img/image-20230416150359239.png" alt="image-20230416150359239"></p><p>设定目标1：用前端框架写一个飞机大战小游戏。</p><p>Develop a airplane shooting game using a frontend framework.</p><p><img src="/./img/image-20230416150438609.png" alt="image-20230416150438609"></p><p>设定目标2：完成后打开网站。</p><p>After completing, open the website.</p><p><img src="/./img/image-20230416150454907.png" alt="image-20230416150454907"></p><p>AI正在对此任务自动进行规划，期间他还会主动访问互联网爬取所需数据。</p><p><img src="/./img/image-20230416150539825.png" alt="image-20230416150539825"></p><p><img src="/./img/image-20230416150611353.png" alt="image-20230416150611353"></p><p>官方Demo视频：</p><p><a href="https://github.com/Significant-Gravitas/Auto-GPT#-usage">Significant-Gravitas&#x2F;Auto-GPT: An experimental open-source attempt to make GPT-4 fully autonomous. (github.com)</a></p><p>程序员的门槛又降低了！</p>]]></content>
     
     
     <categories>
@@ -251,11 +251,11 @@
     
     <tags>
       
-      <tag>复习</tag>
-      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
+      
+      <tag>复习</tag>
       
     </tags>
     
@@ -280,9 +280,9 @@
     
     <tags>
       
-      <tag>复习</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>复习</tag>
       
     </tags>
     
@@ -1419,9 +1419,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1477,9 +1477,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>DataBinding</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>DataBinding</tag>
       
       <tag>ViewModel</tag>
       
@@ -2260,11 +2260,11 @@
       
       <tag>Java</tag>
       
-      <tag>Sort</tag>
-      
       <tag>树</tag>
       
       <tag>Tree</tag>
+      
+      <tag>Sort</tag>
       
       <tag>Srarch</tag>
       
@@ -3507,22 +3507,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
