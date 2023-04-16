@@ -18,25 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="自定义视图自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.com)">
+    <meta name="description" content="通向 AGI 之路AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！ 具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android自定义视图">
-<meta property="og:url" content="http://yorick.love/2022/12/17/Android/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/index.html">
+<meta property="og:title" content="通向 AGI 之路">
+<meta property="og:url" content="http://yorick.love/2023/04/16/%E9%80%9A%E5%90%91%20AGI%20%E4%B9%8B%E8%B7%AF/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="自定义视图自定义视图组件  | Android 开发者  | Android Developers (google.cn) 创建视图类  | Android 开发者  | Android Developers (google.cn) 系统如何绘制View下图是布局树  视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时 Android系统显示原理简介 - 简书 (jianshu.com)">
+<meta property="og:description" content="通向 AGI 之路AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！ 具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/image-20221124172128201.png">
-<meta property="article:published_time" content="2022-12-17T02:57:37.000Z">
-<meta property="article:modified_time" content="2022-12-17T03:39:15.494Z">
+<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="article:published_time" content="2023-04-16T06:37:03.000Z">
+<meta property="article:modified_time" content="2023-04-16T07:06:11.459Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="view">
-<meta property="article:tag" content="layout">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/image-20221124172128201.png">
+<meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Android自定义视图 | Yorick Harbor</title>
+  <title>通向 AGI 之路 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -235,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Android自定义视图"></span>
+            <span id="subtitle" data-typed-text="通向 AGI 之路"></span>
           
         </div>
 
@@ -246,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-17 10:57" pubdate>
-          2022年12月17日 上午
+        <time datetime="2023-04-16 14:37" pubdate>
+          2023年4月16日 下午
         </time>
       </span>
     
@@ -258,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          845 字
         
       </span>
     
@@ -269,7 +268,7 @@
         
         
         
-          9 分钟
+          5 分钟
         
       </span>
     
@@ -315,12 +314,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Android自定义视图</h1>
+            <h1 style="display: none">通向 AGI 之路</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月17日 中午
+                    本文最后更新于：2023年4月16日 下午
                   
                 
               </p>
@@ -328,69 +327,29 @@
             
               <div class="markdown-body">
                 
-                <h1 id="自定义视图"><a href="#自定义视图" class="headerlink" title="自定义视图"></a>自定义视图</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/guide/topics/ui/custom-components?hl=zh_cn">自定义视图组件  | Android 开发者  | Android Developers (google.cn)</a></p>
-<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/training/custom-views/create-view?hl=zh_cn">创建视图类  | Android 开发者  | Android Developers (google.cn)</a></p>
-<h2 id="系统如何绘制View"><a href="#系统如何绘制View" class="headerlink" title="系统如何绘制View"></a>系统如何绘制View</h2><p>下图是布局树</p>
-<p><img src="/./img/image-20221124172128201.png" srcset="/img/loading.gif" lazyload alt="image-20221124172128201"></p>
-<p>视图的每一次刷新都是完整地遍历布局树的过程，这个过程比较耗时</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a978a6250f9e">Android系统显示原理简介 - 简书 (jianshu.com)</a></p>
-<p><img src="/./img/image-20221124185323496.png" srcset="/img/loading.gif" lazyload alt="image-20221124185323496"></p>
-<p>要在<code>16ms</code>内画完每一个界面</p>
-<p><img src="/./img/image-20221124185524584.png" srcset="/img/loading.gif" lazyload alt="image-20221124185524584"></p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyView</span> <span class="hljs-meta">@JvmOverloads</span> <span class="hljs-keyword">constructor</span>(
-    context: Context, attrs: AttributeSet? = <span class="hljs-literal">null</span>, defStyleAttr: <span class="hljs-built_in">Int</span> = <span class="hljs-number">0</span>
-) : View(context, attrs, defStyleAttr) &#123;
-    <span class="hljs-comment">// xml加载完毕时调用</span>
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onFinishInflate</span><span class="hljs-params">()</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onFinishInflate()
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>,<span class="hljs-string">&quot;onFinishInflate：&quot;</span>)
-    &#125;
-	
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onAttachedToWindow</span><span class="hljs-params">()</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onAttachedToWindow()
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onAttachedToWindow: &quot;</span>)
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onMeasure</span><span class="hljs-params">(widthMeasureSpec: <span class="hljs-type">Int</span>, heightMeasureSpec: <span class="hljs-type">Int</span>)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onMeasure: &quot;</span>)
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onLayout</span><span class="hljs-params">(changed: <span class="hljs-type">Boolean</span>, left: <span class="hljs-type">Int</span>, top: <span class="hljs-type">Int</span>, right: <span class="hljs-type">Int</span>, bottom: <span class="hljs-type">Int</span>)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onLayout(changed, left, top, right, bottom)
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onLayout: &quot;</span>)
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onDraw</span><span class="hljs-params">(canvas: <span class="hljs-type">Canvas</span>?)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onDraw(canvas)
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onDraw: &quot;</span>)
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onSizeChanged</span><span class="hljs-params">(w: <span class="hljs-type">Int</span>, h: <span class="hljs-type">Int</span>, oldw: <span class="hljs-type">Int</span>, oldh: <span class="hljs-type">Int</span>)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onSizeChanged(w, h, oldw, oldh)
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onSizeChanged: &quot;</span>)
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onDetachedFromWindow</span><span class="hljs-params">()</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onDetachedFromWindow()
-        Log.d(<span class="hljs-string">&quot;yu&quot;</span>, <span class="hljs-string">&quot;onDetachedFromWindow: &quot;</span>)
-    &#125;
-&#125;</code></pre></div>
-
-<p>启动输出</p>
-<div class="code-wrapper"><pre><code class="hljs pf"><span class="hljs-keyword">on</span>FinishInflate：   
-<span class="hljs-keyword">on</span>AttachedToWindow:
-<span class="hljs-keyword">on</span>Measure:         
-<span class="hljs-keyword">on</span>Measure:         
-<span class="hljs-keyword">on</span>SizeChanged:     
-<span class="hljs-keyword">on</span>Layout:          
-<span class="hljs-keyword">on</span>Draw:</code></pre></div>
-
-
-<ul>
-<li><strong>DashPathEffect</strong>：将Path的线段虚线化，intervals为虚线的ON和OFF的数组，数组中元素数目需要 &gt;&#x3D; 2； 而phase则为绘制时的偏移量。</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6999603842845261860">Android自定义view之利用PathEffect实现动态效果 - 掘金 (juejin.cn)</a></p>
+                <h1 id="通向-AGI-之路"><a href="#通向-AGI-之路" class="headerlink" title="通向 AGI 之路"></a>通向 AGI 之路</h1><p>AutoGPT: prompt 工程的下一个前沿，通向 AGI 之路！</p>
+<p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。此外其还具有互联网访问、长期和短期内存管理、用于文本生成的 GPT-4 实例以及使用 GPT-3.5 进行文件存储和生成摘要等功能。AutoGPT 用处很多，可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p>
+<p>特斯拉前 AI 总监、刚刚回归 OpenAI 的 Andrej Karpathy 也大力宣传，并在推特赞扬：「AutoGPT 是 prompt 工程的下一个前沿。」</p>
+<p>AutoGPT 正在互联网上掀起一场风暴，它无处不在。很快，已经有网友上手实验了，该用户让 AutoGPT 建立一个网站，不到 3 分钟 AutoGPT 就成功了。期间 AutoGPT 使用了 React 和 Tailwind CSS，全凭自己，人类没有插手。看来程序员之后真就不再需要编码了。</p>
+<p>视频脚本：</p>
+<p>一觉醒来，AI行业又变天了！</p>
+<p>提示工程的下一个前言，会自主思考AutoGPT他来了！</p>
+<p>具体来说，AutoGPT 相当于给基于 GPT 的模型一个内存和一个身体。</p>
+<p>有了它，你可以把一项任务交给 AI 智能体，让它自主地提出一个计划，然后执行计划。</p>
+<p>更牛的是，它还可以自主访问互联网爬取需要的信息，并且保存下来使用。</p>
+<p>AutoGPT 用处很多，不仅可以用来编写代码，也可用来分析市场并提出交易策略、提供客户服务、进行营销等其他需要持续更新的任务。</p>
+<p>我自己也实验了一下：</p>
+<p>首先给他指定角色：一名前端程序员（a front-end developer）</p>
+<p><img src="/./img/image-20230416150359239.png" srcset="/img/loading.gif" lazyload alt="image-20230416150359239"></p>
+<p>设定目标1：用前端框架写一个飞机大战小游戏。</p>
+<p>Develop a airplane shooting game using a frontend framework.</p>
+<p><img src="/./img/image-20230416150438609.png" srcset="/img/loading.gif" lazyload alt="image-20230416150438609"></p>
+<p>设定目标2：完成后打开网站。</p>
+<p>After completing, open the website.</p>
+<p><img src="/./img/image-20230416150454907.png" srcset="/img/loading.gif" lazyload alt="image-20230416150454907"></p>
+<p>AI正在对此任务自动进行规划，期间他还会主动访问互联网爬取所需数据。</p>
+<p><img src="/./img/image-20230416150539825.png" srcset="/img/loading.gif" lazyload alt="image-20230416150539825"></p>
+<p><img src="/./img/image-20230416150611353.png" srcset="/img/loading.gif" lazyload alt="image-20230416150611353"></p>
 
                 
               </div>
@@ -426,8 +385,6 @@
       
         <a href="/tags/view/">#view</a>
       
-        <a href="/tags/layout/">#layout</a>
-      
     </div>
   
 </div>
@@ -438,8 +395,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Android自定义视图</div>
-      <div>http://yorick.love/2022/12/17/Android/Android自定义视图/</div>
+      <div>通向 AGI 之路</div>
+      <div>http://yorick.love/2023/04/16/通向 AGI 之路/</div>
     </div>
     <div class="license-meta">
       
@@ -451,7 +408,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月17日</div>
+          <div>2023年4月16日</div>
         </div>
       
       
@@ -483,18 +440,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/17/Android/Android%E6%9C%AC%E5%9C%B0%E5%8C%96/" title="Android本地化">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Android本地化</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/16/%E7%8E%AF%E5%A2%83/HexoFluidTag%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Hexo_Fluid_Tag插件的使用">
-                        <span class="hidden-mobile">Hexo_Fluid_Tag插件的使用</span>
+                      <a href="/2023/04/01/%E6%96%B0%E5%85%B4%E8%81%8C%E4%B8%9A%EF%BC%9A%E6%8F%90%E7%A4%BA%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="新兴职业：提示工程师">
+                        <span class="hidden-mobile">新兴职业：提示工程师</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
