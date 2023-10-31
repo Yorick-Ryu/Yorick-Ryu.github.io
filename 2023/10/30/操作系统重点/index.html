@@ -18,26 +18,24 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LifeCycles使用生命周期感知型组件处理生命周期  | Android 开发者  | Android Developers (google.cn)  示例： 创建项目LifeCycles  创建布局文件 &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.androi">
+    <meta name="description" content="操作系统重点引论OS主要目标 提高资源利用率 方便用户  OS四大基本特征并发、共享、虚拟、同步 操作系统发展过程三大基本操作系统  批处理 分时 实时  操作系统的发展动力 批处理：提高资源利用率和系统吞吐量 分时：方便用户 人机交互 共享主机 便于用户上机   微机：计算机硬件的不断升级换代  多道程序设计将一个以上的作业放入内存，并且同时处于运行状态 硬件支持：通道和中断机构 前提：大内存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lifecycles">
-<meta property="og:url" content="http://yorick.love/2022/11/18/Android/AndroidLifecycles/index.html">
+<meta property="og:title" content="操作系统重点">
+<meta property="og:url" content="http://yorick.love/2023/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%87%8D%E7%82%B9/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="LifeCycles使用生命周期感知型组件处理生命周期  | Android 开发者  | Android Developers (google.cn)  示例： 创建项目LifeCycles  创建布局文件 &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.androi">
+<meta property="og:description" content="操作系统重点引论OS主要目标 提高资源利用率 方便用户  OS四大基本特征并发、共享、虚拟、同步 操作系统发展过程三大基本操作系统  批处理 分时 实时  操作系统的发展动力 批处理：提高资源利用率和系统吞吐量 分时：方便用户 人机交互 共享主机 便于用户上机   微机：计算机硬件的不断升级换代  多道程序设计将一个以上的作业放入内存，并且同时处于运行状态 硬件支持：通道和中断机构 前提：大内存">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/image-20221118171304454.png">
-<meta property="article:published_time" content="2022-11-18T09:11:08.000Z">
-<meta property="article:modified_time" content="2022-12-17T02:54:23.737Z">
+<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="article:published_time" content="2023-10-30T11:14:12.000Z">
+<meta property="article:modified_time" content="2023-10-31T12:07:35.695Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="Jetpack">
-<meta property="article:tag" content="Architecture">
-<meta property="article:tag" content="Lifecycles">
+<meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/image-20221118171304454.png">
+<meta name="twitter:image" content="http://yorick.love/img/default.png">
   
   
   
-  <title>Lifecycles | Yorick Harbor</title>
+  <title>操作系统重点 | Yorick Harbor</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -236,7 +234,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Lifecycles"></span>
+            <span id="subtitle" data-typed-text="操作系统重点"></span>
           
         </div>
 
@@ -247,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-11-18 17:11" pubdate>
-          2022年11月18日 下午
+        <time datetime="2023-10-30 19:14" pubdate>
+          2023年10月30日 晚上
         </time>
       </span>
     
@@ -259,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          1.3k 字
         
       </span>
     
@@ -270,7 +268,7 @@
         
         
         
-          17 分钟
+          7 分钟
         
       </span>
     
@@ -316,12 +314,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Lifecycles</h1>
+            <h1 style="display: none">操作系统重点</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年12月17日 上午
+                    本文最后更新于：2023年10月31日 晚上
                   
                 
               </p>
@@ -329,113 +327,165 @@
             
               <div class="markdown-body">
                 
-                <h1 id="LifeCycles"><a href="#LifeCycles" class="headerlink" title="LifeCycles"></a>LifeCycles</h1><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/lifecycle">使用生命周期感知型组件处理生命周期  | Android 开发者  | Android Developers (google.cn)</a></p>
-<p><img src="/./img/image-20221118171304454.png" srcset="/img/loading.gif" lazyload alt="image-20221118171304454"></p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><ol>
-<li><p>创建项目<code>LifeCycles</code></p>
-</li>
-<li><p>创建布局文件</p>
-<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span>&gt;</span>
-
-    <span class="hljs-tag">&lt;<span class="hljs-name">Chronometer</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/meter&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span>
-<span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></code></pre></div>
-</li>
-<li><p><code>MainActivity</code>中</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;
-    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> chronometer: Chronometer
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        chronometer = findViewById(R.id.meter)
-<span class="hljs-comment">//        chronometer.base = System.currentTimeMillis() // UNIX 时间 1970 1 1 0时（格林尼治）至今的毫秒数</span>
-        chronometer.base = SystemClock.elapsedRealtime() <span class="hljs-comment">// 手机上次开机至今的毫秒数，这里就是默认值，不写也行</span>
-        chronometer.start()
-    &#125;
-&#125;</code></pre></div>
-
-<p>运行App，打开后计时器开始计时，放在后台依然继续计时。</p>
-</li>
-<li><p>继承<code>onPause</code>方法，添加<code>chronometer.stop()</code></p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span></span> &#123;
-    <span class="hljs-keyword">super</span>.onPause()
-    chronometer.stop()
-&#125;</code></pre></div>
-
-<p>发现切到后台后计时器停止，再次返回前台依然停止。</p>
-</li>
-<li><p>继承<code>onResume</code>方法，添加<code>chronometer.start()</code>，同时删除<code>onCreate</code>方法中的<code>chronometer.start()</code></p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span></span> &#123;
-    <span class="hljs-keyword">super</span>.onResume()
-    chronometer.start()
-&#125;</code></pre></div>
-
-<p>发现打开后计时器开始计时，切回后台重新打开依然继续计时。</p>
-<p>实际上<code>chronometer.start()</code>和<code>chronometer.stop()</code>方法仅仅改变的是视图中计时器的启动与停止，并不回真正控制其计时。</p>
-</li>
-<li><p>添加变量elapsedTime，并修改<code>onPause</code>方法和<code>onResume</code>方法</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> elapsedTime: <span class="hljs-built_in">Long</span> = <span class="hljs-number">0</span> <span class="hljs-comment">// 保存切回后台前的计时器时间</span>
-<span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span></span> &#123;
-    <span class="hljs-keyword">super</span>.onPause()
-    elapsedTime = SystemClock.elapsedRealtime() - chronometer.base
-    chronometer.stop() <span class="hljs-comment">// 可写可不写</span>
-&#125;
-<span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span></span> &#123;
-    <span class="hljs-keyword">super</span>.onResume()
-    chronometer.base = SystemClock.elapsedRealtime() - elapsedTime <span class="hljs-comment">// 将计时器的开始计时点设为当前时间减去保存的切回后台前的计时器时间</span>
-    chronometer.start()
-&#125;</code></pre></div>
-
-<p>如果有很多像<code>elapsedTime</code>这样需要在生命周期方法里管理的对象，这样写其实就存在很多问题。</p>
+                <h1 id="操作系统重点"><a href="#操作系统重点" class="headerlink" title="操作系统重点"></a>操作系统重点</h1><h2 id="引论"><a href="#引论" class="headerlink" title="引论"></a>引论</h2><h3 id="OS主要目标"><a href="#OS主要目标" class="headerlink" title="OS主要目标"></a>OS主要目标</h3><ol>
+<li>提高资源利用率</li>
+<li>方便用户</li>
+</ol>
+<h3 id="OS四大基本特征"><a href="#OS四大基本特征" class="headerlink" title="OS四大基本特征"></a>OS四大基本特征</h3><p><strong>并发、共享</strong>、虚拟、同步</p>
+<h3 id="操作系统发展过程"><a href="#操作系统发展过程" class="headerlink" title="操作系统发展过程"></a>操作系统发展过程</h3><p>三大基本操作系统</p>
 <ul>
-<li>代码繁杂臃肿，界面控制器Activity和Fragment应该尽可能保持精简。</li>
-<li>代码可复用性差</li>
+<li>批处理</li>
+<li>分时</li>
+<li>实时</li>
+</ul>
+<h3 id="操作系统的发展动力"><a href="#操作系统的发展动力" class="headerlink" title="操作系统的发展动力"></a>操作系统的发展动力</h3><ul>
+<li>批处理：提高资源利用率和系统吞吐量</li>
+<li>分时：方便用户<ul>
+<li>人机交互</li>
+<li>共享主机</li>
+<li>便于用户上机</li>
 </ul>
 </li>
-<li><p>自定义View，新建<code>MyChronometer</code>类，继承<code>Chronometer</code>类，实现<code>DefaultLifecycleObserver</code>接口</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyChronometer</span>(
-    context: Context,
-    attributeSet: AttributeSet
-) : Chronometer(context, attributeSet), DefaultLifecycleObserver &#123;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> elapsedTime: <span class="hljs-built_in">Long</span> = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onPause</span><span class="hljs-params">(owner: <span class="hljs-type">LifecycleOwner</span>)</span></span> &#123;
-        elapsedTime = SystemClock.elapsedRealtime() - base
-        stop()
-    &#125;
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onResume</span><span class="hljs-params">(owner: <span class="hljs-type">LifecycleOwner</span>)</span></span> &#123;
-        base = SystemClock.elapsedRealtime() - elapsedTime
-        start()
-    &#125;
-&#125;</code></pre></div>
-</li>
-<li><p><code>MainActivity</code>精简为</p>
-<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() &#123;
-    <span class="hljs-keyword">lateinit</span> <span class="hljs-keyword">var</span> chronometer: MyChronometer
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> &#123;
-        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        chronometer = findViewById(R.id.meter)
-        lifecycle.addObserver(chronometer) <span class="hljs-comment">// 注册生命周期观察者</span>
-    &#125;
-&#125;</code></pre></div>
-
-<p>修改<code>Chronometer</code>控件的标签为<code>com.yorick.lifecycles.MyChronometer</code></p>
-<p>运行，实现了上面一样的效果，但是<code>MainActivity</code>非常精简，没有多余的代码。</p>
-</li>
+<li>微机：计算机硬件的不断升级换代</li>
+</ul>
+<h3 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h3><p>将一个以上的作业放入内存，并且同时处于运行状态</p>
+<p>硬件支持：通道和中断机构</p>
+<p>前提：大内存</p>
+<p>优点：提高资源利用率</p>
+<h3 id="并发性与并行性"><a href="#并发性与并行性" class="headerlink" title="并发性与并行性"></a>并发性与并行性</h3><p>并发性：同一时间间隔内</p>
+<p>并行性：同一时间</p>
+<h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>只有OS中最基本的部分，提供最基本的核心功能</p>
+<p>提供功能：</p>
+<ul>
+<li>进程（线程）管理</li>
+<li>低级存储器管理</li>
+<li>进程间通信管理</li>
+<li>中断和陷入处理</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>提高OS的可拓展性</li>
+<li>增强OS的可靠性</li>
+<li>可移植性强</li>
+<li>提供了对分布式系统的支持</li>
+<li>融入了面向对象技术</li>
+</ul>
+<p>缺点：早期的微内核系统运行效率较低</p>
+<h3 id="操作系统的运行环境"><a href="#操作系统的运行环境" class="headerlink" title="操作系统的运行环境"></a>操作系统的运行环境</h3><p>管态（核心态）目态（用户态）</p>
+<p>特权指令：只能由操作系统才能执行的指令，如I&#x2F;O指令，内存清零指令，只能在核心态下执行</p>
+<p>非特权指令：用户可以去执行的指令，在用户态下执行</p>
+<h2 id="进程的描述和控制"><a href="#进程的描述和控制" class="headerlink" title="进程的描述和控制"></a>进程的描述和控制</h2><p>并行</p>
+<p>为什么要引入进程？</p>
+<p>为了并发执行</p>
+<p>进程的构成</p>
+<p>程序、数据和PCB</p>
+<p>进程的三种基本状态及转换条件</p>
+<ul>
+<li>就绪</li>
+<li>执行</li>
+<li>阻塞</li>
+</ul>
+<p>PCB是进程存在的唯一标识</p>
+<p>原语 进程控制</p>
+<p>了解创建、终止、阻塞、唤醒，触发条件（选择、填空）</p>
+<p>进程的同步</p>
+<p>临界资源、临界区</p>
+<p>临界资源（同步机制）使用原则</p>
+<ul>
+<li>空闲让进</li>
+<li>忙则等待</li>
+<li>有限等待</li>
+<li>让权等待</li>
+</ul>
+<p>进程关系：同步（合作）、互斥（竞争资源）</p>
+<p>记录型信号量（小题、大题）</p>
+<p>PV原语（大题、不难但不是原题）</p>
+<p>管程的组成部分、条件变量</p>
+<p>经典进程的同步问题踩分点：</p>
+<ol>
+<li>设信号量（数量、类型、初值）</li>
+<li>进程数量</li>
+<li>p(wait)、v(signal)位置</li>
 </ol>
+<p>进程通信（1、2小题）</p>
+<p>信箱、管道、消息传输对列</p>
+<p>为什么要引入线程（引入）</p>
+<p>线程和进程的关系</p>
+<p>线程的实现方式</p>
+<p>课后题根据重点选做</p>
+<h2 id="处理机调度与死锁"><a href="#处理机调度与死锁" class="headerlink" title="处理机调度与死锁"></a>处理机调度与死锁</h2><p>调度层次</p>
+<ul>
+<li>高级调度（作业调度）</li>
+<li>中级调度（内存调度）</li>
+<li>低级调度（进程调度）</li>
+</ul>
+<p>作业调度算法（可能应用题）：</p>
+<ul>
+<li>先来先服务</li>
+<li>短作业优先</li>
+<li>优先级</li>
+<li>高响应比优先</li>
+</ul>
+<p>进程调度算法</p>
+<p>时间片轮转</p>
+<p>死锁原因、必要条件、解决方法</p>
+<p>安全状态、银行家算法、</p>
+<p>打印机问题</p>
+<h2 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h2><p>单一连续分区</p>
+<p>固定分区</p>
+<p>动态分区、分配算法</p>
+<ul>
+<li>首次适应</li>
+<li>最佳</li>
+<li>最坏</li>
+</ul>
+<p>判断伙伴</p>
+<p>紧凑、拼接、前提条件有动态可重定位</p>
+<p>上下界、限长</p>
+<p>页式存储管理、地址变换（计算）</p>
+<p>TLB、多级页表计算</p>
+<p>段式、地址变换</p>
+<p>段页式、地址变换</p>
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p>局部性原理</p>
+<p>虚拟页式、页表组成、存在位、访问位（简答）</p>
+<p>虚拟段式</p>
+<p>缺页中断和一般中断的不同</p>
+<p>内存的分配策略（选择）</p>
+<p>页面置换算法</p>
+<p>工作集（选择）</p>
+<h2 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h2><p>小题：</p>
+<p>IO控制方式（小题）</p>
+<p>通道</p>
+<p>设备之间单通路与多通路</p>
+<p>设备无关性</p>
+<p>设备分配</p>
+<p>大题：</p>
+<p>Spooling的组成、共享打印机</p>
+<p>缓冲引入、缓冲池工作原理</p>
+<p>磁盘、磁盘访问时间、磁盘调度算法</p>
+<ul>
+<li>先来先访问</li>
+<li>最短寻道时间</li>
+<li>电梯（SCAN）</li>
+<li>循环扫描（CSCAN）</li>
+</ul>
+<p>调度序列、移动磁道数</p>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>文件的逻辑结构</p>
+<p>流式文件</p>
+<p>记录式文件</p>
+<p>文件控制块、索引结点</p>
+<p>文件共享</p>
+<ul>
+<li>基于结点</li>
+<li>符号链接</li>
+</ul>
+<p>访问权限表</p>
+<p>文件的物理结构</p>
+<p>FAT</p>
+<p>混合索引分配</p>
+<h2 id="磁盘存储区的管理"><a href="#磁盘存储区的管理" class="headerlink" title="磁盘存储区的管理"></a>磁盘存储区的管理</h2><p>磁盘空间空闲管理</p>
+<p>位示图（计算）</p>
+<p>成组链接（解答）</p>
 
                 
               </div>
@@ -454,7 +504,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  <a href="/categories/OS/" class="category-chain-item">OS</a>
   
   
 
@@ -469,11 +519,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Jetpack/">#Jetpack</a>
-      
-        <a href="/tags/Architecture/">#Architecture</a>
-      
-        <a href="/tags/Lifecycles/">#Lifecycles</a>
+        <a href="/tags/OS/">#OS</a>
       
     </div>
   
@@ -485,8 +531,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Lifecycles</div>
-      <div>http://yorick.love/2022/11/18/Android/AndroidLifecycles/</div>
+      <div>操作系统重点</div>
+      <div>http://yorick.love/2023/10/30/操作系统重点/</div>
     </div>
     <div class="license-meta">
       
@@ -498,7 +544,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年11月18日</div>
+          <div>2023年10月30日</div>
         </div>
       
       
@@ -530,18 +576,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/26/Kotlin/Kotlin2022%E4%B8%AD%E6%96%87%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E4%BC%9A/" title="2022Kotlin中文开发者大会">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022Kotlin中文开发者大会</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/11/Android/AndroidNavigation/" title="Navigation">
-                        <span class="hidden-mobile">Navigation</span>
+                      <a href="/2023/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/" title="机器学习与深度学习复习">
+                        <span class="hidden-mobile">机器学习与深度学习复习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

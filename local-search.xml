@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>操作系统重点</title>
+    <link href="/2023/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%87%8D%E7%82%B9/"/>
+    <url>/2023/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%87%8D%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<h1 id="操作系统重点"><a href="#操作系统重点" class="headerlink" title="操作系统重点"></a>操作系统重点</h1><h2 id="引论"><a href="#引论" class="headerlink" title="引论"></a>引论</h2><h3 id="OS主要目标"><a href="#OS主要目标" class="headerlink" title="OS主要目标"></a>OS主要目标</h3><ol><li>提高资源利用率</li><li>方便用户</li></ol><h3 id="OS四大基本特征"><a href="#OS四大基本特征" class="headerlink" title="OS四大基本特征"></a>OS四大基本特征</h3><p><strong>并发、共享</strong>、虚拟、同步</p><h3 id="操作系统发展过程"><a href="#操作系统发展过程" class="headerlink" title="操作系统发展过程"></a>操作系统发展过程</h3><p>三大基本操作系统</p><ul><li>批处理</li><li>分时</li><li>实时</li></ul><h3 id="操作系统的发展动力"><a href="#操作系统的发展动力" class="headerlink" title="操作系统的发展动力"></a>操作系统的发展动力</h3><ul><li>批处理：提高资源利用率和系统吞吐量</li><li>分时：方便用户<ul><li>人机交互</li><li>共享主机</li><li>便于用户上机</li></ul></li><li>微机：计算机硬件的不断升级换代</li></ul><h3 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h3><p>将一个以上的作业放入内存，并且同时处于运行状态</p><p>硬件支持：通道和中断机构</p><p>前提：大内存</p><p>优点：提高资源利用率</p><h3 id="并发性与并行性"><a href="#并发性与并行性" class="headerlink" title="并发性与并行性"></a>并发性与并行性</h3><p>并发性：同一时间间隔内</p><p>并行性：同一时间</p><h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>只有OS中最基本的部分，提供最基本的核心功能</p><p>提供功能：</p><ul><li>进程（线程）管理</li><li>低级存储器管理</li><li>进程间通信管理</li><li>中断和陷入处理</li></ul><p>优点：</p><ul><li>提高OS的可拓展性</li><li>增强OS的可靠性</li><li>可移植性强</li><li>提供了对分布式系统的支持</li><li>融入了面向对象技术</li></ul><p>缺点：早期的微内核系统运行效率较低</p><h3 id="操作系统的运行环境"><a href="#操作系统的运行环境" class="headerlink" title="操作系统的运行环境"></a>操作系统的运行环境</h3><p>管态（核心态）目态（用户态）</p><p>特权指令：只能由操作系统才能执行的指令，如I&#x2F;O指令，内存清零指令，只能在核心态下执行</p><p>非特权指令：用户可以去执行的指令，在用户态下执行</p><h2 id="进程的描述和控制"><a href="#进程的描述和控制" class="headerlink" title="进程的描述和控制"></a>进程的描述和控制</h2><p>并行</p><p>为什么要引入进程？</p><p>为了并发执行</p><p>进程的构成</p><p>程序、数据和PCB</p><p>进程的三种基本状态及转换条件</p><ul><li>就绪</li><li>执行</li><li>阻塞</li></ul><p>PCB是进程存在的唯一标识</p><p>原语 进程控制</p><p>了解创建、终止、阻塞、唤醒，触发条件（选择、填空）</p><p>进程的同步</p><p>临界资源、临界区</p><p>临界资源（同步机制）使用原则</p><ul><li>空闲让进</li><li>忙则等待</li><li>有限等待</li><li>让权等待</li></ul><p>进程关系：同步（合作）、互斥（竞争资源）</p><p>记录型信号量（小题、大题）</p><p>PV原语（大题、不难但不是原题）</p><p>管程的组成部分、条件变量</p><p>经典进程的同步问题踩分点：</p><ol><li>设信号量（数量、类型、初值）</li><li>进程数量</li><li>p(wait)、v(signal)位置</li></ol><p>进程通信（1、2小题）</p><p>信箱、管道、消息传输对列</p><p>为什么要引入线程（引入）</p><p>线程和进程的关系</p><p>线程的实现方式</p><p>课后题根据重点选做</p><h2 id="处理机调度与死锁"><a href="#处理机调度与死锁" class="headerlink" title="处理机调度与死锁"></a>处理机调度与死锁</h2><p>调度层次</p><ul><li>高级调度（作业调度）</li><li>中级调度（内存调度）</li><li>低级调度（进程调度）</li></ul><p>作业调度算法（可能应用题）：</p><ul><li>先来先服务</li><li>短作业优先</li><li>优先级</li><li>高响应比优先</li></ul><p>进程调度算法</p><p>时间片轮转</p><p>死锁原因、必要条件、解决方法</p><p>安全状态、银行家算法、</p><p>打印机问题</p><h2 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h2><p>单一连续分区</p><p>固定分区</p><p>动态分区、分配算法</p><ul><li>首次适应</li><li>最佳</li><li>最坏</li></ul><p>判断伙伴</p><p>紧凑、拼接、前提条件有动态可重定位</p><p>上下界、限长</p><p>页式存储管理、地址变换（计算）</p><p>TLB、多级页表计算</p><p>段式、地址变换</p><p>段页式、地址变换</p><h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><p>局部性原理</p><p>虚拟页式、页表组成、存在位、访问位（简答）</p><p>虚拟段式</p><p>缺页中断和一般中断的不同</p><p>内存的分配策略（选择）</p><p>页面置换算法</p><p>工作集（选择）</p><h2 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h2><p>小题：</p><p>IO控制方式（小题）</p><p>通道</p><p>设备之间单通路与多通路</p><p>设备无关性</p><p>设备分配</p><p>大题：</p><p>Spooling的组成、共享打印机</p><p>缓冲引入、缓冲池工作原理</p><p>磁盘、磁盘访问时间、磁盘调度算法</p><ul><li>先来先访问</li><li>最短寻道时间</li><li>电梯（SCAN）</li><li>循环扫描（CSCAN）</li></ul><p>调度序列、移动磁道数</p><h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>文件的逻辑结构</p><p>流式文件</p><p>记录式文件</p><p>文件控制块、索引结点</p><p>文件共享</p><ul><li>基于结点</li><li>符号链接</li></ul><p>访问权限表</p><p>文件的物理结构</p><p>FAT</p><p>混合索引分配</p><h2 id="磁盘存储区的管理"><a href="#磁盘存储区的管理" class="headerlink" title="磁盘存储区的管理"></a>磁盘存储区的管理</h2><p>磁盘空间空闲管理</p><p>位示图（计算）</p><p>成组链接（解答）</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>OS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>OS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器学习与深度学习复习</title>
     <link href="/2023/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/"/>
     <url>/2023/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%A4%8D%E4%B9%A0/</url>
@@ -1452,9 +1477,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Lifecycles</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>Lifecycles</tag>
       
     </tags>
     
@@ -1510,9 +1535,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>DataBinding</tag>
+      
+      <tag>Architecture</tag>
       
       <tag>ViewModel</tag>
       
@@ -2293,11 +2318,11 @@
       
       <tag>Java</tag>
       
+      <tag>Sort</tag>
+      
       <tag>树</tag>
       
       <tag>Tree</tag>
-      
-      <tag>Sort</tag>
       
       <tag>Srarch</tag>
       
@@ -3540,22 +3565,22 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
