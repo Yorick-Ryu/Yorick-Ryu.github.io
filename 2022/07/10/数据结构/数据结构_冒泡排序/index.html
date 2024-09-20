@@ -21,11 +21,11 @@
     <meta name="description" content="冒泡排序基本介绍冒泡排序(Bubble Sorting)的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始），依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就像水底下的气泡一样逐渐向上冒。 因为排序的过程中，各元素不断接近自己的位置，如果一趟比较下来没有进行过交换，就说明序列有序。因此要在排序过程中设置一个标志flag判断元素是否进行过交换，从而减少不必要的比较">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冒泡排序">
-<meta property="og:url" content="http://yorick.love/2022/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:url" content="https://yorick-ryu.github.io/2022/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
 <meta property="og:description" content="冒泡排序基本介绍冒泡排序(Bubble Sorting)的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始），依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就像水底下的气泡一样逐渐向上冒。 因为排序的过程中，各元素不断接近自己的位置，如果一趟比较下来没有进行过交换，就说明序列有序。因此要在排序过程中设置一个标志flag判断元素是否进行过交换，从而减少不必要的比较">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
 <meta property="article:published_time" content="2022-07-10T04:34:58.000Z">
 <meta property="article:modified_time" content="2022-12-13T14:11:27.524Z">
 <meta property="article:author" content="Yorick">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="Sort">
 <meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/default.png">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
   
   
   
@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -408,7 +408,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>冒泡排序</div>
-      <div>http://yorick.love/2022/07/10/数据结构/数据结构_冒泡排序/</div>
+      <div>https://yorick-ryu.github.io/2022/07/10/数据结构/数据结构_冒泡排序/</div>
     </div>
     <div class="license-meta">
       
@@ -626,17 +626,6 @@
 </div>
 
   
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      苏ICP备2022048301号
-    </a>
-  </span>
-  
-</div>
-
   
   
 </div>

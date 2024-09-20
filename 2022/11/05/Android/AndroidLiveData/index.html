@@ -21,11 +21,11 @@
     <meta name="description" content="LiveDataLiveData  | Android Developers (google.cn) [TOC] LiveData的定义LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LiveData">
-<meta property="og:url" content="http://yorick.love/2022/11/05/Android/AndroidLiveData/index.html">
+<meta property="og:url" content="https://yorick-ryu.github.io/2022/11/05/Android/AndroidLiveData/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
 <meta property="og:description" content="LiveDataLiveData  | Android Developers (google.cn) [TOC] LiveData的定义LiveData 是一种可观察的数据存储器类。与常规的可观察类不同，LiveData 具有生命周期感知能力，意指它遵循其他应用组件（如 Activity、Fragment 或 Service）的生命周期。这种感知能力可确保 LiveData 仅更新处于活跃生命周期">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/android-jetpack.svg">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/android-jetpack.svg">
 <meta property="article:published_time" content="2022-11-05T12:42:55.000Z">
 <meta property="article:modified_time" content="2023-01-28T11:25:52.850Z">
 <meta property="article:author" content="Yorick">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="Architecture">
 <meta property="article:tag" content="LiveData">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/android-jetpack.svg">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/android-jetpack.svg">
   
   
   
@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -467,7 +467,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>LiveData</div>
-      <div>http://yorick.love/2022/11/05/Android/AndroidLiveData/</div>
+      <div>https://yorick-ryu.github.io/2022/11/05/Android/AndroidLiveData/</div>
     </div>
     <div class="license-meta">
       
@@ -521,8 +521,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/15/Kotlin/Kotlin%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7%E4%B8%8E%E5%8F%AF%E7%A9%BA%E6%80%A7/" title="Kotlin互操作性与可空性">
-                        <span class="hidden-mobile">Kotlin互操作性与可空性</span>
+                      <a href="/2022/11/05/Android/AndroidViewModel/" title="ViewModel">
+                        <span class="hidden-mobile">ViewModel</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -685,17 +685,6 @@
 </div>
 
   
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      苏ICP备2022048301号
-    </a>
-  </span>
-  
-</div>
-
   
   
 </div>

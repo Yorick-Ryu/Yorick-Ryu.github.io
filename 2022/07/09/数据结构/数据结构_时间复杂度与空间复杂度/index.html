@@ -21,17 +21,17 @@
     <meta name="description" content="时间复杂度与空间复杂度 时间复杂度与空间复杂度 度量程序(算法)执行时间的方法 事后统计 事前估算   时间频度 基本介绍 举例说明 时间频度的性质 忽略常数项 忽略高次项的系数和低次项     时间复杂度 常见的时间复杂度 常数阶 $O(1)$ 对数阶 $O(\log_{2}{n})$ 线性阶 $O(n)$ 线性对数阶 $O(n\log_{2}{n})$ 平方阶 $O(n^2)$ 立方阶 $O(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间复杂度与空间复杂度">
-<meta property="og:url" content="http://yorick.love/2022/07/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/index.html">
+<meta property="og:url" content="https://yorick-ryu.github.io/2022/07/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
 <meta property="og:description" content="时间复杂度与空间复杂度 时间复杂度与空间复杂度 度量程序(算法)执行时间的方法 事后统计 事前估算   时间频度 基本介绍 举例说明 时间频度的性质 忽略常数项 忽略高次项的系数和低次项     时间复杂度 常见的时间复杂度 常数阶 $O(1)$ 对数阶 $O(\log_{2}{n})$ 线性阶 $O(n)$ 线性对数阶 $O(n\log_{2}{n})$ 平方阶 $O(n^2)$ 立方阶 $O(">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/time_complexity.png">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/time_complexity.png">
 <meta property="article:published_time" content="2022-07-09T10:27:06.000Z">
 <meta property="article:modified_time" content="2022-12-13T14:11:10.770Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/time_complexity.png">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/time_complexity.png">
   
   
   
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -492,7 +492,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>时间复杂度与空间复杂度</div>
-      <div>http://yorick.love/2022/07/09/数据结构/数据结构_时间复杂度与空间复杂度/</div>
+      <div>https://yorick-ryu.github.io/2022/07/09/数据结构/数据结构_时间复杂度与空间复杂度/</div>
     </div>
     <div class="license-meta">
       
@@ -710,17 +710,6 @@
 </div>
 
   
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      苏ICP备2022048301号
-    </a>
-  </span>
-  
-</div>
-
   
   
 </div>

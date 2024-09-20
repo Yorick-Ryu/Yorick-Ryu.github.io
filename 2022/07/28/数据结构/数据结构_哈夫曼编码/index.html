@@ -21,11 +21,11 @@
     <meta name="description" content="哈夫曼编码 哈夫曼编码 基本介绍 实现思路 特点总结 最佳实践 数据压缩及解压 文件的压缩与解压 哈夫曼编码压缩文件注意事项      基本介绍（1）哈夫曼编码也翻译为哈夫曼编码(Huffman Coding)，又称霍夫曼编码，是一种编码方式，属于一种程序算法。 （2）哈夫曼编码是哈夫曼树在电讯通信中的经典的应用之一。 （3）哈夫曼编码广泛地用于数据文件压缩，其压缩率通常在20%~90%之间。 （">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哈夫曼编码">
-<meta property="og:url" content="http://yorick.love/2022/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/index.html">
+<meta property="og:url" content="https://yorick-ryu.github.io/2022/07/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
 <meta property="og:description" content="哈夫曼编码 哈夫曼编码 基本介绍 实现思路 特点总结 最佳实践 数据压缩及解压 文件的压缩与解压 哈夫曼编码压缩文件注意事项      基本介绍（1）哈夫曼编码也翻译为哈夫曼编码(Huffman Coding)，又称霍夫曼编码，是一种编码方式，属于一种程序算法。 （2）哈夫曼编码是哈夫曼树在电讯通信中的经典的应用之一。 （3）哈夫曼编码广泛地用于数据文件压缩，其压缩率通常在20%~90%之间。 （">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/default.png">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
 <meta property="article:published_time" content="2022-07-28T05:22:54.000Z">
 <meta property="article:modified_time" content="2022-12-13T14:16:07.369Z">
 <meta property="article:author" content="Yorick">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="Tree">
 <meta property="article:tag" content="Huffman">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/default.png">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
   
   
   
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -684,7 +684,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>哈夫曼编码</div>
-      <div>http://yorick.love/2022/07/28/数据结构/数据结构_哈夫曼编码/</div>
+      <div>https://yorick-ryu.github.io/2022/07/28/数据结构/数据结构_哈夫曼编码/</div>
     </div>
     <div class="license-meta">
       
@@ -902,17 +902,6 @@
 </div>
 
   
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      苏ICP备2022048301号
-    </a>
-  </span>
-  
-</div>
-
   
   
 </div>

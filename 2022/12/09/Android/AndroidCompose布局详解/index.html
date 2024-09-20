@@ -21,11 +21,11 @@
     <meta name="description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Compose布局详解">
-<meta property="og:url" content="http://yorick.love/2022/12/09/Android/AndroidCompose%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:url" content="https://yorick-ryu.github.io/2022/12/09/Android/AndroidCompose%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
 <meta property="og:description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yorick.love/img/image-20221209183304625.png">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/image-20221209183304625.png">
 <meta property="article:published_time" content="2022-12-09T10:29:00.000Z">
 <meta property="article:modified_time" content="2023-01-11T06:31:12.320Z">
 <meta property="article:author" content="Yorick">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="Compose">
 <meta property="article:tag" content="layout">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yorick.love/img/image-20221209183304625.png">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/image-20221209183304625.png">
   
   
   
@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yorick.love","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -673,7 +673,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Compose布局详解</div>
-      <div>http://yorick.love/2022/12/09/Android/AndroidCompose布局详解/</div>
+      <div>https://yorick-ryu.github.io/2022/12/09/Android/AndroidCompose布局详解/</div>
     </div>
     <div class="license-meta">
       
@@ -891,17 +891,6 @@
 </div>
 
   
-  
-    <!-- 备案信息 ICP for China -->
-    <div class="beian">
-  <span>
-    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-      苏ICP备2022048301号
-    </a>
-  </span>
-  
-</div>
-
   
   
 </div>
