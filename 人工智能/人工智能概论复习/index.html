@@ -18,16 +18,16 @@
   <meta name="author" content="Yorick">
   <meta name="keywords" content="">
   
-    <meta name="description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 K近邻(KNN) DBSCAN聚类 K均值(K-Means) 步骤 聚类中心   贝叶斯分类 朴树贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲线   欠拟合和过拟">
+    <meta name="description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 CART决策树   K近邻(KNN) DBSCAN聚类 K均值(K-Means) 步骤 聚类中心   贝叶斯分类 朴素贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能概论复习">
 <meta property="og:url" content="https://yorick-ryu.github.io/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Yorick Harbor">
-<meta property="og:description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 K近邻(KNN) DBSCAN聚类 K均值(K-Means) 步骤 聚类中心   贝叶斯分类 朴树贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲线   欠拟合和过拟">
+<meta property="og:description" content="人工智能概论复习 人工智能概论复习 人工智能概论 机器学习 概念 监督学习与无监督学习 特征工程 数据标准化 特性降维   线性回归 逻辑回归 决策树 CART决策树   K近邻(KNN) DBSCAN聚类 K均值(K-Means) 步骤 聚类中心   贝叶斯分类 朴素贝叶斯分类   支持向量机(SVM) 核函数 软间隔   集成学习 梯度下降 模型评估 MSE R方值 交叉熵 混淆矩阵 ROC曲">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yorick-ryu.github.io/img/image-20230214130706660.png">
 <meta property="article:published_time" content="2023-02-14T02:43:01.000Z">
-<meta property="article:modified_time" content="2023-02-23T10:01:53.023Z">
+<meta property="article:modified_time" content="2024-09-20T11:19:03.676Z">
 <meta property="article:author" content="Yorick">
 <meta property="article:tag" content="复习">
 <meta property="article:tag" content="课程笔记">
@@ -321,7 +321,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年2月23日 晚上
+                    本文最后更新于：2024年9月20日 晚上
                   
                 
               </p>
@@ -342,7 +342,10 @@
 </li>
 <li><a href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">线性回归</a></li>
 <li><a href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92">逻辑回归</a></li>
-<li><a href="#%E5%86%B3%E7%AD%96%E6%A0%91">决策树</a></li>
+<li><a href="#%E5%86%B3%E7%AD%96%E6%A0%91">决策树</a><ul>
+<li><a href="#cart%E5%86%B3%E7%AD%96%E6%A0%91">CART决策树</a></li>
+</ul>
+</li>
 <li><a href="#k%E8%BF%91%E9%82%BBknn">K近邻(KNN)</a></li>
 <li><a href="#dbscan%E8%81%9A%E7%B1%BB">DBSCAN聚类</a></li>
 <li><a href="#k%E5%9D%87%E5%80%BCk-means">K均值(K-Means)</a><ul>
@@ -351,7 +354,7 @@
 </ul>
 </li>
 <li><a href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">贝叶斯分类</a><ul>
-<li><a href="#%E6%9C%B4%E6%A0%91%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">朴树贝叶斯分类</a></li>
+<li><a href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">朴素贝叶斯分类</a></li>
 </ul>
 </li>
 <li><a href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BAsvm">支持向量机(SVM)</a><ul>
@@ -463,7 +466,7 @@
 <li>聚类：K均值(k-means)</li>
 </ul>
 <h3 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h3><h4 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h4><p>将样本数据的属性缩放到某个指定的范围</p>
-<p>（1）min-max标准化(归一化) </p>
+<p>（1）min-max标准化(归一化)</p>
 <p>（2）z-score标准化(规范化)</p>
 <p><img src="/./img/image-20230215182754216.png" srcset="/img/loading.gif" lazyload alt="image-20230215182754216"></p>
 <p>标准化的原因：</p>
@@ -545,7 +548,7 @@
 <p><strong>条件概率</strong>（客观事实）：根据已知结果去推测固有性质的可能性(likelihood)，是对固有性质的拟合程度。</p>
 <p><strong>先验概率</strong>（主观判断）：指根据常识、生活经验所观测到的“原因”的概率。</p>
 <p><strong>后验概率</strong>（最终结论）：指在知道“结果”之后，去推测“原因”的概率。</p>
-<h4 id="朴树贝叶斯分类"><a href="#朴树贝叶斯分类" class="headerlink" title="朴树贝叶斯分类"></a>朴树贝叶斯分类</h4><p><strong>假设条件</strong>：实例特征之间<strong>相互独立</strong></p>
+<h4 id="朴素贝叶斯分类"><a href="#朴素贝叶斯分类" class="headerlink" title="朴素贝叶斯分类"></a>朴素贝叶斯分类</h4><p><strong>假设条件</strong>：实例特征之间<strong>相互独立</strong></p>
 <p><img src="/./img/image-20230219190817960.png" srcset="/img/loading.gif" lazyload alt="image-20230219190817960"></p>
 <p>示例：计算实例点x &#x3D; (2, S)的类别</p>
 <p><img src="/./img/image-20230215190417361.png" srcset="/img/loading.gif" lazyload alt="image-20230215190417361"></p>
@@ -805,8 +808,6 @@ wine = load_wine()</code></pre></div>
 <p>分割测试集数据和训练集数据</p>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn <span class="hljs-keyword">import</span> model_selection
 X_train, X_test, y_train, y_test = train_test_split(train_data, train_target, test_size, random_state，shuffle)</code></pre></div>
-
-
 
 <h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/numpy/numpy-array-manipulation.html">Numpy 数组操作</a></p>
 <h3 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/geek64581/article/details/106241522">Matplotlib常见图形绘制(折线图、散点图 、柱状图 、直方图 、饼图 、条形图)</a></p>
