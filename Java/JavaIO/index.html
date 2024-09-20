@@ -108,7 +108,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -398,7 +398,7 @@
 <li>处理流:对一个已存在的流进行连接和封装，通过封装后的流来实现数据读&#x2F;写操作</li>
 </ul>
 <p>IO流体系<br><img src="/./img/IOStream.png" srcset="/img/loading.gif" lazyload alt="IO流体系"></p>
-<h3 id="lnputStream-amp-Reader"><a href="#lnputStream-amp-Reader" class="headerlink" title="lnputStream &amp; Reader"></a>lnputStream &amp; Reader</h3><p>InputStream和 Reader是所有输入流的基类。<br>InputStream(典型实现:FileInputStream ) :</p>
+<h3 id="lnputStream-Reader"><a href="#lnputStream-Reader" class="headerlink" title="lnputStream &amp; Reader"></a>lnputStream &amp; Reader</h3><p>InputStream和 Reader是所有输入流的基类。<br>InputStream(典型实现:FileInputStream ) :</p>
 <div class="code-wrapper"><pre><code class="hljs java">- <span class="hljs-type">int</span> <span class="hljs-title function_">read</span><span class="hljs-params">()</span>
 - <span class="hljs-type">int</span> <span class="hljs-title function_">read</span><span class="hljs-params">(<span class="hljs-type">byte</span>[] b)</span>
 - <span class="hljs-type">int</span> <span class="hljs-title function_">read</span><span class="hljs-params">(<span class="hljs-type">byte</span>[] b, <span class="hljs-type">int</span> off, <span class="hljs-type">int</span> len)</span></code></pre></div>
@@ -458,7 +458,7 @@
         &#125;
     &#125;
 &#125;</code></pre></div>
-<h3 id="OutputStream-amp-Writer"><a href="#OutputStream-amp-Writer" class="headerlink" title="OutputStream &amp; Writer"></a>OutputStream &amp; Writer</h3><p>OutputStream和Writer也非常相似:</p>
+<h3 id="OutputStream-Writer"><a href="#OutputStream-Writer" class="headerlink" title="OutputStream &amp; Writer"></a>OutputStream &amp; Writer</h3><p>OutputStream和Writer也非常相似:</p>
 <div class="code-wrapper"><pre><code class="hljs java">- <span class="hljs-keyword">void</span> <span class="hljs-title function_">write</span><span class="hljs-params">(<span class="hljs-type">byte</span> write/<span class="hljs-type">int</span> c)</span>
 - <span class="hljs-keyword">void</span> []/<span class="hljs-type">char</span>[] buff)
 - <span class="hljs-keyword">void</span> <span class="hljs-title function_">write</span><span class="hljs-params">(<span class="hljs-type">byte</span>[]/<span class="hljs-type">char</span>[] buff, <span class="hljs-type">int</span> off, <span class="hljs-type">int</span> len)</span>;</code></pre></div>

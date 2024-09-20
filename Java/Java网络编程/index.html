@@ -110,7 +110,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -354,7 +354,7 @@
 <li>OSI参考模型:模型过于理想化，未能在因特网上进行广泛推广</li>
 <li>TCP&#x2F;IP参考模型(或TCPAIP协议)：事实上的国际标准。</li>
 </ul>
-<h2 id="TCP-x2F-IP编程基础"><a href="#TCP-x2F-IP编程基础" class="headerlink" title="TCP&#x2F;IP编程基础"></a>TCP&#x2F;IP编程基础</h2><h3 id="lnetAdress类"><a href="#lnetAdress类" class="headerlink" title="lnetAdress类"></a>lnetAdress类</h3><p>InetAddress类对象含有一个Internet主机地址的域名和IP地址:<code>www.yorick.com/101.43.43.234</code></p>
+<h2 id="TCP-IP编程基础"><a href="#TCP-IP编程基础" class="headerlink" title="TCP&#x2F;IP编程基础"></a>TCP&#x2F;IP编程基础</h2><h3 id="lnetAdress类"><a href="#lnetAdress类" class="headerlink" title="lnetAdress类"></a>lnetAdress类</h3><p>InetAddress类对象含有一个Internet主机地址的域名和IP地址:<code>www.yorick.com/101.43.43.234</code></p>
 <div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">InetAddress</span> <span class="hljs-variable">address</span> <span class="hljs-operator">=</span> InetAddress.getByName(<span class="hljs-string">&quot;www.yorick.com&quot;</span>);
 System.out.println(address);
 <span class="hljs-type">InetAddress</span> <span class="hljs-variable">address1</span> <span class="hljs-operator">=</span> InetAddress.getLocalHost();
@@ -447,7 +447,7 @@ System.out.println(address1);
     socket.close();
 &#125;</code></pre></div>
 
-<h2 id="URL-amp-URLConnection"><a href="#URL-amp-URLConnection" class="headerlink" title="URL &amp; URLConnection"></a>URL &amp; URLConnection</h2><p>URL (Uniform Resource Locator) ：统一资源定位符，它表示 Internet上某一资源的地址。通过URL我们可以访问Internet 上的各种网络资源，比如最常见的www , ftp站点。浏览器通过解析给定的URL可以在网络上查找相应的文件或其他资源。</p>
+<h2 id="URL-URLConnection"><a href="#URL-URLConnection" class="headerlink" title="URL &amp; URLConnection"></a>URL &amp; URLConnection</h2><p>URL (Uniform Resource Locator) ：统一资源定位符，它表示 Internet上某一资源的地址。通过URL我们可以访问Internet 上的各种网络资源，比如最常见的www , ftp站点。浏览器通过解析给定的URL可以在网络上查找相应的文件或其他资源。</p>
 <p>URL的基本结构由5部分组成：</p>
 <ul>
 <li>&lt;传输协议&gt;:&#x2F;&#x2F;&lt;主机名&gt;:&lt;端口号&gt;&#x2F;&lt;文件名&gt;</li>

@@ -29,8 +29,8 @@
 <meta property="article:published_time" content="2022-09-12T07:24:21.000Z">
 <meta property="article:modified_time" content="2022-12-18T04:22:40.110Z">
 <meta property="article:author" content="Yorick">
-<meta property="article:tag" content="泛型">
 <meta property="article:tag" content="Generic">
+<meta property="article:tag" content="泛型">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yorick-ryu.github.io/img/in_out.png">
   
@@ -108,7 +108,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -568,7 +568,7 @@
     <span class="hljs-keyword">val</span> consumer3: Consumer&lt;Burger&gt; = American()
 &#125;</code></pre></div>
 
-<h3 id="为什么使用in-amp-out"><a href="#为什么使用in-amp-out" class="headerlink" title="为什么使用in&amp;out"></a>为什么使用in&amp;out</h3><p>父类泛型对象可以赋值给子类泛型对象，用in。<br>子类泛型对象可以赋值给父类泛型对象，用out。</p>
+<h3 id="为什么使用in-out"><a href="#为什么使用in-out" class="headerlink" title="为什么使用in&amp;out"></a>为什么使用in&amp;out</h3><p>父类泛型对象可以赋值给子类泛型对象，用in。<br>子类泛型对象可以赋值给父类泛型对象，用out。</p>
 <p><img src="/./img/in_out.png" srcset="/img/loading.gif" lazyload alt="in&amp;out"></p>
 <h3 id="reified"><a href="#reified" class="headerlink" title="reified"></a>reified</h3><p>有时候，你可能想知道某个泛型参数具体是什么类型，reified关键字能帮你检查泛型参数类型。Kotlin不允许对泛型参数T做类型检查，因为泛型参数类型会被类型擦除，也就是说，T的类型信息在运行时是不可知的。</p>
 <p>人话：配合内联使用，加了reified关键字，就可以使用is判断类型了。</p>
@@ -642,9 +642,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B3%9B%E5%9E%8B/">#泛型</a>
-      
         <a href="/tags/Generic/">#Generic</a>
+      
+        <a href="/tags/%E6%B3%9B%E5%9E%8B/">#泛型</a>
       
     </div>
   

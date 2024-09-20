@@ -107,7 +107,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -345,8 +345,8 @@
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>(<span class="hljs-title class_ inherited__">object</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, score</span>):
-        self.name = name
-        self.score = score</code></pre></div>
+        <span class="hljs-variable language_">self</span>.name = name
+        <span class="hljs-variable language_">self</span>.score = score</code></pre></div>
 <p>注意：<code>__init()__</code>方法的第一个参数永远是<code>self</code>，表示创建的实例本身。  </p>
 <p>有了<code>__init__</code>方法，在创建实例的时候，就不能传入空的参数了，必须传入与<code>__init__</code>方法匹配的参数，但<code>self</code>不需要传，Python解释器自己会把实例变量传进去：</p>
 <div class="code-wrapper"><pre><code class="hljs py">yorick = Student(<span class="hljs-string">&#x27;Yorick&#x27;</span>,<span class="hljs-number">88</span>)
@@ -375,7 +375,7 @@ h.hello(<span class="hljs-string">&#x27;Yorick&#x27;</span>)
 <span class="hljs-comment"># 按照习惯，metaclass的类名总是以Metaclass结尾</span>
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">ListMetaclass</span>(<span class="hljs-title class_ inherited__">type</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, name, bases, attrs</span>):
-        attrs[<span class="hljs-string">&#x27;add&#x27;</span>] = <span class="hljs-keyword">lambda</span> self, value: self.append(value)
+        attrs[<span class="hljs-string">&#x27;add&#x27;</span>] = <span class="hljs-keyword">lambda</span> <span class="hljs-variable language_">self</span>, value: <span class="hljs-variable language_">self</span>.append(value)
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">type</span>.__new__(cls, name, bases, attrs)</code></pre></div>
 <p><code>__new__</code>方法接收到的参数依次是：</p>
 <ol>

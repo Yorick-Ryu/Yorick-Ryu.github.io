@@ -108,7 +108,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -813,54 +813,56 @@ Thread_1 : <span class="hljs-number">33</span></code></pre></div>
 <ul>
 <li>唤醒所有由于使用这个同步方法而处于等待的线程结束等待<br>实例：刘关张买票，票价五元一张，售票员只有五元零钱，张飞有二十元整钱，刘关各有五元</li>
 </ul>
-<p>&#96;&#96;&#96;java<br>public class TicketHouse implements Runnable {</p>
-<div class="code-wrapper"><pre><code class="hljs">private int fiveCount = 1, tenCount = 0, twentyCount = 0;
+<div class="code-wrapper"><pre><code class="java">public class TicketHouse implements Runnable &#123;
 
-public synchronized void buy() &#123;
+    private int fiveCount = 1, tenCount = 0, twentyCount = 0;
 
-    String name = Thread.currentThread().getName();
+    public synchronized void buy() &#123;
 
-    if (&quot;zf&quot;.equals(name)) &#123;
-        if (fiveCount &lt; 3) &#123;
-            try &#123;
-                System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，张飞必须等待&quot;);
-                wait();
-                System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，卖一张票给张飞，找零 15&quot;);
-            &#125; catch (InterruptedException e) &#123;
-                e.printStackTrace();
+        String name = Thread.currentThread().getName();
+
+        if (&quot;zf&quot;.equals(name)) &#123;
+            if (fiveCount &lt; 3) &#123;
+                try &#123;
+                    System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，张飞必须等待&quot;);
+                    wait();
+                    System.out.println(&quot;五元面值 &quot; + fiveCount + &quot; 张，卖一张票给张飞，找零 15&quot;);
+                &#125; catch (InterruptedException e) &#123;
+                    e.printStackTrace();
+                &#125;
             &#125;
+        &#125; else if (&quot;gy&quot;.equals(name)) &#123;
+            fiveCount++;
+            System.out.println(&quot;卖一张票给关羽，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
+        &#125; else if (&quot;lb&quot;.equals(name)) &#123;
+            fiveCount++;
+            System.out.println(&quot;卖一张票给刘备，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
         &#125;
-    &#125; else if (&quot;gy&quot;.equals(name)) &#123;
-        fiveCount++;
-        System.out.println(&quot;卖一张票给关羽，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
-    &#125; else if (&quot;lb&quot;.equals(name)) &#123;
-        fiveCount++;
-        System.out.println(&quot;卖一张票给刘备，钱正好，&quot; + &quot;五元面值 &quot; + fiveCount + &quot; 张&quot;);
+        //唤醒
+        if (fiveCount == 3)
+            notifyAll();
     &#125;
-    //唤醒
-    if (fiveCount == 3)
-        notifyAll();
-&#125;
 
-@Override
-public void run() &#123;
-    buy();
-&#125;
+    @Override
+    public void run() &#123;
+        buy();
+    &#125;
 
-public static void main(String[] args) &#123;
-    Runnable runnable = new TicketHouse();
-    Thread th1 = new Thread(runnable);
-    th1.setName(&quot;zf&quot;);
-    Thread th2 = new Thread(runnable);
-    th2.setName(&quot;gy&quot;);
-    Thread th3 = new Thread(runnable);
-    th3.setName(&quot;lb&quot;);
-    th1.start();
-    th2.start();
-    th3.start();
+    public static void main(String[] args) &#123;
+        Runnable runnable = new TicketHouse();
+        Thread th1 = new Thread(runnable);
+        th1.setName(&quot;zf&quot;);
+        Thread th2 = new Thread(runnable);
+        th2.setName(&quot;gy&quot;);
+        Thread th3 = new Thread(runnable);
+        th3.setName(&quot;lb&quot;);
+        th1.start();
+        th2.start();
+        th3.start();
+    &#125;
 &#125;
+``
 </code></pre></div>
-<p>}<br>&#96;&#96;</p>
 
                 
               </div>

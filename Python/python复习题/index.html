@@ -107,7 +107,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -446,21 +446,21 @@ num = <span class="hljs-number">0</span>
 <p>4、编程实现(三选一)：<br>定义一个三角形类，输入三条边，判断能否构成三角形，如果能，计算并输出三角<br>形的面积，否则返回0。假设三角形三条边分别为a、 b、c，则周长的一半s&#x3D;(a+ b<br>+c)&#x2F;2，面积area&#x3D;√s*(s-a)*(s-b)*(s-c)。</p>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">triangle</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, a, b, c</span>):
-        self.a = a
-        self.b = b
-        self.c = c
-        self.s = (a + b + c) / <span class="hljs-number">2</span>
+        <span class="hljs-variable language_">self</span>.a = a
+        <span class="hljs-variable language_">self</span>.b = b
+        <span class="hljs-variable language_">self</span>.c = c
+        <span class="hljs-variable language_">self</span>.s = (a + b + c) / <span class="hljs-number">2</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">canTri</span>(<span class="hljs-params">self, a, b, c</span>) -&gt; <span class="hljs-built_in">bool</span>:
         <span class="hljs-keyword">return</span> a + b &gt; c <span class="hljs-keyword">and</span> b + c &gt; a <span class="hljs-keyword">and</span> a + c &gt; b
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getArea</span>(<span class="hljs-params">self, a, b, c</span>) -&gt; <span class="hljs-built_in">float</span>:
-        s = self.s
+        s = <span class="hljs-variable language_">self</span>.s
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(s * (s - a) * (s - b) * (s - c), <span class="hljs-number">0.5</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getRes</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">float</span>:
-        <span class="hljs-keyword">if</span> self.canTri(self.a, self.b, self.c):
-            <span class="hljs-keyword">return</span> self.getArea(self.a, self.b, self.c)
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.canTri(<span class="hljs-variable language_">self</span>.a, <span class="hljs-variable language_">self</span>.b, <span class="hljs-variable language_">self</span>.c):
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.getArea(<span class="hljs-variable language_">self</span>.a, <span class="hljs-variable language_">self</span>.b, <span class="hljs-variable language_">self</span>.c)
         <span class="hljs-keyword">else</span>:
             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
 
@@ -489,24 +489,24 @@ tri = triangle(<span class="hljs-number">3</span>, <span class="hljs-number">4</
 <p>7、重写加减乘除运算符合</p>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyNumber</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, v</span>) -&gt; <span class="hljs-literal">None</span>:
-        self.data = v
+        <span class="hljs-variable language_">self</span>.data = v
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
-        v = self.data + other.data
+        v = <span class="hljs-variable language_">self</span>.data + other.data
         <span class="hljs-keyword">return</span> MyNumber(v)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__sub__</span>(<span class="hljs-params">self, other</span>):
-        v = self.data - other.data
+        v = <span class="hljs-variable language_">self</span>.data - other.data
         <span class="hljs-keyword">return</span> MyNumber(v)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__mul__</span>(<span class="hljs-params">self, other</span>):
-        <span class="hljs-keyword">return</span> MyNumber(self.data * other.data)
+        <span class="hljs-keyword">return</span> MyNumber(<span class="hljs-variable language_">self</span>.data * other.data)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__truediv__</span>(<span class="hljs-params">self, other</span>):
-        <span class="hljs-keyword">return</span> MyNumber(self.data / other.data)
+        <span class="hljs-keyword">return</span> MyNumber(<span class="hljs-variable language_">self</span>.data / other.data)
     
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(self.data)
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(<span class="hljs-variable language_">self</span>.data)
 
 
 n1 = MyNumber(<span class="hljs-number">100</span>)
@@ -532,17 +532,17 @@ n2 = MyNumber(<span class="hljs-number">200</span>)
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, x, y</span>):
-        self.x = x
-        self.y = y
+        <span class="hljs-variable language_">self</span>.x = x
+        <span class="hljs-variable language_">self</span>.y = y
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, p</span>):
-        <span class="hljs-keyword">return</span> Point(self.x + p.x, self.y + p.y)
+        <span class="hljs-keyword">return</span> Point(<span class="hljs-variable language_">self</span>.x + p.x, <span class="hljs-variable language_">self</span>.y + p.y)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__sub__</span>(<span class="hljs-params">self, p</span>):
-        <span class="hljs-keyword">return</span> Point(self.x - p.x, self.y - p.y)
+        <span class="hljs-keyword">return</span> Point(<span class="hljs-variable language_">self</span>.x - p.x, <span class="hljs-variable language_">self</span>.y - p.y)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__lt__</span>(<span class="hljs-params">self, p</span>):
-        <span class="hljs-keyword">return</span> ((<span class="hljs-built_in">pow</span>(self.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(self.y, <span class="hljs-number">2</span>)) - (<span class="hljs-built_in">pow</span>(p.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(p.y, <span class="hljs-number">2</span>))) &lt; <span class="hljs-number">0</span>
+        <span class="hljs-keyword">return</span> ((<span class="hljs-built_in">pow</span>(<span class="hljs-variable language_">self</span>.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(<span class="hljs-variable language_">self</span>.y, <span class="hljs-number">2</span>)) - (<span class="hljs-built_in">pow</span>(p.x, <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>(p.y, <span class="hljs-number">2</span>))) &lt; <span class="hljs-number">0</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
         <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;(<span class="hljs-subst">&#123;self.x&#125;</span>,<span class="hljs-subst">&#123;self.y&#125;</span>)&quot;</span>
@@ -560,13 +560,13 @@ p4 = p1 - p2
 <p>10、编程，为二次方程式ax2+bx+c&#x3D;0设计一个名Equation 的类，判别方程有无实数解，并求解。</p>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Equation</span>(<span class="hljs-title class_ inherited__">object</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, a, b, c</span>):
-        self.a = <span class="hljs-built_in">float</span>(a)
-        self.b = <span class="hljs-built_in">float</span>(b)
-        self.c = <span class="hljs-built_in">float</span>(c)
-        self.e = self.b**<span class="hljs-number">2</span> - (<span class="hljs-number">4</span> * self.a * self.c)
+        <span class="hljs-variable language_">self</span>.a = <span class="hljs-built_in">float</span>(a)
+        <span class="hljs-variable language_">self</span>.b = <span class="hljs-built_in">float</span>(b)
+        <span class="hljs-variable language_">self</span>.c = <span class="hljs-built_in">float</span>(c)
+        <span class="hljs-variable language_">self</span>.e = <span class="hljs-variable language_">self</span>.b**<span class="hljs-number">2</span> - (<span class="hljs-number">4</span> * <span class="hljs-variable language_">self</span>.a * <span class="hljs-variable language_">self</span>.c)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getRes</span>(<span class="hljs-params">self</span>):
-        a, b, c, e = self.a, self.b, self.c, self.e
+        a, b, c, e = <span class="hljs-variable language_">self</span>.a, <span class="hljs-variable language_">self</span>.b, <span class="hljs-variable language_">self</span>.c, <span class="hljs-variable language_">self</span>.e
         <span class="hljs-keyword">if</span> e &lt; <span class="hljs-number">0</span>:
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;无解&quot;</span>)
         <span class="hljs-keyword">elif</span> e == <span class="hljs-number">0</span>:
@@ -586,15 +586,15 @@ equation.getRes()</code></pre></div>
 </ol>
 <div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age, *score</span>):
-        self.__name = name
-        self.__age = age
-        self.__score = score
+        <span class="hljs-variable language_">self</span>.__name = name
+        <span class="hljs-variable language_">self</span>.__age = age
+        <span class="hljs-variable language_">self</span>.__score = score
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getName</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> self.__name
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__name
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getAge</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> self.__age
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__age
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getScore</span>(<span class="hljs-params">self</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;最高分：<span class="hljs-subst">&#123;<span class="hljs-built_in">max</span>(self.__score):<span class="hljs-number">.2</span>f&#125;</span>&quot;</span>)
@@ -610,13 +610,13 @@ student1.getScore()</code></pre></div>
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span>:
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, radius</span>):
-        self.radius = radius
+        <span class="hljs-variable language_">self</span>.radius = radius
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getCircumference</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * math.pi * self.radius
+        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * math.pi * <span class="hljs-variable language_">self</span>.radius
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">getArea</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> math.pi * self.radius**<span class="hljs-number">2</span>
+        <span class="hljs-keyword">return</span> math.pi * <span class="hljs-variable language_">self</span>.radius**<span class="hljs-number">2</span>
 
 circle1 = Circle(<span class="hljs-number">4</span>)
 <span class="hljs-built_in">print</span>(circle1.getCircumference())

@@ -106,7 +106,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -333,8 +333,8 @@
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>(<span class="hljs-title class_ inherited__">object</span>):
   
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age</span>):
-        self.name = name
-        self.age = age
+        <span class="hljs-variable language_">self</span>.name = name
+        <span class="hljs-variable language_">self</span>.age = age
      
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, name, age</span>):
         <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt; age &lt; <span class="hljs-number">150</span>:
@@ -344,7 +344,7 @@
             <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
   
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#123;0&#125;(&#123;1&#125;)&#x27;</span>.<span class="hljs-built_in">format</span>(self.__class__.__name__, self.__dict__)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#123;0&#125;(&#123;1&#125;)&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-variable language_">self</span>.__class__.__name__, <span class="hljs-variable language_">self</span>.__dict__)
   
 <span class="hljs-built_in">print</span>(Person(<span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-number">10</span>))
 <span class="hljs-built_in">print</span>(Person(<span class="hljs-string">&#x27;Mike&#x27;</span>, <span class="hljs-number">200</span>))</code></pre></div>

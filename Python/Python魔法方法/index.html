@@ -106,7 +106,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -349,11 +349,11 @@
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span>(<span class="hljs-title class_ inherited__">object</span>):
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,name,weight</span>):
-        self.name = name
-        self.weight = weight
+        <span class="hljs-variable language_">self</span>.name = name
+        <span class="hljs-variable language_">self</span>.weight = weight
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#123;&#125;:&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(self.name,self.weight)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&#123;&#125;:&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-variable language_">self</span>.name,<span class="hljs-variable language_">self</span>.weight)
 
 <span class="hljs-built_in">print</span>(Apple(<span class="hljs-string">&#x27;A&#x27;</span>,<span class="hljs-string">&#x27;30g&#x27;</span>))
 <span class="hljs-comment"># 输出；A:30g</span></code></pre></div>
@@ -366,20 +366,20 @@
 <div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span>(<span class="hljs-title class_ inherited__">object</span>):
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, weight</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;进入__init__初始化对象属性&quot;</span>)
-        self.name = name
-        self.weight = weight
+        <span class="hljs-variable language_">self</span>.name = name
+        <span class="hljs-variable language_">self</span>.weight = weight
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getattr__</span>(<span class="hljs-params">self, attr</span>):
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;不存在&#123;&#125;属性&quot;</span>.<span class="hljs-built_in">format</span>(attr)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__setattr__</span>(<span class="hljs-params">self, name, value</span>):
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在生成实例化对象的&#123;&#125;属性，值为&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(name, value))
-        <span class="hljs-built_in">object</span>.__setattr__(self, name, value)
+        <span class="hljs-built_in">object</span>.__setattr__(<span class="hljs-variable language_">self</span>, name, value)
         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;正在生成实例化对象的&#123;&#125;属性，值为&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(name, value)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__delattr__</span>(<span class="hljs-params">self, attr: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在删除&#123;&#125;属性&quot;</span>.<span class="hljs-built_in">format</span>(attr))
-        <span class="hljs-built_in">object</span>.__delattr__(self, attr)
+        <span class="hljs-built_in">object</span>.__delattr__(<span class="hljs-variable language_">self</span>, attr)
 
 
 a = Apple(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;30g&quot;</span>)
