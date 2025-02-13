@@ -4,13 +4,27 @@
   
   
   <entry>
-    <title></title>
+    <title>DeepSeek白嫖指南</title>
     <link href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/"/>
     <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/</url>
     
     <content type="html"><![CDATA[<h1 id="DeepSeek白嫖指南"><a href="#DeepSeek白嫖指南" class="headerlink" title="DeepSeek白嫖指南"></a>DeepSeek白嫖指南</h1><table><thead><tr><th align="left">平台</th><th align="left">免费额度（Tokens）</th><th align="left">获取链接</th><th>接口地址（base_url）</th><th>模型名称（model）</th><th>文档</th></tr></thead><tbody><tr><td align="left">DeepSeek官方</td><td align="left">10元免费额度，折算500万</td><td align="left"><a href="https://platform.deepseek.com/api_keys">点击跳转</a></td><td><a href="https://api.deepseek.com/">https://api.deepseek.com</a></td><td>deepseek-chat或deepseek-reasoner</td><td><a href="https://api-docs.deepseek.com/zh-cn/">点击跳转</a></td></tr><tr><td align="left">硅基流动</td><td align="left">14元免费额度，折算2000万</td><td align="left"><a href="https://cloud.siliconflow.cn/i/23c6QiTj">点击跳转</a></td><td><a href="https://api.siliconflow.cn/">https://api.siliconflow.cn</a></td><td>deepseek-ai&#x2F;DeepSeek-R1或deepseek-ai&#x2F;DeepSeek-V3</td><td><a href="https://docs.siliconflow.cn/capabilities/reasoning">点击跳转</a></td></tr><tr><td align="left">华为云</td><td align="left">R1和V3各200万</td><td align="left"><a href="https://console.huaweicloud.com/modelarts/?region=cn-southwest-2#/model-studio/deployment">点击跳转</a></td><td>官网查看</td><td>DeepSeek-R1或DeepSeek-V3</td><td><a href="https://support.huaweicloud.com/usermanual-maas-modelarts/maas-modelarts-0010.html">点击跳转</a></td></tr><tr><td align="left">阿里云</td><td align="left">R1和V3各1000万，限开通后半年内</td><td align="left"><a href="https://bailian.console.aliyun.com/">点击跳转</a></td><td><a href="https://dashscope.aliyuncs.com/compatible-mode/v1/">https://dashscope.aliyuncs.com/compatible-mode/v1/</a></td><td>deepseek-r1、deepseek-v3、deepseek-r1-distill-qwen-1.5b、deepseek-r1-distill-llama-8b、deepseek-r1-distill-llama-70b（免费）</td><td><a href="https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key">点击跳转</a></td></tr><tr><td align="left">腾讯云</td><td align="left">无限制，截止2月25日23:59:59</td><td align="left"><a href="https://console.cloud.tencent.com/lkeap/api">点击跳转</a></td><td><a href="https://api.lkeap.cloud.tencent.com/">https://api.lkeap.cloud.tencent.com</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.tencent.com/document/product/1772/115963">点击跳转</a></td></tr><tr><td align="left">百度云</td><td align="left">无限制，截止2月18日23:59:59</td><td align="left"><a href="https://console.bce.baidu.com/qianfan/ais/console/onlineTest/LLM/DeepSeek-R1">点击跳转</a></td><td><a href="https://qianfan.baidubce.com/v2/">https://qianfan.baidubce.com/v2/</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Fm2vrveyu">点击跳转</a></td></tr><tr><td align="left">火山</td><td align="left">R1和V3各50万</td><td align="left"><a href="https://www.volcengine.com/product/ark">点击跳转</a></td><td><a href="https://ark.cn-beijing.volces.com/api/v3/chat/completions">https://ark.cn-beijing.volces.com/api/v3/chat/completions</a></td><td>官网查看你的接入点ID，YOUR_ENDPOINT_ID</td><td><a href="https://www.volcengine.com/docs/82379/1449737">点击跳转</a></td></tr><tr><td align="left">天翼云</td><td align="left">2500万</td><td align="left"><a href="https://huiju.ctyun.cn/modelSquare">点击跳转</a></td><td><a href="https://wishub-x1.ctyun.cn/">https://wishub-x1.ctyun.cn</a></td><td>DeepSeek-R1-昇腾版：4bd107bff85941239e27b1509eccfe98 DeepSeek-R1-英伟达版：7ba7726dad4c4ea4ab7f39c7741ae</td><td><a href="https://huiju.ctyun.cn/modelSquare/4bd107bff85941239e27b1509eccfe98?regionId=200000001852&tab=API_DOCUMENT">点击跳转</a></td></tr><tr><td align="left">英伟达</td><td align="left">1000次调用</td><td align="left"><a href="https://build.nvidia.com/deepseek-ai/deepseek-r1">点击跳转</a></td><td><a href="https://integrate.api.nvidia.com/">https://integrate.api.nvidia.com</a></td><td>deepseek-ai&#x2F;deepseek-r1</td><td><a href="https://docs.api.nvidia.com/nim/reference/deepseek-ai-deepseek-r1-infer">点击跳转</a></td></tr><tr><td align="left">Github</td><td align="left"><a href="https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits">https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits</a></td><td align="left"><a href="https://github.com/marketplace/models/azureml-deepseek/DeepSeek-R1/playground">点击跳转</a></td><td><a href="https://models.inference.ai.azure.com/">https://models.inference.ai.azure.com/</a></td><td>DeepSeek-R1</td><td><a href="https://learn.microsoft.com/zh-cn/python/api/overview/azure/ai-inference-readme?view=azure-python-preview">点击跳转</a></td></tr><tr><td align="left">浮点奇迹</td><td align="left">R1和R1联网版每日各20次</td><td align="left"><a href="https://dazi.co/login?i=3dcee729">点击跳转</a></td><td>不支持API调用</td><td>\</td><td>\</td></tr></tbody></table><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li><p>点击获取链接完成注册登录创建应用等操作并获取API KEY（可以通过查看文档找到获取方法）</p></li><li><p>复制API KEY到Cherry Studio（没有就去下载：<a href="https://cherry-ai.com/%EF%BC%89">https://cherry-ai.com/）</a></p></li><li><p>点击设置</p><p><img src="/./img/image-20250210202730839.png" alt="image-20250210202730839"></p></li><li><p>找到对应的模型供应商</p><p><img src="/./img/image-20250210203016426.png" alt="image-20250210203016426"></p><p>没有则添加，输入供应商名称，如百度，点击确定</p><p><img src="/./img/image-20250210203059858.png" alt="image-20250210203059858"></p></li><li><p>填入API KEY和API地址</p><p><img src="/./img/image-20250210203329040.png" alt="image-20250210203329040"></p></li><li><p>点击添加</p><p><img src="/./img/image-20250210203413898.png" alt="image-20250210203413898"></p></li><li><p>输入模型ID，点击添加模型</p><p><img src="/./img/image-20250210203546272.png" alt="image-20250210203546272"></p></li><li><p>点击检查，选择刚刚添加的模型ID，点击确定，出现“连接成功”即成功</p><p><img src="/./img/image-20250210203643977.png" alt="image-20250210203643977"></p><p><img src="/./img/image-20250210203804639.png" alt="image-20250210203804639"></p><p><img src="/./img/image-20250210203858755.png" alt="image-20250210203858755"></p></li></ol>]]></content>
     
     
+    <categories>
+      
+      <category>人工智能</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>DeepSeek</tag>
+      
+    </tags>
     
   </entry>
   
@@ -83,11 +97,11 @@
     
     <tags>
       
+      <tag>ML</tag>
+      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
-      
-      <tag>ML</tag>
       
       <tag>DL</tag>
       
@@ -218,11 +232,11 @@
     
     <tags>
       
+      <tag>ML</tag>
+      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
-      
-      <tag>ML</tag>
       
     </tags>
     
@@ -403,13 +417,13 @@
     
     <tags>
       
-      <tag>课程笔记</tag>
-      
-      <tag>AI</tag>
-      
       <tag>ML</tag>
       
       <tag>线性回归</tag>
+      
+      <tag>课程笔记</tag>
+      
+      <tag>AI</tag>
       
     </tags>
     
@@ -434,11 +448,11 @@
     
     <tags>
       
+      <tag>ML</tag>
+      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
-      
-      <tag>ML</tag>
       
       <tag>机器学习</tag>
       
@@ -680,33 +694,6 @@
   
   
   <entry>
-    <title>Android可视化UI设计</title>
-    <link href="/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/"/>
-    <url>/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p><h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p><h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol><li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p><p><img src="/./img/image-20221104183622446.png" alt="image-20221104183622446"></p><p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p><p><img src="/./img/image-20221104182427025.png" alt="image-20221104182427025"></p><p>查看生成的代码</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;TextView&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span> // <span class="hljs-attr">代表控件底部在父布局的底部</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div><p>若我们拖动控件，则会增加如下代码：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div></li><li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p><p><img src="/./img/image-20221104192615537.png" alt="image-20221104192615537"></p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;android:layout_marginBottom=&quot;240dp&quot;app:layout_constraintBottom_toBottomOf=&quot;parent&quot;app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li></ol><h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol><li><p>选择多个控件</p><p><img src="/./img/image-20221104193649706.png" alt="image-20221104193649706"></p></li><li><p>点击<code>Pack</code></p><p><img src="/./img/image-20221104193845078.png" alt="image-20221104193845078"></p></li><li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p><p><img src="/./img/image-20221104193954355.png" alt="image-20221104193954355"></p><p>下面是有阻挡得情况</p><p><img src="/./img/image-20221104194800428.png" alt="image-20221104194800428"></p></li><li><p>Pack Vertically，同理，Buttom</p><p><img src="/./img/image-20221104194533125.png" alt="image-20221104194533125"></p><p><img src="/./img/image-20221104194859939.png" alt="image-20221104194859939"></p></li><li><p>Expand Horizontally，水平拉伸</p><p><img src="/./img/image-20221104195145603.png" alt="image-20221104195145603"></p></li><li><p>Expand Vertically，竖直拉伸</p><p><img src="/./img/image-20221104195319243.png" alt="image-20221104195319243"></p></li><li><p>Distribute Horizontally，添加水平方向相互约束</p><p><img src="/./img/image-20221104195748648.png" alt="image-20221104195748648"></p></li><li><p>Distribute Vertically，添加竖直方向相互约束</p><p><img src="/./img/image-20221104195933250.png" alt="image-20221104195933250"></p></li></ol><p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p><div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div><p>Expend操作会修改控件大小</p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;android:layout_height=&quot;200dp&quot;</code></pre></div><p>Distribute操作会添加约束，如：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div><h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p><p><img src="/./img/image-20221104202313658.png" alt="image-20221104202313658"></p><p>注意点：</p><ol><li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p><p><img src="/./img/image-20221104202740560.png" alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" alt="image-20221104202810457"></p></li><li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p><p><img src="/./img/image-20221104203110925.png" alt="image-20221104203110925"></p><p>然后拖到想要约束的位置，一般是另一个控件的基线</p><p>   <img src="/./img/image-20221104203338181.png" alt="image-20221104203338181"></p></li></ol><h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p><p><img src="/./img/image-20221104203611415.png" alt="image-20221104203611415"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>layout</tag>
-      
-      <tag>view</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Android屏幕旋转ScreenOrientation</title>
     <link href="/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
     <url>/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
@@ -749,6 +736,33 @@
     <tags>
       
       <tag>Icon</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Android可视化UI设计</title>
+    <link href="/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/"/>
+    <url>/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p><h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p><h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol><li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p><p><img src="/./img/image-20221104183622446.png" alt="image-20221104183622446"></p><p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p><p><img src="/./img/image-20221104182427025.png" alt="image-20221104182427025"></p><p>查看生成的代码</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;TextView&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span> // <span class="hljs-attr">代表控件底部在父布局的底部</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div><p>若我们拖动控件，则会增加如下代码：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div></li><li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p><p><img src="/./img/image-20221104192615537.png" alt="image-20221104192615537"></p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;android:layout_marginBottom=&quot;240dp&quot;app:layout_constraintBottom_toBottomOf=&quot;parent&quot;app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li></ol><h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol><li><p>选择多个控件</p><p><img src="/./img/image-20221104193649706.png" alt="image-20221104193649706"></p></li><li><p>点击<code>Pack</code></p><p><img src="/./img/image-20221104193845078.png" alt="image-20221104193845078"></p></li><li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p><p><img src="/./img/image-20221104193954355.png" alt="image-20221104193954355"></p><p>下面是有阻挡得情况</p><p><img src="/./img/image-20221104194800428.png" alt="image-20221104194800428"></p></li><li><p>Pack Vertically，同理，Buttom</p><p><img src="/./img/image-20221104194533125.png" alt="image-20221104194533125"></p><p><img src="/./img/image-20221104194859939.png" alt="image-20221104194859939"></p></li><li><p>Expand Horizontally，水平拉伸</p><p><img src="/./img/image-20221104195145603.png" alt="image-20221104195145603"></p></li><li><p>Expand Vertically，竖直拉伸</p><p><img src="/./img/image-20221104195319243.png" alt="image-20221104195319243"></p></li><li><p>Distribute Horizontally，添加水平方向相互约束</p><p><img src="/./img/image-20221104195748648.png" alt="image-20221104195748648"></p></li><li><p>Distribute Vertically，添加竖直方向相互约束</p><p><img src="/./img/image-20221104195933250.png" alt="image-20221104195933250"></p></li></ol><p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p><div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div><p>Expend操作会修改控件大小</p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;android:layout_height=&quot;200dp&quot;</code></pre></div><p>Distribute操作会添加约束，如：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div><h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p><p><img src="/./img/image-20221104202313658.png" alt="image-20221104202313658"></p><p>注意点：</p><ol><li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p><p><img src="/./img/image-20221104202740560.png" alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" alt="image-20221104202810457"></p></li><li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p><p><img src="/./img/image-20221104203110925.png" alt="image-20221104203110925"></p><p>然后拖到想要约束的位置，一般是另一个控件的基线</p><p>   <img src="/./img/image-20221104203338181.png" alt="image-20221104203338181"></p></li></ol><h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p><p><img src="/./img/image-20221104203611415.png" alt="image-20221104203611415"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+      <tag>view</tag>
       
     </tags>
     
@@ -1515,9 +1529,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>Lifecycles</tag>
+      
+      <tag>Architecture</tag>
       
     </tags>
     
@@ -1573,9 +1587,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>DataBinding</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>DataBinding</tag>
       
       <tag>ViewModel</tag>
       
@@ -1717,9 +1731,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -1803,13 +1817,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Array</tag>
+      <tag>Set</tag>
       
       <tag>List</tag>
       
-      <tag>Set</tag>
-      
       <tag>Map</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3297,17 +3311,17 @@
     
     <tags>
       
-      <tag>Collection</tag>
+      <tag>集合</tag>
       
-      <tag>List</tag>
+      <tag>Collection</tag>
       
       <tag>Set</tag>
       
-      <tag>Map</tag>
-      
-      <tag>集合</tag>
-      
       <tag>TreeSet</tag>
+      
+      <tag>List</tag>
+      
+      <tag>Map</tag>
       
       <tag>HashMap</tag>
       
@@ -3336,9 +3350,9 @@
     
     <tags>
       
-      <tag>Generic</tag>
-      
       <tag>泛型</tag>
+      
+      <tag>Generic</tag>
       
     </tags>
     
@@ -3603,22 +3617,22 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
