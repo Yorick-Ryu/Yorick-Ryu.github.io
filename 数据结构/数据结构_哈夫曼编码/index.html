@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="哈夫曼编码 哈夫曼编码 基本介绍 实现思路 特点总结 最佳实践 数据压缩及解压 文件的压缩与解压 哈夫曼编码压缩文件注意事项      基本介绍（1）哈夫曼编码也翻译为哈夫曼编码(Huffman Coding)，又称霍夫曼编码，是一种编码方式，属于一种程序算法。 （2）哈夫曼编码是哈夫曼树在电讯通信中的经典的应用之一。 （3）哈夫曼编码广泛地用于数据文件压缩，其压缩率通常在20%~90%之间。 （">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈夫曼编码">
+<meta property="og:url" content="https://yorick-ryu.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="哈夫曼编码 哈夫曼编码 基本介绍 实现思路 特点总结 最佳实践 数据压缩及解压 文件的压缩与解压 哈夫曼编码压缩文件注意事项      基本介绍（1）哈夫曼编码也翻译为哈夫曼编码(Huffman Coding)，又称霍夫曼编码，是一种编码方式，属于一种程序算法。 （2）哈夫曼编码是哈夫曼树在电讯通信中的经典的应用之一。 （3）哈夫曼编码广泛地用于数据文件压缩，其压缩率通常在20%~90%之间。 （">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
+<meta property="article:published_time" content="2022-07-28T05:22:54.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.542Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="Tree">
+<meta property="article:tag" content="Huffman">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
+  
+  
+  
+  <title>哈夫曼编码 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="哈夫曼编码"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-28 13:22" pubdate>
+          2022年7月28日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">哈夫曼编码</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h1><ul>
+<li><a href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81">哈夫曼编码</a><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF">实现思路</a></li>
+<li><a href="#%E7%89%B9%E7%82%B9%E6%80%BB%E7%BB%93">特点总结</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">最佳实践</a><ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B">数据压缩及解压</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B">文件的压缩与解压</a></li>
+<li><a href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">哈夫曼编码压缩文件注意事项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>（1）哈夫曼编码也翻译为哈夫曼编码(Huffman Coding)，又称霍夫曼编码，是一种编码方式，属于一种程序算法。</p>
+<p>（2）哈夫曼编码是哈夫曼树在电讯通信中的经典的应用之一。</p>
+<p>（3）哈夫曼编码广泛地用于数据文件压缩，其压缩率通常在20%~90%之间。</p>
+<p>（4）哈夫曼码是可变字长编码(VLC)的一种。Huffman于1952年提出一种编码方法，称之为最佳编码。</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>（1）统计字符串各个字符出现的次数。</p>
+<p>（2）按照上面字符出现的次数构建一棵哈夫曼树，次数作为权值。</p>
+<p>（3）根据哈夫曼树，给各个字符规定编码（前缀编码），向左的路径为0，向右的路径为1。这样，每个字符都有独一无二的编码，而且出现次数越多的字符，编码越短。</p>
+<h2 id="特点总结"><a href="#特点总结" class="headerlink" title="特点总结"></a>特点总结</h2><p>（1）此编码满足前缀编码，即字符的编码都不能是其他字符编码的前缀。不会造成匹配的多义性。</p>
+<p>（2）生成的哈夫曼树根据排序方法不同，也可能不太一样，这样对应的哈夫曼编码也不完全一样，但是wpl是一样的，都是最小的。</p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><h3 id="数据压缩及解压"><a href="#数据压缩及解压" class="headerlink" title="数据压缩及解压"></a>数据压缩及解压</h3><p>（1）构建结点类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span>&lt;Node&gt; &#123;
+    Byte data; <span class="hljs-comment">// 存放字符本身的 ASCII 码</span>
+    <span class="hljs-type">int</span> weight; <span class="hljs-comment">// 存放权值（字符出现的次数）</span>
+    Node left;
+    Node right;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Node</span><span class="hljs-params">(Byte data， <span class="hljs-type">int</span> weight)</span> &#123;
+        <span class="hljs-built_in">this</span>.data = data;
+        <span class="hljs-built_in">this</span>.weight = weight;
+    &#125;
+
+    <span class="hljs-comment">// 前序遍历</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">perOrder</span><span class="hljs-params">()</span> &#123;
+        System.out.println(<span class="hljs-built_in">this</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+            <span class="hljs-built_in">this</span>.left.perOrder();
+        &#125;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+            <span class="hljs-built_in">this</span>.right.perOrder();
+        &#125;
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(Node o)</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.weight - o.weight;
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Node&#123;&quot;</span> + <span class="hljs-string">&quot;data=&quot;</span> + <span class="hljs-built_in">this</span>.data + <span class="hljs-string">&quot;， weight=&quot;</span> + <span class="hljs-built_in">this</span>.weight + <span class="hljs-string">&quot;&#125;&quot;</span>;
+    &#125;
+&#125;</code></pre></div>
+<p>（2）构建<code>HuffmanCode</code>类，里面有个主方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HuffmanCode</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-comment">//主方法</span>
+    &#125;
+&#125;</code></pre></div>
+<p>（3）在主方法中将字符串转为byte数组</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;yorick yur bei yu Android java Hello World yorick你好&quot;</span>;
+<span class="hljs-type">byte</span>[] contentBytes = content.getBytes();</code></pre></div>
+<p>（4）将byte数组的每个元素转化为二叉树结点，可以统计字符串各个字符出现的次数，作为权重。</p>
+<ul>
+<li><p>构建将byte数组的每个元素转化为二叉树结点的方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> List&lt;Node&gt; <span class="hljs-title function_">str2Node</span><span class="hljs-params">(<span class="hljs-type">byte</span>[] bytes)</span> &#123;
+    <span class="hljs-comment">// 存储结点的数据和权值</span>
+    Map&lt;Byte， Integer&gt; count = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+    <span class="hljs-keyword">for</span> (Byte b : bytes) &#123;
+        <span class="hljs-comment">// 当 key 存在时。value+1，key不存在时新建key，并另value=1</span>
+        count.merge(b， <span class="hljs-number">1</span>， Integer::sum);
+    &#125;
+    List&lt;Node&gt; nodes = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+    <span class="hljs-keyword">for</span> (Map.Entry&lt;Byte， Integer&gt; entry : count.entrySet()) &#123;
+        nodes.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Node</span>(entry.getKey()， entry.getValue()));
+    &#125;
+    <span class="hljs-keyword">return</span> nodes;
+&#125;</code></pre></div></li>
+<li><p>主方法调用</p>
+<div class="code-wrapper"><pre><code class="hljs java">List&lt;Node&gt; nodes = str2Node(contentBytes);</code></pre></div>
+<p>（5）生成哈夫曼树</p>
+</li>
+<li><p>根据结点生成哈夫曼树的方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Node <span class="hljs-title function_">buildHuffmanTree</span><span class="hljs-params">(List&lt;Node&gt; nodes)</span> &#123;
+    <span class="hljs-keyword">while</span> (nodes.size() &gt; <span class="hljs-number">1</span>) &#123;
+        Collections.sort(nodes);
+        <span class="hljs-type">Node</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> nodes.get(<span class="hljs-number">0</span>);
+        <span class="hljs-type">Node</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> nodes.get(<span class="hljs-number">1</span>);
+        nodes.remove(<span class="hljs-number">0</span>);
+        nodes.remove(<span class="hljs-number">0</span>);
+        <span class="hljs-type">Node</span> <span class="hljs-variable">pare</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Node</span>(<span class="hljs-literal">null</span>， left.weight + right.weight);
+        pare.left = left;
+        pare.right = right;
+        nodes.add(pare);
+    &#125;
+    <span class="hljs-keyword">return</span> nodes.get(<span class="hljs-number">0</span>);
+&#125;</code></pre></div></li>
+<li><p>主方法调用</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Node</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> buildHuffmanTree(nodes);</code></pre></div>
+<p>（6）根据哈夫曼树生成哈夫曼编码表</p>
+</li>
+<li><p>在主方法中声明两个静态属性</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 供递归入口使用，存储过程值</span>
+<span class="hljs-keyword">static</span> <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">stringBuilder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+<span class="hljs-comment">// 存储递归结果</span>
+<span class="hljs-keyword">static</span> Map&lt;Byte， String&gt; huffmanCode = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();</code></pre></div></li>
+<li><p>通过递归获取哈夫曼树中非叶子结点对应的路径字符串</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/** 递归获得哈夫曼编码</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@param</span> node          结点</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@param</span> str           三种情况：”“、”0“、”1“</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@param</span> stringBuilder 可变字符串，记录路径</span>
+<span class="hljs-comment"> */</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getCodes</span><span class="hljs-params">(Node node， String str， StringBuilder stringBuilder)</span> &#123;
+    <span class="hljs-keyword">if</span> (node == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;
+    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(stringBuilder);
+    sb.append(str);
+    <span class="hljs-comment">// 判断node是否为叶子结点</span>
+    <span class="hljs-keyword">if</span> (node.data == <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-comment">// 向左递归</span>
+        getCodes(node.left， <span class="hljs-string">&quot;0&quot;</span>， sb);
+        <span class="hljs-comment">// 向右递归</span>
+        getCodes(node.right， <span class="hljs-string">&quot;1&quot;</span>， sb);
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        huffmanCode.put(node.data， String.valueOf(sb));
+    &#125;
+&#125;</code></pre></div></li>
+<li><p>为了主方法调用方便，重载方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Map&lt;Byte， String&gt; tree2code(Node root) &#123;
+    getCodes(root， <span class="hljs-string">&quot;&quot;</span>， stringBuilder);
+    <span class="hljs-keyword">return</span> huffmanCode;
+&#125;</code></pre></div></li>
+<li><p>在主方法中调用</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java">Map&lt;Byte， String&gt; huffmanCode = tree2code(root);
+<span class="hljs-comment">// 哈夫曼编码表：32-&gt;01  97-&gt;100  100-&gt;11000  117-&gt;11001  101-&gt;1110  118-&gt;11011  105-&gt;101  121-&gt;11010  106-&gt;0010  107-&gt;1111  108-&gt;000  111-&gt;0011 </span></code></pre></div>
+<p>（7）根据编码表对字符进行压缩</p>
+<ul>
+<li>压缩方法<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">byte</span>[] zip(<span class="hljs-type">byte</span>[] bytes， Map&lt;Byte， String&gt; huffmanCode) &#123;
+    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">codes</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+    <span class="hljs-keyword">for</span> (Byte b : bytes) &#123;
+        codes.append(huffmanCode.get(b));
+    &#125;
+    <span class="hljs-type">int</span> length;
+    <span class="hljs-keyword">if</span> (codes.length() % <span class="hljs-number">8</span> == <span class="hljs-number">0</span>) &#123;
+        length = codes.length() / <span class="hljs-number">8</span>;
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        length = codes.length() / <span class="hljs-number">8</span> + <span class="hljs-number">1</span>;
+    &#125;
+    <span class="hljs-type">byte</span>[] huffmanCodeBytes = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[length];
+    <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; codes.length(); i += <span class="hljs-number">8</span>) &#123;
+        String huffmanCodeStr;
+        <span class="hljs-keyword">if</span> (i + <span class="hljs-number">8</span> &lt; codes.length()) &#123;
+            huffmanCodeStr = codes.substring(i， i + <span class="hljs-number">8</span>);
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            huffmanCodeStr = codes.substring(i);
+        &#125;
+        huffmanCodeBytes[index] = (<span class="hljs-type">byte</span>) Integer.parseInt(huffmanCodeStr， <span class="hljs-number">2</span>);
+        index++;
+    &#125;
+    <span class="hljs-keyword">return</span> huffmanCodeBytes;
+&#125;</code></pre></div></li>
+<li>为了便于调用，将压缩方法封装</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">byte</span>[] huffmanZip(<span class="hljs-type">byte</span>[] contentBytes) &#123;
+    <span class="hljs-comment">// 将字符串的每个字符转化为二叉树结点</span>
+    List&lt;Node&gt; nodes = str2Node(contentBytes);
+    <span class="hljs-comment">// 生成哈夫曼树</span>
+    <span class="hljs-type">Node</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> buildHuffmanTree(nodes);
+    <span class="hljs-comment">//perOder(buildHuffmanTree(nodes));</span>
+    <span class="hljs-comment">// 根据哈夫曼树生成哈夫曼编码表</span>
+    Map&lt;Byte， String&gt; huffmanCode = tree2code(root);
+    System.out.print(<span class="hljs-string">&quot;哈夫曼编码表：&quot;</span>);
+    <span class="hljs-keyword">for</span> (Map.Entry&lt;Byte， String&gt; entry : huffmanCode.entrySet()) &#123;
+        System.out.print(entry.getKey() + <span class="hljs-string">&quot;-&gt;&quot;</span> + entry.getValue() + <span class="hljs-string">&quot;  &quot;</span>);
+    &#125;
+    System.out.println();
+    <span class="hljs-keyword">return</span> zip(contentBytes， huffmanCode);
+&#125;</code></pre></div>
+<ul>
+<li>在主方法中调用</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">byte</span>[] huffmanCodeBytes = huffmanZip(contentBytes);</code></pre></div>
+<ul>
+<li><p>输出压缩后内容</p>
+<div class="code-wrapper"><pre><code class="hljs java">System.out.println(<span class="hljs-string">&quot;压缩后内容：&quot;</span> + Arrays.toString(huffmanCodeBytes));
+<span class="hljs-comment">// 压缩后内容：[-88， -65， -56， -65， -56， -65， -55， 77， -57， 6， -24， -14， -117， -4， -60， -90， 28]</span></code></pre></div>
+<p>（8）解压内容</p>
+</li>
+<li><p>将单个byte转二进制字符串</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">/** 单个byte转二进制字符串</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@param</span> b    单个byte</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@param</span> flag 是否需要补高位</span>
+<span class="hljs-comment"> * <span class="hljs-doctag">@return</span> 对应的二进制补码的字符串</span>
+<span class="hljs-comment"> */</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">byte2BitString</span><span class="hljs-params">(<span class="hljs-type">byte</span> b， <span class="hljs-type">boolean</span> flag)</span> &#123;
+    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> b;
+    <span class="hljs-keyword">if</span> (flag) &#123;
+        <span class="hljs-comment">// 两个位都为0时，结果才为0 256 -&gt; 10000000</span>
+        temp |= <span class="hljs-number">256</span>;
+    &#125;
+    <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> Integer.toBinaryString(temp);
+    <span class="hljs-keyword">if</span> (flag) &#123;
+        <span class="hljs-keyword">return</span> str.substring(str.length() - <span class="hljs-number">8</span>);
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">return</span> str;
+    &#125;
+&#125;</code></pre></div></li>
+<li><p>解压</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">byte</span>[] decode(Map&lt;Byte， String&gt; huffmanCode， <span class="hljs-type">byte</span>[] huffmanCodeBytes) &#123;
+    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">bitString</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; huffmanCodeBytes.length; i++) &#123;
+        <span class="hljs-comment">// 判断是否位最后一个字节</span>
+        <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> i == (huffmanCodeBytes.length - <span class="hljs-number">1</span>);
+        bitString.append(byte2BitString(huffmanCodeBytes[i]， !flag));
+    &#125;
+    <span class="hljs-comment">//System.out.println(bitString);</span>
+    Map&lt;String， Byte&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
+    <span class="hljs-comment">// 反转map</span>
+    <span class="hljs-keyword">for</span> (Map.Entry&lt;Byte， String&gt; entry : huffmanCode.entrySet()) &#123;
+        map.put(entry.getValue()， entry.getKey());
+    &#125;
+    List&lt;Byte&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; bitString.length(); ) &#123;
+        <span class="hljs-type">Byte</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">while</span> (flag) &#123;
+            b = map.get(bitString.substring(i， i + count));
+            <span class="hljs-keyword">if</span> (b == <span class="hljs-literal">null</span>) &#123;
+                count++;
+            &#125; <span class="hljs-keyword">else</span> &#123;
+                flag = <span class="hljs-literal">false</span>;
+            &#125;
+        &#125;
+        list.add(b);
+        i += count;
+    &#125;
+    <span class="hljs-type">byte</span>[] bytes = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[list.size()];
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; list.size(); j++) &#123;
+        bytes[j] = list.get(j);
+    &#125;
+    <span class="hljs-keyword">return</span> bytes;
+&#125;</code></pre></div>
+<ul>
+<li>在主方法中调用<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">byte</span>[] resBytes = decode(huffmanCode， huffmanCodeBytes);</code></pre></div></li>
+<li>输出解压后内容</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java">System.out.println(<span class="hljs-string">&quot;解压后内容：&quot;</span> + <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(resBytes));</code></pre></div>
+
+<h3 id="文件的压缩与解压"><a href="#文件的压缩与解压" class="headerlink" title="文件的压缩与解压"></a>文件的压缩与解压</h3><ul>
+<li>文件压缩方法<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 文件压缩</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">zipFile</span><span class="hljs-params">(String src， String dst)</span> <span class="hljs-keyword">throws</span> IOException &#123;
+    <span class="hljs-comment">// 输入</span>
+    <span class="hljs-type">FileInputStream</span> <span class="hljs-variable">is</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(src);
+    <span class="hljs-type">byte</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-title class_">byte</span>[is.available()];
+    is.read(b);
+    <span class="hljs-type">byte</span>[] huffmanBytes = huffmanZip(b);
+    <span class="hljs-comment">// 输出</span>
+    <span class="hljs-type">OutputStream</span> <span class="hljs-variable">os</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(dst);
+    <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">oos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(os);
+    oos.writeObject(huffmanBytes);
+    oos.writeObject(huffmanCodes);
+    <span class="hljs-comment">// 关闭IO</span>
+    is.close();
+    oos.close();
+    os.close();
+&#125;</code></pre></div></li>
+<li>文件解压方法</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 文件解压</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">unZipFile</span><span class="hljs-params">(String src， String dst)</span> <span class="hljs-keyword">throws</span> IOException， ClassNotFoundException &#123;
+    <span class="hljs-comment">// 输入</span>
+    <span class="hljs-type">FileInputStream</span> <span class="hljs-variable">is</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(src);
+    <span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">ois</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(is);
+    <span class="hljs-type">byte</span>[] huffmanBytes = (<span class="hljs-type">byte</span>[]) ois.readObject();
+    Map&lt;Byte， String&gt; huffmanCodes = (Map&lt;Byte， String&gt;) ois.readObject();
+    <span class="hljs-type">byte</span>[] bytes = decode(huffmanCodes， huffmanBytes);
+    <span class="hljs-comment">// 输出</span>
+    <span class="hljs-type">OutputStream</span> <span class="hljs-variable">os</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(dst);
+    os.write(bytes);
+    os.close();
+    ois.close();
+    is.close();
+&#125;</code></pre></div>
+<ul>
+<li>主方法要添加异常签名<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException， ClassNotFoundException &#123;
+    zipFile(<span class="hljs-string">&quot;E://yy.bmp&quot;</span>， <span class="hljs-string">&quot;E://yy.bmp.huf&quot;</span>);
+    System.out.println(<span class="hljs-string">&quot;压缩完成&quot;</span>);
+    unZipFile(<span class="hljs-string">&quot;E://yy.bmp.huf&quot;</span>，<span class="hljs-string">&quot;E://yy_1.bmp&quot;</span>);
+    System.out.println(<span class="hljs-string">&quot;解压完成&quot;</span>);
+&#125;</code></pre></div></li>
+</ul>
+<h3 id="哈夫曼编码压缩文件注意事项"><a href="#哈夫曼编码压缩文件注意事项" class="headerlink" title="哈夫曼编码压缩文件注意事项"></a>哈夫曼编码压缩文件注意事项</h3><p>（1）如果文件本身就是经过压缩处理的，那么使用哈夫曼编码再压缩效率不会有明显变化，比如视频，ppt等等文件</p>
+<p>（2）哈夫曼编码是按字节来处理的，因此可以处理所有的文件（二进制文件、文本文件）</p>
+<p>（3）如果一个文件中的内容，重复的数据不多，压缩效果也不会很明显。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DataStructure/" class="category-chain-item">DataStructure</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E6%A0%91/">#树</a>
+      
+        <a href="/tags/Tree/">#Tree</a>
+      
+        <a href="/tags/Huffman/">#Huffman</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>哈夫曼编码</div>
+      <div>https://yorick-ryu.github.io/数据结构/数据结构_哈夫曼编码/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" title="计算机基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" title="哈夫曼树">
+                        <span class="hidden-mobile">哈夫曼树</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

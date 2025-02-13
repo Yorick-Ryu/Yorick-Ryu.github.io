@@ -1,0 +1,967 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Kotlin集合与数组List集合List的创建与元素获取fun main() &#123;     &#x2F;&#x2F; 创建List     val list &#x3D; listOf(&quot;Yorick&quot;, &quot;Jerry&quot;, &quot;Sandy&quot;)     &#x2F;&#x2F; 普通获取     println(list[2])     &#x2F;&#x2F; 使用安全索引函数获取     &#x2F;&#x2F; g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin集合与数组">
+<meta property="og:url" content="https://yorick-ryu.github.io/Kotlin/Kotlin%E9%9B%86%E5%90%88%E4%B8%8E%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="Kotlin集合与数组List集合List的创建与元素获取fun main() &#123;     &#x2F;&#x2F; 创建List     val list &#x3D; listOf(&quot;Yorick&quot;, &quot;Jerry&quot;, &quot;Sandy&quot;)     &#x2F;&#x2F; 普通获取     println(list[2])     &#x2F;&#x2F; 使用安全索引函数获取     &#x2F;&#x2F; g">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
+<meta property="article:published_time" content="2022-09-08T09:30:43.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.378Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Collection">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="List">
+<meta property="article:tag" content="Set">
+<meta property="article:tag" content="Map">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
+  
+  
+  
+  <title>Kotlin集合与数组 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Kotlin集合与数组"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-08 17:30" pubdate>
+          2022年9月8日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          23 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Kotlin集合与数组</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Kotlin集合与数组"><a href="#Kotlin集合与数组" class="headerlink" title="Kotlin集合与数组"></a>Kotlin集合与数组</h1><h2 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h2><h3 id="List的创建与元素获取"><a href="#List的创建与元素获取" class="headerlink" title="List的创建与元素获取"></a>List的创建与元素获取</h3><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 创建List</span>
+    <span class="hljs-keyword">val</span> list = listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>)
+    <span class="hljs-comment">// 普通获取</span>
+    println(list[<span class="hljs-number">2</span>])
+    <span class="hljs-comment">// 使用安全索引函数获取</span>
+    <span class="hljs-comment">// getOrElse:没有则返回lambda表达式的结果</span>
+    println(list.getOrElse(<span class="hljs-number">3</span>)&#123;<span class="hljs-string">&quot;Nothing&quot;</span>&#125;)
+    <span class="hljs-comment">// getOrNull:没有则返回空</span>
+    println(list.getOrNull(<span class="hljs-number">3</span>))
+    <span class="hljs-comment">// getOrNull配合合并操作符使用</span>
+    println(list.getOrNull(<span class="hljs-number">3</span>)?:<span class="hljs-string">&quot;Nothing&quot;</span>)
+&#125;</code></pre></div>
+
+<h3 id="可变列表"><a href="#可变列表" class="headerlink" title="可变列表"></a>可变列表</h3><p>在Kotlin中，支持修改内容的列表叫可变列表，要创建可变列表，可以使用mutableListOf函数。List还支持使用toList和toMutableList函数动态实现只读列表和可变列表的相互转换。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 创建可变列表</span>
+    <span class="hljs-keyword">val</span> mutableList = mutableListOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>)
+    mutableList.add(<span class="hljs-string">&quot;Jack&quot;</span>)
+    mutableList.remove(<span class="hljs-string">&quot;Jerry&quot;</span>)、
+    <span class="hljs-comment">// 相互转换</span>
+    listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>).toMutableList()
+    mutableList.toList()
+&#125;</code></pre></div>
+
+<h3 id="mutator函数"><a href="#mutator函数" class="headerlink" title="mutator函数"></a>mutator函数</h3><p>能修改可变列表的函数有个统一的名字：mutator函数</p>
+<p>添加元素运算符与删除元素运算符</p>
+<p>基于lambda表达式指定的条件删除元素</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 创建可变列表</span>
+    <span class="hljs-keyword">val</span> mutableList = mutableListOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>)
+    mutableList += <span class="hljs-string">&quot;Morty&quot;</span> <span class="hljs-comment">// 相当于add</span>
+    mutableList -= <span class="hljs-string">&quot;Sandy&quot;</span> <span class="hljs-comment">// 相当于remove</span>
+    mutableList.removeIf&#123;it.contains(<span class="hljs-string">&quot;o&quot;</span>)&#125; <span class="hljs-comment">// 满足条件才移除</span>
+    println(mutableList)
+&#125;</code></pre></div>
+
+<h3 id="集合遍历"><a href="#集合遍历" class="headerlink" title="集合遍历"></a>集合遍历</h3><ul>
+<li><p>for in 遍历</p>
+</li>
+<li><p>forEach 遍历</p>
+</li>
+<li><p>forEachIndexed 遍历时要获取索引</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> list = listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>)
+    <span class="hljs-keyword">for</span> (s <span class="hljs-keyword">in</span> list) &#123;
+        println(s)
+    &#125;
+
+    list.forEach &#123;
+        println(it)
+    &#125;
+
+    list.forEachIndexed &#123; index, item -&gt;
+        println(<span class="hljs-string">&quot;<span class="hljs-variable">$index</span> : <span class="hljs-variable">$item</span>&quot;</span>)
+    &#125;
+&#125;</code></pre></div>
+
+<h3 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h3><div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> list = listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>)
+    <span class="hljs-comment">// 解构赋值</span>
+    <span class="hljs-keyword">val</span> (origin,dest,proxy) = list
+    println(<span class="hljs-string">&quot;<span class="hljs-variable">$origin</span> <span class="hljs-variable">$dest</span> <span class="hljs-variable">$proxy</span>&quot;</span>)
+&#125;</code></pre></div>
+<p>当想跳过某个元素，则用下划线代替。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">val</span> (origin, _, proxy) = list
+println(<span class="hljs-string">&quot;<span class="hljs-variable">$origin</span> <span class="hljs-variable">$proxy</span>&quot;</span>)
+<span class="hljs-comment">// 输出</span>
+<span class="hljs-comment">// Yorick Sandy</span></code></pre></div>
+
+<h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h2><p>通过setOf创建set集合，使用elementAt函数读取集合中的元素。</p>
+<h3 id="Set创建与元素获取"><a href="#Set创建与元素获取" class="headerlink" title="Set创建与元素获取"></a>Set创建与元素获取</h3><p>setOf：创建集合<br>elementAt：获取集合</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 重复元素自动覆盖</span>
+    <span class="hljs-keyword">val</span> <span class="hljs-keyword">set</span> = setOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>,<span class="hljs-string">&quot;Yorick&quot;</span>)
+    println(<span class="hljs-keyword">set</span>.elementAt(<span class="hljs-number">2</span>)) <span class="hljs-comment">// Sandy</span>
+&#125;</code></pre></div>
+
+<h3 id="可变集合"><a href="#可变集合" class="headerlink" title="可变集合"></a>可变集合</h3><p>通过mutableSetOf创建可变的set集合</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> mutableSet = mutableSetOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>, <span class="hljs-string">&quot;Yorick&quot;</span>)
+    mutableSet += <span class="hljs-string">&quot;Morty&quot;</span>
+    mutableSet.forEach &#123;
+        println(it)
+    &#125;
+&#125;</code></pre></div>
+
+<h3 id="集合转换和快捷去重"><a href="#集合转换和快捷去重" class="headerlink" title="集合转换和快捷去重"></a>集合转换和快捷去重</h3><div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 通过集合转换函数去重</span>
+    <span class="hljs-keyword">val</span> list = listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>, <span class="hljs-string">&quot;Yorick&quot;</span>)
+        .toSet()
+        .toList()
+    println(list)
+    <span class="hljs-comment">// 快捷操作</span>
+    println(listOf(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-string">&quot;Jerry&quot;</span>, <span class="hljs-string">&quot;Sandy&quot;</span>, <span class="hljs-string">&quot;Yorick&quot;</span>).distinct())
+&#125;
+<span class="hljs-comment">// 都输出</span>
+<span class="hljs-comment">// [Yorick, Jerry, Sandy]</span></code></pre></div>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>Kotlin提供各种Array，虽然是引用类型，但可以编译成Java基本数据类型。</p>
+<table>
+<thead>
+<tr>
+<th>数组类型</th>
+<th>创建函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>lntArray</td>
+<td>intArrayOf</td>
+</tr>
+<tr>
+<td>DoubleArray</td>
+<td>doubleArrayOf</td>
+</tr>
+<tr>
+<td>LongArray</td>
+<td>longArrayOf</td>
+</tr>
+<tr>
+<td>ShortArray</td>
+<td>shortArrayOf</td>
+</tr>
+<tr>
+<td>ByteArray</td>
+<td>byteArrayOf</td>
+</tr>
+<tr>
+<td>FloatArray</td>
+<td>floatArrayOf</td>
+</tr>
+<tr>
+<td>BooleanArray</td>
+<td>booleanArrayOf</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>arrayOf</td>
+</tr>
+</tbody></table>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> intArrayOf = intArrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>)
+    <span class="hljs-comment">// list可以直接转换为array</span>
+    listOf(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>).toIntArray()
+    <span class="hljs-comment">// 对象数组</span>
+    <span class="hljs-keyword">val</span> arrayList = arrayListOf(File(<span class="hljs-string">&quot;xxx&quot;</span>), File(<span class="hljs-string">&quot;yyy&quot;</span>), File(<span class="hljs-string">&quot;zzz&quot;</span>))
+&#125;</code></pre></div>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h3 id="Map的创建"><a href="#Map的创建" class="headerlink" title="Map的创建"></a>Map的创建</h3><p>使用mapOf创建Map</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 创建Map</span>
+    <span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-string">&quot;Yorick&quot;</span> to <span class="hljs-number">21</span>, <span class="hljs-string">&quot;Lily&quot;</span> to <span class="hljs-number">20</span>, <span class="hljs-string">&quot;Jerry&quot;</span> to <span class="hljs-number">17</span>)
+    <span class="hljs-comment">// 等价方式</span>
+    mapOf(Pair(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">21</span>), Pair(<span class="hljs-string">&quot;Lily&quot;</span>, <span class="hljs-number">20</span>))
+&#125;</code></pre></div>
+
+<h3 id="读取Map的值"><a href="#读取Map的值" class="headerlink" title="读取Map的值"></a>读取Map的值</h3><ul>
+<li><code>[]</code>取值运算符，读取键对应的值，如果键不存在就返回null</li>
+<li><code>getValue</code>，读取键对应的值，如果键不存在就抛出异常</li>
+<li><code>getOrElse</code>，读取键对应的值，或者使用匿名函数返回默认值</li>
+<li><code>getOrDefault</code>，读取键对应的值，或者返回默认值</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-string">&quot;Yorick&quot;</span> to <span class="hljs-number">21</span>, <span class="hljs-string">&quot;Lily&quot;</span> to <span class="hljs-number">20</span>, <span class="hljs-string">&quot;Jerry&quot;</span> to <span class="hljs-number">17</span>)
+    println(map[<span class="hljs-string">&quot;Yorick&quot;</span>]) <span class="hljs-comment">// 21</span>
+    println(map.getValue(<span class="hljs-string">&quot;Yorick&quot;</span>)) <span class="hljs-comment">// 21</span>
+    println(map.getOrElse(<span class="hljs-string">&quot;Rose&quot;</span>) &#123; <span class="hljs-string">&quot;NOTHING&quot;</span> &#125;) <span class="hljs-comment">// NOTHING</span>
+    println(map.getOrDefault(<span class="hljs-string">&quot;Rose&quot;</span>,<span class="hljs-number">0</span>)) <span class="hljs-comment">// 0</span>
+&#125;</code></pre></div>
+
+<h3 id="Map的遍历"><a href="#Map的遍历" class="headerlink" title="Map的遍历"></a>Map的遍历</h3><p>还是用forEach</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> map = mapOf(<span class="hljs-string">&quot;Yorick&quot;</span> to <span class="hljs-number">21</span>, <span class="hljs-string">&quot;Lily&quot;</span> to <span class="hljs-number">20</span>, <span class="hljs-string">&quot;Jerry&quot;</span> to <span class="hljs-number">17</span>)
+    <span class="hljs-comment">// 遍历Map</span>
+    map.forEach &#123;
+        println(<span class="hljs-string">&quot;<span class="hljs-subst">$&#123;it.key&#125;</span> : <span class="hljs-subst">$&#123;it.value&#125;</span>&quot;</span>)
+    &#125;
+    map.forEach &#123; (key: String, value: <span class="hljs-built_in">Int</span>) -&gt;
+        println(<span class="hljs-string">&quot;<span class="hljs-variable">$key</span> : <span class="hljs-variable">$value</span>&quot;</span>)
+    &#125;
+&#125;
+<span class="hljs-comment">// 都输出</span>
+<span class="hljs-comment">// Yorick : 21</span>
+<span class="hljs-comment">// Lily : 20</span>
+<span class="hljs-comment">// Jerry : 17</span></code></pre></div>
+
+<h3 id="可变Map"><a href="#可变Map" class="headerlink" title="可变Map"></a>可变Map</h3><div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> mutableMap = mutableMapOf(<span class="hljs-string">&quot;Yorick&quot;</span> to <span class="hljs-number">21</span>, <span class="hljs-string">&quot;Lily&quot;</span> to <span class="hljs-number">20</span>, <span class="hljs-string">&quot;Jerry&quot;</span> to <span class="hljs-number">17</span>)
+    mutableMap += <span class="hljs-string">&quot;Morty&quot;</span> to <span class="hljs-number">16</span>
+    <span class="hljs-comment">// 使用put增加</span>
+    mutableMap.put(<span class="hljs-string">&quot;Morty&quot;</span>, <span class="hljs-number">15</span>)
+    <span class="hljs-comment">// 获取不到则放入</span>
+    mutableMap.getOrPut(<span class="hljs-string">&quot;kimmy&quot;</span>) &#123; <span class="hljs-number">11</span> &#125;
+&#125;</code></pre></div>
+
+<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><p>使用kotlin实现Stack与LinkedList</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1741702">Kotlin中Stack与LinkedList的实现方法示例 - 腾讯云开发者社区-</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/kotlin/" class="category-chain-item">kotlin</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Collection/">#Collection</a>
+      
+        <a href="/tags/Array/">#Array</a>
+      
+        <a href="/tags/List/">#List</a>
+      
+        <a href="/tags/Set/">#Set</a>
+      
+        <a href="/tags/Map/">#Map</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Kotlin集合与数组</div>
+      <div>https://yorick-ryu.github.io/Kotlin/Kotlin集合与数组/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96/" title="Kotlin面向对象_定义类和初始化">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kotlin面向对象_定义类和初始化</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E6%A0%87%E5%87%86%E5%BA%93%E5%87%BD%E6%95%B0/" title="Kotlin标准库函数">
+                        <span class="hidden-mobile">Kotlin标准库函数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

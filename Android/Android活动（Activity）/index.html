@@ -1,0 +1,1184 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="活动(Activity)  启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初始状态。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android活动（Activity）">
+<meta property="og:url" content="https://yorick-ryu.github.io/Android/Android%E6%B4%BB%E5%8A%A8%EF%BC%88Activity%EF%BC%89/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="活动(Activity)  启停活动页面Activity的启动和结束 从当前页面跳到新页面，跳转代码如下：startActivity(new Intent(源页面.this,目标页面.class)); 从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：finish();&#x2F;&#x2F;结束当前的活动页面  Activity的生命周期 onCreate：创建活动。把页面布局加载进内存，进入了初始状态。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/activity_life_cycle.png">
+<meta property="article:published_time" content="2022-11-29T10:15:48.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.373Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="activity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/activity_life_cycle.png">
+  
+  
+  
+  <title>Android活动（Activity） | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Android活动（Activity）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-29 18:15" pubdate>
+          2022年11月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          63 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Android活动（Activity）</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="活动-Activity"><a href="#活动-Activity" class="headerlink" title="活动(Activity)"></a>活动(Activity)</h1><!-- toc -->
+
+<h2 id="启停活动页面"><a href="#启停活动页面" class="headerlink" title="启停活动页面"></a>启停活动页面</h2><h3 id="Activity的启动和结束"><a href="#Activity的启动和结束" class="headerlink" title="Activity的启动和结束"></a>Activity的启动和结束</h3><ul>
+<li>从当前页面跳到新页面，跳转代码如下：<br><code>startActivity(new Intent(源页面.this,目标页面.class));</code></li>
+<li>从当前页面回到上一个页面，相当于关闭当前页面，返回代码如下：<br><code>finish();//结束当前的活动页面</code></li>
+</ul>
+<h3 id="Activity的生命周期"><a href="#Activity的生命周期" class="headerlink" title="Activity的生命周期"></a>Activity的生命周期</h3><p><img src="/./img/activity_life_cycle.png" srcset="/img/loading.gif" lazyload alt="activity_life_cycle"></p>
+<p>onCreate：创建活动。把页面布局加载进内存，进入了初始状态。<br>onStart：开始活动。把活动页面显示在屏幕上，进入了就绪状态。<br>onResume：恢复活动。活动页面进入活跃状态，能够与用户正常交互，例如允许响应用户的点击动作、允许用户输入文字等等。<br>onPause：暂停活动。页面进入暂停状态，无法与用户正常交互。<br>onStop：停止活动。页面将不在屏幕上显示。<br>onDestroy：销毁活动。回收活动占用的系统资源，把页面从内存中清除。onRestart：重启活动。重新加载内存中的页面数据。<br>onNewlntent：重用已有的活动实例。</p>
+<p>如果一个Activity已经启动过，并且存在当前应用的Activity任务栈中，启动模式为singieTask，singlelnstance或singleTop(此时已在任务栈顶端)，那么在此启动或回到这个Activity的时候，不会创建新的实例，也就是不会执行onCreate方法，而是执行onNewlntent方法。</p>
+<p><strong>各状态的切换过程：</strong></p>
+<p><img src="/./img/activity_state.png" srcset="/img/loading.gif" lazyload alt="activity_state"></p>
+<h3 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h3><p>打开AndroidManifest.xml，给activity节点添加属性<code>android:launchMode</code>，属性值填入<code>standard</code>表示采取标准模式，当然不添加属性的话默认就是标准模式。具体的activity节点配置内容示例如下:</p>
+<h4 id="默认启动模式-standard"><a href="#默认启动模式-standard" class="headerlink" title="默认启动模式 standard"></a>默认启动模式 standard</h4><p>该模式可以被设定，不在manifest 设定时候，Activity 的默认模式就是standard。在该模式下，启动的 Activity 会依照启动顺序被依次压入Task栈中：</p>
+<p><img src="/img/standard_mode.png" srcset="/img/loading.gif" lazyload alt="standard_mode"></p>
+<h4 id="栈顶复用模式-singleTop"><a href="#栈顶复用模式-singleTop" class="headerlink" title="栈顶复用模式 singleTop"></a>栈顶复用模式 singleTop</h4><p>在该模式下，如果栈顶Activity为我们要新建的Activity(目标Activity)，那么就不会重复创建新的Activity。</p>
+<p><img src="/img/single_top_mode.png" srcset="/img/loading.gif" lazyload alt="single_top_mode"></p>
+<p><strong>应用场景</strong></p>
+<p>适合开启渠道多、多应用开启调用的Activity，通过这种设置可以避免已经创建过的Activity被重复创建，多数通过动态设置使用。</p>
+<h4 id="栈内复用模式-singleTask"><a href="#栈内复用模式-singleTask" class="headerlink" title="栈内复用模式 singleTask"></a>栈内复用模式 singleTask</h4><p>与singleTop模式相似，只不过singleTop模式是只是针对栈顶的元素，而singleTask模式下，如果task栈内存在目标Activity实例，则将task内的对应Activity 实例之上的所有Activity弹出栈，并将对应Activity置于栈顶，获得焦点。</p>
+<p><img src="/img/single_task_mode.png" srcset="/img/loading.gif" lazyload alt="single_task_mode"></p>
+<p><strong>应用场景</strong></p>
+<p><strong>程序主界面</strong>：我们肯定不希望主界面被创建多次，而且在主界面退出的时候退出整个App是最好的效果。</p>
+<p><strong>耗费系统资源的Activity</strong>：对于那些及其耗费系统资源的Activity，我们可以考虑将其设为singleTask模式，减少资源耗费。</p>
+<h4 id="全局唯一模式-singlelnstance"><a href="#全局唯一模式-singlelnstance" class="headerlink" title="全局唯一模式 singlelnstance"></a>全局唯一模式 singlelnstance</h4><p>在该模式下，我们会为目标Activity创建一个新的Task栈，将目标Activity放入新的Task，并让目标Activity获得焦点。新的Task有且只有这一个Activity 实例。如果已经创建过目标Activity实例，则不会创建新的Task，而是将以前创建过的Activity唤醒。</p>
+<p><img src="/./img/single_instance_mode.png" srcset="/img/loading.gif" lazyload alt="single_instance_mode"></p>
+<h4 id="动态设置启动模式"><a href="#动态设置启动模式" class="headerlink" title="动态设置启动模式"></a>动态设置启动模式</h4><p>可以为intend设置不同启动标志</p>
+<p><code>intent.setF1ags(Intent.FLAG_ACTIVITY_CLEAR_TOP);</code></p>
+<h5 id="FLAG-ACTIVITY-NEW-TASK"><a href="#FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="FLAG_ACTIVITY_NEW_TASK"></a>FLAG_ACTIVITY_NEW_TASK</h5><p>该标志用于开辟新任务的活动栈</p>
+<h5 id="FLAG-ACTIVITY-SINGLE-TOP"><a href="#FLAG-ACTIVITY-SINGLE-TOP" class="headerlink" title="FLAG_ACTIVITY_SINGLE_TOP"></a>FLAG_ACTIVITY_SINGLE_TOP</h5><p>当栈顶为待跳转的活动实例之时，则重用栈顶的实例</p>
+<h5 id="FLAG-ACTIVITY-CLEAR-TASK"><a href="#FLAG-ACTIVITY-CLEAR-TASK" class="headerlink" title="FLAG_ACTIVITY_CLEAR_TASK"></a>FLAG_ACTIVITY_CLEAR_TASK</h5><p>该标志会清空当前活动栈里的所有实例</p>
+<h5 id="FLAG-ACTIVITY-CLEAR-TOP"><a href="#FLAG-ACTIVITY-CLEAR-TOP" class="headerlink" title="FLAG_ACTIVITY_CLEAR_TOP"></a>FLAG_ACTIVITY_CLEAR_TOP</h5><p>当设置此Flag时，目标 Activity 会检查Task 中是否存在此实例，如果没有则添加压入栈。如果有，就将位于Task中的对应Activity其上的所有Activity弹出栈，此时有以下两种情况：</p>
+<ul>
+<li>如果同时设置Flag_ACTIVITY_SINGLE_TOP，则直接使用栈内的对应Activity。<br><code>intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);</code></li>
+<li>没有设置，则将栈内的对应Activity 销毁重新创建。</li>
+</ul>
+<h5 id="FLAG-ACTIVITY-NO-HISTORY"><a href="#FLAG-ACTIVITY-NO-HISTORY" class="headerlink" title="FLAG_ACTIVITY_NO_HISTORY"></a>FLAG_ACTIVITY_NO_HISTORY</h5><p>栈中不保存新启动的活动实例</p>
+<p><strong>应用场景示例：</strong></p>
+<p>对于不允许重复返回的情况，可以设置启动标志<code>FLAG_ACTIVITY_CLEAR_TOP</code>，即使活动栈里面存在待跳转的活动实例，也会重新创建该活动的实例，并清除原实例上方的所有实例，保证栈中最多只有该活动的唯一实例，从而避免了无谓的重复返回。</p>
+<p>对于回不去的登录页面情况，可以设置启动标志<code>FLAG_ACTMTY_CLEAR_TASK</code>，该标志会清空当前活动栈里的所有实例。不过全部清空之后，意味着当前栈没法用了，必须另外找个活动栈才行，也就是同时设置启动标志<code>FLAG_ACTIVTY_ NEW_TASK</code>，该标志用于开辟新任务的活动栈。</p>
+<p><code>intent.setF1ags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);</code></p>
+<h2 id="在活动之间传递消息"><a href="#在活动之间传递消息" class="headerlink" title="在活动之间传递消息"></a>在活动之间传递消息</h2><p>Intent是各个组件之间信息沟通的桥梁，它用于Android各组件之间的通信，主要完成下列工作：</p>
+<ul>
+<li>标明本次通信请求从哪里来、到哪里去、要怎么走。</li>
+<li>发起方携带本次通信需要的数据内容，接收方从收到的意图中解析数据。</li>
+<li>发起方若想判断接收方的处理结果，意图就要负责让接收方传回应答的数据内容。</li>
+</ul>
+<h3 id="Intent的组成部分"><a href="#Intent的组成部分" class="headerlink" title="Intent的组成部分"></a>Intent的组成部分</h3><table>
+<thead>
+<tr>
+<th>元素名称</th>
+<th>设置方法</th>
+<th>说明与用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Component</td>
+<td>setComponent</td>
+<td>组件，它指定意图的来源与目标</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>setAction</td>
+<td>动作，它指定意图的动作行为</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>setData</td>
+<td>即Uri，它指定动作要操纵的数据路径</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>addCategory</td>
+<td>类别，它指定意图的操作类别</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>setType</td>
+<td>数据类型，它指定消息的数据类型</td>
+</tr>
+<tr>
+<td>Extras</td>
+<td>putExtras</td>
+<td>扩展信息，它指定装载的包裹信息</td>
+</tr>
+<tr>
+<td>Flags</td>
+<td>setFlags</td>
+<td>标志位，它指定活动的启动标志</td>
+</tr>
+</tbody></table>
+<h3 id="显式lntent和隐式Intent"><a href="#显式lntent和隐式Intent" class="headerlink" title="显式lntent和隐式Intent"></a>显式lntent和隐式Intent</h3><p><strong>显式lntent，直接指定来源活动与目标活动，属于精确匹配</strong></p>
+<p>在构建一个意图对象时，需要指定两个参数，第一个参数表示跳转的来源页面，即”来源<code>Activity.this</code>“；第二个参数表示待跳转的页面，即”目标<code>Activity.class</code>“。具体的意图构建方式有如下3种：</p>
+<p>(1) 在Intent的构造函数中指定，示例代码如下：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个目标确定的意图</span>
+<span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(<span class="hljs-built_in">this</span>,ActNextActivity.class);</code></pre></div>
+
+<p>(2) 调用意图对象的<code>setClass</code>方法指定，示例代码如下：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个新意图</span>
+<span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+<span class="hljs-comment">// 设置意图要跳转的目标活动</span>
+intent.setclass(<span class="hljs-built_in">this</span>,ActNextActivity.class);</code></pre></div>
+
+<p>(3) 调用意图对象的<code>setComponent</code>方法指定，示例代码如下：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个新意图</span>
+<span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+<span class="hljs-comment">// 创建包含目标活动在内的组件名称对象</span>
+<span class="hljs-type">ComponentName</span> <span class="hljs-variable">component</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">componentName</span>(<span class="hljs-built_in">this</span>,ActNextActivity.c1ass);
+<span class="hljs-comment">// 设置意图携带的组件信息</span>
+intent.setcomponent(component);</code></pre></div>
+
+<p>这种方式可用于启动其他应用（包括系统应用）的Activity</p>
+<p>只需知道包名和类名即可</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">ComponentName</span> <span class="hljs-variable">component</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ComponentName</span>(pkg:<span class="hljs-string">&quot;&quot;</span>,cls:<span class="hljs-string">&quot;&quot;</span>);</code></pre></div>
+
+<p><strong>隐式Intent，没有明确指定要跳转的目标活动，只给出一个动作字符串让系统自动匹配，属于模糊匹配</strong></p>
+<p>通常App不希望向外部暴露活动名称，只给出一个事先定义好的标记串，这样大家约定俗成、按图索骥就好，隐式lntent便起到了标记过滤作用。这个动作名称标记串，可以是自己定义的动作，也可以是已有的系统动作。常见系统动作的取值说明见表。</p>
+<table>
+<thead>
+<tr>
+<th>lntent类的系统动作常量名</th>
+<th>系统动作的常量值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ACTION_MAIN</td>
+<td>android.intent.action.MAIN</td>
+<td>App启动时的入口</td>
+</tr>
+<tr>
+<td>ACTION_VIEW</td>
+<td>android.intent.action.VIEW</td>
+<td>向用户显示数据</td>
+</tr>
+<tr>
+<td>ACTION_SEND</td>
+<td>android.intent.action.SEND</td>
+<td>分享内容</td>
+</tr>
+<tr>
+<td>ACTION_CALL</td>
+<td>android.intent.action.CALL</td>
+<td>直接拨号</td>
+</tr>
+<tr>
+<td>ACITON_DIAL</td>
+<td>android.intent.action.DIAL</td>
+<td>准备拨号</td>
+</tr>
+<tr>
+<td>ACTION_SENDTO</td>
+<td>android.intent.action.SENDTO</td>
+<td>发送短信</td>
+</tr>
+<tr>
+<td>ACTION_ANSWER</td>
+<td>android.intent.action.ANSWER</td>
+<td>接听电话</td>
+</tr>
+</tbody></table>
+<p><strong>示例：拨打指定电话</strong></p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+intent.setAction(Intent.ACTION_DIAL);
+<span class="hljs-type">Uri</span> <span class="hljs-variable">uri</span> <span class="hljs-operator">=</span>  Uri.parse(<span class="hljs-string">&quot;tel:&quot;</span>+phoneNo);
+intent.setData(uri);
+startActivity(intent);</code></pre></div>
+
+<p><strong>示例：发送短信到指定号码</strong></p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+intent.setAction(Intent.ACTION_SENDTO);
+<span class="hljs-type">Uri</span> <span class="hljs-variable">uri</span> <span class="hljs-operator">=</span>  Uri.parse(<span class="hljs-string">&quot;smsto:&quot;</span>+phoneNo);
+intent.setData(uri);
+startActivity(intent);</code></pre></div>
+
+<p><strong>示例：自定义隐式  intent</strong></p>
+<p>在目标Activity的清单文件中加入<code>&lt;intent-filter&gt;</code></p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.action.YUR&quot;</span> /&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span></code></pre></div>
+<p>进行跳转</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+intent.setAction(<span class="hljs-string">&quot;android.intent.action.YUR&quot;</span>);
+intent.addCategory(Intent.CATEGORY_DEFAULT);
+startActivity(intent);</code></pre></div>
+
+<h3 id="向下一个Activity发送数据"><a href="#向下一个Activity发送数据" class="headerlink" title="向下一个Activity发送数据"></a>向下一个Activity发送数据</h3><p>Intent使用Bundle对象存放待传递的数据信息。<br>Bundle对象操作各类型数据的读写方法说明见下表。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>读方法</th>
+<th>写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型数</td>
+<td>getlnt</td>
+<td>putlnt</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>getFloat</td>
+<td>putFloat</td>
+</tr>
+<tr>
+<td>双精度数</td>
+<td>getDouble</td>
+<td>putDouble</td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td>getBoolean</td>
+<td>putBoolean</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>getString</td>
+<td>putString</td>
+</tr>
+<tr>
+<td>字符串数组</td>
+<td>getStringArray</td>
+<td>putStringArray</td>
+</tr>
+<tr>
+<td>字符串列表</td>
+<td>getStringArrayList</td>
+<td>putStringArrayList</td>
+</tr>
+<tr>
+<td>可序列化结构</td>
+<td>getSerializable</td>
+<td>putSerializable</td>
+</tr>
+</tbody></table>
+<h3 id="向上一个Activity返回数据"><a href="#向上一个Activity返回数据" class="headerlink" title="向上一个Activity返回数据"></a>向上一个Activity返回数据</h3><p>请求类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ActRequestActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">mRequest</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;你睡了吗？&quot;</span>;
+    <span class="hljs-keyword">private</span> ActivityResultLauncher&lt;Intent&gt; register;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;
+        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_act_request);
+        <span class="hljs-type">TextView</span> <span class="hljs-variable">tvRequest</span> <span class="hljs-operator">=</span> findViewById(R.id.tv_request);
+        tvRequest.setText(<span class="hljs-string">&quot;待发送的消息：&quot;</span> + mRequest);
+        findViewById(R.id.btn_request).setOnClickListener(<span class="hljs-built_in">this</span>);
+        <span class="hljs-type">TextView</span> <span class="hljs-variable">tvResponse</span> <span class="hljs-operator">=</span> findViewById(R.id.tv_response);
+
+        register = registerForActivityResult(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ActivityResultContracts</span>.StartActivityForResult(), result -&gt; &#123;
+            <span class="hljs-keyword">if</span> (result != <span class="hljs-literal">null</span>) &#123;
+                <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> result.getData();
+                <span class="hljs-keyword">if</span> (intent != <span class="hljs-literal">null</span> &amp;&amp; result.getResultCode() == Activity.RESULT_OK) &#123;
+                    <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> intent.getExtras();
+                    <span class="hljs-type">String</span> <span class="hljs-variable">response_time</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;response_time&quot;</span>);
+                    <span class="hljs-type">String</span> <span class="hljs-variable">response_content</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;response_content&quot;</span>);
+                    <span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;收到返回消息：\n返回时间为%s\n返回内容为%s&quot;</span>, response_time, response_content);
+                    tvResponse.setText(desc);
+                &#125;
+            &#125;
+        &#125;);
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span> &#123;
+        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>(<span class="hljs-built_in">this</span>, ActResponseActivity.class);
+        <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Bundle</span>();
+        bundle.putString(<span class="hljs-string">&quot;request_time&quot;</span>, DateUtil.getCurrentTime());
+        bundle.putString(<span class="hljs-string">&quot;request_content&quot;</span>, mRequest);
+        intent.putExtras(bundle);
+        register.launch(intent);
+    &#125;
+&#125;</code></pre></div>
+
+<p>回应类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ActResponseActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">View</span>.OnClickListener &#123;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">mResponse</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;我没睡&quot;</span>;
+
+    <span class="hljs-meta">@Override</span>
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> &#123;
+        <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_act_response);
+        <span class="hljs-type">TextView</span> <span class="hljs-variable">tvRequest</span> <span class="hljs-operator">=</span> findViewById(R.id.tv_request);
+        <span class="hljs-comment">// 获取上个Activity传的的数据</span>
+        <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> getIntent().getExtras();
+        <span class="hljs-type">String</span> <span class="hljs-variable">request_time</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;request_time&quot;</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">request_content</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;request_content&quot;</span>);
+        <span class="hljs-type">String</span> <span class="hljs-variable">desc</span> <span class="hljs-operator">=</span> String.format(<span class="hljs-string">&quot;收到请求消息：\n请求时间为%s\n请求内容为%s&quot;</span>, request_time, request_content);
+        tvRequest.setText(desc);
+
+        findViewById(R.id.btn_response).setOnClickListener(<span class="hljs-built_in">this</span>);
+
+        <span class="hljs-type">TextView</span> <span class="hljs-variable">tvResponse</span> <span class="hljs-operator">=</span> findViewById(R.id.tv_response);
+        tvResponse.setText(<span class="hljs-string">&quot;待返回的消息：&quot;</span> + mResponse);
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span> &#123;
+        <span class="hljs-type">Intent</span> <span class="hljs-variable">intent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Intent</span>();
+        <span class="hljs-type">Bundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Bundle</span>();
+        bundle.putString(<span class="hljs-string">&quot;response_time&quot;</span>, DateUtil.getCurrentTime());
+        bundle.putString(<span class="hljs-string">&quot;response_content&quot;</span>, mResponse);
+        intent.putExtras(bundle);
+        <span class="hljs-comment">// 携带意图返回上一个页面。RESULT OK表示处理成功</span>
+        setResult(Activity.RESULT_OK, intent);
+        finish();
+    &#125;
+&#125;</code></pre></div>
+
+<h2 id="为活动补充附加信息"><a href="#为活动补充附加信息" class="headerlink" title="为活动补充附加信息"></a>为活动补充附加信息</h2><h3 id="利用资源文件配置字符串"><a href="#利用资源文件配置字符串" class="headerlink" title="利用资源文件配置字符串"></a>利用资源文件配置字符串</h3><p>示例：</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> getString(R.string.weather_str);
+tv_resource.setText(value);</code></pre></div>
+
+<p>优点： 无需编译，使用灵活。</p>
+<h3 id="利用元数据传递配置信息"><a href="#利用元数据传递配置信息" class="headerlink" title="利用元数据传递配置信息"></a>利用元数据传递配置信息</h3><h4 id="什么是元数据"><a href="#什么是元数据" class="headerlink" title="什么是元数据"></a>什么是元数据</h4><p>放在清单文件里的数据</p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.MetaDataActivity&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;MetaDate&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;Hello Meta&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span></code></pre></div>
+
+<h4 id="元数据应用场景"><a href="#元数据应用场景" class="headerlink" title="元数据应用场景"></a>元数据应用场景</h4><p>调用第三方SDK是，使用token进行身份验证</p>
+<h4 id="获取元数据信息"><a href="#获取元数据信息" class="headerlink" title="获取元数据信息"></a>获取元数据信息</h4><p>在Java代码中，获取元数据信息的步骤分为下列三步：</p>
+<ul>
+<li>调用<code>getPackageManager</code>方法获得当前应用的包管理器；</li>
+<li>调用包管理器的<code>getActivitylnfo</code>方法获得当前活动的信息对象；</li>
+<li>活动信息对象的<code>metaData</code>是<code>Bundle</code>包裹类型，调用包裹对象的<code>getString</code>即可获得指定名称的参数值；</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-type">TextView</span> <span class="hljs-variable">tvMeta</span> <span class="hljs-operator">=</span> findViewById(R.id.tv_meta);
+<span class="hljs-comment">// 获取应用包管理器</span>
+<span class="hljs-type">PackageManager</span> <span class="hljs-variable">pm</span> <span class="hljs-operator">=</span> getPackageManager();
+<span class="hljs-keyword">try</span> &#123;
+    <span class="hljs-comment">// 从应用包管理器中获取当前的活动信息</span>
+    <span class="hljs-type">ActivityInfo</span> <span class="hljs-variable">info</span> <span class="hljs-operator">=</span> pm.getActivityInfo(getComponentName(), PackageManager.GET_META_DATA);
+    <span class="hljs-comment">// 获取活动附加的元数据信息</span>
+    <span class="hljs-type">Bundle</span> <span class="hljs-variable">metaData</span> <span class="hljs-operator">=</span> info.metaData;
+    <span class="hljs-type">String</span> <span class="hljs-variable">metaDate</span> <span class="hljs-operator">=</span> metaData.getString(<span class="hljs-string">&quot;MetaDate&quot;</span>);
+    tvMeta.setText(metaDate);
+&#125; <span class="hljs-keyword">catch</span> (PackageManager.NameNotFoundException e) &#123;
+    e.printStackTrace();
+&#125;</code></pre></div>
+
+<h3 id="给应用页面注册快捷方式"><a href="#给应用页面注册快捷方式" class="headerlink" title="给应用页面注册快捷方式"></a>给应用页面注册快捷方式</h3><p>元数据不仅能传递简单的字符串参数，还能传送更复杂的资源数据，比如实现应用的快捷方式菜单。</p>
+<p><strong>示例：</strong><br>清单文件：</p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.ButtonClickActivity&quot;</span></span>
+<span class="hljs-tag">    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.app.shortcuts&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:resource</span>=<span class="hljs-string">&quot;@xml/shortcuts&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span></code></pre></div>
+<p>在res目录下新建xml文件夹，里面新建<code>shortcuts.xml</code>，注意所有字符串要在<code>value/string.xml</code>文件里注册，</p>
+<p><code>shortcuts.xml</code>代码示例：</p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">shortcuts</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">shortcut</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:enabled</span>=<span class="hljs-string">&quot;true&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutId</span>=<span class="hljs-string">&quot;first&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutLongLabel</span>=<span class="hljs-string">&quot;@string/long_1&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutShortLabel</span>=<span class="hljs-string">&quot;@string/short_1&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">intent</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:action</span>=<span class="hljs-string">&quot;android.intent.action.VIEW&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetClass</span>=<span class="hljs-string">&quot;com.yorick.chapter03.ViewGravityActivity&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetPackage</span>=<span class="hljs-string">&quot;com.yorick.chapter03&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">categories</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.shortcut.conversation&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">shortcut</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">shortcut</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:enabled</span>=<span class="hljs-string">&quot;true&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutId</span>=<span class="hljs-string">&quot;second&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutLongLabel</span>=<span class="hljs-string">&quot;@string/long_2&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutShortLabel</span>=<span class="hljs-string">&quot;@string/short_2&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">intent</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:action</span>=<span class="hljs-string">&quot;android.intent.action.VIEW&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetClass</span>=<span class="hljs-string">&quot;com.yorick.chapter03.GridLayoutActivity&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetPackage</span>=<span class="hljs-string">&quot;com.yorick.chapter03&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">categories</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.shortcut.conversation&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">shortcut</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">shortcut</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:enabled</span>=<span class="hljs-string">&quot;true&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutId</span>=<span class="hljs-string">&quot;third&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutLongLabel</span>=<span class="hljs-string">&quot;@string/long_3&quot;</span></span>
+<span class="hljs-tag">        <span class="hljs-attr">android:shortcutShortLabel</span>=<span class="hljs-string">&quot;@string/short_3&quot;</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">intent</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:action</span>=<span class="hljs-string">&quot;android.intent.action.VIEW&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetClass</span>=<span class="hljs-string">&quot;com.yorick.chapter03.RelativeLayoutActivity&quot;</span></span>
+<span class="hljs-tag">            <span class="hljs-attr">android:targetPackage</span>=<span class="hljs-string">&quot;com.yorick.chapter03&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">categories</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.shortcut.conversation&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">shortcut</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">shortcuts</span>&gt;</span></code></pre></div>
+<p><code>string.xml</code>代码示例：</p>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;app_name&quot;</span>&gt;</span>chapter03<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hello&quot;</span>&gt;</span>Hello,World!<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;short_1&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;long_1&quot;</span>&gt;</span>重力视图<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;short_2&quot;</span>&gt;</span>short<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;long_2&quot;</span>&gt;</span>网格视图<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;short_3&quot;</span>&gt;</span>third<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;long_3&quot;</span>&gt;</span>相对视图<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span></code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/activity/">#activity</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Android活动（Activity）</div>
+      <div>https://yorick-ryu.github.io/Android/Android活动（Activity）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Android/Android%E9%80%89%E6%8B%A9%E6%8C%89%E9%92%AE/" title="Android选择按钮">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Android选择按钮</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Android/Android%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%EF%BC%88ImageView%EF%BC%89/" title="Android图像视图（ImageView）">
+                        <span class="hidden-mobile">Android图像视图（ImageView）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

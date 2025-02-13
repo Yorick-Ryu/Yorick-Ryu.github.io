@@ -1,0 +1,932 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="使用Proto DataStore存储数据摘自： 应用架构：数据层 - DataStore - Android 开发者  | Android Developers 使用 Proto DataStore  | Android Developers 什么是 DataStore？DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android使用Proto_DataStore">
+<meta property="og:url" content="https://yorick-ryu.github.io/Android/Android%E4%BD%BF%E7%94%A8Proto-DataStore/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="使用Proto DataStore存储数据摘自： 应用架构：数据层 - DataStore - Android 开发者  | Android Developers 使用 Proto DataStore  | Android Developers 什么是 DataStore？DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/android-jetpack.svg">
+<meta property="article:published_time" content="2023-01-28T11:02:05.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.371Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Jetpack">
+<meta property="article:tag" content="DataStore">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/android-jetpack.svg">
+  
+  
+  
+  <title>Android使用Proto_DataStore | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Android使用Proto_DataStore"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-28 19:02" pubdate>
+          2023年1月28日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Android使用Proto_DataStore</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="使用Proto-DataStore存储数据"><a href="#使用Proto-DataStore存储数据" class="headerlink" title="使用Proto DataStore存储数据"></a>使用Proto DataStore存储数据</h1><p>摘自：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn">应用架构：数据层 - DataStore - Android 开发者  | Android Developers</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/codelabs/android-proto-datastore?hl=zh-cn">使用 Proto DataStore  | Android Developers</a></p>
+<h2 id="什么是-DataStore？"><a href="#什么是-DataStore？" class="headerlink" title="什么是 DataStore？"></a><strong>什么是 DataStore？</strong></h2><p>DataStore 是经过改进的新版数据存储解决方案，旨在取代 SharedPreferences。DataStore 基于 Kotlin 协程和 Flow 构建，提供以下两种不同的实现：<strong>Proto DataStore</strong>，用于存储<strong>类型化对象</strong>（由<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>支持）；<strong>Preferences DataStore</strong>，用于存储<strong>键值对</strong>。DataStore 以异步、一致的事务方式存储数据，克服了 SharedPreferences 的一些缺点。</p>
+<h2 id="DataStore-基础知识"><a href="#DataStore-基础知识" class="headerlink" title="DataStore - 基础知识"></a>DataStore - 基础知识</h2><p>您可能经常需要存储较小或简单的数据集。为此，您过去可能使用过 SharedPreferences，但此 API 也存在一系列缺点。Jetpack DataStore 库旨在解决这些问题，从而创建一个简单、安全性更高的异步 API 来存储数据。它提供 2 种不同的实现：</p>
+<ul>
+<li>Preferences DataStore</li>
+<li>Proto DataStore</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>功能</strong></th>
+<th><strong>SharedPreferences</strong></th>
+<th><strong>PreferencesDataStore</strong></th>
+<th><strong>ProtoDataStore</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>异步 API</td>
+<td>✅（仅用于通过<a target="_blank" rel="noopener" href="https://developer.android.com/reference/android/content/SharedPreferences.OnSharedPreferenceChangeListener?hl=zh-cn">监听器</a>读取已更改的值）</td>
+<td>✅（通过 <code>Flow</code> 以及 RxJava 2 和 3 <code>Flowable</code>）</td>
+<td>✅（通过 <code>Flow</code> 以及 RxJava 2 和 3 <code>Flowable</code>）</td>
+</tr>
+<tr>
+<td>同步 API</td>
+<td>✅（但无法在界面线程上安全调用）</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>可在界面线程上安全调用</td>
+<td>❌(1)</td>
+<td>✅（这项工作已在后台移至 <code>Dispatchers.IO</code>）</td>
+<td>✅（这项工作已在后台移至 <code>Dispatchers.IO</code>）</td>
+</tr>
+<tr>
+<td>可以提示错误</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>不受运行时异常影响</td>
+<td>❌(2)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>包含一个具有强一致性保证的事务性 API</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>处理数据迁移</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>类型安全</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅ 使用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a></td>
+</tr>
+</tbody></table>
+<p>(1) SharedPreferences 有一个看上去可以在界面线程中安全调用的同步 API，但是该 API 实际上执行磁盘 I&#x2F;O 操作。此外，<code>apply()</code> 会阻断 <code>fsync()</code> 上的界面线程。每次有服务启动或停止以及每次 activity 在应用中的任何地方启动或停止时，系统都会触发待处理的 <code>fsync()</code> 调用。界面线程在 <code>apply()</code> 调度的待处理 <code>fsync()</code> 调用上会被阻断，这通常会导致 <a target="_blank" rel="noopener" href="https://developer.android.com/topic/performance/vitals/anr?hl=zh-cn">ANR</a>。</p>
+<p>(2) SharedPreferences 会将解析错误作为运行时异常抛出。</p>
+<h3 id="Preferences-DataStore-与-Proto-DataStore"><a href="#Preferences-DataStore-与-Proto-DataStore" class="headerlink" title="Preferences DataStore 与 Proto DataStore"></a><strong>Preferences DataStore 与 Proto DataStore</strong></h3><p>虽然 Preferences DataStore 和 Proto DataStore 都允许保存数据，但它们保存数据的方式不同：</p>
+<ul>
+<li>与 SharedPreferences 一样，<strong>Preferences DataStore</strong> 根据键访问数据，而无需事先定义架构。</li>
+<li><strong>Proto DataStore</strong> 使用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>来定义架构。使用协议缓冲区可<strong>持久保留强类型数据</strong>。与 XML 和其他类似的数据格式相比，协议缓冲区速度更快、规格更小、使用更简单，并且更清楚明了。虽然使用 Proto DataStore 需要学习新的序列化机制，但我们认为 Proto DataStore 有着强大的类型优势，值得学习。</li>
+</ul>
+<h3 id="Room-与-DataStore"><a href="#Room-与-DataStore" class="headerlink" title="Room 与 DataStore"></a><strong>Room 与 DataStore</strong></h3><p>如果您需要实现部分更新、引用完整性或大型&#x2F;复杂数据集，您应考虑使用 Room，而不是 DataStore。DataStore 非常适合小型或简单的数据集，但不支持部分更新或引用完整性。</p>
+<h2 id="Proto-DataStore-概览"><a href="#Proto-DataStore-概览" class="headerlink" title="Proto DataStore - 概览"></a>Proto DataStore - 概览</h2><p>SharedPreferences 和 Preferences DataStore 的一个缺点是无法定义架构，保证不了存取键时使用了正确的数据类型。Proto DataStore 可利用<a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers?hl=zh-cn">协议缓冲区</a>定义架构来解决此问题。通过使用协议，DataStore 可以知道存储的类型，并且无需使用键便能提供类型。</p>
+<h2 id="添加依赖项"><a href="#添加依赖项" class="headerlink" title="添加依赖项"></a><strong>添加依赖项</strong></h2><p>为了使用 Proto DataStore，让协议缓冲区为我们的架构生成代码，我们需要对 build.gradle 文件进行一些更改：</p>
+<ul>
+<li>添加协议缓冲区插件</li>
+<li>添加协议缓冲区和 Proto DataStore 依赖项</li>
+<li>配置协议缓冲区</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs groovy">plugins &#123;
+    ...
+    id <span class="hljs-string">&quot;com.google.protobuf&quot;</span> version <span class="hljs-string">&quot;0.8.17&quot;</span>
+&#125;
+
+dependencies &#123;
+    implementation  <span class="hljs-string">&quot;androidx.datastore:datastore-core:1.0.0&quot;</span>
+    implementation  <span class="hljs-string">&quot;com.google.protobuf:protobuf-javalite:3.18.0&quot;</span>
+    ...
+&#125;
+
+protobuf &#123;
+    protoc &#123;
+        artifact = <span class="hljs-string">&quot;com.google.protobuf:protoc:3.14.0&quot;</span>
+    &#125;
+
+    <span class="hljs-comment">// Generates the java Protobuf-lite code for the Protobufs in this project. See</span>
+    <span class="hljs-comment">// https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation</span>
+    <span class="hljs-comment">// for more information.</span>
+    generateProtoTasks &#123;
+        all().each &#123; task -&gt;
+            task.builtins &#123;
+                java &#123;
+                    option <span class="hljs-string">&#x27;lite&#x27;</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+<h2 id="使用Proto-DataStore"><a href="#使用Proto-DataStore" class="headerlink" title="使用Proto DataStore"></a>使用Proto DataStore</h2><h3 id="定义架构"><a href="#定义架构" class="headerlink" title="定义架构"></a>定义架构</h3><h4 id="定义和使用-protobuf-对象"><a href="#定义和使用-protobuf-对象" class="headerlink" title="定义和使用 protobuf 对象"></a>定义和使用 protobuf 对象</h4><p>协议缓冲区是一种对结构化数据进行序列化的机制。您只需对数据结构化的方式进行一次定义，编译器便会生成源代码，轻松写入和读取结构化数据。</p>
+<h4 id="创建-proto-文件"><a href="#创建-proto-文件" class="headerlink" title="创建 proto 文件"></a><strong>创建 proto 文件</strong></h4><p>您可以在 proto 文件中定义架构。在此 Codelab 中，我们有两个用户偏好设置：<code>show_completed</code> 和 <code>sort_order</code>；目前两者以两种不同的对象来表示。因此，我们的一个目标是将这两个标志统一到存储在 DataStore 中的一个 <code>UserPreferences</code> 类下。我们将在协议缓冲区架构而非 Kotlin 中定义该类。</p>
+<p>请查看 <a target="_blank" rel="noopener" href="https://developers.google.com/protocol-buffers/docs/overview?hl=zh-cn">Proto 语言指南</a>，深入了解关于语法的信息。在此 Codelab 中，我们仅关注我们需要使用的类型。</p>
+<p>在 <code>app/src/main/proto</code> 目录中创建一个名为 <code>user_prefs.proto</code> 的新文件。如果您未看到此文件夹结构，请切换到<strong>项目视图</strong>。在协议缓冲区中，每个结构都使用一个 <code>message</code> 关键字进行定义，并且结构中的每一个成员都会根据类型和名称在消息内进行定义，从而获得从 1 开始的排序。</p>
+<p>示例：</p>
+<div class="code-wrapper"><pre><code class="hljs protobuf">syntax = <span class="hljs-string">&quot;proto3&quot;</span>;
+
+<span class="hljs-keyword">option</span> java_package = <span class="hljs-string">&quot;com.example.application&quot;</span>;
+<span class="hljs-keyword">option</span> java_multiple_files = <span class="hljs-literal">true</span>;
+
+<span class="hljs-keyword">message </span><span class="hljs-title class_">Settings</span> &#123;
+  <span class="hljs-type">int32</span> example_counter = <span class="hljs-number">1</span>;
+&#125;</code></pre></div>
+
+<p class="note note-warning">注意：您的存储对象的类在编译时由 proto 文件中定义的 message 生成。请务必重新构建您的项目。</p>
+
+<h3 id="创建-Proto-DataStore"><a href="#创建-Proto-DataStore" class="headerlink" title="创建 Proto DataStore"></a>创建 Proto DataStore</h3><p>创建 Proto DataStore 来存储类型化对象涉及两个步骤：</p>
+<ol>
+<li>定义一个实现 <code>Serializer&lt;T&gt;</code> 的类，其中 <code>T</code> 是 proto 文件中定义的类型。此序列化器类会告知 DataStore 如何读取和写入您的数据类型。请务必为该序列化器添加默认值，以便在尚未创建任何文件时使用。</li>
+<li>使用由 <code>dataStore</code> 创建的属性委托来创建 <code>DataStore&lt;T&gt;</code> 的实例，其中 <code>T</code> 是在 proto 文件中定义的类型。在您的 Kotlin 文件顶层调用该实例一次，便可在应用的所有其余部分通过此属性委托访问该实例。<code>filename</code> 参数会告知 DataStore 使用哪个文件存储数据，而 <code>serializer</code> 参数会告知 DataStore 第 1 步中定义的序列化器类的名称。</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">object</span> SettingsSerializer : Serializer&lt;Settings&gt; &#123;
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> defaultValue: Settings = Settings.getDefaultInstance()
+
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">readFrom</span><span class="hljs-params">(input: <span class="hljs-type">InputStream</span>)</span></span>: Settings &#123;
+    <span class="hljs-keyword">try</span> &#123;
+      <span class="hljs-keyword">return</span> Settings.parseFrom(input)
+    &#125; <span class="hljs-keyword">catch</span> (exception: InvalidProtocolBufferException) &#123;
+      <span class="hljs-keyword">throw</span> CorruptionException(<span class="hljs-string">&quot;Cannot read proto.&quot;</span>, exception)
+    &#125;
+  &#125;
+
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">writeTo</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    t: <span class="hljs-type">Settings</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">    output: <span class="hljs-type">OutputStream</span>)</span></span> = t.writeTo(output)
+&#125;
+
+<span class="hljs-keyword">val</span> Context.settingsDataStore: DataStore&lt;Settings&gt; <span class="hljs-keyword">by</span> dataStore(
+  fileName = <span class="hljs-string">&quot;settings.pb&quot;</span>,
+  serializer = SettingsSerializer
+)</code></pre></div>
+
+<h3 id="从-Proto-DataStore-读取内容"><a href="#从-Proto-DataStore-读取内容" class="headerlink" title="从 Proto DataStore 读取内容"></a>从 Proto DataStore 读取内容</h3><p>使用 <code>DataStore.data</code> 显示所存储对象中相应属性的 <code>Flow</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> exampleCounterFlow: Flow&lt;<span class="hljs-built_in">Int</span>&gt; = context.settingsDataStore.<span class="hljs-keyword">data</span>
+  .map &#123; settings -&gt;
+    <span class="hljs-comment">// The exampleCounter property is generated from the proto schema.</span>
+    settings.exampleCounter
+  &#125;</code></pre></div>
+
+<h3 id="将内容写入-Proto-DataStore"><a href="#将内容写入-Proto-DataStore" class="headerlink" title="将内容写入 Proto DataStore"></a>将内容写入 Proto DataStore</h3><p>Proto DataStore 提供了一个 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/kotlin/androidx/datastore/core/DataStore?hl=zh-cn#updatedata"><code>updateData()</code></a> 函数，用于以事务方式更新存储的对象。<code>updateData()</code> 为您提供数据的当前状态，作为数据类型的一个实例，并在原子读-写-修改操作中以事务方式更新数据。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">incrementCounter</span><span class="hljs-params">()</span></span> &#123;
+  context.settingsDataStore.updateData &#123; currentSettings -&gt;
+    currentSettings.toBuilder()
+      .setExampleCounter(currentSettings.exampleCounter + <span class="hljs-number">1</span>)
+      .build()
+    &#125;
+&#125;</code></pre></div>
+
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn#synchronous">在同步代码中使用 DataStore</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/topic/libraries/architecture/datastore?hl=zh-cn#multiprocess">在多进程代码中使用 DataStore</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Jetpack/">#Jetpack</a>
+      
+        <a href="/tags/DataStore/">#DataStore</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Android使用Proto_DataStore</div>
+      <div>https://yorick-ryu.github.io/Android/Android使用Proto-DataStore/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Project/CookTools-doc/" title="酷客工具箱使用文档">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">酷客工具箱使用文档</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Android/Android%E5%BC%80%E5%B1%8F%E5%8A%A8%E7%94%BB/" title="Android开屏动画">
+                        <span class="hidden-mobile">Android开屏动画</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

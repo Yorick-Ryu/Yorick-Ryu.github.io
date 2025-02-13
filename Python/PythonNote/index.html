@@ -1,0 +1,1008 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Python_Mini_Note import random 随机数库  import decimal 十进制库，提供精准的浮点数  &#x2F;&#x2F;地板除,两数相除后向下取整的结果  一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y)  divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b)  ads(x)返回x的绝对值，若x是复数，则返回x的模  pow(x,y)和x ** y都表示x的y次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python笔记">
+<meta property="og:url" content="https://yorick-ryu.github.io/Python/PythonNote/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="Python_Mini_Note import random 随机数库  import decimal 十进制库，提供精准的浮点数  &#x2F;&#x2F;地板除,两数相除后向下取整的结果  一个公式：x &#x3D;&#x3D; (x &#x2F;&#x2F; y) * y+(x % y)  divmod(a,b) 得到 (a &#x2F;&#x2F; b,a % b)  ads(x)返回x的绝对值，若x是复数，则返回x的模  pow(x,y)和x ** y都表示x的y次">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/img1.png">
+<meta property="article:published_time" content="2022-04-18T08:13:49.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.388Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/img1.png">
+  
+  
+  
+  <title>Python笔记 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-18 16:13" pubdate>
+          2022年4月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python笔记</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="Python-Mini-Note"><a href="#Python-Mini-Note" class="headerlink" title="Python_Mini_Note"></a>Python_Mini_Note</h3><ol>
+<li><p>import random 随机数库</p>
+</li>
+<li><p>import decimal 十进制库，提供精准的浮点数</p>
+</li>
+<li><p><code>//</code>地板除,两数相除后向下取整的结果</p>
+</li>
+<li><p>一个公式：<code>x == (x // y) * y+(x % y)</code></p>
+</li>
+<li><p><code>divmod(a,b)</code> 得到 <code>(a // b,a % b)</code></p>
+</li>
+<li><p><code>ads(x)</code>返回x的绝对值，若x是复数，则返回x的模</p>
+</li>
+<li><p><code>pow(x,y)</code>和<code>x ** y</code>都表示x的y次方 </p>
+</li>
+<li><p><code>pow(x,y,z)</code>表示x的y次方除以z的余数</p>
+</li>
+<li><p>for in </p>
+</li>
+<li><p>深拷贝和浅拷贝 <code>import copy</code></p>
+</li>
+<li><p>列表推导式</p>
+</li>
+<li><p>元组不可以修改，只支持查</p>
+</li>
+<li><p>打包和解包</p>
+<div class="code-wrapper"><pre><code class="hljs py">t = (<span class="hljs-number">123</span>,<span class="hljs-number">222</span>,<span class="hljs-string">&quot;hh&quot;</span>)
+x,y,z = t
+a,b,c,d,e,f = <span class="hljs-string">&#x27;Yorick&#x27;</span>
+a,b,c,*d = <span class="hljs-string">&#x27;Yorick&#x27;</span></code></pre></div>
+</li>
+<li><p>多重赋值<code>x,y = 1,2</code></p>
+</li>
+<li><p>元组里放列表就可变</p>
+</li>
+<li><p><code>zip(x,y,z)</code>以最短的为准,可以<code>import itertools</code> 使用<code>itertools.zip_longest(x,y,z)</code>可以按照最长的来，空用<code>None</code>填充</p>
+</li>
+<li><p>map()</p>
+ <div class="code-wrapper"><pre><code class="hljs py">mapped = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">pow</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+<span class="hljs-comment">#等价：</span>
+mapped = [<span class="hljs-built_in">pow</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>),<span class="hljs-built_in">pow</span>(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)]</code></pre></div>
+</li>
+<li><p>filter()</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">str</span>.islower,<span class="hljs-string">&quot;Yorick&quot;</span>))
+<span class="hljs-comment"># [&#x27;o&#x27;, &#x27;r&#x27;, &#x27;i&#x27;, &#x27;c&#x27;, &#x27;k&#x27;]</span></code></pre></div>
+</li>
+<li><p>set 集合元素具有唯一性</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>])
+<span class="hljs-comment">#输出去重集合</span>
+&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>&#125;</code></pre></div>
+</li>
+<li><p>参数列表里<code>/</code>左边只能传递位置参数，不能传递关键字参数。</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">abc</span>(<span class="hljs-params">a,/,b,c</span>):
+ <span class="hljs-built_in">print</span>(a,b,c)
+abc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+<span class="hljs-comment">#正常输出 1 2 3</span>
+abc(a = <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+<span class="hljs-comment">#报错SyntaxError: positional argument follows keyword argument</span></code></pre></div>
+</li>
+<li><p><code>*</code>限制参数列表,<code>*</code>号右侧只能为关键字参数,左侧不限</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">abc</span>(<span class="hljs-params">a,*,b,c</span>):
+ <span class="hljs-built_in">print</span>(a,b,c)</code></pre></div>
+</li>
+<li><p>收集参数，利用元组（tuple）的打包解包功能实现动态参数</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">*args</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;有&#123;&#125;个参数&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">len</span>(args)))
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;第二个参数是：&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(args[<span class="hljs-number">1</span>]))
+myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+<span class="hljs-comment"># 输出：</span>
+<span class="hljs-comment"># 有3个参数</span>
+<span class="hljs-comment"># 第二个参数是：2</span></code></pre></div>
+<p>当某函数的参数列表中存在收集参数时，收集参数右侧只能为关键字参数,左侧不限。（同22）</p>
+</li>
+<li><p><code>**</code>字典形式的收集参数</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">a,*b,**c</span>):
+    <span class="hljs-built_in">print</span>(a,b,c)
+myfunc(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,x=<span class="hljs-number">5</span>,y=<span class="hljs-number">6</span>)
+<span class="hljs-comment"># 输出：</span>
+<span class="hljs-comment"># 1 (2, 3, 4) &#123;&#x27;x&#x27;: 5, &#x27;y&#x27;: 6&#125;</span></code></pre></div>
+<p>常见于<code>format</code>函数：</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-built_in">help</span>(<span class="hljs-built_in">str</span>.<span class="hljs-built_in">format</span>)
+Help on method_descriptor:
+
+<span class="hljs-built_in">format</span>(...)
+    S.<span class="hljs-built_in">format</span>(*args, **kwargs) -&gt; <span class="hljs-built_in">str</span>
+
+    Return a formatted version of S, using substitutions <span class="hljs-keyword">from</span> args <span class="hljs-keyword">and</span> kwargs.
+    The substitutions are identified by braces (<span class="hljs-string">&#x27;&#123;&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;&#125;&#x27;</span>).</code></pre></div>
+</li>
+<li><p>解包参数<br>调用时解包元组<code>*</code>，解包字典<code>**</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#定义一个元组</span>
+arg = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)
+<span class="hljs-comment">#定义一函数，需要4个参数</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">a,b,c,d</span>):
+    <span class="hljs-built_in">print</span>(a,b,c,d)
+<span class="hljs-comment">#第一个报错</span>
+myfunc(arg)
+<span class="hljs-comment">#第二个正常输出1 2 3 4，解包了</span>
+myfunc(*arg)</code></pre></div>
+</li>
+<li><p>全局变量无法在函数中改变，只能访问。<br>如果非要改，用<code>global</code>关键字，但不提倡</p>
+<div class="code-wrapper"><pre><code class="hljs py">    x = <span class="hljs-number">880</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>():
+        <span class="hljs-keyword">global</span> x
+        x = <span class="hljs-number">520</span>
+        <span class="hljs-built_in">print</span>(x)
+    
+    myfunc()
+    <span class="hljs-comment">#输出520</span>
+    <span class="hljs-built_in">print</span>(x)
+    <span class="hljs-comment">#输出520，全局变量x被改变</span>
+    ````
+    
+<span class="hljs-number">27.</span> `<span class="hljs-keyword">nonlocal</span>`实现在内部函数改变外部函数的变量
+
+<span class="hljs-number">28.</span> 变量作用域遵循LEGB规则，优先级由高到低
+    `Local`局部作用域
+    `Enclosed`嵌套函数的外层作用域
+    `Global`全局作用域
+    `Built-In`内置作用域
+
+<span class="hljs-number">29.</span> 闭包，工厂函数
+    <span class="hljs-number">1.</span> 利用嵌套函数的外层作用域具有记忆能力这个特性。
+    <span class="hljs-number">2.</span> 将内层函数作为返回值给返回
+
+<span class="hljs-number">30.</span> 返回值是一个函数时不用加`()`
+
+<span class="hljs-number">31.</span> 装饰器,不改变原函数的前提下加功能
+
+    注意：
+    - **多个装饰器**调用顺序：**自下往上**
+    - 可以通过再套一层函数的方式来传递参数
+
+    实现原理：
+    ```py
+    <span class="hljs-keyword">import</span> time
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">time_master</span>(<span class="hljs-params">func</span>):
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">call_func</span>():
+	        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Starting...&quot;</span>)
+	        start = time.time()
+	        func()
+	        stop = time.time()
+	        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;ending...&quot;</span>)
+	        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time:<span class="hljs-subst">&#123;(stop-start):<span class="hljs-number">.2</span>f&#125;</span>秒&quot;</span>)
+        <span class="hljs-keyword">return</span> call_func
+
+    <span class="hljs-comment">#原函数</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>():
+        time.sleep(<span class="hljs-number">2</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello Yorick&quot;</span>)
+
+    <span class="hljs-comment">#闭包覆盖原函数</span>
+    myfunc = time_master(myfunc)
+
+    <span class="hljs-comment">#调用</span>
+    myfunc()
+
+    <span class="hljs-comment">#输出：</span>
+    <span class="hljs-comment">#Starting...</span>
+    <span class="hljs-comment">#Hello Yorick</span>
+    <span class="hljs-comment">#ending...</span>
+    <span class="hljs-comment">#time:2.00秒</span></code></pre></div>
+<p>语法糖：</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> time
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">time_master</span>(<span class="hljs-params">func</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">call_func</span>():
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Starting...&quot;</span>)
+     start = time.time()
+     func()
+     stop = time.time()
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;ending...&quot;</span>)
+     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time:<span class="hljs-subst">&#123;(stop-start):<span class="hljs-number">.2</span>f&#125;</span>秒&quot;</span>)
+    <span class="hljs-keyword">return</span> call_func
+
+<span class="hljs-comment">#语法糖，以后再调用myfunc，则将此函数作参数代入至time_master函数中运行time_master</span>
+<span class="hljs-meta">@time_master</span>
+
+<span class="hljs-comment">#原函数</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>():
+    time.sleep(<span class="hljs-number">2</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello Yorick&quot;</span>)
+
+<span class="hljs-comment">#调用</span>
+myfunc()
+
+<span class="hljs-comment">#输出：</span>
+<span class="hljs-comment">#Starting...</span>
+<span class="hljs-comment">#Hello Yorick</span>
+<span class="hljs-comment">#ending...</span>
+<span class="hljs-comment">#time:2.00秒</span></code></pre></div>
+</li>
+<li><p>lambda函数，匿名函数，一行流</p>
+<div class="code-wrapper"><pre><code class="hljs py">y = [<span class="hljs-keyword">lambda</span> x : x * x,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+y[<span class="hljs-number">0</span>](y[<span class="hljs-number">1</span>])
+<span class="hljs-comment">#结果：4</span></code></pre></div>
+</li>
+<li><p>生成器：每次调用提供一份数据，并保留函数内部状态，下次调用重复以上过程</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">counter</span>():
+    i = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> i &lt;= <span class="hljs-number">5</span>:
+        <span class="hljs-keyword">yield</span> i
+        <span class="hljs-comment">#yield i与函数中的return i类似，返回上层程序并给出返回值。</span>
+        <span class="hljs-comment">#但是函数在return后不保存当前状态，生成器则是一个迭代器，每次引用时从上一次的结束状态开始运行。</span>
+        i += <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> counter():
+    <span class="hljs-built_in">print</span>(i)
+
+<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">输出：</span>
+<span class="hljs-string">0</span>
+<span class="hljs-string">1</span>
+<span class="hljs-string">2</span>
+<span class="hljs-string">3</span>
+<span class="hljs-string">4</span>
+<span class="hljs-string">5</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+
+<span class="hljs-comment">#也可以用next()语句，不支持下表索引</span></code></pre></div>
+<p>斐波那契数列:</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#斐波那契数列生成器函数</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">fib</span>():
+ back1,back2 = <span class="hljs-number">0</span>,<span class="hljs-number">1</span>
+ <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+  <span class="hljs-keyword">yield</span> back1
+  back1, back2 = back2, back1+back2
+
+f = fib()
+
+<span class="hljs-comment">#下一个斐波那契数</span>
+<span class="hljs-built_in">next</span>(f)
+
+<span class="hljs-comment">#打印斐波那契数列</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f:
+    <span class="hljs-built_in">print</span>(i)</code></pre></div></li>
+<li><p>生成器表达式和列表表达式：生成器表达式每次调用只输出一个数据，而列表表达式一次调用全部输出为列表形式。</p>
+<div class="code-wrapper"><pre><code class="hljs py"><span class="hljs-comment">#生成器表式</span>
+g = (i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>))
+<span class="hljs-built_in">next</span>(g)
+<span class="hljs-comment">#输出0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> g:
+    <span class="hljs-built_in">print</span>()
+<span class="hljs-comment">#依次输出16 25 36 49 64 91 </span>
+
+<span class="hljs-comment">#列表表达式</span>
+[i ** <span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]
+<span class="hljs-comment">#输出：[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></code></pre></div></li>
+</ol>
+<p>​    </p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/note/">#note</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python笔记</div>
+      <div>https://yorick-ryu.github.io/Python/PythonNote/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Python/Python%E4%BD%BF%E7%94%A8mysql/" title="Python使用mysql">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python使用mysql</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Python/Python%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0(lambda)/" title="Python匿名函数(lambda)">
+                        <span class="hidden-mobile">Python匿名函数(lambda)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

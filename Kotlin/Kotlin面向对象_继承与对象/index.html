@@ -1,0 +1,1111 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="面向对象 面向对象 继承 open关键字 类型检测与转换 智能类型转换 Any超类   对象 Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类      继承open关键字类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。 open class Product(val name:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin面向对象_继承与对象">
+<meta property="og:url" content="https://yorick-ryu.github.io/Kotlin/Kotlin%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="面向对象 面向对象 继承 open关键字 类型检测与转换 智能类型转换 Any超类   对象 Object关键字 对象声明 对象表达式 伴生对象 嵌套类 数据类 copy关键字 结构声明 运算符重载 枚举类 枚举类定义函数 代数数据类型 密封类      继承open关键字类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。 open class Product(val name:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
+<meta property="article:published_time" content="2022-09-11T03:39:43.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.378Z">
+<meta property="article:author" content="Yorick">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
+  
+  
+  
+  <title>Kotlin面向对象_继承与对象 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Kotlin面向对象_继承与对象"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-11 11:39" pubdate>
+          2022年9月11日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Kotlin面向对象_继承与对象</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a><ul>
+<li><a href="#%E7%BB%A7%E6%89%BF">继承</a><ul>
+<li><a href="#open%E5%85%B3%E9%94%AE%E5%AD%97">open关键字</a></li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%E4%B8%8E%E8%BD%AC%E6%8D%A2">类型检测与转换</a></li>
+<li><a href="#%E6%99%BA%E8%83%BD%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">智能类型转换</a></li>
+<li><a href="#any%E8%B6%85%E7%B1%BB">Any超类</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E8%B1%A1">对象</a><ul>
+<li><a href="#object%E5%85%B3%E9%94%AE%E5%AD%97">Object关键字</a></li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E5%A3%B0%E6%98%8E">对象声明</a></li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E5%BC%8F">对象表达式</a></li>
+<li><a href="#%E4%BC%B4%E7%94%9F%E5%AF%B9%E8%B1%A1">伴生对象</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97%E7%B1%BB">嵌套类</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB">数据类</a></li>
+<li><a href="#copy%E5%85%B3%E9%94%AE%E5%AD%97">copy关键字</a></li>
+<li><a href="#%E7%BB%93%E6%9E%84%E5%A3%B0%E6%98%8E">结构声明</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">运算符重载</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB">枚举类</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0">枚举类定义函数</a></li>
+<li><a href="#%E4%BB%A3%E6%95%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">代数数据类型</a></li>
+<li><a href="#%E5%AF%86%E5%B0%81%E7%B1%BB">密封类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="open关键字"><a href="#open关键字" class="headerlink" title="open关键字"></a>open关键字</h3><p>类默认都是封闭的，要让某个类开放继承，必须使用open关键字修饰它。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Product</span>(<span class="hljs-keyword">val</span> name: String) &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">desc</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Product: <span class="hljs-variable">$name</span>&quot;</span>
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Nothing&quot;</span>
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LuxuryProduct</span> : <span class="hljs-type">Product</span>(<span class="hljs-string">&quot;Luxury&quot;</span>) &#123;
+    <span class="hljs-comment">// 重写方法</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;LuxuryProduct loading...&quot;</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> p:Product = LuxuryProduct()
+    println(p.load()) <span class="hljs-comment">// LuxuryProduct loading...</span>
+&#125;</code></pre></div>
+<h3 id="类型检测与转换"><a href="#类型检测与转换" class="headerlink" title="类型检测与转换"></a>类型检测与转换</h3><p>使用<code>is</code>进行类型检测<br>使用<code>as</code>进行类型转换</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">import</span> java.io.File
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Product</span>(<span class="hljs-keyword">val</span> name: String) &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">desc</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Product: <span class="hljs-variable">$name</span>&quot;</span>
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;Nothing&quot;</span>
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LuxuryProduct</span> : <span class="hljs-type">Product</span>(<span class="hljs-string">&quot;Luxury&quot;</span>) &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;LuxuryProduct loading...&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">special</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;LuxuryProduct special function&quot;</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> p: Product = LuxuryProduct()
+    println(p.load())
+    <span class="hljs-comment">// 类型检测</span>
+    println(p <span class="hljs-keyword">is</span> Product) <span class="hljs-comment">// true</span>
+    println(p <span class="hljs-keyword">is</span> LuxuryProduct) <span class="hljs-comment">// true</span>
+    println(p <span class="hljs-keyword">is</span> File) <span class="hljs-comment">// false</span>
+
+    <span class="hljs-keyword">if</span> (p <span class="hljs-keyword">is</span> LuxuryProduct) &#123;
+        <span class="hljs-comment">// 类型转换</span>
+        println((p <span class="hljs-keyword">as</span> LuxuryProduct).special()) <span class="hljs-comment">// LuxuryProduct special function</span>
+    &#125;
+&#125;</code></pre></div>
+<h3 id="智能类型转换"><a href="#智能类型转换" class="headerlink" title="智能类型转换"></a>智能类型转换</h3><p>Kotlin编译器很聪明，只要能确定any is 父类条件检查属实，它就会将any当做子类类型对待，因此，编译器允许你不经类型转换直接使用。</p>
+<div class="code-wrapper"><pre><code class="hljs kt">println((p <span class="hljs-keyword">as</span> LuxuryProduct).special())
+p.special() <span class="hljs-comment">// 再次调用无需转换</span></code></pre></div>
+
+<h3 id="Any超类"><a href="#Any超类" class="headerlink" title="Any超类"></a>Any超类</h3><p>类似Java里的Object，Kotlin所有类的共同超类为Any</p>
+<div class="code-wrapper"><pre><code class="hljs kt">println(p <span class="hljs-keyword">is</span> Any) <span class="hljs-comment">// true</span></code></pre></div>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="Object关键字"><a href="#Object关键字" class="headerlink" title="Object关键字"></a>Object关键字</h3><p>使用object关键字，你可以定义一个只能产生一个实例的类-单例</p>
+<p>使用object关键字有三种方式</p>
+<ul>
+<li>对象声明</li>
+<li>对象表达式</li>
+<li>伴生对象</li>
+</ul>
+<h3 id="对象声明"><a href="#对象声明" class="headerlink" title="对象声明"></a>对象声明</h3><p>对象声明有利于组织代码和管理状态，尤其是管理整个应用运行生命周期内的某些一致性状态。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">object</span> ApplicationConfig &#123;
+    <span class="hljs-keyword">init</span> &#123;
+        println(<span class="hljs-string">&quot;ApplicationConfig is loading...&quot;</span>)
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span></span> &#123;
+        println(<span class="hljs-string">&quot;do something...&quot;</span>)
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 单例模式 类名=对象名</span>
+    ApplicationConfig.doSomething()
+    println(ApplicationConfig) <span class="hljs-comment">// ApplicationConfig@52cc8049</span>
+    println(ApplicationConfig) <span class="hljs-comment">//ApplicationConfig@52cc8049</span>
+&#125;</code></pre></div>
+
+<h3 id="对象表达式"><a href="#对象表达式" class="headerlink" title="对象表达式"></a>对象表达式</h3><p>有时候你不一定非要定义一个新的命名类不可，也许你需要某个现有类的一种变体实例，但只需用一次就行了，对于这种用完就丢的类实例，连命名都可以省了。</p>
+<p>这个匿名类依然遵循object关键字的一个规则，即一旦实例化，该匿名类只能有唯一一个实例存在。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Player</span> &#123;
+    <span class="hljs-keyword">open</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = <span class="hljs-string">&quot;loading something...&quot;</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 对象表达式</span>
+    <span class="hljs-keyword">val</span> p = <span class="hljs-keyword">object</span> : Player() &#123;
+        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>: String = <span class="hljs-string">&quot;anonymous class load...&quot;</span>
+    &#125;
+    println(p.load())
+&#125;</code></pre></div>
+
+<h3 id="伴生对象"><a href="#伴生对象" class="headerlink" title="伴生对象"></a>伴生对象</h3><p>使用companion修饰符，将对象伴生在类上，一个类只能有一个伴生对象。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">import</span> java.io.File
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConfigMap</span> &#123;
+    <span class="hljs-keyword">companion</span> <span class="hljs-keyword">object</span> &#123;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> PATH = <span class="hljs-string">&quot;E://demo.txt&quot;</span>
+        <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span> = File(PATH).readBytes()
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    ConfigMap.load()
+&#125;</code></pre></div>
+
+<h3 id="嵌套类"><a href="#嵌套类" class="headerlink" title="嵌套类"></a>嵌套类</h3><p>如果一个类只对另一个类有用，那么将其嵌入到该类中并使这两个类保持在一起是合乎逻辑的，可以使用嵌套类。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Play</span> &#123;
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Equipment</span>(<span class="hljs-keyword">var</span> name: String) &#123;
+        <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span> = println(<span class="hljs-string">&quot;equipment: <span class="hljs-variable">$name</span>&quot;</span>)
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">battle</span><span class="hljs-params">()</span></span> &#123;
+        Equipment(<span class="hljs-string">&quot;sharp knife&quot;</span>).show()
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 直接调用</span>
+    Play.Equipment(<span class="hljs-string">&quot;M416&quot;</span>).show() <span class="hljs-comment">// equipment: M416</span>
+&#125;</code></pre></div>
+
+<h3 id="数据类"><a href="#数据类" class="headerlink" title="数据类"></a>数据类</h3><p>数据类，是专门设计用来存储数据的类</p>
+<ul>
+<li>数据类提供了<code>toString</code>的个性化实现</li>
+<li><code>==</code>符号默认情况下，比较对象就是比较它们的引用值，数据类提供了<code>equals</code>和<code>hashCode</code>的个性化实现</li>
+</ul>
+<p>使用数据类</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
+    <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    println(Coordinate(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>))
+    println(Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>) == Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>))
+&#125;
+<span class="hljs-comment">// Coordinate(x=10, y=20)</span>
+<span class="hljs-comment">// true</span></code></pre></div>
+<p>使用普通类</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
+    <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    println(Coordinate(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>))
+    println(Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>) == Coordinate(x = <span class="hljs-number">10</span>, y = <span class="hljs-number">20</span>))
+&#125;
+<span class="hljs-comment">// Coordinate@52cc8049</span>
+<span class="hljs-comment">// false</span></code></pre></div>
+
+<p>正是因为上述这些特性，你才倾向于用数据类来表示存储数据的简单对象，对于那些经常需要比较、复制或打印自身内容的类，数据类尤其适合它们。然而，一个类要成为数据类，也要符合一定条件。总结下来，主要有三个方面：</p>
+<ul>
+<li>数据类必须有至少带一个参数的主构造函数</li>
+<li>数据类主构造函数的参数必须是val或var</li>
+<li>数据类不能使用abstract、open、sealed和inner修饰符</li>
+</ul>
+<h3 id="copy关键字"><a href="#copy关键字" class="headerlink" title="copy关键字"></a>copy关键字</h3><p>data还提供了复制对象的方法copy。</p>
+<p>但是，copy时不会执行次构造函数里的语句，所以次构造函数里的赋值不会被copy到新对象。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>(<span class="hljs-keyword">var</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>) &#123;
+    <span class="hljs-keyword">var</span> score = <span class="hljs-number">10</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> bobby = <span class="hljs-string">&quot;music&quot;</span>
+    <span class="hljs-keyword">var</span> subject: String
+
+    <span class="hljs-keyword">init</span> &#123;
+        println(<span class="hljs-string">&quot;initializing subject&quot;</span>)
+        subject = <span class="hljs-string">&quot;math&quot;</span>
+    &#125;
+
+    <span class="hljs-keyword">constructor</span>(_name: String) : <span class="hljs-keyword">this</span>(_name, <span class="hljs-number">10</span>) &#123;
+        println(<span class="hljs-string">&quot;constructor&quot;</span>)
+        score = <span class="hljs-number">20</span>
+    &#125;
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>: String &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Student(name=&#x27;<span class="hljs-variable">$name</span>&#x27;, age=<span class="hljs-variable">$age</span>, score=<span class="hljs-variable">$score</span>, bobby=&#x27;<span class="hljs-variable">$bobby</span>&#x27;, subject=&#x27;<span class="hljs-variable">$subject</span>&#x27;)&quot;</span>
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> s = Student(<span class="hljs-string">&quot;John&quot;</span>)
+    <span class="hljs-keyword">val</span> copy = s.copy(<span class="hljs-string">&quot;Alice&quot;</span>)
+    println(s)
+    println(copy)
+&#125;
+<span class="hljs-comment">// initializing subject</span>
+<span class="hljs-comment">// constructor</span>
+<span class="hljs-comment">// initializing subject</span>
+<span class="hljs-comment">// Student(name=&#x27;John&#x27;, age=10, score=20, bobby=&#x27;music&#x27;, subject=&#x27;math&#x27;)</span>
+<span class="hljs-comment">// Student(name=&#x27;Alice&#x27;, age=10, score=10, bobby=&#x27;music&#x27;, subject=&#x27;math&#x27;)</span></code></pre></div>
+<h3 id="结构声明"><a href="#结构声明" class="headerlink" title="结构声明"></a>结构声明</h3><p>解构声明的后台实现就是声明component1、component2等若干个组件函数，让每个函数负责管理你想返回的一个属性数据。</p>
+<p>普通类</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerScore</span>(<span class="hljs-keyword">val</span> exp: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">val</span> level: <span class="hljs-built_in">Int</span>) &#123;
+    <span class="hljs-comment">// 需要组件函数</span>
+    <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">component1</span><span class="hljs-params">()</span></span> = exp
+    <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">component2</span><span class="hljs-params">()</span></span> = level
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> (x, y) = PlayerScore(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+    println(<span class="hljs-string">&quot;<span class="hljs-variable">$x</span>,<span class="hljs-variable">$y</span>&quot;</span>) <span class="hljs-comment">// 10,20</span></code></pre></div>
+<p>如果你定义一个数据类，它会自动为所有定义在主构造函数的属性添加对应的组件函数。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PlayerScore</span>(<span class="hljs-keyword">val</span> exp: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">val</span> level: <span class="hljs-built_in">Int</span>) &#123;&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> (x, y) = PlayerScore(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+    println(<span class="hljs-string">&quot;<span class="hljs-variable">$x</span>,<span class="hljs-variable">$y</span>&quot;</span>) <span class="hljs-comment">// 10,20</span>
+&#125;</code></pre></div>
+<h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><p>如果要将内置运算符应用在自定义类身上，你必须重写运算符函数，告诉编译器该如何操作自定义类。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coordinate</span>(<span class="hljs-keyword">var</span> x: <span class="hljs-built_in">Int</span>, <span class="hljs-keyword">var</span> y: <span class="hljs-built_in">Int</span>) &#123;
+    <span class="hljs-keyword">val</span> isInBounds = x &gt; <span class="hljs-number">0</span> &amp;&amp; y &gt; <span class="hljs-number">0</span>
+    <span class="hljs-comment">// 重载加法运算符</span>
+    <span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">plus</span><span class="hljs-params">(other: <span class="hljs-type">Coordinate</span>)</span></span> = Coordinate(x + other.x, y + other.y)
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> p1 = Coordinate(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+    <span class="hljs-keyword">val</span> p2 = Coordinate(<span class="hljs-number">20</span>, <span class="hljs-number">10</span>)
+    <span class="hljs-keyword">val</span> p3 = p1 + p2
+    println(p3) <span class="hljs-comment">// Coordinate(x=30, y=30)</span>
+&#125;</code></pre></div>
+<p>常见操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>函数名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>plus</td>
+<td>把一个对象添加到另一个对象里</td>
+</tr>
+<tr>
+<td>+&#x3D;</td>
+<td>plusAssign</td>
+<td>把一个对象添加到另一个对象里，然后将结果赋值给第一个对象</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D;</td>
+<td>equals</td>
+<td>如果两个对象相等，则返回true，否则返回false</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>compareTo</td>
+<td>如果左边的对象大于右边的对象，则返回true，否则返回false</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>get</td>
+<td>返回集合中指定位置的元素</td>
+</tr>
+<tr>
+<td>..</td>
+<td>rangeTo</td>
+<td>创建一个range对象</td>
+</tr>
+<tr>
+<td>in</td>
+<td>contains</td>
+<td>如果对象包含在集合里，则返回true</td>
+</tr>
+</tbody></table>
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><p>枚举类,用来定义常量集合的一种特殊类。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Direction</span> &#123;
+    EAST,
+    WEST,
+    SOUTH,
+    NORTH
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    println(Direction.EAST) <span class="hljs-comment">// EAST</span>
+    println(Direction.EAST <span class="hljs-keyword">is</span> Direction) <span class="hljs-comment">// true</span>
+&#125;</code></pre></div>
+
+<h3 id="枚举类定义函数"><a href="#枚举类定义函数" class="headerlink" title="枚举类定义函数"></a>枚举类定义函数</h3><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Direction</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> coordinate: Coordinate) &#123;
+    <span class="hljs-comment">// 实例</span>
+    EAST(Coordinate(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)),
+    WEST(Coordinate(-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)),
+    SOUTH(Coordinate(<span class="hljs-number">0</span>, -<span class="hljs-number">1</span>)),
+    NORTH(Coordinate(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">updateCoordinate</span><span class="hljs-params">(playerCoordinate: <span class="hljs-type">Coordinate</span>)</span></span> =
+        Coordinate(playerCoordinate.x + coordinate.x, playerCoordinate.y + coordinate.y)
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    println(Direction.EAST.updateCoordinate(Coordinate(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)))
+&#125;
+<span class="hljs-comment">// Coordinate(x=11, y=20)</span></code></pre></div>
+<h3 id="代数数据类型"><a href="#代数数据类型" class="headerlink" title="代数数据类型"></a>代数数据类型</h3><p>可以用来表示一组子类型的闭集,枚举类就是一种简单的ADT。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LicenseStatus</span> &#123;
+    UNQUALIFIED,
+    LEARNING,
+    QUALIFIED;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Driver</span>(<span class="hljs-keyword">var</span> status: LicenseStatus) &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">checkLicense</span><span class="hljs-params">()</span></span>: String &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">when</span> (status) &#123;
+            LicenseStatus.UNQUALIFIED -&gt; <span class="hljs-string">&quot;没资格&quot;</span>
+            LicenseStatus.LEARNING -&gt; <span class="hljs-string">&quot;正在学&quot;</span>
+            LicenseStatus.QUALIFIED -&gt; <span class="hljs-string">&quot;有资格&quot;</span>
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    println(Driver(LicenseStatus.QUALIFIED).checkLicense())
+&#125;</code></pre></div>
+
+<h3 id="密封类"><a href="#密封类" class="headerlink" title="密封类"></a>密封类</h3><p>对于更复杂的ADT，你可以使用Kotlin的密封类(sealed class）来实现更复杂的定义，密封类可以用来定义一个类似于枚举类的ADT，但你可以更灵活地控制某个子类型。</p>
+<p>密封类可以有若干个子类，要继承密封类，这些子类必须和它定义在同一个文件里。</p>
+<div class="code-wrapper"><pre><code class="hljs kt"><span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LicenseStatus</span> &#123;
+    <span class="hljs-comment">// 没有属性，所以用单例模式</span>
+    <span class="hljs-keyword">object</span> UnQualified : LicenseStatus()
+    <span class="hljs-keyword">object</span> Learning : LicenseStatus()
+    <span class="hljs-comment">// 每次id不一样，所以使用类</span>
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Qualified</span>(<span class="hljs-keyword">val</span> licenseID: String) : LicenseStatus()
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Driver</span>(<span class="hljs-keyword">var</span> status: LicenseStatus) &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">checkLicense</span><span class="hljs-params">()</span></span>: String &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">when</span> (status) &#123;
+            <span class="hljs-keyword">is</span> LicenseStatus.UnQualified -&gt; <span class="hljs-string">&quot;没资格&quot;</span>
+            <span class="hljs-keyword">is</span> LicenseStatus.Learning -&gt; <span class="hljs-string">&quot;正在学&quot;</span>
+            <span class="hljs-keyword">is</span> LicenseStatus.Qualified -&gt; <span class="hljs-string">&quot;有资格，驾驶证编号：<span class="hljs-subst">$&#123;(this.status as LicenseStatus.Qualified).licenseID&#125;</span>&quot;</span>
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> status = LicenseStatus.Qualified(<span class="hljs-string">&quot;2225211&quot;</span>)
+    <span class="hljs-keyword">val</span> driver = Driver(status)
+    println(driver.checkLicense())
+    <span class="hljs-comment">// 有资格，驾驶证编号：2225211</span>
+&#125;</code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/kotlin/" class="category-chain-item">kotlin</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Kotlin面向对象_继承与对象</div>
+      <div>https://yorick-ryu.github.io/Kotlin/Kotlin面向对象_继承与对象/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/" title="Kotlin接口与抽象类">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kotlin接口与抽象类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1_%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96/" title="Kotlin面向对象_定义类和初始化">
+                        <span class="hidden-mobile">Kotlin面向对象_定义类和初始化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

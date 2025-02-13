@@ -1,0 +1,993 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Android 预备知识 Android 预备知识 App运行日志 APP 工程文件目录结构 Gradle 单位 Dpi Density Dip 实验一 实验二   快捷键 格式化时间    App运行日志Android 采用Log工具打印日志，它将各类日志划分为五个等级：  Log.e：表示错误信息，比如可能导致程序崩溃的异常。 Log.w：表示警告信息。 Log.i：表示一般消息。 Log.d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android预备知识">
+<meta property="og:url" content="https://yorick-ryu.github.io/Android/Android%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="Android 预备知识 Android 预备知识 App运行日志 APP 工程文件目录结构 Gradle 单位 Dpi Density Dip 实验一 实验二   快捷键 格式化时间    App运行日志Android 采用Log工具打印日志，它将各类日志划分为五个等级：  Log.e：表示错误信息，比如可能导致程序崩溃的异常。 Log.w：表示警告信息。 Log.i：表示一般消息。 Log.d">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/project_structure.png">
+<meta property="article:published_time" content="2022-11-28T03:55:17.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.374Z">
+<meta property="article:author" content="Yorick">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/project_structure.png">
+  
+  
+  
+  <title>Android预备知识 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Android预备知识"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-28 11:55" pubdate>
+          2022年11月28日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Android预备知识</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Android-预备知识"><a href="#Android-预备知识" class="headerlink" title="Android 预备知识"></a>Android 预备知识</h1><ul>
+<li><a href="#android-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86">Android 预备知识</a><ul>
+<li><a href="#app%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97">App运行日志</a></li>
+<li><a href="#app-%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">APP 工程文件目录结构</a></li>
+<li><a href="#gradle">Gradle</a></li>
+<li><a href="#%E5%8D%95%E4%BD%8D">单位</a><ul>
+<li><a href="#dpi">Dpi</a></li>
+<li><a href="#density">Density</a></li>
+<li><a href="#dip">Dip</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%80">实验一</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C">实验二</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4">格式化时间</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="App运行日志"><a href="#App运行日志" class="headerlink" title="App运行日志"></a>App运行日志</h2><p>Android 采用Log工具打印日志，它将各类日志划分为五个等级：</p>
+<ul>
+<li><span class="label label-primary">Log.e</span>：表示错误信息，比如可能导致程序崩溃的异常。</li>
+<li><span class="label label-warning">Log.w</span>：表示警告信息。</li>
+<li><span class="label label-primary">Log.i</span>：表示一般消息。</li>
+<li><code>Log.d</code>：表示调试信息，可把程序运行时的变量值打印出来，方便跟踪调试。</li>
+<li><code>Log.v</code>：表示冗余信息。</li>
+</ul>
+<p><img src="/./img/log.png" srcset="/img/loading.gif" lazyload alt="log"></p>
+<h2 id="APP-工程文件目录结构"><a href="#APP-工程文件目录结构" class="headerlink" title="APP 工程文件目录结构"></a>APP 工程文件目录结构</h2><p>App工程分为两个层次，第一个层次是项目，另一个层次是模块。模块依附于项目，每个项目至少有一个模块，也能拥有多个模块。一般所言的“编译运行App”，指的是运行某个模块，而非运行某个项目，因为模块才对应实际的App。</p>
+<p><img src="/./img/project_structure.png" srcset="/img/loading.gif" lazyload alt="project_structure"></p>
+<p>从图中看到，该项目下面有两个分类：一个是 app(代表app模块)；另一个是 Gradle Scripts。其中，app 下面又有3个子目录，其功能说明如下：<br>(1) manifests 子目录，下面只有一个XML文件，即AndroidManifest.xml，它是 App 的运行配置文件。<br>(2) java子目录，下面有3个com.example.myapp包，其中第一个包存放当前模块的Java源代码，后面两个包存放测试用的Java代码。<br>(3) res子目录，存放当前模块的资源文件。res下面又有4个子目录：</p>
+<ul>
+<li>drawable目录存放图形描述文件与图片文件。</li>
+<li>layout目录存放App页面的布局文件。</li>
+<li>mipmap目录存放App的启动图标。</li>
+<li>values目录存放一些常量定义文件，例如字符串常量strings.xml、像素常量dimens.xml、颜色常量colors.xml、样式风格定义styles.xml等。</li>
+</ul>
+<p>Gradle scripts 下面主要是工程的编译配置文件，主要有：<br>(1) <code>build.gradle</code>，该文件分为项目级与模块级两种，用于描述App工程的编译规则。<br>(2) <code>proguard-rules.pro</code>，该文件用于描述Java代码的混淆规则。<br>(3) <code>gradle.properties</code>，该文件用于配置编译工程的命令行参数，一般无须改动。<br>(4) <code>settings.gradle</code>，该文件配置了需要编译哪些模块。初始内容为<code>include &#39;:app&#39;</code>，表示只编译 app 模块。<br>(5)<code>local.properties</code>，项目的本地配置文件，它在工程编译时自动生成，用于描述开发者电脑的环境配置，包括SDK的本地路径、NDK的本地路径等。</p>
+<h2 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h2><p>Gradle 是一个项目自动化构建工具，帮我们做了依赖、打包、部署、发布、各种渠道的差异管理等工作。</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>px (Pixel像素)</td>
+<td>也称为图像元素，是作为图像构成的基本单元，单个像素的大小并不固定，跟随屏幕大小和像素数量的关系变化，一个像素点为1px。</td>
+</tr>
+<tr>
+<td>Resolution(分辨率)</td>
+<td>是指屏幕的垂直和水平方向的像素数量，如果分辨率是1920 1080，那就是垂直方向有1920个像素，水平方向有1080个像素。</td>
+</tr>
+<tr>
+<td>Dpi(像素密度)</td>
+<td>是指屏幕上每英寸（1英寸&#x3D;2.54厘米)距离中有多少个像素点。</td>
+</tr>
+<tr>
+<td>Density(密度)</td>
+<td>是指屏幕上每平方英寸(2.54^2平方厘米)中含有的像素点数量。</td>
+</tr>
+<tr>
+<td>Dip&#x2F;dp(设备独立像素)</td>
+<td>也可以叫做dp，长度单位，同一个单位在不同的设备上有不同的显示效果，具体效果根据设备的密度有关，详细的公式请看下面。</td>
+</tr>
+</tbody></table>
+<p>  计算规则  </p>
+<p>我们以一个4.95英寸 1920 1080 的nexus5手机设备为例：</p>
+<h3 id="Dpi"><a href="#Dpi" class="headerlink" title="Dpi"></a>Dpi</h3><ol>
+<li>计算直角边像素数量：$1920^2+1080^2&#x3D;2202^2$ (勾股定理) 。</li>
+<li>计算DPI：$2202&#x2F;4.95&#x3D; 445$ 。</li>
+<li>得到这个设备的DPI为 445 (每英寸的距离中有445个像素)。</li>
+</ol>
+<h3 id="Density"><a href="#Density" class="headerlink" title="Density"></a>Density</h3><p>上面得到每英寸中有445像素，那么density为每平方英寸中的像素数量，应该为: $445^2&#x3D;198025$ 。</p>
+<h3 id="Dip"><a href="#Dip" class="headerlink" title="Dip"></a>Dip</h3><p>所有显示到屏幕上的图像都是以p×为单位，Dip是我们开发中使用的长度单位，最后他也需要转换成pX，计算这个设备上 1dip等于多少px：<br><code>px = dip x dpi /160</code><br>根据换算关系:320 x 480分辨率，3.6寸的手机: dpi为160，1dp&#x3D;1px</p>
+<h3 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h3><p>相同分辨率，不同大小的手机AB：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>分辨率</th>
+<th>尺寸</th>
+<th>dpi</th>
+<th>dp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机A</td>
+<td>320x480</td>
+<td>3.6寸</td>
+<td>160</td>
+<td>1dp&#x3D;1px</td>
+</tr>
+<tr>
+<td>手机B</td>
+<td>320x480</td>
+<td>7.2寸</td>
+<td>80</td>
+<td>1dp&#x3D;0.5px</td>
+</tr>
+<tr>
+<td>假如AB都设置一个宽度为100dp的TextView：</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>代号</td>
+<td>TextView宽度</td>
+<td>手机宽度</td>
+<td>比例关系</td>
+<td></td>
+</tr>
+<tr>
+<td>—–</td>
+<td>————</td>
+<td>——–</td>
+<td>——–</td>
+<td></td>
+</tr>
+<tr>
+<td>手机A</td>
+<td>100px</td>
+<td>320px</td>
+<td>10&#x2F;32</td>
+<td></td>
+</tr>
+<tr>
+<td>手机B</td>
+<td>50px</td>
+<td>320px</td>
+<td>5&#x2F;32</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>得出结论:</p>
+<p>  对于相同分辨率的手机，屏幕越大，同DP的组件占用屏幕比例越小。  </p>
+<p>如图所示：</p>
+<p><img src="/./img/dp_1.png" srcset="/img/loading.gif" lazyload alt="dp_1"></p>
+<h3 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h3><p>相同大小，不同分辨率的手机AB：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>分辨率</th>
+<th>尺寸</th>
+<th>dpi</th>
+<th>dp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机A</td>
+<td>320x480</td>
+<td>3.6寸</td>
+<td>160</td>
+<td>1dp&#x3D;1px</td>
+</tr>
+<tr>
+<td>手机B</td>
+<td>640x960</td>
+<td>3.6寸</td>
+<td>320</td>
+<td>1dp&#x3D;2px</td>
+</tr>
+</tbody></table>
+<p>假如AB都设置一个宽度为100dp的TextView：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>TextView宽度</th>
+<th>手机宽度</th>
+<th>比例关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>手机A</td>
+<td>100px</td>
+<td>320px</td>
+<td>10&#x2F;32</td>
+</tr>
+<tr>
+<td>手机B</td>
+<td>200px</td>
+<td>640px</td>
+<td>10&#x2F;32</td>
+</tr>
+</tbody></table>
+<p>得出结论:</p>
+<p>  对于相同尺寸的手机，即使分辨率不同，同DP的组件占用屏幕比例也相同。  </p>
+<p>如图所示：</p>
+<p><img src="/./img/dp_2.png" srcset="/img/loading.gif" lazyload alt="dp_2"></p>
+<p>综上：</p>
+<p>  dp的UI效果只在相同尺寸的屏幕上相同，如果屏幕尺寸差异过大，则需要重做dp适配。  </p>
+<p>这也是平板需要单独做适配的原因，可见dp不是比例。</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>快捷键可以提高代码编写效率</p>
+<ul>
+<li><code>Ctrl</code>+<code>Alt</code>+<code>L</code>：格式化代码</li>
+<li><code>Ctrl</code>+<code>Alt</code>+<code>O</code>：清除多余的引用</li>
+<li><code>选中变量名</code>+<code>Ctrl</code>+<code>Alt</code>+<code>O</code>+<code>Enter/Tab</code>：将局部变量转为全局变量</li>
+</ul>
+<p>使用Compose构建布局时：</p>
+<ul>
+<li><code>comp</code>快速生成可组合函数</li>
+<li><code>prev</code>快速生成可组合函数的预览</li>
+</ul>
+<h2 id="格式化时间"><a href="#格式化时间" class="headerlink" title="格式化时间"></a>格式化时间</h2><table border=0 cellspacing=3 cellpadding=0 summary="Examples of date and time patterns interpreted in the U.S. locale">
+   <tr style="background-color: rgb(204, 204, 255);">
+       <th align=left>Date and Time Pattern
+       <th align=left>Result
+   <tr>
+       <td><code>"yyyy.MM.dd G 'at' HH:mm:ss z"</code>
+       <td><code>2001.07.04 AD at 12:08:56 PDT</code>
+   <tr style="background-color: rgb(238, 238, 255);">
+       <td><code>"EEE, MMM d, ''yy"</code>
+       <td><code>Wed, Jul 4, '01</code>
+   <tr>
+       <td><code>"h:mm a"</code>
+       <td><code>12:08 PM</code>
+   <tr style="background-color: rgb(238, 238, 255);">
+       <td><code>"hh 'o''clock' a, zzzz"</code>
+       <td><code>12 o'clock PM, Pacific Daylight Time</code>
+   <tr>
+       <td><code>"K:mm a, z"</code>
+       <td><code>0:08 PM, PDT</code>
+   <tr style="background-color: rgb(238, 238, 255);">
+       <td><code>"yyyyy.MMMM.dd GGG hh:mm aaa"</code>
+       <td><code>02001.July.04 AD 12:08 PM</code>
+   <tr>
+       <td><code>"EEE, d MMM yyyy HH:mm:ss Z"</code>
+       <td><code>Wed, 4 Jul 2001 12:08:56 -0700</code>
+   <tr style="background-color: rgb(238, 238, 255);">
+       <td><code>"yyMMddHHmmssZ"</code>
+       <td><code>010704120856-0700</code>
+   <tr>
+       <td><code>"yyyy-MM-dd'T'HH:mm:ss.SSSZ"</code>
+       <td><code>2001-07-04T12:08:56.235-0700</code>
+   <tr style="background-color: rgb(238, 238, 255);">
+       <td><code>"yyyy-MM-dd'T'HH:mm:ss.SSSXXX"</code>
+       <td><code>2001-07-04T12:08:56.235-07:00</code>
+   <tr>
+       <td><code>"YYYY-'W'ww-u"</code>
+       <td><code>2001-W27-3</code>
+</table>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Android预备知识</div>
+      <div>https://yorick-ryu.github.io/Android/Android预备知识/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Android/Android%E6%96%87%E6%9C%AC%E6%8E%A7%E4%BB%B6%EF%BC%88TextView%EF%BC%89/" title="Android文本控件（TextView）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Android文本控件（TextView）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin2022%E4%B8%AD%E6%96%87%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E4%BC%9A/" title="2022Kotlin中文开发者大会">
+                        <span class="hidden-mobile">2022Kotlin中文开发者大会</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

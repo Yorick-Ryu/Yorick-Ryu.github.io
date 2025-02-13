@@ -1,0 +1,1181 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="稀疏数组和队列 稀疏数组和队列 稀疏数组 基本介绍 实现思路 二维数组转稀疏数组的思路 稀疏数组转原始的二维数组的思路   代码实现   队列 基本介绍 数组模拟队列 实现思路 代码实现 存在问题 优化思路   数组模拟环形队列 思路分析 代码实现        稀疏数组基本介绍当一个数组中大部分元素为0，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。 稀疏数组的处理方法是：  记录数组一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="稀疏数组和队列">
+<meta property="og:url" content="https://yorick-ryu.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E5%92%8C%E9%98%9F%E5%88%97/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="稀疏数组和队列 稀疏数组和队列 稀疏数组 基本介绍 实现思路 二维数组转稀疏数组的思路 稀疏数组转原始的二维数组的思路   代码实现   队列 基本介绍 数组模拟队列 实现思路 代码实现 存在问题 优化思路   数组模拟环形队列 思路分析 代码实现        稀疏数组基本介绍当一个数组中大部分元素为0，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。 稀疏数组的处理方法是：  记录数组一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/sparse_array.png">
+<meta property="article:published_time" content="2022-06-25T07:44:44.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.543Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="数组">
+<meta property="article:tag" content="array">
+<meta property="article:tag" content="队列">
+<meta property="article:tag" content="queue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/sparse_array.png">
+  
+  
+  
+  <title>稀疏数组和队列 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="稀疏数组和队列"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-25 15:44" pubdate>
+          2022年6月25日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          44 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">稀疏数组和队列</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="稀疏数组和队列"><a href="#稀疏数组和队列" class="headerlink" title="稀疏数组和队列"></a>稀疏数组和队列</h1><ul>
+<li><a href="#%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E5%92%8C%E9%98%9F%E5%88%97">稀疏数组和队列</a><ul>
+<li><a href="#%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84">稀疏数组</a><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">基本介绍</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF">实现思路</a><ul>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BD%AC%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E7%9A%84%E6%80%9D%E8%B7%AF">二维数组转稀疏数组的思路</a></li>
+<li><a href="#%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E5%8E%9F%E5%A7%8B%E7%9A%84%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%80%9D%E8%B7%AF">稀疏数组转原始的二维数组的思路</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a></li>
+</ul>
+</li>
+<li><a href="#%E9%98%9F%E5%88%97">队列</a><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D-1">基本介绍</a></li>
+<li><a href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E9%98%9F%E5%88%97">数组模拟队列</a><ul>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF-1">实现思路</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1">代码实现</a></li>
+<li><a href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98">存在问题</a></li>
+<li><a href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF">优化思路</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%BD%A2%E9%98%9F%E5%88%97">数组模拟环形队列</a><ul>
+<li><a href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90">思路分析</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2">代码实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>当一个数组中大部分元素为0，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。</p>
+<p>稀疏数组的处理方法是：</p>
+<ol>
+<li>记录数组一共有几行几列，有多少个不同的值</li>
+<li>把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模</li>
+</ol>
+<p><img src="/img/sparse_array.png" srcset="/img/loading.gif" lazyload alt="sparse_array"></p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p><img src="/img/sparse_array_imp.png" srcset="/img/loading.gif" lazyload alt="sparse_array_imp"></p>
+<h4 id="二维数组转稀疏数组的思路"><a href="#二维数组转稀疏数组的思路" class="headerlink" title="二维数组转稀疏数组的思路"></a>二维数组转稀疏数组的思路</h4><ol>
+<li>遍历原始的二维数组,得到有效数据的个数sum</li>
+<li>根据 sum 就可以创建稀疏数组 sparseArr int[sum+1][3]</li>
+<li>将二维数组的有效数据数据存入到稀疏数组</li>
+</ol>
+<h4 id="稀疏数组转原始的二维数组的思路"><a href="#稀疏数组转原始的二维数组的思路" class="headerlink" title="稀疏数组转原始的二维数组的思路"></a>稀疏数组转原始的二维数组的思路</h4><ol>
+<li>先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组，比如上面的 chessArr2&#x3D;int[11][11]</li>
+<li>再读取稀疏数组后几行的数据，并赋给原始的二维数组即可.</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SparseArray</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-comment">// 创建一个原始的二维数组 11*11</span>
+        <span class="hljs-comment">// 0:表示没有棋子,1 表示 黑子, 2 表示 白子</span>
+        <span class="hljs-type">int</span>[][] chessArr1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">11</span>][<span class="hljs-number">11</span>];
+        chessArr1[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;
+        chessArr1[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">2</span>;
+        chessArr1[<span class="hljs-number">5</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">2</span>;
+        <span class="hljs-comment">// 输出原始的二维数组</span>
+        System.out.println(<span class="hljs-string">&quot;原始的二维数组&quot;</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : chessArr1) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> data : row) &#123;
+                System.out.printf(<span class="hljs-string">&quot;%d\t&quot;</span>, data);
+            &#125;
+            System.out.println();
+        &#125;
+        <span class="hljs-comment">// 将二维数组转为稀疏数组</span>
+        <span class="hljs-comment">// 1. 遍历原始的二维数组,得到有效数据的个数sum</span>
+        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">11</span>; i++) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">11</span>; j++) &#123;
+                <span class="hljs-keyword">if</span> (chessArr1[i][j] != <span class="hljs-number">0</span>) &#123;
+                    sum++;
+                &#125;
+            &#125;
+        &#125;
+        System.out.println(sum);
+        <span class="hljs-comment">// 2. 根据 sum 就可以创建稀疏数组 sparseArr int[sum+1][3]</span>
+        <span class="hljs-type">int</span>[][] sparseArr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[sum + <span class="hljs-number">1</span>][<span class="hljs-number">3</span>];
+        <span class="hljs-comment">// 3. 将二维数组的有效数据数据存入到稀疏数组</span>
+        sparseArr[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">11</span>;
+        sparseArr[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">11</span>;
+        sparseArr[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] = sum;
+
+        <span class="hljs-comment">// 遍历二维数组,将非O的值存放到sparseArr中</span>
+        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">11</span>; i++) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">11</span>; j++) &#123;
+                <span class="hljs-keyword">if</span> (chessArr1[i][j] != <span class="hljs-number">0</span>) &#123;
+                    sparseArr[count][<span class="hljs-number">0</span>] = i;
+                    sparseArr[count][<span class="hljs-number">1</span>] = j;
+                    sparseArr[count][<span class="hljs-number">2</span>] = chessArr1[i][j];
+                    count++;
+                &#125;
+            &#125;
+        &#125;
+        <span class="hljs-comment">// 输出稀疏数组</span>
+        System.out.println(<span class="hljs-string">&quot;稀疏数组&quot;</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : sparseArr) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> data : row) &#123;
+                System.out.printf(<span class="hljs-string">&quot;%d\t&quot;</span>, data);
+            &#125;
+            System.out.println();
+        &#125;
+        <span class="hljs-comment">// 将sparseArr 写入磁盘</span>
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-type">OutputStream</span> <span class="hljs-variable">out</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;map.data&quot;</span>);
+            <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">objectOutputStream</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(out);
+            objectOutputStream.writeObject(sparseArr);
+            out.close();
+            objectOutputStream.close();
+        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;
+            e.printStackTrace();
+        &#125;
+        <span class="hljs-comment">// 将sparseArr 从磁盘中读取</span>
+        <span class="hljs-type">int</span>[][] sparseArr2 = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-type">InputStream</span> <span class="hljs-variable">in</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;map.data&quot;</span>);
+            <span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">objectInputStream</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(in);
+            <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> objectInputStream.readObject();
+            sparseArr2 = (<span class="hljs-type">int</span>[][]) obj;
+            in.close();
+            objectInputStream.close();
+        &#125; <span class="hljs-keyword">catch</span> (IOException | ClassNotFoundException e) &#123;
+            e.printStackTrace();
+        &#125;
+        <span class="hljs-comment">// 稀疏数组转原始的二维数组</span>
+        <span class="hljs-comment">// 1. 先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组，比如上面的 chessArr2=int[11][11]</span>
+        <span class="hljs-keyword">assert</span> sparseArr2 != <span class="hljs-literal">null</span>;
+        <span class="hljs-type">int</span>[][] chessArr2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[sparseArr2[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]][sparseArr2[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]];
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; sparseArr.length; i++) &#123;
+            chessArr2[sparseArr2[i][<span class="hljs-number">0</span>]][sparseArr2[i][<span class="hljs-number">1</span>]] = sparseArr2[i][<span class="hljs-number">2</span>];
+        &#125;
+        System.out.println(<span class="hljs-string">&quot;还原的二维数组&quot;</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] row : chessArr2) &#123;
+            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> data : row) &#123;
+                System.out.printf(<span class="hljs-string">&quot;%d\t&quot;</span>, data);
+            &#125;
+            System.out.println();
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><ol>
+<li>队列是一个有序列表，可以用数组或是链表来实现。</li>
+<li>遵循先入先出的原则。即：先存入队列的数据，要先取出。后存入的要后取出</li>
+</ol>
+<h3 id="数组模拟队列"><a href="#数组模拟队列" class="headerlink" title="数组模拟队列"></a>数组模拟队列</h3><h4 id="实现思路-1"><a href="#实现思路-1" class="headerlink" title="实现思路"></a>实现思路</h4><ul>
+<li>队列本身是有序列表，若使用数组的结构来存储队列的数据，则队列数组的声明如下图，其中maxSize是该队列的最大容量。</li>
+<li>因为队列的输出、输入是分别从前后端来处理，因此需要两个变量front及rear分别记录队列前后端的下标，front会随着数据输出而改变，而rear则是随着数据输入而改变,</li>
+</ul>
+<p><img src="/img/queue.png" srcset="/img/loading.gif" lazyload alt="queue"></p>
+<p>当我们将数据存入队列时称为”addQueue”，addQueue的处理需要有两个步骤:</p>
+<ol>
+<li>将尾指针往后移:rear+1，当front &#x3D;&#x3D; rear(空)</li>
+<li>若尾指针rear小于队列的最大下标maxSize-1，则将数据存入rear所指的数组元素中，否则无法存入数据。rear &#x3D;&#x3D; maxSize-1(队列满)</li>
+</ol>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayQueueDemo</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+
+        <span class="hljs-comment">//创建队列</span>
+        <span class="hljs-type">ArrayQueue</span> <span class="hljs-variable">arrayQueue</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayQueue</span>(<span class="hljs-number">3</span>);
+        <span class="hljs-type">char</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27; &#x27;</span>; <span class="hljs-comment">// 接收用户·输入</span>
+        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+        <span class="hljs-type">boolean</span> <span class="hljs-variable">loop</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-comment">// 输出菜单</span>
+        <span class="hljs-keyword">while</span> (loop) &#123;
+            System.out.println(<span class="hljs-string">&quot;s(show): 显示队列&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;a(add): 添加元素&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;g(get): 取出元素&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;h(head): 查看头部&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;e(exit): 退出程序&quot;</span>);
+            key = scanner.next().charAt(<span class="hljs-number">0</span>); <span class="hljs-comment">// 接收一个字符</span>
+            <span class="hljs-keyword">switch</span> (key) &#123;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;s&#x27;</span>:
+                    arrayQueue.showQueue();
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;a&#x27;</span>:
+                    System.out.println(<span class="hljs-string">&quot;输入一个数字&quot;</span>);
+                    <span class="hljs-type">int</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> scanner.nextInt();
+                    arrayQueue.addQueue(value);
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;g&#x27;</span>:
+                    <span class="hljs-keyword">try</span> &#123;
+                        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> arrayQueue.getQueue();
+                        System.out.println(<span class="hljs-string">&quot;取出的数据是&quot;</span> + res);
+                    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+                        System.out.println(e.getMessage());
+                    &#125;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;h&#x27;</span>:
+                    <span class="hljs-keyword">try</span> &#123;
+                        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> arrayQueue.headQueue();
+                        System.out.println(<span class="hljs-string">&quot;取出的队列头数据是&quot;</span> + res);
+                    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+                        System.out.println(e.getMessage());
+                    &#125;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;e&#x27;</span>:
+                    scanner.close();
+                    loop = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-keyword">break</span>;
+            &#125;
+        &#125;
+        System.out.println(<span class="hljs-string">&quot;程序退出&quot;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 使用数组模拟队列</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayQueue</span> &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> maxSize; <span class="hljs-comment">// 表示数组最大容量</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> front; <span class="hljs-comment">// 队列头</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> rear; <span class="hljs-comment">// 队列尾</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] arr; <span class="hljs-comment">// 用数组模拟队列</span>
+
+    <span class="hljs-comment">// 创建队列的构造器,初始化队列</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span> &#123;
+        <span class="hljs-built_in">this</span>.maxSize = maxSize;
+        arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[maxSize];
+        front = -<span class="hljs-number">1</span>; <span class="hljs-comment">// 指向队列头部（不包含，指向队列头的前一个位置）</span>
+        rear = -<span class="hljs-number">1</span>; <span class="hljs-comment">// 指向队列尾部（包含队列最后一个数据）</span>
+    &#125;
+
+    <span class="hljs-comment">// 判断队列是否为满</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> rear == maxSize - <span class="hljs-number">1</span>;
+    &#125;
+
+    <span class="hljs-comment">// 判断队列是否为空</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> rear == front;
+    &#125;
+
+    <span class="hljs-comment">//添加数据到队列</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;
+        <span class="hljs-comment">//判断队列是否为满</span>
+        <span class="hljs-keyword">if</span> (isFull()) &#123;
+            System.out.println(<span class="hljs-string">&quot;该队列已满，无法添加数据&quot;</span>);
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        rear++; <span class="hljs-comment">// rear后移</span>
+        arr[rear] = n;
+    &#125;
+
+    <span class="hljs-comment">//获取队列的数据，出队列</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            <span class="hljs-comment">//抛出异常</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;队列空，无法取出数据&quot;</span>);
+        &#125;
+        front++;
+        <span class="hljs-keyword">return</span> arr[front];
+    &#125;
+
+    <span class="hljs-comment">//显示队列所有数据</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            <span class="hljs-comment">//抛出异常</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;队列空，无法取出数据&quot;</span>);
+        &#125;
+        <span class="hljs-comment">//遍历</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;i&lt;arr.length;i++) &#123;
+            System.out.printf(<span class="hljs-string">&quot;arr[%d]=%d\n&quot;</span>, i,arr[i]);
+        &#125;
+    &#125;
+
+    <span class="hljs-comment">//显示队列的头数据,注意不是取出数据</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">headQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            <span class="hljs-comment">//抛出异常</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;队列空，无数据&quot;</span>);
+        &#125;
+        <span class="hljs-keyword">return</span> arr[front + <span class="hljs-number">1</span>];
+    &#125;
+&#125;</code></pre></div>
+<h4 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h4><p>目前数组使用一次就不能用，没有达到复用的效果</p>
+<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>将这个数组使用算法改进成一个环形的数组</p>
+<h3 id="数组模拟环形队列"><a href="#数组模拟环形队列" class="headerlink" title="数组模拟环形队列"></a>数组模拟环形队列</h3><h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><ol>
+<li>front变量的含义：front就指向队列的第一个元素,也就是说<code>arr[front]</code>就是队列的第一个元素，front的初始值&#x3D;0</li>
+<li>rear变量的含义：rear指向队列的最后一个元素的后一个位置，因为需要空出一个空间做为约定，rear的初始值&#x3D;0</li>
+<li>当队列满时，条件是<code>(rear+1)%maxSize=front</code></li>
+<li>对队列为空的条件是<code>rear=front</code></li>
+<li>队列中有效的数据的个数<code>(rear+maxSize-front)%maxSize</code></li>
+</ol>
+<p><img src="/img/circleQueue.png" srcset="/img/loading.gif" lazyload alt="circleQueue"></p>
+<h4 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h4><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CircleQueueDemo</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-type">CircleQueue</span> <span class="hljs-variable">circleQueue</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CircleQueue</span>(<span class="hljs-number">6</span>);
+        <span class="hljs-type">char</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27; &#x27;</span>; <span class="hljs-comment">// 接收用户·输入</span>
+        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+        <span class="hljs-type">boolean</span> <span class="hljs-variable">loop</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-comment">// 输出菜单</span>
+        <span class="hljs-keyword">while</span> (loop) &#123;
+            System.out.println(<span class="hljs-string">&quot;s(show): 显示队列&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;a(add): 添加元素&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;g(get): 取出元素&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;h(head): 查看头部&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;e(exit): 退出程序&quot;</span>);
+            key = scanner.next().charAt(<span class="hljs-number">0</span>); <span class="hljs-comment">// 接收一个字符</span>
+            <span class="hljs-keyword">switch</span> (key) &#123;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;s&#x27;</span>:
+                    circleQueue.showQueue();
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;a&#x27;</span>:
+                    System.out.println(<span class="hljs-string">&quot;输入一个数字&quot;</span>);
+                    <span class="hljs-type">int</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> scanner.nextInt();
+                    circleQueue.addQueue(value);
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;g&#x27;</span>:
+                    <span class="hljs-keyword">try</span> &#123;
+                        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> circleQueue.removeQueue();
+                        System.out.println(<span class="hljs-string">&quot;取出的数据是&quot;</span> + res);
+                    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+                        System.out.println(e.getMessage());
+                    &#125;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;h&#x27;</span>:
+                    <span class="hljs-keyword">try</span> &#123;
+                        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> circleQueue.headQueue();
+                        System.out.println(<span class="hljs-string">&quot;取出的队列头数据是&quot;</span> + res);
+                    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+                        System.out.println(e.getMessage());
+                    &#125;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;e&#x27;</span>:
+                    scanner.close();
+                    loop = <span class="hljs-literal">false</span>;
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-keyword">break</span>;
+            &#125;
+        &#125;
+        System.out.println(<span class="hljs-string">&quot;程序退出&quot;</span>);
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CircleQueue</span> &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> front;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> rear;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> maxSize;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] arr;
+
+    <span class="hljs-comment">// 初始化环形数组</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">CircleQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> maxSize)</span> &#123;
+        <span class="hljs-built_in">this</span>.maxSize = maxSize;
+        arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[maxSize];
+        front = <span class="hljs-number">0</span>;
+        rear = <span class="hljs-number">0</span>;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> (rear + <span class="hljs-number">1</span>) % maxSize == front;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> rear == front;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;
+        <span class="hljs-keyword">if</span> (isFull()) &#123;
+            System.out.println(<span class="hljs-string">&quot;队列已满，无法添加&quot;</span>);
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        arr[rear] = num;
+<span class="hljs-comment">//        if (rear &lt; maxSize - 1) &#123;</span>
+<span class="hljs-comment">//            rear++;</span>
+<span class="hljs-comment">//        &#125; else &#123;</span>
+<span class="hljs-comment">//            rear = 0;</span>
+<span class="hljs-comment">//        &#125;</span>
+        rear = (rear + <span class="hljs-number">1</span>) % maxSize;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            System.out.println(<span class="hljs-string">&quot;队列为空，无法出队&quot;</span>);
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> arr[front];
+<span class="hljs-comment">//        if (front &lt; maxSize - 1) &#123;</span>
+<span class="hljs-comment">//            front++;</span>
+<span class="hljs-comment">//        &#125; else &#123;</span>
+<span class="hljs-comment">//            front = 0;</span>
+<span class="hljs-comment">//        &#125;</span>
+        front = (front + <span class="hljs-number">1</span>) % maxSize;
+        <span class="hljs-keyword">return</span> res;
+    &#125;
+
+    <span class="hljs-comment">//显示队列所有数据</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">showQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            System.out.println(<span class="hljs-string">&quot;队列为空，无法显示所有数据&quot;</span>);
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        <span class="hljs-comment">//遍历</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> front; i &lt; front + getSize(); i++) &#123;
+            System.out.printf(<span class="hljs-string">&quot;arr[%d]=%d\n&quot;</span>, i % maxSize, arr[i % maxSize]);
+        &#125;
+    &#125;
+
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">headQueue</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty()) &#123;
+            System.out.println(<span class="hljs-string">&quot;队列为空，无法获取头部&quot;</span>);
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">return</span> arr[front];
+    &#125;
+
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getSize</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> (rear + maxSize - front) % maxSize;
+    &#125;
+&#125;</code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DataStructure/" class="category-chain-item">DataStructure</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E6%95%B0%E7%BB%84/">#数组</a>
+      
+        <a href="/tags/array/">#array</a>
+      
+        <a href="/tags/%E9%98%9F%E5%88%97/">#队列</a>
+      
+        <a href="/tags/queue/">#queue</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>稀疏数组和队列</div>
+      <div>https://yorick-ryu.github.io/数据结构/数据结构_稀疏数组和队列/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%8D%95%E9%93%BE%E8%A1%A8/" title="单链表">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">单链表</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E5%92%8C%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" title="线性结构和非线性结构">
+                        <span class="hidden-mobile">线性结构和非线性结构</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

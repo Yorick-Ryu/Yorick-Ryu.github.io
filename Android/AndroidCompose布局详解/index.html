@@ -1,0 +1,1057 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Compose布局详解">
+<meta property="og:url" content="https://yorick-ryu.github.io/Android/AndroidCompose%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="深入了解 Jetpack Compose 布局[TOC] Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。 内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/image-20221209183304625.png">
+<meta property="article:published_time" content="2022-12-09T10:29:00.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.370Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Jetpack">
+<meta property="article:tag" content="Compose">
+<meta property="article:tag" content="layout">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/image-20221209183304625.png">
+  
+  
+  
+  <title>Compose布局详解 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Compose布局详解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-09 18:29" pubdate>
+          2022年12月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          36 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Compose布局详解</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="深入了解-Jetpack-Compose-布局"><a href="#深入了解-Jetpack-Compose-布局" class="headerlink" title="深入了解 Jetpack Compose 布局"></a>深入了解 Jetpack Compose 布局</h1><p>[TOC]</p>
+<p>Jetpack Compose 提供一个全新的布局模型，用于构建精美、高效的界面。我们深入介绍了这个布局模型，说明了它的底层工作逻辑，它所具备的功能，捆绑的布局和修饰符是如何构建的，以及可以如何轻松创建自定义布局和修饰符。本次研讨会将有助于了解 Compose 的布局模型，您可以使用这个模型来构建应用所需的布局，并且编写更优质的代码。</p>
+<p>内容来自<a target="_blank" rel="noopener" href="https://youtu.be/zMKMwh9gZuI">深入了解 Jetpack Compose 布局 - YouTube</a></p>
+<h2 id="Compose布局系统的目标"><a href="#Compose布局系统的目标" class="headerlink" title="Compose布局系统的目标"></a>Compose布局系统的目标</h2><ul>
+<li>简化布局的创建，尤其是自定义布局</li>
+<li>提供强大的布局系统</li>
+<li>实现卓越的性能</li>
+</ul>
+<p><img src="/./img/image-20221209183304625.png" srcset="/img/loading.gif" lazyload alt="image-20221209183304625"></p>
+<p><strong>如何实现以上目标？</strong></p>
+<h2 id="Jetpack-Compose-如何将状态转为界面"><a href="#Jetpack-Compose-如何将状态转为界面" class="headerlink" title="Jetpack Compose 如何将状态转为界面"></a>Jetpack Compose 如何将状态转为界面</h2><p>这个流程包含三个阶段</p>
+<ul>
+<li>组合</li>
+<li>布局</li>
+<li>绘制</li>
+</ul>
+<p><img src="/./img/image-20221209183505668.png" srcset="/img/loading.gif" lazyload alt="image-20221209183505668"></p>
+<h3 id="组合阶段（Composition）"><a href="#组合阶段（Composition）" class="headerlink" title="组合阶段（Composition）"></a>组合阶段（Composition）</h3><p>组合阶段会执行可组合函数，这些函数会创建界面并组建界面树。</p>
+<p>例如，执行这个SearchResult可组合函数，就会生成这样一个界面树。</p>
+<p><img src="/./img/image-20221209184149125.png" srcset="/img/loading.gif" lazyload alt="image-20221209184149125"></p>
+<p>可组合项包含逻辑和控制流，在不同的状态下产生不同的界面树。</p>
+<h3 id="布局阶段（Layout）"><a href="#布局阶段（Layout）" class="headerlink" title="布局阶段（Layout）"></a>布局阶段（Layout）</h3><p>布局阶段会遍历整个界面树，测量每个界面元素并将它们放置在屏幕上的二维空间。也就是说，每个节点会确定其宽度和高度以及x和y坐标。</p>
+<h3 id="绘制阶段（Drawing）"><a href="#绘制阶段（Drawing）" class="headerlink" title="绘制阶段（Drawing）"></a>绘制阶段（Drawing）</h3><p>绘制阶段会重新遍历界面树并呈现全部元素。</p>
+<h2 id="布局阶段的深入介绍"><a href="#布局阶段的深入介绍" class="headerlink" title="布局阶段的深入介绍"></a>布局阶段的深入介绍</h2><p>布局阶段包含两个环节：</p>
+<ul>
+<li>测量（Measure）</li>
+<li>放置（Place）</li>
+</ul>
+<p><img src="/./img/image-20221209185018210.png" srcset="/img/loading.gif" lazyload alt="image-20221209185018210"></p>
+<p>大致相当于View中的<code>onMeasure</code>和<code>onLayout</code></p>
+<p>不过在Compose中，这两个环节是相互交织的，因此我们暂且将它们视作一个布局环节。</p>
+<p>界面树中每个节点的布局流程包含三个步骤：</p>
+<ul>
+<li>先测量全部子项</li>
+<li>决定自身尺寸</li>
+<li>放置子项</li>
+</ul>
+<p><img src="/./img/image-20221209185722752.png" srcset="/img/loading.gif" lazyload alt="image-20221209185722752"></p>
+<p>具体过程如下：</p>
+<p><img src="/./img/image-20221209185904184.png" srcset="/img/loading.gif" lazyload alt="image-20221209185904184"></p>
+<p>这样以来，跟布局在确定了所有子项的尺寸和位置后，就可以确定自己的尺寸和位置（放置指令），然后就可以进入放置环节，系统重新遍历界面树，并执行所有放置指令。</p>
+<p>上述过程如何实现？</p>
+<p>实际上，每个高级别可组合项都是通过低级别可组合项构造而成的。</p>
+<p><img src="/./img/image-20221209190725298.png" srcset="/img/loading.gif" lazyload alt="image-20221209190725298"></p>
+<p>每一个在屏幕上放置元素的可组合项都包含了一个或多个Layout可组合项，这个Layout可组合项是Compose界面的基础构建块。</p>
+<p>Layout可组合项发出LayoutNode，在Compose中，界面树或组合是LayoutNode的树。</p>
+<p><img src="/./img/image-20221209190949564.png" srcset="/img/loading.gif" lazyload alt="image-20221209190949564"></p>
+<p>下面是<code>Layout</code>的源码</p>
+<p>参数：</p>
+<ul>
+<li>content - 可组合放置的子项。</li>
+<li>modifier - 应用于布局的修饰符。</li>
+<li>measurePolicy - 定义布局的测量和定位的策略。</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Suppress(<span class="hljs-string">&quot;ComposableLambdaParameterPosition&quot;</span>)</span>
+<span class="hljs-meta">@UiComposable</span>
+<span class="hljs-meta">@Composable</span> <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">Layout</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    content: @<span class="hljs-type">Composable</span> @<span class="hljs-type">UiComposable</span> () -&gt; <span class="hljs-type">Unit</span>, <span class="hljs-comment">// The children composable to be laid out</span></span></span>
+<span class="hljs-params"><span class="hljs-function">    modifier: <span class="hljs-type">Modifier</span> = Modifier, 				   <span class="hljs-comment">// Modifiers to be applied to the layout</span></span></span>
+<span class="hljs-params"><span class="hljs-function">    measurePolicy: <span class="hljs-type">MeasurePolicy</span>				   <span class="hljs-comment">// The policy defining the measurement and positioning of the layout</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    <span class="hljs-keyword">val</span> density = LocalDensity.current
+    <span class="hljs-keyword">val</span> layoutDirection = LocalLayoutDirection.current
+    <span class="hljs-keyword">val</span> viewConfiguration = LocalViewConfiguration.current
+    ReusableComposeNode&lt;ComposeUiNode, Applier&lt;Any&gt;&gt;(
+        factory = ComposeUiNode.Constructor,
+        update = &#123;
+            <span class="hljs-keyword">set</span>(measurePolicy, ComposeUiNode.SetMeasurePolicy)
+            <span class="hljs-keyword">set</span>(density, ComposeUiNode.SetDensity)
+            <span class="hljs-keyword">set</span>(layoutDirection, ComposeUiNode.SetLayoutDirection)
+            <span class="hljs-keyword">set</span>(viewConfiguration, ComposeUiNode.SetViewConfiguration)
+        &#125;,
+        skippableUpdate = materializerOf(modifier),
+        content = content
+    )
+&#125;</code></pre></div>
+
+<p>自定义Layout</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyCustomLayout</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    modifier: <span class="hljs-type">Modifier</span> = Modifier,</span></span>
+<span class="hljs-params"><span class="hljs-function">    content: @<span class="hljs-type">Composable</span> () -&gt; <span class="hljs-type">Unit</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    Layout(
+        modifier = modifier,
+        content = content
+    ) &#123;measurables:List&lt;Measurable&gt;,
+        constraints:Constraints -&gt;
+        <span class="hljs-comment">// TODO measure and place items</span>
+    &#125;
+&#125;</code></pre></div>
+
+<p>在本例的MyCustomLayout可组合项中，我们调用Layout函数，并以尾随lambda的形式提供measurePolicy用于实现所需的测量函数，这个函数接受<code>Constraints</code>对象，定义布局的大小。</p>
+<p><code>Constraints</code>是一个简单的类，用于对布局可以采用的宽度和高度上下限进行建模。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span> &#123;
+    <span class="hljs-keyword">val</span> minWidth: <span class="hljs-built_in">Int</span>
+    <span class="hljs-keyword">val</span> maxWidth: <span class="hljs-built_in">Int</span>
+    <span class="hljs-keyword">val</span> minHeight: <span class="hljs-built_in">Int</span>
+    <span class="hljs-keyword">val</span> maxHeight: <span class="hljs-built_in">Int</span>
+&#125;</code></pre></div>
+
+<p>例如，<code>Constrains</code>可以表达布局可以采用任意尺寸</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> bigAsYouLike = <span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span>(
+    minWidth = <span class="hljs-number">0</span>,
+    maxWidth = Constraints.Infinity,
+    minHeight = <span class="hljs-number">0</span>,
+    maxHeight = Constraints.Infinity,
+)</code></pre></div>
+
+<p>也可以表达布局必须采用确切的尺寸</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> bigAsYouLike = <span class="hljs-keyword">class</span> <span class="hljs-title class_">Constraints</span>(
+    minWidth = <span class="hljs-number">50</span>,
+    maxWidth = <span class="hljs-number">50</span>,
+    minHeight = <span class="hljs-number">50</span>,
+    maxHeight = <span class="hljs-number">50</span>,
+)</code></pre></div>
+
+<p>测量函数还会接收可测量项的列表，此列表表示传入的子项元素，Measurable类型公开用于测量项目的函数。</p>
+<p>每个元素的布局流程具体实现：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyCustomLayout</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    modifier: <span class="hljs-type">Modifier</span> = Modifier,</span></span>
+<span class="hljs-params"><span class="hljs-function">    content: @<span class="hljs-type">Composable</span> () -&gt; <span class="hljs-type">Unit</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    Layout(
+        modifier = modifier,
+        content = content
+    ) &#123;measurables:List&lt;Measurable&gt;,
+        constraints:Constraints -&gt;
+        <span class="hljs-comment">// 测量各个子项，产生可放置列表</span>
+        <span class="hljs-keyword">val</span> palceables = measurables.map &#123; measurable -&gt;
+            <span class="hljs-comment">// 执行measurable的measure方法，此方法接受尺寸约束条件</span>
+            measurable.measure(constraints)
+        &#125;
+        <span class="hljs-comment">// 可放置项是经过测量的子项，都有一个尺寸</span>
+        <span class="hljs-comment">// 使用可放置项来计算布局大小</span>
+        <span class="hljs-keyword">val</span> width = <span class="hljs-comment">// 从palceables计算得到</span>
+        <span class="hljs-keyword">val</span> height = <span class="hljs-comment">// 从palceables计算得到</span>
+        <span class="hljs-comment">// 报告尺寸</span>
+        layout(width, height)&#123;
+            <span class="hljs-comment">// layout方法需要一个放置位置块来放置每个项目</span>
+            placeables.forEach&#123; palceable -&gt;
+                placeable.place( <span class="hljs-comment">// 还有palceRelative方法，针对从右向左的语言区域镜像水平坐标</span>
+                    x = ...
+                    y = ...
+                )
+            &#125;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+<p>place方法仅能用于measure方法返回的放置项，这样的API设计可以防止放置没有测量过的元素。在View中，onMeasure和onLayout的调用顺序没有强制性要求，容易产生bug。</p>
+<p>示例：实现自定义Colum</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyColum</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    modifier: <span class="hljs-type">Modifier</span> = Modifier,</span></span>
+<span class="hljs-params"><span class="hljs-function">    content: @<span class="hljs-type">Composable</span> () -&gt; <span class="hljs-type">Unit</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    Layout(
+        modifier = modifier,
+        content = content
+    ) &#123; measurables: List&lt;Measurable&gt;,
+        constraints: Constraints -&gt;
+        <span class="hljs-comment">// 测量</span>
+        <span class="hljs-keyword">val</span> palceables = measurables.map &#123; measurable -&gt;
+            measurable.measure(constraints)
+        &#125;
+        <span class="hljs-comment">// 计算</span>
+        <span class="hljs-keyword">val</span> height = palceables.sumOf &#123; it.height &#125;
+        <span class="hljs-keyword">val</span> width = palceables.maxOf &#123; it.width &#125;
+        <span class="hljs-comment">// 放置</span>
+        layout(width, height) &#123;
+            <span class="hljs-keyword">var</span> y = <span class="hljs-number">0</span>
+            palceables.forEach &#123; placeable -&gt;
+                placeable.placeRelative(x = <span class="hljs-number">0</span>, y = y)
+                y += placeable.height
+            &#125;
+        &#125;
+    &#125;
+&#125;</code></pre></div>
+
+<p>示例：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">VerticalGrid</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">    modifier: <span class="hljs-type">Modifier</span> = Modifier,</span></span>
+<span class="hljs-params"><span class="hljs-function">    columns:<span class="hljs-type">Int</span> = <span class="hljs-number">2</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">    content: @<span class="hljs-type">Composable</span> () -&gt; <span class="hljs-type">Unit</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span>&#123;
+    Layout(
+        modifier = modifier,
+        content = content
+    ) &#123; measurables,constraints-&gt;
+        <span class="hljs-comment">// 列宽等于布局的最大宽度除以列数</span>
+        <span class="hljs-keyword">val</span> itemWidth = constraints.maxWidth / columns
+        <span class="hljs-comment">// 构造新的constraints对象</span>
+        <span class="hljs-keyword">val</span> itemConstraints = constraints.copy(
+            minWidth = itemWidth,
+            maxWidth = itemWidth
+        )
+        <span class="hljs-comment">// 使用约束条件测量每个项目</span>
+        <span class="hljs-keyword">val</span> palceables = measurables.map &#123; measurable -&gt;
+            measurable.measure(itemConstraints)
+        &#125;
+        <span class="hljs-comment">// 将项目放入网格</span>
+        ...
+    &#125;
+&#125;</code></pre></div>
+
+<p>这种为子项内容创建新约束条件的理念，就是实现自定义测量逻辑的方式，能够创建不同约束条件来测量子项，这是这个模型的关键。</p>
+<p><img src="/./img/image-20221213213747607.png" srcset="/img/loading.gif" lazyload alt="image-20221213213747607"></p>
+<p>最后父项7传递一系列可选的尺寸供子项选择，一旦子项选择了自己的尺寸，父项就必须接受并进行处理。</p>
+<p>优点是可以通过单次测量遍历整个界面树，并且禁止多个测量循环（测试多次会报错），这样可以提高性能，例如用动画效果呈现布局。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// try out different constraints</span>
+<span class="hljs-keyword">val</span> constraints1 = ...
+<span class="hljs-keyword">val</span> constraints2 = ...
+<span class="hljs-keyword">val</span> placeable1 = measurable.measure(constraints1)
+<span class="hljs-keyword">val</span> placeable2 = measurable.measure(constraints2)</code></pre></div>
+
+<p>什么时候用自定义布局</p>
+<ul>
+<li>无法用标准布局实现</li>
+<li>需要精确元素的控制测量和放置</li>
+<li>实现布局动画</li>
+<li>需要更高的性能</li>
+</ul>
+<h2 id="Modifier修饰符"><a href="#Modifier修饰符" class="headerlink" title="Modifier修饰符"></a>Modifier修饰符</h2><p>Layout函数接受修饰符链作为参数，修饰符修饰自己所关联到的元素，并且在布局自行进行测量和放置之前参与测量和放置。 </p>
+<p>如何实现？</p>
+<p>有很多影响不同行为的各类修饰符，例如drawing修饰符，pointerInput修饰符和focus修饰符，和我们密切相关的是LayoutModifier。 它提供了measure方法，此方法几乎与Layout组合项完全一样，但是它只作用于单个可测量项，而不是可测量项列表，因为修饰符就是应用于单个项目的 。 </p>
+<p>这个示例中，修饰符可像布局一样修改约束条件或实现自定义放置逻辑。这意味着，你并不总是需要编写自定义布局，如果只需要作用于单个项目，就可以改为使用修饰符。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">LayoutModifier</span> : <span class="hljs-type">Modifier.Element</span> &#123;
+    
+<span class="hljs-function"><span class="hljs-keyword">fun</span> MeasureScope.<span class="hljs-title">measure</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">	measurable: <span class="hljs-type">Measurable</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">	constraints: <span class="hljs-type">Constraints</span></span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span>: MeasureResult
+    ...
+&#125;</code></pre></div>
+
+<p>例如，我们看看PaddingModifier如何工作。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> Modifier.<span class="hljs-title">padding</span><span class="hljs-params">(all: <span class="hljs-type">Dp</span>)</span></span> = 
+	<span class="hljs-keyword">this</span>.then(PaddingModifier(
+        start = all,
+        top = a1l,
+        end = all,
+        bottom = all
+        )
+    )
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PaddingModifier</span>(
+    <span class="hljs-keyword">val</span> start: Dp = <span class="hljs-number">0.</span>dp, 
+    <span class="hljs-keyword">val</span> top: Dp = <span class="hljs-number">0.</span>dp,
+    <span class="hljs-keyword">val</span> end: Dp = <span class="hljs-number">0.</span>dp,
+    <span class="hljs-keyword">val</span> bottom: Dp = <span class="hljs-number">0.</span>dp
+) : LayoutModifier &#123;
+...
+&#125;</code></pre></div>
+
+<h2 id="高级布局功能"><a href="#高级布局功能" class="headerlink" title="高级布局功能"></a>高级布局功能</h2><h3 id="固有测量属性（Intrinsic-Measurement）"><a href="#固有测量属性（Intrinsic-Measurement）" class="headerlink" title="固有测量属性（Intrinsic Measurement）"></a>固有测量属性（Intrinsic Measurement）</h3><p>Compose不总是使用单传递布局系统。例如，下拉列表需要使用固有最大宽度来确定具体尺寸。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin">Column(Modifier.width(IntrinsicSize.Max)) &#123;
+    Text(Modifier.fillMaxWidth())
+    Text(Modifier.fillMaxWidth()) 
+    Text(Modifier.fillMaxWidth()) 
+    Text(Modifier.fillMaxWidth()) 
+    Text(Modifier.fillMaxWidth())
+&#125;</code></pre></div>
+
+<p>下拉列表的宽度 &#x3D; 每个文本不换行的情况下的最大宽度</p>
+<p>文本的最小固有宽度是每行一个单词的宽度，多了会换行。</p>
+<h3 id="ParentData修饰符"><a href="#ParentData修饰符" class="headerlink" title="ParentData修饰符"></a>ParentData修饰符</h3><p>某个布局行为需要从子项获取信息，就需要使用ParentData。</p>
+<p>Box中的align就是ParentData修饰符，它向父项传递信息，供父项确定子项布局，如果不在Box中，就无法使用。</p>
+<p>基线对齐</p>
+<p><img src="/./img/image-20221214113056005.png" srcset="/img/loading.gif" lazyload alt="image-20221214113056005"></p>
+<p>对齐会穿透至子项</p>
+<p><img src="/./img/image-20221214113124913.png" srcset="/img/loading.gif" lazyload alt="image-20221214113124913"></p>
+<h3 id="BoxWithConstraints"><a href="#BoxWithConstraints" class="headerlink" title="BoxWithConstraints"></a>BoxWithConstraints</h3><p>这是一个类似Box的可组合项，但是它会将对其内容的组合操作一直延迟到布局环节，那时就有布局信息可用了。</p>
+<p> BoxWithConstraints中的内容在公开约束条件的接收器作用域中运行，这些约束条件是在布局环节以像素或DPI值确定的，因此，里面的内容可以使用这些约束条件来选择要组合的内容。</p>
+<p>例如，根据最大宽度选择不同的呈现内容。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">MyApp</span><span class="hljs-params">(...)</span></span> &#123; 
+	BoxWithConstraints() &#123; <span class="hljs-comment">// this: BoxWithConstraintsScope </span>
+		<span class="hljs-keyword">when</span> &#123;
+			maxWidth &lt; <span class="hljs-number">400.</span>dp -&gt; CompactLayout()
+			maxWidth &lt; <span class="hljs-number">800.</span>dp -&gt; MediumLayout()
+			<span class="hljs-keyword">else</span> -&gt; LargeLayout()
+		&#125;
+	&#125;
+&#125;</code></pre></div>
+
+<p>但是BoxWithConstraints会在布局阶段启动子组合，这会影响性能。除非信息的类型会随着大小一起改变，请尽量避免使用BoxWithConstraints。<img src="/./img/image-20221214114817861.png" srcset="/img/loading.gif" lazyload alt="image-20221214114817861"></p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><ul>
+<li>只有在改变显示内容时才需要重组，而改变显示位置或显示方法时则不需要。</li>
+<li>除非信息的类型会随着大小一起改变，请尽量避免使用BoxWithConstraints。</li>
+<li>有时无需测量自己的所有子项来确定布局大小</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Jetpack/">#Jetpack</a>
+      
+        <a href="/tags/Compose/">#Compose</a>
+      
+        <a href="/tags/layout/">#layout</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Compose布局详解</div>
+      <div>https://yorick-ryu.github.io/Android/AndroidCompose布局详解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年12月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Android/AndroidCompose%E4%B8%AD%E4%BD%BF%E7%94%A8Navigation/" title="Compose中使用Navigation">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Compose中使用Navigation</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Android/AndroidCompose%E8%BF%81%E7%A7%BB/" title="Compose迁移">
+                        <span class="hidden-mobile">Compose迁移</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

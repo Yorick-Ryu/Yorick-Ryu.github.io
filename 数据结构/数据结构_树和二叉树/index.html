@@ -1,0 +1,1290 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="树和二叉树 树和二叉树 为什么需要树这种数据结构 树 树的概念 树的术语   二叉树 二叉树的形态 特殊二叉树   二叉树的遍历 二叉树遍历的实现思路 前序遍历 中序遍历 后序遍历   二叉树遍历的代码实现   二叉树的查找 前序中序后序查找思路 前序查找 中序查找 后序查找   前序中序后序查找代码实现   二叉树删除结点 二叉树删除结点思路 二叉树删除结点代码实现   顺序存储二叉树 顺序存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树和二叉树">
+<meta property="og:url" content="https://yorick-ryu.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="树和二叉树 树和二叉树 为什么需要树这种数据结构 树 树的概念 树的术语   二叉树 二叉树的形态 特殊二叉树   二叉树的遍历 二叉树遍历的实现思路 前序遍历 中序遍历 后序遍历   二叉树遍历的代码实现   二叉树的查找 前序中序后序查找思路 前序查找 中序查找 后序查找   前序中序后序查找代码实现   二叉树删除结点 二叉树删除结点思路 二叉树删除结点代码实现   顺序存储二叉树 顺序存储">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/arrayList.png">
+<meta property="article:published_time" content="2022-07-21T10:07:38.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.543Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="Tree">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/arrayList.png">
+  
+  
+  
+  <title>树和二叉树 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="树和二叉树"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-21 18:07" pubdate>
+          2022年7月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          10k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">树和二叉树</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h1><ul>
+<li><a href="#%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91">树和二叉树</a><ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%A0%91%E8%BF%99%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">为什么需要树这种数据结构</a></li>
+<li><a href="#%E6%A0%91">树</a><ul>
+<li><a href="#%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5">树的概念</a></li>
+<li><a href="#%E6%A0%91%E7%9A%84%E6%9C%AF%E8%AF%AD">树的术语</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91">二叉树</a><ul>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BD%A2%E6%80%81">二叉树的形态</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E4%BA%8C%E5%8F%89%E6%A0%91">特殊二叉树</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86">二叉树的遍历</a><ul>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF">二叉树遍历的实现思路</a><ul>
+<li><a href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86">前序遍历</a></li>
+<li><a href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86">中序遍历</a></li>
+<li><a href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86">后序遍历</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">二叉树遍历的代码实现</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9F%A5%E6%89%BE">二叉树的查找</a><ul>
+<li><a href="#%E5%89%8D%E5%BA%8F%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E6%9F%A5%E6%89%BE%E6%80%9D%E8%B7%AF">前序中序后序查找思路</a><ul>
+<li><a href="#%E5%89%8D%E5%BA%8F%E6%9F%A5%E6%89%BE">前序查找</a></li>
+<li><a href="#%E4%B8%AD%E5%BA%8F%E6%9F%A5%E6%89%BE">中序查找</a></li>
+<li><a href="#%E5%90%8E%E5%BA%8F%E6%9F%A5%E6%89%BE">后序查找</a></li>
+</ul>
+</li>
+<li><a href="#%E5%89%8D%E5%BA%8F%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E6%9F%A5%E6%89%BE%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">前序中序后序查找代码实现</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A0%E9%99%A4%E7%BB%93%E7%82%B9">二叉树删除结点</a><ul>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A0%E9%99%A4%E7%BB%93%E7%82%B9%E6%80%9D%E8%B7%AF">二叉树删除结点思路</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%88%A0%E9%99%A4%E7%BB%93%E7%82%B9%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">二叉树删除结点代码实现</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91">顺序存储二叉树</a><ul>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">顺序存储二叉树代码实现</a></li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">顺序存储二叉树应用场景</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BA%BF%E7%B4%A2%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91">线索化二叉树</a><ul>
+<li><a href="#%E7%BA%BF%E7%B4%A2%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">线索化二叉树基本概念</a></li>
+<li><a href="#%E7%BA%BF%E7%B4%A2%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">线索化二叉树代码实现</a></li>
+<li><a href="#%E9%81%8D%E5%8E%86%E7%BA%BF%E7%B4%A2%E5%8C%96%E4%BA%8C%E5%8F%89%E6%A0%91">遍历线索化二叉树</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么需要树这种数据结构"><a href="#为什么需要树这种数据结构" class="headerlink" title="为什么需要树这种数据结构"></a>为什么需要树这种数据结构</h2><ol>
+<li><p>数组存储方式的分析<br>优点：通过下标方式访问元素，速度快。对于有序数组，还可使用二分查找提高检索速度。<br>缺点：如果要检索具体某个值，或者插入值(按一定顺序)会整体移动，效率较低。</p>
+<p> <img src="/./img/arrayList.png" srcset="/img/loading.gif" lazyload alt="数组存储方式的分析"></p>
+</li>
+<li><p>链式存储方式的分析<br>优点：在一定程度上对数组存储方式有优化（比如：插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好）。<br>缺点：在进行检索时，效率仍然较低，比如（检索某个值，需要从头节点开始遍历）。<br> <img src="/./img/LinkedListOp.png" srcset="/img/loading.gif" lazyload alt="链表操作示意图"></p>
+</li>
+<li><p>树存储方式的分析<br>二叉排序能提高数据存储，读取的效率，比如利用二叉排序树(Binary Sort Tree)，既可以保证数据的检索速度，同时也可以保证数据的插入，删除，修改的速度。<br> <img src="/./img/TreeOp.png" srcset="/img/loading.gif" lazyload alt="树存储方式的分析"></p>
+</li>
+</ol>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="树的概念"><a href="#树的概念" class="headerlink" title="树的概念"></a>树的概念</h3><p>树(Tree)是n(n≧0)个结点的有限集。n&#x3D;0时称为空树。在任意一颗非空树中：有且仅有一个特定的称为根的结点。当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集T1、T2、T3……、Tm，其中每个集合本身又是一棵树，并且称为根的子树。</p>
+<h3 id="树的术语"><a href="#树的术语" class="headerlink" title="树的术语"></a>树的术语</h3><p><img src="/img/TreeDef.png" srcset="/img/loading.gif" lazyload alt="树的术语"></p>
+<p>（一）节点的度：一个节点含有的子树的个数称为该节点的度<br>（二）树的度：一棵树中，最大的节点的度称为树的度<br>（三）叶节点或终端节点：度为0的节点<br>（四）父亲节点或父节点：若一个节点含有子节点，则这个节点 称为其子节点的父节点<br>（五）孩子节点或子节点：一个节点含有的子树的根节点称为该节点的子节点<br>（六）兄弟节点：具有相同父节点的节点互称为兄弟节点<br>（七）节点的层次：从根开始定义起，根为第一层， 根的子节点为第二层，以此类推<br>（八）树的高度或深度：树中节点的最大层次<br>（九）堂兄弟节点：父节点在同一层的节点互为堂兄弟节点<br>（十）节点的祖先：从根到该节点所经分支上的所有节点<br>（十一）子孙：以某节点为根的子树中任一节点都称为该节点的子孙<br>（十二）森林：由m(m&gt;&#x3D;0)棵互不相交的树的集合称为森林</p>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>二叉树是n(n&gt;&#x3D;0)个结点的有限集合，该集合或者为空集（空二叉树）、或者由一个根结点和两颗互不相交的、分别称为根结点的左子树和右子树的二叉树组成。</p>
+<p>特点：</p>
+<ul>
+<li>二叉树中每个结点最多有两颗子树，度没有超过2的。</li>
+<li>左子树和右子树是有顺序的，不能颠倒。</li>
+</ul>
+<h3 id="二叉树的形态"><a href="#二叉树的形态" class="headerlink" title="二叉树的形态"></a>二叉树的形态</h3><p>（1）空二叉树树</p>
+<p>（2）只有一个根结点</p>
+<p>（3）根结点只有左子树</p>
+<p>（4）根结点只有右子树</p>
+<p>（5）根结点既有右子树又有右子树</p>
+<h3 id="特殊二叉树"><a href="#特殊二叉树" class="headerlink" title="特殊二叉树"></a>特殊二叉树</h3><ol>
+<li><p>斜树</p>
+<ul>
+<li>左斜树：所有结点都只有左子树的二叉树</li>
+<li>右斜树：所有结点都只有右子树的二叉树<br><img src="/./img/SpecilTree_1.png" srcset="/img/loading.gif" lazyload alt="斜树"></li>
+</ul>
+</li>
+<li><p>满二叉树</p>
+<p>在二叉树中，所有的分支结点都有左子树和右子树，并且所有的叶子都在同一层。该二叉树的所有叶子节点都在最后一层，并且结点总数为 $2^n - 1$ ，n为层数。<br><img src="/./img/SpecilTree_2.png" srcset="/img/loading.gif" lazyload alt="满二叉树"></p>
+</li>
+<li><p>完全二叉树</p>
+<ul>
+<li>叶子节点只能出现在最下两层。</li>
+<li>最下层的叶子一定集中在左部连续位置。</li>
+<li>倒数第二层，若有叶子结点，一定在右部连续位置。</li>
+<li>如果结点度为1，则该结点只有左孩子。</li>
+<li>同样结点的二叉树，完全二叉树的深度最小。<br><img src="/./img/SpecilTree_3.png" srcset="/img/loading.gif" lazyload alt="完全二叉树"></li>
+</ul>
+</li>
+</ol>
+<h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><p>前序遍历：先输出父节点，再遍历左子树和右子树<br>中序遍历：先遍历左子树，再输出父节点，再遍历右子树<br>后序遍历：先遍历左子树，再遍历右子树，最后输出父节点<br>小结：看输出父节点的顺序，就确定是前序，中序还是后序</p>
+<h3 id="二叉树遍历的实现思路"><a href="#二叉树遍历的实现思路" class="headerlink" title="二叉树遍历的实现思路"></a>二叉树遍历的实现思路</h3><h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><ul>
+<li>先输出当前节点(初始的时候是root节点)</li>
+<li>如果左子节点不为空，则递归继续前序遍历</li>
+<li>如果右子节点不为空，则递归继续前序遍历</li>
+</ul>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><ul>
+<li>如果当前节点的左子节点不为空，则递归中序遍历</li>
+<li>输出当前节点</li>
+<li>如果当前节点的右子节点不为空，则递归中序遍历</li>
+</ul>
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><ul>
+<li>如果当前节点的左子节点不为空，则递归后序遍历</li>
+<li>如果当能节点的右子节点不为空，则递归中序遍历</li>
+<li>输出当前节点</li>
+</ul>
+<h3 id="二叉树遍历的代码实现"><a href="#二叉树遍历的代码实现" class="headerlink" title="二叉树遍历的代码实现"></a>二叉树遍历的代码实现</h3><p>首先定义树的结点类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TreeNode</span> &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> id;
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">public</span> TreeNode left;
+    <span class="hljs-keyword">public</span> TreeNode right;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">TreeNode</span><span class="hljs-params">(<span class="hljs-type">int</span> id, String name)</span> &#123;
+        <span class="hljs-built_in">this</span>.id = id;
+        <span class="hljs-built_in">this</span>.name = name;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getId</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> id;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setId</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+        <span class="hljs-built_in">this</span>.id = id;
+    &#125;
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> name;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(String name)</span> &#123;
+        <span class="hljs-built_in">this</span>.name = name;
+    &#125;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;TreeNode&#123;&quot;</span> +
+                <span class="hljs-string">&quot;id=&quot;</span> + id +
+                <span class="hljs-string">&quot;, name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +
+                <span class="hljs-string">&#x27;&#125;&#x27;</span>;
+    &#125;
+&#125;</code></pre></div>
+<p>递归实现前、中、后序遍历，作为结点的方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">preOrder</span><span class="hljs-params">()</span> &#123;
+    System.out.println(<span class="hljs-built_in">this</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.preOrder();
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.preOrder();
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">infixOrder</span><span class="hljs-params">()</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.infixOrder();
+    &#125;
+    System.out.println(<span class="hljs-built_in">this</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.infixOrder();
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">postOrder</span><span class="hljs-params">()</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.postOrder();
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.postOrder();
+    &#125;
+    System.out.println(<span class="hljs-built_in">this</span>);
+&#125;</code></pre></div>
+<p>定义二叉树类</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BinaryTree</span> &#123;
+    <span class="hljs-comment">// 定义根结点</span>
+    <span class="hljs-keyword">private</span> TreeNode root;
+
+    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">getRoot</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> root;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setRoot</span><span class="hljs-params">(TreeNode root)</span> &#123;
+        <span class="hljs-built_in">this</span>.root = root;
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">preOrder</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-built_in">this</span>.root.preOrder();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">infixOrder</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-built_in">this</span>.root.infixOrder();
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">postOrder</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-built_in">this</span>.root.postOrder();
+    &#125;
+&#125;</code></pre></div>
+<p>测试方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">preOrder</span><span class="hljs-params">()</span> &#123;
+    System.out.println(<span class="hljs-built_in">this</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.preOrder();
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.preOrder();
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">infixOrder</span><span class="hljs-params">()</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.infixOrder();
+    &#125;
+    System.out.println(<span class="hljs-built_in">this</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.infixOrder();
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">postOrder</span><span class="hljs-params">()</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.postOrder();
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.postOrder();
+    &#125;
+    System.out.println(<span class="hljs-built_in">this</span>);
+&#125;</code></pre></div>
+<p>预期结果</p>
+<div class="code-wrapper"><pre><code class="hljs java">前序遍历
+TreeNode&#123;id=<span class="hljs-number">1</span>, name=<span class="hljs-string">&#x27;Yorick&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">2</span>, name=<span class="hljs-string">&#x27;Merry&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">4</span>, name=<span class="hljs-string">&#x27;Tom&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">3</span>, name=<span class="hljs-string">&#x27;Jack&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">5</span>, name=<span class="hljs-string">&#x27;Lily&#x27;</span>&#125;
+中序遍历
+TreeNode&#123;id=<span class="hljs-number">4</span>, name=<span class="hljs-string">&#x27;Tom&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">2</span>, name=<span class="hljs-string">&#x27;Merry&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">1</span>, name=<span class="hljs-string">&#x27;Yorick&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">3</span>, name=<span class="hljs-string">&#x27;Jack&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">5</span>, name=<span class="hljs-string">&#x27;Lily&#x27;</span>&#125;
+后序遍历
+TreeNode&#123;id=<span class="hljs-number">4</span>, name=<span class="hljs-string">&#x27;Tom&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">2</span>, name=<span class="hljs-string">&#x27;Merry&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">5</span>, name=<span class="hljs-string">&#x27;Lily&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">3</span>, name=<span class="hljs-string">&#x27;Jack&#x27;</span>&#125;
+TreeNode&#123;id=<span class="hljs-number">1</span>, name=<span class="hljs-string">&#x27;Yorick&#x27;</span>&#125;</code></pre></div>
+
+<h2 id="二叉树的查找"><a href="#二叉树的查找" class="headerlink" title="二叉树的查找"></a>二叉树的查找</h2><h3 id="前序中序后序查找思路"><a href="#前序中序后序查找思路" class="headerlink" title="前序中序后序查找思路"></a>前序中序后序查找思路</h3><h4 id="前序查找"><a href="#前序查找" class="headerlink" title="前序查找"></a>前序查找</h4><ul>
+<li>先判断当前结点的值是否等于要查找的</li>
+<li>如果是相等，则返回当前结点</li>
+<li>如果不等，则判断当前结点的左子节点是否为空，如果不为空，则递归前序查找</li>
+<li>如果左递归前序查找，找到结点，则返回，否继续判断当前的结点的右子节点是否为空，如果不空，则继续向右递归前序查找，</li>
+</ul>
+<h4 id="中序查找"><a href="#中序查找" class="headerlink" title="中序查找"></a>中序查找</h4><ul>
+<li>判断当前结点的左子节点是否为空，如果不为空，则递归中序查找</li>
+<li>如果找到，则返回，如果没有找到，就和当前结点比较，如果是则返回当前结点，否则继续进行右递归的中序查找</li>
+<li>如果右递归中序查找，找到就返回，否则返回<code>null</code></li>
+</ul>
+<h4 id="后序查找"><a href="#后序查找" class="headerlink" title="后序查找"></a>后序查找</h4><ul>
+<li>判断当前结点的左子节点是否为空，如果不为空，则递归后序查找</li>
+<li>如果找到，就返回，如果没有找到，就判断当前结点的右子节点是否为空，如果不为空，则右递归进行后序查找，如果找到，就返回</li>
+<li>如果不等就和当前结点进行比较，如果是则返回，否则返回<code>null</code></li>
+</ul>
+<h3 id="前序中序后序查找代码实现"><a href="#前序中序后序查找代码实现" class="headerlink" title="前序中序后序查找代码实现"></a>前序中序后序查找代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">preOrderSearch</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.id == id) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+    &#125;
+    <span class="hljs-type">TreeNode</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+    <span class="hljs-comment">// 向左查找</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.left.preOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">if</span> (res != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-keyword">return</span> res;
+    &#125;
+    <span class="hljs-comment">// 向右查找</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.right.preOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">return</span> res;
+&#125;
+
+<span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">infixOrderSearch</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+    <span class="hljs-type">TreeNode</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.left.infixOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">if</span> (res != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-keyword">return</span> res;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.id == id) &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.right.infixOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">return</span> res;
+&#125;
+
+<span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">postOrderSearch</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+    <span class="hljs-type">TreeNode</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.left.postOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">if</span> (res != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-keyword">return</span> res;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        res = <span class="hljs-built_in">this</span>.right.postOrderSearch(id);
+    &#125;
+    <span class="hljs-keyword">if</span> (res != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-keyword">return</span> res;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.id == id) &#123;
+        res = <span class="hljs-built_in">this</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> res;
+&#125;</code></pre></div>
+<h2 id="二叉树删除结点"><a href="#二叉树删除结点" class="headerlink" title="二叉树删除结点"></a>二叉树删除结点</h2><p><strong>要求</strong></p>
+<ul>
+<li>如果删除的节点是叶子节点，则删除该节点</li>
+<li>如果删除的节点是非叶子节点，则删除该子树</li>
+</ul>
+<h3 id="二叉树删除结点思路"><a href="#二叉树删除结点思路" class="headerlink" title="二叉树删除结点思路"></a>二叉树删除结点思路</h3><ol>
+<li>因为我们的二叉树是单向的，所以我们是判断当前结点的子结点是否需要删除结点，而不能去判断当前这个结点是不是需要删除结点。</li>
+<li>如果当前结点的左子结点不为空，并且左子结点就是要删除结点，就将<code>this.left = null;</code>并且返回(结束递归删除)</li>
+<li>如果当前结点的右子结点不为空，并且右子结点就是要删除结点，就将<code>this.right=null;</code>并且返回(结束递归删除)</li>
+<li>如果第2和第3步没有删除结点，那么我们就需要向左子树进行递归删除</li>
+<li>如果第4步也没有删除结点，则应当向右子树进行递归删除。</li>
+<li>如果树是空树，即只有一个root结点，则等价将二叉树置空</li>
+</ol>
+<h3 id="二叉树删除结点代码实现"><a href="#二叉树删除结点代码实现" class="headerlink" title="二叉树删除结点代码实现"></a>二叉树删除结点代码实现</h3><p>结点类方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">delNode</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-built_in">this</span>.left.id == id) &#123;
+        <span class="hljs-built_in">this</span>.left = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-built_in">this</span>.right.id == id) &#123;
+        <span class="hljs-built_in">this</span>.right = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.left != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.left.delNode(id);
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.right != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-built_in">this</span>.right.delNode(id);
+    &#125;
+&#125;</code></pre></div>
+<p>二叉树类方法</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">delNode</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span> &#123;
+    <span class="hljs-keyword">if</span> (root==<span class="hljs-literal">null</span>)&#123;
+        System.out.println(<span class="hljs-string">&quot;树为空&quot;</span>);
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    <span class="hljs-comment">// 根节点且符合删除的情况</span>
+    <span class="hljs-keyword">if</span> (root.getId() == id) &#123;
+        root = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span>;
+    &#125;
+    root.delNode(id);
+&#125;</code></pre></div>
+
+<h2 id="顺序存储二叉树"><a href="#顺序存储二叉树" class="headerlink" title="顺序存储二叉树"></a>顺序存储二叉树</h2><p>顺序存储二叉树的特点：</p>
+<ul>
+<li>顺序二叉树通常只考虑完全二叉树</li>
+<li>第 n 个元素的左子节点为<code>2*n+1</code></li>
+<li>第 n 个元素的右子节点为<code>2*n+2</code></li>
+<li>第 n 个元素的父节点为<code>(n-1)/2</code></li>
+</ul>
+<p>n 表示二叉树中的第几个元素(按 0 开始编号)</p>
+<h3 id="顺序存储二叉树代码实现"><a href="#顺序存储二叉树代码实现" class="headerlink" title="顺序存储二叉树代码实现"></a>顺序存储二叉树代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrBinaryTree</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-type">int</span>[] arr = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>,&#125;;
+        <span class="hljs-type">ArrBinaryTree</span> <span class="hljs-variable">binaryTree</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrBinaryTree</span>(arr);
+        System.out.print(<span class="hljs-string">&quot;前序遍历 &quot;</span>);
+        binaryTree.preOrder(<span class="hljs-number">0</span>);
+        System.out.println();
+        System.out.print(<span class="hljs-string">&quot;中序遍历 &quot;</span>);
+        binaryTree.infixOrder(<span class="hljs-number">0</span>);
+        System.out.println();
+        System.out.print(<span class="hljs-string">&quot;后序遍历 &quot;</span>);
+        binaryTree.postOrder(<span class="hljs-number">0</span>);
+        System.out.println();
+    &#125;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[] arr; <span class="hljs-comment">// 存储结点的数组</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrBinaryTree</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;
+        <span class="hljs-built_in">this</span>.arr = arr;
+    &#125;
+
+    <span class="hljs-comment">// 顺序存储二叉树的前序遍历</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">preOrder</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty())
+            <span class="hljs-keyword">return</span>;
+        System.out.print(arr[n] + <span class="hljs-string">&quot; &quot;</span>);
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>) &lt; arr.length) &#123;
+            preOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>);
+        &#125;
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>) &lt; arr.length) &#123;
+            preOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>);
+        &#125;
+    &#125;
+    <span class="hljs-comment">// 顺序存储二叉树的中序遍历</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">infixOrder</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty())
+            <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>) &lt; arr.length) &#123;
+            infixOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>);
+        &#125;
+        System.out.print(arr[n] + <span class="hljs-string">&quot; &quot;</span>);
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>) &lt; arr.length) &#123;
+            infixOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>);
+        &#125;
+    &#125;
+    <span class="hljs-comment">// 顺序存储二叉树的后序遍历</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">postOrder</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;
+        <span class="hljs-keyword">if</span> (isEmpty())
+            <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>) &lt; arr.length) &#123;
+            postOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>);
+        &#125;
+        <span class="hljs-keyword">if</span> ((n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>) &lt; arr.length) &#123;
+            postOrder(n * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>);
+        &#125;
+        System.out.print(arr[n] + <span class="hljs-string">&quot; &quot;</span>);
+    &#125;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">if</span> (arr == <span class="hljs-literal">null</span> || arr.length == <span class="hljs-number">0</span>) &#123;
+            System.out.println(<span class="hljs-string">&quot;树为空&quot;</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    &#125;
+&#125;</code></pre></div>
+
+<h3 id="顺序存储二叉树应用场景"><a href="#顺序存储二叉树应用场景" class="headerlink" title="顺序存储二叉树应用场景"></a>顺序存储二叉树应用场景</h3><p><a href="./19_%E5%A0%86%E6%8E%92%E5%BA%8F.md">堆排序</a></p>
+<h2 id="线索化二叉树"><a href="#线索化二叉树" class="headerlink" title="线索化二叉树"></a>线索化二叉树</h2><h3 id="线索化二叉树基本概念"><a href="#线索化二叉树基本概念" class="headerlink" title="线索化二叉树基本概念"></a>线索化二叉树基本概念</h3><ol>
+<li>n 个结点的二叉链表中含有<code>n+1</code>公式<code>2n-(n-1)=n+1</code>个空指针域。利用二叉链表中的空指针域，存放指向该结点在某种遍历次序下的前驱和后继结点的指针（这种附加的指针称为”线索”）。</li>
+<li>这种加上了线索的二叉链表称为线索链表，相应的二叉树称为线索二叉树<br>(Threaded BinaryTree)。根据线索性质的不同，线索二叉树可分为前序线索二叉树、中序线索二叉树和后序线索二叉树三种。</li>
+<li>一个结点的前一个结点，称为前驱结点</li>
+<li>一个结点的后一个结点，称为后继结点</li>
+</ol>
+<p>当线索化二叉树后，Node节点的属性<code>left</code>和<code>right</code>，有如下情况：</p>
+<ul>
+<li><code>left</code>指向的是左子树，也可能是指向的前驱节点。</li>
+<li><code>right</code>指向的是右子树，也可能是指向的后驱节点。</li>
+</ul>
+<h3 id="线索化二叉树代码实现"><a href="#线索化二叉树代码实现" class="headerlink" title="线索化二叉树代码实现"></a>线索化二叉树代码实现</h3><div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.yur.tree;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadedBinaryTree</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">BinaryTree</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+        <span class="hljs-type">ThreadedBinaryTree</span> <span class="hljs-variable">tree</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedBinaryTree</span>();
+        <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedTreeNode</span>(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Yorick&quot;</span>);
+        tree.setRoot(root);
+        <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">node2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedTreeNode</span>(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Merry&quot;</span>);
+        <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">node3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedTreeNode</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Jack&quot;</span>);
+        <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">node4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedTreeNode</span>(<span class="hljs-number">4</span>, <span class="hljs-string">&quot;Tom&quot;</span>);
+        <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">node5</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadedTreeNode</span>(<span class="hljs-number">5</span>, <span class="hljs-string">&quot;Lily&quot;</span>);
+        root.left = node2;
+        root.right = node3;
+        node2.left = node4;
+        node3.right = node5;
+        tree.threadedNodes(root);
+        System.out.println(node4.right);
+        System.out.println(node2.right);
+        System.out.println(node5.left);
+        System.out.println(node3.left);
+        System.out.println(<span class="hljs-string">&quot;线索化中序遍历&quot;</span>);
+        <span class="hljs-comment">// 线索化遍历（中序）</span>
+        tree.threadedList();
+    &#125;
+
+    <span class="hljs-keyword">private</span> ThreadedTreeNode pre;
+
+    <span class="hljs-comment">// 中序线索化</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">threadedNodes</span><span class="hljs-params">(ThreadedTreeNode node)</span> &#123;
+        <span class="hljs-keyword">if</span> (node == <span class="hljs-literal">null</span>) &#123;
+            <span class="hljs-keyword">return</span>;
+        &#125;
+        <span class="hljs-comment">// 处理左子树</span>
+        threadedNodes((ThreadedTreeNode) node.left);
+        <span class="hljs-comment">// 处理node</span>
+        <span class="hljs-keyword">if</span> (node.left == <span class="hljs-literal">null</span>) &#123;
+            node.left = pre;
+            node.leftType = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">if</span> (pre != <span class="hljs-literal">null</span> &amp;&amp; pre.right == <span class="hljs-literal">null</span>) &#123;
+            pre.right = node;
+            pre.rightType = <span class="hljs-number">1</span>;
+        &#125;
+        pre = node;
+        <span class="hljs-comment">// 处理右子树</span>
+        threadedNodes((ThreadedTreeNode) node.right);
+    &#125;
+
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadedTreeNode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TreeNode</span> &#123;
+
+    <span class="hljs-comment">// 规定结点的指针类型，默认为 0 代表指向子树，为 1 代表指向前驱或后驱结点</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-variable">leftType</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-variable">rightType</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ThreadedTreeNode</span><span class="hljs-params">(<span class="hljs-type">int</span> id, String name)</span> &#123;
+        <span class="hljs-built_in">super</span>(id, name);
+    &#125;
+&#125;</code></pre></div>
+<h3 id="遍历线索化二叉树"><a href="#遍历线索化二叉树" class="headerlink" title="遍历线索化二叉树"></a>遍历线索化二叉树</h3><p>说明：对前面的中序线索化的二叉树，进行遍历<br>分析：因为线索化后，各个结点指向有变化，因此原来的遍历方式不能使用，这时需要使用新的方式遍历线索化二叉树，各个节点可以通过线型方式遍历，因此无需使用递归方式，这样也提高了遍历的效率。<strong>遍历的次序应当和中序遍历保持一致</strong>。</p>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 线索化遍历（中序）</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">threadedList</span><span class="hljs-params">()</span> &#123;
+    <span class="hljs-type">ThreadedTreeNode</span> <span class="hljs-variable">node</span> <span class="hljs-operator">=</span> (ThreadedTreeNode) getRoot();
+    <span class="hljs-keyword">while</span> (node != <span class="hljs-literal">null</span>) &#123;
+        <span class="hljs-comment">// 向左找的第一个被线索化处理过的结点</span>
+        <span class="hljs-keyword">while</span> (node.leftType == <span class="hljs-number">0</span>) &#123;
+            node = (ThreadedTreeNode) node.left;
+        &#125;
+        System.out.println(node);
+        <span class="hljs-comment">//如果当前结点的右指针指向的是后继结点,就一直输出</span>
+        <span class="hljs-keyword">while</span> (node.rightType == <span class="hljs-number">1</span>) &#123;
+            node = (ThreadedTreeNode) node.right;
+            System.out.println(node);
+        &#125;
+        node = (ThreadedTreeNode) node.right;
+    &#125;
+&#125;</code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DataStructure/" class="category-chain-item">DataStructure</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/">#Java</a>
+      
+        <a href="/tags/%E6%A0%91/">#树</a>
+      
+        <a href="/tags/Tree/">#Tree</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>树和二叉树</div>
+      <div>https://yorick-ryu.github.io/数据结构/数据结构_树和二叉树/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%A0%86%E6%8E%92%E5%BA%8F/" title="堆排序">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">堆排序</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E5%93%88%E5%B8%8C%E8%A1%A8/" title="哈希表">
+                        <span class="hidden-mobile">哈希表</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

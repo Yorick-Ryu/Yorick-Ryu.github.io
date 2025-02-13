@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="泛型 泛型 定义泛型类 泛型函数 多泛型参数 泛型类型约束 配合vararg关键字实现多参 out（协变） in（逆变） 为什么使用in&amp;out reified    定义泛型类泛型类的构造函数可以接受任何类型。 MagicBox类指定的泛型参数由放在一对&lt;&gt;里的字母T表示，T是个代表item类型的占位符。MagicBox类接受任何类型的item作为主构造函数值(item: T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin泛型">
+<meta property="og:url" content="https://yorick-ryu.github.io/Kotlin/Kotlin%E6%B3%9B%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="泛型 泛型 定义泛型类 泛型函数 多泛型参数 泛型类型约束 配合vararg关键字实现多参 out（协变） in（逆变） 为什么使用in&amp;out reified    定义泛型类泛型类的构造函数可以接受任何类型。 MagicBox类指定的泛型参数由放在一对&lt;&gt;里的字母T表示，T是个代表item类型的占位符。MagicBox类接受任何类型的item作为主构造函数值(item: T">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/in_out.png">
+<meta property="article:published_time" content="2022-09-12T07:24:21.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.378Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Generic">
+<meta property="article:tag" content="泛型">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/in_out.png">
+  
+  
+  
+  <title>Kotlin泛型 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Kotlin泛型"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-12 15:24" pubdate>
+          2022年9月12日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Kotlin泛型</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul>
+<li><a href="#%E6%B3%9B%E5%9E%8B">泛型</a><ul>
+<li><a href="#%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B%E7%B1%BB">定义泛型类</a></li>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0">泛型函数</a></li>
+<li><a href="#%E5%A4%9A%E6%B3%9B%E5%9E%8B%E5%8F%82%E6%95%B0">多泛型参数</a></li>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E7%BA%A6%E6%9D%9F">泛型类型约束</a></li>
+<li><a href="#%E9%85%8D%E5%90%88vararg%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%8F%82">配合vararg关键字实现多参</a></li>
+<li><a href="#out%E5%8D%8F%E5%8F%98">out（协变）</a></li>
+<li><a href="#in%E9%80%86%E5%8F%98">in（逆变）</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8inout">为什么使用in&amp;out</a></li>
+<li><a href="#reified">reified</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="定义泛型类"><a href="#定义泛型类" class="headerlink" title="定义泛型类"></a>定义泛型类</h3><p>泛型类的构造函数可以接受任何类型。</p>
+<p>MagicBox类指定的泛型参数由放在一对<code>&lt;&gt;</code>里的字母T表示，T是个代表item类型的占位符。MagicBox类接受任何类型的item作为主构造函数值<code>(item: T)</code>，并将item值赋给同样是T类型的subject私有属性。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T</span>&gt;(item: T) &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> subject: T = item
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-keyword">val</span> weight: <span class="hljs-built_in">Int</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box1: MagicBox&lt;Boy&gt; = MagicBox(Boy(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">21</span>))
+    <span class="hljs-keyword">val</span> box2: MagicBox&lt;Dog&gt; = MagicBox(Dog(<span class="hljs-number">20</span>))
+&#125;</code></pre></div>
+
+<h3 id="泛型函数"><a href="#泛型函数" class="headerlink" title="泛型函数"></a>泛型函数</h3><ul>
+<li><p>泛型参数也可以用于函数。</p>
+</li>
+<li><p>定义一个函数用于获取元素，当且仅当MagicBox可用时，才能获取元素。</p>
+</li>
+</ul>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T</span>&gt;(item: T) &#123;
+    <span class="hljs-keyword">var</span> available = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> subject: T = item
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fetch</span><span class="hljs-params">()</span></span>: T? &#123;
+        <span class="hljs-comment">// 判断接收者是否满足lambda的表达式，满足返回接收者，不满足则返回null。</span>
+        <span class="hljs-keyword">return</span> subject.takeIf &#123; available &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-keyword">val</span> weight: <span class="hljs-built_in">Int</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box1: MagicBox&lt;Boy&gt; = MagicBox(Boy(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">21</span>))
+    <span class="hljs-keyword">val</span> box2: MagicBox&lt;Dog&gt; = MagicBox(Dog(<span class="hljs-number">20</span>))
+    box1.available = <span class="hljs-literal">true</span>
+    box1.fetch()?.run &#123;
+        println(<span class="hljs-string">&quot;you find <span class="hljs-variable">$name</span>&quot;</span>)
+    &#125;
+&#125;</code></pre></div>
+<h3 id="多泛型参数"><a href="#多泛型参数" class="headerlink" title="多泛型参数"></a>多泛型参数</h3><p>泛型函数或泛型类也可以有多个泛型参数</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T</span>&gt;(item: T) &#123;
+    <span class="hljs-keyword">var</span> available = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> subject: T = item
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fetch</span><span class="hljs-params">()</span></span>: T? &#123;
+        <span class="hljs-comment">// 判断接收者是否满足lambda的表达式，满足返回接收者，不满足则返回null。</span>
+        <span class="hljs-keyword">return</span> subject.takeIf &#123; available &#125;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;R&gt;</span> <span class="hljs-title">fetch</span><span class="hljs-params">(subjectModFunc: (<span class="hljs-type">T</span>) -&gt; (<span class="hljs-type">R</span>))</span></span>: R? &#123;
+        <span class="hljs-keyword">return</span> subjectModFunc(subject).takeIf &#123; available &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Man</span>(<span class="hljs-keyword">val</span> name: String, <span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-keyword">val</span> weight: <span class="hljs-built_in">Int</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box1: MagicBox&lt;Boy&gt; = MagicBox(Boy(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">15</span>))
+    <span class="hljs-keyword">val</span> box2: MagicBox&lt;Dog&gt; = MagicBox(Dog(<span class="hljs-number">20</span>))
+    box1.available = <span class="hljs-literal">true</span>
+    box1.fetch()?.run &#123;
+        println(<span class="hljs-string">&quot;you find <span class="hljs-variable">$name</span>&quot;</span>)
+    &#125;
+    <span class="hljs-keyword">val</span> man = box1.fetch &#123;
+        Man(it.name, it.age.plus(<span class="hljs-number">10</span>))
+    &#125;
+&#125;</code></pre></div>
+
+<h3 id="泛型类型约束"><a href="#泛型类型约束" class="headerlink" title="泛型类型约束"></a>泛型类型约束</h3><p>如果要确保MagicBox里面只能装指定类型的物品，如Human类型<br>怎么办？</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// 这里用Human约束泛型类型</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T : Human</span>&gt;(item: T) &#123;
+    <span class="hljs-keyword">var</span> available = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> subject: T = item
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fetch</span><span class="hljs-params">()</span></span>: T? &#123;
+        <span class="hljs-keyword">return</span> subject.takeIf &#123; available &#125;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;R&gt;</span> <span class="hljs-title">fetch</span><span class="hljs-params">(subjectModFunc: (<span class="hljs-type">T</span>) -&gt; (<span class="hljs-type">R</span>))</span></span>: R? &#123;
+        <span class="hljs-keyword">return</span> subjectModFunc(subject).takeIf &#123; available &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Human</span>(<span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Man</span>(<span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-keyword">val</span> weight: <span class="hljs-built_in">Int</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box1: MagicBox&lt;Boy&gt; = MagicBox(Boy(<span class="hljs-string">&quot;Yorick&quot;</span>, <span class="hljs-number">15</span>))
+<span class="hljs-comment">//    val box2: MagicBox&lt;Dog&gt; = MagicBox(Dog(20))</span>
+    box1.available = <span class="hljs-literal">true</span>
+    box1.fetch()?.run &#123;
+        println(<span class="hljs-string">&quot;you find <span class="hljs-variable">$name</span>&quot;</span>)
+    &#125;
+    <span class="hljs-keyword">val</span> man = box1.fetch &#123;
+        Man(it.name, it.age.plus(<span class="hljs-number">10</span>))
+    &#125;
+&#125;</code></pre></div>
+
+<h3 id="配合vararg关键字实现多参"><a href="#配合vararg关键字实现多参" class="headerlink" title="配合vararg关键字实现多参"></a>配合vararg关键字实现多参</h3><div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T : Human</span>&gt;(<span class="hljs-keyword">vararg</span> item: T) &#123;
+    <span class="hljs-keyword">var</span> available = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> subject: Array&lt;<span class="hljs-keyword">out</span> T&gt; = item
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fetch</span><span class="hljs-params">(index: <span class="hljs-type">Int</span>)</span></span>: T? &#123;
+        <span class="hljs-comment">// 判断接收者是否满足lambda的表达式，满足返回接收者，不满足则返回null。</span>
+        <span class="hljs-keyword">return</span> subject[index].takeIf &#123; available &#125;
+    &#125;
+
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;R&gt;</span> <span class="hljs-title">fetch</span><span class="hljs-params">(index: <span class="hljs-type">Int</span>, subjectModFunc: (<span class="hljs-type">T</span>) -&gt; (<span class="hljs-type">R</span>))</span></span>: R? &#123;
+        <span class="hljs-keyword">return</span> subjectModFunc(subject[index]).takeIf &#123; available &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Human</span>(<span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Man</span>(<span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box1 = MagicBox(
+        Boy(<span class="hljs-string">&quot;Jimmy&quot;</span>, <span class="hljs-number">16</span>),
+        Boy(<span class="hljs-string">&quot;Jack&quot;</span>, <span class="hljs-number">13</span>),
+        Boy(<span class="hljs-string">&quot;Morty&quot;</span>, <span class="hljs-number">14</span>)
+    )
+    box1.available = <span class="hljs-literal">true</span>
+    box1.fetch(<span class="hljs-number">1</span>)?.run &#123;
+        println(<span class="hljs-string">&quot;you find <span class="hljs-variable">$name</span>&quot;</span>) <span class="hljs-comment">// Jack</span>
+    &#125;
+    box1.fetch(<span class="hljs-number">2</span>) &#123;
+        Man(it.name, it.age.plus(<span class="hljs-number">10</span>))
+    &#125;
+&#125;</code></pre></div>
+<p>想要使用<code>box1[1]</code>获取实例，那么就要进行运算符重载</p>
+<p>在MagicBox类中添加</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">operator</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">get</span><span class="hljs-params">(index: <span class="hljs-type">Int</span>)</span></span>: T? = subject[index]?.takeIf &#123; available &#125;</code></pre></div>
+<p>调用</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin">println(box1[<span class="hljs-number">1</span>]?.name) <span class="hljs-comment">// Jack</span></code></pre></div>
+
+<h3 id="out（协变）"><a href="#out（协变）" class="headerlink" title="out（协变）"></a>out（协变）</h3><p>out（协变），如果泛型类只将泛型类型作为函数的返回（输出），那么使用out，可以称之为生产类&#x2F;接口，因为它主要是用来生产(produce)指定的泛型对象。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Production</span>&lt;<span class="hljs-type">out T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: T
+&#125;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Consumer</span>&lt;<span class="hljs-type">in T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">T</span>)</span></span>
+&#125;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">ProductionConsumer</span>&lt;<span class="hljs-type">T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: T
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">T</span>)</span></span>
+&#125;
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Food</span>
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FastFood</span> : <span class="hljs-type">Food</span>()
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Burger</span> : <span class="hljs-type">FastFood</span>()
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">FoodStore</span> : <span class="hljs-type">Production</span>&lt;<span class="hljs-type">Food</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: Food &#123;
+        println(<span class="hljs-string">&quot;Produce Food&quot;</span>)
+        <span class="hljs-keyword">return</span> Food()
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">FastFoodStore</span> : <span class="hljs-type">Production</span>&lt;<span class="hljs-type">FastFood</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: FastFood &#123;
+        println(<span class="hljs-string">&quot;Produce FastFood&quot;</span>)
+        <span class="hljs-keyword">return</span> FastFood()
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">BurgerStore</span> : <span class="hljs-type">Production</span>&lt;<span class="hljs-type">Burger</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: Burger &#123;
+        println(<span class="hljs-string">&quot;Produce Burger&quot;</span>)
+        <span class="hljs-keyword">return</span> Burger()
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 子类泛型对象可以赋值给父类泛型对象</span>
+    <span class="hljs-keyword">val</span> production1: Production&lt;Food&gt; = FoodStore()
+    <span class="hljs-keyword">val</span> production2: Production&lt;Food&gt; = FastFoodStore()
+    <span class="hljs-keyword">val</span> production3: Production&lt;Food&gt; = BurgerStore()
+&#125;</code></pre></div>
+<h3 id="in（逆变）"><a href="#in（逆变）" class="headerlink" title="in（逆变）"></a>in（逆变）</h3><p>in（逆变），如果泛型类只将泛型类型作为函数的入参（输入），那么使用<br>in，可以称之为消费者类&#x2F;接口，因为它主要是用来消费(consume)指定的泛型对象。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Production</span>&lt;<span class="hljs-type">out T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: T
+&#125;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Consumer</span>&lt;<span class="hljs-type">in T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">T</span>)</span></span>
+&#125;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">ProductionConsumer</span>&lt;<span class="hljs-type">T</span>&gt; &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">product</span><span class="hljs-params">()</span></span>: T
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">T</span>)</span></span>
+&#125;
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Food</span>
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FastFood</span> : <span class="hljs-type">Food</span>()
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Burger</span> : <span class="hljs-type">FastFood</span>()
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EveryBody</span> : <span class="hljs-type">Consumer</span>&lt;<span class="hljs-type">Food</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">Food</span>)</span></span> &#123;
+        println(<span class="hljs-string">&quot;Eat Food&quot;</span>)
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ModernPeople</span> : <span class="hljs-type">Consumer</span>&lt;<span class="hljs-type">FastFood</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">FastFood</span>)</span></span> &#123;
+        println(<span class="hljs-string">&quot;Eat FastFood&quot;</span>)
+    &#125;
+&#125;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">American</span> : <span class="hljs-type">Consumer</span>&lt;<span class="hljs-type">Burger</span>&gt; &#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">consumer</span><span class="hljs-params">(item: <span class="hljs-type">Burger</span>)</span></span> &#123;
+        println(<span class="hljs-string">&quot;Eat Burger&quot;</span>)
+    &#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-comment">// 父类泛型对象可以赋值给子类泛型对象</span>
+    <span class="hljs-keyword">val</span> consumer1: Consumer&lt;Burger&gt; = EveryBody()
+    <span class="hljs-keyword">val</span> consumer2: Consumer&lt;Burger&gt; = ModernPeople()
+    <span class="hljs-keyword">val</span> consumer3: Consumer&lt;Burger&gt; = American()
+&#125;</code></pre></div>
+
+<h3 id="为什么使用in-out"><a href="#为什么使用in-out" class="headerlink" title="为什么使用in&amp;out"></a>为什么使用in&amp;out</h3><p>父类泛型对象可以赋值给子类泛型对象，用in。<br>子类泛型对象可以赋值给父类泛型对象，用out。</p>
+<p><img src="/./img/in_out.png" srcset="/img/loading.gif" lazyload alt="in&amp;out"></p>
+<h3 id="reified"><a href="#reified" class="headerlink" title="reified"></a>reified</h3><p>有时候，你可能想知道某个泛型参数具体是什么类型，reified关键字能帮你检查泛型参数类型。Kotlin不允许对泛型参数T做类型检查，因为泛型参数类型会被类型擦除，也就是说，T的类型信息在运行时是不可知的。</p>
+<p>人话：配合内联使用，加了reified关键字，就可以使用is判断类型了。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MagicBox</span>&lt;<span class="hljs-type">T : Human</span>&gt;(<span class="hljs-keyword">vararg</span> item: T) &#123;
+    <span class="hljs-comment">// 随机产生一个对象，如果不是指定类型的对象，就通过backup函数生成一个指定类型的对象</span>
+    <span class="hljs-keyword">inline</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-type">&lt;<span class="hljs-keyword">reified</span> T&gt;</span> <span class="hljs-title">randomOrBackup</span><span class="hljs-params">(backup: () -&gt; <span class="hljs-type">T</span>)</span></span>: T &#123;
+        <span class="hljs-keyword">val</span> items = listOf(
+            Boy(<span class="hljs-string">&quot;Jack&quot;</span>, <span class="hljs-number">20</span>),
+            Man(<span class="hljs-string">&quot;Jimmy&quot;</span>, <span class="hljs-number">35</span>)
+        )
+        <span class="hljs-keyword">val</span> random = items.shuffled().first()
+        <span class="hljs-comment">// 这里进行类型判断</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span> (random <span class="hljs-keyword">is</span> T) &#123;
+            random
+        &#125; <span class="hljs-keyword">else</span> &#123;
+            backup()
+        &#125;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Human</span>(<span class="hljs-keyword">val</span> age: <span class="hljs-built_in">Int</span>)
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Boy</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)&#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>: String &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Boy(name=&#x27;<span class="hljs-variable">$name</span>&#x27;,age=&#x27;<span class="hljs-variable">$age</span>&#x27;)&quot;</span>
+    &#125;
+&#125;
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Man</span>(<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> name: String, age: <span class="hljs-built_in">Int</span>) : Human(age)&#123;
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>: String &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Boy(name=&#x27;<span class="hljs-variable">$name</span>&#x27;,age=&#x27;<span class="hljs-variable">$age</span>&#x27;)&quot;</span>
+    &#125;
+&#125;
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-keyword">val</span> weight: <span class="hljs-built_in">Int</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+    <span class="hljs-keyword">val</span> box: MagicBox&lt;Boy&gt; = MagicBox()
+    <span class="hljs-keyword">val</span> subject = box.randomOrBackup &#123;
+        Boy(<span class="hljs-string">&quot;Jimmy&quot;</span>, <span class="hljs-number">21</span>)
+    &#125;
+    println(subject)
+&#125;
+</code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/kotlin/" class="category-chain-item">kotlin</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Generic/">#Generic</a>
+      
+        <a href="/tags/%E6%B3%9B%E5%9E%8B/">#泛型</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Kotlin泛型</div>
+      <div>https://yorick-ryu.github.io/Kotlin/Kotlin泛型/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E6%8B%93%E5%B1%95%E5%87%BD%E6%95%B0%E5%92%8C%E6%8B%93%E5%B1%95%E5%B1%9E%E6%80%A7/" title="Kotlin拓展函数和拓展属性">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Kotlin拓展函数和拓展属性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Kotlin/Kotlin%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB/" title="Kotlin接口与抽象类">
+                        <span class="hidden-mobile">Kotlin接口与抽象类</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

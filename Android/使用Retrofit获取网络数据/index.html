@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="使用Retrofit获取网络数据参考：从互联网获取数据 (google.cn) Retrofit官方文档：Retrofit (square.github.io) 添加Retrofit依赖项Android Gradle 允许您将外部库添加到项目中。除了库依赖项之外，您还需要添加托管库的代码库。  打开模块级 Gradle 文件 build.gradle (Module: MarsPhotos.app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓使用Retrofit获取网络数据">
+<meta property="og:url" content="https://yorick-ryu.github.io/Android/%E4%BD%BF%E7%94%A8Retrofit%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="使用Retrofit获取网络数据参考：从互联网获取数据 (google.cn) Retrofit官方文档：Retrofit (square.github.io) 添加Retrofit依赖项Android Gradle 允许您将外部库添加到项目中。除了库依赖项之外，您还需要添加托管库的代码库。  打开模块级 Gradle 文件 build.gradle (Module: MarsPhotos.app">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
+<meta property="article:published_time" content="2023-01-17T06:33:39.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.374Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Retrofit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
+  
+  
+  
+  <title>安卓使用Retrofit获取网络数据 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="安卓使用Retrofit获取网络数据"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-17 14:33" pubdate>
+          2023年1月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          72 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">安卓使用Retrofit获取网络数据</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="使用Retrofit获取网络数据"><a href="#使用Retrofit获取网络数据" class="headerlink" title="使用Retrofit获取网络数据"></a>使用Retrofit获取网络数据</h1><p>参考：<a target="_blank" rel="noopener" href="https://developer.android.google.cn/codelabs/basic-android-kotlin-compose-getting-data-internet">从互联网获取数据 (google.cn)</a></p>
+<p>Retrofit官方文档：<a target="_blank" rel="noopener" href="https://square.github.io/retrofit/">Retrofit (square.github.io)</a></p>
+<h2 id="添加Retrofit依赖项"><a href="#添加Retrofit依赖项" class="headerlink" title="添加Retrofit依赖项"></a>添加Retrofit依赖项</h2><p>Android Gradle 允许您将外部库添加到项目中。除了库依赖项之外，您还需要添加托管库的代码库。</p>
+<ol>
+<li><p>打开模块级 Gradle 文件 <code>build.gradle</code> <code>(Module: MarsPhotos.app)</code>。</p>
+</li>
+<li><p>在 <code>dependencies</code> 部分，为 Retrofit 库添加以下几行代码：</p>
+<div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// Retrofit</span>
+implementation <span class="hljs-string">&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;</span>
+<span class="hljs-comment">// Retrofit with Scalar Converter</span>
+implementation <span class="hljs-string">&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;</span></code></pre></div></li>
+</ol>
+<p>这两个库协同工作。第一个依赖项用于 Retrofit 2 库本身，而第二个依赖项则用于 Retrofit 标量转换器。Retrofit2 是 Retrofit 库的更新版本。此标量转换器允许 Retrofit 将 JSON 结果作为 <code>String</code> 返回。</p>
+<h2 id="添加数据层"><a href="#添加数据层" class="headerlink" title="添加数据层"></a>添加数据层</h2><p>添加一个数据层，供 <code>ViewModel</code> 用来与网络服务通信。您将按照以下步骤实现 Retrofit 服务 API。</p>
+<ul>
+<li>创建一个数据源：<code>XxxxApiService</code> 类。</li>
+<li>使用基准网址和转换器工厂创建 Retrofit 对象，以转换字符串。</li>
+<li>创建一个可说明 Retrofit 如何与网络服务器通信的接口。</li>
+<li>创建一个 Retrofit 服务，并向应用的其余 API 服务公开实例。</li>
+</ul>
+<p>示例：</p>
+<ol>
+<li><p>右键点击 Android 项目窗格中的 <code>com.example.android.marsphotos</code> 软件包，然后依次选择 <strong>New &gt; Package</strong>。</p>
+</li>
+<li><p>在弹出式窗口中，将 <strong>network</strong> 附加到建议软件包名称的末尾。</p>
+</li>
+<li><p>在新软件包“network”下创建新的 Kotlin 文件。将该文件命名为 <code>MarsApiService</code>。</p>
+</li>
+<li><p>打开 <code>network/MarsApiService.kt</code>。</p>
+</li>
+<li><p>为网络服务的基准网址添加以下常量。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">val</span> BASE_URL =
+   <span class="hljs-string">&quot;https://android-kotlin-fun-mars-server.appspot.com&quot;</span></code></pre></div>
+</li>
+<li><p>在该常量正下方添加 Retrofit 构建器，用于构建和创建 Retrofit 对象。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> retrofit2.Retrofit
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> retrofit = Retrofit.Builder()</code></pre></div></li>
+</ol>
+<p>Retrofit 需要网络服务的基本 URI 和转换器工厂来构建网络服务 API。转换器会告知 Retrofit 如何处理它从网络服务获取的数据。在这种情况下，您需要 Retrofit 从网络服务提取 JSON 响应，并将该响应作为 <code>String</code> 返回。Retrofit 包含一个 <code>ScalarsConverter</code>，它支持字符串和其他基元类型。</p>
+<ol start="7">
+<li><p>使用 <code>ScalarsConverterFactory</code> 实例对构建器调用 <code>addConverterFactory()</code>。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> retrofit2.converter.scalars.ScalarsConverterFactory
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> retrofit = Retrofit.Builder()
+   .addConverterFactory(ScalarsConverterFactory.create())</code></pre></div>
+</li>
+<li><p>使用 <code>baseUrl()</code> 方法为网络服务添加基准网址。</p>
+</li>
+<li><p>调用 <code>build()</code> 以创建 Retrofit 对象。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> retrofit = Retrofit.Builder()
+   .addConverterFactory(ScalarsConverterFactory.create())
+   .baseUrl(BASE_URL)
+   .build()</code></pre></div>
+</li>
+<li><p>在对 Retrofit 构建器的调用的下方，定义一个名为 <code>MarsApiService</code> 的接口，该接口定义 Retrofit 如何使用 HTTP 请求与网络服务器通信。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
+&#125;</code></pre></div>
+</li>
+<li><p>向 <code>MarsApiService</code> 接口添加一个名为 <code>getPhotos()</code> 的函数，以从网络服务中获取响应字符串。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>
+&#125;</code></pre></div>
+</li>
+<li><p>使用 <code>@GET</code> 注解告知 Retrofit 这是 GET 请求，并为该网络服务方法指定端点。在这种情况下，端点为 <code>photos</code>。如上个任务中所述，您将在此 Codelab 中使用 <a target="_blank" rel="noopener" href="https://android-kotlin-fun-mars-server.appspot.com/photos">&#x2F;photos</a> 端点。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> retrofit2.http.GET
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
+    <span class="hljs-meta">@GET(<span class="hljs-string">&quot;photos&quot;</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>
+&#125;</code></pre></div></li>
+</ol>
+<p>调用 <code>getPhotos()</code> 方法时，Retrofit 会将端点 <code>photos</code> 附加到您用于启动请求的基准网址（由您在 Retrofit 构建器中定义）。</p>
+<ol start="13">
+<li><p>将函数的返回值类型添加到 <code>String</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
+    <span class="hljs-meta">@GET(<span class="hljs-string">&quot;photos&quot;</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>: String
+&#125;</code></pre></div>
+</li>
+<li><p>创建MarsApi对象</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">object</span> MarsApi &#123;
+    <span class="hljs-keyword">val</span> retrofitService: MarsApiService <span class="hljs-keyword">by</span> lazy &#123;
+        retrofit.create(MarsApiService::<span class="hljs-keyword">class</span>.java)
+    &#125;
+&#125;</code></pre></div></li>
+</ol>
+<h2 id="在-ViewModel-中调用网络服务"><a href="#在-ViewModel-中调用网络服务" class="headerlink" title="在 ViewModel 中调用网络服务"></a>在 ViewModel 中调用网络服务</h2><p>前提：使用ViewModel管理状态。</p>
+<h3 id="ViewModelScope"><a href="#ViewModelScope" class="headerlink" title="ViewModelScope"></a>ViewModelScope</h3><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/coroutines#viewmodelscope"><code>viewModelScope</code></a> 是为应用中的每个 <code>ViewModel</code> 定义的内置协程作用域。在此作用域内启动的协程会在 <code>ViewModel</code> 被清除时自动取消。</p>
+<p>您可以使用 <code>viewModelScope</code> 启动协程，并在后台发出网络服务请求。由于 <code>viewModelScope</code> 属于 <code>ViewModel</code>，因此，即使应用发生配置更改，请求也会继续发出。</p>
+<ol>
+<li><p>在 <code>MarsApiService.kt</code> 文件中，将 <code>getPhotos()</code> 设置为挂起函数，使其异步，并且不会阻塞发起调用的线程。您可以从 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/topic/libraries/architecture/coroutines#viewmodelscope"><code>viewModelScope</code></a> 内调用此函数。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@GET(<span class="hljs-string">&quot;photos&quot;</span>)</span>
+<span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>: String</code></pre></div>
+</li>
+<li><p>打开 <code>ui/screens/MarsViewModel.kt</code> 文件。向下滚动到 <code>getMarsPhotos()</code> 方法。删除用于将状态响应设置为 <code>&quot;Set the Mars API Response here!&quot;</code> 的代码行，使 <code>getMarsPhotos()</code> 方法为空。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getMarsPhotos</span><span class="hljs-params">()</span></span> &#123;&#125;</code></pre></div>
+</li>
+<li><p>在 <code>getMarsPhotos()</code> 中，使用 <code>viewModelScope.launch</code> 启动协程。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> androidx.lifecycle.viewModelScope
+<span class="hljs-keyword">import</span> kotlinx.coroutines.launch
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getMarsPhotos</span><span class="hljs-params">()</span></span> &#123;
+    viewModelScope.launch &#123;&#125;
+&#125;</code></pre></div>
+</li>
+<li><p>在 <code>viewModelScope</code> 中，使用单例对象 <code>MarsApi</code> 从 <code>retrofitService</code> 接口调用 <code>getPhotos()</code> 方法。将返回的响应保存在名为 <code>listResult</code> 的 <code>val</code> 中。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> com.example.marsphotos.network.MarsApi
+
+viewModelScope.launch &#123;
+    <span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+&#125;</code></pre></div>
+</li>
+<li><p>将刚刚从后端服务器收到的结果分配给 <code>marsUiState</code>。<code>marsUiState</code> 是一个可变状态对象，表示最近的网络请求的状态。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+marsUiState = listResult</code></pre></div>
+</li>
+<li><p>运行应用。请注意，该应用会立即关闭，不一定会显示错误弹出窗口。应用发生了崩溃。</p>
+</li>
+<li><p>点击 Android Studio 中的 <strong>Logcat</strong> 标签页，并记下日志中以如下所示的代码行开头的错误消息：“<code>------- beginning of crash</code>”。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin">    --------- beginning of crash
+<span class="hljs-number">22803</span>-<span class="hljs-number">22865</span>/com.example.android.marsphotos E/AndroidRuntime: FATAL EXCEPTION: OkHttp Dispatcher
+    Process: com.example.android.marsphotos, PID: <span class="hljs-number">22803</span>
+    java.lang.SecurityException: Permission denied (missing INTERNET permission?)
+...</code></pre></div></li>
+</ol>
+<p>此错误消息表示应用可能缺少 <code>INTERNET</code> 权限。下一步添加互联网权限并解决此问题。</p>
+<h2 id="添加互联网权限和异常处理"><a href="#添加互联网权限和异常处理" class="headerlink" title="添加互联网权限和异常处理"></a>添加互联网权限和异常处理</h2><p>应用需要 <code>INTERNET</code> 权限才能访问互联网。</p>
+<h3 id="添加互联网权限"><a href="#添加互联网权限" class="headerlink" title="添加互联网权限"></a>添加互联网权限</h3><p>在 <code>AndroidManifest.xml</code> 文件中添加 <code>&lt;uses-permission&gt;</code> 标签来声明它所需的权限。</p>
+<ol>
+<li>打开 <code>manifests/AndroidManifest.xml</code>。将下面这行代码添加到 <code>&lt;application&gt;</code> 标签的前面：</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span></code></pre></div>
+
+<ol start="2">
+<li>编译并再次运行应用。</li>
+</ol>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a><strong>异常处理</strong></h3><p>如果没有进行异常处理，执行以下步骤，应用会崩溃：</p>
+<ol>
+<li><p>将设备或模拟器设为飞行模式，以模拟网络连接错误。</p>
+</li>
+<li><p>从“最近”菜单中重新打开应用，或从 Android Studio 中重启应用。</p>
+</li>
+<li><p>点击 Android Studio 中的 <strong>Logcat</strong> 标签页，并记下日志中如下所示的严重异常：</p>
+<div class="code-wrapper"><pre><code class="hljs stylus"><span class="hljs-number">3302</span>-<span class="hljs-number">3302</span>/com<span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.android</span><span class="hljs-selector-class">.marsphotos</span> E/AndroidRuntime: FATAL EXCEPTION: <span class="hljs-selector-tag">main</span>
+    Process: com<span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.android</span><span class="hljs-selector-class">.marsphotos</span>, PID: <span class="hljs-number">3302</span></code></pre></div></li>
+</ol>
+<p>此错误消息表示应用尝试连接并超时。在现实环境中，诸如此类的异常非常常见。与权限问题不同，此错误无法解决，但您可以自行处理。在下一步中，您将了解如何处理此类异常。</p>
+<p>连接到服务器时可能出现的问题包括：</p>
+<ul>
+<li>在 API 中使用的网址或 URI 不正确。</li>
+<li>服务器不可用，应用无法连接到服务器。</li>
+<li>网络延迟问题。</li>
+<li>设备的互联网连接状况不佳或无互联网连接。</li>
+</ul>
+<p>这些异常无法在编译时进行处理，但您可以使用 <code>try-catch</code> 代码块在运行时处理异常。</p>
+<p>在 <code>try</code> 代码块中，您可以在预期会引发异常的位置添加代码。在您的应用中，这会是一次网络调用。在 <code>catch</code> 代码块中，您需要实现用于防止应用突然终止的代码。如果存在异常，系统会执行 <code>catch</code> 代码块，以从错误中恢复，而不是突然终止应用。</p>
+<ol>
+<li><p>在 <code>getMarsPhotos()</code> 中的 <code>launch</code> 代码块内，围绕 <code>MarsApi</code> 调用添加一个 <code>try</code> 代码块来处理异常。</p>
+</li>
+<li><p>在 <code>try</code> 代码块之后添加一个 <code>catch</code> 代码块。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin">viewModelScope.launch &#123;
+   <span class="hljs-keyword">try</span> &#123;
+       <span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+       marsUiState = listResult
+   &#125; <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+
+   &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>再次运行该应用。请注意，应用这次不会崩溃。</p>
+</li>
+</ol>
+<h3 id="添加状态界面"><a href="#添加状态界面" class="headerlink" title="添加状态界面"></a>添加状态界面</h3><p>在 <code>MarsViewModel</code> 类中，最近的网络请求的状态 <code>marsUiState</code> 会保存为可变状态对象。但是，这个类缺乏保存如下不同状态的功能：正在加载、成功和失败。</p>
+<ul>
+<li><strong>Loading</strong>状态表示应用正在等待数据。</li>
+<li><strong>Success</strong>状态表示已成功从网络服务检索到数据。</li>
+<li><strong>Error</strong>状态表示存在网络或连接错误。</li>
+</ul>
+<p>如需表示应用中的这三种状态，您将使用封装接口。<code>sealed interface</code> 通过限制可能的值来轻松管理状态。在 Mars Photos 应用中，您将 <code>marsUiState</code> 网络响应限制为三种状态（数据类对象）：正在加载、成功和错误，如以下代码所示：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-comment">// No need to copy over</span>
+<span class="hljs-keyword">sealed</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsUiState</span> &#123;
+   <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Success</span> : <span class="hljs-type">MarsUiState</span>
+   <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Loading</span> : <span class="hljs-type">MarsUiState</span>
+   <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Error</span> : <span class="hljs-type">MarsUiState</span>
+&#125;</code></pre></div>
+
+<p>在上述代码段中，如果返回成功响应，您会从服务器收到火星照片信息。为了存储数据，请向 <code>Success</code> 数据类添加一个构造函数参数。</p>
+<p>对于 <code>Loading</code> 和 <code>Error</code> 状态，您无需设置新数据和创建新对象；只需传递网络响应即可。将 <code>data</code> 类更改为 <code>Object</code>，以便为网络响应创建对象。</p>
+<ol>
+<li><p>打开 <code>ui/MarsViewModel.kt</code> 文件。在 import 语句后，添加 <code>MarsUiState</code> 封装接口。添加后，<code>MarsUiState</code> 对象的值就会变得详尽。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">sealed</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsUiState</span> &#123;
+    <span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Success</span>(<span class="hljs-keyword">val</span> photos: String) : MarsUiState
+    <span class="hljs-keyword">object</span> Error : MarsUiState
+    <span class="hljs-keyword">object</span> Loading : MarsUiState
+&#125;</code></pre></div>
+</li>
+<li><p>在 <code>MarsViewModel</code> 类中，更新 <code>marsUiState</code> 定义。将类型更改为 <code>MarsUiState</code>，将 <code>MarsUiState.Loading</code> 作为其默认值。将 setter 设为不公开，以保护写入 <code>marsUiState</code> 的内容。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">var</span> marsUiState: MarsUiState <span class="hljs-keyword">by</span> mutableStateOf(MarsUiState.Loading)
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">set</span></code></pre></div>
+</li>
+<li><p>向下滚动到 <code>getMarsPhotos()</code> 方法。将 <code>marsUiState</code> 值更新为 <code>MarsUiState.Success</code>，并传递 <code>listResult</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+marsUiState = MarsUiState.Success(listResult)</code></pre></div>
+</li>
+<li><p>在 <code>catch</code> 代码块内部，处理故障响应。将 <code>MarsUiState</code> 设为 <code>Error</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">catch</span> (e: IOException) &#123;
+   marsUiState = MarsUiState.Error
+&#125;</code></pre></div>
+</li>
+<li><p>您可以从 <code>try-catch</code> 代码块中取出 <code>marsUiState</code> 分配。完成后的函数应如以下代码所示：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getMarsPhotos</span><span class="hljs-params">()</span></span> &#123;
+   viewModelScope.launch &#123;
+       marsUiState = <span class="hljs-keyword">try</span> &#123;
+           <span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+           MarsUiState.Success(listResult)
+       &#125; <span class="hljs-keyword">catch</span> (e: IOException) &#123;
+           MarsUiState.Error
+       &#125;
+   &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>在 <code>screens/HomeScreen.kt</code> 文件中，对 <code>marsUiState</code> 添加一个 <code>when</code> 表达式。如果 <code>marsUiState</code> 为 <code>MarsUiState.Success</code>，则调用 <code>ResultScreen</code> 并传入 <code>marsUiState.photos</code>。现阶段，请忽略错误。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">HomeScreen</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">   marsUiState: <span class="hljs-type">MarsUiState</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">   modifier: <span class="hljs-type">Modifier</span> = Modifier</span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    <span class="hljs-keyword">when</span> (marsUiState) &#123;
+        <span class="hljs-keyword">is</span> MarsUiState.Success -&gt; ResultScreen(marsUiState.photos, modifier)
+    &#125;
+&#125;</code></pre></div>
+
+<p class="note note-success">注意：marsUiState 属性不再是字符串。您已将其更改为 MarsUiState 封装接口，该接口有三个不同的对象值：MarsUiState.Loading、MarsUiState.Success 和 MarsUiState.Error。</p>
+</li>
+<li><p>在 <code>when</code> 代码块内，为 <code>MarsUiState.Loading</code> 和 <code>MarsUiState.Error</code> 添加检查项。让该应用显示 <code>LoadingScreen</code>、<code>ResultScreen</code> 和 <code>ErrorScreen</code> 可组合项，稍后您会实现这些可组合项。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">HomeScreen</span><span class="hljs-params">(</span></span>
+<span class="hljs-params"><span class="hljs-function">   marsUiState: <span class="hljs-type">MarsUiState</span>,</span></span>
+<span class="hljs-params"><span class="hljs-function">   modifier: <span class="hljs-type">Modifier</span> = Modifier</span></span>
+<span class="hljs-params"><span class="hljs-function">)</span></span> &#123;
+    <span class="hljs-keyword">when</span> (marsUiState) &#123;
+        <span class="hljs-keyword">is</span> MarsUiState.Loading -&gt; LoadingScreen(modifier)
+        <span class="hljs-keyword">is</span> MarsUiState.Success -&gt; ResultScreen(marsUiState.photos, modifier)
+        <span class="hljs-keyword">is</span> MarsUiState.Error -&gt; ErrorScreen(modifier)
+    &#125;
+&#125;</code></pre></div>
+
+<p class="note note-success">如果实现 MarsUiState interface 时未使用 sealed 关键字，则需要添加一个 Success、Error、Loading 和 else 分支。由于没有第四个选项 (else)，因此，您可以使用 sealed 接口告知编译器只有三个选项（这会使条件语句变得详尽）</p>
+</li>
+<li><p>打开 <code>res/drawable/loading_animation.xml</code>。该可绘制对象是围绕中心点旋转图片可绘制对象 <code>loading_img.xml</code> 的动画。（您在预览中看不到这段动画。）</p>
+<p><img src="/./img/92a448fa23b6d1df.png" srcset="/img/loading.gif" lazyload alt="loading.png"></p>
+</li>
+<li><p>在 <code>screens/HomeScreen.kt</code> 文件中的 <code>HomeScreen</code> 可组合项下方，添加以下 <code>LoadingScreen</code> 可组合函数以显示加载动画。起始代码中包含 <code>loading_img</code> 可绘制资源。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> androidx.compose.ui.res.painterResource
+<span class="hljs-keyword">import</span> androidx.compose.ui.unit.dp
+<span class="hljs-keyword">import</span> androidx.compose.foundation.layout.size
+<span class="hljs-keyword">import</span> androidx.compose.foundation.Image
+
+<span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">LoadingScreen</span><span class="hljs-params">(modifier: <span class="hljs-type">Modifier</span> = Modifier)</span></span> &#123;
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = modifier.fillMaxSize()
+    ) &#123;
+        Image(
+            modifier = Modifier.size(<span class="hljs-number">200.</span>dp),
+            painter = painterResource(R.drawable.loading_img),
+            contentDescription = stringResource(R.string.loading)
+        )
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>在 <code>LoadingScreen</code> 可组合项下方，添加以下 <code>ErrorScreen</code> 可组合函数，以便应用显示错误消息。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-meta">@Composable</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">ErrorScreen</span><span class="hljs-params">(modifier: <span class="hljs-type">Modifier</span> = Modifier)</span></span> &#123;
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = modifier.fillMaxSize()
+    ) &#123;
+        Text(stringResource(R.string.loading_failed))
+    &#125;
+&#125;</code></pre></div>
+</li>
+<li><p>再次运行应用，保持飞行模式开启状态。应用这次不会突然关闭，而是会显示错误消息：</p>
+</li>
+<li><p>在手机或模拟器上，关闭飞行模式。运行并测试您的应用，确保一切正常，并且您能够看到 JSON 字符串。</p>
+</li>
+</ol>
+<h2 id="使用-kotlinx-serialization-解析-JSON-响应"><a href="#使用-kotlinx-serialization-解析-JSON-响应" class="headerlink" title="使用 kotlinx.serialization 解析 JSON 响应"></a>使用 kotlinx.serialization 解析 JSON 响应</h2><h3 id="添加-kotlinx-serialization-依赖项"><a href="#添加-kotlinx-serialization-依赖项" class="headerlink" title="添加 kotlinx.serialization 依赖项"></a>添加 <code>kotlinx.serialization</code> 依赖项</h3><ol>
+<li><p>打开 **build.gradle (Module: app)**。</p>
+</li>
+<li><p>在 <code>plugins</code> 代码块中，添加 <code>kotlinx serialization</code> 插件。</p>
+   <div class="code-wrapper"><pre><code class="hljs groovy">id <span class="hljs-string">&#x27;org.jetbrains.kotlin.plugin.serialization&#x27;</span> version <span class="hljs-string">&#x27;1.7.10&#x27;</span></code></pre></div>
+
+</li>
+<li><p>在“dependencies”部分，添加以下代码以包含 <code>kotlinx.serialization</code> 依赖项。此依赖项可为 Kotlin 项目提供 JSON 序列化。</p>
+   <div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// Kotlin serialization</span>
+implementation <span class="hljs-string">&quot;org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1&quot;</span></code></pre></div>
+</li>
+<li><p>在 <code>dependencies</code> 代码块中，找到 Retrofit 标量转换器所在的代码行，并将其更改为使用 <code>kotlinx-serialization-converter</code>：</p>
+<p><strong>将以下代码</strong></p>
+<div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// Retrofit with scalar Converter</span>
+implementation <span class="hljs-string">&quot;com.squareup.retrofit2:converter-scalars:2.9.0&quot;</span></code></pre></div>
+
+<p><strong>替换为以下代码</strong></p>
+<div class="code-wrapper"><pre><code class="hljs groovy"><span class="hljs-comment">// Retrofit with Kotlin serialization Converter</span>
+implementation <span class="hljs-string">&quot;com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0&quot;</span></code></pre></div>
+</li>
+<li><p>点击 <strong>Sync Now</strong>，以使用新的依赖项重建项目。</p>
+</li>
+</ol>
+<h3 id="实现数据类"><a href="#实现数据类" class="headerlink" title="实现数据类"></a>实现数据类</h3><p>例如：</p>
+<p>您从网络服务中获取的 JSON 响应的示例条目类似于您之前看到的内容：</p>
+<div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+        <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;424906&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;img_src&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044631300305227E03_DXXX.jpg&quot;</span>
+    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+...<span class="hljs-punctuation">]</span></code></pre></div>
+
+<p>请注意，在上面的示例中，每个火星照片条目都具有以下 JSON 键值对：</p>
+<ul>
+<li><code>id</code>：资源的 ID，用字符串表示。由于它封装在英文引号 (<code>&quot; &quot;</code>) 中，因此它是 <code>String</code> 类型，而不是 <code>Integer</code>。</li>
+<li><code>img_src</code>：图片的网址，用字符串表示。</li>
+</ul>
+<p>kotlinx.serialization 会解析此 JSON 数据并将其转换为 Kotlin 对象。为此，kotlinx.serialization 需要一个 Kotlin 数据类来存储解析后的结果。在此步骤中，您将创建数据类 <code>MarsPhoto</code>。</p>
+<ol>
+<li><p>右键点击 <strong>network</strong> 软件包，然后依次选择 <strong>New &gt; Kotlin File&#x2F;Class</strong>。</p>
+</li>
+<li><p>在对话框中，选择 <strong>Class</strong>，然后输入 <code>MarsPhoto</code> 作为类的名称。系统将在 <code>network</code> 软件包中创建一个名为 <code>MarsPhoto.kt</code> 的新文件。</p>
+</li>
+<li><p>在类定义前添加 <code>data</code> 关键字，使 <code>MarsPhoto</code> 成为数据类。</p>
+</li>
+<li><p>将英文大括号 <code>&#123;&#125;</code> 更改为英文圆括号 <code>()</code>。此更改会引发错误，因为数据类必须至少定义一个属性。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MarsPhoto</span>()</code></pre></div>
+</li>
+<li><p>将以下属性添加到 <code>MarsPhoto</code> 类定义中。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MarsPhoto</span>(
+    <span class="hljs-keyword">val</span> id: String,  <span class="hljs-keyword">val</span> img_src: String
+)</code></pre></div>
+</li>
+<li><p>使 <code>MarsPhoto</code> 类可序列化，并为其添加 <code>@Serializable</code> 注解。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> kotlinx.serialization.Serializable
+
+<span class="hljs-meta">@Serializable</span>
+<span class="hljs-keyword">data</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MarsPhoto</span>(
+    <span class="hljs-keyword">val</span> id: String,  <span class="hljs-keyword">val</span> img_src: String
+)</code></pre></div>
+
+<p>请注意，<code>MarsPhoto</code> 类中的每个变量都对应于 JSON 对象中的一个键名。为了匹配特定 JSON 响应中的类型，您可以为所有值使用 <code>String</code> 对象。</p>
+<p><code>kotlinx serialization</code> 解析 JSON 时，它会按名称匹配键，并用适当的值填充数据对象。</p>
+</li>
+</ol>
+<p><strong>@SerialName 注解</strong></p>
+<p>有时，JSON 响应中的键名可能会使 Kotlin 属性混淆，或者可能与建议的编码样式不匹配。例如，在 JSON 文件中，<code>img_src</code> 键使用下划线，而 Kotlin 惯例使用大写和小写字母（“驼峰式大小写”）。</p>
+<p>如需在数据类中使用与 JSON 响应中的键名不同的变量名称，请使用 <code>@SerialName</code> 注解。在以下示例中，数据类中变量的名称为 <code>imgSrc</code>。可以使用 <code>@SerialName(value = &quot;img_src&quot;)</code> 将该变量映射到 JSON 属性 <code>img_src</code>。</p>
+<ol>
+<li><p>将 <code>img_src</code> 键所在的代码行替换为如下所示的代码行。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> kotlinx.serialization.SerialName
+
+<span class="hljs-meta">@SerialName(value = <span class="hljs-string">&quot;img_src&quot;</span>)</span>
+<span class="hljs-keyword">val</span> imgSrc: String</code></pre></div></li>
+</ol>
+<h3 id="更新-MarsApiService-和-MarsViewModel"><a href="#更新-MarsApiService-和-MarsViewModel" class="headerlink" title="更新 MarsApiService 和 MarsViewModel"></a>更新 MarsApiService 和 MarsViewModel</h3><p>在此任务中，您将使用 <code>kotlinx.serialization</code> 转换器将 JSON 对象转换为 Kotlin 对象。</p>
+<ol>
+<li><p>打开 <code>network/MarsApiService.kt</code>。</p>
+</li>
+<li><p>请注意 <code>ScalarsConverterFactory</code> 的未解析引用错误。这些错误是由上一部分中的 Retrofit 依赖项更改导致的。</p>
+</li>
+<li><p>删除 <code>ScalarConverterFactory</code> 的导入作业。</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> retrofit2.converter.scalars.ScalarsConverterFactory</code></pre></div>
+</li>
+<li><p>在 <code>retrofit</code> 对象声明中，将 Retrofit 构建器更改为使用 <code>kotlinx.serialization</code> 而不是 <code>ScalarConverterFactory</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+<span class="hljs-keyword">import</span> kotlinx.serialization.json.Json
+<span class="hljs-keyword">import</span> okhttp3.MediaType
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> retrofit = Retrofit.Builder()
+    .addConverterFactory(Json.asConverterFactory(<span class="hljs-string">&quot;application/json&quot;</span>.toMediaType()))
+    .baseUrl(BASE_URL)
+    .build()
+<span class="hljs-comment">// 这里我一直引入失败，改为了：Json.asConverterFactory(MediaType.get(&quot;application/json&quot;))</span></code></pre></div>
+<p><strong>如果<code>toMediaType()</code>报错</strong>：<br> 在<code>build.gradle(app)</code>的<code>dependencies</code>中导入okhttp3依赖并同步.</p>
+ <div class="code-wrapper"><pre><code class="hljs groovy">dependencies &#123;
+...
+implementation <span class="hljs-string">&quot;com.squareup.okhttp3:okhttp:4.10.1&quot;</span>
+&#125;</code></pre></div>
+<p> 就可以使用了：</p>
+ <div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">import</span> okhttp3.MediaType.Companion.toMediaType
+   
+<span class="hljs-keyword">val</span> contentType = <span class="hljs-string">&quot;application/json&quot;</span>.toMediaType()</code></pre></div></li>
+</ol>
+<p>现在，您已具备 <code>kotlinx.serialization</code>，可以要求 Retrofit 从 JSON 数组中返回 <code>MarsPhoto</code> 对象列表，而不是返回 JSON 字符串。</p>
+<ol start="5">
+<li><p>更新 <code>MarsApiService</code> 接口，以便 Retrofit 返回 <code>MarsPhoto</code> 对象列表，而不是返回 <code>String</code>。</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">MarsApiService</span> &#123;
+    <span class="hljs-meta">@GET(<span class="hljs-string">&quot;photos&quot;</span>)</span>
+    <span class="hljs-keyword">suspend</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getPhotos</span><span class="hljs-params">()</span></span>: List&lt;MarsPhoto&gt;
+&#125;</code></pre></div>
+</li>
+<li><p>对 <code>viewModel</code> 进行类似的更改。打开 <code>MarsViewModel.kt</code>，并向下滚动到 <code>getMarsPhotos()</code> 方法。</p>
+<p>在 <code>getMarsPhotos()</code> 方法中，<code>listResult</code> 是 <code>List&lt;MarsPhoto&gt;</code>，而不再是 <code>String</code>。该列表的大小就是已接收和解析的照片数。</p>
+</li>
+<li><p>如需输出检索的照片数，请按如下方式更新 <code>marsUiState</code>：</p>
+<div class="code-wrapper"><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> listResult = MarsApi.retrofitService.getPhotos()
+marsUiState = MarsUiState.Success(
+   <span class="hljs-string">&quot;Success: <span class="hljs-subst">$&#123;listResult.size&#125;</span> Mars photos retrieved&quot;</span>
+)</code></pre></div>
+</li>
+<li><p>确保在设备或模拟器中关闭飞行模式，编译并运行应用。</p>
+<p>这一次，消息应显示网络服务返回的资源数，而不是较大的 JSON 字符串。</p>
+</li>
+</ol>
+<p>示例应用完整代码：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos">google-developer-training&#x2F;basic-android-kotlin-compose-training-mars-photos: Solution code for Android Basics in Kotlin course (github.com)</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="REST-网络服务"><a href="#REST-网络服务" class="headerlink" title="REST 网络服务"></a>REST 网络服务</h3><ul>
+<li>网络服务是通过互联网提供的基于软件的功能，可让您的应用发出请求并获取返回的数据。</li>
+<li>常见网络服务使用的是 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> 架构。提供 REST 架构的网络服务称为 RESTful 服务。RESTful 网络服务是使用标准网络组件和协议构建的。</li>
+<li>您可通过 URI 以标准化方式向 REST 网络服务发出请求。</li>
+<li>若要使用网络服务，应用必须建立网络连接，然后与该服务进行通信。然后，应用必须接收响应数据，并将该数据解析成应用可以使用的格式。</li>
+<li><a target="_blank" rel="noopener" href="https://square.github.io/retrofit/">Retrofit</a> 库是一个客户端库，可让应用向 REST 网络服务发出请求。</li>
+<li>使用转换器指示 Retrofit 如何处理它发送至网络服务的数据，以及它从网络服务获取的返回数据。例如，<code>ScalarsConverter</code> 会将网络服务数据视为 <code>String</code> 或其他基元。</li>
+<li>如需让应用能够连接到互联网，请在 Android 清单中添加 <code>&quot;android.permission.INTERNET&quot;</code> 权限。</li>
+<li>延迟初始化会将对象创建操作委派为在首次使用时执行。它会创建引用，但不会创建对象。在首次访问对象后，此后每次访问都会创建并使用引用。</li>
+</ul>
+<h3 id="JSON-解析"><a href="#JSON-解析" class="headerlink" title="JSON 解析"></a>JSON 解析</h3><ul>
+<li>网络服务的响应通常会采用 <a target="_blank" rel="noopener" href="https://www.json.org/">JSON</a> 格式（一种表示结构化数据的通用格式）。</li>
+<li>JSON 对象是键值对的集合。</li>
+<li>JSON 对象集合是一个 JSON 数组。作为网络服务的响应，您会得到一个 JSON 数组。</li>
+<li>键值对中的键会用英文引号引起来。值可以是数字或字符串。</li>
+<li>在 Kotlin 中，数据序列化工具位于单独的组件 <a target="_blank" rel="noopener" href="https://github.com/Kotlin/kotlinx.serialization">kotlinx.serialization</a> 中。kotlinx.serialization 提供了一系列库，用于将 JSON 字符串转换为 Kotlin 对象。</li>
+<li>Kotlin 序列化转换器库是一个社区开发的库，适用于 Retrofit：<a target="_blank" rel="noopener" href="https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter#kotlin-serialization-converter">retrofit2-kotlinx-serialization-converter</a>。</li>
+<li>kotlinx.serialization 可将 JSON 响应中的键与具有相同名称的数据对象中的属性进行匹配。</li>
+<li>如需为键使用不同的属性名称，请使用 <code>@Serializable</code> 注解和 JSON 键 <code>value</code> 为该属性添加注解。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Retrofit/">#Retrofit</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>安卓使用Retrofit获取网络数据</div>
+      <div>https://yorick-ryu.github.io/Android/使用Retrofit获取网络数据/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/BackEnd/Ktor%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Ktor部署到云服务器">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Ktor部署到云服务器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/career/things-they-didnt-teach-you/" title="关于软件工程他们没有教你的事情">
+                        <span class="hidden-mobile">关于软件工程他们没有教你的事情</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

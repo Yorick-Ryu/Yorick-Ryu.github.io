@@ -1,0 +1,973 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/icon_coko.png">
+  <link rel="icon" href="/img/icon/icon_coko.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#4F378B">
+  <meta name="author" content="Yorick">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="python实用脚本收集图片压缩BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):     if">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python实用脚本收集">
+<meta property="og:url" content="https://yorick-ryu.github.io/Python/PythonScripts/index.html">
+<meta property="og:site_name" content="Yorick Harbor">
+<meta property="og:description" content="python实用脚本收集图片压缩BUG:部分图片压缩后体积反而变大 from PIL import Image import os  def get_size(file):     # 获取文件大小:KB     size &#x3D; os.path.getsize(file)     return size &#x2F; 1024  def get_outfile(infile, outfile):     if">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yorick-ryu.github.io/img/default.png">
+<meta property="article:published_time" content="2022-04-21T08:50:41.000Z">
+<meta property="article:modified_time" content="2025-02-13T11:14:54.388Z">
+<meta property="article:author" content="Yorick">
+<meta property="article:tag" content="Script">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yorick-ryu.github.io/img/default.png">
+  
+  
+  
+  <title>Python实用脚本收集 | Yorick Harbor</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yorick-ryu.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","app_key":"H7FOf5iT0i1NDe3oH6gFSyzM","server_url":"https://nitgclcq.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7736708165034885" crossorigin="anonymous"></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Yorick Harbor</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Python实用脚本收集"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-21 16:50" pubdate>
+          2022年4月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python实用脚本收集</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2025年2月13日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="python实用脚本收集"><a href="#python实用脚本收集" class="headerlink" title="python实用脚本收集"></a>python实用脚本收集</h1><h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>BUG:部分图片压缩后体积反而变大</p>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
+<span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">get_size</span>(<span class="hljs-params">file</span>):
+    <span class="hljs-comment"># 获取文件大小:KB</span>
+    size = os.path.getsize(file)
+    <span class="hljs-keyword">return</span> size / <span class="hljs-number">1024</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">get_outfile</span>(<span class="hljs-params">infile, outfile</span>):
+    <span class="hljs-keyword">if</span> outfile:
+        <span class="hljs-keyword">return</span> outfile
+    <span class="hljs-built_in">dir</span>, suffix = os.path.splitext(infile)
+    outfile = <span class="hljs-string">&#x27;&#123;&#125;-out&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">dir</span>, suffix)
+    <span class="hljs-keyword">return</span> outfile
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">compress_image</span>(<span class="hljs-params">infile, outfile=<span class="hljs-string">&#x27;&#x27;</span>, mb=<span class="hljs-number">400</span>, step=<span class="hljs-number">10</span>, quality=<span class="hljs-number">90</span></span>):
+    <span class="hljs-string">&quot;&quot;&quot;不改变图片尺寸压缩到指定大小</span>
+<span class="hljs-string">    :param infile: 压缩源文件</span>
+<span class="hljs-string">    :param outfile: 压缩文件保存地址</span>
+<span class="hljs-string">    :param mb: 压缩目标，KB</span>
+<span class="hljs-string">    :param step: 每次调整的压缩比率</span>
+<span class="hljs-string">    :param quality: 初始压缩比率</span>
+<span class="hljs-string">    :return: 压缩文件地址，压缩文件大小</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    o_size = get_size(infile)
+    <span class="hljs-keyword">if</span> o_size &lt;= mb:
+        <span class="hljs-keyword">return</span> infile
+    outfile = get_outfile(infile, outfile)
+    <span class="hljs-keyword">while</span> o_size &gt; mb:
+        im = Image.<span class="hljs-built_in">open</span>(infile)
+        im.save(outfile, quality=quality)
+        <span class="hljs-keyword">if</span> quality - step &lt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">break</span>
+        quality -= step
+        o_size = get_size(outfile)
+    <span class="hljs-keyword">return</span> outfile, get_size(outfile)
+    
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">resize_image</span>(<span class="hljs-params">infile, outfile=<span class="hljs-string">&#x27;&#x27;</span>, x_s=<span class="hljs-number">1376</span></span>):
+    <span class="hljs-string">&quot;&quot;&quot;修改图片尺寸</span>
+<span class="hljs-string">    :param infile: 图片源文件</span>
+<span class="hljs-string">    :param outfile: 重设尺寸文件保存地址</span>
+<span class="hljs-string">    :param x_s: 设置的宽度</span>
+<span class="hljs-string">    :return:</span>
+<span class="hljs-string">    &quot;&quot;&quot;</span>
+    im = Image.<span class="hljs-built_in">open</span>(infile)
+    x, y = im.size
+    y_s = <span class="hljs-built_in">int</span>(y * x_s / x)
+    out = im.resize((x_s, y_s), Image.ANTIALIAS)
+    outfile = get_outfile(infile, outfile)
+    out.save(outfile)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+    <span class="hljs-comment"># 这里填写图片的路径和输出路径</span>
+    compress_image(<span class="hljs-string">r&quot;E:\download\yorick.love.png&quot;</span>)
+   <span class="hljs-comment">#resize_image(r&#x27;D:\learn\space.jpg&#x27;)</span></code></pre></div>
+
+<h2 id="QQ-TimOCR转md表格"><a href="#QQ-TimOCR转md表格" class="headerlink" title="QQ&#x2F;TimOCR转md表格"></a>QQ&#x2F;TimOCR转md表格</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将表格内容的QCR文本结果还原为Markdown文档的表格格式</span>
+<span class="hljs-comment"># 暂不支持空单元格</span>
+<span class="hljs-comment"># 使用方法：</span>
+<span class="hljs-comment"># 1. 运行脚本</span>
+<span class="hljs-comment"># 2. 用QQ/Tim的OCR识别表格内容并复制</span>
+<span class="hljs-comment"># 3. 按下快捷键 shift+alt+表格列数（2~4）</span>
+<span class="hljs-comment"># 4. 粘贴文本</span>
+<span class="hljs-keyword">import</span> pyperclip, keyboard
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">formatTable</span>(<span class="hljs-params">columnNum</span>):
+    <span class="hljs-comment"># 获取剪贴板内容</span>
+    raw = pyperclip.paste()
+    <span class="hljs-comment"># 按行分割</span>
+    raw = raw.replace(<span class="hljs-string">&quot;\r&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+    rawLine = raw.split(<span class="hljs-string">&quot;\n&quot;</span>)
+
+    <span class="hljs-comment"># 接受结果</span>
+    tableLine = []
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(rawLine)):
+
+        <span class="hljs-comment"># 加入制表符</span>
+        <span class="hljs-keyword">if</span> i == columnNum:
+            tableLine.append(columnNum * <span class="hljs-string">&quot;|---&quot;</span> + <span class="hljs-string">&quot;|\n&quot;</span>)
+
+        <span class="hljs-keyword">if</span> i % columnNum == <span class="hljs-number">0</span>:
+            <span class="hljs-comment"># 如果是第一列</span>
+            tableLine.append(<span class="hljs-string">&quot;|&quot;</span> + rawLine[i] + <span class="hljs-string">&quot;|&quot;</span>)
+        <span class="hljs-keyword">elif</span> i % columnNum == columnNum - <span class="hljs-number">1</span>:
+            <span class="hljs-comment"># 如果是最后一列</span>
+            tableLine.append(rawLine[i] + <span class="hljs-string">&quot;|&quot;</span> + <span class="hljs-string">&quot;\n&quot;</span>)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># 普通列</span>
+            tableLine.append(rawLine[i] + <span class="hljs-string">&quot;|&quot;</span>)
+
+    <span class="hljs-comment"># print(&quot;&quot;.join(tableLine))</span>
+    <span class="hljs-comment"># 写入剪切板</span>
+    pyperclip.copy(<span class="hljs-string">&quot;&quot;</span>.join(tableLine))
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    keyboard.add_hotkey(<span class="hljs-string">&quot;shift+alt+2&quot;</span>, formatTable, args=(<span class="hljs-number">2</span>,))
+    keyboard.add_hotkey(<span class="hljs-string">&quot;shift+alt+3&quot;</span>, formatTable, args=(<span class="hljs-number">3</span>,))
+    keyboard.add_hotkey(<span class="hljs-string">&quot;shift+alt+4&quot;</span>, formatTable, args=(<span class="hljs-number">4</span>,))
+    keyboard.record(<span class="hljs-string">&quot;shift+alt+1&quot;</span>)
+</code></pre></div>
+
+<h2 id="hexo博客格式化"><a href="#hexo博客格式化" class="headerlink" title="hexo博客格式化"></a>hexo博客格式化</h2><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 将任意路径下的所有md文档格式化为Hexo博客并转移到Hexo目录下，同时转移图片文件</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> datetime
+
+<span class="hljs-comment"># md文档路径</span>
+md_path = <span class="hljs-string">r&quot;C:\Users\yurui\Desktop\Coding_Note\python_note&quot;</span>
+<span class="hljs-comment"># 获取文档名的正则表达式，例如“24_Python脚本.md”，提取后为Python脚本</span>
+re_file_name = <span class="hljs-string">r&quot;[0-9]*_(.+?).md&quot;</span>
+<span class="hljs-comment"># 获取文档内容中图片路径的表达式</span>
+re_img_name = <span class="hljs-string">r&quot;!\[.*\]\((.+?)\)&quot;</span>
+<span class="hljs-comment"># 博客首页图默认路径</span>
+img_default_url = <span class="hljs-string">r&quot;/img/default.png&quot;</span>
+<span class="hljs-comment"># 定义默认分类</span>
+categories = <span class="hljs-string">&quot;Python&quot;</span>
+<span class="hljs-comment"># 博客路径</span>
+post_url = <span class="hljs-string">r&quot;D:\Blog\source\_posts&quot;</span>
+<span class="hljs-comment"># 前缀</span>
+prefix = <span class="hljs-string">&quot;Python&quot;</span>
+
+<span class="hljs-comment"># 获取md文档并格式化</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">format</span>(<span class="hljs-params">md_path</span>):
+    <span class="hljs-comment"># 得到文件夹下的所有文件名称，返回列表</span>
+    files = os.listdir(md_path)
+    <span class="hljs-comment"># 遍历每个文件</span>
+    <span class="hljs-keyword">for</span> file_name <span class="hljs-keyword">in</span> files:
+        <span class="hljs-comment"># 保存博客头信息</span>
+        heads_list = [
+            <span class="hljs-string">&quot;---\n&quot;</span>,
+            <span class="hljs-string">&quot;title: &#123;title&#125;\n&quot;</span>,
+            <span class="hljs-string">&quot;index_img: &#123;img_path&#125;\n&quot;</span>,
+            <span class="hljs-string">&quot;categories: \n&quot;</span>,
+            <span class="hljs-string">&quot;  - &#123;categories&#125;\n&quot;</span>,
+            <span class="hljs-string">&quot;date: &#123;time&#125;\n&quot;</span>,
+            <span class="hljs-string">&quot;tags: \n&quot;</span>,
+            <span class="hljs-string">&quot;  - \n&quot;</span>,
+            <span class="hljs-string">&quot;sticky: \n&quot;</span>,
+            <span class="hljs-string">&quot;---\n&quot;</span>,
+        ]
+        <span class="hljs-comment"># 获取文件绝对路径</span>
+        file_path = md_path + <span class="hljs-string">&quot;/&quot;</span> + file_name
+        <span class="hljs-comment"># 判断是否是文件</span>
+        <span class="hljs-keyword">if</span> os.path.isfile(file_path) <span class="hljs-keyword">and</span> file_name.split(<span class="hljs-string">&quot;.&quot;</span>)[<span class="hljs-number">1</span>] == <span class="hljs-string">&quot;md&quot;</span>:
+            <span class="hljs-comment"># 获取blog名称</span>
+            blog_name = re.findall(re_file_name, file_name)
+            <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(blog_name) == <span class="hljs-number">1</span>:
+                blog_name = blog_name[<span class="hljs-number">0</span>]
+            <span class="hljs-keyword">else</span>:
+                blog_name = file_name.split(<span class="hljs-string">&quot;.&quot;</span>)[<span class="hljs-number">0</span>]
+            <span class="hljs-comment"># 获取blog首图</span>
+            <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_path, <span class="hljs-string">&quot;r&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> f:
+                <span class="hljs-comment"># 获取文件全部内容</span>
+                content = f.read()
+                <span class="hljs-comment"># 正则匹配</span>
+                img_url = re.findall(re_img_name, content)
+                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(img_url) &gt; <span class="hljs-number">0</span>:
+                    img_url = img_url[<span class="hljs-number">0</span>]
+                <span class="hljs-keyword">else</span>:
+                    img_url = img_default_url
+            <span class="hljs-comment"># 将assets替换为img</span>
+            img_url = img_url.replace(<span class="hljs-string">&quot;assets&quot;</span>, <span class="hljs-string">&quot;img&quot;</span>)
+            <span class="hljs-comment"># 获取文件创建日期</span>
+            blog_time = <span class="hljs-built_in">int</span>(os.path.getctime(file_path))
+            blog_time = datetime.datetime.fromtimestamp(blog_time)
+
+            heads_list[<span class="hljs-number">1</span>] = heads_list[<span class="hljs-number">1</span>].<span class="hljs-built_in">format</span>(title=blog_name)
+            heads_list[<span class="hljs-number">2</span>] = heads_list[<span class="hljs-number">2</span>].<span class="hljs-built_in">format</span>(img_path=img_url)
+            heads_list[<span class="hljs-number">4</span>] = heads_list[<span class="hljs-number">4</span>].<span class="hljs-built_in">format</span>(categories=categories)
+            heads_list[<span class="hljs-number">5</span>] = heads_list[<span class="hljs-number">5</span>].<span class="hljs-built_in">format</span>(time=blog_time)
+
+            <span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> heads_list:
+                <span class="hljs-built_in">print</span>(li)
+            flag = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;本博客头信息如上所示，是否修改？\n 0.完美，1.标题，2.图片路径，3.分类  &quot;</span>)
+            <span class="hljs-keyword">while</span> flag != <span class="hljs-string">&quot;0&quot;</span>:
+                <span class="hljs-keyword">if</span> flag == <span class="hljs-string">&quot;1&quot;</span>:
+                    heads_list[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;title: &#123;0&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入标题，回车后输入 0 提交：&quot;</span>))
+                <span class="hljs-keyword">elif</span> flag == <span class="hljs-string">&quot;2&quot;</span>:
+                    heads_list[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;index_img: &#123;0&#125;&quot;</span>.<span class="hljs-built_in">format</span>(
+                        <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入图片路径，回车后输入 0 提交：&quot;</span>)
+                    )
+                <span class="hljs-keyword">elif</span> flag == <span class="hljs-string">&quot;3&quot;</span>:
+                    heads_list[<span class="hljs-number">4</span>] = <span class="hljs-string">&quot;  - &#123;0&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入分类，回车后输入 0 提交：&quot;</span>))
+                <span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> heads_list:
+                    <span class="hljs-built_in">print</span>(li)
+                flag = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;本博客头信息如上所示，是否修改？\n 0.完美，1.标题，2.图片路径，3.分类  &quot;</span>)
+
+            <span class="hljs-comment"># 获取博客</span>
+            blog_body = []
+            <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file_path, <span class="hljs-string">&quot;r+&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> f:
+                blog_body = f.readlines()
+
+            <span class="hljs-comment"># 将head写入博客头</span>
+            heads_list.append(<span class="hljs-string">&quot;\n&quot;</span>)
+            heads_list.reverse()
+            <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> heads_list:
+                blog_body.insert(<span class="hljs-number">0</span>, line)
+
+            <span class="hljs-comment"># 批量替换关键词</span>
+
+            <span class="hljs-comment"># 写入博客</span>
+            blog_url = post_url + <span class="hljs-string">&quot;/&quot;</span> + prefix +blog_name + <span class="hljs-string">&quot;.md&quot;</span>
+            <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(blog_url, <span class="hljs-string">&quot;w&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> f:
+                f.writelines(blog_body)
+
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;写入成功，博客路径：<span class="hljs-subst">&#123;blog_url&#125;</span>&quot;</span>)
+
+
+<span class="hljs-built_in">format</span>(md_path)
+
+<span class="hljs-comment"># BUG</span>
+<span class="hljs-comment"># 文章内图片路径没改</span>
+<span class="hljs-comment"># 图片资源文件夹没有迁移</span>
+<span class="hljs-comment"># 修改文章名称是文件名称不变</span></code></pre></div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Script/">#Script</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Python实用脚本收集</div>
+      <div>https://yorick-ryu.github.io/Python/PythonScripts/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yorick</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Java/Java%E6%B3%9B%E5%9E%8B/" title="Java泛型">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java泛型</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Python/Python%E4%BD%BF%E7%94%A8mysql/" title="Python使用mysql">
+                        <span class="hidden-mobile">Python使用mysql</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"niTgcLCqcq447LgShReWFoup-gzGzoHsz","appKey":"H7FOf5iT0i1NDe3oH6gFSyzM","path":"window.location.pathname","placeholder":"Have a nice day!","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-code"></i> <a href="https://github.com/Yorick-Ryu/Yorick-Ryu.github.io" target="_blank" rel="nofollow noopener"><span>Yorick</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
