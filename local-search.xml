@@ -4,23 +4,46 @@
   
   
   <entry>
-    <title>DeepSeek白嫖指南</title>
-    <link href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/"/>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/</url>
+    <title>火山引擎如何获取DeepSeek API并接入Cherry Studio</title>
+    <link href="/AI/volcengine-get-ds-api/"/>
+    <url>/AI/volcengine-get-ds-api/</url>
     
-    <content type="html"><![CDATA[<h1 id="DeepSeek白嫖指南"><a href="#DeepSeek白嫖指南" class="headerlink" title="DeepSeek白嫖指南"></a>DeepSeek白嫖指南</h1><table><thead><tr><th align="left">平台</th><th align="left">免费额度（Tokens）</th><th align="left">获取链接</th><th>接口地址（base_url）</th><th>模型名称（model）</th><th>文档</th></tr></thead><tbody><tr><td align="left">DeepSeek官方</td><td align="left">10元免费额度，折算500万</td><td align="left"><a href="https://platform.deepseek.com/api_keys">点击跳转</a></td><td><a href="https://api.deepseek.com/">https://api.deepseek.com</a></td><td>deepseek-chat或deepseek-reasoner</td><td><a href="https://api-docs.deepseek.com/zh-cn/">点击跳转</a></td></tr><tr><td align="left">硅基流动</td><td align="left">14元免费额度，折算2000万</td><td align="left"><a href="https://cloud.siliconflow.cn/i/23c6QiTj">点击跳转</a></td><td><a href="https://api.siliconflow.cn/">https://api.siliconflow.cn</a></td><td>deepseek-ai&#x2F;DeepSeek-R1或deepseek-ai&#x2F;DeepSeek-V3</td><td><a href="https://docs.siliconflow.cn/capabilities/reasoning">点击跳转</a></td></tr><tr><td align="left">华为云</td><td align="left">R1和V3各200万</td><td align="left"><a href="https://console.huaweicloud.com/modelarts/?region=cn-southwest-2#/model-studio/deployment">点击跳转</a></td><td>官网查看</td><td>DeepSeek-R1或DeepSeek-V3</td><td><a href="https://support.huaweicloud.com/usermanual-maas-modelarts/maas-modelarts-0010.html">点击跳转</a></td></tr><tr><td align="left">阿里云</td><td align="left">R1和V3各1000万，限开通后半年内</td><td align="left"><a href="https://bailian.console.aliyun.com/">点击跳转</a></td><td><a href="https://dashscope.aliyuncs.com/compatible-mode/v1/">https://dashscope.aliyuncs.com/compatible-mode/v1/</a></td><td>deepseek-r1、deepseek-v3、deepseek-r1-distill-qwen-1.5b、deepseek-r1-distill-llama-8b、deepseek-r1-distill-llama-70b（免费）</td><td><a href="https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key">点击跳转</a></td></tr><tr><td align="left">腾讯云</td><td align="left">无限制，截止2月25日23:59:59</td><td align="left"><a href="https://console.cloud.tencent.com/lkeap/api">点击跳转</a></td><td><a href="https://api.lkeap.cloud.tencent.com/">https://api.lkeap.cloud.tencent.com</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.tencent.com/document/product/1772/115963">点击跳转</a></td></tr><tr><td align="left">百度云</td><td align="left">无限制，截止2月18日23:59:59</td><td align="left"><a href="https://console.bce.baidu.com/qianfan/ais/console/onlineTest/LLM/DeepSeek-R1">点击跳转</a></td><td><a href="https://qianfan.baidubce.com/v2/">https://qianfan.baidubce.com/v2/</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Fm2vrveyu">点击跳转</a></td></tr><tr><td align="left">火山</td><td align="left">R1和V3各50万</td><td align="left"><a href="https://www.volcengine.com/product/ark">点击跳转</a></td><td><a href="https://ark.cn-beijing.volces.com/api/v3/chat/completions">https://ark.cn-beijing.volces.com/api/v3/chat/completions</a></td><td>官网查看你的接入点ID，YOUR_ENDPOINT_ID</td><td><a href="https://www.volcengine.com/docs/82379/1449737">点击跳转</a></td></tr><tr><td align="left">天翼云</td><td align="left">2500万</td><td align="left"><a href="https://huiju.ctyun.cn/modelSquare">点击跳转</a></td><td><a href="https://wishub-x1.ctyun.cn/">https://wishub-x1.ctyun.cn</a></td><td>DeepSeek-R1-昇腾版：4bd107bff85941239e27b1509eccfe98 DeepSeek-R1-英伟达版：7ba7726dad4c4ea4ab7f39c7741ae</td><td><a href="https://huiju.ctyun.cn/modelSquare/4bd107bff85941239e27b1509eccfe98?regionId=200000001852&tab=API_DOCUMENT">点击跳转</a></td></tr><tr><td align="left">英伟达</td><td align="left">1000次调用</td><td align="left"><a href="https://build.nvidia.com/deepseek-ai/deepseek-r1">点击跳转</a></td><td><a href="https://integrate.api.nvidia.com/">https://integrate.api.nvidia.com</a></td><td>deepseek-ai&#x2F;deepseek-r1</td><td><a href="https://docs.api.nvidia.com/nim/reference/deepseek-ai-deepseek-r1-infer">点击跳转</a></td></tr><tr><td align="left">Github</td><td align="left"><a href="https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits">https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits</a></td><td align="left"><a href="https://github.com/marketplace/models/azureml-deepseek/DeepSeek-R1/playground">点击跳转</a></td><td><a href="https://models.inference.ai.azure.com/">https://models.inference.ai.azure.com/</a></td><td>DeepSeek-R1</td><td><a href="https://learn.microsoft.com/zh-cn/python/api/overview/azure/ai-inference-readme?view=azure-python-preview">点击跳转</a></td></tr><tr><td align="left">浮点奇迹</td><td align="left">R1和R1联网版每日各20次</td><td align="left"><a href="https://dazi.co/login?i=3dcee729">点击跳转</a></td><td>不支持API调用</td><td>\</td><td>\</td></tr></tbody></table><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li><p>点击获取链接完成注册登录创建应用等操作并获取API KEY（可以通过查看文档找到获取方法）</p></li><li><p>复制API KEY到Cherry Studio（没有就去下载：<a href="https://cherry-ai.com/%EF%BC%89">https://cherry-ai.com/）</a></p></li><li><p>点击设置</p><p><img src="/./img/image-20250210202730839.png" alt="image-20250210202730839"></p></li><li><p>找到对应的模型供应商</p><p><img src="/./img/image-20250210203016426.png" alt="image-20250210203016426"></p><p>没有则添加，输入供应商名称，如百度，点击确定</p><p><img src="/./img/image-20250210203059858.png" alt="image-20250210203059858"></p></li><li><p>填入API KEY和API地址</p><p><img src="/./img/image-20250210203329040.png" alt="image-20250210203329040"></p></li><li><p>点击添加</p><p><img src="/./img/image-20250210203413898.png" alt="image-20250210203413898"></p></li><li><p>输入模型ID，点击添加模型</p><p><img src="/./img/image-20250210203546272.png" alt="image-20250210203546272"></p></li><li><p>点击检查，选择刚刚添加的模型ID，点击确定，出现“连接成功”即成功</p><p><img src="/./img/image-20250210203643977.png" alt="image-20250210203643977"></p><p><img src="/./img/image-20250210203804639.png" alt="image-20250210203804639"></p><p><img src="/./img/image-20250210203858755.png" alt="image-20250210203858755"></p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="火山引擎如何获取DeepSeek-API并接入Cherry-Studio"><a href="#火山引擎如何获取DeepSeek-API并接入Cherry-Studio" class="headerlink" title="火山引擎如何获取DeepSeek API并接入Cherry Studio"></a>火山引擎如何获取DeepSeek API并接入Cherry Studio</h1><ol><li><p>访问<a href="https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&ac=DSASUQY5&rc=D3VA3VGQ">火山引擎官网</a></p></li><li><p>输入邀请码D3VA3VGQ、手机号、验证码注册领取15元大模型&#x2F;无门槛代金券，约可抵扣375万R1模型tokens</p><p><img src="/./img/image-20250221215426368.png" alt="image-20250221215426368"></p></li><li><p>点击API接入<br><img src="/./img/image-20250221215952220.png" alt="image-20250221215952220"></p></li><li><p>点击创建API Key</p><p><img src="/./img/image-20250221220242216.png" alt="image-20250221220242216"></p></li><li><p>点击创建</p><p><img src="/./img/image-20250221220430744.png" alt="image-20250221220430744"></p></li><li><p>点击查看并连接，会自动复制API密钥</p><p><img src="/./img/image-20250221220613640.png" alt="image-20250221220613640"></p></li><li><p>如果提示该模型服务暂未开通，击立即开通</p><p><img src="/./img/image-20250221220902823.png" alt="image-20250221220902823"></p></li><li><p>任选一个方式进行实名认证</p><p><img src="/./img/image-20250221221052741.png" alt="image-20250221221052741"></p></li><li><p>勾选需要的模型，勾选使用代金券和协议，点击立即开通（⚠️注意！免费额度为初始的50万+15元代金券的375万Tokens，记得及时查看费用消耗，以免造成欠费！）</p><p><img src="/./img/image-20250221221521945.png" alt="image-20250221221521945"></p><p><img src="/./img/image-20250221221806815.png" alt="image-20250221221806815"></p></li><li><p>打开Cherry Studio，没有的话去<a href="https://cherry-ai.com/">官网</a>下载，点击设置</p><p><img src="/./img/image-20250221222237971.png" alt="image-20250221222237971"></p></li><li><p>找到豆包，粘贴刚刚复制的API密钥</p><p><img src="/./img/image-20250221222708114.png" alt="image-20250221222708114"></p></li><li><p>点击添加</p><p><img src="/./img/image-20250221222742596.png" alt="image-20250221222742596"></p></li><li><p>输入模型ID：deepseek-r1-250120，与获取密钥那个界面的model一致！如果使用V3模型的话，填写：deepseek-v3-241226，输入完点击添加模型</p><p><img src="/./img/image-20250221222835794.png" alt="image-20250221222835794"></p><p><img src="/./img/image-20250221223028382.png" alt="image-20250221223028382"></p></li><li><p>点击检查，选择刚刚添加的模型，点击确定</p><p><img src="/./img/image-20250221223105637.png" alt="image-20250221223105637"></p><p><img src="/./img/image-20250221223202201.png" alt="image-20250221223202201"></p></li><li><p>显示连接成功，代表已经成功接入</p><p><img src="/./img/image-20250221223340309.png" alt="image-20250221223340309"></p></li><li><p>去对话使用</p><p><img src="/./img/image-20250221223403551.png" alt="image-20250221223403551"></p></li><li><p>点击这里</p><p><img src="/./img/image-20250221223530225.png" alt="image-20250221223530225"></p></li><li><p>找到豆包的R1，点击</p><p><img src="/./img/image-20250221223636069.png" alt="image-20250221223636069"></p></li><li><p>进行对话，测试下来发现速度非常的快，⚠️注意Tokens消耗哦！</p><p><img src="/./img/image-20250221223745150.png" alt="image-20250221223745150"></p></li></ol>]]></content>
     
     
     <categories>
       
-      <category>人工智能</category>
+      <category>AI</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>AI</tag>
+      <tag>DeepSeek</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DeepSeek白嫖指南</title>
+    <link href="/AI/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/"/>
+    <url>/AI/DeepSeek%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/</url>
+    
+    <content type="html"><![CDATA[<h1 id="DeepSeek白嫖指南"><a href="#DeepSeek白嫖指南" class="headerlink" title="DeepSeek白嫖指南"></a>DeepSeek白嫖指南</h1><table><thead><tr><th align="left">平台</th><th align="left">免费额度（Tokens）</th><th align="left">获取链接</th><th>接口地址（base_url）</th><th>模型名称（model）</th><th>文档</th></tr></thead><tbody><tr><td align="left">DeepSeek官方</td><td align="left">10元免费额度，折算500万</td><td align="left"><a href="https://platform.deepseek.com/api_keys">点击跳转</a></td><td><a href="https://api.deepseek.com/">https://api.deepseek.com</a></td><td>deepseek-chat或deepseek-reasoner</td><td><a href="https://api-docs.deepseek.com/zh-cn/">点击跳转</a></td></tr><tr><td align="left">硅基流动</td><td align="left">14元免费额度，折算2000万</td><td align="left"><a href="https://cloud.siliconflow.cn/i/23c6QiTj">点击跳转</a></td><td><a href="https://api.siliconflow.cn/">https://api.siliconflow.cn</a></td><td>deepseek-ai&#x2F;DeepSeek-R1或deepseek-ai&#x2F;DeepSeek-V3</td><td><a href="https://docs.siliconflow.cn/capabilities/reasoning">点击跳转</a></td></tr><tr><td align="left">华为云</td><td align="left">R1和V3各200万</td><td align="left"><a href="https://console.huaweicloud.com/modelarts/?region=cn-southwest-2#/model-studio/deployment">点击跳转</a></td><td>官网查看</td><td>DeepSeek-R1或DeepSeek-V3</td><td><a href="https://support.huaweicloud.com/usermanual-maas-modelarts/maas-modelarts-0010.html">点击跳转</a></td></tr><tr><td align="left">阿里云</td><td align="left">R1和V3各1000万，限开通后半年内</td><td align="left"><a href="https://bailian.console.aliyun.com/">点击跳转</a></td><td><a href="https://dashscope.aliyuncs.com/compatible-mode/v1/">https://dashscope.aliyuncs.com/compatible-mode/v1/</a></td><td>deepseek-r1、deepseek-v3、deepseek-r1-distill-qwen-1.5b、deepseek-r1-distill-llama-8b、deepseek-r1-distill-llama-70b（免费）</td><td><a href="https://help.aliyun.com/zh/model-studio/developer-reference/get-api-key">点击跳转</a></td></tr><tr><td align="left">腾讯云</td><td align="left">无限制，截止2月25日23:59:59</td><td align="left"><a href="https://console.cloud.tencent.com/lkeap/api">点击跳转</a></td><td><a href="https://api.lkeap.cloud.tencent.com/">https://api.lkeap.cloud.tencent.com</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.tencent.com/document/product/1772/115963">点击跳转</a></td></tr><tr><td align="left">百度云</td><td align="left">无限制，截止2月18日23:59:59</td><td align="left"><a href="https://console.bce.baidu.com/qianfan/ais/console/onlineTest/LLM/DeepSeek-R1">点击跳转</a></td><td><a href="https://qianfan.baidubce.com/v2/">https://qianfan.baidubce.com/v2/</a></td><td>deepseek-r1或deepseek-v3</td><td><a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Fm2vrveyu">点击跳转</a></td></tr><tr><td align="left">火山</td><td align="left">R1和V3各50万</td><td align="left"><a href="https://www.volcengine.com/product/ark">点击跳转</a></td><td><a href="https://ark.cn-beijing.volces.com/api/v3/chat/completions">https://ark.cn-beijing.volces.com/api/v3/chat/completions</a></td><td>官网查看你的接入点ID，YOUR_ENDPOINT_ID</td><td><a href="https://www.volcengine.com/docs/82379/1449737">点击跳转</a></td></tr><tr><td align="left">天翼云</td><td align="left">2500万</td><td align="left"><a href="https://huiju.ctyun.cn/modelSquare">点击跳转</a></td><td><a href="https://wishub-x1.ctyun.cn/">https://wishub-x1.ctyun.cn</a></td><td>DeepSeek-R1-昇腾版：4bd107bff85941239e27b1509eccfe98 DeepSeek-R1-英伟达版：7ba7726dad4c4ea4ab7f39c7741ae</td><td><a href="https://huiju.ctyun.cn/modelSquare/4bd107bff85941239e27b1509eccfe98?regionId=200000001852&tab=API_DOCUMENT">点击跳转</a></td></tr><tr><td align="left">英伟达</td><td align="left">1000次调用</td><td align="left"><a href="https://build.nvidia.com/deepseek-ai/deepseek-r1">点击跳转</a></td><td><a href="https://integrate.api.nvidia.com/">https://integrate.api.nvidia.com</a></td><td>deepseek-ai&#x2F;deepseek-r1</td><td><a href="https://docs.api.nvidia.com/nim/reference/deepseek-ai-deepseek-r1-infer">点击跳转</a></td></tr><tr><td align="left">Github</td><td align="left"><a href="https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits">https://docs.github.com/zh/github-models/prototyping-with-ai-models#rate-limits</a></td><td align="left"><a href="https://github.com/marketplace/models/azureml-deepseek/DeepSeek-R1/playground">点击跳转</a></td><td><a href="https://models.inference.ai.azure.com/">https://models.inference.ai.azure.com/</a></td><td>DeepSeek-R1</td><td><a href="https://learn.microsoft.com/zh-cn/python/api/overview/azure/ai-inference-readme?view=azure-python-preview">点击跳转</a></td></tr><tr><td align="left">浮点奇迹</td><td align="left">R1和R1联网版每日各20次</td><td align="left"><a href="https://dazi.co/login?i=3dcee729">点击跳转</a></td><td>不支持API调用</td><td>\</td><td>\</td></tr></tbody></table><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li><p>点击获取链接完成注册登录创建应用等操作并获取API KEY（可以通过查看文档找到获取方法）</p></li><li><p>复制API KEY到Cherry Studio（没有就去下载：<a href="https://cherry-ai.com/%EF%BC%89">https://cherry-ai.com/）</a></p></li><li><p>点击设置</p><p><img src="/./img/image-20250210202730839.png" alt="image-20250210202730839"></p></li><li><p>找到对应的模型供应商</p><p><img src="/./img/image-20250210203016426.png" alt="image-20250210203016426"></p><p>没有则添加，输入供应商名称，如百度，点击确定</p><p><img src="/./img/image-20250210203059858.png" alt="image-20250210203059858"></p></li><li><p>填入API KEY和API地址</p><p><img src="/./img/image-20250210203329040.png" alt="image-20250210203329040"></p></li><li><p>点击添加</p><p><img src="/./img/image-20250210203413898.png" alt="image-20250210203413898"></p></li><li><p>输入模型ID，点击添加模型</p><p><img src="/./img/image-20250210203546272.png" alt="image-20250210203546272"></p></li><li><p>点击检查，选择刚刚添加的模型ID，点击确定，出现“连接成功”即成功</p><p><img src="/./img/image-20250210203643977.png" alt="image-20250210203643977"></p><p><img src="/./img/image-20250210203804639.png" alt="image-20250210203804639"></p><p><img src="/./img/image-20250210203858755.png" alt="image-20250210203858755"></p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
       
       <tag>DeepSeek</tag>
       
@@ -97,11 +120,11 @@
     
     <tags>
       
-      <tag>ML</tag>
-      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
+      
+      <tag>ML</tag>
       
       <tag>DL</tag>
       
@@ -232,11 +255,11 @@
     
     <tags>
       
-      <tag>ML</tag>
-      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
+      
+      <tag>ML</tag>
       
     </tags>
     
@@ -346,26 +369,24 @@
   
   <entry>
     <title>人工智能概论复习</title>
-    <link href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/"/>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/</url>
+    <link href="/AI/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/"/>
+    <url>/AI/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0/</url>
     
     <content type="html"><![CDATA[<h1 id="人工智能概论复习"><a href="#人工智能概论复习" class="headerlink" title="人工智能概论复习"></a>人工智能概论复习</h1><ul><li><a href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA%E5%A4%8D%E4%B9%A0">人工智能概论复习</a><ul><li><a href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E8%AE%BA">人工智能概论</a></li><li><a href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a><ul><li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li><li><a href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0">监督学习与无监督学习</a></li><li><a href="#%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B">特征工程</a><ul><li><a href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96">数据标准化</a></li><li><a href="#%E7%89%B9%E6%80%A7%E9%99%8D%E7%BB%B4">特性降维</a></li></ul></li><li><a href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">线性回归</a></li><li><a href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92">逻辑回归</a></li><li><a href="#%E5%86%B3%E7%AD%96%E6%A0%91">决策树</a><ul><li><a href="#cart%E5%86%B3%E7%AD%96%E6%A0%91">CART决策树</a></li></ul></li><li><a href="#k%E8%BF%91%E9%82%BBknn">K近邻(KNN)</a></li><li><a href="#dbscan%E8%81%9A%E7%B1%BB">DBSCAN聚类</a></li><li><a href="#k%E5%9D%87%E5%80%BCk-means">K均值(K-Means)</a><ul><li><a href="#%E6%AD%A5%E9%AA%A4">步骤</a></li><li><a href="#%E8%81%9A%E7%B1%BB%E4%B8%AD%E5%BF%83">聚类中心</a></li></ul></li><li><a href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">贝叶斯分类</a><ul><li><a href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB">朴素贝叶斯分类</a></li></ul></li><li><a href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BAsvm">支持向量机(SVM)</a><ul><li><a href="#%E6%A0%B8%E5%87%BD%E6%95%B0">核函数</a></li><li><a href="#%E8%BD%AF%E9%97%B4%E9%9A%94">软间隔</a></li></ul></li><li><a href="#%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0">集成学习</a></li><li><a href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D">梯度下降</a></li><li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0">模型评估</a><ul><li><a href="#mse">MSE</a></li><li><a href="#r%E6%96%B9%E5%80%BC">R方值</a></li><li><a href="#%E4%BA%A4%E5%8F%89%E7%86%B5">交叉熵</a></li><li><a href="#%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5">混淆矩阵</a></li><li><a href="#roc%E6%9B%B2%E7%BA%BF">ROC曲线</a></li></ul></li><li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E5%92%8C%E8%BF%87%E6%8B%9F%E5%90%88">欠拟合和过拟合</a><ul><li><a href="#%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0">过拟合的原因</a></li><li><a href="#%E8%BF%87%E6%8B%9F%E5%90%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">过拟合的解决办法</a></li><li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E5%8E%9F%E5%9B%A0">欠拟合的原因</a></li><li><a href="#%E6%AC%A0%E6%8B%9F%E5%90%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">欠拟合的解决办法</a></li></ul></li><li><a href="#%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96">模型优化</a><ul><li><a href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">常用方法</a></li><li><a href="#%E4%BC%98%E5%8C%96%E6%AD%A5%E9%AA%A4">优化步骤</a></li></ul></li><li><a href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81">交叉验证</a></li></ul></li><li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a><ul><li><a href="#%E4%BB%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">从机器学习到深度学习</a><ul><li><a href="#%E6%B5%85%E5%B1%82%E5%AD%A6%E4%B9%A0shallow-learning">浅层学习(Shallow Learning)</a></li><li><a href="#%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0">表示学习</a></li><li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A6%82%E5%BF%B5">深度学习概念</a></li><li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%AD%A5%E9%AA%A4">深度学习步骤</a></li></ul></li><li><a href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">神经网络</a></li><li><a href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%89%8D%E9%A6%88%E7%BD%91%E7%BB%9C">全连接前馈网络</a></li><li><a href="#bp%E7%AE%97%E6%B3%95backpropagation">BP算法(Backpropagation)</a></li><li><a href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn">卷积神经网络(CNN)</a></li><li><a href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn">循环神经网络(RNN)</a></li></ul></li><li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89">计算机视觉</a></li><li><a href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86">自然语言处理</a><ul><li><a href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B">文本处理流程</a></li></ul></li><li><a href="#%E5%B7%A5%E5%85%B7">工具</a><ul><li><a href="#scikit-learn">Scikit-Learn</a></li><li><a href="#numpy">Numpy</a></li><li><a href="#matplotlib">Matplotlib</a></li></ul></li></ul></li></ul><h2 id="人工智能概论"><a href="#人工智能概论" class="headerlink" title="人工智能概论"></a>人工智能概论</h2><p>提出时间： <strong>1956年</strong></p><p>标志性事件：<strong>达特茅斯会议</strong></p><p>4个发展阶段：</p><p><img src="/./img/image-20230214130706660.png" alt="image-20230214130706660"></p><p>3个主要学派：</p><ol><li><p><strong>符号主义</strong>(symbolicism)</p><p>认为人工智能源于<strong>数理逻辑</strong></p></li><li><p><strong>连接主义</strong>(connectionism)</p><p>认为人工智能源于<strong>仿生学</strong></p></li><li><p><strong>行为主义</strong>(actionism)</p></li></ol><p><strong>概念</strong>：人工智能是研究使<strong>计算机</strong>来<strong>模拟人</strong>的某些思维过程和智能行为的学科</p><p><strong>研究领域</strong>：</p><ul><li>机器感知(计算机视觉、语音信息处理、模式识别)</li><li>学习(机器学习、强化学习)</li><li>语言(自然语言处理)</li><li>记忆(知识表示)</li><li>决策(规划、数据挖掘)</li></ul><p><strong>图灵测试</strong>：艾伦·图灵认为，如果机器在拥有知识的观察者面前能够成功地伪装成人类，那么你就应该认为它具有智能。</p><p>麦卡锡等4人(1955年)提出<strong>首次提出“人工智能”这一术语</strong></p><p>研究主题：</p><ol><li><p>将信息理论概念应用到计算机器与大脑模型中。</p></li><li><p>与机器人相匹配的环境-大脑模型。</p></li></ol><h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>机器学习( Machine Learning，ML)是指从<strong>有限的观测数据(训练数据)<strong>中</strong>学习(或“猜测”)出具有一般性的规律(Function)<strong>，并利用这些规律</strong>对未知数据进行预测</strong>的方法。</p><h3 id="监督学习与无监督学习"><a href="#监督学习与无监督学习" class="headerlink" title="监督学习与无监督学习"></a>监督学习与无监督学习</h3><p>监督学习(supervised learning) (预测)</p><ul><li>定义：输入数据是由输入<strong>特征值</strong>和<strong>目标值</strong>所组成。函数的输出可以是一个连续的值(称<br>为<strong>回归</strong>)，或是输出是有限个离散值(称作<strong>分类</strong>)。<ul><li><p>回归：线性回归、岭回归</p></li><li><p>分类：k-近邻算法、贝叶斯分类、决策树与随机森林、逻辑回归、神经网络</p></li></ul></li></ul><p>无监督学习(unsupervised learning)</p><ul><li>定义：输入数据是由输入<strong>特征值</strong>所组成。</li><li>聚类：K均值(k-means)</li></ul><h3 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h3><h4 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h4><p>将样本数据的属性缩放到某个指定的范围</p><p>（1）min-max标准化(归一化)</p><p>（2）z-score标准化(规范化)</p><p><img src="/./img/image-20230215182754216.png" alt="image-20230215182754216"></p><p>标准化的原因：</p><ul><li>某些算法要求样本具有零均值和单位方差；</li><li>需要消除样本不同属性具有不同量级时的影响；</li><li>数量级的差异将导致量级较大的属性占据主导地位；</li><li>数量级的差异将导致迭代收敛速度减慢；</li><li>依赖于样本距离的算法对于数据的数量级非常敏感。</li></ul><h4 id="特性降维"><a href="#特性降维" class="headerlink" title="特性降维"></a>特性降维</h4><p>目标：在某些限定条件下，降低随机变量(特征)个数,得到一组“不相关”主变量的过程。</p><h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p>通过两个或多个变量之间的<strong>线性关系</strong>来预测结果。</p><p>目标函数：</p><p><img src="/./img/image-20230214143648199.png" alt="目标函数"></p><h3 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h3><p>解决分类问题</p><p><a href="https://www.bilibili.com/video/BV1PJ411676g">讲解视频</a></p><p>用于解决分类问题的一种模型。根据数据特征或属性，计算其归属于某一类别的概率P(x)，根据概率数值判断其所属类别。主要应用场景：二分类问题。</p><p>逻辑回归 &#x3D; 线性回归+Sogmoid函数</p><p><strong>Sigmoid函数：</strong></p><p><img src="/./img/image-20230219185835082.png" alt="Sigmoid函数"></p><p>目标函数：</p><p><img src="/./img/image-20230214144025700.png" alt="image-20230214144025700"></p><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p>分类问题</p><p>决策树的构建算法主要有<strong>ID3、C4.5、 CART</strong>三种，其中ID3和C4.5是分类树，CART是分类回归树。ID3是决策树最基本的构建算法，C4.5和CART是在ID3的基础上进行的优化算法。</p><h4 id="CART决策树"><a href="#CART决策树" class="headerlink" title="CART决策树"></a>CART决策树</h4><p>Classification and Regression Tree</p><p>以基尼系数（标准的不确定程度，越小越好）为核心</p><p><img src="/./img/image-20230223112021298.png" alt="image-20230223112021298"></p><h3 id="K近邻-KNN"><a href="#K近邻-KNN" class="headerlink" title="K近邻(KNN)"></a>K近邻(KNN)</h3><p>利用训练数据集对特征空间进行划分，以其作为分类的“模型”，不具有显性的学习过程。KNN的输入是测试数据和训练样本数据集，输出是测试样本的类别。</p><p>KNN的三个要素：</p><ul><li>距离度量</li><li>K值选择</li><li>分类决策规则</li></ul><h3 id="DBSCAN聚类"><a href="#DBSCAN聚类" class="headerlink" title="DBSCAN聚类"></a>DBSCAN聚类</h3><p>无标签信息，无监督</p><p><a href="https://www.bilibili.com/video/BV114411M7ci">动画演示</a></p><p><a href="https://www.bilibili.com/video/BV1aA4y1o7UG">具体讲解</a></p><p>DBSCAN (Density-Based Spatial Clustering of Applications with Noise，具有噪声的基于<strong>密度</strong>的聚类方法。</p><p>簇：密度相连的点的最大集合。</p><ul><li><p>密度：某个点的领域空间里存在的其他点的数量</p></li><li><p>核心对象：若某个点的密度达到算法设定的阈值，则为核心点。(即r邻域内点的数量不小于minPts)</p></li><li><p>邻域的距离阈值：设定半径r</p></li><li><p>直接密度可达：若p在q的邻域内，且q是<strong>核心点</strong>，则称p到q直接密度可达</p></li><li><p><strong>密度可达</strong>：若存在一个点的序列$q_0$、$q_1$… $q_n$对任意$q_i$、$q_{i+1}$是直接密度可达的，则称$q_0$、$q_n$ 密度可达，实际上是直接密度可达的<strong>传播</strong></p></li><li><p><strong>密度相连</strong>：对于点p和点q，若点p点q都是从点k<strong>密度可达</strong>的，则称点p和q是密度相连的</p></li><li><p>边界点：属于某一个类的非核心点，不能再发展下线了</p><p>对象的邻域小于MinPts个对象，但是<strong>在某个核心对象的邻域</strong>中</p></li><li><p>噪声点：不属于任何一个类簇的点，从任何一个核心点出发都不是密度可达的</p></li></ul><h3 id="K均值-K-Means"><a href="#K均值-K-Means" class="headerlink" title="K均值(K-Means)"></a>K均值(K-Means)</h3><p>无标签信息，无监督</p><p>K-Means是一种基于相似距离的聚类算法，根据给定样本集中样本间距离的大小将样本集划分为k个簇（类），使得每个点都属于距离它最近的那个<strong>聚类中心</strong>（即均值means）对应的类。</p><ul><li>K值：要得到的簇的个数（样本的类别数）</li><li>质心：每个簇的均值，一般是向量各维取平均值</li><li>距离：常用欧几里得距离(先做标准化)</li><li>目标：选择距离最短的质心</li></ul><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol><li>先定义总共有多少个类&#x2F;簇(cluster)</li><li>将每个簇心(cluster centers)随机定在一个点上</li><li>将每个数据点关联到最近簇中心所属的簇上</li><li>对于每一个簇找到其所有关联点的中心点(取每一个点坐标的平均值)</li><li>将上述点变为新的簇心</li><li>不停重复，直到每个簇所拥有的点不变</li></ol><h4 id="聚类中心"><a href="#聚类中心" class="headerlink" title="聚类中心"></a>聚类中心</h4><p>每个簇的均值，一般是向量各维取平均值</p><h3 id="贝叶斯分类"><a href="#贝叶斯分类" class="headerlink" title="贝叶斯分类"></a>贝叶斯分类</h3><p>贝叶斯(Bayes) 分类是一类分类算法的总称，该类算法均以<strong>贝叶斯定理</strong>为基础，所以统称为贝叶斯分类。而朴素贝叶斯分类是贝叶斯分类中最简单，也是常见的一种分类方法,同时朴素贝叶斯模型是一-组非常简单快速的分类算法，通常适用于维度非常高的数据集。</p><p>贝叶斯定理：<strong>P (A∩B) &#x3D; P (A)*P (B|A)&#x3D;P (B)*P (A|B)</strong></p><p>贝叶斯定理是一种逆概率思维。</p><p><strong>条件概率</strong>（客观事实）：根据已知结果去推测固有性质的可能性(likelihood)，是对固有性质的拟合程度。</p><p><strong>先验概率</strong>（主观判断）：指根据常识、生活经验所观测到的“原因”的概率。</p><p><strong>后验概率</strong>（最终结论）：指在知道“结果”之后，去推测“原因”的概率。</p><h4 id="朴素贝叶斯分类"><a href="#朴素贝叶斯分类" class="headerlink" title="朴素贝叶斯分类"></a>朴素贝叶斯分类</h4><p><strong>假设条件</strong>：实例特征之间<strong>相互独立</strong></p><p><img src="/./img/image-20230219190817960.png" alt="image-20230219190817960"></p><p>示例：计算实例点x &#x3D; (2, S)的类别</p><p><img src="/./img/image-20230215190417361.png" alt="image-20230215190417361"></p><h3 id="支持向量机-SVM"><a href="#支持向量机-SVM" class="headerlink" title="支持向量机(SVM)"></a>支持向量机(SVM)</h3><p><a href="https://www.bilibili.com/video/BV16T4y1y7qj">直觉理解</a></p><p>支持向量机（<code>support vector machines</code>，<code>SVM</code>）是一种二分类模型，它的目的是寻找一个超平面来对样本进行分割，分割的原则是间隔最大化，最终转化为一个凸二次规划问题来求解。由简至繁的模型包括：</p><ul><li>当训练样本<strong>线性可分</strong>时，通过<strong>硬间隔最大化</strong>，学习一个<strong>线性可分支持向量机</strong></li><li>当训练样本<strong>近似线性可分</strong>时，通过<strong>软间隔最大化</strong>，学习一个<strong>线性支持向量机</strong></li><li>当训练样本<strong>线性不可分</strong>时，通过<strong>核技巧和软间隔最大化</strong>，学习一个<strong>非线性支持向量机</strong></li></ul><p>简而言之：求最大化离超平面最近点（支持向量）的距离。</p><p>决策边界：选出来离雷区最远的（雷区就是边界上的点，要Large Margin )</p><h4 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h4><p><strong>解决计算复杂度问题</strong></p><p>由低维度空间向高维度空间作一个映射，使原本在低纬度上线性不可分数据变得在高维度上变得可分，并找到这个分割函数。</p><h4 id="软间隔"><a href="#软间隔" class="headerlink" title="软间隔"></a>软间隔</h4><p><strong>解决过拟合问题</strong></p><p>硬间隔强制要求包括噪音点或者离群点的所有样本点都满足约束，可能会导致使决策边界发生变化出现过拟合的问题，所以允许部分样本（离群点或者噪音点）不必满足该约束。</p><h3 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h3><p>集成学习(Ensemble Learning)方法通过组合和合并多个相同或者不同种类的机器学习分类器来完成学习任务，避免使用单一学习模型带来的学习模型缺陷， 从而尽可能的使得机器学习的效果达到尽可能的最优。</p><p>策略：</p><ul><li><p><strong>Bagging</strong>：训练多个分类器取平均值</p><p><strong>并联，少数服从多数</strong>，典型代表是<strong>随机森林</strong></p></li><li><p><strong>Boosting</strong>：从弱学习器开始加强，通过加权来进行训练</p><p><strong>串联，权重</strong>（错分类样本），每次迭代正确率要提高，典型算法<code>Adaboost</code></p></li><li><p><strong>Stacking</strong>：聚合多个分类或回归模型（可以分阶段来做）</p><p><strong>级联，裁判</strong>，分阶段：第一阶段各自分类，第二阶段用前一阶段的结果训练</p></li></ul><h3 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h3><p>提高收敛速度的三种策略：</p><ol><li>批量梯度下降<br>每次迭代，均选择<strong>所有数据</strong>来计算梯度</li><li>随机梯度下降<br>每次迭代，<strong>随机</strong>选择<strong>一条数据</strong>来计算梯度</li><li>Mini-Batch GD<br>每次迭代，<strong>随机</strong>选择<strong>一部分数据</strong>来计算梯度</li></ol><h3 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h3><p>MSE，R2评估回归，交叉熵评估分类</p><h4 id="MSE"><a href="#MSE" class="headerlink" title="MSE"></a>MSE</h4><p>Mean Squared Error <strong>均方误差</strong></p><p><a href="https://www.bilibili.com/video/BV1wi4y157Tt">https://www.bilibili.com/video/BV1wi4y157Tt</a></p><p><img src="/./img/image-20230215194816842.png" alt="image-20230215194816842"></p><p><img src="/./img/image-20230215194311371.png" alt="image-20230215194311371"></p><h4 id="R方值"><a href="#R方值" class="headerlink" title="R方值"></a>R方值</h4><p>[0,1] 不定系数 R-squared (R方)，越接近1越好，但是等于1没有价值</p><p><a href="https://www.bilibili.com/video/BV1Qy4y1i7Le">https://www.bilibili.com/video/BV1Qy4y1i7Le</a></p><p><img src="/./img/image-20230215195149603.png" alt="image-20230215195149603"></p><h4 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h4><p><a href="https://www.bilibili.com/video/BV1mZ4y1R76t">https://www.bilibili.com/video/BV1mZ4y1R76t</a></p><p>输入为羊，输出为羊的概率0.8，输出为牛的概率0.1，输出为猴概率0.1</p><p><img src="/./img/wps1.jpg" alt="img"></p><h4 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h4><p><img src="/./img/image-20230215191114810.png" alt="image-20230215191114810"></p><p><img src="/./img/image-20230215191137030.png" alt="image-20230215191137030"></p><h4 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h4><p><img src="/./img/image-20230215191158222.png" alt="image-20230215191158222"></p><p>一种比较总体优劣的方法是采用AUG (Area Under ROC Curve)参数，表示为其ROC曲线之下和坐标横轴之间的面积。</p><h3 id="欠拟合和过拟合"><a href="#欠拟合和过拟合" class="headerlink" title="欠拟合和过拟合"></a>欠拟合和过拟合</h3><p>欠拟合：训练集上表现的不好，测试集上不好</p><p>过拟合：训练集上表现的好，测试集上不好</p><h4 id="过拟合的原因"><a href="#过拟合的原因" class="headerlink" title="过拟合的原因"></a>过拟合的原因</h4><ul><li>模型结构过于复杂（维度过高）</li><li>训练数据中噪音干扰过大，使得学习器认为部分噪音是特征从而扰乱学习规则。</li><li>建模样本选取有误，例如训练数据太少，抽样方法错误，样本label错误等，导致样本不能代表整体。</li><li>模型不合理，或假设成立的条件与实际不符。</li></ul><h4 id="过拟合的解决办法"><a href="#过拟合的解决办法" class="headerlink" title="过拟合的解决办法"></a>过拟合的解决办法</h4><ul><li>简化模型结构（使用低阶模型，比如线性模型）</li><li>数据预处理，保留主成分信息（数据PCA处理）</li><li>在模型训练时，增加<strong>正则化项</strong>（regularization）</li></ul><h4 id="欠拟合的原因"><a href="#欠拟合的原因" class="headerlink" title="欠拟合的原因"></a>欠拟合的原因</h4><ul><li>模型复杂度过低</li><li>特征量过少</li></ul><h4 id="欠拟合的解决办法"><a href="#欠拟合的解决办法" class="headerlink" title="欠拟合的解决办法"></a>欠拟合的解决办法</h4><p>欠拟合可以通过观察训练数据及时发现，优化模型结果解决。</p><ul><li>增加特征数；<br>当特征不足或者现有特征与样本标签的相关性不强时，模型易出现欠拟合。<br>可以通过挖掘上下文特征，ID类特征，组合特征等新的特征，可以取得较好的效果。这属于特征工程相关的内容，如因子分解机，梯度提升决策树，deep_crossing都可以丰富特征。</li><li>增加模型复杂度；<br>模型简单时其表达能力较差，容易导致欠拟合，因此可以适当地增加模型复杂度，使模型拥有更强的拟合能力。<br>如线性模型中添加高次项，神经网络中增加网络层数或神经元个数。尝试非线性模型，比如核SVM 、决策树、DNN等模型。</li><li>减小<a href="https://so.csdn.net/so/search?q=%E6%AD%A3%E5%88%99%E5%8C%96&spm=1001.2101.3001.7020">正则化</a>系数。<br>正则化是用于防止过拟合的，但是当出现欠拟合时，就有必要针对性地减小正则化系数。</li></ul><h3 id="模型优化"><a href="#模型优化" class="headerlink" title="模型优化"></a>模型优化</h3><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul><li>PCA思路(最大可分性和最低重构性)</li><li>正则化(L1、L2)</li></ul><h4 id="优化步骤"><a href="#优化步骤" class="headerlink" title="优化步骤"></a>优化步骤</h4><ol><li>优化数据(异常数据、数据量级、数据维度)</li><li>优化模型(模型选择与调参)</li><li>测试评估(交叉验证)</li></ol><h3 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h3><p>常用方法：</p><ul><li><p>数据分离</p></li><li><p>LOOCV方法(Leave-one-out cross-validation留一交叉验证)</p><p>每次取出一个数据作为测试集的唯一元素，其他n - 1个数据都作为训练集用于训练模型和调参。结果是最终训练了n个模型，每次都能得到一个均方误差(Mean-Square Error MSE)。而计算最终测试集MSE则就是将这n个MSE取平均值。</p></li><li><p>K折交叉验证(K-fold Cross Validation)</p><p>和LOOCV的不同在于，每次的测试集将不再只包含一个数据，而是多个，具体数目将根据K的选取决定。<br>比如，如果K&#x3D;3，那么我们利用三折交叉验证的步骤就是：</p><ul><li>将所有数据集分成3份</li><li>不重复地每次取其中一份做测试集，用其他两份做训练集训练模型，之后计算该模型在测试集上的MSE</li><li>将3次的MSE取平均得到最后的MSE</li></ul></li></ul><h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><h3 id="从机器学习到深度学习"><a href="#从机器学习到深度学习" class="headerlink" title="从机器学习到深度学习"></a>从机器学习到深度学习</h3><p><strong>机器学习 &#x3D; 特征工程 + 预测</strong></p><p><strong>深度学习 &#x3D; 表示学习 + 预测</strong></p><h4 id="浅层学习-Shallow-Learning"><a href="#浅层学习-Shallow-Learning" class="headerlink" title="浅层学习(Shallow Learning)"></a>浅层学习(Shallow Learning)</h4><p>不涉及特征学习，其特征主要靠人工经验或特征转换方法抽取。(特征工程)</p><h4 id="表示学习"><a href="#表示学习" class="headerlink" title="表示学习"></a>表示学习</h4><p>如何自动从数据中学习好的表示<br>通过构建具有一定“深度”的模型，可以让模型来自动学习好的特征表示(从底层特征，到中层特征，再到高层特征)，从而最终提升预测或识别的准确性</p><p><img src="/./img/image-20221117092346589.png" alt="image-20221117092346589"></p><p>表示形式：如何在计算机中表示语义</p><p>局部(符号)表示:</p><ul><li>离散表示、符号表示</li><li>One-Hot向量</li></ul><p>分布式(Distributed) 表示:</p><ul><li>压缩、低维、稠密向量</li><li>用O(N)个参数表示O(2^k)区间，k为非0参数, k&lt;N</li></ul><p>以颜色表示为例，一种表示颜色的方法是以不同名字来命名不同的颜色，这种表示方式叫做<strong>one-hot局部表示</strong>。</p><p>另一种表示颜色的方法是用RGB值来表示颜色，不同颜色对应R、G、B三维空间中一个点，这种表示方式叫做<strong>分布式表示</strong>。</p><p><strong>特征提取 vs 表示学习</strong></p><ul><li>特征提取：基于任务或先验去除无用特征</li><li>表示学习：通过深度模型学习高层语义特征</li></ul><h4 id="深度学习概念"><a href="#深度学习概念" class="headerlink" title="深度学习概念"></a>深度学习概念</h4><p><strong>深度学习 &#x3D; 表示学习 + 决策(预测)学习</strong></p><p><img src="/./img/image-20230216143206169.png" alt="image-20230216143206169"></p><p>深度学习需要解决的关键问题是<strong>贡献度分配问题</strong>（Credit Assignment Problem，CAP），即<strong>一个系统中不同的组件 (component)或其参数对最终系统输出结果的贡献或影响</strong>。</p><p>神经网络模型可以使用误差反向传播算法，从而可以比较好地解决贡献度分配问题。</p><h4 id="深度学习步骤"><a href="#深度学习步骤" class="headerlink" title="深度学习步骤"></a>深度学习步骤</h4><p><img src="/./img/image-20230216145144425.png" alt="image-20230216145144425"></p><h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p>参考生物神经元以下特征：</p><ul><li>两种状态：兴奋和抑制</li><li>输入达到一定值激活兴奋状态</li><li>记忆储存在连接之中</li></ul><p><strong>单个神经元模型结构</strong></p><p><img src="https://img-blog.csdnimg.cn/20200308143208133.png" alt="img"></p><p>上面的x是神经元的输入，相当于树突接收的多个外部刺激。w是每个输入对应的权重，代表了每个特征的重要程度，它对应于每个输入特征，影响着每个输入x的刺激强度。假设只有3个特征，那么x就可以用（x1，x2，x3）。b表示阈值，用来影响预测结果。z就是预测结果。</p><p><strong>多个神经元组成神经网络</strong></p><p><strong>神经网络分类</strong></p><ol><li><strong>前馈网络</strong>，整个网络中的信息朝一个方向传播，没有反向的信息传播。如<strong>全连接前馈网络</strong>，<strong>卷积神经网络</strong>。</li><li><strong>记忆网络</strong>，神经元不仅可以接受其他神经元的信息，也可以接受自己的历史信息，如<strong>循环神经网络</strong>。</li><li><strong>图网络</strong>，是前两者的泛化，如图卷积网络</li></ol><h3 id="全连接前馈网络"><a href="#全连接前馈网络" class="headerlink" title="全连接前馈网络"></a>全连接前馈网络</h3><p>全连接前馈网络、多层感知器</p><ul><li>各神经元分别属于不同的层，层内无连接</li><li>相邻两层之间的神经元全部两两连接</li><li>整个网络中无反馈,信号从输入层向输出层单向传播，可用一个有向无环图表示</li></ul><p>神经元之间两两都连接，<strong>链式结构</strong>，前后次序给定；上一层的输出为下一层的输入。</p><p><img src="/./img/image-20230216145514119.png" alt="image-20230216145514119"></p><p><strong>应用：</strong></p><ul><li>数据压缩</li><li>模式识别</li><li>计算机视觉</li><li>声纳目标识别</li><li>语音识别</li><li>手写字符识别</li></ul><h3 id="BP算法-Backpropagation"><a href="#BP算法-Backpropagation" class="headerlink" title="BP算法(Backpropagation)"></a>BP算法(Backpropagation)</h3><p>误差反向传播</p><p>用来高效寻找最优参数</p><ol><li>权重初始化</li><li>前向计算</li><li>反向传播</li></ol><p><img src="/./img/image-20230216145941069.png" alt="image-20230216145941069"></p><h3 id="卷积神经网络-CNN"><a href="#卷积神经网络-CNN" class="headerlink" title="卷积神经网络(CNN)"></a>卷积神经网络(CNN)</h3><p>受生物学上<strong>感受野</strong>(Receptive Field)的机制而提出的，选不同的卷积核提取需要的特征</p><p><strong>特性</strong>：</p><ul><li>局部连接</li><li>权重共享</li><li>空间或时间上的次采样</li></ul><p><strong>应用</strong>：图像特征识别</p><p><strong>为什么用于图像</strong>：</p><ol><li>彩色图片维度很大</li><li>特征往往小于图片</li><li>特征会出现在图片的任何位置</li><li>图片压缩大小不会改变特征</li></ol><p>下采样→保留特征+减小图片尺寸→网络中节点数变少→参数变少→加快训练</p><p><strong>计算方法及输出长度</strong></p><p><img src="/./img/image-20230216151753192.png" alt="image-20230216151753192"></p><p><strong>卷积输出长度</strong></p><p><code>1,1,-1,1...,1</code>是输入信号，经过卷积<code>[1,-2,1]</code>的计算，输出<code>-2,4,-2,0...</code><br><code>-2 = 1*1 + 1* -2 + -1 * 1</code></p><p><img src="/./img/image-20230219195627192.png" alt="image-20230219195627192"></p><h3 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络(RNN)"></a>循环神经网络(RNN)</h3><ul><li>样本间存在顺序关系，每个样本和它之前的样本存在关联。</li><li>引入“记忆”的概念，来处理前后数据的相关性。</li></ul><p>适合<strong>序列数据</strong>，如文本，语音，视频，气象观测数据，股票交易数据。</p><p><strong>计算方法</strong></p><p>在计算时，把上一次隐藏层的结果数据，作为下一次的一个输入源，与下一次的x合并后，再传入隐藏层。</p><p><img src="/./img/image-20230216153526519.png" alt="image-20230216153526519"></p><p><img src="/./img/image-20230216154207341.png" alt="image-20230216154207341"></p><p><strong>应用：</strong></p><ul><li>机器翻译</li><li>机器人控制</li><li>时间序列预测</li><li>语音识别</li><li>语音合成</li><li>时间序列异常检测</li><li>节奏学习</li><li>音乐创作</li></ul><h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p>用摄像机等设备替代人眼对目标进行识别，跟踪和测量，并使用计算机对获取的图像或视频进行处理，分析和理解。</p><p><img src="/./img/image-20230216161158288.png" alt="image-20230216161158288"></p><p><strong>应用类型：</strong></p><ul><li>图像分类</li><li>目标检测 定位 识别 R-CNN 区域卷积神经网络</li><li>目标跟踪 分布式视觉网络 摄像头协作</li><li>语义分割 一类颜色一样</li><li>实例分割 一类可能有不同颜色</li></ul><p><strong>像素</strong>：像素是分辨率的单位。像素是构成位图图像最基本的单元，每个像素都用自己的颜色。</p><p><strong>分辨率</strong>(解析度) ：</p><ul><li><p>图像分辨率是单位英寸内的像素点数，单位为PPI (Pixels Per Inch)</p></li><li><p>PPI表示的是每英寸对角线上所拥有的像素数量(每英寸密度) :</p><p><img src="/./img/image-20230216161308145.png" alt="image-20230216161308145"></p></li></ul><p><strong>灰度</strong>：表示图像像素<strong>明暗程度</strong>的数值，即<strong>黑白图像中点的颜色深度</strong>。范围0-255，白色是255，黑色是0</p><p><strong>通道</strong>：把图像分解成一个或多个颜色成分：</p><ul><li><p>单通道：一个像素点只需一 个数值表示， 只能表示灰度, 0表示黑色(二值图&amp;灰度图)</p></li><li><p>三通道：RGB模式，把图像分为红绿蓝三个通道，可以表示彩色，全0表示黑色</p></li><li><p>四通道：RGBA模式，在RGB基础上加上Alpha通道， 表示透明度，Alpha&#x3D;0表示全透明</p></li></ul><p>对比度：不同颜色之间的差别，对比度&#x3D;最大灰度值&#x2F;最小灰度值</p><p>一副尺寸为800x600的黑白图像，假设采用8bit像素，需要占用多大存储空间?</p><p>800 x 600黑白图像，有480000个像素，每个像素包含1个数值，每个数值8-bit，保存这一副图像需要<br><code>800 X 600 X 1 X 8-bit = 3840000-bit = 3750Kb = 468.75KB = 0.4578MB</code></p><p>一副尺寸为800x 600的彩色图像，需要占用多大存储空间?<br>800 x 600彩色图像，有480000个像素，每个像素包含3个数值，每个数值8-bit，保存这一副图像需要<br><code>800 X 600 X 3 X 8-bit = 11520000-bit = 11250Kb = 1406.25KB = 1.373MB</code></p><h2 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h2><p>自然语言处理(Natural Language Processing: NLP)是研究用机器处理人类语言的理论和技术以实现在人与人以及人与计算机之间利用自然语言进行交互的一门学科。</p><ul><li>自然语言理解</li><li>自然语言生成</li></ul><h3 id="文本处理流程"><a href="#文本处理流程" class="headerlink" title="文本处理流程"></a>文本处理流程</h3><p><img src="/./img/image-20230216162204463.png" alt="image-20230216162204463"></p><p>标准化：套规则</p><p>特征提取：共现矩阵</p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="Scikit-Learn"><a href="#Scikit-Learn" class="headerlink" title="Scikit-Learn"></a>Scikit-Learn</h3><p>常用函数</p><p><a href="https://blog.csdn.net/HNU_Csee_wjw/article/details/89218305">scikit-learn常用库与函数整理</a></p><p><a href="https://blog.csdn.net/weixin_45485946/article/details/106627416">sklearn常用函数</a></p><p>导入数据集</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn.datasets <span class="hljs-keyword">import</span> load_winewine = load_wine()</code></pre></div><p>分割测试集数据和训练集数据</p><div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn <span class="hljs-keyword">import</span> model_selectionX_train, X_test, y_train, y_test = train_test_split(train_data, train_target, test_size, random_state，shuffle)</code></pre></div><h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><p><a href="https://www.runoob.com/numpy/numpy-array-manipulation.html">Numpy 数组操作</a></p><h3 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h3><p><a href="https://blog.csdn.net/geek64581/article/details/106241522">Matplotlib常见图形绘制(折线图、散点图 、柱状图 、直方图 、饼图 、条形图)</a></p>]]></content>
     
     
     <categories>
       
-      <category>人工智能</category>
+      <category>AI</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>复习</tag>
-      
       <tag>课程笔记</tag>
       
-      <tag>AI</tag>
+      <tag>复习</tag>
       
     </tags>
     
@@ -390,9 +411,9 @@
     
     <tags>
       
-      <tag>复习</tag>
-      
       <tag>课程笔记</tag>
+      
+      <tag>复习</tag>
       
     </tags>
     
@@ -417,13 +438,13 @@
     
     <tags>
       
-      <tag>ML</tag>
-      
-      <tag>线性回归</tag>
-      
       <tag>课程笔记</tag>
       
       <tag>AI</tag>
+      
+      <tag>ML</tag>
+      
+      <tag>线性回归</tag>
       
     </tags>
     
@@ -433,26 +454,24 @@
   
   <entry>
     <title>机器学习入门</title>
-    <link href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/</url>
+    <link href="/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/"/>
+    <url>/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/</url>
     
     <content type="html"><![CDATA[<h1 id="机器学习入门"><a href="#机器学习入门" class="headerlink" title="机器学习入门"></a>机器学习入门</h1><h2 id="机器学习概述"><a href="#机器学习概述" class="headerlink" title="机器学习概述"></a>机器学习概述</h2><p>机器学习的含义是基于样本数据(即已有的“训练数据”)建立数学模型，以便做出预测或决策，从而给出人们指导性的建议和意见。</p><h3 id="常用应用"><a href="#常用应用" class="headerlink" title="常用应用"></a>常用应用</h3><p><img src="/./img/image-20230213082305737.png" alt="image-20230213082305737"></p><h3 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h3><p><img src="/./img/image-20230213082341521.png" alt="image-20230213082341521"></p><p>用的最广泛：回归和分类</p><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>机器学习是从数据中自动分析获得模型，并利用模型对未知数据进行预测。机器学习一般流程大致分为<strong>数据采集</strong>、<strong>预处理数据</strong>、<strong>特征提取</strong>以及<strong>训练模型</strong>和<strong>评估模型</strong>，然后优化模型等步骤，如图所示。</p><p><img src="/./img/image-20230213082648977.png" alt="image-20230213082648977"></p><h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="（1）数据集、特征和标签"><a href="#（1）数据集、特征和标签" class="headerlink" title="（1）数据集、特征和标签"></a>（1）数据集、特征和标签</h3><table><thead><tr><th>Housing Median Age（房龄 特征）</th><th>Total Rooms（总数 特征）</th><th>Total Bedrooms（卧室 特征）</th><th>MedianHouseValue（价格 标签）</th></tr></thead><tbody><tr><td>15</td><td>5612</td><td>1283</td><td>66900</td></tr><tr><td>19</td><td>7650</td><td>1901</td><td>80100</td></tr><tr><td>17</td><td>720</td><td>174</td><td>85700</td></tr><tr><td>14</td><td>1501</td><td>337</td><td>73400</td></tr><tr><td>20</td><td>1454</td><td>326</td><td>65500</td></tr></tbody></table><p>数据集：表中全部信息</p><p>特征：自变量</p><p>标签：因变量</p><p><img src="/./img/image-20230213084428305.png" alt="image-20230213084428305"></p><h3 id="（2）训练集、验证集和测试集"><a href="#（2）训练集、验证集和测试集" class="headerlink" title="（2）训练集、验证集和测试集"></a>（2）训练集、验证集和测试集</h3><p><strong>训练集（Train set）</strong>—— 用于训练模型，拟合的数据样本。</p><p><strong>验证集（Development set）</strong>—— 是模型训练过程中单独留出的样本集，它可以用于调整模型的超参数和优化算法。</p><p><strong>测试集（Test set）</strong>—— 对于已经构建和训练好的机器学习模型进行各方面的性能评估。</p><h3 id="（3）数据预处理"><a href="#（3）数据预处理" class="headerlink" title="（3）数据预处理"></a>（3）数据预处理</h3><p>一个数据集中通常会存在以下问题：</p><ul><li>数据缺失（Incomplete） 是属性值为空的情况。</li><li>数据噪声（Noisy）是数据值不合常理的情况。</li><li>数据不一致（Inconsistent）是数据前后存在矛盾的情况。</li><li>数据冗余（Redundant）是数据量或者属性数目超出数据分析需要的情况。</li><li>数据集不均衡 （Imbalance）是各个类别的数据量相差悬殊的情况。</li><li>离群点&#x2F;异常值 （Outliers）是远离数据集中其余部分的数据。</li><li>数据重复（Duplicate）是在数据集中出现多次的数据。</li></ul><p>对于数据中存在的问题，数据的预处理主要有以下方法与步骤，包括：</p><ul><li>(1)数据清洗 (Data Cleansing)</li><li>(2)数据转换 (Data Transformation)</li><li>(3)数据描述 (Data Description)</li><li>(4)特征选择 (Feature Selection)</li><li>(5)特征抽取 (Feature Extraction)</li></ul><h4 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h4><p>占用50%—80%时间</p><p>（1）缺失值清洗</p><ul><li>确定缺失值范围。</li><li>去除不需要的字段。</li><li>填充缺失内容。</li></ul><p>（2）格式内容清洗</p><ul><li>时间、日期、数值、全半角等显示格式不一致</li><li>内容中有不该存在的字符</li><li>内容与该字段应有内容不符</li></ul><p>（3）第三步：逻辑错误清洗</p><ul><li>去除冗余数据</li><li>去除不合理值</li><li>修正矛盾内容</li></ul><h4 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h4><p><strong>原因</strong>：某些算法要求样本具有零均值和单位方差；需要消除样本不同属性具有不同量级时的影响。</p><p>①数量级的差异将导致量级较大的属性占据主导地位；</p><p>②数量级的差异将导致迭代收敛速度减慢；</p><p>③依赖于样本距离的算法对于数据的数量级非常敏感。</p><p><strong>常用方法</strong></p><ol><li><p>min-max标准化（归一化）</p></li><li><p>z-score标准化（规范化）</p></li></ol><h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>选择相关特征，合并离散特征，去除无关特征。</p><p><strong>常用算法</strong></p><p>熵增益(Entropy information ain)，分支定界（Branch and bound，Sequential forward(序列前向选择), Sequential backward(序列反向选择), Simulated annealing(模拟退火), Tabu search(竞技搜索), Genetic algorithms(遗传算法)。</p><h2 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h2><p>在对于数据集进行<strong>预处理</strong>和<strong>特征提取</strong>以后，需要利用<strong>训练集</strong>建立<strong>预测模型</strong>，然后将这种训练好的模型应用于<strong>测试集</strong>（即作为新的、未见过的数据）上进行预测。根据模型在测试集上的表现来选择最佳模型，为了获得最佳模型，还需要进行<strong>参数优化</strong>。</p><p><img src="/./img/image-20230213091840071.png" alt="机器学习算法构建过程"></p><p><strong>泛化：</strong>使算法模型的应用场景更普遍</p><h2 id="模型拟合"><a href="#模型拟合" class="headerlink" title="模型拟合"></a>模型拟合</h2><h3 id="模型的过（欠）拟合"><a href="#模型的过（欠）拟合" class="headerlink" title="模型的过（欠）拟合"></a>模型的过（欠）拟合</h3><p>衡量算法模型泛化能力的好坏，最直观的表现就是模型的过拟合（Overfitting）和欠拟合（Underfitting）</p><p><img src="/./img/image-20230213093231014.png" alt="image-20230213093231014"></p><p>过拟合是指训练误差和测试误差之间的差距太大，模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。</p><p>欠拟合一般是由于训练样本被提取的特征比较少，样本数理不足，导致训练出来的模型不能很好地匹配算法模型，数据预测表现得很差，甚至样本本身都无法高效的识别。</p><p>在机器学习与深度学习中，对于模型欠拟合，一般是由于训练数据量太少，我们只有再去增加训练数据的数据量来避免模型欠拟合。对于模型过拟合，我们一般使用<strong>交叉验证</strong>(Cross-Validation)和正则化来避免模型过拟合。</p><h3 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h3><p><strong>LOOCV方法，即（Leave-one-out cross-validation留一交叉验证）</strong></p><p>LOOCV方法包含将数据集分为训练集和测试集，只用一个数据作为测试集，其他的数据都作为训练集，并将此步骤重复N次（N为数据集的数据数量）。计算量大。</p><p><strong>K折交叉验证(K-fold Cross Validation)</strong></p><p>和LOOCV的不同在于，我们每次的测试集将不再只包含一个数据，而是多个，具体数目将根据K的选取决定。</p><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h3><p>混淆矩阵(Confusion matrix)是机器学习中总结分类模型预测结果的情形分析表，以矩阵形式将数据集中的记录按照真实的类别与分类模型预测的类别判断两个标准进行汇总。其中矩阵的行表示预测值，矩阵的列表示真实值，以二分类为例，看下矩阵表现形式，如表：</p><table><thead><tr><th align="center">混淆矩阵</th><th align="center"></th><th align="center">预测值</th><th align="center">预测值</th></tr></thead><tbody><tr><td align="center"></td><td align="center"></td><td align="center"><strong>P</strong></td><td align="center"><strong>N</strong></td></tr><tr><td align="center"><strong>真实值</strong></td><td align="center"><strong>P</strong></td><td align="center">TP</td><td align="center">FN</td></tr><tr><td align="center"><strong>真实值</strong></td><td align="center"><strong>N</strong></td><td align="center">FP</td><td align="center">TN</td></tr></tbody></table><p>(1) 准确率(Accuracy)&#x3D;所有预测正确的样本&#x2F;总的样本（TP+TN）&#x2F;总样本数<br>$$<br>Accuracy&#x3D;\frac{TP+TN}{TP+TN+FP+FN}<br>$$</p><p>(2) 精确率(Precision)&#x3D;将正类预测为正类&#x2F;所有预测为正类 TP&#x2F;（TP+FP）<br>$$<br>Precision&#x3D;\frac{TP}{TP+FP}<br>$$</p><p>(3) 召回率(Recall) &#x3D; 将正类预测为正类&#x2F;所有正真的正类 TP&#x2F;（TP+FN）<br>$$<br>Recall&#x3D;\frac{TP}{TP+FN}<br>$$<br>(4) F-Measure（又称为F-Score）<br>$$<br>F&#x3D;\frac{(a^2+1)P<em>R}{a^2(P+R)}<br>$$<br>特别的：当参数α&#x3D;1时，就是最常见的F1值测量,即为：<br>$$<br>F&#x3D;\frac{2</em>P*R}{P+R}<br>$$</p><h3 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h3><p>ROC(Receiver Operating Characteristic 受试者操作特征曲线)是一个画在二维平面上的曲线—ROC Curve。<br>$$<br>TPR&#x3D;\frac{TP}{TP+FN}<br>$$<br>在所有实际为阳性的样本中，被正确地判断为阳性之比率<br>$$<br>FPR&#x3D;\frac{FP}{FP+TN}<br>$$<br>在所有实际为阴性的样本中，被错误地判断为阳性之比率</p><p><img src="/./img/image-20230213104128560.png" alt="image-20230213104128560"></p><p>对于一个预测模型来说，我们希望：</p><ol><li>分类正确的数量越多越好，TPR越大越好。</li><li>分类错误的数量越少越好，FPR越小越好。</li><li>最理想的情况是经过坐标（0，1）。</li><li>当TPR&#x3D;FPR,无论是输入是正例还是负例， 都预测为正例和负例各一半（图中虚线的部分）。</li></ol><h3 id="AUC曲线"><a href="#AUC曲线" class="headerlink" title="AUC曲线"></a>AUC曲线</h3><p>AUC（Area Under ROC Curve）是一种用来度量分类模型好坏的另一个标准。虽然用ROC Curve来表示分类器的性能很直观，但是一般希望能有一个数值来标志分类器的好坏，于是Area Under roc Curve(AUC)就出现了。顾名思义，AUC的值就是处于ROC Curve下方的那部分面积的大小。通常，AUC的值介于0.5到1.0之间，较大的AUC代表了分类器较好的性能，如图3-6。AUC被定义为ROC曲线下的面积(ROC的积分)，通常大于0.5小于1。随机挑选一个正样本以及一个负样本，分类器判定正样本的值高于负样本的概率就是 AUC 值。AUC值(面积)越大的分类器，性能越好。</p><p><img src="/./img/image-20230213105902502.png" alt="image-20230213105902502"></p>]]></content>
     
     
     <categories>
       
-      <category>人工智能</category>
+      <category>AI</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>ML</tag>
-      
       <tag>课程笔记</tag>
       
-      <tag>AI</tag>
+      <tag>ML</tag>
       
       <tag>机器学习</tag>
       
@@ -694,6 +713,33 @@
   
   
   <entry>
+    <title>Android可视化UI设计</title>
+    <link href="/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/"/>
+    <url>/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p><h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p><h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol><li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p><p><img src="/./img/image-20221104183622446.png" alt="image-20221104183622446"></p><p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p><p><img src="/./img/image-20221104182427025.png" alt="image-20221104182427025"></p><p>查看生成的代码</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;TextView&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span> // <span class="hljs-attr">代表控件底部在父布局的底部</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div><p>若我们拖动控件，则会增加如下代码：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div></li><li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p><p><img src="/./img/image-20221104192615537.png" alt="image-20221104192615537"></p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;android:layout_marginBottom=&quot;240dp&quot;app:layout_constraintBottom_toBottomOf=&quot;parent&quot;app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li></ol><h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol><li><p>选择多个控件</p><p><img src="/./img/image-20221104193649706.png" alt="image-20221104193649706"></p></li><li><p>点击<code>Pack</code></p><p><img src="/./img/image-20221104193845078.png" alt="image-20221104193845078"></p></li><li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p><p><img src="/./img/image-20221104193954355.png" alt="image-20221104193954355"></p><p>下面是有阻挡得情况</p><p><img src="/./img/image-20221104194800428.png" alt="image-20221104194800428"></p></li><li><p>Pack Vertically，同理，Buttom</p><p><img src="/./img/image-20221104194533125.png" alt="image-20221104194533125"></p><p><img src="/./img/image-20221104194859939.png" alt="image-20221104194859939"></p></li><li><p>Expand Horizontally，水平拉伸</p><p><img src="/./img/image-20221104195145603.png" alt="image-20221104195145603"></p></li><li><p>Expand Vertically，竖直拉伸</p><p><img src="/./img/image-20221104195319243.png" alt="image-20221104195319243"></p></li><li><p>Distribute Horizontally，添加水平方向相互约束</p><p><img src="/./img/image-20221104195748648.png" alt="image-20221104195748648"></p></li><li><p>Distribute Vertically，添加竖直方向相互约束</p><p><img src="/./img/image-20221104195933250.png" alt="image-20221104195933250"></p></li></ol><p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p><div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div><p>Expend操作会修改控件大小</p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;android:layout_height=&quot;200dp&quot;</code></pre></div><p>Distribute操作会添加约束，如：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div><h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p><p><img src="/./img/image-20221104202313658.png" alt="image-20221104202313658"></p><p>注意点：</p><ol><li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p><p><img src="/./img/image-20221104202740560.png" alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" alt="image-20221104202810457"></p></li><li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p><p><img src="/./img/image-20221104203110925.png" alt="image-20221104203110925"></p><p>然后拖到想要约束的位置，一般是另一个控件的基线</p><p>   <img src="/./img/image-20221104203338181.png" alt="image-20221104203338181"></p></li></ol><h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p><p><img src="/./img/image-20221104203611415.png" alt="image-20221104203611415"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>layout</tag>
+      
+      <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Android屏幕旋转ScreenOrientation</title>
     <link href="/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/"/>
     <url>/Android/Android%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%ACScreenOrientation/</url>
@@ -736,33 +782,6 @@
     <tags>
       
       <tag>Icon</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Android可视化UI设计</title>
-    <link href="/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/"/>
-    <url>/Android/Android%E5%8F%AF%E8%A7%86%E5%8C%96UI%E8%AE%BE%E8%AE%A1/</url>
-    
-    <content type="html"><![CDATA[<h1 id="可视化UI设计"><a href="#可视化UI设计" class="headerlink" title="可视化UI设计"></a>可视化UI设计</h1><p>[TOC]</p><h2 id="约束布局ConstraintLayout"><a href="#约束布局ConstraintLayout" class="headerlink" title="约束布局ConstraintLayout"></a>约束布局ConstraintLayout</h2><p>约束布局ConstraintLayout是一个使用“相对定位”灵活地确定控件的位置和大小的一个布局，在 2016 年 Google I&#x2F;O 中面世，它的出现是为了解决开发中过于复杂的页面层级嵌套过多的问题——层级过深会增加绘制界面需要的时间，影响用户体验，以灵活的方式定位和调整小部件。</p><h3 id="基本位置约束"><a href="#基本位置约束" class="headerlink" title="基本位置约束"></a>基本位置约束</h3><ol><li><p><strong>直接拖动蓝点</strong>。首先认识各个位置的定义，（注意：这里每个词指的不是具体的点，而是该点所在的红色直线！）</p><p><img src="/./img/image-20221104183622446.png" alt="image-20221104183622446"></p><p>下图显示布局约束，➡️代表指向，意思是控件的某个位置相对于其他控件或者布局的位置。例如：控件底部在父布局的底部，但是控件顶部又在父布局的顶部，这是两个约束拉扯，控件最终居中，但是我们仍然可以拖动控件调整位置，这里修改的是控件在两个约束之间的比重，默认是50</p><p><img src="/./img/image-20221104182427025.png" alt="image-20221104182427025"></p><p>查看生成的代码</p><div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><span class="hljs-tag"><span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView2&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;TextView&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;34sp&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span> // <span class="hljs-attr">代表控件底部在父布局的底部</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">&quot;parent&quot;</span>// <span class="hljs-attr">代表控件结束位置在父控件的结束位置</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><span class="hljs-tag"><span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span> /&gt;</span></code></pre></div><p>若我们拖动控件，则会增加如下代码：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintHorizontal_bias=&quot;0.35&quot; // 代表控件在受到水平约束时到两端的比例，范围0~1app:layout_constraintVertical_bias=&quot;0.65&quot; // 代表控件在受到竖直约束时到两端的比例，范围0~1</code></pre></div></li><li><p><strong>点击魔法棒🪄</strong>，会自动添加约束，同时以外边距的形式添加距离。</p><p><img src="/./img/image-20221104192615537.png" alt="image-20221104192615537"></p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_marginStart=&quot;96dp&quot;android:layout_marginBottom=&quot;240dp&quot;app:layout_constraintBottom_toBottomOf=&quot;parent&quot;app:layout_constraintStart_toStartOf=&quot;parent&quot;</code></pre></div></li></ol><h3 id="对多个控件操作"><a href="#对多个控件操作" class="headerlink" title="对多个控件操作"></a>对多个控件操作</h3><h4 id="Pack"><a href="#Pack" class="headerlink" title="Pack"></a>Pack</h4><ol><li><p>选择多个控件</p><p><img src="/./img/image-20221104193649706.png" alt="image-20221104193649706"></p></li><li><p>点击<code>Pack</code></p><p><img src="/./img/image-20221104193845078.png" alt="image-20221104193845078"></p></li><li><p>Pack Horizontally，会以最Start位置的Start边界为基准水平紧凑对齐</p><p><img src="/./img/image-20221104193954355.png" alt="image-20221104193954355"></p><p>下面是有阻挡得情况</p><p><img src="/./img/image-20221104194800428.png" alt="image-20221104194800428"></p></li><li><p>Pack Vertically，同理，Buttom</p><p><img src="/./img/image-20221104194533125.png" alt="image-20221104194533125"></p><p><img src="/./img/image-20221104194859939.png" alt="image-20221104194859939"></p></li><li><p>Expand Horizontally，水平拉伸</p><p><img src="/./img/image-20221104195145603.png" alt="image-20221104195145603"></p></li><li><p>Expand Vertically，竖直拉伸</p><p><img src="/./img/image-20221104195319243.png" alt="image-20221104195319243"></p></li><li><p>Distribute Horizontally，添加水平方向相互约束</p><p><img src="/./img/image-20221104195748648.png" alt="image-20221104195748648"></p></li><li><p>Distribute Vertically，添加竖直方向相互约束</p><p><img src="/./img/image-20221104195933250.png" alt="image-20221104195933250"></p></li></ol><p>所有操作都会通过修改控件绝对位置来改变位置，坐标原点在Start与Top交点处。</p><div class="code-wrapper"><pre><code class="hljs xml">tools:layout_editor_absoluteX=&quot;123dp&quot; // 绝对x轴位置tools:layout_editor_absoluteY=&quot;456dp&quot; // 绝对Y轴位置</code></pre></div><p>Expend操作会修改控件大小</p><div class="code-wrapper"><pre><code class="hljs xml">android:layout_width=&quot;400dp&quot;android:layout_height=&quot;200dp&quot;</code></pre></div><p>Distribute操作会添加约束，如：</p><div class="code-wrapper"><pre><code class="hljs xml">app:layout_constraintStart_toEndOf=&quot;@+id/button4&quot;</code></pre></div><h4 id="Align"><a href="#Align" class="headerlink" title="Align"></a>Align</h4><p>多选后点击Align，直接看图标就能理解作用。</p><p><img src="/./img/image-20221104202313658.png" alt="image-20221104202313658"></p><p>注意点：</p><ol><li><p>与Pack不同，这里的对齐是是通过添加约束实现，而且控件可能重叠。</p><p><img src="/./img/image-20221104202740560.png" alt="image-20221104202740560"><img src="/./img/image-20221104202810457.png" alt="image-20221104202810457"></p></li><li><p>Baselines是文字基线对齐，选中控件，右键菜单选择显示</p><p><img src="/./img/image-20221104203110925.png" alt="image-20221104203110925"></p><p>然后拖到想要约束的位置，一般是另一个控件的基线</p><p>   <img src="/./img/image-20221104203338181.png" alt="image-20221104203338181"></p></li></ol><h4 id="清除控件所有约束"><a href="#清除控件所有约束" class="headerlink" title="清除控件所有约束"></a>清除控件所有约束</h4><p>所有约束都会被清除</p><p><img src="/./img/image-20221104203611415.png" alt="image-20221104203611415"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Android</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>layout</tag>
-      
-      <tag>view</tag>
       
     </tags>
     
@@ -1529,9 +1548,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Lifecycles</tag>
-      
       <tag>Architecture</tag>
+      
+      <tag>Lifecycles</tag>
       
     </tags>
     
@@ -1587,9 +1606,9 @@
       
       <tag>Jetpack</tag>
       
-      <tag>Architecture</tag>
-      
       <tag>DataBinding</tag>
+      
+      <tag>Architecture</tag>
       
       <tag>ViewModel</tag>
       
@@ -1731,9 +1750,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
@@ -1817,13 +1836,13 @@
       
       <tag>Collection</tag>
       
-      <tag>Set</tag>
+      <tag>Array</tag>
       
       <tag>List</tag>
       
-      <tag>Map</tag>
+      <tag>Set</tag>
       
-      <tag>Array</tag>
+      <tag>Map</tag>
       
     </tags>
     
@@ -2045,9 +2064,9 @@
       
       <tag>Java</tag>
       
-      <tag>Graph</tag>
-      
       <tag>图</tag>
+      
+      <tag>Graph</tag>
       
       <tag>最短路径</tag>
       
@@ -2078,11 +2097,11 @@
       
       <tag>Java</tag>
       
-      <tag>Dijkstra</tag>
+      <tag>图</tag>
       
       <tag>Graph</tag>
       
-      <tag>图</tag>
+      <tag>Dijkstra</tag>
       
       <tag>最短路径</tag>
       
@@ -2111,13 +2130,13 @@
       
       <tag>Java</tag>
       
-      <tag>Graph</tag>
-      
-      <tag>图</tag>
-      
       <tag>树</tag>
       
       <tag>Tree</tag>
+      
+      <tag>图</tag>
+      
+      <tag>Graph</tag>
       
     </tags>
     
@@ -2144,9 +2163,9 @@
       
       <tag>Java</tag>
       
-      <tag>Graph</tag>
-      
       <tag>图</tag>
+      
+      <tag>Graph</tag>
       
       <tag>最短路径</tag>
       
@@ -2279,9 +2298,9 @@
       
       <tag>Java</tag>
       
-      <tag>Graph</tag>
-      
       <tag>图</tag>
+      
+      <tag>Graph</tag>
       
       <tag>DFS</tag>
       
@@ -3311,17 +3330,17 @@
     
     <tags>
       
-      <tag>集合</tag>
-      
       <tag>Collection</tag>
-      
-      <tag>Set</tag>
-      
-      <tag>TreeSet</tag>
       
       <tag>List</tag>
       
+      <tag>Set</tag>
+      
       <tag>Map</tag>
+      
+      <tag>集合</tag>
+      
+      <tag>TreeSet</tag>
       
       <tag>HashMap</tag>
       
@@ -3350,9 +3369,9 @@
     
     <tags>
       
-      <tag>泛型</tag>
-      
       <tag>Generic</tag>
+      
+      <tag>泛型</tag>
       
     </tags>
     
@@ -3617,22 +3636,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
