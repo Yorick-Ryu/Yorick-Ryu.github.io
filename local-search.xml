@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>什么是Manus？</title>
+    <link href="/AI/what-is-manus/"/>
+    <url>/AI/what-is-manus/</url>
+    
+    <content type="html"><![CDATA[<h1 id="什么是Manus？"><a href="#什么是Manus？" class="headerlink" title="什么是Manus？"></a>什么是Manus？</h1><p>Manus 是由中国创业公司 <strong>Monica</strong> 团队开发的一款<strong>通用型AI Agent</strong>，号称“全球首款真正意义上的通用AI Agent”，能够自主思考、规划并执行复杂任务，直接交付完整成果，而非仅提供建议或答案。以下是其核心功能和技术特点的详细说明：</p><hr><h3 id="核心能力与功能"><a href="#核心能力与功能" class="headerlink" title="核心能力与功能"></a><strong>核心能力与功能</strong></h3><ol><li><p><strong>自主任务处理与成果交付</strong><br>Manus 的核心特点是能够像人类一样拆解任务、调用工具并完成全流程操作，例如：</p><ul><li><strong>简历筛选</strong>：解压文件、逐页分析简历、提取关键信息、生成排名建议和电子表格。</li><li><strong>房产搜索</strong>：根据家庭收入、安全性、教育资源等需求，拆解任务（搜索社区信息、编写预算程序、筛选房源等），最终生成详细报告。</li><li><strong>股票分析</strong>：调用金融数据API、编写代码分析股价相关性、生成可视化图表，甚至部署为可分享的网站。</li><li><strong>PPT生成</strong>：仅需一句话指令（如“介绍小米SU7的十页PPT”），即可自动收集信息并生成完整内容。</li></ul></li><li><p><strong>多领域应用场景</strong><br>Manus 的适用场景广泛，包括但不限于：</p><ul><li><strong>旅行规划</strong>：创建个性化旅行手册，整合行程建议和详细攻略。</li><li><strong>教育内容创建</strong>：为教师生成视频材料，解释复杂概念（如动量定理）。</li><li><strong>商业分析</strong>：整理创业公司列表、分析亚马逊销售数据、生成市场情绪报告。</li></ul></li><li><p><strong>异步处理与记忆能力</strong><br>用户可随时中断任务或添加新指令，Manus 会异步处理并在完成后通知用户。此外，它能记忆用户偏好（如习惯以表格形式呈现结果），并在后续任务中自动优化交付方式。</p></li></ol><hr><h3 id="技术特点与优势"><a href="#技术特点与优势" class="headerlink" title="技术特点与优势"></a><strong>技术特点与优势</strong></h3><ol><li><p><strong>任务拆解与工具调用</strong><br>Manus 通过内置的“工作记忆”系统（如生成待办清单 <code>todo.md</code>），将复杂任务拆解为可执行的子任务，并调用多种工具（如浏览器、代码编辑器、数据分析软件）完成操作。例如，在股票分析中，它结合API调用和Python脚本生成可视化图表。</p></li><li><p><strong>性能表现</strong><br>在 <strong>GAIA 基准测试</strong>（评估AI解决现实问题的能力）中，Manus 在所有难度级别均达到最先进水平（SOTA），宣称性能超越OpenAI同层次模型。</p></li><li><p><strong>架构设计</strong><br>业内推测其架构可能结合了多代理虚拟机环境（类似Anthropic的“ComputerUse”），通过大模型（如DeepSeek R1&#x2F;V3）作为中央处理器，集成多模态输入输出和工具链调用能力。</p></li></ol><hr><h3 id="团队背景与争议"><a href="#团队背景与争议" class="headerlink" title="团队背景与争议"></a><strong>团队背景与争议</strong></h3><ul><li><strong>创始人肖弘</strong>：华中科技大学软件工程专业毕业，连续创业者，曾推出服务超200万B端用户的“微伴助手”和海外百万用户的AI插件Monica。</li><li><strong>争议与质疑</strong>：部分观点认为Manus的宣传存在营销炒作嫌疑，例如大量自媒体集中造势、官网仅提供英文界面（目标市场矛盾）、能力尚未经广泛第三方验证等。也有开发者指出其技术本质是现有工具链的整合，而非底层突破。</li></ul><hr><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>Manus 代表了AI从“对话工具”向“执行代理”的跃迁，其核心价值在于<strong>自主规划与执行复杂任务的能力</strong>。尽管存在争议，但其在任务拆解、工具调用和成果交付上的表现已引发广泛关注。若其技术能进一步验证，或将成为AI Agent领域的重要里程碑。用户可通过<a href="https://manus.im/invitation">官网</a>申请内测邀请码体验。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Manus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Manus能做什么</title>
+    <link href="/AI/how-manus-can-do/"/>
+    <url>/AI/how-manus-can-do/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Manus能做什么？"><a href="#Manus能做什么？" class="headerlink" title="Manus能做什么？"></a>Manus能做什么？</h1><h3 id="一、智能化数据分析与决策支持"><a href="#一、智能化数据分析与决策支持" class="headerlink" title="一、智能化数据分析与决策支持"></a>一、<strong>智能化数据分析与决策支持</strong></h3><ol><li><p><strong>行业深度洞察</strong></p><ul><li>计划利用Manus的<strong>AI数据挖掘能力</strong>，分析服装行业（或其他目标领域）的市场趋势、用户消费行为及竞品动态，生成可视化图表（如流量分布、销售热点图）[1][2][4]。</li><li>需要Manus提供<strong>定制化Dashboard</strong>，实时监控关键指标（如库存周转率、用户转化率），并生成可操作的优化建议[1][2]。</li></ul></li><li><p><strong>金融与股票分析</strong></p><ul><li>希望Manus对特定股票进行<strong>多维度分析</strong>（技术面、基本面、市场情绪），生成风险预警和投资组合优化方案[1]。</li><li>需整合历史数据与实时新闻舆情，提供动态预测模型[1][2]。</li></ul></li></ol><hr><h3 id="二、个性化内容创作与知识管理"><a href="#二、个性化内容创作与知识管理" class="headerlink" title="二、个性化内容创作与知识管理"></a>二、<strong>个性化内容创作与知识管理</strong></h3><ol><li><p><strong>定制化学习资源</strong></p><ul><li>需要Manus根据我的专业领域（如AI技术、市场营销）<strong>自动化整理高质量学习资料</strong>，并生成图文结合的课程笔记[1][5]。</li><li>期望通过<strong>交互式课程网页</strong>（例如Transformer架构解析）深化技术理解[1][5]。</li></ul></li><li><p><strong>音视频内容生成</strong></p><ul><li>计划使用Manus的<strong>音效定制功能</strong>，为播客节目制作独特背景音乐；同时生成<strong>AI语音克隆</strong>旁白，适配多语言版本内容[1][5]。</li><li>需要Manus剪辑短视频并添加智能字幕，提升社交媒体内容生产效率[5]。</li></ul></li></ol><hr><h3 id="三、企业级应用与行业解决方案"><a href="#三、企业级应用与行业解决方案" class="headerlink" title="三、企业级应用与行业解决方案"></a>三、<strong>企业级应用与行业解决方案</strong></h3><ol><li><p><strong>服装行业智能化升级</strong></p><ul><li>需Manus分析服装设计、生产到销售的全链路数据，提供<strong>AI驱动的优化方案</strong>（如智能选款、库存预测）[2][4]。</li><li>要求生成<strong>竞品技术对比报告</strong>，帮助团队评估AI技术（如智能搜索、推荐算法）的应用价值[2][4]。</li></ul></li><li><p><strong>产品体验与用户调研</strong></p><ul><li>计划通过Manus<strong>代理体验目标网站&#x2F;APP</strong>，生成详细的功能评估报告（如用户体验痛点、性能瓶颈）[1][5]。</li><li>需要Manus收集并分析用户评论，提炼产品改进建议[1][5]。</li></ul></li></ol><hr><h3 id="四、创意与工具开发"><a href="#四、创意与工具开发" class="headerlink" title="四、创意与工具开发"></a>四、<strong>创意与工具开发</strong></h3><ol><li><p><strong>游戏化内容定制</strong></p><ul><li>希望Manus为团队定制<strong>互动小游戏原型</strong>（如策略类模拟器），用于产品原型测试或用户活动引流[1]。</li><li>需支持快速迭代，并生成玩法规则文档与代码框架[1][5]。</li></ul></li><li><p><strong>自动化工具开发</strong></p><ul><li>计划利用Manus的<strong>AI编程辅助功能</strong>，开发自动化脚本（如数据爬虫、报表生成工具），减少重复性工作[5]。</li><li>需要Manus提供代码优化建议及错误调试支持[3][5]。</li></ul></li></ol><hr><h3 id="五、协作与知识共享"><a href="#五、协作与知识共享" class="headerlink" title="五、协作与知识共享"></a>五、<strong>协作与知识共享</strong></h3><ol><li><p><strong>团队知识库建设</strong></p><ul><li>需Manus整合内部文档、会议录音等资料，生成<strong>结构化知识图谱</strong>，支持语义搜索与智能问答[1][5]。</li><li>期望通过<strong>智能简报生成</strong>功能，自动提炼项目进展关键信息[1][5]。</li></ul></li><li><p><strong>跨语言协作</strong></p><ul><li>依赖Manus的<strong>多语言实时翻译与摘要功能</strong>，加速国际团队沟通（如中英文会议纪要同步生成）[5]。</li></ul></li></ol><hr><h3 id="具体要求与数据支持需求："><a href="#具体要求与数据支持需求：" class="headerlink" title="具体要求与数据支持需求："></a>具体要求与数据支持需求：</h3><ul><li><strong>数据输入类型</strong>：行业报告、用户行为日志、音视频素材、代码库、社交媒体评论等。</li><li><strong>输出格式要求</strong>：需支持PDF&#x2F;Excel&#x2F;JSON导出，部分场景需API接口集成。</li><li><strong>安全与隐私</strong>：要求数据加密存储，并符合GDPR等法规。</li></ul><p>若提供更详细的业务场景与数据样本，Manus可进一步细化模型训练与功能适配，例如：</p><ul><li>提供服装设计草图，生成AI优化建议[2][4]；</li><li>上传历史销售数据，定制预测模型参数[1][2]。</li></ul><p>以上规划可根据实际需求优先级分阶段实施，期待通过Manus实现效率提升与创新突破。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>AI</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Manus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>DeepSeek开源周</title>
+    <link href="/AI/deepseek-opensource-week/"/>
+    <url>/AI/deepseek-opensource-week/</url>
+    
+    <content type="html"><![CDATA[<h1 id="DeepSeek开源周"><a href="#DeepSeek开源周" class="headerlink" title="DeepSeek开源周"></a>DeepSeek开源周</h1><h2 id="Day1-FlashMLA"><a href="#Day1-FlashMLA" class="headerlink" title="Day1 FlashMLA"></a>Day1 FlashMLA</h2><p><a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a>是用于Hopper GPU的高效MLA解码内核，针对可变长度序列服务进行了优化。</p><ul><li>BF16支持</li><li>分页KV缓存（块大小64）</li><li>H800上3000 GB&#x2F;s内存绑定和580 TFLOPS计算绑定</li></ul><p><img src="/./img/image-20250301160310013.png" alt="image-20250301160310013"></p><h2 id="Day2-DeepEP"><a href="#Day2-DeepEP" class="headerlink" title="Day2 DeepEP"></a>Day2 DeepEP</h2><p><a href="https://github.com/deepseek-ai/DeepEP">DeepEP</a>是为混合专家（MoE）和专家并行（EP）量身定制的通信库，提供高通量和低延迟的全对全GPU内核，也就是所谓的MoE调度和合并，该库还支持低查准率&#x2F;精确度操作，包括FP8。</p><p><img src="/./img/image-20250301163212125.png" alt="image-20250301163212125"></p><h2 id="Day3-DeepGEMM"><a href="#Day3-DeepGEMM" class="headerlink" title="Day3 DeepGEMM"></a>Day3 DeepGEMM</h2><p>DeepGEMM是一个专为干净高效的FP8通用矩阵乘法（GEMM）而设计的库，具有细粒度扩展，如DeepSeek-V3中提出的。它支持普通和混合专家（MoE）分组的GEMM。该库用CUDA编写，在安装过程中不需要编译，通过在运行时使用轻量级即时（JIT）模块编译所有内核。</p><p><img src="/./img/image-20250301165605229.png" alt="image-20250301165605229"></p><h2 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>view</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>火山引擎如何查看费用消耗</title>
     <link href="/AI/volcengine-model-management/"/>
     <url>/AI/volcengine-model-management/</url>
@@ -758,9 +833,9 @@
     
     <tags>
       
-      <tag>layout</tag>
-      
       <tag>view</tag>
+      
+      <tag>layout</tag>
       
     </tags>
     
@@ -860,9 +935,9 @@
     
     <tags>
       
-      <tag>layout</tag>
-      
       <tag>view</tag>
+      
+      <tag>layout</tag>
       
     </tags>
     
@@ -1024,11 +1099,11 @@
     
     <tags>
       
+      <tag>view</tag>
+      
       <tag>Jetpack</tag>
       
       <tag>Compose</tag>
-      
-      <tag>view</tag>
       
     </tags>
     
@@ -3665,22 +3740,22 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
+    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function () {    /** 计时起始时间，自行修改 **/    var start = new Date("2022/11/27 00:00:00");    function update() {        var now = new Date();        now.setTime(now.getTime() + 250);        days = (now - start) / 1000 / 60 / 60 / 24;        dnum = Math.floor(days);        hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);        hnum = Math.floor(hours);        if (String(hnum).length === 1) {            hnum = "0" + hnum;        }        minutes = (now - start) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);        mnum = Math.floor(minutes);        if (String(mnum).length === 1) {            mnum = "0" + mnum;        }        seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);        snum = Math.round(seconds);        if (String(snum).length === 1) {            snum = "0" + snum;        }        document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp" + dnum + "&nbsp天";        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";    }    update();    setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="top-app-bar__title">  我的项目</div><div class="card card--elevated">  <div class="padding-3">    <h3 class="headline-small margin-top-0 margin-bottom-3">    酷客工具箱    </h3>    <div class="body-medum margin-bottom-3">      本软件适用于vivo/iqoo手机，借助系统开发测试的工具，实现一些正常情况下被阉割或者隐藏的功能。    </div>    <div class="display-flex justify-content-flex-end">    <button type="button" class="button button--filled" onclick="window.location.href='https://github.com/Yorick-Ryu/CokoTools/tree/release'">        查看源码      </button>      <button type="button" class="button button--filled" style="margin-left:10px;" onclick="window.location.href='https://www.coolapk.com/apk/com.yorick.cokotools'">        下载      </button>    </div>  </div></div>]]></content>
     
   </entry>
   
